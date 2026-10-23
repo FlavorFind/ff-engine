@@ -19,3 +19,5 @@ class DishRegionAdmin(admin.ModelAdmin):
     list_display = ["dish", "region"]
     list_filter = ["region"]
     search_fields = ["dish__name_en", "region__name"]
+    autocomplete_fields = ["dish", "region"]
+    ordering = ["dish__name_en"]
