@@ -40,7 +40,12 @@ def superuser(db):
 
 
 @pytest.fixture
-def admin_client(superuser):
+def curator_client(superuser):
+    """Authenticated test client logged in as a superuser curator.
+
+    Named 'curator_client' to avoid shadowing pytest-django's built-in
+    'curator_client' fixture.
+    """
     c = Client()
     c.force_login(superuser)
     return c
@@ -96,16 +101,16 @@ def test_admin_site_branding():
 
 
 @pytest.mark.django_db
-def test_dish_admin_list_page(admin_client, dish):
-    resp = admin_client.get("/admin/dishes/dish/")
+def test_dish_admin_list_page(curator_client, dish):
+    resp = curator_client.get("/admin/dishes/dish/")
     assert resp.status_code == 200
     assert "Ugali" in resp.content.decode()
 
 
 @pytest.mark.django_db
-def test_dish_admin_add_page(admin_client):
+def test_dish_admin_add_page(curator_client):
     """Pass criterion: curator can open the dish add page."""
-    resp = admin_client.get("/admin/dishes/dish/add/")
+    resp = curator_client.get("/admin/dishes/dish/add/")
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "name_en" in body
@@ -114,9 +119,9 @@ def test_dish_admin_add_page(admin_client):
 
 
 @pytest.mark.django_db
-def test_dish_admin_change_page(admin_client, dish):
+def test_dish_admin_change_page(curator_client, dish):
     """Pass criterion: curator can open the dish change page."""
-    resp = admin_client.get(f"/admin/dishes/dish/{dish.pk}/change/")
+    resp = curator_client.get(f"/admin/dishes/dish/{dish.pk}/change/")
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "Ugali" in body
@@ -133,10 +138,10 @@ def test_dish_admin_change_page(admin_client, dish):
 
 
 @pytest.mark.django_db
-def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
+def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
     """E6 pass criterion: a curator enters a dish with inline ingredient rows."""
     initial_count = Dish.objects.count()
-    resp = admin_client.post(
+    resp = curator_client.post(
         "/admin/dishes/dish/add/",
         data={
             "slug": "sukuma-wiki",
@@ -229,13 +234,13 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
 
 
 @pytest.mark.django_db
-def test_bulk_action_mark_reviewed(admin_client):
+def test_bulk_action_mark_reviewed(curator_client):
     d1 = Dish.objects.create(name_en="Githeri")
     d2 = Dish.objects.create(name_en="Mukimo")
     assert d1.status == "draft"
     assert d2.status == "draft"
 
-    resp = admin_client.post(
+    resp = curator_client.post(
         "/admin/dishes/dish/",
         data={
             "action": "mark_reviewed",
@@ -251,9 +256,9 @@ def test_bulk_action_mark_reviewed(admin_client):
 
 
 @pytest.mark.django_db
-def test_bulk_action_mark_verified(admin_client):
+def test_bulk_action_mark_verified(curator_client):
     d1 = Dish.objects.create(name_en="Nyama Choma")
-    resp = admin_client.post(
+    resp = curator_client.post(
         "/admin/dishes/dish/",
         data={
             "action": "mark_verified",
@@ -267,9 +272,9 @@ def test_bulk_action_mark_verified(admin_client):
 
 
 @pytest.mark.django_db
-def test_bulk_action_mark_archived(admin_client):
+def test_bulk_action_mark_archived(curator_client):
     d1 = Dish.objects.create(name_en="Irio")
-    resp = admin_client.post(
+    resp = curator_client.post(
         "/admin/dishes/dish/",
         data={
             "action": "mark_archived",
@@ -283,12 +288,12 @@ def test_bulk_action_mark_archived(admin_client):
 
 
 @pytest.mark.django_db
-def test_ingredient_bulk_action_mark_reviewed(admin_client, category):
+def test_ingredient_bulk_action_mark_reviewed(curator_client, category):
     i1 = Ingredient.objects.create(name_en="Tomato", category=category)
     i2 = Ingredient.objects.create(name_en="Onion", category=category)
     assert i1.status == "draft"
 
-    resp = admin_client.post(
+    resp = curator_client.post(
         "/admin/ingredients/ingredient/",
         data={
             "action": "mark_reviewed",
@@ -309,23 +314,23 @@ def test_ingredient_bulk_action_mark_reviewed(admin_client, category):
 
 
 @pytest.mark.django_db
-def test_search_by_alias_finds_dish(admin_client, dish):
+def test_search_by_alias_finds_dish(curator_client, dish):
     """Search query matching a dish alias (not the dish name) should find the dish."""
     DishAlias.objects.create(dish=dish, alias="Ugali wa mahindi", language="sw")
 
-    resp = admin_client.get("/admin/dishes/dish/", data={"q": "mahindi"})
+    resp = curator_client.get("/admin/dishes/dish/", data={"q": "mahindi"})
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "Ugali" in body  # dish found via alias
 
 
 @pytest.mark.django_db
-def test_search_by_alias_finds_ingredient(admin_client, category):
+def test_search_by_alias_finds_ingredient(curator_client, category):
     """Search query matching an ingredient alias should find the ingredient."""
     ing = Ingredient.objects.create(name_en="Coriander", category=category)
     ing.aliases.create(alias="Dhania", normalized_alias="dhania", language="sw")
 
-    resp = admin_client.get("/admin/ingredients/ingredient/", data={"q": "dhania"})
+    resp = curator_client.get("/admin/ingredients/ingredient/", data={"q": "dhania"})
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "Coriander" in body
@@ -337,7 +342,7 @@ def test_search_by_alias_finds_ingredient(admin_client, category):
 
 
 @pytest.mark.django_db
-def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, water):
+def test_save_model_rebuilds_search_arrays(curator_client, dish, maize_flour, water):
     """When a dish is saved via admin, search arrays are rebuilt from DishIngredient rows."""
     # dish already has maize_flour as primary (from fixture)
     existing_di = dish.dish_ingredients.first()
@@ -346,7 +351,7 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
         dish=dish, ingredient=water, role=DishIngredient.Role.REQUIRED
     )
     # Trigger admin save (POST to change page)
-    resp = admin_client.post(
+    resp = curator_client.post(
         f"/admin/dishes/dish/{dish.pk}/change/",
         data={
             "slug": "ugali",
@@ -422,10 +427,10 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
 
 
 @pytest.mark.django_db
-def test_region_inline_on_dish_change_page(admin_client, dish, region):
+def test_region_inline_on_dish_change_page(curator_client, dish, region):
     """The Dish change page should show the DishRegion inline."""
     DishRegion.objects.create(dish=dish, region=region)
-    resp = admin_client.get(f"/admin/dishes/dish/{dish.pk}/change/")
+    resp = curator_client.get(f"/admin/dishes/dish/{dish.pk}/change/")
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "Coastal" in body
@@ -437,8 +442,8 @@ def test_region_inline_on_dish_change_page(admin_client, dish, region):
 
 
 @pytest.mark.django_db
-def test_ingredient_admin_add_page(admin_client, category):
-    resp = admin_client.get("/admin/ingredients/ingredient/add/")
+def test_ingredient_admin_add_page(curator_client, category):
+    resp = curator_client.get("/admin/ingredients/ingredient/add/")
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "name_en" in body
@@ -446,7 +451,7 @@ def test_ingredient_admin_add_page(admin_client, category):
 
 
 @pytest.mark.django_db
-def test_ingredient_admin_change_page(admin_client, maize_flour):
-    resp = admin_client.get(f"/admin/ingredients/ingredient/{maize_flour.pk}/change/")
+def test_ingredient_admin_change_page(curator_client, maize_flour):
+    resp = curator_client.get(f"/admin/ingredients/ingredient/{maize_flour.pk}/change/")
     assert resp.status_code == 200
     assert "Maize flour" in resp.content.decode()
