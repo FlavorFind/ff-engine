@@ -1,4 +1,5 @@
 """Core middleware for ff-engine."""
+
 import uuid
 
 from django.utils.deprecation import MiddlewareMixin

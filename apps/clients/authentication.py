@@ -1,4 +1,5 @@
 """API key authentication — full implementation in E36."""
+
 from rest_framework.authentication import BaseAuthentication
 
 

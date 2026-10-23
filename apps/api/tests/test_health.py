@@ -1,4 +1,5 @@
 """Tests for health and version endpoints — E3 exit criteria."""
+
 import pytest
 from django.urls import reverse
 from rest_framework import status

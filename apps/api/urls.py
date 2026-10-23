@@ -1,4 +1,5 @@
 """API URL routing."""
+
 from django.urls import path
 
 from apps.api import views

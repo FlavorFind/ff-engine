@@ -1,4 +1,5 @@
 """Structured JSON logging for ff-engine."""
+
 import json
 import logging
 import traceback

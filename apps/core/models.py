@@ -1,4 +1,5 @@
 """Base models shared across all apps."""
+
 import uuid
 
 from django.db import models

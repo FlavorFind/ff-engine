@@ -1,4 +1,5 @@
 """Custom exception handling for the API."""
+
 import logging
 
 from rest_framework import status

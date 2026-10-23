@@ -1,4 +1,5 @@
 """Pagination classes for ff-engine API."""
+
 from rest_framework.pagination import CursorPagination as _CursorPagination
 from rest_framework.response import Response
 

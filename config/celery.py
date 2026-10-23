@@ -1,4 +1,5 @@
 """Celery application for ff-engine."""
+
 import os
 
 from celery import Celery
