@@ -204,10 +204,12 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
         import re
 
         body = resp.content.decode()
-        # Extract error messages from the HTML
-        errors = re.findall(r'class="errorlist".*?</ul>', body, re.DOTALL)
-        error_text = "\n".join(errors) if errors else body[5000:8000]
-        raise AssertionError(f"Expected 302, got 200. Form errors: {error_text}")
+        error_items = re.findall(r"<li>(.*?)</li>", body)
+        field_errors = re.findall(r'class="[^"]*errorlist[^"]*">(.*?)</ul>', body, re.DOTALL)
+        plain = " | ".join(
+            re.sub(r"<[^>]+>", "", e).strip() for e in (error_items + field_errors) if e.strip()
+        )
+        raise AssertionError(f"Expected 302, got {resp.status_code}. Errors: {plain[:2000]}")
     assert Dish.objects.count() == initial_count + 1
     dish = Dish.objects.get(name_en="Sukuma Wiki")
     assert dish.slug == "sukuma-wiki"
@@ -409,9 +411,12 @@ def test_save_model_rebuilds_search_arrays(curator_client, dish, maize_flour, wa
         import re
 
         body = resp.content.decode()
-        errors = re.findall(r'class="errorlist".*?</ul>', body, re.DOTALL)
-        error_text = "\n".join(errors) if errors else body[5000:8000]
-        raise AssertionError(f"Expected 302, got 200. Form errors: {error_text}")
+        error_items = re.findall(r"<li>(.*?)</li>", body)
+        field_errors = re.findall(r'class="[^"]*errorlist[^"]*">(.*?)</ul>', body, re.DOTALL)
+        plain = " | ".join(
+            re.sub(r"<[^>]+>", "", e).strip() for e in (error_items + field_errors) if e.strip()
+        )
+        raise AssertionError(f"Expected 302, got {resp.status_code}. Errors: {plain[:2000]}")
     dish.refresh_from_db()
     # maize_flour (primary, non-staple) should be in primary_ids and all_ids
     assert maize_flour.pk in dish.primary_ids
