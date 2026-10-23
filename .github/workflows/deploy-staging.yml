@@ -6,15 +6,21 @@ on:
 
 jobs:
   deploy:
-    name: Deploy staging
+    name: Deploy to Render staging
     runs-on: ubuntu-latest
     environment: staging
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy to staging server
-        # Replace with your actual deploy command (SSH, Docker, etc.)
-        # Example: SSH in and pull + restart containers
+      - name: Trigger Render deploy
         run: |
-          echo "Staging deploy step — wire up your server here in E7"
+          curl --fail --silent --show-error \
+            -X POST \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            "https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys" \
+            -d '{}'
+
+      - name: Wait for deploy to complete
+        run: |
+          echo "Deploy triggered. Monitor at https://dashboard.render.com"
+          echo "Service: ${{ secrets.RENDER_SERVICE_ID }}"

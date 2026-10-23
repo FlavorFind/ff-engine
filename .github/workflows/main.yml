@@ -5,11 +5,46 @@ on:
     branches: [main]
 
 jobs:
-  # E1 skeleton — upgraded to full verification in E2.
   verify:
     name: Post-merge verification
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: ff_engine_test
+          POSTGRES_USER: ff_engine
+          POSTGRES_PASSWORD: ff_engine_pass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - uses: actions/checkout@v4
-      - name: Confirm main branch check is running
-        run: echo "Main branch check active. Full verification lands in E2."
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements/dev.txt
+
+      - name: Lint (ruff)
+        run: ruff check .
+
+      - name: Format check (ruff)
+        run: ruff format --check .
+
+      - name: Run tests
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.test
+          DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
+          SECRET_KEY: main-branch-test-secret
+          REDIS_URL: redis://localhost:6379/0
+        run: pytest --tb=short -q
