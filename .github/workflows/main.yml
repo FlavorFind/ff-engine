@@ -10,6 +10,6 @@ jobs:
     name: Post-merge verification
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Confirm main branch check is running
         run: echo "Main branch check active. Full verification lands in E2."

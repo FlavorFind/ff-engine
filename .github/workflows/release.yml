@@ -13,7 +13,7 @@ jobs:
     environment: production  # requires manual approval from a reviewer
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0  # full history for changelog
 
