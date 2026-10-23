@@ -1,0 +1,39 @@
+name: Weekly checks
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"  # Every Monday 2 AM UTC = 5 AM Nairobi
+  workflow_dispatch:
+
+jobs:
+  security-audit:
+    name: Dependency security audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Audit Python dependencies
+        run: pip-audit -r requirements/prod.txt
+
+  secret-scan:
+    name: Secret scan (full history)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history
+
+      - name: Run gitleaks on full history
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,66 @@
+name: Main branch checks
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Post-merge verification
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: ff_engine_test
+          POSTGRES_USER: ff_engine
+          POSTGRES_PASSWORD: ff_engine_pass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements/dev.txt
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Format check
+        run: ruff format --check .
+
+      - name: Run full test suite
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.test
+          DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
+          REDIS_URL: redis://localhost:6379/0
+          SECRET_KEY: ci-secret-key-not-for-production
+        run: pytest --tb=short -q
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Main branch is broken — fix immediately before next PR."
