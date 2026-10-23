@@ -137,7 +137,7 @@ class Migration(migrations.Migration):
                 (
                     "required_ids",
                     django.contrib.postgres.fields.ArrayField(
-                        base_field=models.IntegerField(),
+                        base_field=models.UUIDField(),
                         default=list,
                         help_text="PKs of required non-staple ingredients.",
                         size=None,
@@ -146,7 +146,7 @@ class Migration(migrations.Migration):
                 (
                     "optional_ids",
                     django.contrib.postgres.fields.ArrayField(
-                        base_field=models.IntegerField(),
+                        base_field=models.UUIDField(),
                         default=list,
                         help_text="PKs of optional ingredients.",
                         size=None,
@@ -155,7 +155,7 @@ class Migration(migrations.Migration):
                 (
                     "primary_ids",
                     django.contrib.postgres.fields.ArrayField(
-                        base_field=models.IntegerField(),
+                        base_field=models.UUIDField(),
                         default=list,
                         help_text="PKs of primary ingredients.",
                         size=None,
@@ -164,7 +164,7 @@ class Migration(migrations.Migration):
                 (
                     "all_ids",
                     django.contrib.postgres.fields.ArrayField(
-                        base_field=models.IntegerField(),
+                        base_field=models.UUIDField(),
                         default=list,
                         help_text="PKs of all ingredients.",
                         size=None,

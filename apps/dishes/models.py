@@ -153,24 +153,25 @@ class Dish(TimeStampedModel):
     # Denormalised search arrays (Architecture section 5)
     # Rebuilt by rebuild_search_arrays() whenever DishIngredient rows change.
     # GIN indexes added in the migration for fast candidate retrieval (E19).
+    # Note: UUIDField arrays because Ingredient.id is a UUID (TimeStampedModel).
     # -----------------------------------------------------------------------
     required_ids = ArrayField(
-        models.IntegerField(),
+        models.UUIDField(),
         default=list,
         help_text="PKs of required non-staple ingredients.",
     )
     optional_ids = ArrayField(
-        models.IntegerField(),
+        models.UUIDField(),
         default=list,
         help_text="PKs of optional ingredients.",
     )
     primary_ids = ArrayField(
-        models.IntegerField(),
+        models.UUIDField(),
         default=list,
         help_text="PKs of primary ingredients.",
     )
     all_ids = ArrayField(
-        models.IntegerField(),
+        models.UUIDField(),
         default=list,
         help_text="PKs of all ingredients (required + optional + garnish).",
     )
