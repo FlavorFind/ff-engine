@@ -5,7 +5,7 @@ Tracking all 51 build steps against the two governing documents:
 - **Blueprint** — `Flavor_Find_Engine_Blueprint.pdf` (51 steps, 6 iterations)
 - **Architecture** — `Flavor_Find_Sprint1_Engine_Architecture.pdf` (full technical spec)
 
-Last updated: 2026-10-23
+Last updated: 2026-10-23 — E4 complete
 
 ---
 
@@ -28,7 +28,7 @@ Last updated: 2026-10-23
 | E1 | Create the repository from template and protect main | ff-engine repo with CI skeleton, rules and templates | A first pull request must pass checks to merge | ✅ |
 | E2 | Build the local environment with containers | One-command start (app, database, cache, worker) | A new developer is running in under 15 minutes | ✅ |
 | E3 | Create the Django project with split settings | Running service with health and version pages | Health check green in CI | ✅ |
-| E4 | Core models: categories, ingredients, aliases, units, sources, status | Database tables via migrations | Migrations apply and reverse cleanly | ⬜ |
+| E4 | Core models: categories, ingredients, aliases, units, sources, status | Database tables via migrations | Migrations apply and reverse cleanly | ✅ |
 | E5 | Dish models: dishes, ingredient links with roles, aliases, steps, regions | Complete core data structure | Integrity rules tested (no duplicate ingredient on one dish) | ⬜ |
 | E6 | Admin v0 for data entry | Screens to add ingredients and dishes with inline rows | A curator enters a dish unaided | ⬜ |
 | E7 | Staging server and automatic deployment | A public staging address | Merge to main deploys; one rollback practised | ⬜ |
@@ -124,7 +124,7 @@ Last updated: 2026-10-23
 
 ---
 
-## Current State (E3 complete)
+## Current State (E4 complete)
 
 ### What is on `main` right now
 
@@ -165,9 +165,15 @@ Last updated: 2026-10-23
 - `conftest.py` — pytest-django root config
 - CI: lint (ruff check + format) + tests (pytest with postgres:16 + redis:7) — **both green**
 
+**E4 — Core ingredient models** (Blueprint E4 + Architecture section 5)
+- `apps/ingredients/models.py` — `IngredientCategory`, `Unit`, `Allergen`, `Ingredient`, `IngredientAllergen`, `IngredientAlias`
+- `apps/curation/models.py` — `Source`, `ChangeLog` (append-only), `DatasetRelease`
+- `apps/ingredients/migrations/0001_initial.py` + `apps/curation/migrations/0001_initial.py`
+- `apps/ingredients/admin.py` + `apps/curation/admin.py`
+- 18 model tests + migration column-spec tests — **CI green**
+
 ### What is NOT yet built (next steps)
 
-- **E4** — `ingredients` app models: `IngredientCategory`, `Ingredient`, `IngredientAlias`, `Allergen`, `Unit`, `Source` + migrations
 - **E5** — `dishes` app models: `Dish`, `DishIngredient` (with roles), `DishStep`, `Region`, `DishRegion` + migrations
 - **E6** — Django admin v0: inline ingredient rows, bulk status actions, search by alias
 - **E7** — Staging server + automatic deployment pipeline
