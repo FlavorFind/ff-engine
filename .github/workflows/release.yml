@@ -48,7 +48,7 @@ jobs:
           echo "Production deploy for ${{ github.ref_name }} — wire up SSH deploy here in E7"
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           generate_release_notes: true
           make_latest: true
