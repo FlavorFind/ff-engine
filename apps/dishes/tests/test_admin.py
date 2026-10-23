@@ -195,9 +195,10 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
         },
     )
     # A successful save redirects to the change list
-    assert (
-        resp.status_code == 302
-    ), f"Expected redirect (302), got {resp.status_code}. Check form errors in response."
+    assert resp.status_code == 302, (
+        f"Expected 302, got {resp.status_code}. "
+        f"Response body snippet: {resp.content.decode()[:3000]}"
+    )
     assert Dish.objects.count() == initial_count + 1
     dish = Dish.objects.get(name_en="Sukuma Wiki")
     assert dish.slug == "sukuma-wiki"
@@ -395,7 +396,10 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
             "_save": "Save",
         },
     )
-    assert resp.status_code == 302, f"Expected redirect (302), got {resp.status_code}"
+    assert resp.status_code == 302, (
+        f"Expected 302, got {resp.status_code}. "
+        f"Response body snippet: {resp.content.decode()[:3000]}"
+    )
     dish.refresh_from_db()
     # maize_flour (primary, non-staple) should be in primary_ids and all_ids
     assert maize_flour.pk in dish.primary_ids
