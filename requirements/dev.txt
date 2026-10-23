@@ -25,5 +25,3 @@ pre-commit==4.0.1
 django-debug-toolbar==4.4.6
 ipython==8.28.0
 
-# Redis CLI (for entrypoint health check)
-redis-cli-tools==0.1.0
