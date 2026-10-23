@@ -193,9 +193,9 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
         },
     )
     # A successful save redirects to the change list
-    assert resp.status_code == 302, (
-        f"Expected redirect (302), got {resp.status_code}. Check form errors in response."
-    )
+    assert (
+        resp.status_code == 302
+    ), f"Expected redirect (302), got {resp.status_code}. Check form errors in response."
     assert Dish.objects.count() == initial_count + 1
     dish = Dish.objects.get(name_en="Sukuma Wiki")
     assert dish.slug == "sukuma-wiki"
