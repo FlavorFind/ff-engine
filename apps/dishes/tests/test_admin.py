@@ -195,10 +195,14 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
         },
     )
     # A successful save redirects to the change list
-    assert resp.status_code == 302, (
-        f"Expected 302, got {resp.status_code}. "
-        f"Response body snippet: {resp.content.decode()[:3000]}"
-    )
+    if resp.status_code != 302:
+        import re
+
+        body = resp.content.decode()
+        # Extract error messages from the HTML
+        errors = re.findall(r'class="errorlist".*?</ul>', body, re.DOTALL)
+        error_text = "\n".join(errors) if errors else body[5000:8000]
+        raise AssertionError(f"Expected 302, got 200. Form errors: {error_text}")
     assert Dish.objects.count() == initial_count + 1
     dish = Dish.objects.get(name_en="Sukuma Wiki")
     assert dish.slug == "sukuma-wiki"
@@ -396,10 +400,13 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
             "_save": "Save",
         },
     )
-    assert resp.status_code == 302, (
-        f"Expected 302, got {resp.status_code}. "
-        f"Response body snippet: {resp.content.decode()[:3000]}"
-    )
+    if resp.status_code != 302:
+        import re
+
+        body = resp.content.decode()
+        errors = re.findall(r'class="errorlist".*?</ul>', body, re.DOTALL)
+        error_text = "\n".join(errors) if errors else body[5000:8000]
+        raise AssertionError(f"Expected 302, got 200. Form errors: {error_text}")
     dish.refresh_from_db()
     # maize_flour (primary, non-staple) should be in primary_ids and all_ids
     assert maize_flour.pk in dish.primary_ids
