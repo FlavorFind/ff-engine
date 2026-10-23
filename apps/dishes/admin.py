@@ -160,8 +160,10 @@ class DishAdmin(admin.ModelAdmin):
         """Search by dish name, slug, or any alias string."""
         queryset, may_have_duplicates = super().get_search_results(request, queryset, search_term)
         if search_term:
-            alias_matches = self.model.objects.filter(aliases__alias__icontains=search_term)
-            queryset = queryset.union(alias_matches)
+            alias_pks = Dish.objects.filter(aliases__alias__icontains=search_term).values_list(
+                "pk", flat=True
+            )
+            queryset |= self.model.objects.filter(pk__in=list(alias_pks))
             may_have_duplicates = True
         return queryset, may_have_duplicates
 

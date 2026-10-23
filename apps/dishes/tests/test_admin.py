@@ -153,29 +153,49 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
             "popularity": "0.5",
             "quality_level": "seeded",
             "status": "draft",
-            # Inline: DishIngredient (prefix = model_name)
+            # DishIngredient inline (prefix = model_name)
             "dishingredient-TOTAL_FORMS": "1",
             "dishingredient-INITIAL_FORMS": "0",
+            "dishingredient-MIN_NUM_FORMS": "0",
+            "dishingredient-MAX_NUM_FORMS": "1000",
+            "dishingredient-0-id": "",
+            "dishingredient-0-dish": "",
             "dishingredient-0-ingredient": str(maize_flour.pk),
             "dishingredient-0-role": "primary",
             "dishingredient-0-quantity": "200",
+            "dishingredient-0-unit": "",
+            "dishingredient-0-preparation_note": "",
             "dishingredient-0-position": "0",
-            # Inline: DishAlias
+            # DishAlias inline
             "dishalias-TOTAL_FORMS": "1",
             "dishalias-INITIAL_FORMS": "0",
+            "dishalias-MIN_NUM_FORMS": "0",
+            "dishalias-MAX_NUM_FORMS": "1000",
+            "dishalias-0-id": "",
+            "dishalias-0-dish": "",
             "dishalias-0-alias": "Sukuma",
             "dishalias-0-language": "sw",
-            # Inline: DishStep
+            # DishStep inline
             "dishstep-TOTAL_FORMS": "1",
             "dishstep-INITIAL_FORMS": "0",
+            "dishstep-MIN_NUM_FORMS": "0",
+            "dishstep-MAX_NUM_FORMS": "1000",
+            "dishstep-0-id": "",
+            "dishstep-0-dish": "",
             "dishstep-0-position": "1",
             "dishstep-0-text_en": "Chop and fry the greens.",
-            # Inline: DishRegion (empty — no region selected)
+            "dishstep-0-text_sw": "",
+            # DishRegion inline (empty)
             "dishregion-TOTAL_FORMS": "0",
             "dishregion-INITIAL_FORMS": "0",
+            "dishregion-MIN_NUM_FORMS": "0",
+            "dishregion-MAX_NUM_FORMS": "1000",
         },
     )
-    assert resp.status_code in (200, 302)
+    # A successful save redirects to the change list
+    assert resp.status_code == 302, (
+        f"Expected redirect (302), got {resp.status_code}. Check form errors in response."
+    )
     assert Dish.objects.count() == initial_count + 1
     dish = Dish.objects.get(name_en="Sukuma Wiki")
     assert dish.slug == "sukuma-wiki"
@@ -190,7 +210,7 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
     # Step saved
     assert dish.steps.count() == 1
     assert dish.steps.first().text_en == "Chop and fry the greens."
-    # Search arrays rebuilt (save_related hook)
+    # Search arrays rebuilt by save_related hook
     dish.refresh_from_db()
     assert maize_flour.pk in dish.all_ids
     assert maize_flour.pk in dish.primary_ids
@@ -336,29 +356,43 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
             "popularity": "0.0",
             "quality_level": "seeded",
             "status": "draft",
-            # Existing DishIngredient rows (maize_flour primary + water required)
+            # Two existing DishIngredient rows
             "dishingredient-TOTAL_FORMS": "2",
             "dishingredient-INITIAL_FORMS": "2",
+            "dishingredient-MIN_NUM_FORMS": "0",
+            "dishingredient-MAX_NUM_FORMS": "1000",
             "dishingredient-0-id": str(existing_di.pk),
+            "dishingredient-0-dish": str(dish.pk),
             "dishingredient-0-ingredient": str(maize_flour.pk),
             "dishingredient-0-role": "primary",
             "dishingredient-0-quantity": "",
+            "dishingredient-0-unit": "",
+            "dishingredient-0-preparation_note": "",
             "dishingredient-0-position": "0",
             "dishingredient-1-id": str(water_di.pk),
+            "dishingredient-1-dish": str(dish.pk),
             "dishingredient-1-ingredient": str(water.pk),
             "dishingredient-1-role": "required",
             "dishingredient-1-quantity": "",
+            "dishingredient-1-unit": "",
+            "dishingredient-1-preparation_note": "",
             "dishingredient-1-position": "1",
-            # Inlines — empty
+            # Other inlines empty
             "dishalias-TOTAL_FORMS": "0",
             "dishalias-INITIAL_FORMS": "0",
+            "dishalias-MIN_NUM_FORMS": "0",
+            "dishalias-MAX_NUM_FORMS": "1000",
             "dishstep-TOTAL_FORMS": "0",
             "dishstep-INITIAL_FORMS": "0",
+            "dishstep-MIN_NUM_FORMS": "0",
+            "dishstep-MAX_NUM_FORMS": "1000",
             "dishregion-TOTAL_FORMS": "0",
             "dishregion-INITIAL_FORMS": "0",
+            "dishregion-MIN_NUM_FORMS": "0",
+            "dishregion-MAX_NUM_FORMS": "1000",
         },
     )
-    assert resp.status_code in (200, 302)
+    assert resp.status_code == 302, f"Expected redirect (302), got {resp.status_code}"
     dish.refresh_from_db()
     # maize_flour (primary, non-staple) should be in primary_ids and all_ids
     assert maize_flour.pk in dish.primary_ids
