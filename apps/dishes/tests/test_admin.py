@@ -190,6 +190,8 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
             "dishregion-INITIAL_FORMS": "0",
             "dishregion-MIN_NUM_FORMS": "0",
             "dishregion-MAX_NUM_FORMS": "1000",
+            # Tell Django admin to save and return to change list
+            "_save": "Save",
         },
     )
     # A successful save redirects to the change list
@@ -390,6 +392,7 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
             "dishregion-INITIAL_FORMS": "0",
             "dishregion-MIN_NUM_FORMS": "0",
             "dishregion-MAX_NUM_FORMS": "1000",
+            "_save": "Save",
         },
     )
     assert resp.status_code == 302, f"Expected redirect (302), got {resp.status_code}"
