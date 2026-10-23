@@ -1,0 +1,49 @@
+name: Feature request
+description: Suggest a new engine capability or API feature
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Feature request"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the use case. Who needs this and why?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to see built?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you considered?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area of the engine does this affect?
+      options:
+        - Matching / search
+        - Ingredients / aliases
+        - Dishes / data model
+        - Pairings / substitutions
+        - Dietary / allergen
+        - API / endpoints
+        - Curation / data pipeline
+        - Performance
+        - Security
+        - Other
+    validations:
+      required: true

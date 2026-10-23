@@ -1,0 +1,56 @@
+name: Data issue
+description: Report a problem with a dish, ingredient, pairing or substitution
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Data issue"
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: What type of data issue is this?
+      options:
+        - Wrong ingredient role (primary / required / optional / garnish)
+        - Missing ingredient
+        - Wrong or missing alias (English / Swahili / Sheng)
+        - Wrong dietary or allergen tag
+        - Wrong or missing pairing
+        - Wrong or missing substitution
+        - Duplicate dish or ingredient
+        - Missing dish
+        - Wrong region
+        - Wrong steps or quantities
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: dish_or_ingredient
+    attributes:
+      label: Dish or ingredient name
+      placeholder: e.g. Githeri, Sukuma wiki
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What is currently in the engine?
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: What should it be?
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction
+      description: Who or what confirms this is correct? (e.g. chef name, cookbook, personal knowledge)
+    validations:
+      required: true

@@ -21,12 +21,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ruff mypy
+          pip install -r requirements/dev.txt
 
-      - name: Run ruff (lint)
+      - name: Lint (ruff)
         run: ruff check .
 
-      - name: Run ruff (format check)
+      - name: Format check (ruff)
         run: ruff format --check .
 
   test:
@@ -78,5 +78,6 @@ jobs:
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
-        run: |
-          pytest --tb=short -q
+          ENGINE_VERSION: ci
+          DATASET_VERSION: 0.0.0
+        run: pytest --tb=short -q

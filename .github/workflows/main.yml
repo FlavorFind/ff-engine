@@ -1,0 +1,15 @@
+name: Main branch checks
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  # E1 skeleton — upgraded to full verification in E2.
+  verify:
+    name: Post-merge verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm main branch check is running
+        run: echo "Main branch check active. Full verification lands in E2."
