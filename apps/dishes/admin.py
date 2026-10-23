@@ -97,7 +97,7 @@ class DishAdmin(admin.ModelAdmin):
         "popularity",
     ]
     list_filter = ["status", "quality_level", "meal_type", "course", "spice_level", "difficulty"]
-    search_fields = ["name_en", "name_sw", "slug", "aliases__alias"]
+    search_fields = ["name_en", "name_sw", "slug"]
     prepopulated_fields = {"slug": ("name_en",)}
     autocomplete_fields = ["source"]
     readonly_fields = [
@@ -146,16 +146,23 @@ class DishAdmin(admin.ModelAdmin):
         ("Timestamps", {"fields": ["created_at", "updated_at"], "classes": ["collapse"]}),
     ]
 
-    def save_model(self, request, obj, form, change):
-        """Persist the dish, then rebuild search arrays from DishIngredient rows."""
-        super().save_model(request, obj, form, change)
-        obj.rebuild_search_arrays()
+    def save_related(self, request, form, formsets, change):
+        """
+        Save inline formsets, then rebuild search arrays.
+
+        save_related runs AFTER inlines are saved, so DishIngredient rows
+        are already in the database when rebuild_search_arrays() runs.
+        """
+        super().save_related(request, form, formsets, change)
+        form.instance.rebuild_search_arrays()
 
     def get_search_results(self, request, queryset, search_term):
         """Search by dish name, slug, or any alias string."""
         queryset, may_have_duplicates = super().get_search_results(request, queryset, search_term)
         if search_term:
-            queryset |= self.model.objects.filter(aliases__alias__icontains=search_term).distinct()
+            alias_matches = self.model.objects.filter(aliases__alias__icontains=search_term)
+            queryset = queryset.union(alias_matches)
+            may_have_duplicates = True
         return queryset, may_have_duplicates
 
 

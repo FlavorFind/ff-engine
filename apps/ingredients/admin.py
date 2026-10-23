@@ -97,7 +97,7 @@ class IngredientAllergenInline(admin.TabularInline):
 class IngredientAdmin(admin.ModelAdmin):
     list_display = ["name_en", "name_sw", "category", "kind", "is_staple", "status"]
     list_filter = ["status", "kind", "is_staple", "category"]
-    search_fields = ["name_en", "name_sw", "slug", "aliases__alias"]
+    search_fields = ["name_en", "name_sw", "slug"]
     prepopulated_fields = {"slug": ("name_en",)}
     autocomplete_fields = ["category", "typical_unit", "source"]
     readonly_fields = ["created_at", "updated_at"]
@@ -115,7 +115,9 @@ class IngredientAdmin(admin.ModelAdmin):
         """Search by name, slug, or any alias string."""
         queryset, may_have_duplicates = super().get_search_results(request, queryset, search_term)
         if search_term:
-            queryset |= self.model.objects.filter(aliases__alias__icontains=search_term).distinct()
+            alias_matches = self.model.objects.filter(aliases__alias__icontains=search_term)
+            queryset = queryset.union(alias_matches)
+            may_have_duplicates = True
         return queryset, may_have_duplicates
 
 

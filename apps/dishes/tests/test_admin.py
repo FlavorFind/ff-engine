@@ -153,26 +153,26 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
             "popularity": "0.5",
             "quality_level": "seeded",
             "status": "draft",
-            # Inline: DishIngredient
-            "dish_ingredients-TOTAL_FORMS": "1",
-            "dish_ingredients-INITIAL_FORMS": "0",
-            "dish_ingredients-0-ingredient": str(maize_flour.pk),
-            "dish_ingredients-0-role": "primary",
-            "dish_ingredients-0-quantity": "200",
-            "dish_ingredients-0-position": "0",
+            # Inline: DishIngredient (prefix = model_name)
+            "dishingredient-TOTAL_FORMS": "1",
+            "dishingredient-INITIAL_FORMS": "0",
+            "dishingredient-0-ingredient": str(maize_flour.pk),
+            "dishingredient-0-role": "primary",
+            "dishingredient-0-quantity": "200",
+            "dishingredient-0-position": "0",
             # Inline: DishAlias
-            "aliases-TOTAL_FORMS": "1",
-            "aliases-INITIAL_FORMS": "0",
-            "aliases-0-alias": "Sukuma",
-            "aliases-0-language": "sw",
+            "dishalias-TOTAL_FORMS": "1",
+            "dishalias-INITIAL_FORMS": "0",
+            "dishalias-0-alias": "Sukuma",
+            "dishalias-0-language": "sw",
             # Inline: DishStep
-            "steps-TOTAL_FORMS": "1",
-            "steps-INITIAL_FORMS": "0",
-            "steps-0-position": "1",
-            "steps-0-text_en": "Chop and fry the greens.",
+            "dishstep-TOTAL_FORMS": "1",
+            "dishstep-INITIAL_FORMS": "0",
+            "dishstep-0-position": "1",
+            "dishstep-0-text_en": "Chop and fry the greens.",
             # Inline: DishRegion (empty — no region selected)
-            "dish_region-TOTAL_FORMS": "0",
-            "dish_region-INITIAL_FORMS": "0",
+            "dishregion-TOTAL_FORMS": "0",
+            "dishregion-INITIAL_FORMS": "0",
         },
     )
     assert resp.status_code in (200, 302)
@@ -190,7 +190,7 @@ def test_curator_creates_dish_unaided(admin_client, category, maize_flour):
     # Step saved
     assert dish.steps.count() == 1
     assert dish.steps.first().text_en == "Chop and fry the greens."
-    # Search arrays rebuilt (save_model hook)
+    # Search arrays rebuilt (save_related hook)
     dish.refresh_from_db()
     assert maize_flour.pk in dish.all_ids
     assert maize_flour.pk in dish.primary_ids
@@ -312,8 +312,12 @@ def test_search_by_alias_finds_ingredient(admin_client, category):
 @pytest.mark.django_db
 def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, water):
     """When a dish is saved via admin, search arrays are rebuilt from DishIngredient rows."""
+    # dish already has maize_flour as primary (from fixture)
+    existing_di = dish.dish_ingredients.first()
     # Add a required staple (water) — it should NOT appear in required_ids
-    DishIngredient.objects.create(dish=dish, ingredient=water, role=DishIngredient.Role.REQUIRED)
+    water_di = DishIngredient.objects.create(
+        dish=dish, ingredient=water, role=DishIngredient.Role.REQUIRED
+    )
     # Trigger admin save (POST to change page)
     resp = admin_client.post(
         f"/admin/dishes/dish/{dish.pk}/change/",
@@ -333,23 +337,25 @@ def test_save_model_rebuilds_search_arrays(admin_client, dish, maize_flour, wate
             "quality_level": "seeded",
             "status": "draft",
             # Existing DishIngredient rows (maize_flour primary + water required)
-            "dish_ingredients-TOTAL_FORMS": "2",
-            "dish_ingredients-INITIAL_FORMS": "0",
-            "dish_ingredients-0-ingredient": str(maize_flour.pk),
-            "dish_ingredients-0-role": "primary",
-            "dish_ingredients-0-quantity": "",
-            "dish_ingredients-0-position": "0",
-            "dish_ingredients-1-ingredient": str(water.pk),
-            "dish_ingredients-1-role": "required",
-            "dish_ingredients-1-quantity": "",
-            "dish_ingredients-1-position": "1",
+            "dishingredient-TOTAL_FORMS": "2",
+            "dishingredient-INITIAL_FORMS": "2",
+            "dishingredient-0-id": str(existing_di.pk),
+            "dishingredient-0-ingredient": str(maize_flour.pk),
+            "dishingredient-0-role": "primary",
+            "dishingredient-0-quantity": "",
+            "dishingredient-0-position": "0",
+            "dishingredient-1-id": str(water_di.pk),
+            "dishingredient-1-ingredient": str(water.pk),
+            "dishingredient-1-role": "required",
+            "dishingredient-1-quantity": "",
+            "dishingredient-1-position": "1",
             # Inlines — empty
-            "aliases-TOTAL_FORMS": "0",
-            "aliases-INITIAL_FORMS": "0",
-            "steps-TOTAL_FORMS": "0",
-            "steps-INITIAL_FORMS": "0",
-            "dish_region-TOTAL_FORMS": "0",
-            "dish_region-INITIAL_FORMS": "0",
+            "dishalias-TOTAL_FORMS": "0",
+            "dishalias-INITIAL_FORMS": "0",
+            "dishstep-TOTAL_FORMS": "0",
+            "dishstep-INITIAL_FORMS": "0",
+            "dishregion-TOTAL_FORMS": "0",
+            "dishregion-INITIAL_FORMS": "0",
         },
     )
     assert resp.status_code in (200, 302)
