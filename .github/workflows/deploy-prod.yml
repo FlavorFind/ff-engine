@@ -1,0 +1,21 @@
+name: Deploy to Production
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  deploy:
+    name: Deploy production
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to production server
+        # Only runs on a signed version tag (e.g. v1.0.0)
+        # Requires manual approval via GitHub environment protection rules
+        run: |
+          echo "Production deploy step — wire up your server here in E7"

@@ -1,0 +1,19 @@
+# CODEOWNERS
+# These owners are automatically requested for review on every PR.
+# Format: <path pattern> <owner>
+# Replace @Dog254 with additional team members as the team grows.
+
+# Default owner for everything
+* @Dog254
+
+# CI/CD and infrastructure
+.github/ @Dog254
+docker/ @Dog254
+
+# Core data and matching engine (highest sensitivity)
+apps/search/ @Dog254
+apps/dishes/ @Dog254
+apps/ingredients/ @Dog254
+
+# Data files — require careful review
+data/ @Dog254

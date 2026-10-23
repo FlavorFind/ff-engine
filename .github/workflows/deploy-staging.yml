@@ -1,0 +1,20 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy staging
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to staging server
+        # Replace with your actual deploy command (SSH, Docker, etc.)
+        # Example: SSH in and pull + restart containers
+        run: |
+          echo "Staging deploy step — wire up your server here in E7"
