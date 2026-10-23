@@ -1,0 +1,114 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-ff_engine}
+      POSTGRES_USER: ${DB_USER:-ff_engine}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-ff_engine_pass}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-ff_engine}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    entrypoint: /app/docker/entrypoint.sh
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
+    volumes:
+      - ..:/app
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-production}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-ff_engine}
+      DB_USER: ${DB_USER:-ff_engine}
+      DB_PASSWORD: ${DB_PASSWORD:-ff_engine_pass}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgres://${DB_USER:-ff_engine}:${DB_PASSWORD:-ff_engine_pass}@db:5432/${DB_NAME:-ff_engine}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: celery -A config.celery worker --loglevel=info
+    restart: unless-stopped
+    volumes:
+      - ..:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-production}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-ff_engine}
+      DB_USER: ${DB_USER:-ff_engine}
+      DB_PASSWORD: ${DB_PASSWORD:-ff_engine_pass}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgres://${DB_USER:-ff_engine}:${DB_PASSWORD:-ff_engine_pass}@db:5432/${DB_NAME:-ff_engine}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  beat:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: celery -A config.celery beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    restart: unless-stopped
+    volumes:
+      - ..:/app
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-production}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-ff_engine}
+      DB_USER: ${DB_USER:-ff_engine}
+      DB_PASSWORD: ${DB_PASSWORD:-ff_engine_pass}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_URL: redis://redis:6379/0
+      DATABASE_URL: postgres://${DB_USER:-ff_engine}:${DB_PASSWORD:-ff_engine_pass}@db:5432/${DB_NAME:-ff_engine}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
