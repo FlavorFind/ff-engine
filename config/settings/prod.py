@@ -21,3 +21,13 @@ CSRF_TRUSTED_ORIGINS = ["https://ff-engine-kuar.onrender.com"]
 
 # Structured JSON logging in production
 LOGGING["handlers"]["console"]["formatter"] = "json"  # noqa: F405
+
+# Static files — served by Whitenoise with compression and long-lived cache headers
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
