@@ -1,0 +1,751 @@
+dish_slug,position,text_en
+nyama-choma,1,Season goat meat with salt and pepper
+nyama-choma,2,Let marinate for 20 minutes
+nyama-choma,3,"Grill over hot charcoal, turning occasionally"
+nyama-choma,4,"Cook until charred outside and tender inside, about 2 hours"
+nyama-choma,5,Serve hot with kachumbari
+ugali,1,Boil water in a heavy pot
+ugali,2,Add maize flour gradually while stirring
+ugali,3,Stir continuously to avoid lumps
+ugali,4,"Cook on low heat, turning and pressing with a wooden spoon until firm"
+ugali,5,Shape into a mound and serve hot
+sukuma-wiki,1,Heat oil in a pan and fry chopped onions until soft
+sukuma-wiki,2,Add tomatoes and cook until they break down
+sukuma-wiki,3,Add chopped collard greens
+sukuma-wiki,4,"Season with salt and cook until wilted, about 8 minutes"
+sukuma-wiki,5,Serve as a side dish
+pilau,1,Fry onions until golden brown
+pilau,2,Add beef and brown on all sides
+pilau,3,"Add pilau masala, garlic and ginger and stir"
+pilau,4,Add water and simmer beef until tender
+pilau,5,"Add rice and beef stock, cover and cook until rice is done"
+chapati,1,"Mix flour, salt and oil with warm water into a soft dough"
+chapati,2,Knead well and rest for 1 hour
+chapati,3,Divide into balls and roll flat
+chapati,4,"Brush with oil and roll into a coil, then flatten again"
+chapati,5,"Cook on a hot dry pan, flipping until golden brown spots appear"
+mandazi,1,"Mix flour, sugar, cardamom and yeast"
+mandazi,2,Add coconut milk and knead into a soft dough
+mandazi,3,Rest for 1 hour until risen
+mandazi,4,Roll out and cut into triangles
+mandazi,5,Deep fry in hot oil until golden brown on both sides
+githeri,1,Boil soaked maize and beans together until tender
+githeri,2,Fry onions and tomatoes in a separate pot
+githeri,3,Add the cooked maize and beans to the fry
+githeri,4,Season with salt and curry powder
+githeri,5,Simmer for 10 minutes and serve
+mukimo,1,"Boil potatoes, maize and beans until soft"
+mukimo,2,Add chopped pumpkin leaves and cook until wilted
+mukimo,3,Drain and mash everything together until smooth
+mukimo,4,Season with salt
+mukimo,5,Shape into a mound and serve with stew
+kenyan-chicken-curry,1,Marinate chicken pieces with salt and turmeric
+kenyan-chicken-curry,2,"Fry onions, garlic and ginger until fragrant"
+kenyan-chicken-curry,3,Add tomatoes and curry powder and cook down
+kenyan-chicken-curry,4,Add chicken and brown lightly
+kenyan-chicken-curry,5,Pour in coconut milk and simmer 25 minutes until cooked through
+samaki-wa-kupaka,1,"Season whole fish with salt, lemon and pepper"
+samaki-wa-kupaka,2,Grill fish over charcoal until lightly charred
+samaki-wa-kupaka,3,"Prepare coconut sauce with onions, tomatoes and curry powder"
+samaki-wa-kupaka,4,Simmer sauce until thickened
+samaki-wa-kupaka,5,Pour sauce over grilled fish and serve
+nyoyo,1,Soak dried maize and beans overnight
+nyoyo,2,"Boil together until tender, adding water as needed"
+nyoyo,3,Season with salt and a little butter
+nyoyo,4,Simmer 10 more minutes
+nyoyo,5,Serve warm as a light meal
+kachumbari,1,Finely slice tomatoes and red onions
+kachumbari,2,Chop coriander and green chili
+kachumbari,3,Combine all ingredients in a bowl
+kachumbari,4,Squeeze fresh lemon juice over the salad
+kachumbari,5,Season with salt and toss well
+kenyan-beef-stew,1,Brown beef chunks in hot oil
+kenyan-beef-stew,2,Add onions and garlic and cook until soft
+kenyan-beef-stew,3,"Add tomatoes, curry powder and beef stock"
+kenyan-beef-stew,4,Cover and simmer on low heat for 1.5 hours until tender
+kenyan-beef-stew,5,Adjust seasoning and serve with ugali
+matumbo,1,Clean and boil tripe until softened
+matumbo,2,"Fry onions, tomatoes and garlic"
+matumbo,3,Add boiled tripe to the fry
+matumbo,4,Add curry powder and simmer until well cooked
+matumbo,5,Serve with ugali or chapati
+irio,1,"Boil potatoes, green peas and maize together until soft"
+irio,2,"Drain most of the water, keeping a little"
+irio,3,Mash all ingredients together until smooth
+irio,4,Season with salt
+irio,5,Serve warm as a side
+kenyan-fish-curry,1,Season fish pieces with salt and turmeric
+kenyan-fish-curry,2,"Fry onions, garlic and ginger until soft"
+kenyan-fish-curry,3,Add tomatoes and curry powder and cook down
+kenyan-fish-curry,4,Add fish pieces and a little water
+kenyan-fish-curry,5,Simmer gently for 15 minutes until fish is cooked
+managu,1,Wash and blanch managu leaves to reduce bitterness
+managu,2,Fry onions and tomatoes in oil
+managu,3,Add the blanched leaves and stir
+managu,4,Add a splash of milk and simmer 5 minutes
+managu,5,Season with salt and serve
+ndengu-stew,1,Boil soaked green grams until tender
+ndengu-stew,2,"Fry onions, tomatoes and garlic in oil"
+ndengu-stew,3,Add curry powder and cook briefly
+ndengu-stew,4,Add cooked green grams and simmer 10 minutes
+ndengu-stew,5,Season with salt and serve with rice
+egg-chapati-wrap,1,Fry a chapati lightly on a hot pan
+egg-chapati-wrap,2,"Whisk eggs with chopped onion, tomato and cabbage"
+egg-chapati-wrap,3,Pour the egg mixture over the chapati in the pan
+egg-chapati-wrap,4,"Cook until the egg sets, then fold the chapati over it"
+egg-chapati-wrap,5,Serve hot with chili sauce
+uji,1,Mix millet flour with water to form a smooth paste
+uji,2,Boil water in a pot
+uji,3,Slowly stir in the flour paste to avoid lumps
+uji,4,"Cook on low heat, stirring until thick and smooth"
+uji,5,Sweeten to taste and serve warm
+beef-pilau-rice,1,Brown beef in oil with onions
+beef-pilau-rice,2,"Add pilau masala, garlic and ginger"
+beef-pilau-rice,3,"Add water and simmer beef until tender, reserving stock"
+beef-pilau-rice,4,Add washed rice and beef stock to the pot
+beef-pilau-rice,5,Cover and cook on low heat until rice is fully cooked
+kuku-kienyeji,1,Cut chicken into pieces and season with salt
+kuku-kienyeji,2,"Fry onions, tomatoes and garlic until fragrant"
+kuku-kienyeji,3,Add chicken pieces and brown lightly
+kuku-kienyeji,4,Add water and simmer slowly for over an hour until tender
+kuku-kienyeji,5,Serve with ugali or rice
+mahamri,1,"Mix flour, sugar, cardamom and yeast"
+mahamri,2,Add coconut milk and knead into a soft dough
+mahamri,3,Cover and let rise for 2 hours
+mahamri,4,Roll out and cut into triangles
+mahamri,5,Deep fry until golden and puffed
+bhajia,1,Slice potatoes thinly
+bhajia,2,"Make a batter with chickpea flour, turmeric, chili and salt"
+bhajia,3,Dip potato slices into the batter
+bhajia,4,Deep fry in hot oil until golden and crisp
+bhajia,5,Serve with tamarind or chili sauce
+kenyan-beef-samosa,1,"Cook minced beef with onions, garlic and spices until dry"
+kenyan-beef-samosa,2,Let filling cool completely
+kenyan-beef-samosa,3,Wrap spoonfuls of filling in samosa pastry strips into triangles
+kenyan-beef-samosa,4,Seal edges with a flour paste
+kenyan-beef-samosa,5,Deep fry until golden brown and crisp
+kenyan-coconut-rice,1,Rinse rice well
+kenyan-coconut-rice,2,Bring coconut milk and water to a boil with salt
+kenyan-coconut-rice,3,Add rice and stir
+kenyan-coconut-rice,4,Cover and simmer on low heat until rice is tender
+kenyan-coconut-rice,5,Fluff with a fork and serve
+terere,1,Wash and chop amaranth leaves
+terere,2,Fry onions until soft
+terere,3,Add tomatoes and cook down
+terere,4,Add the greens and cook until wilted
+terere,5,Season with salt and serve
+kenyan-goat-stew,1,Brown goat meat pieces in hot oil
+kenyan-goat-stew,2,"Add onions, garlic and ginger and cook until fragrant"
+kenyan-goat-stew,3,Add tomatoes and curry powder
+kenyan-goat-stew,4,Add water and simmer on low heat until meat is very tender
+kenyan-goat-stew,5,Serve with ugali
+kenyan-fish-fry,1,Clean whole tilapia and score the skin
+kenyan-fish-fry,2,"Marinate with salt, lemon and garlic"
+kenyan-fish-fry,3,Coat lightly with flour
+kenyan-fish-fry,4,Deep fry in hot oil until golden and crisp
+kenyan-fish-fry,5,Serve with kachumbari and ugali
+chai-ya-tangawizi,1,Boil water with grated ginger
+chai-ya-tangawizi,2,Add tea leaves and simmer 3 minutes
+chai-ya-tangawizi,3,Add milk and bring back to a boil
+chai-ya-tangawizi,4,Add sugar to taste
+chai-ya-tangawizi,5,Strain and serve hot
+beef-stew-with-potatoes,1,Brown beef chunks in oil
+beef-stew-with-potatoes,2,Add onions and garlic and cook until soft
+beef-stew-with-potatoes,3,"Add tomatoes, curry powder and stock"
+beef-stew-with-potatoes,4,"Simmer for an hour, then add potatoes and carrots"
+beef-stew-with-potatoes,5,Cook until vegetables and meat are tender
+wali-wa-kukaanga,1,Cook rice and let it cool
+wali-wa-kukaanga,2,"Heat oil and fry chopped onions, carrots and peas"
+wali-wa-kukaanga,3,Add cooked rice and stir fry
+wali-wa-kukaanga,4,Season with curry powder and soy sauce
+wali-wa-kukaanga,5,Cook for 5 more minutes and serve
+kenyan-lentil-soup,1,"Fry onions, garlic and carrots until soft"
+kenyan-lentil-soup,2,Add curry powder and stir briefly
+kenyan-lentil-soup,3,Add lentils and vegetable stock
+kenyan-lentil-soup,4,"Simmer until lentils are fully soft, about 30 minutes"
+kenyan-lentil-soup,5,Blend partially for a creamy texture and serve
+ugali-na-samaki,1,Prepare ugali by stirring maize flour into boiling water until firm
+ugali-na-samaki,2,Deep fry seasoned tilapia until golden and crisp
+ugali-na-samaki,3,Sauté sukuma wiki with onions and tomatoes
+ugali-na-samaki,4,Plate ugali with fish and greens together
+ugali-na-samaki,5,Serve hot with kachumbari on the side
+beans-and-maize-stew,1,Boil soaked beans and maize until tender
+beans-and-maize-stew,2,Fry onions and tomatoes in oil
+beans-and-maize-stew,3,Combine cooked beans and maize with the fry
+beans-and-maize-stew,4,Season with salt and simmer 10 minutes
+beans-and-maize-stew,5,Serve hot as a main dish
+kenyan-beef-sausages,1,Prick sausages lightly with a fork
+kenyan-beef-sausages,2,Heat a pan or grill until hot
+kenyan-beef-sausages,3,"Grill sausages, turning frequently until browned all over"
+kenyan-beef-sausages,4,Cook through for about 15 minutes
+kenyan-beef-sausages,5,Serve with kachumbari and chapati
+spinach-with-groundnuts,1,Fry onions until soft
+spinach-with-groundnuts,2,Add ground peanuts mixed with a little water to form a paste
+spinach-with-groundnuts,3,Stir the paste into the onions and cook until fragrant
+spinach-with-groundnuts,4,Add chopped spinach and simmer until wilted
+spinach-with-groundnuts,5,Season with salt and serve
+omena-stew,1,Wash dried omena thoroughly
+omena-stew,2,Fry onions and tomatoes until soft
+omena-stew,3,Add omena to the pan and stir
+omena-stew,4,Add a little water and simmer for 15 minutes
+omena-stew,5,Season with salt and serve with ugali
+ugali-with-sukuma-combo,1,Prepare ugali by stirring maize flour into boiling water until firm
+ugali-with-sukuma-combo,2,Sauté sukuma wiki with onions and tomatoes
+ugali-with-sukuma-combo,3,"Fry a piece of beef or omena to accompany, if desired"
+ugali-with-sukuma-combo,4,Plate the ugali alongside the greens
+ugali-with-sukuma-combo,5,Serve hot
+kenyan-fruit-salad,1,"Chop mango, pineapple, watermelon and banana into cubes"
+kenyan-fruit-salad,2,Combine fruits in a large bowl
+kenyan-fruit-salad,3,Scoop passion fruit pulp over the top
+kenyan-fruit-salad,4,Toss gently to combine
+kenyan-fruit-salad,5,Chill before serving
+viazi-karai,1,Boil potatoes until just tender and cool
+viazi-karai,2,Cut into thick rounds
+viazi-karai,3,"Make a spiced batter with chickpea flour, turmeric and chili"
+viazi-karai,4,Dip potato rounds into the batter
+viazi-karai,5,Deep fry until golden and serve with tamarind sauce
+kenyan-roast-potatoes,1,Peel and cube potatoes
+kenyan-roast-potatoes,2,"Toss with oil, garlic, salt and rosemary"
+kenyan-roast-potatoes,3,Spread on a baking tray
+kenyan-roast-potatoes,4,"Roast at high heat, turning halfway, until golden and crisp"
+kenyan-roast-potatoes,5,Serve as a side dish
+chicken-pilau,1,Brown chicken pieces with onions in oil
+chicken-pilau,2,"Add pilau masala, garlic and ginger"
+chicken-pilau,3,Add water and simmer chicken until nearly cooked
+chicken-pilau,4,Add washed rice and chicken stock
+chicken-pilau,5,Cover and cook until rice is fully done
+beef-ribs-nyama-choma,1,Season beef ribs generously with salt and pepper
+beef-ribs-nyama-choma,2,Let sit for 20 minutes
+beef-ribs-nyama-choma,3,"Grill slowly over charcoal, turning often"
+beef-ribs-nyama-choma,4,"Cook until deeply browned and tender, about 2 hours"
+beef-ribs-nyama-choma,5,Serve with kachumbari and ugali
+kenyan-cabbage-fry,1,Shred cabbage and carrots finely
+kenyan-cabbage-fry,2,Fry onions in oil until soft
+kenyan-cabbage-fry,3,Add cabbage and carrots and stir fry
+kenyan-cabbage-fry,4,"Cook until just tender, about 8 minutes"
+kenyan-cabbage-fry,5,Season with salt and pepper and serve
+mursik,1,Clean a gourd and smoke it with hot charcoal inside
+mursik,2,Pour fresh milk into the smoked gourd
+mursik,3,Seal and let ferment at room temperature for 2 to 3 days
+mursik,4,Shake well before serving
+mursik,5,Serve chilled
+kenyan-banana-fritters,1,Mash ripe bananas in a bowl
+kenyan-banana-fritters,2,"Mix in flour, sugar and a pinch of cinnamon to form a batter"
+kenyan-banana-fritters,3,Heat oil in a pan
+kenyan-banana-fritters,4,Drop spoonfuls of batter into the hot oil
+kenyan-banana-fritters,5,Fry until golden brown on both sides and drain
+kenyan-fish-soup,1,Clean fish heads and pieces thoroughly
+kenyan-fish-soup,2,"Fry onions, tomatoes and garlic until fragrant"
+kenyan-fish-soup,3,Add fish and water and bring to a boil
+kenyan-fish-soup,4,Simmer gently for 30 minutes
+kenyan-fish-soup,5,Season with salt and coriander and serve hot
+kenyan-chicken-soup,1,"Place chicken pieces, onion and carrots in a pot with water"
+kenyan-chicken-soup,2,Bring to a boil and skim off foam
+kenyan-chicken-soup,3,Simmer on low heat for 45 minutes until chicken is tender
+kenyan-chicken-soup,4,Season with salt and black pepper
+kenyan-chicken-soup,5,Serve hot with a squeeze of lemon
+maandazi-ya-nazi,1,"Mix flour, sugar, cardamom and yeast in a bowl"
+maandazi-ya-nazi,2,Add coconut milk and knead into a soft dough
+maandazi-ya-nazi,3,Cover and rest for 1.5 hours until risen
+maandazi-ya-nazi,4,Shape into small rounds or triangles
+maandazi-ya-nazi,5,Deep fry until golden brown and cooked through
+ugali-wa-tanzania,1,Boil water in a heavy pot
+ugali-wa-tanzania,2,Gradually stir in maize flour
+ugali-wa-tanzania,3,Keep stirring to avoid lumps
+ugali-wa-tanzania,4,"Cook on low heat until thick and firm, pressing with a spoon"
+ugali-wa-tanzania,5,Shape and serve hot
+wali-wa-nazi,1,Rinse rice thoroughly
+wali-wa-nazi,2,"Bring coconut milk, water and salt to a boil"
+wali-wa-nazi,3,Add rice and stir once
+wali-wa-nazi,4,Cover and simmer on low heat until tender
+wali-wa-nazi,5,Fluff and serve with stew or fish
+mishkaki,1,"Cut beef into cubes and marinate with garlic, ginger, lemon and spices"
+mishkaki,2,Refrigerate for at least 2 hours
+mishkaki,3,Thread beef onto skewers
+mishkaki,4,"Grill over charcoal, turning until browned on all sides"
+mishkaki,5,Serve hot with kachumbari
+ndizi-nyama,1,Brown beef pieces in oil with onions
+ndizi-nyama,2,Add tomatoes and curry powder
+ndizi-nyama,3,Add water and simmer beef until half tender
+ndizi-nyama,4,Add peeled green bananas and continue simmering until soft
+ndizi-nyama,5,Season and serve hot
+pilau-ya-tanzania,1,Fry onions until deep golden brown
+pilau-ya-tanzania,2,"Add whole pilau spices and beef, browning well"
+pilau-ya-tanzania,3,"Add garlic, ginger and water and simmer until beef is tender"
+pilau-ya-tanzania,4,Add rice and beef stock
+pilau-ya-tanzania,5,Cover and cook on low heat until rice is done
+mchuzi-wa-samaki,1,Season fish with salt and lemon
+mchuzi-wa-samaki,2,"Fry onions, garlic and ginger until fragrant"
+mchuzi-wa-samaki,3,Add tomatoes and curry powder and cook down
+mchuzi-wa-samaki,4,"Add coconut milk and fish, simmer gently"
+mchuzi-wa-samaki,5,"Cook until fish is done, about 15 minutes"
+mtori,1,Boil beef in water until nearly tender
+mtori,2,Add peeled green bananas to the pot
+mtori,3,Simmer until bananas and beef are soft
+mtori,4,Mash some of the bananas to thicken the soup
+mtori,5,Season with salt and serve hot
+chapati-ya-tanzania,1,"Mix flour, salt and oil with warm water into a dough"
+chapati-ya-tanzania,2,Knead well and rest for an hour
+chapati-ya-tanzania,3,Divide and roll into flat rounds
+chapati-ya-tanzania,4,"Coil with oil for layers, then flatten again"
+chapati-ya-tanzania,5,Cook on a hot pan until golden with brown spots
+mandazi-ya-tanzania,1,"Mix flour, sugar, cardamom and yeast"
+mandazi-ya-tanzania,2,Add coconut milk and knead into a soft dough
+mandazi-ya-tanzania,3,Rest for an hour until risen
+mandazi-ya-tanzania,4,Roll and cut into triangles
+mandazi-ya-tanzania,5,Deep fry until golden brown
+mchicha,1,Fry onions until soft
+mchicha,2,Add ground peanuts and a splash of coconut milk
+mchicha,3,Stir in chopped spinach
+mchicha,4,Simmer until wilted and sauce thickens slightly
+mchicha,5,Season with salt and serve
+kuku-wa-kupaka,1,"Marinate chicken pieces with salt, lemon and spices"
+kuku-wa-kupaka,2,Grill chicken until lightly charred
+kuku-wa-kupaka,3,"Prepare coconut curry sauce with onions, tomatoes and curry powder"
+kuku-wa-kupaka,4,Simmer sauce until thickened
+kuku-wa-kupaka,5,Pour sauce over grilled chicken and serve
+maharage-ya-nazi,1,Boil soaked kidney beans until tender
+maharage-ya-nazi,2,Fry onions and tomatoes until soft
+maharage-ya-nazi,3,Add coconut milk and curry powder
+maharage-ya-nazi,4,Add cooked beans and simmer for 15 minutes
+maharage-ya-nazi,5,Season with salt and serve with rice
+sambusa,1,"Cook minced meat with onions, garlic and spices until dry"
+sambusa,2,Cool the filling completely
+sambusa,3,Fill samosa pastry triangles with the mixture and seal
+sambusa,4,Heat oil until hot
+sambusa,5,Deep fry samosas until golden and crisp
+vitumbua,1,Soak rice and blend with coconut milk and sugar into a batter
+vitumbua,2,Add yeast and let ferment for 4 hours
+vitumbua,3,Heat a vitumbua pan with a little oil in each mold
+vitumbua,4,Pour batter into molds and cover to cook
+vitumbua,5,Flip and cook until golden brown on both sides
+urojo-zanzibar-mix,1,Prepare a mango and turmeric based broth by simmering with spices
+urojo-zanzibar-mix,2,Boil cassava and potatoes until tender
+urojo-zanzibar-mix,3,Fry small potato fritters (bhajia) separately
+urojo-zanzibar-mix,4,"Assemble bowls with broth, cassava, potato and fritters"
+urojo-zanzibar-mix,5,Top with tamarind sauce and chili before serving
+tanzanian-beef-stew,1,Brown beef chunks in hot oil
+tanzanian-beef-stew,2,Add onions and garlic and cook until soft
+tanzanian-beef-stew,3,Add tomatoes and curry powder
+tanzanian-beef-stew,4,Add water and simmer on low heat until beef is tender
+tanzanian-beef-stew,5,Serve with ugali or rice
+wali-wa-kukaanga-wa-tanzania,1,Cook rice ahead of time and cool
+wali-wa-kukaanga-wa-tanzania,2,"Heat oil and fry onions, carrots and peas"
+wali-wa-kukaanga-wa-tanzania,3,Add cooked rice and stir fry well
+wali-wa-kukaanga-wa-tanzania,4,Season with curry powder and a little soy sauce
+wali-wa-kukaanga-wa-tanzania,5,Cook a few more minutes and serve
+kande,1,Boil soaked dried corn and beans together until soft
+kande,2,Fry onions and tomatoes separately
+kande,3,Combine the fry with the cooked corn and beans
+kande,4,Season with salt and simmer 10 minutes
+kande,5,Serve hot
+mbege-inspired-banana-drink,1,Peel and boil ripe bananas until very soft
+mbege-inspired-banana-drink,2,Mash bananas and mix with roasted millet flour
+mbege-inspired-banana-drink,3,Add water gradually to reach a drinkable consistency
+mbege-inspired-banana-drink,4,"Simmer gently for 15 minutes, stirring often"
+mbege-inspired-banana-drink,5,Cool and sweeten lightly before serving
+chips-mayai,1,Deep fry sliced potatoes until golden and crisp
+chips-mayai,2,Whisk eggs with a little salt
+chips-mayai,3,Mix the fried chips into the whisked eggs
+chips-mayai,4,Pour the mixture into a hot greased pan
+chips-mayai,5,Cook until set on both sides and serve
+tanzanian-fish-fry,1,Clean whole fish and score the skin
+tanzanian-fish-fry,2,"Marinate with salt, lemon, garlic and turmeric"
+tanzanian-fish-fry,3,Coat lightly with flour
+tanzanian-fish-fry,4,Deep fry until golden and crisp
+tanzanian-fish-fry,5,Serve with kachumbari and ugali
+supu-ya-pembe,1,Clean and chop goat legs into pieces
+supu-ya-pembe,2,Boil in a large pot with onions and garlic
+supu-ya-pembe,3,Simmer for about 2 hours until meat is falling off the bone
+supu-ya-pembe,4,"Season with salt, black pepper and a squeeze of lemon"
+supu-ya-pembe,5,Serve hot with bread or on its own
+tanzanian-coconut-beans,1,Boil soaked beans until nearly tender
+tanzanian-coconut-beans,2,"Fry onions, tomatoes and garlic in oil"
+tanzanian-coconut-beans,3,Add coconut milk and curry powder
+tanzanian-coconut-beans,4,Add the beans and simmer until fully soft and creamy
+tanzanian-coconut-beans,5,Season with salt and serve
+kachumbari-ya-tanzania,1,Finely slice tomatoes and onions
+kachumbari-ya-tanzania,2,Chop coriander and chili finely
+kachumbari-ya-tanzania,3,Combine in a bowl
+kachumbari-ya-tanzania,4,Squeeze fresh lime juice over the top
+kachumbari-ya-tanzania,5,Season with salt and toss
+tanzanian-chicken-curry,1,Marinate chicken with salt and turmeric
+tanzanian-chicken-curry,2,"Fry onions, garlic and ginger until fragrant"
+tanzanian-chicken-curry,3,Add tomatoes and curry powder and cook down
+tanzanian-chicken-curry,4,Add chicken and coconut milk
+tanzanian-chicken-curry,5,"Simmer until chicken is cooked through, about 25 minutes"
+mahindi-ya-kuchoma,1,Husk fresh corn cobs
+mahindi-ya-kuchoma,2,"Roast over hot charcoal, turning frequently"
+mahindi-ya-kuchoma,3,Cook until kernels are charred in spots and tender
+mahindi-ya-kuchoma,4,Rub with a slice of lime and chili powder
+mahindi-ya-kuchoma,5,Serve hot
+tanzanian-octopus-curry,1,"Clean and tenderize octopus, then cut into pieces"
+tanzanian-octopus-curry,2,Boil octopus until nearly tender
+tanzanian-octopus-curry,3,"Fry onions, garlic and tomatoes"
+tanzanian-octopus-curry,4,Add coconut milk and curry powder and simmer
+tanzanian-octopus-curry,5,"Add octopus and cook until fully tender, about 15 minutes"
+bagia,1,Soak split peas for 2 hours and blend coarsely
+bagia,2,"Mix with mashed potato, chili, and spices"
+bagia,3,Shape into small patties
+bagia,4,Deep fry until golden brown and crisp
+bagia,5,Serve with chutney
+tanzanian-rice-pudding,1,Cook rice with water until soft
+tanzanian-rice-pudding,2,Add coconut milk and sugar
+tanzanian-rice-pudding,3,"Simmer gently, stirring often, until creamy"
+tanzanian-rice-pudding,4,Add ground cardamom
+tanzanian-rice-pudding,5,Cool slightly and serve warm or chilled
+tangawizi-tea,1,Boil water with grated fresh ginger
+tangawizi-tea,2,Add black tea leaves and simmer a few minutes
+tangawizi-tea,3,Add milk and bring back to a gentle boil
+tangawizi-tea,4,Sweeten to taste
+tangawizi-tea,5,Strain and serve hot
+injera,1,Mix teff flour with water into a thin batter
+injera,2,Cover and let ferment at room temperature for 2 to 3 days
+injera,3,Stir the fermented batter well
+injera,4,Pour a thin layer onto a hot flat pan in a spiral
+injera,5,"Cover and cook until small holes form on top, then remove"
+doro-wat,1,Slow cook chopped onions without oil until deeply softened
+doro-wat,2,Add berbere spice and oil and cook until fragrant
+doro-wat,3,Add chicken pieces and coat well in the sauce
+doro-wat,4,"Add water and simmer until chicken is tender, about an hour"
+doro-wat,5,Add hard boiled eggs in the last 10 minutes and serve with injera
+misir-wat,1,Cook chopped onions in oil until soft
+misir-wat,2,Add berbere spice and garlic and cook until fragrant
+misir-wat,3,Add red lentils and water
+misir-wat,4,"Simmer, stirring occasionally, until lentils are soft and thick"
+misir-wat,5,Serve with injera
+tibs,1,Cut beef into small cubes
+tibs,2,Heat oil in a hot pan and sear the beef quickly
+tibs,3,"Add onions, garlic and green peppers"
+tibs,4,Stir fry until vegetables are just tender
+tibs,5,"Season with rosemary, berbere and salt and serve"
+shiro,1,Fry chopped onions and garlic in oil until soft
+shiro,2,Add berbere spice and stir briefly
+shiro,3,Whisk shiro (chickpea) flour into water until smooth
+shiro,4,Pour into the pot and stir continuously to avoid lumps
+shiro,5,Simmer until thickened and serve with injera
+kitfo,1,Finely mince fresh lean beef
+kitfo,2,Melt spiced clarified butter (niter kibbeh) with mitmita spice
+kitfo,3,Combine the warm spiced butter with the minced beef
+kitfo,4,Mix thoroughly until well coated
+kitfo,5,Serve with injera and ayib cheese
+gomen,1,Wash and chop collard greens finely
+gomen,2,Fry onions and garlic in oil until soft
+gomen,3,Add the greens and a splash of water
+gomen,4,"Cook covered until tender, about 12 minutes"
+gomen,5,Season with salt and serve
+atkilt-wat,1,Fry onions in oil until soft
+atkilt-wat,2,Add turmeric and stir
+atkilt-wat,3,"Add cabbage, carrots and potatoes"
+atkilt-wat,4,"Cover and cook until vegetables are tender, stirring occasionally"
+atkilt-wat,5,Season with salt and serve with injera
+berbere-beef-stew,1,Cook onions slowly in oil until deeply softened
+berbere-beef-stew,2,Add berbere spice and garlic and cook until fragrant
+berbere-beef-stew,3,Add beef chunks and coat well
+berbere-beef-stew,4,"Add water and simmer on low heat until tender, about 1 hour"
+berbere-beef-stew,5,Serve hot with injera
+ethiopian-lentil-soup,1,Fry onions and garlic until soft
+ethiopian-lentil-soup,2,Add berbere spice and stir briefly
+ethiopian-lentil-soup,3,Add lentils and vegetable stock
+ethiopian-lentil-soup,4,"Simmer until lentils are soft, about 30 minutes"
+ethiopian-lentil-soup,5,Blend partially and serve warm
+ayib-with-gomen,1,Heat milk gently until it curdles with a little lemon juice
+ayib-with-gomen,2,Strain curds through cloth to make fresh ayib cheese
+ayib-with-gomen,3,Sauté collard greens with onion and garlic separately
+ayib-with-gomen,4,Plate the cheese alongside the greens
+ayib-with-gomen,5,Serve with injera
+ethiopian-chicken-soup,1,"Place chicken pieces, onion and garlic in a pot with water"
+ethiopian-chicken-soup,2,Bring to a boil and skim foam
+ethiopian-chicken-soup,3,"Simmer on low heat until chicken is tender, about 40 minutes"
+ethiopian-chicken-soup,4,"Season with berbere spice, salt and black pepper"
+ethiopian-chicken-soup,5,Serve hot
+fosolia,1,Slice green beans and carrots into thin strips
+fosolia,2,Fry onions and garlic in oil until soft
+fosolia,3,Add the green beans and carrots
+fosolia,4,"Cook covered until just tender, stirring occasionally"
+fosolia,5,Season with salt and serve
+ethiopian-spiced-butter-fish,1,Season fish pieces with salt and lemon
+ethiopian-spiced-butter-fish,2,Melt niter kibbeh in a pan with onions and garlic
+ethiopian-spiced-butter-fish,3,Add berbere spice and cook until fragrant
+ethiopian-spiced-butter-fish,4,Add fish and a little water
+ethiopian-spiced-butter-fish,5,"Simmer gently until fish is cooked through, about 15 minutes"
+ethiopian-sambusa,1,Cook filling of spiced lentils or minced beef with onions and berbere until dry
+ethiopian-sambusa,2,Cool completely
+ethiopian-sambusa,3,Wrap filling in pastry strips into triangles and seal
+ethiopian-sambusa,4,Heat oil until hot
+ethiopian-sambusa,5,Deep fry until golden and crisp
+genfo,1,Boil water in a pot
+genfo,2,Gradually whisk in barley or wheat flour to avoid lumps
+genfo,3,"Cook, stirring constantly, until very thick and smooth"
+genfo,4,Shape into a mound with a well in the center
+genfo,5,Fill the well with melted niter kibbeh and berbere and serve
+ethiopian-coffee-buna,1,Wash and roast green coffee beans in a pan until dark and fragrant
+ethiopian-coffee-buna,2,Grind the roasted beans coarsely
+ethiopian-coffee-buna,3,Boil water in a traditional jebena pot
+ethiopian-coffee-buna,4,Add ground coffee and simmer gently
+ethiopian-coffee-buna,5,"Pour into small cups and serve, often with sugar"
+tej,1,Dissolve honey in warm water to make a must
+tej,2,Add crushed gesho (hops substitute) for bitterness
+tej,3,Pour into a fermentation vessel and cover loosely
+tej,4,Let ferment at room temperature for about two weeks
+tej,5,Strain and serve chilled
+shimbra-asa,1,Fry onions and garlic in oil until soft
+shimbra-asa,2,Add berbere spice and cook until fragrant
+shimbra-asa,3,Add cooked chickpeas and a little water
+shimbra-asa,4,"Simmer until the sauce thickens, about 20 minutes"
+shimbra-asa,5,Season with salt and serve with injera
+ethiopian-beef-tibs-rice-bowl,1,Cook rice and season lightly with turmeric and salt
+ethiopian-beef-tibs-rice-bowl,2,Sear beef cubes in a hot pan with oil
+ethiopian-beef-tibs-rice-bowl,3,"Add onions, garlic, peppers and berbere spice"
+ethiopian-beef-tibs-rice-bowl,4,Stir fry until beef is cooked and vegetables are tender
+ethiopian-beef-tibs-rice-bowl,5,Serve the tibs over the rice
+matoke,1,Peel green bananas and wrap in banana leaves
+matoke,2,Steam over boiling water for about 45 minutes until soft
+matoke,3,Mash the steamed bananas while still wrapped
+matoke,4,Season lightly with salt
+matoke,5,Serve warm alongside stew
+rolex,1,Fry a chapati lightly on a hot pan
+rolex,2,"Whisk eggs with chopped tomato, onion and cabbage"
+rolex,3,Pour egg mixture over the chapati in the pan and cook until set
+rolex,4,Roll the chapati up around the cooked egg
+rolex,5,Slice and serve hot
+binyebwa-groundnut-stew,1,Fry onions and tomatoes until soft
+binyebwa-groundnut-stew,2,Mix ground peanuts with water into a smooth paste
+binyebwa-groundnut-stew,3,Stir the paste into the pot
+binyebwa-groundnut-stew,4,"Simmer gently, stirring often, until the sauce thickens"
+binyebwa-groundnut-stew,5,Season with salt and serve with matoke or rice
+luwombo,1,Marinate chicken pieces with salt and spices
+luwombo,2,Prepare a groundnut sauce with onions and tomatoes
+luwombo,3,"Combine chicken and sauce, wrap tightly in banana leaves"
+luwombo,4,Steam the parcel over boiling water for about an hour
+luwombo,5,Unwrap and serve with matoke or rice
+ugandan-beef-stew,1,Brown beef chunks in hot oil
+ugandan-beef-stew,2,Add onions and garlic and cook until soft
+ugandan-beef-stew,3,Add tomatoes and curry powder
+ugandan-beef-stew,4,Add water and simmer until beef is tender
+ugandan-beef-stew,5,Serve with matoke or posho
+posho,1,Boil water in a heavy pot
+posho,2,Gradually stir in maize flour
+posho,3,Stir continuously to prevent lumps
+posho,4,Cook on low heat until thick and firm
+posho,5,Shape and serve hot with stew
+malewa,1,"Boil dried bamboo shoots until softened, changing water once to reduce bitterness"
+malewa,2,Fry onions and tomatoes in oil
+malewa,3,Add the boiled bamboo shoots to the fry
+malewa,4,Add a little groundnut paste and simmer
+malewa,5,Season with salt and serve with matoke
+ugandan-fish-stew,1,Season fish pieces with salt
+ugandan-fish-stew,2,"Fry onions, tomatoes and garlic until soft"
+ugandan-fish-stew,3,Add fish pieces and a little water
+ugandan-fish-stew,4,"Simmer gently until fish is cooked through, about 15 minutes"
+ugandan-fish-stew,5,Serve with matoke or posho
+katogo,1,Brown beef pieces with onions in oil
+katogo,2,Add tomatoes and curry powder
+katogo,3,Add peeled green bananas and a little water
+katogo,4,Cover and simmer until bananas and beef are tender
+katogo,5,Mash slightly and serve hot
+ugandan-beans,1,Boil soaked beans until tender
+ugandan-beans,2,Fry onions and tomatoes in oil
+ugandan-beans,3,Combine cooked beans with the fry
+ugandan-beans,4,Season with salt and simmer 10 minutes
+ugandan-beans,5,Serve with posho or matoke
+ugandan-chapati,1,"Mix flour, salt and oil with warm water into a dough"
+ugandan-chapati,2,Knead well and rest for an hour
+ugandan-chapati,3,Divide and roll into flat rounds
+ugandan-chapati,4,"Coil with oil for flaky layers, then flatten again"
+ugandan-chapati,5,Cook on a hot dry pan until golden with brown spots
+ugandan-pumpkin-stew,1,Peel and cube pumpkin
+ugandan-pumpkin-stew,2,Fry onions until soft
+ugandan-pumpkin-stew,3,Add pumpkin and a little water
+ugandan-pumpkin-stew,4,Cover and simmer until pumpkin is tender
+ugandan-pumpkin-stew,5,Stir in a little groundnut paste and season with salt
+groundnut-sauce-chicken,1,Brown chicken pieces with onions in oil
+groundnut-sauce-chicken,2,Add tomatoes and cook down
+groundnut-sauce-chicken,3,Mix ground peanuts with water into a paste and stir in
+groundnut-sauce-chicken,4,Simmer on low heat until chicken is tender and sauce is thick
+groundnut-sauce-chicken,5,Serve with matoke or rice
+muchomo,1,Cut beef or goat meat into chunks
+muchomo,2,Season with salt and pepper
+muchomo,3,Thread onto skewers
+muchomo,4,"Grill over hot charcoal, turning until well browned"
+muchomo,5,Serve hot with a side of raw onions
+ugandan-cassava,1,Peel and chop cassava into chunks
+ugandan-cassava,2,Boil until just tender
+ugandan-cassava,3,Drain and let cool slightly
+ugandan-cassava,4,Pan fry in a little oil until lightly golden
+ugandan-cassava,5,Season with salt and serve
+nsenene,1,Clean grasshoppers by removing wings and legs
+nsenene,2,Rinse thoroughly
+nsenene,3,Fry in a dry hot pan until crunchy
+nsenene,4,"Add a little oil, onions and salt and continue frying"
+nsenene,5,Serve as a crunchy snack
+ugandan-peanut-butter-greens,1,Fry onions until soft
+ugandan-peanut-butter-greens,2,Add chopped greens and cook until wilted
+ugandan-peanut-butter-greens,3,Stir in a spoonful of natural peanut butter
+ugandan-peanut-butter-greens,4,Simmer for 5 minutes until the sauce is smooth
+ugandan-peanut-butter-greens,5,Season with salt and serve
+ugandan-passion-fruit-juice,1,Scoop passion fruit pulp into a bowl
+ugandan-passion-fruit-juice,2,Add water and stir to loosen the pulp
+ugandan-passion-fruit-juice,3,Strain through a sieve to remove seeds
+ugandan-passion-fruit-juice,4,Sweeten with sugar to taste
+ugandan-passion-fruit-juice,5,Chill and serve over ice
+ugandan-sweet-potato-dessert,1,Boil sweet potatoes until soft
+ugandan-sweet-potato-dessert,2,Drain and mash while warm
+ugandan-sweet-potato-dessert,3,"Stir in sugar, a little butter and cinnamon"
+ugandan-sweet-potato-dessert,4,Mix until smooth and creamy
+ugandan-sweet-potato-dessert,5,Serve warm as a simple dessert
+kalo-millet-bread,1,Boil water in a pot
+kalo-millet-bread,2,Gradually stir in millet flour
+kalo-millet-bread,3,"Cook, stirring vigorously, until it forms a thick smooth dough"
+kalo-millet-bread,4,Shape into small balls with wet hands
+kalo-millet-bread,5,Serve warm alongside groundnut sauce or stew
+jollof-rice,1,"Blend tomatoes, pepper and onion into a smooth base"
+jollof-rice,2,Fry the blended base in oil until reduced and deep red
+jollof-rice,3,"Add stock, bay leaves and seasoning cubes"
+jollof-rice,4,Add washed rice and stir to combine
+jollof-rice,5,Cover and cook on low heat until rice is tender and infused
+egusi-soup,1,Fry onions in palm oil until soft
+egusi-soup,2,Add ground egusi seeds mixed with a little water
+egusi-soup,3,"Cook, stirring, until the egusi forms small lumps and fries in the oil"
+egusi-soup,4,"Add stock, meat or fish and seasoning"
+egusi-soup,5,Add chopped greens and simmer until well cooked
+fufu,1,Peel and boil cassava until very soft
+fufu,2,Drain well
+fufu,3,"Pound the cassava in a mortar until smooth and stretchy, or blend with a little water"
+fufu,4,Shape into smooth balls
+fufu,5,Serve warm with soup
+suya,1,Slice beef thinly and thread onto skewers
+suya,2,"Mix ground peanuts with chili powder, ginger and stock powder to make suya spice"
+suya,3,Coat the beef skewers generously with the suya spice
+suya,4,"Grill over hot charcoal, turning frequently"
+suya,5,Sprinkle with more suya spice before serving
+efo-riro,1,"Blend peppers, onion and tomato into a base"
+efo-riro,2,Fry the blended base in palm oil until reduced
+efo-riro,3,Add stock and seasoning cubes
+efo-riro,4,Add chopped spinach and assorted meat or fish if using
+efo-riro,5,Simmer until the greens are well wilted and serve
+west-african-groundnut-soup,1,Brown chicken or beef pieces with onions
+west-african-groundnut-soup,2,Add tomatoes and pepper and cook down
+west-african-groundnut-soup,3,Stir in peanut butter and stock
+west-african-groundnut-soup,4,Simmer on low heat until the meat is tender and sauce thickened
+west-african-groundnut-soup,5,Season and serve with rice or fufu
+moin-moin,1,Soak and peel black-eyed peas
+moin-moin,2,"Blend with onion, pepper and a little water into a smooth batter"
+moin-moin,3,Whisk in oil and seasoning cubes
+moin-moin,4,Pour into cups or wrap in leaves
+moin-moin,5,"Steam over boiling water until firm, about 45 minutes"
+akara,1,Soak and peel black-eyed peas
+akara,2,Blend with onion and pepper into a thick smooth batter
+akara,3,Whisk the batter vigorously to add air
+akara,4,Scoop spoonfuls into hot oil
+akara,5,Fry until golden brown and crisp on all sides
+jollof-chicken-bowl,1,Prepare jollof rice by frying a blended tomato pepper base and cooking with rice and stock
+jollof-chicken-bowl,2,Season chicken pieces with spices and grill until browned and cooked through
+jollof-chicken-bowl,3,Combine or plate the rice with the grilled chicken
+jollof-chicken-bowl,4,Garnish with fried plantain if desired
+jollof-chicken-bowl,5,Serve hot
+west-african-peanut-chicken,1,Brown chicken pieces with onions in oil
+west-african-peanut-chicken,2,Add tomatoes and pepper and cook down
+west-african-peanut-chicken,3,Stir in peanut butter and a little water
+west-african-peanut-chicken,4,Simmer on low heat until chicken is tender and sauce thick
+west-african-peanut-chicken,5,Serve with rice or fufu
+dodo-fried-plantains,1,Peel ripe plantains and slice diagonally
+dodo-fried-plantains,2,Heat oil in a pan until hot
+dodo-fried-plantains,3,Fry plantain slices until golden brown on both sides
+dodo-fried-plantains,4,Drain on paper towels
+dodo-fried-plantains,5,Serve warm as a side
+west-african-fish-pepper-soup,1,Clean and cut fish into pieces
+west-african-fish-pepper-soup,2,"Boil water with onions, ginger and pepper soup spice"
+west-african-fish-pepper-soup,3,Add fish pieces and simmer gently
+west-african-fish-pepper-soup,4,"Cook until fish is done, about 15 minutes"
+west-african-fish-pepper-soup,5,Season with salt and scent leaves and serve hot
+waakye,1,Soak black-eyed peas or beans and boil until half tender
+waakye,2,Add washed rice and dried sorghum leaves (or baking soda for color)
+waakye,3,Add water and cook covered until rice and beans are tender
+waakye,4,Remove the sorghum leaves
+waakye,5,Serve with stew and sides
+chin-chin,1,"Mix flour, sugar, nutmeg and butter into a crumbly texture"
+chin-chin,2,Add eggs and milk and knead into a firm dough
+chin-chin,3,Roll out and cut into small cubes
+chin-chin,4,Deep fry in batches until golden and crunchy
+chin-chin,5,Cool completely before storing
+zobo-hibiscus-drink,1,Rinse dried hibiscus petals thoroughly
+zobo-hibiscus-drink,2,Boil in water with ginger for 15 minutes
+zobo-hibiscus-drink,3,Strain out the petals
+zobo-hibiscus-drink,4,Sweeten with sugar and add chopped pineapple for flavor
+zobo-hibiscus-drink,5,Chill thoroughly and serve over ice
+isombe,1,"Boil pounded cassava leaves until tender, about 45 minutes"
+isombe,2,Fry onions and chopped eggplant in oil
+isombe,3,Add ground peanuts and a little water
+isombe,4,Combine with the cooked cassava leaves
+isombe,5,Season with salt and simmer 10 minutes
+ibihaza,1,Boil soaked beans until nearly tender
+ibihaza,2,Add peeled pumpkin chunks to the pot
+ibihaza,3,Continue cooking until both beans and pumpkin are soft
+ibihaza,4,Mash some of the pumpkin to thicken
+ibihaza,5,Season with salt and serve
+umutsima,1,Boil water in a heavy pot
+umutsima,2,Gradually stir in cassava flour and maize flour
+umutsima,3,Stir continuously to avoid lumps
+umutsima,4,Cook on low heat until thick and smooth
+umutsima,5,Shape into a mound and serve warm
+rwandan-beef-brochettes,1,Cut beef into cubes and season with salt and pepper
+rwandan-beef-brochettes,2,Let marinate briefly
+rwandan-beef-brochettes,3,"Thread onto skewers, alternating with peppers if desired"
+rwandan-beef-brochettes,4,"Grill over hot charcoal, turning until browned all over"
+rwandan-beef-brochettes,5,Serve hot with fried potatoes
+ubugali,1,Boil water in a heavy pot
+ubugali,2,Gradually stir in cassava and maize flour
+ubugali,3,Stir continuously until smooth
+ubugali,4,Cook on low heat until thick and firm
+ubugali,5,Shape and serve warm with stew
+rwandan-bean-stew,1,Boil soaked kidney beans until tender
+rwandan-bean-stew,2,Fry onions and tomatoes in oil
+rwandan-bean-stew,3,Combine cooked beans with the fry
+rwandan-bean-stew,4,Season with salt and simmer 10 minutes
+rwandan-bean-stew,5,Serve with rice or ugali
+sombe-with-fish,1,Boil pounded cassava leaves until tender
+sombe-with-fish,2,Soak and clean dried fish
+sombe-with-fish,3,Fry onions and add the dried fish
+sombe-with-fish,4,Combine with the cooked cassava leaves and ground peanuts
+sombe-with-fish,5,Simmer for 15 minutes and season with salt
+rwandan-chicken-stew,1,Brown chicken pieces with onions in oil
+rwandan-chicken-stew,2,Add tomatoes and green pepper and cook down
+rwandan-chicken-stew,3,"Add water and simmer until chicken is tender, about 40 minutes"
+rwandan-chicken-stew,4,Season with salt and pepper
+rwandan-chicken-stew,5,Serve with rice or ugali
+agatogo,1,Brown beef pieces with onions in oil
+agatogo,2,Add tomatoes and cook down
+agatogo,3,Add peeled green plantains and a little water
+agatogo,4,Cover and simmer until plantains and beef are tender
+agatogo,5,Season with salt and serve hot
+rwandan-sweet-potato-mash,1,Peel and chop sweet potatoes
+rwandan-sweet-potato-mash,2,Boil until soft
+rwandan-sweet-potato-mash,3,Drain and mash while warm
+rwandan-sweet-potato-mash,4,Stir in a little butter and salt
+rwandan-sweet-potato-mash,5,Serve warm as a side dish
+ikivuguto,1,Pour fresh milk into a clean container
+ikivuguto,2,Cover and let sit at room temperature to ferment for about 2 days
+ikivuguto,3,Stir well once fermented and slightly thickened
+ikivuguto,4,Chill before serving
+ikivuguto,5,Serve cold in cups
+rwandan-avocado-salad,1,Halve and slice ripe avocados
+rwandan-avocado-salad,2,Slice tomatoes and onions thinly
+rwandan-avocado-salad,3,"Combine avocado, tomato and onion in a bowl"
+rwandan-avocado-salad,4,Drizzle with a little lemon juice and oil
+rwandan-avocado-salad,5,Season with salt and serve fresh
+burundian-peanut-stew,1,Fry onions and tomatoes until soft
+burundian-peanut-stew,2,Add chopped mixed vegetables such as carrots and green beans
+burundian-peanut-stew,3,Stir in ground peanuts mixed with water
+burundian-peanut-stew,4,Simmer until vegetables are tender and sauce thickens
+burundian-peanut-stew,5,Season with salt and serve with rice
+ibitoki-sweet-banana-dessert,1,Peel ripe bananas and slice thickly
+ibitoki-sweet-banana-dessert,2,Place in a pot with a small amount of water and sugar
+ibitoki-sweet-banana-dessert,3,Simmer gently until soft and slightly caramelized
+ibitoki-sweet-banana-dessert,4,Sprinkle with cinnamon
+ibitoki-sweet-banana-dessert,5,Serve warm as a light dessert
+rwandan-ginger-tea,1,Boil water with sliced fresh ginger
+rwandan-ginger-tea,2,Add black tea leaves and simmer a few minutes
+rwandan-ginger-tea,3,Add milk and bring back to a gentle boil
+rwandan-ginger-tea,4,Sweeten to taste
+rwandan-ginger-tea,5,Strain and serve hot

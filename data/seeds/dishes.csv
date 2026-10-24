@@ -1,0 +1,151 @@
+slug,name_en,description,meal_type,course,spice_level,difficulty,prep_min,cook_min,servings,calories,protein_g,fat_g,carbs_g,fiber_g,sugar_g,cholesterol_mg,sodium_mg,keywords,status
+nyama-choma,Nyama Choma,Classic Kenyan grilled goat meat cooked over charcoal,dinner,main,2,medium,20,120,6,420,38,28,0,0,0,110,480,Kenyan|Grilled|Goat|Charcoal,draft
+ugali,Ugali,Staple Kenyan maize meal cooked to a firm dough,dinner,side,2,easy,5,15,6,230,5,1,50,3,0,0,5,Kenyan|Staple|Maize|Vegetarian,draft
+sukuma-wiki,Sukuma Wiki,Sautéed collard greens with onions and tomatoes,dinner,side,2,easy,10,15,4,90,4,5,9,3,3,0,220,Kenyan|Vegetarian|Greens|Side,draft
+pilau,Pilau,Spiced rice cooked with beef and pilau masala,dinner,main,3,medium,15,45,6,410,22,12,55,2,3,55,510,Kenyan|Rice|Beef|Spiced,draft
+chapati,Chapati,Soft layered Kenyan flatbread,dinner,side,2,hard,60,20,8,230,4,8,35,1,1,0,180,Kenyan|Bread|Flatbread|Wheat,draft
+mandazi,Mandazi,Sweet fried Kenyan doughnut-style bread,snack,dessert,2,medium,60,15,10,210,4,8,30,1,8,0,120,Kenyan|Fried|Sweet|Snack,draft
+githeri,Githeri,"Hearty stew of maize and beans, a Kenyan staple",dinner,main,2,easy,10,60,6,320,14,6,55,10,4,0,300,Kenyan|Vegetarian|Beans|Maize,draft
+mukimo,Mukimo,"Mashed potatoes with maize, beans and pumpkin leaves",dinner,side,2,easy,15,30,6,260,7,3,52,7,4,0,240,Kenyan|Vegetarian|Mash|Kikuyu,draft
+kenyan-chicken-curry,Kenyan Chicken Curry,Coconut-spiced chicken curry stew,dinner,main,2,medium,15,40,5,380,30,22,10,2,4,110,420,Kenyan|Chicken|Curry|Coconut,draft
+samaki-wa-kupaka,Samaki wa Kupaka,Grilled fish smothered in coconut curry sauce,dinner,main,2,medium,15,30,4,340,32,18,9,2,4,70,400,Kenyan|Coastal|Fish|Coconut,draft
+nyoyo,Nyoyo,Kenyan boiled maize and beans mix seasoned simply,dinner,main,2,easy,10,60,6,290,13,4,53,9,3,5,220,Kenyan|Vegetarian|Beans|Maize,draft
+kachumbari,Kachumbari,Fresh tomato onion salad served alongside grilled meats,dinner,side,2,easy,10,0,4,35,1,0,8,2,4,0,120,Kenyan|Salad|Fresh|Side,draft
+kenyan-beef-stew,Kenyan Beef Stew,Slow cooked beef stew in tomato gravy,dinner,main,2,medium,15,90,6,390,28,20,12,2,5,90,460,Kenyan|Beef|Stew|Comfort Food,draft
+matumbo,Matumbo,Kenyan tripe and offal stew simmered with spices,dinner,main,2,medium,20,120,5,310,26,18,8,1,3,180,410,Kenyan|Offal|Stew|Traditional,draft
+irio,Irio,"Mashed peas, potatoes and maize, a Kikuyu classic",dinner,side,2,easy,10,30,6,250,8,2,50,7,4,0,220,Kenyan|Vegetarian|Mash|Kikuyu,draft
+kenyan-fish-curry,Kenyan Fish Curry,Tilapia simmered in a spiced tomato curry sauce,dinner,main,3,medium,15,30,4,290,29,12,10,2,4,65,390,Kenyan|Fish|Curry|Spiced,draft
+managu,Managu,African nightshade greens cooked with onions and milk,dinner,side,2,easy,10,20,4,85,4,4,9,3,3,5,180,Kenyan|Vegetarian|Greens|Traditional,draft
+ndengu-stew,Ndengu Stew,Green gram stew cooked with tomatoes and spices,dinner,main,2,easy,10,40,5,260,15,5,42,10,4,0,260,Kenyan|Vegetarian|Beans|Legumes,draft
+egg-chapati-wrap,Egg Chapati Wrap,"Chapati folded with fried egg and vegetables, a Kenyan street food",snack,snack,2,medium,10,15,2,320,13,16,32,2,3,190,380,Kenyan|Street Food|Egg|Snack,draft
+uji,Uji,Fermented millet and maize porridge drink,beverage,beverage,2,easy,5,15,4,150,4,1,32,2,6,0,20,Kenyan|Porridge|Fermented|Breakfast,draft
+beef-pilau-rice,Beef Pilau Rice,Aromatic pilau rice with tender beef chunks,dinner,main,3,medium,15,50,6,430,24,13,56,2,3,60,520,Kenyan|Rice|Beef|Spiced,draft
+kuku-kienyeji,Kuku Kienyeji,Free-range chicken stew cooked slowly with local spices,dinner,main,2,medium,15,90,5,360,32,18,8,2,4,120,430,Kenyan|Chicken|Traditional|Free Range,draft
+mahamri,Mahamri,Coastal Kenyan sweet fried bread flavored with coconut and cardamom,dessert,dessert,2,medium,120,15,10,220,4,9,31,1,9,0,110,Kenyan|Coastal|Fried|Sweet,draft
+bhajia,Bhajia,Spiced potato fritters coated in chickpea flour batter,snack,snack,2,medium,15,20,6,240,6,11,30,4,2,0,300,Kenyan|Fried|Snack|Vegetarian,draft
+kenyan-beef-samosa,Kenyan Beef Samosa,Crispy pastry triangles filled with spiced minced beef,snack,snack,2,medium,30,30,12,180,8,10,15,1,1,25,260,Kenyan|Fried|Snack|Beef,draft
+kenyan-coconut-rice,Kenyan Coconut Rice,"Fragrant rice cooked in coconut milk, a coastal favorite",dinner,main,2,medium,5,25,5,320,5,10,52,2,2,0,220,Kenyan|Coastal|Rice|Coconut,draft
+terere,Terere,Amaranth greens sautéed with onion and tomato,dinner,side,2,easy,10,15,4,80,4,4,8,3,3,0,180,Kenyan|Vegetarian|Greens|Side,draft
+kenyan-goat-stew,Kenyan Goat Stew,Rich goat meat stew simmered until tender,dinner,main,2,medium,15,105,6,380,30,20,9,2,4,105,440,Kenyan|Goat|Stew|Traditional,draft
+kenyan-fish-fry,Kenyan Fish Fry,Whole tilapia deep fried until crisp,dinner,main,2,medium,15,20,4,360,30,22,8,1,1,75,380,Kenyan|Fish|Fried|Coastal,draft
+chai-ya-tangawizi,Chai ya Tangawizi,Kenyan spiced ginger tea with milk,beverage,beverage,2,easy,2,10,4,90,2,3,13,0,12,8,40,Kenyan|Tea|Ginger|Beverage,draft
+beef-stew-with-potatoes,Beef Stew with Potatoes,Beef stew simmered with chunky potatoes and carrots,dinner,main,2,medium,15,90,6,400,27,18,25,3,5,88,470,Kenyan|Beef|Stew|Comfort Food,draft
+wali-wa-kukaanga,Wali wa Kukaanga,Kenyan fried rice with vegetables and spices,dinner,main,2,medium,10,20,5,310,6,9,50,2,3,0,380,Kenyan|Rice|Fried|Vegetarian,draft
+kenyan-lentil-soup,Kenyan Lentil Soup,Warming red lentil soup with vegetables and spices,dinner,starter,2,medium,10,45,6,210,12,4,32,8,4,0,340,Kenyan|Soup|Lentils|Vegetarian,draft
+ugali-na-samaki,Ugali na Samaki,Complete Kenyan meal of ugali with fried fish and greens,dinner,main,2,medium,15,40,4,520,32,24,50,4,3,75,480,Kenyan|One Dish Meal|Fish|Complete Meal,draft
+beans-and-maize-stew,Beans and Maize Stew,Simple stewed beans and maize seasoned with tomatoes,dinner,main,2,easy,10,60,6,300,14,5,52,9,4,0,280,Kenyan|Vegetarian|Beans|Maize,draft
+kenyan-beef-sausages,Kenyan Beef Sausages,Home-style grilled beef sausages Kenyan style,snack,main,2,medium,5,20,4,320,16,26,4,0,2,70,650,Kenyan|Meat|Grilled|Snack,draft
+spinach-with-groundnuts,Spinach with Groundnuts,Spinach cooked in a creamy ground peanut sauce,dinner,side,2,easy,10,20,4,180,7,12,12,4,3,0,200,Kenyan|Vegetarian|Peanuts|Greens,draft
+omena-stew,Omena Stew,Silver fish stewed with tomatoes and onions,dinner,main,2,medium,10,25,4,260,22,14,8,1,3,140,420,Kenyan|Fish|Traditional|Lake Victoria,draft
+ugali-with-sukuma-combo,Ugali with Sukuma Combo,Classic Kenyan combo plate of ugali and sautéed greens,dinner,main,2,medium,10,30,4,380,10,8,65,6,4,0,320,Kenyan|One Dish Meal|Vegetarian|Staple,draft
+kenyan-fruit-salad,Kenyan Fruit Salad,Fresh tropical fruit salad with passion fruit dressing,dessert,dessert,2,medium,15,0,6,120,1,0,30,3,24,0,5,Kenyan|Dessert|Fruit|Fresh,draft
+viazi-karai,Viazi Karai,Coastal spiced potatoes dipped in turmeric batter and fried,snack,snack,2,medium,15,25,5,260,6,10,36,4,2,0,320,Kenyan|Coastal|Fried|Snack,draft
+kenyan-roast-potatoes,Kenyan Roast Potatoes,Oven roasted potatoes seasoned with garlic and herbs,dinner,side,2,easy,10,40,5,210,4,7,34,3,2,0,280,Kenyan|Side|Roasted|Vegetarian,draft
+chicken-pilau,Chicken Pilau,Spiced pilau rice cooked with chicken pieces,dinner,main,2,medium,15,50,6,420,26,12,54,2,3,95,510,Kenyan|One Dish Meal|Chicken|Rice,draft
+beef-ribs-nyama-choma,Beef Ribs Nyama Choma,Grilled beef ribs Kenyan barbecue style,dinner,main,2,medium,20,120,6,450,34,32,0,0,0,105,470,Kenyan|Grilled|Beef|Barbecue,draft
+kenyan-cabbage-fry,Kenyan Cabbage Fry,Shredded cabbage stir fried with carrots and onions,dinner,side,2,easy,10,15,4,95,2,5,11,3,5,0,150,Kenyan|Vegetarian|Side|Quick,draft
+mursik,Mursik,"Fermented milk drink flavored with smoked charcoal, from the Kalenjin community",beverage,beverage,2,easy,10,0,4,150,8,9,10,0,10,30,110,Kenyan|Fermented|Traditional|Milk,draft
+kenyan-banana-fritters,Kenyan Banana Fritters,"Sweet ripe banana fritters, a popular tea-time snack",dessert,dessert,2,medium,10,15,6,200,3,8,30,2,14,0,90,Kenyan|Dessert|Fried|Banana,draft
+kenyan-fish-soup,Kenyan Fish Soup,Light broth made from fish heads and vegetables,dinner,starter,2,medium,15,45,5,220,24,8,9,2,3,85,410,Kenyan|Soup|Fish|Comfort Food,draft
+kenyan-chicken-soup,Kenyan Chicken Soup,"Comforting chicken soup with vegetables, often served to the unwell",dinner,starter,2,medium,15,60,5,240,26,9,10,2,3,95,380,Kenyan|Soup|Chicken|Comfort Food,draft
+maandazi-ya-nazi,Maandazi ya Nazi,Coconut mandazi with a soft fluffy texture,dessert,dessert,2,medium,90,15,10,215,4,9,29,1,8,0,110,Kenyan|Coastal|Fried|Coconut,draft
+ugali-wa-tanzania,Ugali wa Tanzania,Tanzanian style firm maize meal staple,dinner,side,2,easy,5,15,6,230,5,1,50,3,0,0,5,Tanzanian|Staple|Maize|Vegetarian,draft
+wali-wa-nazi,Wali wa Nazi,Tanzanian coconut rice cooked with coconut milk,dinner,main,2,medium,5,25,5,320,5,10,52,2,2,0,220,Tanzanian|Rice|Coconut|Coastal,draft
+mishkaki,Mishkaki,Tanzanian grilled marinated beef skewers,dinner,main,2,medium,120,20,5,360,32,22,4,0,2,95,400,Tanzanian|Grilled|Beef|Skewers,draft
+ndizi-nyama,Ndizi Nyama,Green bananas stewed together with beef in a savory sauce,dinner,main,2,medium,15,60,6,380,24,18,30,4,8,80,410,Tanzanian|Beef|Plantain|One Pot,draft
+pilau-ya-tanzania,Pilau ya Tanzania,Zanzibar-style fragrant spiced rice with beef and whole spices,dinner,main,3,medium,15,50,6,420,23,13,55,2,3,60,530,Tanzanian|Rice|Zanzibar|Spiced,draft
+mchuzi-wa-samaki,Mchuzi wa Samaki,Tanzanian fish curry cooked in coconut and tomato sauce,dinner,main,2,medium,15,30,4,330,29,17,10,2,4,70,400,Tanzanian|Fish|Curry|Coconut,draft
+mtori,Mtori,Traditional banana and beef soup from Kilimanjaro,dinner,starter,2,medium,15,60,6,260,18,8,28,3,6,65,380,Tanzanian|Soup|Banana|Chagga,draft
+chapati-ya-tanzania,Chapati ya Tanzania,Tanzanian style soft layered flatbread,dinner,side,2,hard,60,20,8,230,4,8,35,1,1,0,180,Tanzanian|Bread|Flatbread|Wheat,draft
+mandazi-ya-tanzania,Mandazi ya Tanzania,Tanzanian coconut flavored fried sweet bread,snack,dessert,2,medium,60,15,10,210,4,8,30,1,8,0,120,Tanzanian|Fried|Sweet|Snack,draft
+mchicha,Mchicha,Tanzanian spinach stew cooked with peanuts and coconut,dinner,side,2,easy,10,20,4,190,7,13,12,4,3,0,190,Tanzanian|Vegetarian|Greens|Peanuts,draft
+kuku-wa-kupaka,Kuku wa Kupaka,Grilled chicken smothered in a rich coconut curry sauce,dinner,main,2,medium,15,40,5,400,32,23,10,2,4,115,420,Tanzanian|Chicken|Coconut|Grilled,draft
+maharage-ya-nazi,Maharage ya Nazi,Red kidney beans stewed in creamy coconut sauce,dinner,main,2,easy,10,60,5,310,13,12,40,10,4,0,290,Tanzanian|Vegetarian|Beans|Coconut,draft
+sambusa,Sambusa,Tanzanian style fried pastry filled with spiced meat,snack,snack,2,medium,30,30,12,180,8,10,15,1,1,25,260,Tanzanian|Fried|Snack|Meat,draft
+vitumbua,Vitumbua,"Sweet rice and coconut mini pancakes, a Zanzibar favorite",dessert,dessert,2,medium,240,15,12,140,2,4,23,0,9,0,60,Tanzanian|Zanzibar|Fried|Sweet,draft
+urojo-zanzibar-mix,Urojo (Zanzibar Mix),"Tangy Zanzibar soup with mango, potato fritters and cassava",snack,starter,2,medium,20,45,6,310,8,10,45,4,10,10,420,Tanzanian|Zanzibar|Soup|Street Food,draft
+tanzanian-beef-stew,Tanzanian Beef Stew,"Rich tomato based beef stew, Tanzanian home style",dinner,main,2,medium,15,90,6,390,28,20,12,2,5,90,460,Tanzanian|Beef|Stew|Comfort Food,draft
+wali-wa-kukaanga-wa-tanzania,Wali wa Kukaanga wa Tanzania,Tanzanian style fried rice with vegetables and spices,dinner,main,2,medium,10,20,5,310,6,9,50,2,3,0,380,Tanzanian|Rice|Fried|Vegetarian,draft
+kande,Kande,"Tanzanian corn and bean stew, a filling everyday dish",dinner,main,2,easy,10,60,6,300,14,5,52,9,4,0,270,Tanzanian|Vegetarian|Beans|Maize,draft
+mbege-inspired-banana-drink,Mbege-Inspired Banana Drink,Non-alcoholic version of the traditional Chagga banana millet drink,beverage,beverage,2,easy,20,60,6,180,3,1,40,3,20,0,15,Tanzanian|Chagga|Traditional|Beverage,draft
+chips-mayai,Chips Mayai,Tanzanian street food omelette made with french fries,snack,main,2,medium,10,20,2,520,16,28,52,4,2,370,420,Tanzanian|Street Food|Egg|Comfort Food,draft
+tanzanian-fish-fry,Tanzanian Fish Fry,Whole fish marinated and deep fried Tanzanian style,dinner,main,2,medium,15,20,4,360,30,22,8,1,1,75,380,Tanzanian|Fish|Fried|Coastal,draft
+supu-ya-pembe,Supu ya Pembe,"Tanzanian goat leg soup, a hearty broth often eaten for breakfast",dinner,starter,2,medium,15,120,6,280,26,15,4,1,1,110,410,Tanzanian|Soup|Goat|Traditional,draft
+tanzanian-coconut-beans,Tanzanian Coconut Beans,Beans slow cooked in a fragrant coconut and spice sauce,dinner,main,2,easy,10,60,5,300,13,11,39,10,4,0,280,Tanzanian|Vegetarian|Beans|Coconut,draft
+kachumbari-ya-tanzania,Kachumbari ya Tanzania,Tanzanian tomato onion salad with lime and chili,dinner,side,2,easy,10,0,4,35,1,0,8,2,4,0,120,Tanzanian|Salad|Fresh|Side,draft
+tanzanian-chicken-curry,Tanzanian Chicken Curry,Slow simmered chicken curry with coconut and spices,dinner,main,2,medium,15,40,5,385,30,22,10,2,4,115,420,Tanzanian|Chicken|Curry|Coconut,draft
+mahindi-ya-kuchoma,Mahindi ya Kuchoma,"Roasted maize on the cob, a popular street snack",snack,snack,2,medium,5,15,4,140,4,2,30,3,5,0,10,Tanzanian|Street Food|Corn|Snack,draft
+tanzanian-octopus-curry,Tanzanian Octopus Curry,Zanzibar style octopus simmered in coconut curry sauce,dinner,main,2,medium,20,60,5,310,28,16,10,2,3,90,400,Tanzanian|Zanzibar|Seafood|Coconut,draft
+bagia,Bagia,Tanzanian spiced lentil and potato fritters,snack,snack,2,medium,120,20,6,210,7,9,26,4,2,0,280,Tanzanian|Fried|Snack|Vegetarian,draft
+tanzanian-rice-pudding,Tanzanian Rice Pudding,Creamy coconut rice pudding sweetened with cardamom,dessert,dessert,2,medium,5,35,6,230,3,7,38,1,18,0,40,Tanzanian|Dessert|Rice|Coconut,draft
+tangawizi-tea,Tangawizi Tea,Strong ginger black tea popular across Tanzania,beverage,beverage,2,easy,2,10,4,90,2,3,13,0,12,8,40,Tanzanian|Tea|Ginger|Beverage,draft
+injera,Injera,Spongy fermented flatbread made from teff flour,dinner,side,2,hard,0,10,8,120,4,1,25,3,1,0,10,Ethiopian|Fermented|Bread|Teff,draft
+doro-wat,Doro Wat,"Ethiopia's national dish, a rich spicy chicken stew with berbere",dinner,main,4,medium,20,90,6,420,33,24,14,3,5,220,480,Ethiopian|Chicken|Spicy|Berbere,draft
+misir-wat,Misir Wat,Spicy red lentil stew flavored with berbere,dinner,main,4,easy,10,40,6,240,13,6,36,9,3,0,320,Ethiopian|Vegetarian|Lentils|Spicy,draft
+tibs,Tibs,"Sautéed beef cubes with onions, peppers and rosemary",dinner,main,4,medium,10,25,4,360,30,22,8,2,4,90,400,Ethiopian|Beef|Sauteed|Spicy,draft
+shiro,Shiro,"Smooth chickpea flour stew, a beloved Ethiopian vegetarian staple",dinner,main,2,easy,5,25,5,220,10,8,28,6,2,0,300,Ethiopian|Vegetarian|Chickpea|Comfort Food,draft
+kitfo,Kitfo,Ethiopian minced raw or lightly warmed beef seasoned with spiced butter,dinner,main,3,medium,10,15,4,380,32,26,3,1,0,95,320,Ethiopian|Beef|Traditional|Spiced,draft
+gomen,Gomen,"Collard greens cooked simply with onions and garlic, Ethiopian style",dinner,side,2,easy,10,20,4,90,4,5,9,3,2,0,180,Ethiopian|Vegetarian|Greens|Side,draft
+atkilt-wat,Atkilt Wat,"Cabbage, carrot and potato stew mildly spiced with turmeric",dinner,side,1,easy,10,30,5,160,4,6,24,5,6,0,220,Ethiopian|Vegetarian|Vegetables|Mild,draft
+berbere-beef-stew,Berbere Beef Stew,Slow simmered beef stew flavored heavily with berbere spice,dinner,main,4,medium,15,90,6,400,29,21,12,3,4,90,470,Ethiopian|Beef|Stew|Spicy,draft
+ethiopian-lentil-soup,Ethiopian Lentil Soup,Warm brown lentil soup spiced with berbere and garlic,dinner,starter,2,medium,10,45,6,210,12,4,32,8,3,0,330,Ethiopian|Soup|Lentils|Vegetarian,draft
+ayib-with-gomen,Ayib with Gomen,Ethiopian fresh cottage-style cheese served with sautéed greens,dinner,side,2,easy,15,20,4,180,12,10,8,2,4,25,220,Ethiopian|Vegetarian|Cheese|Side,draft
+ethiopian-chicken-soup,Ethiopian Chicken Soup,Light spiced chicken broth with vegetables,dinner,starter,3,medium,15,60,5,240,26,9,8,2,3,95,380,Ethiopian|Soup|Chicken|Spiced,draft
+fosolia,Fosolia,Green beans and carrots sautéed with onions and garlic,dinner,side,2,easy,10,20,4,110,3,6,13,4,5,0,180,Ethiopian|Vegetarian|Vegetables|Side,draft
+ethiopian-spiced-butter-fish,Ethiopian Spiced Butter Fish,Fish simmered in niter kibbeh spiced clarified butter sauce,dinner,main,3,medium,15,30,4,320,28,20,6,1,2,90,390,Ethiopian|Fish|Spiced|Butter,draft
+ethiopian-sambusa,Ethiopian Sambusa,Crispy triangular pastries filled with spiced lentils or beef,snack,snack,3,medium,30,30,12,175,7,9,17,2,1,15,250,Ethiopian|Fried|Snack|Spiced,draft
+genfo,Genfo,Thick barley or wheat porridge served with spiced butter well,breakfast,side,2,hard,5,20,4,260,6,10,38,3,1,20,180,Ethiopian|Breakfast|Porridge|Traditional,draft
+ethiopian-coffee-buna,Ethiopian Coffee (Buna),Traditional Ethiopian coffee ceremony brew,beverage,beverage,2,easy,5,20,4,5,0,0,1,0,0,0,2,Ethiopian|Coffee|Traditional|Ceremony,draft
+tej,Tej,Traditional Ethiopian honey wine flavored with gesho,beverage,beverage,2,easy,0,15,8,180,0,0,30,0,29,0,5,Ethiopian|Fermented|Honey Wine|Traditional,draft
+shimbra-asa,Shimbra Asa,"Ethiopian spiced chickpea stew, a Lenten favorite",dinner,main,3,easy,10,40,5,250,12,7,34,8,4,0,300,Ethiopian|Vegetarian|Chickpeas|Spiced,draft
+ethiopian-beef-tibs-rice-bowl,Ethiopian Beef Tibs Rice Bowl,Spiced sautéed beef tibs served over seasoned rice,dinner,main,2,medium,15,35,4,480,30,20,45,3,3,90,420,Ethiopian|One Dish Meal|Beef|Rice,draft
+matoke,Matoke,"Steamed and mashed green bananas, a Ugandan staple",dinner,side,2,easy,15,60,6,220,2,0,55,4,25,0,10,Ugandan|Vegetarian|Banana|Staple,draft
+rolex,Rolex,Ugandan street food of a rolled chapati wrapped around an omelette,snack,snack,2,medium,10,15,2,330,14,17,32,2,3,190,380,Ugandan|Street Food|Egg|Snack,draft
+binyebwa-groundnut-stew,Binyebwa (Groundnut Stew),Rich Ugandan peanut sauce stewed with vegetables,dinner,side,2,easy,10,30,5,240,9,17,15,4,3,0,220,Ugandan|Vegetarian|Peanuts|Stew,draft
+luwombo,Luwombo,"Chicken stewed with groundnut sauce, steamed inside banana leaves",dinner,main,2,medium,20,90,6,400,31,22,12,3,4,110,400,Ugandan|Chicken|Steamed|Traditional,draft
+ugandan-beef-stew,Ugandan Beef Stew,Everyday beef stew simmered with tomatoes and onions,dinner,main,2,medium,15,90,6,390,28,20,11,2,5,90,460,Ugandan|Beef|Stew|Comfort Food,draft
+posho,Posho,"Ugandan firm maize meal, similar to ugali",dinner,side,2,easy,5,15,6,230,5,1,50,3,0,0,5,Ugandan|Staple|Maize|Vegetarian,draft
+malewa,Malewa,"Bamboo shoot stew, a traditional dish from the Elgon region",dinner,side,2,easy,15,60,5,170,6,9,16,5,3,0,220,Ugandan|Vegetarian|Traditional|Bamboo,draft
+ugandan-fish-stew,Ugandan Fish Stew,Tilapia simmered in a tomato and onion sauce,dinner,main,2,medium,15,30,4,300,28,14,9,2,4,70,390,Ugandan|Fish|Stew|Comfort Food,draft
+katogo,Katogo,Ugandan breakfast dish of matoke cooked together with beef or beans,breakfast,main,2,medium,15,60,5,380,22,17,32,4,10,80,400,Ugandan|One Dish Meal|Breakfast|Banana,draft
+ugandan-beans,Ugandan Beans,Simple stewed red beans seasoned with onions and tomatoes,dinner,main,2,easy,10,60,6,270,14,4,45,10,4,0,270,Ugandan|Vegetarian|Beans|Staple,draft
+ugandan-chapati,Ugandan Chapati,"Soft pan-fried flatbread, popular across Uganda",dinner,side,2,hard,60,20,8,230,4,8,35,1,1,0,180,Ugandan|Bread|Flatbread|Wheat,draft
+ugandan-pumpkin-stew,Ugandan Pumpkin Stew,Sweet pumpkin simmered with onions and a touch of peanut,dinner,side,2,easy,10,30,5,160,4,6,24,3,8,0,180,Ugandan|Vegetarian|Pumpkin|Side,draft
+groundnut-sauce-chicken,Groundnut Sauce Chicken,Chicken simmered in a thick savory peanut sauce,dinner,main,2,medium,15,60,5,420,32,25,12,3,4,115,410,Ugandan|Chicken|Peanuts|Stew,draft
+muchomo,Muchomo,"Ugandan grilled skewered meat, popular roadside snack",snack,main,2,medium,15,25,5,350,30,22,3,0,1,90,400,Ugandan|Grilled|Meat|Street Food,draft
+ugandan-cassava,Ugandan Cassava,"Boiled and lightly fried cassava, a common accompaniment",dinner,side,2,easy,10,30,5,240,2,6,45,2,2,0,150,Ugandan|Vegetarian|Cassava|Side,draft
+nsenene,Nsenene,"Pan fried grasshoppers, a seasonal Ugandan delicacy",snack,snack,2,medium,10,15,4,210,20,12,3,0,0,90,300,Ugandan|Snack|Traditional|Delicacy,draft
+ugandan-peanut-butter-greens,Ugandan Peanut Butter Greens,Amaranth or spinach cooked with natural peanut butter,dinner,side,2,easy,10,20,4,180,7,12,12,4,3,0,190,Ugandan|Vegetarian|Greens|Peanuts,draft
+ugandan-passion-fruit-juice,Ugandan Passion Fruit Juice,"Refreshing fresh passion fruit juice, popular across Uganda",beverage,beverage,2,easy,10,0,4,90,1,0,22,1,20,0,5,Ugandan|Beverage|Fruit|Fresh,draft
+ugandan-sweet-potato-dessert,Ugandan Sweet Potato Dessert,Mashed sweet potatoes sweetened and lightly spiced,dessert,dessert,2,medium,10,30,5,210,3,5,40,4,16,10,60,Ugandan|Dessert|Sweet Potato|Simple,draft
+kalo-millet-bread,Kalo (Millet Bread),"Dense Ugandan millet dough, traditionally eaten with soup or stew",dinner,side,2,hard,5,20,6,210,5,1,45,3,0,0,5,Ugandan|Staple|Millet|Traditional,draft
+jollof-rice,Jollof Rice,West African one-pot smoky tomato rice dish,dinner,main,2,medium,15,45,6,380,7,10,64,3,6,0,480,West African|Rice|Nigerian|Ghanaian,draft
+egusi-soup,Egusi Soup,Rich Nigerian soup made with ground melon seeds and leafy greens,dinner,starter,2,medium,15,60,6,420,24,30,10,4,2,80,460,West African|Nigerian|Soup|Melon Seed,draft
+fufu,Fufu,"Smooth pounded cassava dough, a staple West African accompaniment",dinner,side,2,easy,10,30,6,230,1,0,56,3,2,0,5,West African|Vegetarian|Cassava|Staple,draft
+suya,Suya,Spicy grilled skewered beef coated in a peanut spice blend,dinner,main,2,medium,30,20,5,340,30,20,7,2,1,85,420,West African|Nigerian|Grilled|Peanuts,draft
+efo-riro,Efo Riro,Nigerian spinach stew cooked with palm oil and peppers,dinner,side,4,easy,15,35,5,210,8,14,12,4,4,40,400,West African|Nigerian|Vegetarian|Spicy,draft
+west-african-groundnut-soup,West African Groundnut Soup,Creamy peanut soup simmered with chicken or beef,dinner,starter,2,medium,15,60,6,400,26,24,16,3,5,90,450,West African|Peanuts|Soup|Chicken,draft
+moin-moin,Moin Moin,Steamed Nigerian bean pudding made from blended black-eyed peas,dinner,main,2,easy,30,60,8,210,12,9,20,6,2,0,320,West African|Nigerian|Beans|Steamed,draft
+akara,Akara,Deep fried bean fritters made from blended black-eyed peas,snack,snack,2,medium,30,20,8,180,8,10,15,4,1,0,260,West African|Nigerian|Fried|Snack,draft
+jollof-chicken-bowl,Jollof Chicken Bowl,Smoky jollof rice served with grilled seasoned chicken,dinner,main,2,medium,20,60,6,520,32,18,60,3,6,110,510,West African|One Dish Meal|Rice|Chicken,draft
+west-african-peanut-chicken,West African Peanut Chicken,Chicken simmered in a thick tomato peanut sauce,dinner,main,2,medium,15,60,5,430,32,26,13,3,5,115,420,West African|Chicken|Peanuts|Stew,draft
+dodo-fried-plantains,Dodo (Fried Plantains),Sweet ripe plantains fried until caramelized,dinner,side,2,easy,10,15,4,210,1,9,32,2,17,0,5,West African|Vegetarian|Plantain|Side,draft
+west-african-fish-pepper-soup,West African Fish Pepper Soup,Spicy light broth with fish and aromatic spices,dinner,starter,4,medium,15,35,5,220,26,7,6,1,2,80,400,West African|Fish|Soup|Spicy,draft
+waakye,Waakye,Ghanaian rice and beans cooked together with sorghum leaves for color,dinner,main,2,medium,15,60,6,360,12,3,68,7,3,0,280,West African|Ghanaian|Rice|Beans,draft
+chin-chin,Chin Chin,Crunchy sweet fried dough snack popular in Nigeria,dessert,dessert,2,medium,20,20,10,200,3,9,28,1,10,25,80,West African|Nigerian|Fried|Sweet,draft
+zobo-hibiscus-drink,Zobo (Hibiscus Drink),Refreshing chilled hibiscus flower drink flavored with ginger and pineapple,beverage,beverage,2,easy,10,20,6,90,0,0,23,0,21,0,5,West African|Nigerian|Beverage|Hibiscus,draft
+isombe,Isombe,"Mashed cassava leaves cooked with onions, eggplant and peanuts",dinner,side,2,easy,15,60,5,220,8,14,15,5,3,0,220,Rwandan|Vegetarian|Cassava Leaves|Traditional,draft
+ibihaza,Ibihaza,"Pumpkin stewed together with beans, a Rwandan comfort dish",dinner,main,2,easy,10,60,6,270,13,3,50,10,8,0,240,Rwandan|Vegetarian|Pumpkin|Beans,draft
+umutsima,Umutsima,"Firm cassava and maize flour dough, a Rwandan staple",dinner,side,2,easy,5,20,6,240,3,1,55,3,0,0,5,Rwandan|Staple|Cassava|Vegetarian,draft
+rwandan-beef-brochettes,Rwandan Beef Brochettes,Grilled beef skewers seasoned simply and cooked over charcoal,dinner,main,2,medium,20,20,5,340,30,21,4,1,2,90,400,Rwandan|Grilled|Beef|Skewers,draft
+ubugali,Ubugali,Burundian firm cassava and maize meal staple,dinner,side,2,easy,5,20,6,240,3,1,55,3,0,0,5,Burundian|Staple|Cassava|Vegetarian,draft
+rwandan-bean-stew,Rwandan Bean Stew,Kidney beans simmered with tomatoes and onions,dinner,main,2,easy,10,60,6,270,14,4,45,10,4,0,270,Rwandan|Vegetarian|Beans|Staple,draft
+sombe-with-fish,Sombe with Fish,Cassava leaves cooked together with dried fish and peanuts,dinner,main,2,medium,15,60,5,260,18,15,14,4,3,60,380,Rwandan|Fish|Cassava Leaves|Traditional,draft
+rwandan-chicken-stew,Rwandan Chicken Stew,Everyday chicken stew simmered with tomatoes and green peppers,dinner,main,2,medium,15,60,5,360,31,19,9,2,4,115,410,Rwandan|Chicken|Stew|Comfort Food,draft
+agatogo,Agatogo,Burundian plantain stew cooked with beef and vegetables,dinner,main,2,medium,15,60,6,380,23,17,32,4,9,80,400,Burundian|One Dish Meal|Plantain|Beef,draft
+rwandan-sweet-potato-mash,Rwandan Sweet Potato Mash,Simple mashed sweet potatoes seasoned with a little butter,dinner,side,2,easy,10,30,5,190,3,4,36,4,10,10,150,Rwandan|Vegetarian|Sweet Potato|Side,draft
+ikivuguto,Ikivuguto,Traditional Rwandan fermented milk drink,beverage,beverage,2,easy,0,0,4,140,8,8,10,0,10,28,105,Rwandan|Fermented|Milk|Traditional,draft
+rwandan-avocado-salad,Rwandan Avocado Salad,Simple fresh avocado and tomato salad,dinner,side,2,easy,10,0,4,210,3,17,13,7,3,0,110,Rwandan|Vegetarian|Salad|Fresh,draft
+burundian-peanut-stew,Burundian Peanut Stew,Mixed vegetables simmered in a thick peanut sauce,dinner,side,2,easy,15,35,5,230,8,15,16,5,4,0,200,Burundian|Vegetarian|Peanuts|Stew,draft
+ibitoki-sweet-banana-dessert,Ibitoki (Sweet Banana Dessert),Ripe bananas gently stewed with a touch of sugar and cinnamon,dessert,dessert,2,medium,5,20,4,160,1,0,40,3,28,0,5,Rwandan|Dessert|Banana|Simple,draft
+rwandan-ginger-tea,Rwandan Ginger Tea,Warming ginger tea popular across the Great Lakes region,beverage,beverage,2,easy,2,10,4,90,2,3,13,0,12,8,40,Rwandan|Tea|Ginger|Beverage,draft
