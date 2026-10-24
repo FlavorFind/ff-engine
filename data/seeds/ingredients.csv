@@ -149,3 +149,253 @@ whole-cumin,whole cumin,Spices & Seasonings,seasoning,false
 whole-fish,whole fish,Fish & Seafood,primary,false
 whole-tilapia,whole tilapia,Fish & Seafood,primary,false
 yeast,yeast,Other,secondary,true
+lamb-leg,Lamb leg,Meat,primary,false
+lamb-chops,Lamb chops,Meat,primary,false
+lamb-shoulder,Lamb shoulder,Meat,primary,false
+lamb-ribs,Lamb ribs,Meat,primary,false
+minced-lamb,Minced lamb,Meat,primary,false
+mutton-chunks,Mutton chunks,Meat,primary,false
+mutton-ribs,Mutton ribs,Meat,primary,false
+pork-belly,Pork belly,Meat,primary,false
+pork-ribs,Pork ribs,Meat,primary,false
+pork-chops,Pork chops,Meat,primary,false
+pork-sausages,Pork sausages,Meat,primary,false
+minced-pork,Minced pork,Meat,primary,false
+beef-liver,Beef liver,Meat,primary,false
+beef-kidney,Beef kidney,Meat,primary,false
+beef-heart,Beef heart,Meat,primary,false
+beef-tongue,Beef tongue,Meat,primary,false
+beef-brisket,Beef brisket,Meat,primary,false
+beef-shin,Beef shin,Meat,primary,false
+oxtail,Oxtail,Meat,primary,false
+goat-ribs,Goat ribs,Meat,primary,false
+goat-liver,Goat liver,Meat,primary,false
+goat-tripe,Goat tripe,Meat,primary,false
+goat-trotters,Goat trotters,Meat,primary,false
+beef-biltong,Beef biltong,Meat,primary,false
+camel-meat,Camel meat,Meat,primary,false
+rabbit-meat,Rabbit meat,Meat,primary,false
+chicken-breast,Chicken breast,Poultry,primary,false
+chicken-thighs,Chicken thighs,Poultry,primary,false
+chicken-drumsticks,Chicken drumsticks,Poultry,primary,false
+chicken-wings,Chicken wings,Poultry,primary,false
+whole-chicken,Whole chicken,Poultry,primary,false
+chicken-liver,Chicken liver,Poultry,primary,false
+chicken-gizzards,Chicken gizzards,Poultry,primary,false
+chicken-feet,Chicken feet,Poultry,secondary,false
+minced-chicken,Minced chicken,Poultry,primary,false
+guinea-fowl,Guinea fowl,Poultry,primary,false
+turkey,Turkey,Poultry,primary,false
+nile-perch,Nile perch,Fish & Seafood,primary,false
+nile-perch-fillets,Nile perch fillets,Fish & Seafood,primary,false
+dagaa,Dagaa,Fish & Seafood,primary,false
+omena,Omena,Fish & Seafood,primary,false
+mukene,Mukene,Fish & Seafood,primary,false
+catfish,Catfish,Fish & Seafood,primary,false
+mudfish,Mudfish,Fish & Seafood,primary,false
+tilapia-steaks,Tilapia steaks,Fish & Seafood,primary,false
+red-snapper,Red snapper,Fish & Seafood,primary,false
+kingfish,Kingfish,Fish & Seafood,primary,false
+tuna,Tuna,Fish & Seafood,primary,false
+sardines,Sardines,Fish & Seafood,primary,false
+mackerel,Mackerel,Fish & Seafood,primary,false
+prawns,Prawns,Fish & Seafood,primary,false
+jumbo-prawns,Jumbo prawns,Fish & Seafood,primary,false
+dried-prawns,Dried prawns,Fish & Seafood,secondary,false
+crab,Crab,Fish & Seafood,primary,false
+crab-meat,Crab meat,Fish & Seafood,primary,false
+lobster,Lobster,Fish & Seafood,primary,false
+squid,Squid,Fish & Seafood,primary,false
+mussels,Mussels,Fish & Seafood,primary,false
+smoked-fish,Smoked fish,Fish & Seafood,primary,false
+salted-fish,Salted fish,Fish & Seafood,primary,false
+stockfish,Stockfish,Fish & Seafood,primary,false
+rabbitfish,Rabbitfish,Fish & Seafood,primary,false
+terere,Terere,Vegetables,primary,false
+saga,Saga (spider plant),Vegetables,primary,false
+kunde-leaves,Kunde leaves (cowpea leaves),Vegetables,primary,false
+matembele,Matembele (sweet potato leaves),Vegetables,primary,false
+mrenda,Mrenda (jute mallow),Vegetables,primary,false
+bitterleaf,Bitterleaf,Vegetables,primary,false
+okra,Okra,Vegetables,primary,false
+cucumber,Cucumber,Vegetables,secondary,false
+lettuce,Lettuce,Vegetables,secondary,false
+spring-onions,Spring onions,Vegetables,secondary,false
+shallots,Shallots,Vegetables,secondary,false
+baby-corn,Baby corn,Vegetables,secondary,false
+red-cabbage,Red cabbage,Vegetables,secondary,false
+cauliflower,Cauliflower,Vegetables,primary,false
+broccoli,Broccoli,Vegetables,primary,false
+yellow-bell-pepper,Yellow bell pepper,Vegetables,secondary,false
+courgette,Courgette,Vegetables,secondary,false
+butternut-squash,Butternut squash,Vegetables,primary,false
+bitter-gourd,Bitter gourd,Vegetables,primary,false
+arrowroot,Arrowroot,Vegetables,primary,false
+taro-root,Taro root,Vegetables,primary,false
+yam,Yam,Vegetables,primary,false
+orange-fleshed-sweet-potato,Orange fleshed sweet potato,Vegetables,primary,false
+white-sweet-potato,White sweet potato,Vegetables,primary,false
+african-eggplant,African eggplant,Vegetables,primary,false
+mushrooms,Mushrooms,Vegetables,primary,false
+oyster-mushrooms,Oyster mushrooms,Vegetables,primary,false
+chayote,Chayote,Vegetables,primary,false
+sun-dried-tomatoes,Sun dried tomatoes,Vegetables,secondary,false
+cloves,Cloves,Spices & Seasonings,seasoning,false
+star-anise,Star anise,Spices & Seasonings,seasoning,false
+bay-leaves,Bay leaves,Spices & Seasonings,seasoning,false
+thyme,Thyme,Spices & Seasonings,seasoning,false
+oregano,Oregano,Spices & Seasonings,seasoning,false
+fenugreek-seeds,Fenugreek seeds,Spices & Seasonings,seasoning,false
+fenugreek-leaves,Fenugreek leaves,Spices & Seasonings,seasoning,false
+paprika,Paprika,Spices & Seasonings,seasoning,false
+cayenne-pepper,Cayenne pepper,Spices & Seasonings,seasoning,false
+white-pepper,White pepper,Spices & Seasonings,seasoning,false
+ground-cumin,Ground cumin,Spices & Seasonings,seasoning,false
+coriander-seeds,Coriander seeds,Spices & Seasonings,seasoning,false
+ground-coriander,Ground coriander,Spices & Seasonings,seasoning,false
+mustard-seeds,Mustard seeds,Spices & Seasonings,seasoning,false
+fennel-seeds,Fennel seeds,Spices & Seasonings,seasoning,false
+ground-cardamom,Ground cardamom,Spices & Seasonings,seasoning,false
+garam-masala,Garam masala,Spices & Seasonings,seasoning,false
+biryani-masala,Biryani masala,Spices & Seasonings,seasoning,false
+tea-masala,Tea masala,Spices & Seasonings,seasoning,false
+meat-masala,Meat masala,Spices & Seasonings,seasoning,false
+nigella-seeds,Nigella seeds,Spices & Seasonings,seasoning,false
+korarima,Korarima (Ethiopian cardamom),Spices & Seasonings,seasoning,false
+basil,Basil,Spices & Seasonings,garnish,false
+mint,Mint,Spices & Seasonings,garnish,false
+parsley,Parsley,Spices & Seasonings,garnish,false
+lemongrass,Lemongrass,Spices & Seasonings,seasoning,false
+curry-leaves,Curry leaves,Spices & Seasonings,seasoning,false
+vanilla,Vanilla,Spices & Seasonings,seasoning,false
+garlic-powder,Garlic powder,Spices & Seasonings,seasoning,false
+onion-powder,Onion powder,Spices & Seasonings,seasoning,false
+garlic-paste,Garlic paste,Spices & Seasonings,seasoning,false
+ginger-garlic-paste,Ginger garlic paste,Spices & Seasonings,seasoning,false
+scotch-bonnet-pepper,Scotch bonnet pepper,Spices & Seasonings,seasoning,false
+bird-eye-chili,Bird eye chili,Spices & Seasonings,seasoning,false
+dried-red-chili,Dried red chili,Spices & Seasonings,seasoning,false
+chili-flakes,Chili flakes,Spices & Seasonings,seasoning,false
+mekelesha-spice,Mekelesha spice blend,Spices & Seasonings,seasoning,false
+sea-salt,Sea salt,Spices & Seasonings,staple,true
+iodized-salt,Iodized salt,Spices & Seasonings,staple,true
+sorghum-flour,Sorghum flour,Grains,primary,false
+whole-sorghum,Whole sorghum,Grains,primary,false
+finger-millet-flour,Finger millet flour,Grains,primary,false
+pearl-millet-flour,Pearl millet flour,Grains,primary,false
+millet-grain,Millet grain,Grains,primary,false
+arrowroot-flour,Arrowroot flour,Grains,secondary,false
+sweet-potato-flour,Sweet potato flour,Grains,primary,false
+ugali-meal,Ugali meal (sifted maize meal),Grains,primary,false
+whole-maize-meal,Whole maize meal,Grains,primary,false
+maize-grits,Maize grits,Grains,primary,false
+cornstarch,Cornstarch,Grains,secondary,false
+oats,Oats,Grains,primary,false
+wholemeal-flour,Wholemeal flour,Grains,primary,false
+self-raising-flour,Self raising flour,Grains,primary,false
+semolina,Semolina,Grains,primary,false
+spaghetti,Spaghetti,Grains,primary,false
+brown-rice,Brown rice,Grains,primary,false
+pishori-rice,Pishori rice,Grains,primary,false
+teff-grain,Teff grain,Grains,primary,false
+injera,Injera,Grains,primary,false
+bread-crumbs,Bread crumbs,Grains,secondary,false
+rice-flour,Rice flour,Grains,primary,false
+pigeon-peas,Pigeon peas,Legumes,primary,false
+dried-pigeon-peas,Dried pigeon peas,Legumes,primary,false
+njahi,Njahi (black lablab beans),Legumes,primary,false
+black-gram,Black gram,Legumes,primary,false
+chana-dal,Chana dal,Legumes,primary,false
+broad-beans,Broad beans,Legumes,primary,false
+dried-broad-beans,Dried broad beans,Legumes,primary,false
+bambara-groundnuts,Bambara groundnuts,Legumes,primary,false
+soybeans,Soybeans,Legumes,primary,false
+haricot-beans,Haricot beans,Legumes,primary,false
+rosecoco-beans,Rosecoco beans,Legumes,primary,false
+canadian-wonder-beans,Canadian wonder beans,Legumes,primary,false
+yellow-beans,Yellow beans,Legumes,primary,false
+green-lentils,Green lentils,Legumes,primary,false
+yogurt,Yogurt,Dairy & Eggs,secondary,false
+buttermilk,Buttermilk,Dairy & Eggs,secondary,false
+fermented-milk,Fermented milk (maziwa lala),Dairy & Eggs,secondary,false
+mursik,Mursik (fermented milk),Dairy & Eggs,liquid,false
+fresh-cream,Fresh cream,Dairy & Eggs,secondary,false
+cheddar-cheese,Cheddar cheese,Dairy & Eggs,secondary,false
+cottage-cheese,Cottage cheese,Dairy & Eggs,secondary,false
+ayib,Ayib (Ethiopian cheese),Dairy & Eggs,secondary,false
+evaporated-milk,Evaporated milk,Dairy & Eggs,liquid,false
+condensed-milk,Sweetened condensed milk,Dairy & Eggs,secondary,false
+goat-milk,Goat milk,Dairy & Eggs,liquid,false
+camel-milk,Camel milk,Dairy & Eggs,liquid,false
+quail-eggs,Quail eggs,Dairy & Eggs,primary,false
+sunflower-oil,Sunflower oil,Fats & Oils,staple,true
+corn-oil,Corn oil,Fats & Oils,staple,true
+coconut-oil,Coconut oil,Fats & Oils,staple,true
+olive-oil,Olive oil,Fats & Oils,staple,true
+groundnut-oil,Groundnut oil,Fats & Oils,staple,true
+sesame-oil,Sesame oil,Fats & Oils,seasoning,false
+cottonseed-oil,Cottonseed oil,Fats & Oils,staple,true
+ghee,Ghee,Fats & Oils,secondary,false
+margarine,Margarine,Fats & Oils,secondary,false
+guava,Guava,Fruit,primary,false
+jackfruit,Jackfruit,Fruit,primary,false
+papaya,Papaya,Fruit,primary,false
+green-papaya,Green papaya,Fruit,primary,false
+yellow-passion-fruit,Yellow passion fruit,Fruit,primary,false
+purple-passion-fruit,Purple passion fruit,Fruit,primary,false
+orange,Orange,Fruit,primary,false
+tangerine,Tangerine,Fruit,primary,false
+grapefruit,Grapefruit,Fruit,primary,false
+peach,Peach,Fruit,primary,false
+tree-tomato,Tree tomato,Fruit,primary,false
+soursop,Soursop,Fruit,primary,false
+custard-apple,Custard apple,Fruit,primary,false
+sweet-melon,Sweet melon,Fruit,primary,false
+coconut,Coconut,Fruit,primary,false
+dates,Dates,Fruit,secondary,false
+baobab-fruit,Baobab fruit,Fruit,secondary,false
+pomegranate,Pomegranate,Fruit,secondary,false
+raisins,Raisins,Fruit,secondary,false
+green-mango,Green mango,Fruit,secondary,false
+finger-bananas,Finger bananas,Fruit,primary,false
+coconut-cream,Coconut cream,Liquids,liquid,false
+tamarind-water,Tamarind water,Liquids,liquid,false
+bone-broth,Bone broth,Liquids,liquid,false
+chicken-stock,Chicken stock,Liquids,liquid,false
+fish-stock,Fish stock,Liquids,liquid,false
+goat-broth,Goat broth,Liquids,liquid,false
+coconut-water,Coconut water,Liquids,liquid,false
+orange-juice,Orange juice,Liquids,liquid,false
+passion-fruit-juice,Passion fruit juice,Liquids,liquid,false
+lime-juice,Lime juice,Liquids,liquid,false
+white-vinegar,White vinegar,Liquids,liquid,false
+brewed-tea,Brewed tea,Liquids,liquid,false
+rose-water,Rose water,Liquids,liquid,false
+sugarcane-juice,Sugarcane juice,Liquids,liquid,false
+tomato-paste,Tomato paste,Other,secondary,false
+tomato-ketchup,Tomato ketchup,Other,secondary,false
+tinned-tomatoes,Tinned tomatoes,Other,secondary,false
+mayonnaise,Mayonnaise,Other,secondary,false
+mustard,Mustard,Other,seasoning,false
+chili-sauce,Chili sauce,Other,seasoning,false
+pili-pili-sauce,Pili pili sauce,Other,seasoning,false
+fish-sauce,Fish sauce,Other,seasoning,false
+oyster-sauce,Oyster sauce,Other,seasoning,false
+tamarind-paste,Tamarind paste,Other,seasoning,false
+baobab-powder,Baobab powder,Other,secondary,false
+sesame-seeds,Sesame seeds,Other,garnish,false
+pumpkin-seeds,Pumpkin seeds,Other,garnish,false
+sunflower-seeds,Sunflower seeds,Other,garnish,false
+cashew-nuts,Cashew nuts,Other,secondary,false
+macadamia-nuts,Macadamia nuts,Other,secondary,false
+desiccated-coconut,Desiccated coconut,Other,secondary,false
+baking-powder,Baking powder,Other,staple,true
+bicarbonate-of-soda,Bicarbonate of soda,Other,staple,true
+green-tea,Green tea leaves,Other,secondary,false
+mango-pickle,Mango pickle,Other,seasoning,false
+jaggery,Jaggery,Other,secondary,false
+awaze-paste,Awaze paste,Other,seasoning,false
+senafich,Senafich (Ethiopian mustard paste),Other,seasoning,false
+datta,Datta (Ethiopian green chili paste),Other,seasoning,false
+dried-cassava,Dried cassava,Other,secondary,false
+enset-kocho,Enset kocho,Other,primary,false
