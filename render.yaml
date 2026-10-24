@@ -8,7 +8,7 @@ services:
     runtime: python
     region: frankfurt
     plan: free
-    buildCommand: pip install -r requirements/prod.txt && python manage.py fix_migration_history && python manage.py migrate --no-input && python manage.py collectstatic --no-input && python manage.py seed_all
+    buildCommand: pip install -r requirements/prod.txt && python manage.py fix_migration_history && python manage.py migrate --no-input && python manage.py collectstatic --no-input && python manage.py seed_all && python manage.py ensure_superuser
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     healthCheckPath: /v1/health/
     envVars:
