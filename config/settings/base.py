@@ -43,10 +43,16 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "django_celery_beat",
     "django_celery_results",
+    # Two-factor authentication
+    "django_otp",
+    "django_otp.plugins.otp_totp",
+    "django_otp.plugins.otp_static",
+    "two_factor",
 ]
 
 LOCAL_APPS = [
     "apps.core",
+    "apps.accounts",
     "apps.ingredients",
     "apps.dishes",
     "apps.regions",
@@ -69,6 +75,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django_otp.middleware.OTPMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.core.middleware.RequestIDMiddleware",
@@ -127,6 +134,13 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Africa/Nairobi"
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+# ---------------------------------------------------------------------------
+# Auth
+# ---------------------------------------------------------------------------
+AUTH_USER_MODEL = "accounts.CustomUser"
+LOGIN_URL = "two_factor:login"
+LOGIN_REDIRECT_URL = "admin:index"
 
 # ---------------------------------------------------------------------------
 # Password validation
