@@ -43,11 +43,29 @@ def superuser(db):
 def curator_client(superuser):
     """Authenticated test client logged in as a superuser curator.
 
-    Named 'curator_client' to avoid shadowing pytest-django's built-in
-    'curator_client' fixture.
+    AdminSiteOTPRequired (added in E8) checks user.is_verified() in addition
+    to is_staff.  We create a StaticDevice (from django-otp) for the user and
+    mark the session as OTP-verified so the client can reach admin pages.
     """
+    from django_otp.plugins.otp_static.models import StaticDevice
+
+    device = StaticDevice.objects.create(user=superuser, name="test-device", confirmed=True)
+    device.token_set.create(token="123456")
+
     c = Client()
+    # Log in with password so a real session exists
     c.force_login(superuser)
+
+    # Mark the session as OTP-verified.  django-otp stores the verified device
+    # id in the session; two_factor.admin.AdminSiteOTPRequired calls
+    # user.is_verified() which reads that session key.
+    session = c.session
+    session["_auth_user_id"] = str(superuser.pk)
+    # django-otp marks a session verified by having the device confirm a token;
+    # the cleanest way in tests is to use otp_device_id directly.
+    session["otp_device_id"] = device.persistent_id
+    session.save()
+
     return c
 
 
