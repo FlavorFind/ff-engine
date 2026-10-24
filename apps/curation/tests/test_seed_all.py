@@ -23,11 +23,11 @@ class TestSeedAll:
         call_command("seed_all", verbosity=0)
 
     def test_ingredients_created(self):
-        """150 unique ingredients are seeded from the CSV."""
+        """400 unique ingredients are seeded from the CSV."""
         from apps.ingredients.models import Ingredient
 
         call_command("seed_all", verbosity=0)
-        assert Ingredient.objects.count() == 150
+        assert Ingredient.objects.count() == 400
 
     def test_ingredient_categories_created(self):
         """At least one IngredientCategory is created per unique category name."""

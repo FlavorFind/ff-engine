@@ -1,0 +1,224 @@
+{
+  "version": "0",
+  "description": "Golden set v0 — 20 hand-authored cases for the search input pipeline (E18). Each case exercises a specific resolver / pipeline behaviour and acts as a regression baseline.",
+  "cases": [
+    {
+      "id": "G01",
+      "description": "Exact English name resolves",
+      "inputs": ["Tomato"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {"Tomato": "exact_name"},
+        "confidence_min_for_input": {"Tomato": 1.0}
+      }
+    },
+    {
+      "id": "G02",
+      "description": "Swahili name resolves via exact_name (no alias needed)",
+      "inputs": ["Nyanya"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {"Nyanya": "exact_name"},
+        "confidence_min_for_input": {"Nyanya": 1.0}
+      }
+    },
+    {
+      "id": "G03",
+      "description": "Swahili alias resolves via exact_alias",
+      "inputs": ["nyanya"],
+      "aliases_required": [
+        {"ingredient_slug": "tomato", "alias": "nyanya", "normalized_alias": "nyanya", "language": "sw"}
+      ],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {"nyanya": "exact_alias"},
+        "confidence_min_for_input": {"nyanya": 1.0}
+      }
+    },
+    {
+      "id": "G04",
+      "description": "Common misspelling resolves via alias",
+      "inputs": ["tomatoe"],
+      "aliases_required": [
+        {"ingredient_slug": "tomato", "alias": "tomatoe", "normalized_alias": "tomatoe", "language": "en"}
+      ],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G05",
+      "description": "Quantity prefix is stripped before resolving",
+      "inputs": ["3 tomatoes"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G06",
+      "description": "Input is case-insensitive — ALL CAPS still resolves",
+      "inputs": ["TOMATO"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G07",
+      "description": "Multi-word Swahili name resolves (Unga wa mahindi → maize flour)",
+      "inputs": ["Unga wa mahindi"],
+      "expect": {
+        "matched_slugs": ["maize-flour"],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G08",
+      "description": "Staples are auto-added to the pool when an ingredient resolves",
+      "inputs": ["tomato"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "staples_added_min": 1,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G09",
+      "description": "Explicitly excluded staple is NOT added to the pool",
+      "inputs": ["tomato"],
+      "excluded_slugs": ["salt"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "pool_excludes_slugs": ["salt"],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G10",
+      "description": "Completely unknown token returns unmatched",
+      "inputs": ["xyzzy_no_such_ingredient_12345"],
+      "expect": {
+        "matched_slugs": [],
+        "unmatched": ["xyzzy_no_such_ingredient_12345"],
+        "is_empty": true
+      }
+    },
+    {
+      "id": "G11",
+      "description": "Empty input list returns empty ResolvedQuery",
+      "inputs": [],
+      "expect": {
+        "matched_slugs": [],
+        "unmatched": [],
+        "is_empty": true,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G12",
+      "description": "Mixed input — one matched, one unmatched",
+      "inputs": ["tomato", "xyzzy_unknown_abc"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "unmatched": ["xyzzy_unknown_abc"],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G13",
+      "description": "Duplicate inputs are deduplicated — tomato appears once in matched_ids",
+      "inputs": ["Tomato", "tomato", "TOMATO"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "matched_count": 1,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G14",
+      "description": "Multi-token query — Tomato + Onion both resolve",
+      "inputs": ["Tomato", "Onion"],
+      "expect": {
+        "matched_slugs": ["tomato", "onion"],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G15",
+      "description": "Pool completeness — typing only maize flour covers ugali non-staple requirements",
+      "inputs": ["maize flour"],
+      "dish_slug": "ugali",
+      "expect": {
+        "matched_slugs": ["maize-flour"],
+        "pool_covers_dish_non_staple_required": true,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G16",
+      "description": "is_empty is True when only unmatched tokens given",
+      "inputs": ["zzz_nope_aaa"],
+      "expect": {
+        "is_empty": true
+      }
+    },
+    {
+      "id": "G17",
+      "description": "has_ambiguity is False for a clean single-token match",
+      "inputs": ["tomato"],
+      "expect": {
+        "has_ambiguity": false,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G18",
+      "description": "resolve_many returns one result per unique input token",
+      "inputs": ["Tomato", "Onion", "xyzzy_unk"],
+      "expect": {
+        "results_count": 3,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G19",
+      "description": "method field is set on a fuzzy match",
+      "inputs": ["tomatos"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "method_for_input": {"tomatos": "fuzzy"},
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G20",
+      "description": "confidence is 1.0 for an exact name match",
+      "inputs": ["Tomato"],
+      "expect": {
+        "matched_slugs": ["tomato"],
+        "confidence_min_for_input": {"Tomato": 1.0},
+        "is_empty": false
+      }
+    }
+  ]
+}
