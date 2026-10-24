@@ -24,6 +24,7 @@ import csv
 import logging
 from pathlib import Path
 
+from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
@@ -33,7 +34,7 @@ from apps.ingredients.models import Ingredient, IngredientCategory
 
 logger = logging.getLogger(__name__)
 
-SEEDS_DIR = Path(__file__).resolve().parents[5] / "data" / "seeds"
+SEEDS_DIR = Path(settings.BASE_DIR) / "data" / "seeds"
 
 # ── field-value maps ──────────────────────────────────────────────────────────
 
