@@ -1,20 +1,37 @@
 name: Deploy to Staging
 
+# Render auto-deploys on every push to main (Auto-Deploy: On Commit).
+# This workflow records the deploy in the GitHub Actions audit trail
+# and verifies the staging health endpoint after deploy.
+
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy:
-    name: Deploy staging
+  verify-staging:
+    name: Verify staging health after deploy
     runs-on: ubuntu-latest
     environment: staging
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Wait for Render deploy to complete
+        # Render typically takes 2-3 minutes to build and deploy
+        run: sleep 180
 
-      - name: Deploy to staging server
-        # Replace with your actual deploy command (SSH, Docker, etc.)
-        # Example: SSH in and pull + restart containers
+      - name: Check staging health endpoint
         run: |
-          echo "Staging deploy step — wire up your server here in E7"
+          STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+            https://ff-engine-kuar.onrender.com/v1/health/)
+          echo "Health check status: $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "Staging health check failed with status $STATUS"
+            exit 1
+          fi
+          echo "Staging is healthy ✓"
+
+      - name: Print staging URL
+        run: |
+          echo "Staging URL: https://ff-engine-kuar.onrender.com"
+          echo "Admin:       https://ff-engine-kuar.onrender.com/admin/"
+          echo "API docs:    https://ff-engine-kuar.onrender.com/docs/"
