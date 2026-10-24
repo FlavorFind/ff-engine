@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import csv
 import logging
+import re
 from pathlib import Path
 
 from django.conf import settings
@@ -234,6 +235,24 @@ class Command(BaseCommand):
         self.stdout.write(f"  Dishes       created={created}  skipped={skipped}")
         return {"dishes_created": created, "dishes_skipped": skipped}
 
+    # ── quantity parsing ──────────────────────────────────────────────────────
+
+    @staticmethod
+    def _parse_quantity(raw: str) -> tuple[str | None, str]:
+        """
+        Split "1 kg" → (Decimal-compatible "1", "kg")
+        Split "2 tbsp" → ("2", "tbsp")
+        Split "1/2 cup" → (None, "1/2 cup")   # fractions stored as note only
+        Returns (numeric_str_or_None, unit_note).
+        """
+        raw = raw.strip()
+        if not raw:
+            return None, ""
+        m = re.match(r"^(\d+(?:\.\d+)?)\s*(.*)", raw)
+        if m:
+            return m.group(1), m.group(2).strip()
+        return None, raw  # e.g. "a pinch", "to taste"
+
     # ── dish ingredients ──────────────────────────────────────────────────────
 
     def _seed_dish_ingredients(self, dry_run: bool) -> dict:
@@ -249,7 +268,7 @@ class Command(BaseCommand):
                 dish_slug = row["dish_slug"].strip()
                 ing_slug = row["ingredient_slug"].strip()
                 role = row["role"].strip()
-                quantity = row["quantity"].strip()
+                qty_raw = row["quantity"].strip()
                 position = _safe_int(row.get("position", "1"), 1)
 
                 if role not in VALID_ROLES:
@@ -278,12 +297,15 @@ class Command(BaseCommand):
                 dish = dish_cache[dish_slug]
                 ing = ing_cache[ing_slug]
 
+                qty_num, qty_note = self._parse_quantity(qty_raw)
+
                 _, was_created = DishIngredient.objects.get_or_create(
                     dish=dish,
                     ingredient=ing,
                     defaults={
                         "role": role,
-                        "quantity": quantity,
+                        "quantity": qty_num,  # Decimal or None
+                        "preparation_note": qty_raw,  # full string e.g. "1 kg"
                         "position": position,
                     },
                 )
