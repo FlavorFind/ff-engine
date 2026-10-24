@@ -77,18 +77,13 @@ jobs:
             echo "::notice::seed_all not yet built (E9) — skipping"
           fi
 
-      - name: Golden set (E18 — skipped until built)
+      - name: Golden set (E18)
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
-        run: |
-          if [ -d "data/golden" ] && [ "$(ls -A data/golden 2>/dev/null)" ]; then
-            pytest data/golden/ --tb=short -q
-          else
-            echo "::notice::Golden set not yet built (E18) — skipping"
-          fi
+        run: python manage.py run_golden_set --json
 
       - name: QA report (E14 — skipped until built)
         env:

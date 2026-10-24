@@ -206,8 +206,12 @@ SPECTACULAR_SETTINGS = {
 # ---------------------------------------------------------------------------
 # CORS
 # ---------------------------------------------------------------------------
+# Closed by default. Set CORS_ALLOWED_ORIGINS in the environment to allow
+# specific origins (e.g. the internal test console during Iteration 5).
+# CORS_ALLOW_ALL_ORIGINS must never be True in production.
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
 CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS", default=False)
+CORS_ALLOW_CREDENTIALS = False
 
 # ---------------------------------------------------------------------------
 # Logging — structured JSON logs with request IDs

@@ -19,6 +19,14 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ["https://ff-engine-kuar.onrender.com"]
 
+# CORS — only the internal test console origin is allowed in production.
+# Add more origins via the CORS_ALLOWED_ORIGINS environment variable.
+CORS_ALLOWED_ORIGINS = env.list(  # type: ignore[misc]  # noqa: F405
+    "CORS_ALLOWED_ORIGINS",
+    default=["https://ff-engine-kuar.onrender.com"],
+)
+CORS_ALLOW_ALL_ORIGINS = False
+
 # Structured JSON logging in production
 LOGGING["handlers"]["console"]["formatter"] = "json"  # noqa: F405
 
