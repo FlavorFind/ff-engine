@@ -5,9 +5,17 @@ on:
     - cron: "0 1 * * *"  # 1 AM UTC = 4 AM Nairobi time
   workflow_dispatch:      # allow manual trigger
 
+# ---------------------------------------------------------------------------
+# Iteration gate: steps below activate as build steps complete.
+#   seed_all       — E9  (seed first 100 ingredients and 20 dishes)
+#   golden set     — E18 (golden query set runner)
+#   qa_report      — E14 (QA report and dashboard)
+# Until those commands exist, each step exits cleanly with a notice.
+# ---------------------------------------------------------------------------
+
 jobs:
-  golden-set:
-    name: Golden query set
+  nightly:
+    name: Nightly — migrate, seed, golden set, QA
     runs-on: ubuntu-latest
 
     services:
@@ -48,40 +56,49 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/dev.txt
 
-      - name: Load seed data and run golden set
+      - name: Migrate
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.test
+          DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
+          REDIS_URL: redis://localhost:6379/0
+          SECRET_KEY: ci-secret-key-not-for-production
+        run: python manage.py migrate --noinput
+
+      - name: Seed data (E9 — skipped until built)
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
         run: |
-          python manage.py migrate --noinput
-          python manage.py seed_all --env test
-          pytest data/golden/ --tb=short -q
+          if python manage.py help seed_all >/dev/null 2>&1; then
+            python manage.py seed_all --env test
+          else
+            echo "::notice::seed_all not yet built (E9) — skipping"
+          fi
 
-  data-integrity:
-    name: Data integrity checks
-    runs-on: ubuntu-latest
-    needs: golden-set
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements/dev.txt
-
-      - name: Run QA report
+      - name: Golden set (E18 — skipped until built)
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
         run: |
-          python manage.py qa_report --fail-on-critical
+          if [ -d "data/golden" ] && [ "$(ls -A data/golden 2>/dev/null)" ]; then
+            pytest data/golden/ --tb=short -q
+          else
+            echo "::notice::Golden set not yet built (E18) — skipping"
+          fi
+
+      - name: QA report (E14 — skipped until built)
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.test
+          DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
+          REDIS_URL: redis://localhost:6379/0
+          SECRET_KEY: ci-secret-key-not-for-production
+        run: |
+          if python manage.py help qa_report >/dev/null 2>&1; then
+            python manage.py qa_report --fail-on-critical
+          else
+            echo "::notice::qa_report not yet built (E14) — skipping"
+          fi

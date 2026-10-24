@@ -3,9 +3,13 @@
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from two_factor.urls import urlpatterns as tf_urls
 
 urlpatterns = [
-    # Django admin
+    # Two-factor auth login (replaces the standard Django login).
+    # Must come before admin/ so the admin login redirect lands here.
+    path("", include(tf_urls, namespace="two_factor")),
+    # Django admin — protected by AdminSiteOTPRequired (see accounts/admin.py)
     path("admin/", admin.site.urls),
     # API v1
     path("v1/", include("apps.api.urls")),
