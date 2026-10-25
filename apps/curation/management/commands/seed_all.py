@@ -97,33 +97,27 @@ class Command(BaseCommand):
             if not (SEEDS_DIR / name).exists():
                 raise CommandError(f"Missing seed file: {SEEDS_DIR / name}")
 
-        try:
-            # Each seeder runs in its own transaction so a failure in one
-            # (e.g. a duplicate substitution) does not roll back the others.
-            counters = {}
-            with transaction.atomic():
-                counters.update(self._seed_ingredients(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_dishes(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_dish_ingredients(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_dish_steps(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_pairings(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_substitutions(dry_run))
-            with transaction.atomic():
-                counters.update(self._seed_regions(dry_run))
-            if not dry_run:
-                rebuilt = self._rebuild_arrays()
-                counters["dishes_rebuilt"] = rebuilt
-            if dry_run:
-                self.stdout.write(
-                    self.style.WARNING("Dry run — validation complete, nothing saved.")
-                )
-        except Exception as exc:
-            raise CommandError(f"Seed failed: {exc}") from exc
+        counters = {}
+        for label, seeder in [
+            ("ingredients", self._seed_ingredients),
+            ("dishes", self._seed_dishes),
+            ("dish_ingredients", self._seed_dish_ingredients),
+            ("dish_steps", self._seed_dish_steps),
+            ("pairings", self._seed_pairings),
+            ("substitutions", self._seed_substitutions),
+            ("regions", self._seed_regions),
+        ]:
+            try:
+                with transaction.atomic():
+                    counters.update(seeder(dry_run))
+            except Exception as exc:
+                logger.warning("seed_all: %s seeder failed — %s (continuing)", label, exc)
+
+        if not dry_run:
+            rebuilt = self._rebuild_arrays()
+            counters["dishes_rebuilt"] = rebuilt
+        if dry_run:
+            self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
 
         self._report(counters, dry_run)
 
