@@ -119,7 +119,9 @@ class Command(BaseCommand):
                 rebuilt = self._rebuild_arrays()
                 counters["dishes_rebuilt"] = rebuilt
             if dry_run:
-                self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
+                self.stdout.write(
+                    self.style.WARNING("Dry run — validation complete, nothing saved.")
+                )
         except Exception as exc:
             raise CommandError(f"Seed failed: {exc}") from exc
 
