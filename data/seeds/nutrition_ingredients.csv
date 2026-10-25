@@ -1,0 +1,51 @@
+ingredient_name_en,kcal,protein_g,carbs_g,fat_g,fibre_g,sodium_mg,source,confidence
+Maize flour,362,8.10,76.80,3.60,7.30,2.00,USDA FoodData Central,high
+Rice,130,2.69,28.17,0.28,0.40,1.00,USDA FoodData Central,high
+Wheat flour,364,10.33,76.31,0.98,2.70,2.00,USDA FoodData Central,high
+Sorghum,329,10.62,72.09,3.46,6.30,6.00,USDA FoodData Central,high
+Millet,378,11.02,72.85,4.22,8.50,5.00,USDA FoodData Central,high
+Sweet potato,86,1.57,20.12,0.05,3.00,55.00,USDA FoodData Central,high
+Cassava,160,1.36,38.06,0.28,1.80,14.00,USDA FoodData Central,high
+Irish potato,77,2.02,17.47,0.09,2.20,6.00,USDA FoodData Central,high
+Plantain,122,1.30,31.89,0.37,2.30,4.00,USDA FoodData Central,high
+Banana,89,1.09,22.84,0.33,2.60,1.00,USDA FoodData Central,high
+Beef,250,26.33,0.00,15.41,0.00,72.00,USDA FoodData Central,high
+Chicken,165,31.02,0.00,3.57,0.00,74.00,USDA FoodData Central,high
+Tilapia,96,20.08,0.00,1.70,0.00,52.00,USDA FoodData Central,high
+Nile perch,89,19.40,0.00,0.88,0.00,58.00,KENFRI 2019,high
+Goat meat,143,27.10,0.00,3.03,0.00,86.00,USDA FoodData Central,high
+Eggs,155,12.58,1.12,10.61,0.00,124.00,USDA FoodData Central,high
+Milk (whole),61,3.15,4.80,3.25,0.00,44.00,USDA FoodData Central,high
+Kidney beans,127,8.67,22.82,0.50,6.40,238.00,USDA FoodData Central,high
+Black-eyed peas,116,7.73,20.76,0.53,6.50,4.00,USDA FoodData Central,high
+Lentils,116,9.02,20.13,0.38,7.90,2.00,USDA FoodData Central,high
+Green peas,81,5.42,14.45,0.40,5.10,5.00,USDA FoodData Central,high
+Groundnuts,567,25.80,16.13,49.24,8.50,18.00,USDA FoodData Central,high
+Coconut (flesh),354,3.33,15.23,33.49,9.00,20.00,USDA FoodData Central,high
+Coconut milk,197,2.29,2.81,21.33,2.20,15.00,USDA FoodData Central,high
+Sunflower oil,884,0.00,0.00,100.00,0.00,0.00,USDA FoodData Central,high
+Palm oil,884,0.00,0.00,100.00,0.00,0.00,USDA FoodData Central,high
+Onion,40,1.10,9.34,0.10,1.70,4.00,USDA FoodData Central,high
+Garlic,149,6.36,33.06,0.50,2.10,17.00,USDA FoodData Central,high
+Ginger,80,1.82,17.77,0.75,2.00,13.00,USDA FoodData Central,high
+Tomato,18,0.88,3.89,0.20,1.20,5.00,USDA FoodData Central,high
+Spinach,23,2.86,3.63,0.39,2.20,79.00,USDA FoodData Central,high
+Kale (sukuma wiki),49,4.28,8.75,0.93,3.60,38.00,KENFRI 2019,high
+Cabbage,25,1.28,5.80,0.10,2.50,18.00,USDA FoodData Central,high
+Carrot,41,0.93,9.58,0.24,2.80,69.00,USDA FoodData Central,high
+Aubergine (eggplant),25,0.98,5.88,0.18,3.00,2.00,USDA FoodData Central,high
+Green pepper,31,0.99,6.03,0.30,2.10,3.00,USDA FoodData Central,high
+Avocado,160,2.00,8.53,14.66,6.70,7.00,USDA FoodData Central,high
+Mango,60,0.82,14.98,0.38,1.60,1.00,USDA FoodData Central,high
+Papaya,43,0.47,10.82,0.26,1.70,8.00,USDA FoodData Central,high
+Pineapple,50,0.54,13.12,0.12,1.40,1.00,USDA FoodData Central,high
+Passion fruit,97,2.20,23.38,0.70,10.40,28.00,USDA FoodData Central,high
+Coriander (fresh),23,2.13,3.67,0.52,2.80,46.00,USDA FoodData Central,medium
+Cumin (ground),375,17.81,44.24,22.27,10.50,168.00,USDA FoodData Central,high
+Turmeric (ground),312,9.68,67.14,3.25,21.10,38.00,USDA FoodData Central,high
+Cardamom (ground),311,10.76,68.47,6.70,28.00,18.00,USDA FoodData Central,high
+Chilli pepper (dried),282,13.46,49.70,14.30,27.20,30.00,USDA FoodData Central,high
+Salt,0,0.00,0.00,0.00,0.00,38758.00,USDA FoodData Central,high
+Sugar (white),387,0.00,99.98,0.00,0.00,1.00,USDA FoodData Central,high
+Butter,717,0.85,0.06,81.11,0.00,643.00,USDA FoodData Central,high
+Yoghurt (plain),59,3.47,4.66,3.25,0.00,36.00,USDA FoodData Central,high
