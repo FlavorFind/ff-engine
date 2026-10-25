@@ -194,11 +194,6 @@ def ugali(db, maize_flour, salt, water):
     )
 
 
-@pytest.fixture
-def api_client():
-    return APIClient()
-
-
 @pytest.fixture(autouse=True)
 def _clear_cache():
     """Ensure a clean cache before each test."""
