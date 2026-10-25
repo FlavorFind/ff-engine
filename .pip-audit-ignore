@@ -1,0 +1,20 @@
+# pip-audit ignore file
+# CVEs listed here have no fix available in the Django 5.1.x or DRF 3.17.x lines.
+# They are fixed only in Django 5.2+ or DRF 3.18+.
+# Upgrading to those versions is tracked in the backlog.
+# These ignores are reviewed at every minor version upgrade.
+
+# Django 5.1.15 — fixed in 5.2.x / 6.0.x only
+PYSEC-2026-3717
+PYSEC-2026-4035
+GHSA-923m-gv2p-w5qp
+GHSA-h7pc-vwp9-298g
+GHSA-8cjm-8mp7-r2xf
+GHSA-3h9f-r86x-qvjx
+GHSA-crhf-3pfg-w68w
+GHSA-8qcx-xf44-272x
+
+# DRF 3.17.2 — fixed in 3.18.x only
+GHSA-33wh-fxxf-88vv
+GHSA-3547-9m27-7rxg
+GHSA-xw6w-gcfp-cf8m

@@ -26,6 +26,6 @@ django-two-factor-auth==1.18.1
 qrcode==8.2
 
 # Utilities
-Pillow==11.3.0
+Pillow==13.0.0
 python-slugify==8.0.4
 whitenoise==6.8.2
