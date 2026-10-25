@@ -197,6 +197,15 @@ def search_by_ingredients(request: Request) -> Response:
     etag = compute_etag(payload)
     set_cached_result(cache_key, payload, etag, dataset_version)
 
+    # ── Log zero-result queries for observatory (E43) ──────────────────────
+    if result.total_results == 0 and ingredients:
+        try:
+            from apps.search.models import log_zero_result
+
+            log_zero_result(" ".join(ingredients))
+        except Exception:
+            logger.exception("observatory: failed to log zero-result query")
+
     # If-None-Match → 304 Not Modified
     if_none_match = request.META.get("HTTP_IF_NONE_MATCH")
     if if_none_match is not None and if_none_match == etag:
