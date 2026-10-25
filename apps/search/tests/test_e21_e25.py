@@ -39,6 +39,7 @@ def api_client(db):
     c.credentials(HTTP_X_API_KEY=raw_key)
     return c
 
+
 # ===========================================================================
 # Shared fixtures
 # ===========================================================================
@@ -714,7 +715,9 @@ class TestSearchEngine:
 
 @pytest.mark.django_db
 class TestSearchEndpoint:
-    def test_returns_200_with_valid_payload(self, api_client, ugali, maize_flour, salt, water) -> None:
+    def test_returns_200_with_valid_payload(
+        self, api_client, ugali, maize_flour, salt, water
+    ) -> None:
         invalidate_staple_cache()
         resp = api_client.post(
             "/v1/search/by-ingredients",
@@ -723,7 +726,9 @@ class TestSearchEndpoint:
         )
         assert resp.status_code == 200
 
-    def test_response_has_required_top_level_keys(self, api_client, ugali, maize_flour, salt, water) -> None:
+    def test_response_has_required_top_level_keys(
+        self, api_client, ugali, maize_flour, salt, water
+    ) -> None:
         invalidate_staple_cache()
         resp = api_client.post(
             "/v1/search/by-ingredients",
@@ -743,7 +748,9 @@ class TestSearchEndpoint:
         ):
             assert key in data, f"missing key: {key}"
 
-    def test_results_has_exact_can_make_almost_keys(self, api_client, ugali, maize_flour, salt, water) -> None:
+    def test_results_has_exact_can_make_almost_keys(
+        self, api_client, ugali, maize_flour, salt, water
+    ) -> None:
         invalidate_staple_cache()
         resp = api_client.post(
             "/v1/search/by-ingredients",
@@ -765,7 +772,9 @@ class TestSearchEndpoint:
         exact_slugs = [r["slug"] for r in resp.json()["results"]["exact"]]
         assert "ugali-e21" in exact_slugs
 
-    def test_explore_mode_returns_almost(self, api_client, tomato_sauce, tomato, salt, water) -> None:
+    def test_explore_mode_returns_almost(
+        self, api_client, tomato_sauce, tomato, salt, water
+    ) -> None:
         invalidate_staple_cache()
         resp = api_client.post(
             "/v1/search/by-ingredients",
@@ -785,7 +794,9 @@ class TestSearchEndpoint:
         assert resp.json()["results"]["almost"] == []
         assert resp.json()["mode"] == "strict"
 
-    def test_each_result_has_required_fields(self, api_client, ugali, maize_flour, salt, water) -> None:
+    def test_each_result_has_required_fields(
+        self, api_client, ugali, maize_flour, salt, water
+    ) -> None:
         invalidate_staple_cache()
         resp = api_client.post(
             "/v1/search/by-ingredients",
@@ -842,7 +853,9 @@ class TestSearchEndpoint:
         assert resp.status_code == 200
         assert "xyzzy_no_match_99999" in resp.json()["unmatched"]
 
-    def test_exclude_removes_staple_from_pool(self, api_client, ugali, maize_flour, salt, water) -> None:
+    def test_exclude_removes_staple_from_pool(
+        self, api_client, ugali, maize_flour, salt, water
+    ) -> None:
         """Excluding salt should not break ugali if salt is only optional."""
         invalidate_staple_cache()
         resp = api_client.post(

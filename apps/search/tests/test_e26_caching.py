@@ -36,6 +36,7 @@ def api_client(db):
     c.credentials(HTTP_X_API_KEY=raw_key)
     return c
 
+
 # ===========================================================================
 # Shared fixtures (mirror test_e21_e25.py to keep tests independent)
 # ===========================================================================
