@@ -179,6 +179,8 @@ jobs:
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
-        run: python manage.py migrate --check --no-input
-        # --check exits non-zero if there are unapplied migrations or
-        # if any model changes are missing a migration file
+        run: |
+          # Apply all migrations to the fresh CI database
+          python manage.py migrate --no-input
+          # Check that no model changes are missing a migration file
+          python manage.py makemigrations --check --dry-run --no-input
