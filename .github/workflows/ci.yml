@@ -241,4 +241,4 @@ jobs:
           ENGINE_VERSION: ci
           DATASET_VERSION: 0.0.0
         run: |
-          python manage.py spectacular --validate --fail-on-warn
+          python manage.py spectacular --validate

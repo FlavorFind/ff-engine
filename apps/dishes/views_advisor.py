@@ -19,6 +19,7 @@ import logging
 
 from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
+from rest_framework import serializers
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -30,6 +31,25 @@ from apps.pairings.serializers import PairingSerializer
 from apps.pairings.services import get_pairings_for_dish
 from apps.substitutions.serializers import SubstitutionSerializer
 from apps.substitutions.services import get_substitutions_for_dish
+
+
+class MissingIngredientsRequestSerializer(serializers.Serializer):
+    ingredients = serializers.ListField(
+        child=serializers.CharField(max_length=200),
+        help_text="Ingredients the user has (raw text strings).",
+    )
+    exclude = serializers.ListField(
+        child=serializers.CharField(max_length=200),
+        required=False,
+        default=list,
+        help_text="Ingredient slugs to exclude.",
+    )
+    lang = serializers.ChoiceField(
+        choices=["en", "sw"],
+        default="en",
+        help_text="Language for ingredient names in the response.",
+    )
+
 
 logger = logging.getLogger(__name__)
 
@@ -212,6 +232,7 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
             location=OpenApiParameter.PATH,
         ),
     ],
+    request=MissingIngredientsRequestSerializer,
     responses={
         200: OpenApiResponse(description="Missing ingredients with substitute suggestions"),
         400: OpenApiResponse(description="Invalid request body"),
