@@ -98,22 +98,28 @@ class Command(BaseCommand):
                 raise CommandError(f"Missing seed file: {SEEDS_DIR / name}")
 
         try:
+            # Each seeder runs in its own transaction so a failure in one
+            # (e.g. a duplicate substitution) does not roll back the others.
+            counters = {}
             with transaction.atomic():
-                counters = {}
                 counters.update(self._seed_ingredients(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_dishes(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_dish_ingredients(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_dish_steps(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_pairings(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_substitutions(dry_run))
+            with transaction.atomic():
                 counters.update(self._seed_regions(dry_run))
-                if not dry_run:
-                    rebuilt = self._rebuild_arrays()
-                    counters["dishes_rebuilt"] = rebuilt
-                if dry_run:
-                    raise _DryRunRollback()
-        except _DryRunRollback:
-            self.stdout.write(self.style.WARNING("Dry run — all changes rolled back."))
+            if not dry_run:
+                rebuilt = self._rebuild_arrays()
+                counters["dishes_rebuilt"] = rebuilt
+            if dry_run:
+                self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
         except Exception as exc:
             raise CommandError(f"Seed failed: {exc}") from exc
 

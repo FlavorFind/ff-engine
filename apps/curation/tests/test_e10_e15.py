@@ -489,7 +489,7 @@ class TestDishIngredientRowValidators:
 class TestScanDataset:
     """scan_dataset() covers the whole DB."""
 
-    def test_clean_dataset_has_no_violations(self, dish) -> None:
+    def test_clean_dataset_has_no_violations(self, seeded_db, dish) -> None:
         result = scan_dataset()
         # With the fixture we expect zero violations
         critical = [e for e in result.errors if e.rule in ("V01", "V21")]
@@ -913,7 +913,7 @@ class TestQaReport:
             call_command("qa_report", "--fail-on-critical", stdout=out)
         assert exc_info.value.code == 1
 
-    def test_no_fail_without_violations(self, dish, ingredient) -> None:
+    def test_no_fail_without_violations(self, seeded_db, dish, ingredient) -> None:
         """Clean dataset → --fail-on-critical should not exit 1."""
         # dish fixture already has a primary ingredient
         out = io.StringIO()
