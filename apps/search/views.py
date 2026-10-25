@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import logging
 
+from drf_spectacular.utils import OpenApiResponse, extend_schema
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
@@ -33,6 +34,27 @@ logger = logging.getLogger(__name__)
 CACHE_CONTROL = "private, max-age=300"
 
 
+@extend_schema(
+    summary="Search dishes by ingredients",
+    description=(
+        "The core search endpoint. Takes a list of free-text ingredient strings "
+        "and returns tiered, scored, explained dish matches. "
+        "Supports strict mode (exact match) and explore mode (loose match). "
+        "Responses are cached by dataset version with ETag support."
+    ),
+    request=SearchRequestSerializer,
+    responses={
+        200: OpenApiResponse(
+            description=(
+                "Tiered search results: exact (can make now), can_make (with staples), "
+                "almost (one or two ingredients short)."
+            )
+        ),
+        304: OpenApiResponse(description="Not modified — client cache is current"),
+        400: OpenApiResponse(description="Invalid request body"),
+    },
+    tags=["Search"],
+)
 @api_view(["POST"])
 def search_by_ingredients(request: Request) -> Response:
     """

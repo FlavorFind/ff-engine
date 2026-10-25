@@ -18,6 +18,8 @@ from __future__ import annotations
 import logging
 
 from django.shortcuts import get_object_or_404
+from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
+from rest_framework import serializers
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -30,12 +32,76 @@ from apps.pairings.services import get_pairings_for_dish
 from apps.substitutions.serializers import SubstitutionSerializer
 from apps.substitutions.services import get_substitutions_for_dish
 
+
+class MissingIngredientsRequestSerializer(serializers.Serializer):
+    ingredients = serializers.ListField(
+        child=serializers.CharField(max_length=200),
+        help_text="Ingredients the user has (raw text strings).",
+    )
+    exclude = serializers.ListField(
+        child=serializers.CharField(max_length=200),
+        required=False,
+        default=list,
+        help_text="Ingredient slugs to exclude.",
+    )
+    lang = serializers.ChoiceField(
+        choices=["en", "sw"],
+        default="en",
+        help_text="Language for ingredient names in the response.",
+    )
+
+
 logger = logging.getLogger(__name__)
 
 
 # ── E29: Pairings ─────────────────────────────────────────────────────────────
 
 
+@extend_schema(
+    summary="Dish pairings",
+    description=(
+        "Returns a list of dishes that pair well with the given dish. "
+        "Pairings include sides, drinks, starters and desserts, ordered by strength."
+    ),
+    parameters=[
+        OpenApiParameter(
+            name="dish_id",
+            description="UUID of the dish.",
+            required=True,
+            type=str,
+            location=OpenApiParameter.PATH,
+        ),
+        OpenApiParameter(
+            name="type",
+            description="Filter pairing type: side | drink | dessert | starter",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="min_strength",
+            description="Minimum pairing strength (1–5, default 1).",
+            required=False,
+            type=int,
+        ),
+        OpenApiParameter(
+            name="lang",
+            description="Language for names: en | sw (default en).",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="limit",
+            description="Maximum number of results (default 20, max 50).",
+            required=False,
+            type=int,
+        ),
+    ],
+    responses={
+        200: OpenApiResponse(description="List of pairings for the dish"),
+        404: OpenApiResponse(description="Dish not found"),
+    },
+    tags=["Dishes"],
+)
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def dish_pairings(request: Request, dish_id: str) -> Response:
@@ -83,6 +149,39 @@ def dish_pairings(request: Request, dish_id: str) -> Response:
 # ── E29: Substitutions ────────────────────────────────────────────────────────
 
 
+@extend_schema(
+    summary="Dish ingredient substitutions",
+    description=(
+        "Returns ingredient substitutions for all ingredients in the dish. "
+        "Useful for adapting a recipe to available or preferred ingredients."
+    ),
+    parameters=[
+        OpenApiParameter(
+            name="dish_id",
+            description="UUID of the dish.",
+            required=True,
+            type=str,
+            location=OpenApiParameter.PATH,
+        ),
+        OpenApiParameter(
+            name="lang",
+            description="Language for names: en | sw (default en).",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="limit",
+            description="Maximum number of results (default 50, max 100).",
+            required=False,
+            type=int,
+        ),
+    ],
+    responses={
+        200: OpenApiResponse(description="List of substitutions for dish ingredients"),
+        404: OpenApiResponse(description="Dish not found"),
+    },
+    tags=["Dishes"],
+)
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def dish_substitutions(request: Request, dish_id: str) -> Response:
@@ -117,6 +216,30 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
 # ── E30: Missing ingredients ──────────────────────────────────────────────────
 
 
+@extend_schema(
+    summary="Missing ingredients for a dish",
+    description=(
+        "Given a list of ingredients the user has, returns the non-staple "
+        "required ingredients that are still missing for this dish. "
+        "Also returns possible substitutes for each missing ingredient."
+    ),
+    parameters=[
+        OpenApiParameter(
+            name="dish_id",
+            description="UUID of the dish.",
+            required=True,
+            type=str,
+            location=OpenApiParameter.PATH,
+        ),
+    ],
+    request=MissingIngredientsRequestSerializer,
+    responses={
+        200: OpenApiResponse(description="Missing ingredients with substitute suggestions"),
+        400: OpenApiResponse(description="Invalid request body"),
+        404: OpenApiResponse(description="Dish not found"),
+    },
+    tags=["Dishes"],
+)
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def dish_missing(request: Request, dish_id: str) -> Response:

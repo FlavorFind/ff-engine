@@ -17,6 +17,7 @@ Filters (all optional, combinable):
 
 from __future__ import annotations
 
+from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -27,6 +28,63 @@ from apps.core.models import StatusChoices
 from apps.dishes.models import Dish
 
 
+@extend_schema(
+    summary="List dishes",
+    description=(
+        "Returns a paginated list of dishes. "
+        "Supports filtering by region, meal type, course, dietary tags, "
+        "and free-text search."
+    ),
+    parameters=[
+        OpenApiParameter(
+            name="region",
+            description="Filter by region slug.",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="meal_type",
+            description="Filter by meal type: breakfast | lunch | dinner | snack | drink | dessert",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="course",
+            description="Filter by course: starter | main | side | dessert | drink | snack",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="diet",
+            description="Filter by dietary tag slug (e.g. vegetarian, gluten-free).",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="q",
+            description="Free-text search on dish name (English or Swahili).",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="limit",
+            description="Page size (default 50, max 200).",
+            required=False,
+            type=int,
+        ),
+        OpenApiParameter(
+            name="offset",
+            description="Pagination offset (default 0).",
+            required=False,
+            type=int,
+        ),
+    ],
+    responses={
+        200: OpenApiResponse(description="Paginated list of dishes"),
+        400: OpenApiResponse(description="Invalid query parameter"),
+    },
+    tags=["Dishes"],
+)
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def dish_catalogue(request: Request) -> Response:
