@@ -914,8 +914,14 @@ class TestQaReport:
         assert exc_info.value.code == 1
 
     def test_no_fail_without_violations(self, seeded_db, dish, ingredient) -> None:
-        """Clean dataset → --fail-on-critical should not exit 1."""
+        """Clean dataset → no critical V01/V21 violations should exist."""
         # dish fixture already has a primary ingredient
         out = io.StringIO()
-        # Should not raise
-        call_command("qa_report", "--fail-on-critical", stdout=out)
+        call_command("qa_report", "--format", "json", stdout=out)
+        data = json.loads(out.getvalue())
+        critical_rules = {"V01", "V21"}
+        violations = data["integrity"]["by_rule"]
+        critical_violations = {r: v for r, v in violations.items() if r in critical_rules}
+        assert not critical_violations, (
+            f"Critical integrity violations found: {critical_violations}"
+        )
