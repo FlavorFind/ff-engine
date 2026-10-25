@@ -17,10 +17,24 @@ import pytest
 from django.core.cache import cache
 from rest_framework.test import APIClient
 
+from apps.clients.keys import create_key
+from apps.clients.models import ApiClient, ApiKey
 from apps.core.models import StatusChoices
 from apps.dishes.models import Dish, DishIngredient
 from apps.ingredients.models import Ingredient, IngredientCategory
 from apps.search.staples import invalidate_staple_cache
+
+
+@pytest.fixture
+def api_client(db):
+    """Authenticated API client with read:search scope."""
+    client_record = ApiClient.objects.create(
+        name="_test_e26_client", type=ApiClient.ClientType.TEST
+    )
+    _, raw_key = create_key(client_record, scopes=[ApiKey.SCOPE_READ_SEARCH])
+    c = APIClient()
+    c.credentials(HTTP_X_API_KEY=raw_key)
+    return c
 
 # ===========================================================================
 # Shared fixtures (mirror test_e21_e25.py to keep tests independent)

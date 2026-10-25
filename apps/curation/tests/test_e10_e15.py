@@ -671,8 +671,8 @@ class TestImportCsvDishes:
     def test_import_valid_dish(self) -> None:
         rows = [
             {
-                "slug": "chapati",
-                "name_en": "Chapati",
+                "slug": "test-import-flatbread",
+                "name_en": "Test Import Flatbread",
                 "meal_type": "breakfast",
                 "course": "main",
                 "difficulty": "medium",
@@ -696,7 +696,7 @@ class TestImportCsvDishes:
         )
         out = io.StringIO()
         call_command("import_csv", str(path), "--type", "dishes", stdout=out)
-        assert Dish.objects.filter(slug="chapati").exists()
+        assert Dish.objects.filter(slug="test-import-flatbread").exists()
 
     def test_invalid_meal_type_fails(self) -> None:
         rows = [{"slug": "chapati2", "name_en": "Chapati2", "meal_type": "INVALID"}]
@@ -826,10 +826,16 @@ class TestExportCsv:
 
     def test_export_then_import_round_trip(self, dish, ingredient, category) -> None:
         """E11 exit check: export then import reproduces identical data."""
+        from apps.substitutions.models import Substitution
+
         with tempfile.TemporaryDirectory() as tmpdir:
             # Export dishes
             call_command("export_csv", "--type", "dishes", "--output-dir", tmpdir)
             exported_path = Path(tmpdir) / "dishes.csv"
+
+            # Delete substitutions first to avoid unique constraint violations
+            # when SET_NULL collapses multiple context_dish FKs to NULL.
+            Substitution.objects.all().delete()
 
             # Delete all dishes, re-import
             orig_slugs = set(Dish.objects.values_list("slug", flat=True))
