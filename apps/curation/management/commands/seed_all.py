@@ -302,16 +302,24 @@ class Command(BaseCommand):
 
                 qty_num, qty_note = self._parse_quantity(qty_raw)
 
-                _, was_created = DishIngredient.objects.get_or_create(
+                obj, was_created = DishIngredient.objects.get_or_create(
                     dish=dish,
                     ingredient=ing,
                     defaults={
                         "role": role,
-                        "quantity": qty_num,  # Decimal or None
-                        "preparation_note": qty_raw,  # full string e.g. "1 kg"
+                        "quantity": qty_num,
+                        "preparation_note": qty_raw,
                         "position": position,
                     },
                 )
+                # If the row already exists but with a different role (e.g. a
+                # CSV entry was added later to promote optional → primary),
+                # update it so the seeded DB stays in sync with the CSV.
+                if not was_created and obj.role != role:
+                    obj.role = role
+                    obj.save(update_fields=["role"])
+                    was_created = True  # count as an effective change
+
                 if was_created:
                     created += 1
                 else:

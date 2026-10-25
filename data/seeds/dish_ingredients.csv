@@ -2,7 +2,7 @@ dish_slug,ingredient_slug,role,quantity,unit,position
 nyama-choma,goat-meat,primary,1 kg,,1
 nyama-choma,salt,optional,2 tsp,,2
 nyama-choma,black-pepper,optional,1 tsp,,3
-ugali,maize-flour,optional,3 cups,,1
+ugali,maize-flour,primary,3 cups,,1
 ugali,water,optional,4 cups,,2
 sukuma-wiki,collard-greens,primary,1 bunch,,1
 sukuma-wiki,onion,required,1 medium,,2
@@ -16,11 +16,11 @@ pilau,pilau-masala,optional,2 tbsp,,4
 pilau,garlic,optional,4 cloves,,5
 pilau,ginger,optional,1 tbsp,,6
 pilau,cooking-oil,optional,3 tbsp,,7
-chapati,wheat-flour,optional,4 cups,,1
+chapati,wheat-flour,primary,4 cups,,1
 chapati,salt,optional,1 tsp,,2
 chapati,cooking-oil,optional,1/2 cup,,3
 chapati,warm-water,optional,1.5 cups,,4
-mandazi,wheat-flour,optional,4 cups,,1
+mandazi,wheat-flour,primary,4 cups,,1
 mandazi,sugar,optional,1/2 cup,,2
 mandazi,coconut-milk,optional,1 cup,,3
 mandazi,yeast,optional,2 tsp,,4
@@ -115,7 +115,7 @@ kuku-kienyeji,onion,required,2 medium,,2
 kuku-kienyeji,tomato,required,3 medium,,3
 kuku-kienyeji,garlic,optional,4 cloves,,4
 kuku-kienyeji,cooking-oil,optional,3 tbsp,,5
-mahamri,wheat-flour,optional,4 cups,,1
+mahamri,wheat-flour,primary,4 cups,,1
 mahamri,sugar,optional,1/2 cup,,2
 mahamri,coconut-milk,optional,1 cup,,3
 mahamri,yeast,optional,2 tsp,,4
@@ -253,13 +253,13 @@ kenyan-chicken-soup,carrot,required,2 medium,,3
 kenyan-chicken-soup,salt,optional,1 tsp,,4
 kenyan-chicken-soup,black-pepper,optional,1/2 tsp,,5
 kenyan-chicken-soup,lemon,optional,1,,6
-maandazi-ya-nazi,wheat-flour,optional,4 cups,,1
+maandazi-ya-nazi,wheat-flour,primary,4 cups,,1
 maandazi-ya-nazi,sugar,optional,1/2 cup,,2
 maandazi-ya-nazi,coconut-milk,optional,1 cup,,3
 maandazi-ya-nazi,yeast,optional,2 tsp,,4
 maandazi-ya-nazi,cardamom,optional,1 tsp,,5
 maandazi-ya-nazi,cooking-oil,optional,for frying,,6
-ugali-wa-tanzania,maize-flour,optional,3 cups,,1
+ugali-wa-tanzania,maize-flour,primary,3 cups,,1
 ugali-wa-tanzania,water,optional,4 cups,,2
 wali-wa-nazi,rice,primary,2 cups,,1
 wali-wa-nazi,coconut-milk,optional,1.5 cups,,2
@@ -293,11 +293,11 @@ mtori,beef,primary,500 g,,1
 mtori,green-bananas,required,6,,2
 mtori,onion,required,1 medium,,3
 mtori,salt,optional,1 tsp,,4
-chapati-ya-tanzania,wheat-flour,optional,4 cups,,1
+chapati-ya-tanzania,wheat-flour,primary,4 cups,,1
 chapati-ya-tanzania,salt,optional,1 tsp,,2
 chapati-ya-tanzania,cooking-oil,optional,1/2 cup,,3
 chapati-ya-tanzania,warm-water,optional,1.5 cups,,4
-mandazi-ya-tanzania,wheat-flour,optional,4 cups,,1
+mandazi-ya-tanzania,wheat-flour,primary,4 cups,,1
 mandazi-ya-tanzania,sugar,optional,1/2 cup,,2
 mandazi-ya-tanzania,coconut-milk,optional,1 cup,,3
 mandazi-ya-tanzania,yeast,optional,2 tsp,,4
@@ -535,7 +535,7 @@ ugandan-beef-stew,onion,required,2 medium,,2
 ugandan-beef-stew,garlic,optional,4 cloves,,3
 ugandan-beef-stew,tomato,required,3 medium,,4
 ugandan-beef-stew,curry-powder,optional,1 tbsp,,5
-posho,maize-flour,optional,3 cups,,1
+posho,maize-flour,primary,3 cups,,1
 posho,water,optional,4 cups,,2
 malewa,dried-bamboo-shoots,primary,2 cups,,1
 malewa,onion,required,1 medium,,2
@@ -557,7 +557,7 @@ ugandan-beans,onion,required,1 medium,,2
 ugandan-beans,tomato,required,2 medium,,3
 ugandan-beans,cooking-oil,optional,2 tbsp,,4
 ugandan-beans,salt,optional,1 tsp,,5
-ugandan-chapati,wheat-flour,optional,4 cups,,1
+ugandan-chapati,wheat-flour,primary,4 cups,,1
 ugandan-chapati,salt,optional,1 tsp,,2
 ugandan-chapati,cooking-oil,optional,1/2 cup,,3
 ugandan-chapati,warm-water,optional,1.5 cups,,4
@@ -803,13 +803,3 @@ uji-porridge,millet-flour,primary,1 cup,,1
 urojo,cassava,primary,200 g,,1
 urwagwa,banana,primary,8,,1
 zanzibar-seafood-pilau,prawns,primary,300 g,,1
-chapati,wheat-flour,primary,4 cups,,0
-chapati-ya-tanzania,wheat-flour,primary,4 cups,,0
-maandazi-ya-nazi,wheat-flour,primary,4 cups,,0
-mahamri,wheat-flour,primary,4 cups,,0
-mandazi,wheat-flour,primary,4 cups,,0
-mandazi-ya-tanzania,wheat-flour,primary,4 cups,,0
-posho,maize-flour,primary,3 cups,,0
-ugali,maize-flour,primary,3 cups,,0
-ugali-wa-tanzania,maize-flour,primary,3 cups,,0
-ugandan-chapati,wheat-flour,primary,4 cups,,0
