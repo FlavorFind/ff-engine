@@ -124,6 +124,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements/dev.txt
 
+      - name: Enable pg_trgm extension
+        env:
+          PGPASSWORD: ff_engine_pass
+        run: psql -h localhost -U ff_engine -d ff_engine_test -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+
       - name: Run tests with coverage
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test

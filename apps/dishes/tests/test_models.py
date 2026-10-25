@@ -25,47 +25,62 @@ from apps.regions.models import DishRegion, Region
 
 @pytest.fixture
 def category(db):
-    return IngredientCategory.objects.create(name_en="Grains")
+    return IngredientCategory.objects.get_or_create(name_en="_test_Grains")[0]
 
 
 @pytest.fixture
 def unit(db):
-    return Unit.objects.create(code="g", name="Gram", kind=Unit.Kind.MASS, to_base_factor=1)
+    return Unit.objects.get_or_create(
+        code="_tg",
+        defaults={"name": "_test_Gram", "kind": Unit.Kind.MASS, "to_base_factor": 1},
+    )[0]
 
 
 @pytest.fixture
 def maize_flour(db, category):
-    return Ingredient.objects.create(name_en="Maize flour", category=category)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Maize flour", defaults={"category": category}
+    )[0]
 
 
 @pytest.fixture
 def water(db, category):
-    return Ingredient.objects.create(name_en="Water", category=category, is_staple=True)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Water", defaults={"category": category, "is_staple": True}
+    )[0]
 
 
 @pytest.fixture
 def salt(db, category):
-    return Ingredient.objects.create(name_en="Salt", category=category, is_staple=True)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Salt", defaults={"category": category, "is_staple": True}
+    )[0]
 
 
 @pytest.fixture
 def tomato(db, category):
-    return Ingredient.objects.create(name_en="Tomato", category=category)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Tomato", defaults={"category": category}
+    )[0]
 
 
 @pytest.fixture
 def onion(db, category):
-    return Ingredient.objects.create(name_en="Onion", category=category)
+    return Ingredient.objects.get_or_create(name_en="_test_Onion", defaults={"category": category})[
+        0
+    ]
 
 
 @pytest.fixture
 def dish(db):
-    return Dish.objects.create(name_en="Ugali")
+    return Dish.objects.get_or_create(name_en="_test_Ugali")[0]
 
 
 @pytest.fixture
 def region(db):
-    return Region.objects.create(name="Coastal", type=Region.Type.COAST)
+    return Region.objects.get_or_create(name="_test_Coastal", defaults={"type": Region.Type.COAST})[
+        0
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -75,19 +90,19 @@ def region(db):
 
 @pytest.mark.django_db
 def test_dish_slug_auto_generated(dish):
-    assert dish.slug == "ugali"
+    assert dish.slug == "test-ugali"
 
 
 @pytest.mark.django_db
 def test_dish_str(dish):
-    assert str(dish) == "Ugali"
+    assert str(dish) == "_test_Ugali"
 
 
 @pytest.mark.django_db
 def test_dish_name_en_unique(db):
-    Dish.objects.create(name_en="Githeri")
+    Dish.objects.create(name_en="_test_Unique Dish")
     with pytest.raises(IntegrityError):
-        Dish.objects.create(name_en="Githeri")
+        Dish.objects.create(name_en="_test_Unique Dish")
 
 
 @pytest.mark.django_db
@@ -289,7 +304,7 @@ def test_dish_step_str(dish):
 
 @pytest.mark.django_db
 def test_region_slug_auto_generated(region):
-    assert region.slug == "coastal"
+    assert region.slug == "test-coastal"
 
 
 @pytest.mark.django_db

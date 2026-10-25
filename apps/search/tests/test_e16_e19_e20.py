@@ -65,6 +65,10 @@ def tomato(db, category):
             "status": StatusChoices.DRAFT,
         },
     )
+    # Ensure name_sw is set even if the seeded ingredient has an empty value
+    if not ing.name_sw:
+        ing.name_sw = "Nyanya"
+        ing.save(update_fields=["name_sw"])
     return ing
 
 

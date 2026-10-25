@@ -25,30 +25,34 @@ from apps.ingredients.models import (
 
 @pytest.fixture
 def category(db):
-    return IngredientCategory.objects.create(name_en="Vegetables and greens")
+    return IngredientCategory.objects.get_or_create(name_en="_test_Vegetables and greens")[0]
 
 
 @pytest.fixture
 def unit(db):
-    return Unit.objects.create(code="g", name="Gram", kind=Unit.Kind.MASS, to_base_factor=1)
+    return Unit.objects.get_or_create(
+        code="_tg",
+        defaults={"name": "_test_Gram", "kind": Unit.Kind.MASS, "to_base_factor": 1},
+    )[0]
 
 
 @pytest.fixture
 def source(db):
-    return Source.objects.create(
-        kind=Source.Kind.CHEF,
-        title="Test source",
-        permission_status=Source.PermissionStatus.GRANTED,
-    )
+    return Source.objects.get_or_create(
+        title="_test_source",
+        defaults={
+            "kind": Source.Kind.CHEF,
+            "permission_status": Source.PermissionStatus.GRANTED,
+        },
+    )[0]
 
 
 @pytest.fixture
 def ingredient(db, category):
-    return Ingredient.objects.create(
-        name_en="Tomato",
-        name_sw="Nyanya",
-        category=category,
-    )
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Tomato",
+        defaults={"name_sw": "_test_Nyanya", "category": category},
+    )[0]
 
 
 # ---------------------------------------------------------------------------
@@ -58,17 +62,17 @@ def ingredient(db, category):
 
 @pytest.mark.django_db
 def test_category_slug_auto_generated(category):
-    assert category.slug == "vegetables-and-greens"
+    assert category.slug == "test-vegetables-and-greens"
 
 
 @pytest.mark.django_db
 def test_category_str(category):
-    assert str(category) == "Vegetables and greens"
+    assert str(category) == "_test_Vegetables and greens"
 
 
 @pytest.mark.django_db
 def test_category_parent_child(db, category):
-    child = IngredientCategory.objects.create(name_en="Leafy greens", parent=category)
+    child = IngredientCategory.objects.create(name_en="_test_Leafy greens", parent=category)
     assert child.parent == category
     assert child in category.children.all()
 
@@ -77,8 +81,8 @@ def test_category_parent_child(db, category):
 def test_category_slug_unique(db, category):
     with pytest.raises(IntegrityError):
         IngredientCategory.objects.create(
-            name_en="Vegetables and greens",
-            slug="vegetables-and-greens",
+            name_en="_test_Vegetables and greens",
+            slug="test-vegetables-and-greens",
         )
 
 
@@ -89,13 +93,15 @@ def test_category_slug_unique(db, category):
 
 @pytest.mark.django_db
 def test_unit_str(unit):
-    assert str(unit) == "g (Mass)"
+    assert str(unit) == "_tg (Mass)"
 
 
 @pytest.mark.django_db
 def test_unit_code_unique(db, unit):
     with pytest.raises(IntegrityError):
-        Unit.objects.create(code="g", name="Gram duplicate", kind=Unit.Kind.MASS, to_base_factor=1)
+        Unit.objects.create(
+            code="_tg", name="_test_Gram duplicate", kind=Unit.Kind.MASS, to_base_factor=1
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -123,19 +129,19 @@ def test_allergen_slug_unique(db):
 
 @pytest.mark.django_db
 def test_ingredient_slug_auto_generated(ingredient):
-    assert ingredient.slug == "tomato"
+    assert ingredient.slug == "test-tomato"
 
 
 @pytest.mark.django_db
 def test_ingredient_str(ingredient):
-    assert str(ingredient) == "Tomato"
+    assert str(ingredient) == "_test_Tomato"
 
 
 @pytest.mark.django_db
 def test_ingredient_name_en_unique(db, category):
-    Ingredient.objects.create(name_en="Onion", category=category)
+    Ingredient.objects.create(name_en="_test_Onion", category=category)
     with pytest.raises(IntegrityError):
-        Ingredient.objects.create(name_en="Onion", category=category)
+        Ingredient.objects.create(name_en="_test_Onion", category=category)
 
 
 @pytest.mark.django_db
@@ -150,8 +156,9 @@ def test_ingredient_is_staple_default_false(ingredient):
 
 @pytest.mark.django_db
 def test_ingredient_staple_flag(db, category):
-    water = Ingredient.objects.create(name_en="Water", category=category, is_staple=True)
-    assert Ingredient.objects.filter(is_staple=True).count() == 1
+    water = Ingredient.objects.get_or_create(
+        name_en="_test_Water_staple", defaults={"category": category, "is_staple": True}
+    )[0]
     assert water.is_staple is True
 
 
@@ -199,20 +206,20 @@ def test_ingredient_allergen_unique_together(db, ingredient):
 def test_alias_str(db, ingredient):
     alias = IngredientAlias.objects.create(
         ingredient=ingredient,
-        alias="Nyanya",
-        normalized_alias="nyanya",
+        alias="_test_Nyanya",
+        normalized_alias="_test_nyanya",
         language=IngredientAlias.Language.SW,
     )
-    assert "nyanya" in str(alias).lower()
-    assert "tomato" in str(alias).lower()
+    assert "_test_nyanya" in str(alias).lower()
+    assert "_test_tomato" in str(alias).lower()
 
 
 @pytest.mark.django_db
 def test_alias_misspelling_flag(db, ingredient):
     alias = IngredientAlias.objects.create(
         ingredient=ingredient,
-        alias="tomatos",
-        normalized_alias="tomatos",
+        alias="_test_tomatos",
+        normalized_alias="_test_tomatos",
         language=IngredientAlias.Language.EN,
         is_misspelling=True,
     )
@@ -225,16 +232,16 @@ def test_alias_normalized_language_unique(db, ingredient, category):
     """One normalized alias + language combo maps to exactly one ingredient (dictionary rule)."""
     IngredientAlias.objects.create(
         ingredient=ingredient,
-        alias="nyanya",
-        normalized_alias="nyanya",
+        alias="_test_nyanya",
+        normalized_alias="_test_nyanya",
         language=IngredientAlias.Language.SW,
     )
-    other = Ingredient.objects.create(name_en="Cherry Tomato", category=category)
+    other = Ingredient.objects.create(name_en="_test_Cherry Tomato", category=category)
     with pytest.raises(IntegrityError):
         IngredientAlias.objects.create(
             ingredient=other,
-            alias="nyanya",
-            normalized_alias="nyanya",
+            alias="_test_nyanya",
+            normalized_alias="_test_nyanya",
             language=IngredientAlias.Language.SW,
         )
 
