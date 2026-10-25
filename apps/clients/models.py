@@ -131,7 +131,10 @@ class RequestLog(models.Model):
     class Meta:
         db_table = "request_log"
         indexes = [
-            models.Index(fields=["client", "endpoint", "logged_at"]),
+            models.Index(
+                fields=["client", "endpoint", "logged_at"],
+                name="request_log_client_endpoint_idx",
+            ),
         ]
 
     def __str__(self) -> str:
