@@ -133,7 +133,7 @@ class RequestLog(models.Model):
         indexes = [
             models.Index(
                 fields=["client", "endpoint", "logged_at"],
-                name="request_log_client_endpoint_idx",
+                name="req_log_client_endpoint_idx",
             ),
         ]
 

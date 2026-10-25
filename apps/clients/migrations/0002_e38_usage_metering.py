@@ -40,7 +40,8 @@ class Migration(migrations.Migration):
         migrations.AddIndex(
             model_name="requestlog",
             index=models.Index(
-                fields=["client", "endpoint", "logged_at"], name="request_log_client_endpoint_idx"
+                fields=["client", "endpoint", "logged_at"],
+                name="req_log_client_endpoint_idx",
             ),
         ),
         migrations.CreateModel(
