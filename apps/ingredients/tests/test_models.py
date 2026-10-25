@@ -62,7 +62,7 @@ def ingredient(db, category):
 
 @pytest.mark.django_db
 def test_category_slug_auto_generated(category):
-    assert category.slug == "test-vegetables-and-greens"
+    assert category.slug == "test_vegetables-and-greens"
 
 
 @pytest.mark.django_db
@@ -82,7 +82,7 @@ def test_category_slug_unique(db, category):
     with pytest.raises(IntegrityError):
         IngredientCategory.objects.create(
             name_en="_test_Vegetables and greens",
-            slug="test-vegetables-and-greens",
+            slug="test_vegetables-and-greens",
         )
 
 
@@ -129,7 +129,7 @@ def test_allergen_slug_unique(db):
 
 @pytest.mark.django_db
 def test_ingredient_slug_auto_generated(ingredient):
-    assert ingredient.slug == "test-tomato"
+    assert ingredient.slug == "test_tomato"
 
 
 @pytest.mark.django_db
@@ -253,7 +253,7 @@ def test_alias_normalized_language_unique(db, ingredient, category):
 
 @pytest.mark.django_db
 def test_source_str(source):
-    assert "Test source" in str(source)
+    assert "_test_source" in str(source)
     assert "Chef" in str(source)
 
 

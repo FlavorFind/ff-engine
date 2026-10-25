@@ -90,7 +90,7 @@ def region(db):
 
 @pytest.mark.django_db
 def test_dish_slug_auto_generated(dish):
-    assert dish.slug == "test-ugali"
+    assert dish.slug == "test_ugali"
 
 
 @pytest.mark.django_db
@@ -304,7 +304,7 @@ def test_dish_step_str(dish):
 
 @pytest.mark.django_db
 def test_region_slug_auto_generated(region):
-    assert region.slug == "test-coastal"
+    assert region.slug == "test_coastal"
 
 
 @pytest.mark.django_db
