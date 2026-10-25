@@ -922,6 +922,6 @@ class TestQaReport:
         critical_rules = {"V01", "V21"}
         violations = data["integrity"]["by_rule"]
         critical_violations = {r: v for r, v in violations.items() if r in critical_rules}
-        assert not critical_violations, (
-            f"Critical integrity violations found: {critical_violations}"
-        )
+        assert (
+            not critical_violations
+        ), f"Critical integrity violations found: {critical_violations}"
