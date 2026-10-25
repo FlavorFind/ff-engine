@@ -522,19 +522,23 @@ class Command(BaseCommand):
                             pass
                     context_dish = dish_cache.get(context_slug)
 
-                _, was_created = Substitution.objects.get_or_create(
-                    ingredient=ingredient,
-                    substitute=substitute,
-                    context_dish=context_dish,
-                    defaults={
-                        "ratio": ratio,
-                        "quality": quality,
-                        "note": (row.get("note") or "").strip(),
-                    },
-                )
-                if was_created:
-                    created += 1
-                else:
+                try:
+                    with transaction.atomic():
+                        _, was_created = Substitution.objects.get_or_create(
+                            ingredient=ingredient,
+                            substitute=substitute,
+                            context_dish=context_dish,
+                            defaults={
+                                "ratio": ratio,
+                                "quality": quality,
+                                "note": (row.get("note") or "").strip(),
+                            },
+                        )
+                    if was_created:
+                        created += 1
+                    else:
+                        skipped += 1
+                except Exception:
                     skipped += 1
 
         if missing:
