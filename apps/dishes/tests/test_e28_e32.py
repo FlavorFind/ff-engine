@@ -7,17 +7,17 @@ E30 — Missing-ingredients endpoint
 E31 — Allergen links and dietary derivation rules
 E32 — Manual overrides with reason and audit (ChangeLog)
 """
+
 from __future__ import annotations
 
 import pytest
 from django.core.management import call_command
-from django.urls import reverse
 from rest_framework.test import APIClient
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Fixtures — seeded_db comes from root conftest.py (session-scoped, runs once)
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.fixture
 def api():
@@ -27,30 +27,35 @@ def api():
 @pytest.fixture
 def ugali(seeded_db):
     from apps.dishes.models import Dish
+
     return Dish.objects.get(slug="ugali")
 
 
 @pytest.fixture
 def tomato(seeded_db):
     from apps.ingredients.models import Ingredient
+
     return Ingredient.objects.get(slug="tomato")
 
 
 @pytest.fixture
 def spinach(seeded_db):
     from apps.ingredients.models import Ingredient
+
     return Ingredient.objects.get(slug="spinach")
 
 
 @pytest.fixture
 def sukuma_wiki(seeded_db):
     from apps.ingredients.models import Ingredient
+
     return Ingredient.objects.filter(name_en__icontains="sukuma").first()
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # E28 — Model tests
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestPairingModel:
@@ -178,6 +183,7 @@ class TestSubstitutionModel:
 # E29 — Pairing endpoint tests
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 @pytest.mark.django_db
 class TestDishPairingsEndpoint:
     def test_pairings_200(self, api, seeded_db):
@@ -240,6 +246,7 @@ class TestDishPairingsEndpoint:
 # E29 — Substitution endpoint tests
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 @pytest.mark.django_db
 class TestDishSubstitutionsEndpoint:
     def test_substitutions_200(self, api, seeded_db):
@@ -267,7 +274,6 @@ class TestDishSubstitutionsEndpoint:
     def test_substitution_fields_present(self, api, seeded_db):
         """Each substitution has the expected fields."""
         from apps.dishes.models import Dish
-        from apps.substitutions.models import Substitution
 
         # Use a dish that has ingredients with substitutions
         sukuma = Dish.objects.get(slug="sukuma-wiki")
@@ -284,6 +290,7 @@ class TestDishSubstitutionsEndpoint:
 # ─────────────────────────────────────────────────────────────────────────────
 # E30 — Missing ingredients endpoint tests
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestDishMissingEndpoint:
@@ -338,10 +345,14 @@ class TestDishMissingEndpoint:
         githeri = Dish.objects.get(slug="githeri")
         staple_ids = get_staple_ids()
 
-        non_staple_count = DishIngredient.objects.filter(
-            dish=githeri,
-            role__in=[DishIngredient.Role.PRIMARY, DishIngredient.Role.REQUIRED],
-        ).exclude(ingredient_id__in=staple_ids).count()
+        non_staple_count = (
+            DishIngredient.objects.filter(
+                dish=githeri,
+                role__in=[DishIngredient.Role.PRIMARY, DishIngredient.Role.REQUIRED],
+            )
+            .exclude(ingredient_id__in=staple_ids)
+            .count()
+        )
 
         resp = api.post(
             f"/v1/dishes/{githeri.id}/missing/",
@@ -414,6 +425,7 @@ class TestDishMissingEndpoint:
 # E31 — Dietary derivation tests
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 @pytest.mark.django_db
 class TestDietaryDerivation:
     def test_derive_vegetarian_dish(self, seeded_db):
@@ -466,13 +478,11 @@ class TestDietaryDerivation:
         A dish with pork should have contains-pork tag and should NEVER
         be returned when pork is excluded.
         """
-        from apps.dietary.services import apply_derived_tags, derive_dietary_tags
+        from apps.dietary.services import derive_dietary_tags
         from apps.dishes.models import Dish
 
         # Find a dish with pork in name
-        pork_dish = Dish.objects.filter(
-            name_en__icontains="pork"
-        ).first()
+        pork_dish = Dish.objects.filter(name_en__icontains="pork").first()
         if pork_dish:
             tags = derive_dietary_tags(pork_dish)
             assert tags.get("contains-pork") is True
@@ -494,8 +504,14 @@ class TestDietaryDerivation:
         dish = Dish.objects.first()
         tags = derive_dietary_tags(dish)
         expected_keys = {
-            "vegetarian", "vegan", "contains-pork", "halal-friendly",
-            "gluten-free", "nut-free", "dairy-free", "egg-free",
+            "vegetarian",
+            "vegan",
+            "contains-pork",
+            "halal-friendly",
+            "gluten-free",
+            "nut-free",
+            "dairy-free",
+            "egg-free",
         }
         assert set(tags.keys()) == expected_keys
 
@@ -512,6 +528,7 @@ class TestDietaryDerivation:
 # ─────────────────────────────────────────────────────────────────────────────
 # E32 — Manual override and audit log tests
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestManualOverrides:
@@ -546,7 +563,7 @@ class TestManualOverrides:
             defaults={"name": "Vegetarian"},
         )
         # Set a manual override saying nyama choma IS vegetarian (wrong, but override)
-        manual = DishDietaryTag.objects.create(
+        DishDietaryTag.objects.create(
             dish=nyama_choma,
             tag=tag,
             source=DishDietaryTag.Source.MANUAL,
@@ -620,6 +637,7 @@ class TestManualOverrides:
 # ─────────────────────────────────────────────────────────────────────────────
 # E28 — Importer (seed_all) tests
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestSeedPairingsAndSubstitutions:

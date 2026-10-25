@@ -4,6 +4,7 @@ Tests for E34 + E35.
 E34 — Golden set has 100 cases (file-level check only; full run is via run_golden_set command)
 E35 — Regions list endpoint + Dishes catalogue endpoint
 """
+
 from __future__ import annotations
 
 import json
@@ -12,10 +13,10 @@ from pathlib import Path
 import pytest
 from rest_framework.test import APIClient
 
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Fixtures
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.fixture
 def api():
@@ -25,6 +26,7 @@ def api():
 # ─────────────────────────────────────────────────────────────────────────────
 # E34 — Golden set structure
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 class TestGoldenSetStructure:
     def test_golden_set_has_100_cases(self):
@@ -54,6 +56,7 @@ class TestGoldenSetStructure:
 # ─────────────────────────────────────────────────────────────────────────────
 # E35 — Regions endpoint
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestRegionsList:
@@ -111,6 +114,7 @@ class TestRegionsList:
 # ─────────────────────────────────────────────────────────────────────────────
 # E35 — Dishes catalogue endpoint
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @pytest.mark.django_db
 class TestDishCatalogue:

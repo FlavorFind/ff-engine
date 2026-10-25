@@ -130,18 +130,19 @@ def find_candidates(
     # ── E31: Dietary tag filtering — allergen exclusion always wins ────────────
     if diet:
         from apps.dietary.models import DishDietaryTag
+
         for tag_slug in diet:
             if tag_slug.startswith("contains-"):
                 # Allergen exclusion: dish must NOT have this tag
-                excluded_dish_ids = DishDietaryTag.objects.filter(
-                    tag__slug=tag_slug
-                ).values_list("dish_id", flat=True)
+                excluded_dish_ids = DishDietaryTag.objects.filter(tag__slug=tag_slug).values_list(
+                    "dish_id", flat=True
+                )
                 qs = qs.exclude(id__in=excluded_dish_ids)
             else:
                 # Positive requirement: dish MUST have this tag
-                required_dish_ids = DishDietaryTag.objects.filter(
-                    tag__slug=tag_slug
-                ).values_list("dish_id", flat=True)
+                required_dish_ids = DishDietaryTag.objects.filter(tag__slug=tag_slug).values_list(
+                    "dish_id", flat=True
+                )
                 qs = qs.filter(id__in=required_dish_ids)
 
     qs = qs[:limit]

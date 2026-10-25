@@ -3,6 +3,7 @@ E29 — Substitution service.
 
 Business logic for substitution retrieval.
 """
+
 from __future__ import annotations
 
 from django.db import models
@@ -32,9 +33,7 @@ def get_substitutions_for_dish(
 
     qs = (
         Substitution.objects.filter(ingredient_id__in=ingredient_ids)
-        .filter(
-            models.Q(context_dish__isnull=True) | models.Q(context_dish_id=dish_id)
-        )
+        .filter(models.Q(context_dish__isnull=True) | models.Q(context_dish_id=dish_id))
         .select_related("ingredient", "substitute", "context_dish")
         .order_by("quality", "ingredient__name_en")
     )

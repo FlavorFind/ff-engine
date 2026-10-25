@@ -19,6 +19,7 @@ Two-lock principle:
 
 E32: Every manual override is logged to ChangeLog via the admin save hook.
 """
+
 from __future__ import annotations
 
 import logging
@@ -42,18 +43,55 @@ _HONEY_ALLERGEN_SLUGS = {"honey"}
 
 # Ingredient name keywords for meat detection (fallback when allergens not set)
 _MEAT_NAME_KEYWORDS = {
-    "beef", "goat", "chicken", "lamb", "mutton", "pork", "meat",
-    "fish", "tilapia", "omena", "dagaa", "prawn", "shrimp", "crab",
-    "lobster", "octopus", "squid", "tuna", "salmon", "sardine",
-    "turkey", "duck", "rabbit", "offal", "tripe", "liver", "kidney",
-    "blood", "bacon", "ham", "sausage", "nyama",
+    "beef",
+    "goat",
+    "chicken",
+    "lamb",
+    "mutton",
+    "pork",
+    "meat",
+    "fish",
+    "tilapia",
+    "omena",
+    "dagaa",
+    "prawn",
+    "shrimp",
+    "crab",
+    "lobster",
+    "octopus",
+    "squid",
+    "tuna",
+    "salmon",
+    "sardine",
+    "turkey",
+    "duck",
+    "rabbit",
+    "offal",
+    "tripe",
+    "liver",
+    "kidney",
+    "blood",
+    "bacon",
+    "ham",
+    "sausage",
+    "nyama",
 }
 _DAIRY_NAME_KEYWORDS = {"milk", "cheese", "butter", "cream", "yoghurt", "yogurt", "mursik", "ghee"}
 _EGG_NAME_KEYWORDS = {"egg", "eggs"}
 _HONEY_NAME_KEYWORDS = {"honey"}
 _PORK_NAME_KEYWORDS = {"pork", "bacon", "ham", "lard"}
 _GLUTEN_NAME_KEYWORDS = {"wheat", "barley", "rye", "bread flour", "plain flour", "wheat flour"}
-_NUT_NAME_KEYWORDS = {"peanut", "groundnut", "almond", "cashew", "walnut", "pecan", "macadamia", "hazelnut", "pistachio"}
+_NUT_NAME_KEYWORDS = {
+    "peanut",
+    "groundnut",
+    "almond",
+    "cashew",
+    "walnut",
+    "pecan",
+    "macadamia",
+    "hazelnut",
+    "pistachio",
+}
 
 
 def derive_dietary_tags(dish) -> dict[str, bool]:
@@ -68,8 +106,7 @@ def derive_dietary_tags(dish) -> dict[str, bool]:
     from apps.ingredients.models import IngredientAllergen
 
     ingredient_ids = list(
-        DishIngredient.objects.filter(dish=dish)
-        .values_list("ingredient_id", flat=True)
+        DishIngredient.objects.filter(dish=dish).values_list("ingredient_id", flat=True)
     )
 
     if not ingredient_ids:
@@ -77,15 +114,16 @@ def derive_dietary_tags(dish) -> dict[str, bool]:
 
     # Gather allergen slugs across all ingredients
     allergen_slugs: set[str] = set(
-        IngredientAllergen.objects.filter(ingredient_id__in=ingredient_ids)
-        .values_list("allergen__slug", flat=True)
+        IngredientAllergen.objects.filter(ingredient_id__in=ingredient_ids).values_list(
+            "allergen__slug", flat=True
+        )
     )
 
     # Gather ingredient name_en values (lowercased) for keyword fallback
     from apps.ingredients.models import Ingredient
+
     ingredient_names: set[str] = set(
-        Ingredient.objects.filter(id__in=ingredient_ids)
-        .values_list("name_en", flat=True)
+        Ingredient.objects.filter(id__in=ingredient_ids).values_list("name_en", flat=True)
     )
     name_lower = {n.lower() for n in ingredient_names}
 

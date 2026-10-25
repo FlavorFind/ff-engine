@@ -5,6 +5,7 @@ GET /v1/regions/
   Returns all regions, optionally filtered by type.
   Used by clients to populate region filter dropdowns.
 """
+
 from __future__ import annotations
 
 from rest_framework.decorators import api_view, permission_classes

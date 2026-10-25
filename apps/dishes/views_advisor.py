@@ -12,6 +12,7 @@ Architecture section 7 (API Specification):
   GET /v1/dishes/{id}/substitutions
   POST /v1/dishes/{id}/missing
 """
+
 from __future__ import annotations
 
 import logging
@@ -33,6 +34,7 @@ logger = logging.getLogger(__name__)
 
 
 # ── E29: Pairings ─────────────────────────────────────────────────────────────
+
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -68,15 +70,18 @@ def dish_pairings(request: Request, dish_id: str) -> Response:
 
     serializer = PairingSerializer(pairings, many=True, context={"lang": lang})
 
-    return Response({
-        "dish_id": str(dish.id),
-        "dish_slug": dish.slug,
-        "count": len(pairings),
-        "pairings": serializer.data,
-    })
+    return Response(
+        {
+            "dish_id": str(dish.id),
+            "dish_slug": dish.slug,
+            "count": len(pairings),
+            "pairings": serializer.data,
+        }
+    )
 
 
 # ── E29: Substitutions ────────────────────────────────────────────────────────
+
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -99,15 +104,18 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
 
     serializer = SubstitutionSerializer(substitutions, many=True, context={"lang": lang})
 
-    return Response({
-        "dish_id": str(dish.id),
-        "dish_slug": dish.slug,
-        "count": len(substitutions),
-        "substitutions": serializer.data,
-    })
+    return Response(
+        {
+            "dish_id": str(dish.id),
+            "dish_slug": dish.slug,
+            "count": len(substitutions),
+            "substitutions": serializer.data,
+        }
+    )
 
 
 # ── E30: Missing ingredients ──────────────────────────────────────────────────
+
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
@@ -164,13 +172,10 @@ def dish_missing(request: Request, dish_id: str) -> Response:
     staple_ids = get_staple_ids()
 
     # Find non-staple required ingredients the user does NOT have
-    required_links = (
-        DishIngredient.objects.filter(
-            dish=dish,
-            role__in=[DishIngredient.Role.PRIMARY, DishIngredient.Role.REQUIRED],
-        )
-        .select_related("ingredient")
-    )
+    required_links = DishIngredient.objects.filter(
+        dish=dish,
+        role__in=[DishIngredient.Role.PRIMARY, DishIngredient.Role.REQUIRED],
+    ).select_related("ingredient")
 
     missing = []
     for link in required_links:
@@ -193,29 +198,35 @@ def dish_missing(request: Request, dish_id: str) -> Response:
         else:
             ing_name = link.ingredient.name_en
 
-        missing.append({
-            "ingredient_id": iid,
-            "ingredient_slug": link.ingredient.slug,
-            "ingredient_name": ing_name,
-            "role": link.role,
-            "substitutes": sub_data,
-        })
+        missing.append(
+            {
+                "ingredient_id": iid,
+                "ingredient_slug": link.ingredient.slug,
+                "ingredient_name": ing_name,
+                "role": link.role,
+                "substitutes": sub_data,
+            }
+        )
 
-    return Response({
-        "dish_id": str(dish.id),
-        "dish_slug": dish.slug,
-        "missing": missing,
-        "has_missing": len(missing) > 0,
-        "can_make": len(missing) == 0,
-        "resolved_inputs": [r.raw for r in query.results],
-        "unmatched_inputs": list(query.unmatched),
-    })
+    return Response(
+        {
+            "dish_id": str(dish.id),
+            "dish_slug": dish.slug,
+            "missing": missing,
+            "has_missing": len(missing) > 0,
+            "can_make": len(missing) == 0,
+            "resolved_inputs": [r.raw for r in query.results],
+            "unmatched_inputs": list(query.unmatched),
+        }
+    )
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
+
 def _slugs_to_ids(slugs: list[str]) -> list[str]:
     from apps.ingredients.models import Ingredient
+
     ids: list[str] = []
     for slug in slugs:
         for pk in Ingredient.objects.filter(slug=slug).values_list("id", flat=True):

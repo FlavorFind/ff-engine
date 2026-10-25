@@ -9,6 +9,7 @@ E32: Auto-log every manual DishDietaryTag override to ChangeLog.
      Ensures the audit trail is captured regardless of how the override
      was created (admin, API, management command).
 """
+
 from __future__ import annotations
 
 import logging
@@ -21,9 +22,11 @@ logger = logging.getLogger(__name__)
 
 # ── E31: Rebuild dietary tags when dish ingredients change ────────────────────
 
+
 def _rederive(dish_ingredient) -> None:
     """Re-run dietary tag derivation for the parent dish."""
     from apps.dietary.services import apply_derived_tags
+
     dish = dish_ingredient.dish
     try:
         dish.refresh_from_db()
@@ -52,6 +55,7 @@ def on_dish_ingredient_delete_dietary(sender, instance, **kwargs):
 
 # ── E32: Log manual DishDietaryTag overrides to ChangeLog ────────────────────
 
+
 @receiver(post_save, sender="dietary.DishDietaryTag")
 def on_dish_dietary_tag_save(sender, instance, created, **kwargs):
     """
@@ -65,6 +69,7 @@ def on_dish_dietary_tag_save(sender, instance, created, **kwargs):
 
     try:
         from apps.curation.models import ChangeLog
+
         ChangeLog.objects.create(
             object_type="DishDietaryTag",
             object_id=str(instance.pk),

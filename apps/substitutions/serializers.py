@@ -1,4 +1,5 @@
 """E29 — Substitution serializers."""
+
 from rest_framework import serializers
 
 from apps.substitutions.models import Substitution

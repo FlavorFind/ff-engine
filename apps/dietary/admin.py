@@ -33,11 +33,17 @@ class DishDietaryTagAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
         if obj.source == DishDietaryTag.Source.MANUAL:
             from apps.curation.models import ChangeLog
+
             ChangeLog.objects.create(
                 object_type="DishDietaryTag",
                 object_id=str(obj.pk),
                 action="update",
-                diff={"tag": obj.tag.slug, "reason": obj.reason, "dish": obj.dish.slug, "source": "manual"},
+                diff={
+                    "tag": obj.tag.slug,
+                    "reason": obj.reason,
+                    "dish": obj.dish.slug,
+                    "source": "manual",
+                },
                 actor=request.user,
                 reason=obj.reason,
             )

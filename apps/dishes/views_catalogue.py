@@ -14,16 +14,17 @@ Filters (all optional, combinable):
   limit       — page size (default 50, max 200)
   offset      — pagination offset (default 0)
 """
+
 from __future__ import annotations
 
+from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework import status as http_status
 
-from apps.dishes.models import Dish
 from apps.core.models import StatusChoices
+from apps.dishes.models import Dish
 
 
 @api_view(["GET"])
@@ -75,6 +76,7 @@ def dish_catalogue(request: Request) -> Response:
     q = request.query_params.get("q", "").strip()
     if q:
         from django.db.models import Q
+
         qs = qs.filter(Q(name_en__icontains=q) | Q(name_sw__icontains=q))
 
     # ── pagination ────────────────────────────────────────────────────────────
@@ -89,7 +91,7 @@ def dish_catalogue(request: Request) -> Response:
         )
 
     total = qs.distinct().count()
-    dishes = qs.distinct()[offset: offset + limit]
+    dishes = qs.distinct()[offset : offset + limit]
 
     results = [
         {
@@ -110,9 +112,11 @@ def dish_catalogue(request: Request) -> Response:
         for d in dishes
     ]
 
-    return Response({
-        "count": total,
-        "limit": limit,
-        "offset": offset,
-        "results": results,
-    })
+    return Response(
+        {
+            "count": total,
+            "limit": limit,
+            "offset": offset,
+            "results": results,
+        }
+    )

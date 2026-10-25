@@ -1,4 +1,5 @@
 """E29 — Pairing serializers."""
+
 from rest_framework import serializers
 
 from apps.pairings.models import Pairing

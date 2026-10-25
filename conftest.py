@@ -32,6 +32,7 @@ def pytest_configure(config):
 # Session-scoped seed fixture
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 @pytest.fixture(scope="session")
 def seeded_db(django_db_setup, django_db_blocker):
     """
@@ -51,17 +52,23 @@ def seeded_db(django_db_setup, django_db_blocker):
 
 def _disconnect_signals():
     from django.db.models.signals import post_delete, post_save
+
     from apps.dishes.models import DishIngredient
 
     try:
-        from apps.search.signals import on_dish_ingredient_save, on_dish_ingredient_delete
+        from apps.search.signals import on_dish_ingredient_delete, on_dish_ingredient_save
+
         post_save.disconnect(on_dish_ingredient_save, sender=DishIngredient)
         post_delete.disconnect(on_dish_ingredient_delete, sender=DishIngredient)
     except Exception:
         pass
 
     try:
-        from apps.dietary.signals import on_dish_ingredient_save_dietary, on_dish_ingredient_delete_dietary
+        from apps.dietary.signals import (
+            on_dish_ingredient_delete_dietary,
+            on_dish_ingredient_save_dietary,
+        )
+
         post_save.disconnect(on_dish_ingredient_save_dietary, sender=DishIngredient)
         post_delete.disconnect(on_dish_ingredient_delete_dietary, sender=DishIngredient)
     except Exception:
@@ -70,17 +77,23 @@ def _disconnect_signals():
 
 def _reconnect_signals():
     from django.db.models.signals import post_delete, post_save
+
     from apps.dishes.models import DishIngredient
 
     try:
-        from apps.search.signals import on_dish_ingredient_save, on_dish_ingredient_delete
+        from apps.search.signals import on_dish_ingredient_delete, on_dish_ingredient_save
+
         post_save.connect(on_dish_ingredient_save, sender=DishIngredient)
         post_delete.connect(on_dish_ingredient_delete, sender=DishIngredient)
     except Exception:
         pass
 
     try:
-        from apps.dietary.signals import on_dish_ingredient_save_dietary, on_dish_ingredient_delete_dietary
+        from apps.dietary.signals import (
+            on_dish_ingredient_delete_dietary,
+            on_dish_ingredient_save_dietary,
+        )
+
         post_save.connect(on_dish_ingredient_save_dietary, sender=DishIngredient)
         post_delete.connect(on_dish_ingredient_delete_dietary, sender=DishIngredient)
     except Exception:
@@ -89,6 +102,7 @@ def _reconnect_signals():
     # Rebuild search arrays once after all inserts
     try:
         from apps.dishes.models import Dish
+
         for dish in Dish.objects.prefetch_related("dish_ingredients__ingredient"):
             dish.rebuild_search_arrays()
     except Exception:

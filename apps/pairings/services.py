@@ -4,6 +4,7 @@ E29 — Pairing service.
 Business logic for pairing retrieval.
 Thin service layer — views stay thin, logic lives here.
 """
+
 from __future__ import annotations
 
 from apps.pairings.models import Pairing
