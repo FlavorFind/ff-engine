@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import logging
 
+from drf_spectacular.utils import OpenApiResponse, extend_schema
 from rest_framework import serializers, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -57,6 +58,22 @@ class ResolveResultSerializer(serializers.Serializer):
 # ──────────────────────────────────────────────────────────────────────────────
 
 
+@extend_schema(
+    summary="Resolve ingredient strings",
+    description=(
+        "Turn free-text ingredient strings into canonical ingredient IDs. "
+        "Handles misspellings, Swahili names, Sheng, and partial matches. "
+        "Returns matched, ambiguous, and unmatched results."
+    ),
+    request=ResolveRequestSerializer,
+    responses={
+        200: OpenApiResponse(
+            description="Resolution results with matched/ambiguous/unmatched counts"
+        ),
+        400: OpenApiResponse(description="Invalid request body"),
+    },
+    tags=["Ingredients"],
+)
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def resolve(request: Request) -> Response:
