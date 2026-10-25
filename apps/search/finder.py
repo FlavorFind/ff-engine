@@ -58,6 +58,7 @@ def find_candidates(
     status_filter: list[str] | None = None,
     meal_type: str | None = None,
     course: str | None = None,
+    diet: list[str] | None = None,
     limit: int = 200,
 ) -> list[CandidateDish]:
     """
@@ -74,9 +75,13 @@ def find_candidates(
         Optional meal_type filter (e.g. 'breakfast').
     course:
         Optional course filter (e.g. 'main').
+    diet:
+        Optional list of dietary tag slugs to require/exclude.
+        Tags starting with 'contains-' are allergen exclusions (dish must NOT have them).
+        Other tags are positive requirements (dish MUST have them).
+        Allergen exclusions always win — Blueprint section 8.
     limit:
         Maximum number of candidates to return (safety cap).
-        The Judge drops non-matching dishes afterwards.
 
     Returns
     -------
@@ -121,6 +126,24 @@ def find_candidates(
         qs = qs.filter(meal_type=meal_type)
     if course:
         qs = qs.filter(course=course)
+
+    # ── E31: Dietary tag filtering — allergen exclusion always wins ────────────
+    if diet:
+        from apps.dietary.models import DishDietaryTag
+
+        for tag_slug in diet:
+            if tag_slug.startswith("contains-"):
+                # Allergen exclusion: dish must NOT have this tag
+                excluded_dish_ids = DishDietaryTag.objects.filter(tag__slug=tag_slug).values_list(
+                    "dish_id", flat=True
+                )
+                qs = qs.exclude(id__in=excluded_dish_ids)
+            else:
+                # Positive requirement: dish MUST have this tag
+                required_dish_ids = DishDietaryTag.objects.filter(tag__slug=tag_slug).values_list(
+                    "dish_id", flat=True
+                )
+                qs = qs.filter(id__in=required_dish_ids)
 
     qs = qs[:limit]
 

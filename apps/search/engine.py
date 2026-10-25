@@ -71,6 +71,7 @@ def search(
     almost_limit: int = 1,
     meal_type: str | None = None,
     course: str | None = None,
+    diet: list[str] | None = None,
     status_filter: list[str] | None = None,
     weights: dict[str, float] | None = None,
     preferred_region_id: str | None = None,
@@ -122,6 +123,7 @@ def search(
         status_filter=status_filter,
         meal_type=meal_type,
         course=course,
+        diet=diet,
         limit=200,  # over-fetch; judge will trim
     )
 

@@ -1,0 +1,16 @@
+slug,name,type,parent_slug,description
+kenya,Kenya,cuisine,,East African cuisine from Kenya
+tanzania,Tanzania,cuisine,,East African cuisine from Tanzania
+uganda,Uganda,cuisine,,East African cuisine from Uganda
+ethiopia,Ethiopia,cuisine,,Horn of Africa cuisine from Ethiopia
+eritrea,Eritrea,cuisine,,Horn of Africa cuisine from Eritrea
+rwanda,Rwanda,cuisine,,Great Lakes cuisine from Rwanda
+burundi,Burundi,cuisine,,Great Lakes cuisine from Burundi
+kenya-coast,Kenya Coast,coast,kenya,Swahili coastal cuisine — coconut, seafood, spice
+zanzibar,Zanzibar,coast,tanzania,Island cuisine rich in spice, seafood and coconut
+luo,Luo,cuisine,kenya,Lake Victoria cuisine — fish, ugali, greens
+kikuyu,Kikuyu,cuisine,kenya,Central Kenya highlands cuisine
+kalenjin,Kalenjin,cuisine,kenya,Rift Valley pastoral cuisine — mursik, ugali
+swahili,Swahili,cuisine,,Pan-coastal Swahili fusion cuisine
+great-lakes,Great Lakes,cuisine,,Shared cuisine of Rwanda, Burundi and eastern DRC
+horn-of-africa,Horn of Africa,cuisine,,Shared cuisine of Ethiopia and Eritrea

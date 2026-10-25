@@ -1,27 +1,37 @@
 """
-E25 — Search views.
+E25/E26 — Search views.
 
 POST /v1/search/by-ingredients
   The main search endpoint.  Takes a list of ingredient strings and
   returns tiered, scored, explained dish matches.
+
+E26 adds dataset-version-aware caching with ETag / Cache-Control headers.
 """
 
 from __future__ import annotations
 
 import logging
 
-from django.conf import settings
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.search.cache import (
+    build_cache_key,
+    compute_etag,
+    get_cached_result,
+    get_dataset_version,
+    set_cached_result,
+)
 from apps.search.engine import search
 from apps.search.pipeline import resolve_ingredients
 from apps.search.serializers import SearchRequestSerializer, SearchResultItemSerializer
 
 logger = logging.getLogger(__name__)
+
+CACHE_CONTROL = "private, max-age=300"
 
 
 @api_view(["POST"])
@@ -58,6 +68,11 @@ def search_by_ingredients(request: Request) -> Response:
             "almost":   []
           }
         }
+
+    Headers:
+        X-Cache-Hit: true|false
+        ETag: "<hash>"
+        Cache-Control: private, max-age=300
     """
     req_ser = SearchRequestSerializer(data=request.data)
     if not req_ser.is_valid():
@@ -74,8 +89,45 @@ def search_by_ingredients(request: Request) -> Response:
     course: str | None = data.get("course")
     lang: str = data.get("lang", "en")
     limit: int = data.get("limit", 20)
+    diet: list[str] = data.get("diet") or []
 
-    # ── Step 1-3: Normalise, resolve, expand ──────────────────────────────────
+    # ── Dataset version (drives cache key) ────────────────────────────────────
+    dataset_version = get_dataset_version()
+
+    # ── Cache lookup ───────────────────────────────────────────────────────────
+    cache_key = build_cache_key(
+        dataset_version=dataset_version,
+        ingredients=ingredients,
+        exclude=exclude,
+        mode=mode,
+        meal_type=meal_type,
+        course=course,
+        lang=lang,
+        limit=limit,
+        diet=diet,
+    )
+
+    cached = get_cached_result(cache_key)
+    if cached is not None:
+        payload = cached["payload"]
+        etag = cached["etag"]
+
+        # If-None-Match → 304 Not Modified
+        if_none_match = request.META.get("HTTP_IF_NONE_MATCH")
+        if if_none_match is not None and if_none_match == etag:
+            response = Response(status=http_status.HTTP_304_NOT_MODIFIED)
+            response.headers["ETag"] = etag
+            response.headers["Cache-Control"] = CACHE_CONTROL
+            response.headers["X-Cache-Hit"] = "true"
+            return response
+
+        response = Response(payload, status=http_status.HTTP_200_OK)
+        response.headers["X-Cache-Hit"] = "true"
+        response.headers["ETag"] = etag
+        response.headers["Cache-Control"] = CACHE_CONTROL
+        return response
+
+    # ── Cache miss: run the pipeline ──────────────────────────────────────────
     # Resolve excluded slugs to IDs
     excluded_ids = _slugs_to_ids(exclude) if exclude else None
 
@@ -87,6 +139,7 @@ def search_by_ingredients(request: Request) -> Response:
         explore=(mode == "explore"),
         meal_type=meal_type,
         course=course,
+        diet=diet or None,
         lang=lang,
         limit=limit,
     )
@@ -107,7 +160,7 @@ def search_by_ingredients(request: Request) -> Response:
     ]
 
     payload = {
-        "dataset_version": getattr(settings, "DATASET_VERSION", "0.0.0"),
+        "dataset_version": dataset_version,
         "mode": mode,
         "candidate_count": result.candidate_count,
         "total_results": result.total_results,
@@ -121,7 +174,23 @@ def search_by_ingredients(request: Request) -> Response:
         },
     }
 
-    return Response(payload, status=http_status.HTTP_200_OK)
+    etag = compute_etag(payload)
+    set_cached_result(cache_key, payload, etag, dataset_version)
+
+    # If-None-Match → 304 Not Modified
+    if_none_match = request.META.get("HTTP_IF_NONE_MATCH")
+    if if_none_match is not None and if_none_match == etag:
+        response = Response(status=http_status.HTTP_304_NOT_MODIFIED)
+        response.headers["ETag"] = etag
+        response.headers["Cache-Control"] = CACHE_CONTROL
+        response.headers["X-Cache-Hit"] = "false"
+        return response
+
+    response = Response(payload, status=http_status.HTTP_200_OK)
+    response.headers["X-Cache-Hit"] = "false"
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = CACHE_CONTROL
+    return response
 
 
 # ──────────────────────────────────────────────────────────────────────────────

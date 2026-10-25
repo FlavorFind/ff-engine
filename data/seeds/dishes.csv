@@ -149,3 +149,73 @@ rwandan-avocado-salad,Rwandan Avocado Salad,Simple fresh avocado and tomato sala
 burundian-peanut-stew,Burundian Peanut Stew,Mixed vegetables simmered in a thick peanut sauce,dinner,side,2,easy,15,35,5,230,8,15,16,5,4,0,200,Burundian|Vegetarian|Peanuts|Stew,draft
 ibitoki-sweet-banana-dessert,Ibitoki (Sweet Banana Dessert),Ripe bananas gently stewed with a touch of sugar and cinnamon,dessert,dessert,2,medium,5,20,4,160,1,0,40,3,28,0,5,Rwandan|Dessert|Banana|Simple,draft
 rwandan-ginger-tea,Rwandan Ginger Tea,Warming ginger tea popular across the Great Lakes region,beverage,beverage,2,easy,2,10,4,90,2,3,13,0,12,8,40,Rwandan|Tea|Ginger|Beverage,draft
+mizuzu,Mizuzu,Ripe plantain sliced and fried until golden and crisp at the edges,snack,side,1,easy,10,15,4,,,,,,,,,Rwanda|Easy|Snack,draft
+akabenz,Akabenz,Pork pieces roasted or grilled with garlic and salt and served with fried plantain and salad,dinner,main,2,easy,15,40,4,,,,,,,,,Rwanda|Easy|Dinner,draft
+ubugari,Ubugari,Stiff porridge of cassava or maize flour stirred smooth and used to scoop up stews,dinner,side,1,medium,5,20,4,,,,,,,,,Rwanda|Medium|Lunch,draft
+rwandan-brochettes,Rwandan brochettes,Skewered goat or beef grilled over charcoal and served with roasted bananas,dinner,main,2,easy,20,20,4,,,,,,,,,Rwanda|Easy|Dinner,draft
+rwandan-pumpkin-stew,Rwandan pumpkin stew,Pumpkin cooked down with onion and tomato into a soft golden stew,dinner,main,1,easy,15,30,4,,,,,,,,,Rwanda|Easy|Lunch,draft
+rwandan-roasted-sweet-potatoes,Rwandan roasted sweet potatoes,Whole sweet potatoes roasted in embers or an oven until soft and caramelised,snack,side,1,easy,5,40,4,,,,,,,,,Rwanda|Easy|Snack,draft
+urwagwa,Urwagwa,Traditional banana beer made by pressing ripe bananas and fermenting the juice with sorghum,beverage,beverage,1,hard,60,30,4,,,,,,,,,Rwanda|Hard|Drink,draft
+igikoma,Igikoma,Thin sorghum porridge lightly sweetened and drunk warm,breakfast,beverage,1,easy,10,20,4,,,,,,,,,Rwanda|Easy|Breakfast,draft
+rwandan-banana-juice,Rwandan banana juice,Ripe bananas pressed and strained into a sweet juice,beverage,beverage,1,medium,30,0,4,,,,,,,,,Rwanda|Medium|Drink,draft
+burundian-bean-stew,Burundian bean stew,Red beans simmered slowly with onion and palm oil,dinner,main,1,easy,15,90,4,,,,,,,,,Burundi|Easy|Lunch,draft
+burundian-fried-plantains,Burundian fried plantains,Plantain slices fried until golden and sprinkled with salt,snack,side,1,easy,10,15,4,,,,,,,,,Burundi|Easy|Snack,draft
+burundian-ndagala-fry,Burundian ndagala fry,Small Lake Tanganyika fish fried crisp with onion and lemon,dinner,main,2,easy,15,15,4,,,,,,,,,Burundi|Easy|Dinner,draft
+burundian-sweet-potato-stew,Burundian sweet potato stew,Sweet potato chunks cooked in a light tomato and onion sauce,dinner,main,1,easy,15,30,4,,,,,,,,,Burundi|Easy|Lunch,draft
+key-wat,Key wat,Beef simmered in a spicy berbere sauce enriched with spiced butter,dinner,main,4,medium,30,90,4,,,,,,,,,Ethiopia|Medium|Dinner,draft
+beef-tibs,Beef tibs,Cubes of beef sauteed with onion green chili and rosemary,dinner,main,2,easy,15,15,4,,,,,,,,,Ethiopia|Easy|Dinner,draft
+lamb-tibs,Lamb tibs,Lamb cubes quickly fried with onion green chili and spiced butter,dinner,main,2,easy,15,15,4,,,,,,,,,Ethiopia|Easy|Dinner,draft
+shiro-wat,Shiro wat,Smooth stew of ground chickpea and spices cooked with onion and oil,dinner,main,2,easy,10,30,4,,,,,,,,,Ethiopia|Easy|Lunch,draft
+ful-ethiopian,Ful (Ethiopian fava beans),Mashed broad beans cooked with oil onion tomato and green chili and finished with lemon,breakfast,main,1,easy,10,40,4,,,,,,,,,Ethiopia|Easy|Breakfast,draft
+kik-alicha,Kik alicha,Mild yellow split pea stew with onion garlic and turmeric,dinner,main,1,easy,10,50,4,,,,,,,,,Ethiopia|Easy|Lunch,draft
+firfir,Firfir,Torn flatbread tossed in a spicy berbere sauce,breakfast,main,3,easy,10,15,4,,,,,,,,,Ethiopia|Easy|Breakfast,draft
+chechebsa,Chechebsa,Flatbread pieces fried with spiced butter and berbere,breakfast,main,2,medium,10,20,4,,,,,,,,,Ethiopia|Medium|Breakfast,draft
+buna,Buna,Ethiopian coffee roasted ground and brewed in a clay pot,beverage,beverage,1,medium,10,15,4,,,,,,,,,Ethiopia|Medium|Drink,draft
+eritrean-zigni,Eritrean zigni,Beef stew in a spicy berbere and tomato sauce,dinner,main,3,medium,20,90,4,,,,,,,,,Eritrea|Medium|Dinner,draft
+coastal-chicken-biryani,Coastal chicken biryani,Layered spiced rice and marinated chicken cooked together with fried onion,dinner,main,2,hard,45,90,4,,,,,,,,,Kenya Coast|Hard|Lunch,draft
+coastal-beef-biryani,Coastal beef biryani,Layered spiced rice and tender beef cooked together with fried onion and potato,dinner,main,2,hard,45,110,4,,,,,,,,,Kenya Coast|Hard|Lunch,draft
+samaki-wa-nazi,Samaki wa nazi,Fish simmered in coconut milk with tomato garlic and turmeric,dinner,main,2,easy,15,25,4,,,,,,,,,Kenya Coast|Easy|Dinner,draft
+pweza-wa-nazi,Pweza wa nazi,Tender octopus in a creamy coconut sauce with spices,dinner,main,2,medium,25,50,4,,,,,,,,,Kenya Coast|Medium|Dinner,draft
+mbaazi-za-nazi,Mbaazi za nazi,Pigeon peas cooked in coconut milk with onion and cumin,dinner,main,1,easy,15,60,4,,,,,,,,,Kenya Coast|Easy|Lunch,draft
+urojo,Urojo,Zanzibar mix soup with potato mango cassava crisps and a tangy tamarind sauce,dinner,main,2,medium,30,45,4,,,,,,,,,Zanzibar|Medium|Lunch,draft
+mkate-wa-ufuta,Mkate wa ufuta,Rice-flour bread topped with sesame seeds and baked or griddled,breakfast,side,1,medium,40,30,4,,,,,,,,,Kenya Coast|Medium|Breakfast,draft
+zanzibar-seafood-pilau,Zanzibar seafood pilau,Spiced rice cooked with prawns squid and fish,dinner,main,2,hard,40,60,4,,,,,,,,,Zanzibar|Hard|Lunch,draft
+kuku-paka,Kuku paka,Grilled chicken in a creamy coconut sauce scented with turmeric and cardamom,dinner,main,2,medium,25,40,4,,,,,,,,,Kenya Coast|Medium|Dinner,draft
+mutura,Mutura,Seasoned goat or beef sausage stuffed in cleaned intestines and roasted,snack,main,2,hard,60,60,4,,,,,,,,,Kenya|Hard|Snack,draft
+smokie-pasua,Smokie pasua,Split smoked sausage served with a fresh tomato and onion relish,snack,main,2,easy,5,5,4,,,,,,,,,Kenya|Easy|Snack,draft
+coconut-mandazi,Coconut mandazi,Fried sweet dough made with coconut milk and cardamom,snack,side,1,medium,30,20,4,,,,,,,,,Kenya Coast|Medium|Snack,draft
+milk-mandazi,Milk mandazi,Soft fried dough made with milk and a hint of cardamom,breakfast,side,1,medium,30,20,4,,,,,,,,,Kenya|Medium|Breakfast,draft
+mshikaki,Mshikaki,Marinated beef skewers grilled over charcoal,dinner,main,2,easy,30,15,4,,,,,,,,,Tanzania|Easy|Dinner,draft
+potato-bhajia,Potato bhajia,Potato slices dipped in spiced chickpea batter and fried,snack,side,2,easy,15,15,4,,,,,,,,,Kenya|Easy|Snack,draft
+mahindi-choma,Mahindi choma,Maize cobs roasted over charcoal and rubbed with lime and chili salt,snack,side,1,easy,5,15,4,,,,,,,,,Kenya|Easy|Snack,draft
+muhogo-wa-kukaanga,Muhogo wa kukaanga,Cassava pieces fried and seasoned with chili and lemon,snack,side,2,easy,10,20,4,,,,,,,,,Tanzania|Easy|Snack,draft
+ugandan-rolex,Ugandan rolex,Eggs and vegetables rolled inside a fresh chapati,breakfast,main,1,easy,10,10,4,,,,,,,,,Uganda|Easy|Breakfast,draft
+kikomando,Kikomando,Chopped chapati served with a bean stew,dinner,main,1,easy,10,20,4,,,,,,,,,Uganda|Easy|Lunch,draft
+roasted-gonja,Roasted gonja,Plantain roasted over charcoal until charred and sweet,snack,side,1,easy,5,20,4,,,,,,,,,Uganda|Easy|Snack,draft
+beef-samosa,Beef samosa,Crisp pastry triangles filled with spiced minced beef,snack,starter,2,medium,40,20,4,,,,,,,,,Kenya|Medium|Snack,draft
+togwa,Togwa,Lightly fermented porridge drink made with malted millet,beverage,beverage,1,medium,20,30,4,,,,,,,,,Tanzania|Medium|Drink,draft
+fermented-millet-uji,Fermented millet uji,Sour porridge made from fermented finger millet,breakfast,beverage,1,medium,15,25,4,,,,,,,,,Kenya|Medium|Breakfast,draft
+busaa,Busaa,Traditional fermented maize and millet beer,beverage,beverage,1,hard,60,30,4,,,,,,,,,Kenya|Hard|Drink,draft
+mbege,Mbege,Fermented banana and millet beer from the Kilimanjaro region,beverage,beverage,1,hard,60,30,4,,,,,,,,,Tanzania|Hard|Drink,draft
+obushera,Obushera,Fermented millet or sorghum drink from southwestern Uganda,beverage,beverage,1,medium,20,30,4,,,,,,,,,Uganda|Medium|Drink,draft
+dawa,Dawa,Hot drink of honey lime and fresh ginger,beverage,beverage,1,easy,5,5,4,,,,,,,,,Kenya|Easy|Drink,draft
+tamarind-juice-ukwaju,Tamarind juice,Sweet and sour juice from tamarind pulp,beverage,beverage,1,easy,15,10,4,,,,,,,,,Kenya Coast|Easy|Drink,draft
+baobab-juice,Baobab juice,Drink made from baobab fruit pulp and water,beverage,beverage,1,easy,10,0,4,,,,,,,,,Tanzania|Easy|Drink,draft
+kahawa-chungu,Kahawa chungu,Strong black coffee spiced with ginger and cardamom,beverage,beverage,1,easy,5,10,4,,,,,,,,,Kenya Coast|Easy|Drink,draft
+hibiscus-tea,Hibiscus tea,Tart red tea brewed from dried hibiscus petals,beverage,beverage,1,easy,5,10,4,,,,,,,,,Tanzania|Easy|Drink,draft
+masala-chai,Masala chai,Milky tea simmered with ginger cardamom and cinnamon,breakfast,beverage,1,easy,5,10,4,,,,,,,,,Kenya|Easy|Breakfast,draft
+mandazi,Mandazi,Classic East African fried dough triangles lightly sweetened with coconut milk,breakfast,side,1,easy,20,15,4,,,,,,,,,Kenyan|Swahili|Breakfast|Fried,draft
+rice-and-beans,Rice and Beans,Rice and red beans cooked together with onion and spices,dinner,main,2,easy,10,40,4,,,,,,,,,Kenyan|Everyday|Vegetarian,draft
+matumbo-stew,Matumbo Stew,Tripe slow-cooked with tomato onion garlic and spices,dinner,main,2,medium,20,120,4,,,,,,,,,Kenyan|Offal|Stew,draft
+ugandan-groundnut-stew,Ugandan Groundnut Stew,Chicken or beef simmered in a smooth peanut and tomato sauce,dinner,main,2,medium,20,60,4,,,,,,,,,Ugandan|Groundnut|Stew,draft
+tanzanian-mchuzi-wa-samaki,Tanzanian Fish Curry,Fish fillets cooked in a coconut and spice sauce,dinner,main,2,easy,15,25,4,,,,,,,,,Tanzanian|Fish|Coconut,draft
+kuku-wa-nazi,Kuku wa Nazi,Chicken simmered in coconut milk with garlic ginger and tomato,dinner,main,2,easy,20,45,4,,,,,,,,,Swahili|Chicken|Coconut,draft
+stewed-tripe,Stewed Tripe,Beef tripe slow-cooked until tender with onions tomato and spices,dinner,main,2,medium,20,150,4,,,,,,,,,Kenyan|Offal|Slow-cooked,draft
+githeri-stew,Githeri Stew,Maize and beans simmered with tomato onion and greens,dinner,main,2,easy,15,60,4,,,,,,,,,Kenyan|Legumes|Maize,draft
+maharagwe-ya-nazi,Maharagwe ya Nazi,Red kidney beans cooked in coconut milk with onion and spices,dinner,main,1,easy,10,60,4,,,,,,,,,Swahili|Beans|Coconut,draft
+chapati-wrap,Chapati Wrap,Chapati filled with spiced beef vegetables and sauce,snack,main,2,easy,10,10,4,,,,,,,,,Kenyan|Street food|Chapati,draft
+fried-tilapia,Fried Tilapia,Whole tilapia marinated with garlic lemon and chili then deep fried,dinner,main,2,easy,15,20,4,,,,,,,,,Kenyan|Fish|Fried,draft
+kenyan-cabbage-stew,Kenyan Cabbage Stew,Shredded cabbage stewed with tomato onion and a touch of chili,dinner,side,1,easy,10,20,4,,,,,,,,,Kenyan|Vegetarian|Side,draft
+boiled-cassava,Boiled Cassava,Cassava chunks boiled until tender and served with coconut chutney or relish,snack,side,1,easy,10,30,4,,,,,,,,,Swahili|Cassava|Side,draft
+kenyan-fried-eggs,Kenyan Fried Eggs,Eggs fried with onion tomato and chili served with chapati or bread,breakfast,main,2,easy,5,10,4,,,,,,,,,Kenyan|Eggs|Breakfast,draft
+uji-porridge,Uji Porridge,Smooth fermented millet or maize flour porridge drunk warm for breakfast,breakfast,beverage,1,easy,5,15,4,,,,,,,,,Kenyan|Porridge|Breakfast,draft

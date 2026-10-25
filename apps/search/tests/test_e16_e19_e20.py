@@ -65,6 +65,10 @@ def tomato(db, category):
             "status": StatusChoices.DRAFT,
         },
     )
+    # Ensure name_sw is set even if the seeded ingredient has an empty value
+    if not ing.name_sw:
+        ing.name_sw = "Nyanya"
+        ing.save(update_fields=["name_sw"])
     return ing
 
 
@@ -151,6 +155,10 @@ def maize_flour(db, grains):
             "status": StatusChoices.DRAFT,
         },
     )
+    # Ensure name_sw is set even if the seeded ingredient has an empty value
+    if not ing.name_sw:
+        ing.name_sw = "Unga wa mahindi"
+        ing.save(update_fields=["name_sw"])
     return ing
 
 
@@ -189,11 +197,15 @@ def ugali(db, maize_flour, water, salt):
             "quality_level": Dish.QualityLevel.SEEDED,
         },
     )
-    DishIngredient.objects.get_or_create(
+    di, _ = DishIngredient.objects.get_or_create(
         dish=dish,
         ingredient=maize_flour,
         defaults={"role": DishIngredient.Role.PRIMARY, "position": 1},
     )
+    # Force PRIMARY role — seeded ugali may have it as optional
+    if di.role != DishIngredient.Role.PRIMARY:
+        di.role = DishIngredient.Role.PRIMARY
+        di.save(update_fields=["role"])
     DishIngredient.objects.get_or_create(
         dish=dish,
         ingredient=water,

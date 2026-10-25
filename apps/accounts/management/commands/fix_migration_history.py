@@ -94,6 +94,6 @@ class Command(BaseCommand):
 
         self.stdout.write(
             self.style.SUCCESS(
-                "accounts tables created and migration recorded — " "migrate can now proceed"
+                "accounts tables created and migration recorded — migrate can now proceed"
             )
         )

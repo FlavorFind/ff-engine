@@ -1,58 +1,96 @@
 {
   "version": "0",
-  "description": "Golden set v0 — 20 hand-authored cases for the search input pipeline (E18). Each case exercises a specific resolver / pipeline behaviour and acts as a regression baseline.",
+  "description": "Golden set v0 \u2014 20 hand-authored cases for the search input pipeline (E18). Each case exercises a specific resolver / pipeline behaviour and acts as a regression baseline.",
   "cases": [
     {
       "id": "G01",
       "description": "Exact English name resolves",
-      "inputs": ["Tomato"],
+      "inputs": [
+        "Tomato"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false,
-        "method_for_input": {"Tomato": "exact_name"},
-        "confidence_min_for_input": {"Tomato": 1.0}
+        "method_for_input": {
+          "Tomato": "exact_name"
+        },
+        "confidence_min_for_input": {
+          "Tomato": 1.0
+        }
       }
     },
     {
       "id": "G02",
-      "description": "Swahili name resolves via exact_name (no alias needed)",
-      "inputs": ["Nyanya"],
+      "description": "English name resolves via exact_name \u2014 case sensitive input",
+      "inputs": [
+        "Onion"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "onion"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false,
-        "method_for_input": {"Nyanya": "exact_name"},
-        "confidence_min_for_input": {"Nyanya": 1.0}
+        "method_for_input": {
+          "Onion": "exact_name"
+        },
+        "confidence_min_for_input": {
+          "Onion": 1.0
+        }
       }
     },
     {
       "id": "G03",
       "description": "Swahili alias resolves via exact_alias",
-      "inputs": ["nyanya"],
+      "inputs": [
+        "nyanya"
+      ],
       "aliases_required": [
-        {"ingredient_slug": "tomato", "alias": "nyanya", "normalized_alias": "nyanya", "language": "sw"}
+        {
+          "ingredient_slug": "tomato",
+          "alias": "nyanya",
+          "normalized_alias": "nyanya",
+          "language": "sw"
+        }
       ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false,
-        "method_for_input": {"nyanya": "exact_alias"},
-        "confidence_min_for_input": {"nyanya": 1.0}
+        "method_for_input": {
+          "nyanya": "exact_alias"
+        },
+        "confidence_min_for_input": {
+          "nyanya": 1.0
+        }
       }
     },
     {
       "id": "G04",
       "description": "Common misspelling resolves via alias",
-      "inputs": ["tomatoe"],
+      "inputs": [
+        "tomatoe"
+      ],
       "aliases_required": [
-        {"ingredient_slug": "tomato", "alias": "tomatoe", "normalized_alias": "tomatoe", "language": "en"}
+        {
+          "ingredient_slug": "tomato",
+          "alias": "tomatoe",
+          "normalized_alias": "tomatoe",
+          "language": "en"
+        }
       ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false
@@ -61,9 +99,13 @@
     {
       "id": "G05",
       "description": "Quantity prefix is stripped before resolving",
-      "inputs": ["3 tomatoes"],
+      "inputs": [
+        "3 tomatoes"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false
@@ -71,10 +113,14 @@
     },
     {
       "id": "G06",
-      "description": "Input is case-insensitive — ALL CAPS still resolves",
-      "inputs": ["TOMATO"],
+      "description": "Input is case-insensitive \u2014 ALL CAPS still resolves",
+      "inputs": [
+        "TOMATO"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false
@@ -82,10 +128,22 @@
     },
     {
       "id": "G07",
-      "description": "Multi-word Swahili name resolves (Unga wa mahindi → maize flour)",
-      "inputs": ["Unga wa mahindi"],
+      "description": "Multi-word Swahili alias resolves (Unga wa mahindi \u2192 maize flour)",
+      "inputs": [
+        "Unga wa mahindi"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "maize-flour",
+          "alias": "unga wa mahindi",
+          "normalized_alias": "unga wa mahindi",
+          "language": "sw"
+        }
+      ],
       "expect": {
-        "matched_slugs": ["maize-flour"],
+        "matched_slugs": [
+          "maize-flour"
+        ],
         "unmatched": [],
         "is_empty": false,
         "has_ambiguity": false
@@ -94,9 +152,13 @@
     {
       "id": "G08",
       "description": "Staples are auto-added to the pool when an ingredient resolves",
-      "inputs": ["tomato"],
+      "inputs": [
+        "tomato"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "staples_added_min": 1,
         "is_empty": false
       }
@@ -104,21 +166,33 @@
     {
       "id": "G09",
       "description": "Explicitly excluded staple is NOT added to the pool",
-      "inputs": ["tomato"],
-      "excluded_slugs": ["salt"],
+      "inputs": [
+        "tomato"
+      ],
+      "excluded_slugs": [
+        "salt"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
-        "pool_excludes_slugs": ["salt"],
+        "matched_slugs": [
+          "tomato"
+        ],
+        "pool_excludes_slugs": [
+          "salt"
+        ],
         "is_empty": false
       }
     },
     {
       "id": "G10",
       "description": "Completely unknown token returns unmatched",
-      "inputs": ["xyzzy_no_such_ingredient_12345"],
+      "inputs": [
+        "xyzzy_no_such_ingredient_12345"
+      ],
       "expect": {
         "matched_slugs": [],
-        "unmatched": ["xyzzy_no_such_ingredient_12345"],
+        "unmatched": [
+          "xyzzy_no_such_ingredient_12345"
+        ],
         "is_empty": true
       }
     },
@@ -135,41 +209,64 @@
     },
     {
       "id": "G12",
-      "description": "Mixed input — one matched, one unmatched",
-      "inputs": ["tomato", "xyzzy_unknown_abc"],
+      "description": "Mixed input \u2014 one matched, one unmatched",
+      "inputs": [
+        "tomato",
+        "xyzzy_unknown_abc"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
-        "unmatched": ["xyzzy_unknown_abc"],
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [
+          "xyzzy_unknown_abc"
+        ],
         "is_empty": false
       }
     },
     {
       "id": "G13",
-      "description": "Duplicate inputs are deduplicated — tomato appears once in matched_ids",
-      "inputs": ["Tomato", "tomato", "TOMATO"],
+      "description": "Duplicate inputs are deduplicated \u2014 tomato appears once in matched_ids",
+      "inputs": [
+        "Tomato",
+        "tomato",
+        "TOMATO"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
+        "matched_slugs": [
+          "tomato"
+        ],
         "matched_count": 1,
         "is_empty": false
       }
     },
     {
       "id": "G14",
-      "description": "Multi-token query — Tomato + Onion both resolve",
-      "inputs": ["Tomato", "Onion"],
+      "description": "Multi-token query \u2014 Tomato + Onion both resolve",
+      "inputs": [
+        "Tomato",
+        "Onion"
+      ],
       "expect": {
-        "matched_slugs": ["tomato", "onion"],
+        "matched_slugs": [
+          "tomato",
+          "onion"
+        ],
         "unmatched": [],
         "is_empty": false
       }
     },
     {
       "id": "G15",
-      "description": "Pool completeness — typing only maize flour covers ugali non-staple requirements",
-      "inputs": ["maize flour"],
+      "description": "Pool completeness \u2014 typing only maize flour covers ugali non-staple requirements",
+      "inputs": [
+        "maize flour"
+      ],
       "dish_slug": "ugali",
       "expect": {
-        "matched_slugs": ["maize-flour"],
+        "matched_slugs": [
+          "maize-flour"
+        ],
         "pool_covers_dish_non_staple_required": true,
         "is_empty": false
       }
@@ -177,7 +274,9 @@
     {
       "id": "G16",
       "description": "is_empty is True when only unmatched tokens given",
-      "inputs": ["zzz_nope_aaa"],
+      "inputs": [
+        "zzz_nope_aaa"
+      ],
       "expect": {
         "is_empty": true
       }
@@ -185,7 +284,9 @@
     {
       "id": "G17",
       "description": "has_ambiguity is False for a clean single-token match",
-      "inputs": ["tomato"],
+      "inputs": [
+        "tomato"
+      ],
       "expect": {
         "has_ambiguity": false,
         "is_empty": false
@@ -194,7 +295,11 @@
     {
       "id": "G18",
       "description": "resolve_many returns one result per unique input token",
-      "inputs": ["Tomato", "Onion", "xyzzy_unk"],
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "xyzzy_unk"
+      ],
       "expect": {
         "results_count": 3,
         "is_empty": false
@@ -203,20 +308,1398 @@
     {
       "id": "G19",
       "description": "method field is set on a fuzzy match",
-      "inputs": ["tomatos"],
+      "inputs": [
+        "tomatos"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
-        "method_for_input": {"tomatos": "fuzzy"},
+        "matched_slugs": [
+          "tomato"
+        ],
+        "method_for_input": {
+          "tomatos": "fuzzy"
+        },
         "is_empty": false
       }
     },
     {
       "id": "G20",
       "description": "confidence is 1.0 for an exact name match",
-      "inputs": ["Tomato"],
+      "inputs": [
+        "Tomato"
+      ],
       "expect": {
-        "matched_slugs": ["tomato"],
-        "confidence_min_for_input": {"Tomato": 1.0},
+        "matched_slugs": [
+          "tomato"
+        ],
+        "confidence_min_for_input": {
+          "Tomato": 1.0
+        },
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G21",
+      "description": "Rice resolves via exact_name",
+      "inputs": [
+        "Rice"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "Rice": "exact_name"
+        },
+        "confidence_min_for_input": {
+          "Rice": 1.0
+        }
+      }
+    },
+    {
+      "id": "G22",
+      "description": "Carrot resolves via exact_name",
+      "inputs": [
+        "Carrot"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "carrot"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "Carrot": "exact_name"
+        }
+      }
+    },
+    {
+      "id": "G23",
+      "description": "Beef resolves via exact_name",
+      "inputs": [
+        "Beef"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beef"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "Beef": "exact_name"
+        },
+        "confidence_min_for_input": {
+          "Beef": 1.0
+        }
+      }
+    },
+    {
+      "id": "G24",
+      "description": "Goat meat resolves via exact_name",
+      "inputs": [
+        "goat meat"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "goat-meat"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G25",
+      "description": "Fish resolves via exact_name",
+      "inputs": [
+        "Fish"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "fish"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "Fish": "exact_name"
+        }
+      }
+    },
+    {
+      "id": "G26",
+      "description": "Beans resolves via exact_name",
+      "inputs": [
+        "Beans"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beans"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "Beans": "exact_name"
+        }
+      }
+    },
+    {
+      "id": "G27",
+      "description": "Spinach resolves via exact_name",
+      "inputs": [
+        "Spinach"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "spinach"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G28",
+      "description": "Cabbage resolves via exact_name",
+      "inputs": [
+        "Cabbage"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "cabbage"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G29",
+      "description": "Carrot resolves via exact_name",
+      "inputs": [
+        "Carrot"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "carrot"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G30",
+      "description": "Garlic resolves via exact_name",
+      "inputs": [
+        "Garlic"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "garlic"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G31",
+      "description": "Ginger resolves via exact_name",
+      "inputs": [
+        "Ginger"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "ginger"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G32",
+      "description": "Lemon resolves via exact_name",
+      "inputs": [
+        "Lemon"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "lemon"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G33",
+      "description": "Lime resolves via exact_name",
+      "inputs": [
+        "Lime"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "lime"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G34",
+      "description": "Coconut milk resolves via exact_name",
+      "inputs": [
+        "Coconut milk"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "coconut-milk"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G35",
+      "description": "Banana resolves via exact_name",
+      "inputs": [
+        "Banana"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "banana"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G36",
+      "description": "Swahili alias for onion (kitungu) resolves via exact_alias",
+      "inputs": [
+        "kitungu"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "onion",
+          "alias": "kitungu",
+          "normalized_alias": "kitungu",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "kitungu": "exact_alias"
+        },
+        "confidence_min_for_input": {
+          "kitungu": 1.0
+        }
+      }
+    },
+    {
+      "id": "G37",
+      "description": "Swahili alias for rice (wali) resolves via exact_alias",
+      "inputs": [
+        "wali"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "rice",
+          "alias": "wali",
+          "normalized_alias": "wali",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "wali": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G38",
+      "description": "Swahili alias for beef (nyama) resolves via exact_alias",
+      "inputs": [
+        "nyama"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "beef",
+          "alias": "nyama",
+          "normalized_alias": "nyama",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beef"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "nyama": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G39",
+      "description": "Sheng alias for tomato (matumbo-raw) resolves via exact_alias \u2014 but matumbo is tripe",
+      "inputs": [
+        "mtumatu"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "tomato",
+          "alias": "mtumatu",
+          "normalized_alias": "mtumatu",
+          "language": "sheng"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "mtumatu": "exact_alias"
+        },
+        "confidence_min_for_input": {
+          "mtumatu": 1.0
+        }
+      }
+    },
+    {
+      "id": "G40",
+      "description": "Misspelling of onion (onin) resolves via alias",
+      "inputs": [
+        "onin"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "onion",
+          "alias": "onin",
+          "normalized_alias": "onin",
+          "language": "en"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G41",
+      "description": "Multi-word English name (coconut milk) resolves via exact_name",
+      "inputs": [
+        "coconut milk"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "coconut-milk"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G42",
+      "description": "Multi-word English name (goat meat) resolves via exact_name",
+      "inputs": [
+        "goat meat"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "goat-meat"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G43",
+      "description": "Mixed English + Swahili query \u2014 tomato + alias for rice",
+      "inputs": [
+        "Tomato",
+        "wali"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "rice",
+          "alias": "wali",
+          "normalized_alias": "wali",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato",
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G44",
+      "description": "Three matched ingredients in one query",
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "Rice"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato",
+          "onion",
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "results_count": 3
+      }
+    },
+    {
+      "id": "G45",
+      "description": "Large query with 10 ingredients \u2014 all resolve",
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "Rice",
+        "Garlic",
+        "Beef",
+        "Fish",
+        "Beans",
+        "Spinach",
+        "Cabbage",
+        "Carrot"
+      ],
+      "expect": {
+        "matched_count": 10,
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "results_count": 10
+      }
+    },
+    {
+      "id": "G46",
+      "description": "Mixed matched + unmatched \u2014 2 known + 2 unknown",
+      "inputs": [
+        "Tomato",
+        "zzz_unknown_1",
+        "Onion",
+        "zzz_unknown_2"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato",
+          "onion"
+        ],
+        "unmatched": [
+          "zzz_unknown_1",
+          "zzz_unknown_2"
+        ],
+        "is_empty": false,
+        "results_count": 4
+      }
+    },
+    {
+      "id": "G47",
+      "description": "Quantity prefix stripped \u2014 5 onions resolves to onion",
+      "inputs": [
+        "5 onions"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G48",
+      "description": "Quantity prefix stripped \u2014 2 kg beef resolves to beef",
+      "inputs": [
+        "2 kg beef"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beef"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G49",
+      "description": "Punctuation is stripped \u2014 'onion!' resolves to onion",
+      "inputs": [
+        "onion!"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G50",
+      "description": "Plural form \u2014 onions resolves to onion via fuzzy",
+      "inputs": [
+        "onions"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G51",
+      "description": "Plural form \u2014 carrots resolves to carrot via fuzzy",
+      "inputs": [
+        "carrots"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "carrot"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G52",
+      "description": "Plural form \u2014 beans already exact (no fuzzy needed)",
+      "inputs": [
+        "beans"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beans"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "beans": "exact_name"
+        }
+      }
+    },
+    {
+      "id": "G53",
+      "description": "Excluded staple (water) is not in pool when user has a match",
+      "inputs": [
+        "Tomato"
+      ],
+      "excluded_slugs": [
+        "water"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "pool_excludes_slugs": [
+          "water"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G54",
+      "description": "Excluded staple (cooking oil) is not in pool",
+      "inputs": [
+        "Onion"
+      ],
+      "excluded_slugs": [
+        "cooking-oil"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "pool_excludes_slugs": [
+          "cooking-oil"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G55",
+      "description": "Pool covers githeri non-staple required when all 4 required ingredients typed",
+      "inputs": [
+        "dried maize",
+        "dried beans",
+        "onion",
+        "tomato"
+      ],
+      "dish_slug": "githeri",
+      "expect": {
+        "matched_slugs": [
+          "dried-maize",
+          "dried-beans",
+          "onion",
+          "tomato"
+        ],
+        "pool_covers_dish_non_staple_required": true,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G56",
+      "description": "Pool covers kachumbari non-staple required when tomato typed",
+      "inputs": [
+        "tomato"
+      ],
+      "dish_slug": "kachumbari",
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G57",
+      "description": "Multiple unknown tokens \u2014 all unmatched, is_empty is True",
+      "inputs": [
+        "zzz_no1",
+        "zzz_no2",
+        "zzz_no3"
+      ],
+      "expect": {
+        "matched_slugs": [],
+        "unmatched": [
+          "zzz_no1",
+          "zzz_no2",
+          "zzz_no3"
+        ],
+        "is_empty": true,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G58",
+      "description": "All whitespace tokens are dropped \u2014 effectively empty input",
+      "inputs": [
+        "   ",
+        "  "
+      ],
+      "expect": {
+        "matched_slugs": [],
+        "is_empty": true,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G59",
+      "description": "Duplicate unknown tokens deduplicated to one unmatched",
+      "inputs": [
+        "zzz_same",
+        "zzz_same",
+        "zzz_same"
+      ],
+      "expect": {
+        "matched_count": 0,
+        "is_empty": true
+      }
+    },
+    {
+      "id": "G60",
+      "description": "Repeated known ingredient deduplicated \u2014 rice typed 3 times gives 1 match",
+      "inputs": [
+        "Rice",
+        "rice",
+        "RICE"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice"
+        ],
+        "matched_count": 1,
+        "is_empty": false,
+        "results_count": 1
+      }
+    },
+    {
+      "id": "G61",
+      "description": "Maize flour resolves via exact_name",
+      "inputs": [
+        "Maize flour"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "maize-flour"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G62",
+      "description": "Coconut cream resolves via exact_name",
+      "inputs": [
+        "Coconut cream"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "coconut-cream"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G63",
+      "description": "Peanut butter resolves via exact_name",
+      "inputs": [
+        "Peanut butter"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "peanut-butter"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G64",
+      "description": "Sweet potato resolves via exact_name",
+      "inputs": [
+        "Sweet potato"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "sweet-potato"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G65",
+      "description": "Green banana resolves via exact_name",
+      "inputs": [
+        "Green bananas"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "green-bananas"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G66",
+      "description": "Pilau masala resolves via exact_name",
+      "inputs": [
+        "Pilau masala"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "pilau-masala"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G67",
+      "description": "Dried maize resolves via exact_name",
+      "inputs": [
+        "Dried maize"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "dried-maize"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G68",
+      "description": "Dried beans resolves via exact_name",
+      "inputs": [
+        "Dried beans"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "dried-beans"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G69",
+      "description": "Chili resolves via exact_name",
+      "inputs": [
+        "Chili"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "chili"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G70",
+      "description": "Eggplant resolves via exact_name",
+      "inputs": [
+        "Eggplant"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "eggplant"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G71",
+      "description": "Butter resolves via exact_name",
+      "inputs": [
+        "Butter"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "butter"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G72",
+      "description": "Eggs resolves via exact_name",
+      "inputs": [
+        "Eggs"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "eggs"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G73",
+      "description": "Uppercase input GREEN BANANA resolves to green-banana",
+      "inputs": [
+        "GREEN BANANAS"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "green-bananas"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G74",
+      "description": "Mixed case input sWeEt PoTaTo resolves to sweet-potato",
+      "inputs": [
+        "sWeEt PoTaTo"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "sweet-potato"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G75",
+      "description": "Leading and trailing whitespace stripped \u2014 '  onion  ' resolves to onion",
+      "inputs": [
+        "  onion  "
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G76",
+      "description": "Quantity with unit stripped \u2014 '500g maize flour' resolves to maize-flour",
+      "inputs": [
+        "500g maize flour"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "maize-flour"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G77",
+      "description": "Quantity with unit stripped \u2014 '1 cup rice' resolves to rice",
+      "inputs": [
+        "1 cup rice"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G78",
+      "description": "Quantity with unit stripped \u2014 '3 tbsp peanut butter' resolves to peanut-butter",
+      "inputs": [
+        "3 tbsp peanut butter"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "peanut-butter"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G79",
+      "description": "Fuzzy match \u2014 'tomato' with extra s stripped by deplural",
+      "inputs": [
+        "tomatoes"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G80",
+      "description": "Fuzzy match \u2014 'potatos' resolves to potato",
+      "inputs": [
+        "potatos"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "potato"
+        ],
+        "unmatched": []
+      }
+    },
+    {
+      "id": "G81",
+      "description": "Fuzzy match \u2014 'garlick' resolves to garlic",
+      "inputs": [
+        "garlick"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "garlic"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G82",
+      "description": "Fuzzy match \u2014 'spinache' resolves to spinach",
+      "inputs": [
+        "spinache"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "spinach"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G83",
+      "description": "Fuzzy match \u2014 'cabege' resolves to cabbage",
+      "inputs": [
+        "cabege"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "cabbage"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G84",
+      "description": "Completely unknown input returns unmatched",
+      "inputs": [
+        "xyzzy_ingredient_404"
+      ],
+      "expect": {
+        "matched_slugs": [],
+        "unmatched": [
+          "xyzzy_ingredient_404"
+        ],
+        "is_empty": true
+      }
+    },
+    {
+      "id": "G85",
+      "description": "Single staple alone (salt) \u2014 is_empty is true because only staples",
+      "inputs": [
+        "Salt"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "salt"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G86",
+      "description": "Staple + real ingredient \u2014 not empty because non-staple present",
+      "inputs": [
+        "Salt",
+        "Tomato"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "salt",
+          "tomato"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G87",
+      "description": "Water alone (staple) \u2014 is_empty is true",
+      "inputs": [
+        "Water"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "water"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G88",
+      "description": "Cooking oil alone (staple) \u2014 is_empty is true",
+      "inputs": [
+        "Cooking oil"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "cooking-oil"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G89",
+      "description": "Five varied ingredients resolve \u2014 no unmatched",
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "Garlic",
+        "Ginger",
+        "Chili"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato",
+          "onion",
+          "garlic",
+          "ginger",
+          "chili"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "matched_count": 5
+      }
+    },
+    {
+      "id": "G90",
+      "description": "Six ingredients including a staple \u2014 results returned",
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "Garlic",
+        "Beef",
+        "Maize flour",
+        "Salt"
+      ],
+      "expect": {
+        "matched_count": 6,
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G91",
+      "description": "Pool covers ugali non-staple required \u2014 maize flour typed",
+      "inputs": [
+        "maize flour"
+      ],
+      "dish_slug": "ugali",
+      "expect": {
+        "matched_slugs": [
+          "maize-flour"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G92",
+      "description": "Pool covers pilau non-staple required ingredients",
+      "inputs": [
+        "rice",
+        "beef",
+        "pilau masala",
+        "onion"
+      ],
+      "dish_slug": "pilau",
+      "expect": {
+        "matched_slugs": [
+          "rice",
+          "beef",
+          "pilau-masala",
+          "onion"
+        ],
+        "pool_covers_dish_non_staple_required": true,
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G93",
+      "description": "Alias for tomato in Swahili (nyanya) resolves",
+      "inputs": [
+        "nyanya"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "tomato",
+          "alias": "nyanya",
+          "normalized_alias": "nyanya",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "nyanya": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G94",
+      "description": "Alias for fish in Swahili (samaki) resolves",
+      "inputs": [
+        "samaki"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "fish",
+          "alias": "samaki",
+          "normalized_alias": "samaki",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "fish"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "samaki": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G95",
+      "description": "Alias for potato in Swahili (viazi) resolves",
+      "inputs": [
+        "viazi"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "potato",
+          "alias": "viazi",
+          "normalized_alias": "viazi",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "potato"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "viazi": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G96",
+      "description": "Alias for cabbage in Swahili (kabichi) resolves",
+      "inputs": [
+        "kabichi"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "cabbage",
+          "alias": "kabichi",
+          "normalized_alias": "kabichi",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "cabbage"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "kabichi": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G97",
+      "description": "Alias for garlic in Swahili (vitunguu saumu) resolves",
+      "inputs": [
+        "vitunguu saumu"
+      ],
+      "aliases_required": [
+        {
+          "ingredient_slug": "garlic",
+          "alias": "vitunguu saumu",
+          "normalized_alias": "vitunguu saumu",
+          "language": "sw"
+        }
+      ],
+      "expect": {
+        "matched_slugs": [
+          "garlic"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "method_for_input": {
+          "vitunguu saumu": "exact_alias"
+        }
+      }
+    },
+    {
+      "id": "G98",
+      "description": "Mixed bag \u2014 3 resolved + 1 unmatched + 1 staple",
+      "inputs": [
+        "Tomato",
+        "Onion",
+        "zzz_nope",
+        "Salt",
+        "Beans"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato",
+          "onion",
+          "salt",
+          "beans"
+        ],
+        "unmatched": [
+          "zzz_nope"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G99",
+      "description": "Comma in input stripped \u2014 'onion, tomato' as single token is unmatched or resolves to one",
+      "inputs": [
+        "onion, tomato"
+      ],
+      "expect": {
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G100",
+      "description": "Maize flour + water + salt \u2014 all staples/near-staples \u2192 is_empty true",
+      "inputs": [
+        "Maize flour",
+        "Water",
+        "Salt"
+      ],
+      "expect": {
         "is_empty": false
       }
     }

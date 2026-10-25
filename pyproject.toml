@@ -31,6 +31,12 @@ python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
 addopts = "--tb=short -q"
+log_cli = false
+log_level = "WARNING"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::django.utils.deprecation.RemovedInDjango60Warning",
+]
 
 [tool.mypy]
 python_version = "3.12"

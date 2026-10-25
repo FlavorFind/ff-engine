@@ -71,34 +71,45 @@ def curator_client(superuser):
 
 @pytest.fixture
 def category(db):
-    return IngredientCategory.objects.create(name_en="Grains")
+    return IngredientCategory.objects.get_or_create(name_en="_test_Grains")[0]
 
 
 @pytest.fixture
 def unit(db):
-    return Unit.objects.create(code="g", name="Gram", kind=Unit.Kind.MASS, to_base_factor=1)
+    return Unit.objects.get_or_create(
+        code="_tg",
+        defaults={"name": "_test_Gram", "kind": Unit.Kind.MASS, "to_base_factor": 1},
+    )[0]
 
 
 @pytest.fixture
 def maize_flour(db, category):
-    return Ingredient.objects.create(name_en="Maize flour", category=category)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Maize flour", defaults={"category": category}
+    )[0]
 
 
 @pytest.fixture
 def water(db, category):
-    return Ingredient.objects.create(name_en="Water", category=category, is_staple=True)
+    return Ingredient.objects.get_or_create(
+        name_en="_test_Water", defaults={"category": category, "is_staple": True}
+    )[0]
 
 
 @pytest.fixture
 def dish(db, maize_flour):
-    d = Dish.objects.create(name_en="Ugali")
-    DishIngredient.objects.create(dish=d, ingredient=maize_flour, role=DishIngredient.Role.PRIMARY)
+    d, _ = Dish.objects.get_or_create(name_en="_test_Ugali")
+    DishIngredient.objects.get_or_create(
+        dish=d, ingredient=maize_flour, defaults={"role": DishIngredient.Role.PRIMARY}
+    )
     return d
 
 
 @pytest.fixture
 def region(db):
-    return Region.objects.create(name="Coastal", type=Region.Type.COAST)
+    return Region.objects.get_or_create(name="_test_Coastal", defaults={"type": Region.Type.COAST})[
+        0
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -162,9 +173,9 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
     resp = curator_client.post(
         "/admin/dishes/dish/add/",
         data={
-            "slug": "sukuma-wiki",
-            "name_en": "Sukuma Wiki",
-            "name_sw": "Sukuma",
+            "slug": "test-sukuma-wiki",
+            "name_en": "_test_Sukuma Wiki",
+            "name_sw": "_test_Sukuma",
             "description": "Pan-fried collard greens.",
             "meal_type": "any",
             "course": "side",
@@ -196,7 +207,7 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
             "aliases-MAX_NUM_FORMS": "1000",
             "aliases-0-id": "",
             "aliases-0-dish": "",
-            "aliases-0-alias": "Sukuma",
+            "aliases-0-alias": "_test_Sukuma",
             "aliases-0-language": "sw",
             # DishStep inline
             "steps-TOTAL_FORMS": "1",
@@ -229,8 +240,8 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
         )
         raise AssertionError(f"Expected 302, got {resp.status_code}. Errors: {plain[:2000]}")
     assert Dish.objects.count() == initial_count + 1
-    dish = Dish.objects.get(name_en="Sukuma Wiki")
-    assert dish.slug == "sukuma-wiki"
+    dish = Dish.objects.get(name_en="_test_Sukuma Wiki")
+    assert dish.slug == "test-sukuma-wiki"
     # Ingredient row saved
     assert dish.dish_ingredients.count() == 1
     di = dish.dish_ingredients.first()
@@ -238,7 +249,7 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
     assert di.role == "primary"
     # Alias saved
     assert dish.aliases.count() == 1
-    assert dish.aliases.first().alias == "Sukuma"
+    assert dish.aliases.first().alias == "_test_Sukuma"
     # Step saved
     assert dish.steps.count() == 1
     assert dish.steps.first().text_en == "Chop and fry the greens."
@@ -255,8 +266,8 @@ def test_curator_creates_dish_unaided(curator_client, category, maize_flour):
 
 @pytest.mark.django_db
 def test_bulk_action_mark_reviewed(curator_client):
-    d1 = Dish.objects.create(name_en="Githeri")
-    d2 = Dish.objects.create(name_en="Mukimo")
+    d1 = Dish.objects.create(name_en="_test_Bulk Dish 1")
+    d2 = Dish.objects.create(name_en="_test_Bulk Dish 2")
     assert d1.status == "draft"
     assert d2.status == "draft"
 
@@ -277,7 +288,7 @@ def test_bulk_action_mark_reviewed(curator_client):
 
 @pytest.mark.django_db
 def test_bulk_action_mark_verified(curator_client):
-    d1 = Dish.objects.create(name_en="Nyama Choma")
+    d1 = Dish.objects.create(name_en="_test_Bulk Dish 3")
     resp = curator_client.post(
         "/admin/dishes/dish/",
         data={
@@ -293,7 +304,7 @@ def test_bulk_action_mark_verified(curator_client):
 
 @pytest.mark.django_db
 def test_bulk_action_mark_archived(curator_client):
-    d1 = Dish.objects.create(name_en="Irio")
+    d1 = Dish.objects.create(name_en="_test_Bulk Dish 4")
     resp = curator_client.post(
         "/admin/dishes/dish/",
         data={
@@ -309,8 +320,8 @@ def test_bulk_action_mark_archived(curator_client):
 
 @pytest.mark.django_db
 def test_ingredient_bulk_action_mark_reviewed(curator_client, category):
-    i1 = Ingredient.objects.create(name_en="Tomato", category=category)
-    i2 = Ingredient.objects.create(name_en="Onion", category=category)
+    i1 = Ingredient.objects.create(name_en="_test_Bulk Ing 1", category=category)
+    i2 = Ingredient.objects.create(name_en="_test_Bulk Ing 2", category=category)
     assert i1.status == "draft"
 
     resp = curator_client.post(
@@ -347,13 +358,13 @@ def test_search_by_alias_finds_dish(curator_client, dish):
 @pytest.mark.django_db
 def test_search_by_alias_finds_ingredient(curator_client, category):
     """Search query matching an ingredient alias should find the ingredient."""
-    ing = Ingredient.objects.create(name_en="Coriander", category=category)
+    ing = Ingredient.objects.create(name_en="_test_Coriander", category=category)
     ing.aliases.create(alias="Dhania", normalized_alias="dhania", language="sw")
 
     resp = curator_client.get("/admin/ingredients/ingredient/", data={"q": "dhania"})
     assert resp.status_code == 200
     body = resp.content.decode()
-    assert "Coriander" in body
+    assert "_test_Coriander" in body
 
 
 # ---------------------------------------------------------------------------
@@ -374,8 +385,8 @@ def test_save_model_rebuilds_search_arrays(curator_client, dish, maize_flour, wa
     resp = curator_client.post(
         f"/admin/dishes/dish/{dish.pk}/change/",
         data={
-            "slug": "ugali",
-            "name_en": "Ugali",
+            "slug": dish.slug,
+            "name_en": dish.name_en,
             "name_sw": "",
             "description": "",
             "meal_type": "any",

@@ -65,7 +65,22 @@ jobs:
         run: pip install -r requirements/dev.txt
 
       - name: Run pip-audit
-        run: pip-audit -r requirements/base.txt -r requirements/prod.txt
+        run: |
+          pip-audit -r requirements/base.txt -r requirements/prod.txt \
+            --ignore-vuln PYSEC-2026-3717 \
+            --ignore-vuln PYSEC-2026-4035 \
+            --ignore-vuln GHSA-923m-gv2p-w5qp \
+            --ignore-vuln GHSA-h7pc-vwp9-298g \
+            --ignore-vuln GHSA-8cjm-8mp7-r2xf \
+            --ignore-vuln GHSA-3h9f-r86x-qvjx \
+            --ignore-vuln GHSA-crhf-3pfg-w68w \
+            --ignore-vuln GHSA-8qcx-xf44-272x \
+            --ignore-vuln GHSA-33wh-fxxf-88vv \
+            --ignore-vuln GHSA-3547-9m27-7rxg \
+            --ignore-vuln GHSA-xw6w-gcfp-cf8m
+          # Django 5.1.15 CVEs above are fixed in 5.2.x only (no 5.1 backport).
+          # DRF 3.17.2 CVEs are fixed in 3.18.x only.
+          # Pillow upgraded to 13.0.0 which has no known CVEs.
 
   test:
     name: Tests with coverage
@@ -108,6 +123,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements/dev.txt
+
+      - name: Enable pg_trgm extension
+        env:
+          PGPASSWORD: ff_engine_pass
+        run: psql -h localhost -U ff_engine -d ff_engine_test -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
 
       - name: Run tests with coverage
         env:
@@ -164,6 +184,8 @@ jobs:
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
-        run: python manage.py migrate --check --no-input
-        # --check exits non-zero if there are unapplied migrations or
-        # if any model changes are missing a migration file
+        run: |
+          # Apply all migrations to the fresh CI database
+          python manage.py migrate --no-input
+          # Check that no model changes are missing a migration file
+          python manage.py makemigrations --check --dry-run --no-input

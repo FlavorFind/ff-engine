@@ -9,4 +9,6 @@ urlpatterns = [
     path("meta/version/", views.version, name="version"),
     path("ingredients/", include("apps.ingredients.urls")),
     path("search/", include("apps.search.urls")),
+    path("dishes/", include("apps.dishes.urls")),
+    path("regions/", include("apps.regions.urls")),
 ]
