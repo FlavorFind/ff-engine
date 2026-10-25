@@ -104,6 +104,9 @@ class Command(BaseCommand):
                 counters.update(self._seed_dishes(dry_run))
                 counters.update(self._seed_dish_ingredients(dry_run))
                 counters.update(self._seed_dish_steps(dry_run))
+                counters.update(self._seed_pairings(dry_run))
+                counters.update(self._seed_substitutions(dry_run))
+                counters.update(self._seed_regions(dry_run))
                 if not dry_run:
                     rebuilt = self._rebuild_arrays()
                     counters["dishes_rebuilt"] = rebuilt
@@ -371,6 +374,216 @@ class Command(BaseCommand):
 
         self.stdout.write(f"  DishSteps    created={created}  skipped={skipped}")
         return {"dish_steps_created": created, "dish_steps_skipped": skipped}
+
+    # ── pairings ──────────────────────────────────────────────────────────────
+
+    def _seed_pairings(self, dry_run: bool) -> dict:
+        path = SEEDS_DIR / "pairings.csv"
+        if not path.exists():
+            return {"pairings_created": 0, "pairings_skipped": 0}
+
+        from apps.pairings.models import Pairing
+
+        VALID_TYPES = {c[0] for c in Pairing.PairingType.choices}
+        created = skipped = missing = 0
+        dish_cache: dict[str, Dish] = {}
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                dish_slug = row["dish_slug"].strip()
+                paired_slug = row.get("paired_dish_slug", "").strip()
+                paired_label = row.get("paired_label", "").strip()
+                p_type = row["pairing_type"].strip()
+                strength = _safe_int(row["strength"], 3)
+
+                if p_type not in VALID_TYPES:
+                    p_type = Pairing.PairingType.SIDE
+                strength = max(1, min(5, strength))
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                # Dish
+                if dish_slug not in dish_cache:
+                    try:
+                        dish_cache[dish_slug] = Dish.objects.get(slug=dish_slug)
+                    except Dish.DoesNotExist:
+                        missing += 1
+                        continue
+                dish = dish_cache[dish_slug]
+
+                # Paired dish (optional)
+                paired_dish = None
+                if paired_slug:
+                    if paired_slug not in dish_cache:
+                        try:
+                            dish_cache[paired_slug] = Dish.objects.get(slug=paired_slug)
+                        except Dish.DoesNotExist:
+                            # Silently skip unknown paired dish slugs
+                            pass
+                    paired_dish = dish_cache.get(paired_slug)
+
+                if not paired_dish and not paired_label:
+                    skipped += 1
+                    continue
+
+                _, was_created = Pairing.objects.get_or_create(
+                    dish=dish,
+                    paired_dish=paired_dish,
+                    paired_label=paired_label if not paired_dish else "",
+                    pairing_type=p_type,
+                    defaults={
+                        "strength": strength,
+                        "note": (row.get("note") or "").strip(),
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        if missing:
+            logger.warning("pairings: %d rows skipped — dish not found", missing)
+        self.stdout.write(f"  Pairings     created={created}  skipped={skipped}")
+        return {"pairings_created": created, "pairings_skipped": skipped}
+
+    # ── substitutions ─────────────────────────────────────────────────────────
+
+    def _seed_substitutions(self, dry_run: bool) -> dict:
+        path = SEEDS_DIR / "substitutions.csv"
+        if not path.exists():
+            return {"substitutions_created": 0, "substitutions_skipped": 0}
+
+        from apps.substitutions.models import Substitution
+
+        VALID_QUALITIES = {c[0] for c in Substitution.Quality.choices}
+        created = skipped = missing = 0
+        ing_cache: dict[str, Ingredient] = {}
+        dish_cache: dict[str, Dish] = {}
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                ing_slug = row["ingredient_slug"].strip()
+                sub_slug = row["substitute_slug"].strip()
+                quality = row["quality"].strip()
+                context_slug = row.get("context_dish_slug", "").strip()
+                ratio = _safe_float(row.get("ratio", "1.0"), 1.0)
+
+                if quality not in VALID_QUALITIES:
+                    quality = Substitution.Quality.OK
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                # Ingredient
+                if ing_slug not in ing_cache:
+                    try:
+                        ing_cache[ing_slug] = Ingredient.objects.get(slug=ing_slug)
+                    except Ingredient.DoesNotExist:
+                        missing += 1
+                        continue
+
+                # Substitute ingredient
+                if sub_slug not in ing_cache:
+                    try:
+                        ing_cache[sub_slug] = Ingredient.objects.get(slug=sub_slug)
+                    except Ingredient.DoesNotExist:
+                        missing += 1
+                        continue
+
+                ingredient = ing_cache[ing_slug]
+                substitute = ing_cache[sub_slug]
+
+                # Context dish (optional)
+                context_dish = None
+                if context_slug:
+                    if context_slug not in dish_cache:
+                        try:
+                            dish_cache[context_slug] = Dish.objects.get(slug=context_slug)
+                        except Dish.DoesNotExist:
+                            pass
+                    context_dish = dish_cache.get(context_slug)
+
+                _, was_created = Substitution.objects.get_or_create(
+                    ingredient=ingredient,
+                    substitute=substitute,
+                    context_dish=context_dish,
+                    defaults={
+                        "ratio": ratio,
+                        "quality": quality,
+                        "note": (row.get("note") or "").strip(),
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        if missing:
+            logger.warning("substitutions: %d rows skipped — ingredient not found", missing)
+        self.stdout.write(f"  Substitutions created={created}  skipped={skipped}")
+        return {"substitutions_created": created, "substitutions_skipped": skipped}
+
+    # ── regions ───────────────────────────────────────────────────────────────
+
+    def _seed_regions(self, dry_run: bool) -> dict:
+        path = SEEDS_DIR / "regions.csv"
+        if not path.exists():
+            return {"regions_created": 0, "regions_skipped": 0}
+
+        from apps.regions.models import Region
+
+        created = skipped = 0
+        # Two-pass: create parents first, then children
+        rows = []
+        with open(path, newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+
+        if dry_run:
+            self.stdout.write(f"  Regions      created={len(rows)}  skipped=0  (dry run)")
+            return {"regions_created": len(rows), "regions_skipped": 0}
+
+        # Pass 1 — rows with no parent
+        for row in rows:
+            if row.get("parent_slug", "").strip():
+                continue
+            _, was_created = Region.objects.get_or_create(
+                slug=row["slug"].strip(),
+                defaults={
+                    "name": row["name"].strip(),
+                    "type": row["type"].strip(),
+                    "description": (row.get("description") or "").strip(),
+                },
+            )
+            if was_created:
+                created += 1
+            else:
+                skipped += 1
+
+        # Pass 2 — rows with a parent
+        for row in rows:
+            parent_slug = row.get("parent_slug", "").strip()
+            if not parent_slug:
+                continue
+            parent = Region.objects.filter(slug=parent_slug).first()
+            _, was_created = Region.objects.get_or_create(
+                slug=row["slug"].strip(),
+                defaults={
+                    "name": row["name"].strip(),
+                    "type": row["type"].strip(),
+                    "parent": parent,
+                    "description": (row.get("description") or "").strip(),
+                },
+            )
+            if was_created:
+                created += 1
+            else:
+                skipped += 1
+
+        self.stdout.write(f"  Regions      created={created}  skipped={skipped}")
+        return {"regions_created": created, "regions_skipped": skipped}
 
     # ── rebuild search arrays ────────────────────────────────────────────────
 

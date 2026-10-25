@@ -1,0 +1,112 @@
+ingredient_slug,substitute_slug,ratio,quality,context_dish_slug,note
+spinach,amaranth-or-spinach,1.0,great,,Amaranth is a close substitute for spinach
+tomato,tomato-paste,0.25,ok,,Use 1/4 the quantity — paste is concentrated
+onion,red-onion,1.0,great,,Very close substitute
+garlic,ginger,0.5,ok,,Different flavour but both aromatics — use half
+coconut-milk,coconut-cream,0.5,great,,Use half the quantity — richer
+lemon,lime,1.0,great,,Almost interchangeable in most recipes
+lime,lemon,1.0,great,,Almost interchangeable
+butter,ghee,0.8,great,,Slightly richer — reduce quantity slightly
+ghee,butter,1.2,great,,Use slightly more butter to compensate
+beef,goat-meat,1.0,great,,Very similar cooking properties
+maize-flour,sorghum-flour,1.0,ok,,Different flavour; works for ugali variations
+dried-beans,kidney-beans,1.0,great,,Interchangeable in most recipes
+rice,broken-rice,1.0,great,,Same ingredient, different grade
+coriander,parsley,1.0,ok,,Similar freshness; different flavour profile
+cooking-oil,sunflower-oil,1.0,great,,Direct substitute
+cooking-oil,vegetable-oil,1.0,great,,Direct substitute
+spinach,collard-greens,1.0,ok,,Tougher leaves need longer cooking
+collard-greens,spinach,1.0,ok,,Cooks faster so add late
+collard-greens,cabbage,1.0,ok,,Shred finely and cook briefly
+amaranth-leaves,spinach,1.0,great,,Very similar mild leafy green
+spinach,amaranth-leaves,1.0,great,,Very similar mild leafy green
+managu-leaves,spinach,1.0,ok,,Less bitter than managu
+cassava-leaves,spinach,1.0,emergency,,Lacks the body of cassava leaves
+cassava-leaves,pounded-cassava-leaves,1.0,great,,Same leaf already pounded
+bean-leaves,spinach,1.0,ok,,Milder flavour
+moringa-leaves,spinach,1.0,ok,,Milder and less peppery
+stinging-nettle,spinach,1.0,ok,,Spinach needs no pre-boiling
+roselle-leaves,spinach,1.0,emergency,,Loses the sour note so add a little lemon juice
+dried-amaranth-leaves,amaranth-leaves,4.0,great,,Use about four times the dried weight in fresh leaves
+dried-cassava-leaves,cassava-leaves,4.0,great,,Use about four times the dried weight in fresh leaves
+red-onion,onion,1.0,great,,Slightly milder and sweeter
+fresh-ginger,ginger-powder,0.25,ok,,Powder is stronger and less fresh
+ginger-powder,fresh-ginger,4.0,ok,,Grate fresh ginger and use about four times as much
+fresh-turmeric,turmeric,0.33,ok,,Use about a third as much powder
+chili,chili-powder,0.25,ok,,Powder is hotter by weight
+berbere-spice,mitmita-spice,0.5,ok,,Mitmita is hotter and sharper
+mitmita-spice,berbere-spice,1.5,ok,,Milder and sweeter than mitmita
+mchuzi-mix,curry-powder,1.0,great,,Both are all-purpose blends
+curry-powder,mchuzi-mix,1.0,great,,Both are all-purpose blends
+zanzibar-spice-mix,pilau-masala,1.0,great,,Both are warm clove-led blends
+pilau-masala,zanzibar-spice-mix,1.0,great,,Both are warm clove-led blends
+long-pepper,black-pepper,1.0,ok,,Long pepper is sweeter and more complex
+dried-limes,lime,0.5,ok,,Fresh lime lacks the smoky depth
+vegetable-oil,cooking-oil,1.0,great,,Both are neutral frying oils
+palm-oil,vegetable-oil,1.0,ok,,Loses the red colour and flavour
+lard,butter,1.0,ok,,Good for frying but lacks dairy flavour
+beef-tallow,lard,1.0,great,,Both are solid animal fats
+pork-fat,lard,1.0,great,,Lard is rendered pork fat
+sugar,honey,0.75,great,,Honey is sweeter so use less
+honey,sugar,1.25,ok,,Add a little water for moisture
+brown-sugar,sugar,1.0,great,,Slightly less depth
+palm-sugar,brown-sugar,1.0,great,,Similar caramel flavour
+date-syrup,honey,1.0,great,,Both are thick natural sweeteners
+wild-honey,honey,1.0,great,,Both are natural honey
+goat-meat,beef,1.0,great,,Beef cooks slightly faster
+minced-beef,minced-goat,1.0,great,,Goat is leaner
+minced-goat,minced-beef,1.0,great,,Beef is fattier
+beef-chunks,beef-cubes,1.0,great,,Same meat cut differently
+beef-cubes,beef-chunks,1.0,great,,Same meat cut differently
+chicken-pieces,free-range-chicken,1.0,great,,Free-range is firmer and needs longer cooking
+tilapia-fillets,fish-fillets,1.0,ok,,Any firm white fillets
+fish-fillets,tilapia-fillets,1.0,great,,Mild white fish
+dried-omena,dried-fish,1.0,ok,,Larger dried fish need soaking
+dried-fish,dried-omena,1.0,ok,,Omena are smaller and cook faster
+ndagala,dried-omena,1.0,great,,Both are small lake fish
+dried-omena,ndagala,1.0,great,,Both are small lake fish
+kawakawa,skipjack-tuna,1.0,great,,Similar oily dark flesh
+skipjack-tuna,kawakawa,1.0,great,,Similar oily dark flesh
+emperor-fish,grouper,1.0,ok,,Both have firm white flesh
+goat-intestines,beef-tripe,1.0,ok,,Tripe is chewier
+beef-tripe,goat-intestines,1.0,ok,,Intestines are softer
+maize-flour,millet-flour,1.0,ok,,Darker and tangier
+millet-flour,maize-flour,1.0,ok,,Milder flavour
+maize-flour,cassava-flour,1.0,ok,,Softer and stickier texture
+white-teff-flour,teff-flour,1.0,great,,Teff flour is slightly darker
+red-teff-flour,teff-flour,1.0,great,,Teff flour is slightly lighter
+mixed-teff-flour,teff-flour,1.0,great,,Same grain
+teff-flour,mixed-teff-flour,1.0,great,,Same grain
+dagusha-flour,millet-flour,1.0,ok,,Millet flour is finer
+plantain-flour,green-banana-flour,1.0,great,,Both are dried unripe fruit flours
+green-banana-flour,plantain-flour,1.0,great,,Both are dried unripe fruit flours
+yellow-maize-flour,maize-flour,1.0,great,,White flour is milder
+maize-flour,yellow-maize-flour,1.0,great,,Colour will be deeper
+uji-flour,millet-flour,1.0,ok,,Plain flour lacks the blend
+kivunde,cassava-flour,1.0,ok,,Lacks the sour fermented taste
+beans,kidney-beans,1.0,great,,Both cook similarly
+kidney-beans,beans,1.0,great,,Cook until fully soft
+brown-lentils,red-lentils,1.0,ok,,Red lentils break down faster
+potato,sweet-potato,1.0,ok,,Sweeter and softer
+sweet-potato,potato,1.0,ok,,Less sweet
+green-bananas,green-plantains,1.0,great,,Plantains are firmer
+peanut-butter,groundnut-paste,1.0,great,,Use unsweetened paste
+groundnut-flour,ground-peanuts,1.0,great,,Both are ground peanuts
+butter,niter-kibbeh,1.0,great,doro-wat,Traditional spiced clarified butter
+butter,niter-kibbeh,1.0,great,key-wat,Traditional spiced clarified butter
+butter,niter-kibbeh,1.0,great,kitfo,Traditional spiced clarified butter
+butter,niter-kibbeh,1.0,great,beef-tibs,Traditional spiced clarified butter
+butter,niter-kibbeh,1.0,great,lamb-tibs,Traditional spiced clarified butter
+spinach,collard-greens,1.0,great,gomen,Gomen is traditionally made with collard greens
+cabbage,collard-greens,1.0,ok,gomen,Stronger flavour than cabbage
+cassava-leaves,bean-leaves,1.0,ok,isombe,Milder and softer
+rice,basmati-rice,1.0,great,coastal-chicken-biryani,Long fragrant grains are traditional
+rice,basmati-rice,1.0,great,coastal-beef-biryani,Long fragrant grains are traditional
+tilapia,fish,1.0,great,samaki-wa-nazi,Any firm fish works in coconut sauce
+green-bananas,green-plantains,1.0,great,ndizi-nyama,Plantains hold their shape well
+beef,goat-meat,1.0,great,mshikaki,Goat needs a longer marinade
+minced-beef,minced-goat,1.0,great,beef-samosa,Goat is leaner so add a little oil
+honey,sugar,1.25,ok,dawa,Add extra lime to balance
+malted-finger-millet,malted-sorghum,1.0,ok,togwa,Different flavour
+millet-flour,maize-flour,1.0,ok,fermented-millet-uji,Milder and less sour
+cassava-flour,maize-flour,1.0,ok,ubugari,Gives a firmer porridge

@@ -1,0 +1,122 @@
+dish_slug,paired_dish_slug,paired_label,pairing_type,strength,note
+ugali,sukuma-wiki,,side,5,Classic Kenyan combination
+ugali,nyama-choma,,side,5,Classic
+ugali,fried-fish,,side,5,Very common coastal and lakeside
+ugali,beef-stew,,side,4,Common household meal
+ugali,chicken-stew,,side,4,
+ugali,bean-stew,,side,4,Budget-friendly pairing
+ugali,githeri,,side,3,
+nyama-choma,kachumbari,,side,5,Essential pairing
+nyama-choma,ugali,,side,5,
+nyama-choma,,roasted corn,side,3,Street food accompaniment
+nyama-choma,,cold beer,drink,5,Classic bar pairing
+nyama-choma,,soda,drink,4,
+kachumbari,nyama-choma,,side,5,
+kachumbari,pilau,,side,4,
+kachumbari,fried-fish,,side,4,
+pilau,kachumbari,,side,5,
+pilau,,raita,side,3,Cooling accompaniment
+pilau,,mango juice,drink,4,
+chapati,bean-stew,,side,5,Classic Kenyan breakfast/lunch
+chapati,beef-stew,,side,5,
+chapati,chicken-stew,,side,4,
+chapati,,chai,drink,5,Everyday pairing
+chapati,kachumbari,,side,3,
+githeri,kachumbari,,side,4,
+githeri,,avocado,side,3,
+sukuma-wiki,ugali,,side,5,
+sukuma-wiki,chapati,,side,4,
+mandazi,,chai,drink,5,Classic Kenyan breakfast
+mandazi,,uji,drink,4,
+matoke,beef-stew,,side,4,
+matoke,chicken-stew,,side,4,
+biryani,kachumbari,,side,4,
+biryani,,raita,side,3,
+biryani,,mango juice,drink,4,
+samosa,,chutney,side,5,
+samosa,,chai,drink,4,
+bhajia,,kachumbari,side,4,
+mukimo,nyama-choma,,side,5,Kikuyu classic
+mukimo,beef-stew,,side,4,
+mutura,,kachumbari,side,4,
+mutura,,beer,drink,4,
+doro-wat,misir-wat,complementary,4,Lentil stew shares the platter with chicken
+doro-wat,gomen,side,4,Mild greens balance the spicy sauce
+doro-wat,atkilt-wat,side,3,Soft vegetables cool the heat
+doro-wat,tej,drink,4,Honey wine is the traditional partner
+key-wat,gomen,side,4,Greens balance the spicy beef
+key-wat,atkilt-wat,side,3,Soft vegetables cool the heat
+key-wat,buna,drink,3,Coffee often closes the meal
+beef-tibs,gomen,side,3,Greens add freshness
+beef-tibs,tej,drink,4,Sweet honey wine pairs with savoury beef
+lamb-tibs,tej,drink,4,Sweet honey wine pairs with savoury lamb
+kitfo,gomen,side,5,Traditional partner that cuts the richness
+kitfo,buna,drink,3,Coffee follows a rich meal
+shiro-wat,atkilt-wat,side,4,Fasting-friendly vegetable side
+shiro-wat,gomen,side,4,Fasting-friendly greens
+ful-ethiopian,buna,drink,4,Classic breakfast pairing
+ful-ethiopian,chechebsa,complementary,3,Both are breakfast staples
+misir-wat,kik-alicha,side,4,Mild and spicy pulses served together
+misir-wat,gomen,side,4,Greens balance the heat
+misir-wat,atkilt-wat,side,4,Vegetable side for a fasting platter
+kik-alicha,atkilt-wat,side,4,Mild vegetables with mild peas
+genfo,buna,drink,3,Coffee with breakfast porridge
+chechebsa,buna,drink,4,Coffee with a spiced breakfast
+firfir,buna,drink,4,Coffee with a spicy breakfast
+eritrean-zigni,buna,drink,3,Coffee follows a hearty stew
+isombe,ubugari,side,5,Classic partner for the leafy stew
+isombe,rwandan-roasted-sweet-potatoes,side,3,Sweet starch balances the savoury leaves
+isombe,rwandan-bean-stew,complementary,3,Hearty plant-based pairing
+akabenz,mizuzu,side,5,Fried plantain is the classic partner
+akabenz,rwandan-avocado-salad,side,4,Cool creamy salad with roasted pork
+akabenz,rwandan-banana-juice,drink,3,Sweet juice with salty pork
+rwandan-brochettes,mizuzu,side,5,Fried plantain is the classic partner
+rwandan-brochettes,urwagwa,drink,3,Traditional banana beer with grilled meat
+rwandan-brochettes,rwandan-avocado-salad,side,3,Cool creamy salad
+rwandan-pumpkin-stew,ubugari,side,4,Stiff porridge scoops the stew
+rwandan-bean-stew,ubugari,side,5,Classic stew and porridge
+rwandan-bean-stew,mizuzu,side,3,Sweet fried plantain with beans
+rwandan-roasted-sweet-potatoes,ikivuguto,drink,3,Fermented milk with a sweet snack
+igikoma,rwandan-roasted-sweet-potatoes,side,3,Morning porridge with roasted potatoes
+burundian-bean-stew,burundian-fried-plantains,side,4,Sweet plantain with savoury beans
+burundian-bean-stew,ugali,side,4,Stiff porridge with beans
+burundian-ndagala-fry,ugali,side,5,Classic fried small fish with porridge
+burundian-ndagala-fry,burundian-fried-plantains,side,3,Crisp fish with sweet plantain
+burundian-sweet-potato-stew,burundian-ndagala-fry,complementary,3,Light stew with fried fish
+sombe-with-fish,ubugari,side,5,Classic partner for the cassava-leaf stew
+sombe-with-fish,mizuzu,side,3,Fried plantain with fish and leaves
+ugali,isombe,complementary,4,Stiff porridge with cassava-leaf stew
+ugali,rwandan-bean-stew,complementary,4,Stiff porridge with beans
+ugali,samaki-wa-kupaka,complementary,3,Porridge with fish in coconut sauce
+rwandan-ginger-tea,coconut-mandazi,complementary,4,Sweet fried dough with spiced tea
+coastal-chicken-biryani,tamarind-juice-ukwaju,drink,4,Sour juice cuts through spiced rice
+coastal-chicken-biryani,kahawa-chungu,drink,3,Spiced coffee after the meal
+coastal-beef-biryani,tamarind-juice-ukwaju,drink,4,Sour juice cuts through spiced rice
+coastal-beef-biryani,hibiscus-tea,drink,3,Tart tea with rich rice
+zanzibar-seafood-pilau,tamarind-juice-ukwaju,drink,3,Tangy juice with seafood rice
+samaki-wa-kupaka,wali-wa-nazi,side,5,Coconut rice is the classic partner
+samaki-wa-kupaka,mkate-wa-ufuta,side,4,Sesame bread soaks up the sauce
+samaki-wa-kupaka,viazi-karai,side,3,Crisp potatoes with fish
+samaki-wa-kupaka,tamarind-juice-ukwaju,drink,4,Sour juice with fish
+samaki-wa-nazi,wali-wa-nazi,side,5,Coconut rice completes the dish
+samaki-wa-nazi,mbaazi-za-nazi,side,3,Another coconut dish for a coastal meal
+pweza-wa-nazi,wali-wa-nazi,side,4,Coconut rice with octopus
+pweza-wa-nazi,mkate-wa-ufuta,side,3,Bread for the sauce
+mbaazi-za-nazi,mkate-wa-ufuta,side,5,Traditional coastal pairing
+mbaazi-za-nazi,wali-wa-nazi,side,4,Coconut peas over coconut rice
+mbaazi-za-nazi,coconut-mandazi,complementary,4,Sweet fried dough with peas
+kuku-paka,mkate-wa-ufuta,side,5,Sesame bread with creamy chicken
+kuku-paka,wali-wa-nazi,side,4,Coconut rice with creamy chicken
+urojo,viazi-karai,side,4,Fried potatoes added to the soup
+urojo,mshikaki,complementary,4,Grilled beef alongside the soup
+viazi-karai,mshikaki,complementary,4,Classic street-food pairing
+mkate-wa-ufuta,masala-chai,drink,4,Morning bread with spiced tea
+mkate-wa-ufuta,kahawa-chungu,drink,4,Morning bread with spiced coffee
+coconut-mandazi,masala-chai,drink,5,The classic tea-time pairing
+coconut-mandazi,kahawa-chungu,drink,3,Coffee with sweet dough
+milk-mandazi,masala-chai,drink,5,The classic tea-time pairing
+potato-bhajia,masala-chai,drink,4,Savoury fritters with tea
+beef-samosa,masala-chai,drink,4,Savoury pastry with tea
+beef-samosa,tamarind-juice-ukwaju,drink,3,Sour juice with spiced pastry
+mshikaki,tamarind-juice-ukwaju,drink,3,Sour juice with grilled beef
+ugandan-rolex,masala-chai,drink,3,Tea with a street breakfast
