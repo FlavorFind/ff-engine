@@ -59,8 +59,8 @@ class ResolvedQuery:
 
     @property
     def is_empty(self) -> bool:
-        """True if no ingredients resolved at all (not even via staples)."""
-        return not self.matched_ids and not self.staples_added
+        """True if no user ingredients resolved (staples are assumed, not real matches)."""
+        return not self.matched_ids
 
 
 def resolve_ingredients(

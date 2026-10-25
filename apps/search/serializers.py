@@ -85,6 +85,16 @@ class SearchRequestSerializer(serializers.Serializer):
         max_value=50,
         required=False,
     )
+    diet = serializers.ListField(
+        child=serializers.CharField(max_length=100),
+        default=list,
+        required=False,
+        help_text=(
+            "Dietary tag slugs to filter by (e.g. 'vegetarian', 'gluten-free', 'nut-free'). "
+            "Allergen exclusions always win — a dish tagged contains-pork is excluded "
+            "when 'contains-pork' is in this list."
+        ),
+    )
 
     def validate_ingredients(self, value: list) -> list:
         """Strip whitespace and drop blank entries."""
