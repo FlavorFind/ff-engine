@@ -1,5 +1,5 @@
 """
-E36 — Admin for ApiClient and ApiKey.
+E36 + E38 — Admin for ApiClient, ApiKey, UsageRecord, RequestLog.
 
 Key workflow:
   - Create a client, then use the "Generate new key" action on the
@@ -13,7 +13,7 @@ from django.contrib import admin, messages
 from django.utils.html import format_html
 
 from apps.clients.keys import create_key
-from apps.clients.models import ApiClient, ApiKey
+from apps.clients.models import ApiClient, ApiKey, RequestLog, UsageRecord
 
 
 class ApiKeyInline(admin.TabularInline):
@@ -121,3 +121,23 @@ class ApiKeyAdmin(admin.ModelAdmin):
             key.revoke()
             count += 1
         self.message_user(request, f"{count} key(s) revoked.")
+
+
+@admin.register(UsageRecord)
+class UsageRecordAdmin(admin.ModelAdmin):
+    list_display = ["client", "endpoint", "date", "calls", "errors", "p95_ms"]
+    list_filter = ["client", "endpoint", "date"]
+    search_fields = ["client__name", "endpoint"]
+    ordering = ["-date", "client__name"]
+    readonly_fields = ["client", "endpoint", "date", "calls", "errors", "p95_ms"]
+    date_hierarchy = "date"
+
+
+@admin.register(RequestLog)
+class RequestLogAdmin(admin.ModelAdmin):
+    list_display = ["client", "endpoint", "status_code", "response_ms", "logged_at"]
+    list_filter = ["client", "endpoint", "status_code"]
+    search_fields = ["client__name", "endpoint"]
+    ordering = ["-logged_at"]
+    readonly_fields = ["client", "endpoint", "status_code", "response_ms", "logged_at"]
+    date_hierarchy = "logged_at"
