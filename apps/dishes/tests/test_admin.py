@@ -129,11 +129,11 @@ def test_admin_site_branding():
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.django_db
+@pytest.mark.django_db(transaction=True)
 def test_dish_admin_list_page(curator_client, dish):
     resp = curator_client.get("/admin/dishes/dish/")
     assert resp.status_code == 200
-    assert "Ugali" in resp.content.decode()
+    assert "_test_Ugali" in resp.content.decode()
 
 
 @pytest.mark.django_db

@@ -13,8 +13,7 @@ from __future__ import annotations
 import logging
 
 from rest_framework import status as http_status
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
 
@@ -35,7 +34,6 @@ CACHE_CONTROL = "private, max-age=300"
 
 
 @api_view(["POST"])
-@permission_classes([AllowAny])
 def search_by_ingredients(request: Request) -> Response:
     """
     POST /v1/search/by-ingredients

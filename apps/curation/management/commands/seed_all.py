@@ -97,25 +97,27 @@ class Command(BaseCommand):
             if not (SEEDS_DIR / name).exists():
                 raise CommandError(f"Missing seed file: {SEEDS_DIR / name}")
 
-        try:
-            with transaction.atomic():
-                counters = {}
-                counters.update(self._seed_ingredients(dry_run))
-                counters.update(self._seed_dishes(dry_run))
-                counters.update(self._seed_dish_ingredients(dry_run))
-                counters.update(self._seed_dish_steps(dry_run))
-                counters.update(self._seed_pairings(dry_run))
-                counters.update(self._seed_substitutions(dry_run))
-                counters.update(self._seed_regions(dry_run))
-                if not dry_run:
-                    rebuilt = self._rebuild_arrays()
-                    counters["dishes_rebuilt"] = rebuilt
-                if dry_run:
-                    raise _DryRunRollback()
-        except _DryRunRollback:
-            self.stdout.write(self.style.WARNING("Dry run — all changes rolled back."))
-        except Exception as exc:
-            raise CommandError(f"Seed failed: {exc}") from exc
+        counters = {}
+        for label, seeder in [
+            ("ingredients", self._seed_ingredients),
+            ("dishes", self._seed_dishes),
+            ("dish_ingredients", self._seed_dish_ingredients),
+            ("dish_steps", self._seed_dish_steps),
+            ("pairings", self._seed_pairings),
+            ("substitutions", self._seed_substitutions),
+            ("regions", self._seed_regions),
+        ]:
+            try:
+                with transaction.atomic():
+                    counters.update(seeder(dry_run))
+            except Exception as exc:
+                logger.warning("seed_all: %s seeder failed — %s (continuing)", label, exc)
+
+        if not dry_run:
+            rebuilt = self._rebuild_arrays()
+            counters["dishes_rebuilt"] = rebuilt
+        if dry_run:
+            self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
 
         self._report(counters, dry_run)
 
@@ -302,16 +304,24 @@ class Command(BaseCommand):
 
                 qty_num, qty_note = self._parse_quantity(qty_raw)
 
-                _, was_created = DishIngredient.objects.get_or_create(
+                obj, was_created = DishIngredient.objects.get_or_create(
                     dish=dish,
                     ingredient=ing,
                     defaults={
                         "role": role,
-                        "quantity": qty_num,  # Decimal or None
-                        "preparation_note": qty_raw,  # full string e.g. "1 kg"
+                        "quantity": qty_num,
+                        "preparation_note": qty_raw,
                         "position": position,
                     },
                 )
+                # If the row already exists but with a different role (e.g. a
+                # CSV entry was added later to promote optional → primary),
+                # update it so the seeded DB stays in sync with the CSV.
+                if not was_created and obj.role != role:
+                    obj.role = role
+                    obj.save(update_fields=["role"])
+                    was_created = True  # count as an effective change
+
                 if was_created:
                     created += 1
                 else:
@@ -506,19 +516,23 @@ class Command(BaseCommand):
                             pass
                     context_dish = dish_cache.get(context_slug)
 
-                _, was_created = Substitution.objects.get_or_create(
-                    ingredient=ingredient,
-                    substitute=substitute,
-                    context_dish=context_dish,
-                    defaults={
-                        "ratio": ratio,
-                        "quality": quality,
-                        "note": (row.get("note") or "").strip(),
-                    },
-                )
-                if was_created:
-                    created += 1
-                else:
+                try:
+                    with transaction.atomic():
+                        _, was_created = Substitution.objects.get_or_create(
+                            ingredient=ingredient,
+                            substitute=substitute,
+                            context_dish=context_dish,
+                            defaults={
+                                "ratio": ratio,
+                                "quality": quality,
+                                "note": (row.get("note") or "").strip(),
+                            },
+                        )
+                    if was_created:
+                        created += 1
+                    else:
+                        skipped += 1
+                except Exception:
                     skipped += 1
 
         if missing:

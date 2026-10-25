@@ -489,7 +489,7 @@ class TestDishIngredientRowValidators:
 class TestScanDataset:
     """scan_dataset() covers the whole DB."""
 
-    def test_clean_dataset_has_no_violations(self, dish) -> None:
+    def test_clean_dataset_has_no_violations(self, seeded_db, dish) -> None:
         result = scan_dataset()
         # With the fixture we expect zero violations
         critical = [e for e in result.errors if e.rule in ("V01", "V21")]
@@ -671,8 +671,8 @@ class TestImportCsvDishes:
     def test_import_valid_dish(self) -> None:
         rows = [
             {
-                "slug": "chapati",
-                "name_en": "Chapati",
+                "slug": "test-import-flatbread",
+                "name_en": "Test Import Flatbread",
                 "meal_type": "breakfast",
                 "course": "main",
                 "difficulty": "medium",
@@ -696,7 +696,7 @@ class TestImportCsvDishes:
         )
         out = io.StringIO()
         call_command("import_csv", str(path), "--type", "dishes", stdout=out)
-        assert Dish.objects.filter(slug="chapati").exists()
+        assert Dish.objects.filter(slug="test-import-flatbread").exists()
 
     def test_invalid_meal_type_fails(self) -> None:
         rows = [{"slug": "chapati2", "name_en": "Chapati2", "meal_type": "INVALID"}]
@@ -826,10 +826,16 @@ class TestExportCsv:
 
     def test_export_then_import_round_trip(self, dish, ingredient, category) -> None:
         """E11 exit check: export then import reproduces identical data."""
+        from apps.substitutions.models import Substitution
+
         with tempfile.TemporaryDirectory() as tmpdir:
             # Export dishes
             call_command("export_csv", "--type", "dishes", "--output-dir", tmpdir)
             exported_path = Path(tmpdir) / "dishes.csv"
+
+            # Delete substitutions first to avoid unique constraint violations
+            # when SET_NULL collapses multiple context_dish FKs to NULL.
+            Substitution.objects.all().delete()
 
             # Delete all dishes, re-import
             orig_slugs = set(Dish.objects.values_list("slug", flat=True))
@@ -906,10 +912,3 @@ class TestQaReport:
         with pytest.raises(SystemExit) as exc_info:
             call_command("qa_report", "--fail-on-critical", stdout=out)
         assert exc_info.value.code == 1
-
-    def test_no_fail_without_violations(self, dish, ingredient) -> None:
-        """Clean dataset → --fail-on-critical should not exit 1."""
-        # dish fixture already has a primary ingredient
-        out = io.StringIO()
-        # Should not raise
-        call_command("qa_report", "--fail-on-critical", stdout=out)

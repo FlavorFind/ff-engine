@@ -2,7 +2,7 @@ dish_slug,ingredient_slug,role,quantity,unit,position
 nyama-choma,goat-meat,primary,1 kg,,1
 nyama-choma,salt,optional,2 tsp,,2
 nyama-choma,black-pepper,optional,1 tsp,,3
-ugali,maize-flour,optional,3 cups,,1
+ugali,maize-flour,primary,3 cups,,1
 ugali,water,optional,4 cups,,2
 sukuma-wiki,collard-greens,primary,1 bunch,,1
 sukuma-wiki,onion,required,1 medium,,2
@@ -16,11 +16,11 @@ pilau,pilau-masala,optional,2 tbsp,,4
 pilau,garlic,optional,4 cloves,,5
 pilau,ginger,optional,1 tbsp,,6
 pilau,cooking-oil,optional,3 tbsp,,7
-chapati,wheat-flour,optional,4 cups,,1
+chapati,wheat-flour,primary,4 cups,,1
 chapati,salt,optional,1 tsp,,2
 chapati,cooking-oil,optional,1/2 cup,,3
 chapati,warm-water,optional,1.5 cups,,4
-mandazi,wheat-flour,optional,4 cups,,1
+mandazi,wheat-flour,primary,4 cups,,1
 mandazi,sugar,optional,1/2 cup,,2
 mandazi,coconut-milk,optional,1 cup,,3
 mandazi,yeast,optional,2 tsp,,4
@@ -115,7 +115,7 @@ kuku-kienyeji,onion,required,2 medium,,2
 kuku-kienyeji,tomato,required,3 medium,,3
 kuku-kienyeji,garlic,optional,4 cloves,,4
 kuku-kienyeji,cooking-oil,optional,3 tbsp,,5
-mahamri,wheat-flour,optional,4 cups,,1
+mahamri,wheat-flour,primary,4 cups,,1
 mahamri,sugar,optional,1/2 cup,,2
 mahamri,coconut-milk,optional,1 cup,,3
 mahamri,yeast,optional,2 tsp,,4
@@ -253,13 +253,13 @@ kenyan-chicken-soup,carrot,required,2 medium,,3
 kenyan-chicken-soup,salt,optional,1 tsp,,4
 kenyan-chicken-soup,black-pepper,optional,1/2 tsp,,5
 kenyan-chicken-soup,lemon,optional,1,,6
-maandazi-ya-nazi,wheat-flour,optional,4 cups,,1
+maandazi-ya-nazi,wheat-flour,primary,4 cups,,1
 maandazi-ya-nazi,sugar,optional,1/2 cup,,2
 maandazi-ya-nazi,coconut-milk,optional,1 cup,,3
 maandazi-ya-nazi,yeast,optional,2 tsp,,4
 maandazi-ya-nazi,cardamom,optional,1 tsp,,5
 maandazi-ya-nazi,cooking-oil,optional,for frying,,6
-ugali-wa-tanzania,maize-flour,optional,3 cups,,1
+ugali-wa-tanzania,maize-flour,primary,3 cups,,1
 ugali-wa-tanzania,water,optional,4 cups,,2
 wali-wa-nazi,rice,primary,2 cups,,1
 wali-wa-nazi,coconut-milk,optional,1.5 cups,,2
@@ -293,11 +293,11 @@ mtori,beef,primary,500 g,,1
 mtori,green-bananas,required,6,,2
 mtori,onion,required,1 medium,,3
 mtori,salt,optional,1 tsp,,4
-chapati-ya-tanzania,wheat-flour,optional,4 cups,,1
+chapati-ya-tanzania,wheat-flour,primary,4 cups,,1
 chapati-ya-tanzania,salt,optional,1 tsp,,2
 chapati-ya-tanzania,cooking-oil,optional,1/2 cup,,3
 chapati-ya-tanzania,warm-water,optional,1.5 cups,,4
-mandazi-ya-tanzania,wheat-flour,optional,4 cups,,1
+mandazi-ya-tanzania,wheat-flour,primary,4 cups,,1
 mandazi-ya-tanzania,sugar,optional,1/2 cup,,2
 mandazi-ya-tanzania,coconut-milk,optional,1 cup,,3
 mandazi-ya-tanzania,yeast,optional,2 tsp,,4
@@ -535,7 +535,7 @@ ugandan-beef-stew,onion,required,2 medium,,2
 ugandan-beef-stew,garlic,optional,4 cloves,,3
 ugandan-beef-stew,tomato,required,3 medium,,4
 ugandan-beef-stew,curry-powder,optional,1 tbsp,,5
-posho,maize-flour,optional,3 cups,,1
+posho,maize-flour,primary,3 cups,,1
 posho,water,optional,4 cups,,2
 malewa,dried-bamboo-shoots,primary,2 cups,,1
 malewa,onion,required,1 medium,,2
@@ -557,7 +557,7 @@ ugandan-beans,onion,required,1 medium,,2
 ugandan-beans,tomato,required,2 medium,,3
 ugandan-beans,cooking-oil,optional,2 tbsp,,4
 ugandan-beans,salt,optional,1 tsp,,5
-ugandan-chapati,wheat-flour,optional,4 cups,,1
+ugandan-chapati,wheat-flour,primary,4 cups,,1
 ugandan-chapati,salt,optional,1 tsp,,2
 ugandan-chapati,cooking-oil,optional,1/2 cup,,3
 ugandan-chapati,warm-water,optional,1.5 cups,,4
@@ -732,3 +732,74 @@ rwandan-ginger-tea,fresh-ginger,optional,1 tbsp sliced,,2
 rwandan-ginger-tea,black-tea-leaves,primary,2 tbsp,,3
 rwandan-ginger-tea,milk,required,1 cup,,4
 rwandan-ginger-tea,sugar,optional,2 tbsp,,5
+akabenz,pork-chops,primary,500 g,,1
+akabenz,garlic,optional,4 cloves,,2
+buna,green-coffee-beans,primary,1/2 cup,,1
+buna,water,optional,3 cups,,2
+baobab-juice,baobab-fruit,primary,2 cups,,1
+beef-samosa,minced-beef,primary,300 g,,1
+beef-tibs,beef,primary,500 g,,1
+boiled-cassava,cassava,primary,500 g,,1
+burundian-bean-stew,dried-red-beans,primary,2 cups,,1
+burundian-fried-plantains,ripe-plantain,primary,3,,1
+burundian-ndagala-fry,fish-fillets,primary,300 g,,1
+burundian-sweet-potato-stew,sweet-potato,primary,500 g,,1
+busaa,maize,primary,2 cups,,1
+chapati-wrap,wheat-flour,primary,2 cups,,1
+chechebsa,wheat-flour,primary,2 cups,,1
+coastal-beef-biryani,beef,primary,500 g,,1
+coastal-chicken-biryani,chicken-pieces,primary,500 g,,1
+coconut-mandazi,wheat-flour,primary,2 cups,,1
+dawa,honey,primary,2 tbsp,,1
+eritrean-zigni,beef,primary,500 g,,1
+fermented-millet-uji,millet-flour,primary,1 cup,,1
+firfir,injera,primary,2 pieces,,1
+fried-tilapia,tilapia,primary,1 whole,,1
+ful-ethiopian,chickpeas,primary,2 cups,,1
+githeri-stew,maize,primary,1 cup,,1
+hibiscus-tea,dried-hibiscus-petals,primary,1/4 cup,,1
+igikoma,sorghum-flour,primary,1 cup,,1
+kahawa-chungu,black-tea-leaves,primary,2 tbsp,,1
+kenyan-cabbage-stew,cabbage,primary,500 g,,1
+kenyan-fried-eggs,eggs,primary,3,,1
+key-wat,beef,primary,500 g,,1
+kik-alicha,split-peas,primary,2 cups,,1
+kikomando,wheat-flour,primary,2 cups,,1
+kuku-paka,chicken-pieces,primary,1 kg,,1
+kuku-wa-nazi,chicken-pieces,primary,1 kg,,1
+lamb-tibs,lamb-chops,primary,500 g,,1
+maharagwe-ya-nazi,kidney-beans,primary,2 cups,,1
+mahindi-choma,maize,primary,2 cobs,,1
+masala-chai,black-tea-leaves,primary,2 tbsp,,1
+matumbo-stew,beef-tripe,primary,500 g,,1
+mbaazi-za-nazi,pigeon-peas,primary,2 cups,,1
+mbege,banana,primary,6,,1
+milk-mandazi,wheat-flour,primary,2 cups,,1
+mizuzu,ripe-plantain,primary,3,,1
+mkate-wa-ufuta,wheat-flour,primary,2 cups,,1
+mshikaki,beef,primary,500 g,,1
+muhogo-wa-kukaanga,cassava,primary,500 g,,1
+mutura,goat-meat,primary,300 g,,1
+obushera,millet-grain,primary,2 cups,,1
+potato-bhajia,potato,primary,4,,1
+pweza-wa-nazi,octopus,primary,500 g,,1
+rice-and-beans,rice,primary,1 cup,,1
+roasted-gonja,green-plantains,primary,3,,1
+rwandan-banana-juice,banana,primary,6,,1
+rwandan-brochettes,goat-meat,primary,500 g,,1
+rwandan-pumpkin-stew,pumpkin,primary,500 g,,1
+rwandan-roasted-sweet-potatoes,sweet-potato,primary,500 g,,1
+samaki-wa-nazi,fish-fillets,primary,500 g,,1
+shiro-wat,chickpea-flour,primary,1 cup,,1
+smokie-pasua,minced-pork,primary,4,,1
+stewed-tripe,beef-tripe,primary,500 g,,1
+tamarind-juice-ukwaju,tamarind,primary,100 g,,1
+tanzanian-mchuzi-wa-samaki,fish-fillets,primary,500 g,,1
+togwa,millet-flour,primary,1 cup,,1
+ubugari,maize-flour,primary,2 cups,,1
+ugandan-groundnut-stew,groundnut-paste,primary,1 cup,,1
+ugandan-rolex,eggs,primary,3,,1
+uji-porridge,millet-flour,primary,1 cup,,1
+urojo,cassava,primary,200 g,,1
+urwagwa,banana,primary,8,,1
+zanzibar-seafood-pilau,prawns,primary,300 g,,1
