@@ -10,7 +10,12 @@ Without a GIN index these are sequential scans. At 638+ ingredients
 and 1,500+ aliases a GIN trgm index brings fuzzy lookups from O(n)
 to O(log n).
 
-pg_trgm extension is enabled in the initial migration and in CI setup.
+This migration installs the pg_trgm extension itself (CREATE EXTENSION IF NOT EXISTS),
+so it is self-contained and works on any fresh PostgreSQL database — including the
+test DB created by pytest-django — without requiring a separate setup step.
+
+atomic=False is required because CREATE INDEX CONCURRENTLY cannot run inside
+a transaction block.
 """
 
 from django.db import migrations
@@ -18,8 +23,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     # CREATE INDEX CONCURRENTLY cannot run inside a transaction block.
-    # Setting atomic=False tells Django to run this migration outside
-    # the default transaction wrapper.
     atomic = False
 
     dependencies = [
@@ -27,6 +30,11 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        # Install pg_trgm first — safe to run on any DB, idempotent.
+        migrations.RunSQL(
+            sql="CREATE EXTENSION IF NOT EXISTS pg_trgm;",
+            reverse_sql=migrations.RunSQL.noop,
+        ),
         migrations.RunSQL(
             sql="""
                 CREATE INDEX CONCURRENTLY IF NOT EXISTS
