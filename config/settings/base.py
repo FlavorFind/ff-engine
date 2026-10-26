@@ -112,6 +112,11 @@ DATABASES = {
     "default": env.db("DATABASE_URL"),
 }
 DATABASES["default"]["CONN_MAX_AGE"] = env.int("DB_CONN_MAX_AGE", default=60)
+# Use a deterministic test DB name so CI can pre-install pg_trgm on it.
+# pytest-django default is "test_" + DB name (e.g. test_ff_engine_test).
+DATABASES["default"].setdefault("TEST", {})["NAME"] = env(
+    "TEST_DATABASE_NAME", default="test_ff_engine_test"
+)
 
 # ---------------------------------------------------------------------------
 # Cache and Redis
