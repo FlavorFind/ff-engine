@@ -1,0 +1,24 @@
+[bandit]
+# E48 — Bandit static security analysis configuration.
+#
+# Run: bandit -c .bandit -r apps/ config/ scripts/ -ll
+#
+# -ll  only report medium and high severity issues
+# Skipped test IDs are documented below with justification.
+
+[bandit]
+skips =
+    # B101 — assert_used: asserts are used in tests only (pytest convention).
+    B101,
+    # B106 — hardcoded_password_funcarg: test fixtures use dummy passwords.
+    B106,
+    # B311 — random: random is used in load tests (locust), not crypto.
+    B311
+
+exclude_dirs =
+    .venv,
+    .git,
+    __pycache__,
+    node_modules,
+    console/node_modules,
+    console/dist
