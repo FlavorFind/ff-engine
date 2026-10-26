@@ -2514,6 +2514,812 @@
         "is_empty": false,
         "has_ambiguity": false
       }
+    },
+    {
+      "id": "G151",
+      "description": "Strawberry resolves via exact_name",
+      "inputs": [
+        "strawberry"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "strawberry"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false,
+        "method_for_input": {
+          "strawberry": "exact_name"
+        }
+      }
+    },
+    {
+      "id": "G152",
+      "description": "Blueberry resolves via exact_name",
+      "inputs": [
+        "blueberry"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "blueberry"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G153",
+      "description": "Feta cheese resolves",
+      "inputs": [
+        "feta cheese"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "feta-cheese"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G154",
+      "description": "Mozzarella resolves via exact_name",
+      "inputs": [
+        "mozzarella"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "mozzarella"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G155",
+      "description": "Parmesan resolves via exact_name",
+      "inputs": [
+        "parmesan"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "parmesan"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G156",
+      "description": "Walnuts resolves via exact_name",
+      "inputs": [
+        "walnuts"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "walnuts"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G157",
+      "description": "Almonds resolves via exact_name",
+      "inputs": [
+        "almonds"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "almonds"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G158",
+      "description": "Cocoa powder resolves",
+      "inputs": [
+        "cocoa powder"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "cocoa-powder"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G159",
+      "description": "Maple syrup resolves",
+      "inputs": [
+        "maple syrup"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "maple-syrup"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G160",
+      "description": "Tahini resolves via exact_name",
+      "inputs": [
+        "tahini"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tahini"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G161",
+      "description": "Capers resolves via exact_name",
+      "inputs": [
+        "capers"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "capers"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G162",
+      "description": "Quinoa resolves via exact_name",
+      "inputs": [
+        "quinoa"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "quinoa"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G163",
+      "description": "Bulgur wheat resolves",
+      "inputs": [
+        "bulgur wheat"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "bulgur"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G164",
+      "description": "Couscous resolves via exact_name",
+      "inputs": [
+        "couscous"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "couscous"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G165",
+      "description": "Polenta resolves via exact_name",
+      "inputs": [
+        "polenta"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "polenta"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G166",
+      "description": "Kale resolves via exact_name",
+      "inputs": [
+        "kale"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "kale"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G167",
+      "description": "Beetroot resolves via exact_name",
+      "inputs": [
+        "beetroot"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beetroot"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G168",
+      "description": "Arugula resolves via exact_name",
+      "inputs": [
+        "arugula"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "arugula"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G169",
+      "description": "Veal resolves via exact_name",
+      "inputs": [
+        "veal"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "veal"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G170",
+      "description": "Venison resolves via exact_name",
+      "inputs": [
+        "venison"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "venison"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G171",
+      "description": "Greek yogurt resolves",
+      "inputs": [
+        "greek yogurt"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "greek-yogurt"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G172",
+      "description": "Labneh resolves via exact_name",
+      "inputs": [
+        "labneh"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "labneh"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G173",
+      "description": "Ricotta resolves via exact_name",
+      "inputs": [
+        "ricotta"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "ricotta"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G174",
+      "description": "Apple juice resolves",
+      "inputs": [
+        "apple juice"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "apple-juice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G175",
+      "description": "Vanilla extract resolves",
+      "inputs": [
+        "vanilla extract"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "vanilla-extract"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G176",
+      "description": "Lamb shoulder + almonds + apricot resolves all three",
+      "inputs": [
+        "lamb shoulder",
+        "almonds",
+        "apricot"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "lamb-shoulder",
+          "almonds",
+          "apricot"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G177",
+      "description": "Chicken pieces + green olives + lemon resolves all three",
+      "inputs": [
+        "chicken pieces",
+        "green olives",
+        "lemon"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "chicken-pieces",
+          "green-olives",
+          "lemon"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G178",
+      "description": "Egusi seeds + palm oil resolves both",
+      "inputs": [
+        "egusi seeds",
+        "palm oil"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "egusi-seeds",
+          "palm-oil"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G179",
+      "description": "Minced beef + curry powder + raisins resolves all three",
+      "inputs": [
+        "minced beef",
+        "curry powder",
+        "raisins"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "minced-beef",
+          "curry-powder",
+          "raisins"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G180",
+      "description": "Bitterleaf + groundnut paste + prawns resolves all three",
+      "inputs": [
+        "bitterleaf",
+        "groundnut paste",
+        "prawns"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "bitterleaf",
+          "groundnut-paste",
+          "prawns"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G181",
+      "description": "Chickpea flour + berbere resolves both",
+      "inputs": [
+        "chickpea flour",
+        "berbere"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "chickpea-flour",
+          "berbere-spice"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G182",
+      "description": "Goat meat + whole cumin + cinnamon resolves all three",
+      "inputs": [
+        "goat meat",
+        "whole cumin",
+        "cinnamon"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "goat-meat",
+          "whole-cumin",
+          "cinnamon"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G183",
+      "description": "Tilapia + cassava resolves both",
+      "inputs": [
+        "tilapia",
+        "cassava"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tilapia",
+          "cassava"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G184",
+      "description": "Rice + raisins + cinnamon resolves all three",
+      "inputs": [
+        "rice",
+        "raisins",
+        "cinnamon"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice",
+          "raisins",
+          "cinnamon"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G185",
+      "description": "Maize + salt resolves both",
+      "inputs": [
+        "maize",
+        "salt"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "maize",
+          "salt"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G186",
+      "description": "Basmati rice + goat meat resolves both",
+      "inputs": [
+        "basmati rice",
+        "goat meat"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "basmati-rice",
+          "goat-meat"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G187",
+      "description": "Wheat flour + coconut milk + sugar resolves all three",
+      "inputs": [
+        "wheat flour",
+        "coconut milk",
+        "sugar"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "wheat-flour",
+          "coconut-milk",
+          "sugar"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G188",
+      "description": "Potato + wheat flour resolves both",
+      "inputs": [
+        "potato",
+        "wheat flour"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "potato",
+          "wheat-flour"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G189",
+      "description": "Niter kibbeh + onion + garlic resolves all three",
+      "inputs": [
+        "niter kibbeh",
+        "onion",
+        "garlic"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "niter-kibbeh",
+          "onion",
+          "garlic"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G190",
+      "description": "Brown lentils + macaroni resolves both",
+      "inputs": [
+        "brown lentils",
+        "macaroni"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "brown-lentils",
+          "macaroni"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G191",
+      "description": "UPPERCASE input resolves correctly",
+      "inputs": [
+        "GARLIC"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "garlic"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G192",
+      "description": "Mixed case resolves correctly",
+      "inputs": [
+        "Coconut Milk"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "coconut-milk"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G193",
+      "description": "Leading/trailing whitespace is stripped",
+      "inputs": [
+        "  onion  "
+      ],
+      "expect": {
+        "matched_slugs": [
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G194",
+      "description": "Quantity prefix stripped \u2014 500g beef resolves",
+      "inputs": [
+        "500g beef"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beef"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G195",
+      "description": "Quantity prefix stripped \u2014 2 cups rice resolves",
+      "inputs": [
+        "2 cups rice"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "rice"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G196",
+      "description": "Unknown ingredient returns unmatched not error",
+      "inputs": [
+        "xylophone-fruit-zz99"
+      ],
+      "expect": {
+        "matched_slugs": [],
+        "unmatched": [
+          "xylophone-fruit-zz99"
+        ],
+        "is_empty": true
+      }
+    },
+    {
+      "id": "G197",
+      "description": "One valid + one invalid: valid resolves, invalid unmatched",
+      "inputs": [
+        "tomato",
+        "zz99-unknown-ingredient"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [
+          "zz99-unknown-ingredient"
+        ],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G198",
+      "description": "Plural fish resolves (normaliser deplurals)",
+      "inputs": [
+        "tomatoes"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "tomato"
+        ],
+        "unmatched": [],
+        "is_empty": false
+      }
+    },
+    {
+      "id": "G199",
+      "description": "Garlic + ginger + onion \u2014 classic trio resolves all",
+      "inputs": [
+        "garlic",
+        "ginger",
+        "onion"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "garlic",
+          "ginger",
+          "onion"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
+    },
+    {
+      "id": "G200",
+      "description": "Five ingredients resolve all \u2014 beef, potato, carrot, onion, tomato",
+      "inputs": [
+        "beef",
+        "potato",
+        "carrot",
+        "onion",
+        "tomato"
+      ],
+      "expect": {
+        "matched_slugs": [
+          "beef",
+          "potato",
+          "carrot",
+          "onion",
+          "tomato"
+        ],
+        "unmatched": [],
+        "is_empty": false,
+        "has_ambiguity": false
+      }
     }
   ]
 }

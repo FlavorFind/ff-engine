@@ -29,18 +29,18 @@ def api():
 
 
 class TestGoldenSetStructure:
-    def test_golden_set_has_150_cases(self):
-        """golden_set_v0.json must have exactly 150 cases."""
+    def test_golden_set_has_200_cases(self):
+        """golden_set_v0.json must have exactly 200 cases."""
         path = Path(__file__).parents[3] / "data" / "golden" / "golden_set_v0.json"
         data = json.loads(path.read_text())
-        assert len(data["cases"]) == 150
+        assert len(data["cases"]) == 200
 
     def test_golden_set_ids_are_sequential(self):
-        """Case IDs must run G01–G150 with no gaps."""
+        """Case IDs must run G01–G200 with no gaps."""
         path = Path(__file__).parents[3] / "data" / "golden" / "golden_set_v0.json"
         data = json.loads(path.read_text())
         ids = [c["id"] for c in data["cases"]]
-        expected = [f"G{i:02d}" for i in range(1, 151)]
+        expected = [f"G{i:02d}" if i < 100 else f"G{i}" for i in range(1, 201)]
         assert ids == expected
 
     def test_every_case_has_inputs_and_expect(self):
