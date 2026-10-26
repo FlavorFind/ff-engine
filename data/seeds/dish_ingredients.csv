@@ -803,3 +803,333 @@ uji-porridge,millet-flour,primary,1 cup,,1
 urojo,cassava,primary,200 g,,1
 urwagwa,banana,primary,8,,1
 zanzibar-seafood-pilau,prawns,primary,300 g,,1
+kenyan-vegetable-stew,potato,primary,3 medium,,1
+kenyan-vegetable-stew,carrot,required,2 medium,,2
+kenyan-vegetable-stew,onion,required,1 medium,,3
+kenyan-vegetable-stew,tomato,required,2 medium,,4
+kenyan-vegetable-stew,green-peas,optional,1 cup,,5
+kenyan-vegetable-stew,salt,optional,1 tsp,,6
+kenyan-vegetable-stew,cooking-oil,optional,2 tbsp,,7
+kenyan-chicken-pilau,rice,primary,3 cups,,1
+kenyan-chicken-pilau,chicken-pieces,required,500g,,2
+kenyan-chicken-pilau,onion,required,1 large,,3
+kenyan-chicken-pilau,tomato,optional,1 medium,,4
+kenyan-chicken-pilau,pilau-masala,required,2 tbsp,,5
+kenyan-chicken-pilau,garlic,optional,3 cloves,,6
+kenyan-chicken-pilau,ginger,optional,1 inch,,7
+kenyan-chicken-pilau,salt,optional,1 tsp,,8
+kenyan-chicken-pilau,cooking-oil,optional,3 tbsp,,9
+kenyan-matoke-stew,green-bananas,primary,6 green,,1
+kenyan-matoke-stew,onion,required,1 medium,,2
+kenyan-matoke-stew,tomato,required,2 medium,,3
+kenyan-matoke-stew,beef-stock,optional,2 cups,,4
+kenyan-matoke-stew,salt,optional,1 tsp,,5
+kenyan-matoke-stew,cooking-oil,optional,2 tbsp,,6
+kenyan-bean-soup,beans,primary,2 cups,,1
+kenyan-bean-soup,onion,required,1 medium,,2
+kenyan-bean-soup,tomato,required,2 medium,,3
+kenyan-bean-soup,carrot,optional,1 medium,,4
+kenyan-bean-soup,salt,optional,1 tsp,,5
+kenyan-bean-soup,stock,optional,4 cups,,6
+kenyan-pea-soup,split-peas,primary,2 cups,,1
+kenyan-pea-soup,carrot,required,2 medium,,2
+kenyan-pea-soup,onion,required,1 medium,,3
+kenyan-pea-soup,salt,optional,1 tsp,,4
+kenyan-pea-soup,stock,optional,4 cups,,5
+kenyan-carrot-soup,carrot,primary,6 medium,,1
+kenyan-carrot-soup,onion,required,1 medium,,2
+kenyan-carrot-soup,ginger,optional,1 inch,,3
+kenyan-carrot-soup,salt,optional,1 tsp,,4
+kenyan-carrot-soup,stock,optional,3 cups,,5
+kenyan-pumpkin-soup,pumpkin,primary,500g,,1
+kenyan-pumpkin-soup,onion,required,1 medium,,2
+kenyan-pumpkin-soup,nutmeg,optional,1 pinch,,3
+kenyan-pumpkin-soup,salt,optional,1 tsp,,4
+kenyan-pumpkin-soup,stock,optional,3 cups,,5
+kenyan-sweet-potato-porridge,sweet-potato,primary,3 medium,,1
+kenyan-sweet-potato-porridge,milk,required,2 cups,,2
+kenyan-sweet-potato-porridge,cinnamon,optional,1 tsp,,3
+kenyan-sweet-potato-porridge,sugar,optional,2 tbsp,,4
+kenyan-cassava-stew,cassava,primary,500g,,1
+kenyan-cassava-stew,onion,required,1 medium,,2
+kenyan-cassava-stew,tomato,required,2 medium,,3
+kenyan-cassava-stew,salt,optional,1 tsp,,4
+kenyan-cassava-stew,cooking-oil,optional,2 tbsp,,5
+kenyan-nduma,arrowroot,primary,4 tubers,,1
+kenyan-nduma,salt,optional,1 tsp,,2
+kenyan-ngumu,wheat-flour,primary,2 cups,,1
+kenyan-ngumu,sugar,required,3 tbsp,,2
+kenyan-ngumu,cooking-oil,required,for frying,,3
+kenyan-ngumu,salt,optional,1 pinch,,4
+kenyan-kaimati,wheat-flour,primary,2 cups,,1
+kenyan-kaimati,sugar,required,1 cup,,2
+kenyan-kaimati,yeast,optional,1 tsp,,3
+kenyan-kaimati,cooking-oil,required,for frying,,4
+kenyan-kaimati,water,optional,1 cup,,5
+kenyan-karakara,beef,primary,500g,,1
+kenyan-karakara,onion,required,2 medium,,2
+kenyan-karakara,chili,required,2 pieces,,3
+kenyan-karakara,tomato,optional,2 medium,,4
+kenyan-karakara,garlic,optional,3 cloves,,5
+kenyan-karakara,ginger,optional,1 inch,,6
+kenyan-karakara,salt,optional,1 tsp,,7
+kenyan-karakara,cooking-oil,optional,3 tbsp,,8
+kenyan-mbaazi,pigeon-peas,primary,2 cups,,1
+kenyan-mbaazi,coconut-milk,required,1 cup,,2
+kenyan-mbaazi,onion,optional,1 small,,3
+kenyan-mbaazi,tomato,optional,1 medium,,4
+kenyan-mbaazi,salt,optional,1 tsp,,5
+kenyan-viazi-vya-nyama,potato,primary,4 large,,1
+kenyan-viazi-vya-nyama,minced-beef,required,300g,,2
+kenyan-viazi-vya-nyama,onion,required,1 medium,,3
+kenyan-viazi-vya-nyama,garlic,optional,2 cloves,,4
+kenyan-viazi-vya-nyama,salt,optional,1 tsp,,5
+kenyan-viazi-vya-nyama,cooking-oil,optional,3 tbsp,,6
+kenyan-mchuzi-wa-nyama,beef,primary,500g,,1
+kenyan-mchuzi-wa-nyama,potato,required,3 medium,,2
+kenyan-mchuzi-wa-nyama,onion,required,1 large,,3
+kenyan-mchuzi-wa-nyama,tomato,required,2 medium,,4
+kenyan-mchuzi-wa-nyama,carrot,optional,2 medium,,5
+kenyan-mchuzi-wa-nyama,salt,optional,1 tsp,,6
+kenyan-mchuzi-wa-nyama,cooking-oil,optional,3 tbsp,,7
+kenyan-ukwaju-soup,tamarind,primary,2 tbsp,,1
+kenyan-ukwaju-soup,tomato,optional,2 medium,,2
+kenyan-ukwaju-soup,onion,optional,1 small,,3
+kenyan-ukwaju-soup,carrot,optional,1 medium,,4
+kenyan-ukwaju-soup,salt,optional,1 tsp,,5
+kenyan-mkate-wa-sinia,rice,primary,2 cups,,1
+kenyan-mkate-wa-sinia,coconut-milk,required,1 cup,,2
+kenyan-mkate-wa-sinia,sugar,optional,2 tbsp,,3
+kenyan-mkate-wa-sinia,yeast,optional,1 tsp,,4
+kenyan-mkate-wa-sinia,salt,optional,1 pinch,,5
+kenyan-kishumba,green-plantains,primary,4 green,,1
+kenyan-kishumba,beans,required,1 cup,,2
+kenyan-kishumba,onion,required,1 medium,,3
+kenyan-kishumba,tomato,optional,2 medium,,4
+kenyan-kishumba,cooking-oil,optional,2 tbsp,,5
+kenyan-kishumba,salt,optional,1 tsp,,6
+kenyan-bokoboko,maize,primary,2 cups,,1
+kenyan-bokoboko,beans,required,1 cup,,2
+kenyan-bokoboko,salt,optional,1 tsp,,3
+kenyan-omurwa,sweet-potato,primary,4 medium,,1
+kenyan-omurwa,honey,optional,2 tbsp,,2
+kenyan-omalanga,cassava,primary,500g,,1
+kenyan-omalanga,fish,required,300g,,2
+kenyan-omalanga,onion,required,1 medium,,3
+kenyan-omalanga,tomato,required,2 medium,,4
+kenyan-omalanga,salt,optional,1 tsp,,5
+kenyan-omalanga,cooking-oil,optional,2 tbsp,,6
+kenyan-butere,cabbage,primary,1 small,,1
+kenyan-butere,eggs,required,3,,2
+kenyan-butere,onion,required,1 medium,,3
+kenyan-butere,tomato,optional,1 medium,,4
+kenyan-butere,salt,optional,1 tsp,,5
+kenyan-butere,cooking-oil,optional,2 tbsp,,6
+kenyan-kienyeji-stew,free-range-chicken,primary,1 whole,,1
+kenyan-kienyeji-stew,onion,required,1 large,,2
+kenyan-kienyeji-stew,tomato,required,2 medium,,3
+kenyan-kienyeji-stew,garlic,optional,3 cloves,,4
+kenyan-kienyeji-stew,salt,optional,1 tsp,,5
+kenyan-kienyeji-stew,cooking-oil,optional,3 tbsp,,6
+kenyan-githeri-ya-maharage,maize,primary,2 cups,,1
+kenyan-githeri-ya-maharage,beans,required,1.5 cups,,2
+kenyan-githeri-ya-maharage,onion,optional,1 medium,,3
+kenyan-githeri-ya-maharage,tomato,optional,2 medium,,4
+kenyan-githeri-ya-maharage,salt,optional,1 tsp,,5
+kenyan-githeri-ya-maharage,cooking-oil,optional,2 tbsp,,6
+kenyan-wali-na-maharage,rice,primary,2 cups,,1
+kenyan-wali-na-maharage,beans,required,1 cup,,2
+kenyan-wali-na-maharage,onion,optional,1 small,,3
+kenyan-wali-na-maharage,salt,optional,1 tsp,,4
+kenyan-sukuma-na-nyama,beef,primary,300g,,1
+kenyan-sukuma-na-nyama,collard-greens,required,1 bunch,,2
+kenyan-sukuma-na-nyama,onion,required,1 medium,,3
+kenyan-sukuma-na-nyama,tomato,required,2 medium,,4
+kenyan-sukuma-na-nyama,salt,optional,1 tsp,,5
+kenyan-sukuma-na-nyama,cooking-oil,optional,2 tbsp,,6
+kenyan-ugali-nyama-choma,maize-flour,primary,3 cups,,1
+kenyan-ugali-nyama-choma,goat-meat,required,1 kg,,2
+kenyan-ugali-nyama-choma,onion,optional,1 medium,,3
+kenyan-ugali-nyama-choma,tomato,optional,2 medium,,4
+kenyan-ugali-nyama-choma,salt,optional,1 tsp,,5
+kenyan-mchemsho,beef,primary,300g,,1
+kenyan-mchemsho,potato,required,3 medium,,2
+kenyan-mchemsho,carrot,required,2 medium,,3
+kenyan-mchemsho,onion,required,1 medium,,4
+kenyan-mchemsho,tomato,required,2 medium,,5
+kenyan-mchemsho,salt,optional,1 tsp,,6
+kenyan-mchemsho,cooking-oil,optional,2 tbsp,,7
+kenyan-mboga-ya-kukaanga,cabbage,primary,1 small,,1
+kenyan-mboga-ya-kukaanga,carrot,required,2 medium,,2
+kenyan-mboga-ya-kukaanga,onion,required,1 medium,,3
+kenyan-mboga-ya-kukaanga,garlic,optional,2 cloves,,4
+kenyan-mboga-ya-kukaanga,ginger,optional,1 inch,,5
+kenyan-mboga-ya-kukaanga,cooking-oil,required,3 tbsp,,6
+kenyan-mboga-ya-kukaanga,salt,optional,1 tsp,,7
+kenyan-nyama-ya-kukaanga,beef,primary,500g,,1
+kenyan-nyama-ya-kukaanga,onion,required,2 medium,,2
+kenyan-nyama-ya-kukaanga,green-pepper,optional,1 medium,,3
+kenyan-nyama-ya-kukaanga,garlic,optional,3 cloves,,4
+kenyan-nyama-ya-kukaanga,salt,optional,1 tsp,,5
+kenyan-nyama-ya-kukaanga,cooking-oil,required,3 tbsp,,6
+kenyan-kuku-ya-kukaanga,chicken-pieces,primary,500g,,1
+kenyan-kuku-ya-kukaanga,onion,required,1 large,,2
+kenyan-kuku-ya-kukaanga,tomato,required,2 medium,,3
+kenyan-kuku-ya-kukaanga,garlic,optional,3 cloves,,4
+kenyan-kuku-ya-kukaanga,salt,optional,1 tsp,,5
+kenyan-kuku-ya-kukaanga,cooking-oil,required,3 tbsp,,6
+kenyan-samaki-ya-kukaanga,fish,primary,500g,,1
+kenyan-samaki-ya-kukaanga,garlic,required,4 cloves,,2
+kenyan-samaki-ya-kukaanga,ginger,required,1 inch,,3
+kenyan-samaki-ya-kukaanga,lime,optional,1,,4
+kenyan-samaki-ya-kukaanga,salt,optional,1 tsp,,5
+kenyan-samaki-ya-kukaanga,cooking-oil,required,for frying,,6
+kenyan-ndogo-ndogo,beef-tripe,primary,300g,,1
+kenyan-ndogo-ndogo,beef-liver,required,200g,,2
+kenyan-ndogo-ndogo,beef-kidney,required,200g,,3
+kenyan-ndogo-ndogo,onion,required,2 medium,,4
+kenyan-ndogo-ndogo,tomato,required,2 medium,,5
+kenyan-ndogo-ndogo,chili,optional,2 pieces,,6
+kenyan-ndogo-ndogo,salt,optional,1 tsp,,7
+kenyan-ndogo-ndogo,cooking-oil,optional,3 tbsp,,8
+kenyan-kahawa-ya-maziwa,roasted-coffee-beans,primary,2 tbsp,,1
+kenyan-kahawa-ya-maziwa,milk,required,1 cup,,2
+kenyan-kahawa-ya-maziwa,sugar,optional,2 tsp,,3
+kenyan-kahawa-ya-maziwa,cardamom,optional,2 pods,,4
+kenyan-dawa-ya-asili,honey,primary,2 tbsp,,1
+kenyan-dawa-ya-asili,ginger,required,1 inch,,2
+kenyan-dawa-ya-asili,lemon,required,1,,3
+kenyan-dawa-ya-asili,water,optional,2 cups,,4
+kenyan-ukwaju-juice,tamarind,primary,3 tbsp,,1
+kenyan-ukwaju-juice,sugar,required,3 tbsp,,2
+kenyan-ukwaju-juice,lime,optional,1,,3
+kenyan-ukwaju-juice,water,optional,4 cups,,4
+kenyan-mabuyu,baobab-fruit,primary,1 cup,,1
+kenyan-mabuyu,sugar,required,1 cup,,2
+kenyan-mabuyu,water,optional,1 cup,,3
+kenyan-karanga-ya-kukaanga,groundnuts,primary,2 cups,,1
+kenyan-karanga-ya-kukaanga,chili,optional,1 tsp,,2
+kenyan-karanga-ya-kukaanga,salt,optional,1 tsp,,3
+kenyan-karanga-ya-kukaanga,cooking-oil,required,for frying,,4
+kenyan-mboga-mix,spinach,primary,1 bunch,,1
+kenyan-mboga-mix,groundnut-paste,required,3 tbsp,,2
+kenyan-mboga-mix,onion,required,1 medium,,3
+kenyan-mboga-mix,tomato,optional,1 medium,,4
+kenyan-mboga-mix,salt,optional,1 tsp,,5
+kenyan-mboga-mix,cooking-oil,optional,2 tbsp,,6
+kenyan-ugali-wa-muondo,sorghum-flour,primary,3 cups,,1
+kenyan-ugali-wa-muondo,water,optional,4 cups,,2
+kenyan-ugali-wa-muondo,salt,optional,1 pinch,,3
+kenyan-chai-ya-maziwa,black-tea-leaves,primary,2 tbsp,,1
+kenyan-chai-ya-maziwa,milk,required,2 cups,,2
+kenyan-chai-ya-maziwa,sugar,optional,2 tsp,,3
+kenyan-chai-ya-maziwa,cardamom,optional,2 pods,,4
+kenyan-chai-ya-maziwa,cinnamon,optional,1 stick,,5
+kenyan-mtindi,milk,primary,1 liter,,1
+kenyan-mtindi,salt,optional,1 pinch,,2
+kenyan-muratina,honey,primary,1 cup,,1
+kenyan-muratina,water,required,2 liters,,2
+kenyan-muratina,sugar,optional,1 cup,,3
+tanzanian-mchicha-ya-nazi,spinach,primary,1 bunch,,1
+tanzanian-mchicha-ya-nazi,coconut-milk,required,1 cup,,2
+tanzanian-mchicha-ya-nazi,groundnut-paste,optional,2 tbsp,,3
+tanzanian-mchicha-ya-nazi,onion,optional,1 small,,4
+tanzanian-mchicha-ya-nazi,salt,optional,1 tsp,,5
+tanzanian-makande,maize,primary,2 cups,,1
+tanzanian-makande,beans,required,1 cup,,2
+tanzanian-makande,coconut-milk,optional,1 cup,,3
+tanzanian-makande,onion,optional,1 medium,,4
+tanzanian-makande,tomato,optional,2 medium,,5
+tanzanian-makande,salt,optional,1 tsp,,6
+tanzanian-bokoli,cassava-leaves,primary,500g,,1
+tanzanian-bokoli,groundnut-paste,required,3 tbsp,,2
+tanzanian-bokoli,palm-oil,optional,2 tbsp,,3
+tanzanian-bokoli,onion,optional,1 medium,,4
+tanzanian-bokoli,salt,optional,1 tsp,,5
+tanzanian-pilipili-ya-kuku,chicken-pieces,primary,500g,,1
+tanzanian-pilipili-ya-kuku,chili,required,4 pieces,,2
+tanzanian-pilipili-ya-kuku,coconut-milk,required,1 cup,,3
+tanzanian-pilipili-ya-kuku,onion,required,1 medium,,4
+tanzanian-pilipili-ya-kuku,garlic,optional,3 cloves,,5
+tanzanian-pilipili-ya-kuku,salt,optional,1 tsp,,6
+tanzanian-pilipili-ya-kuku,cooking-oil,optional,2 tbsp,,7
+tanzanian-ugali-wa-muhogo,cassava-flour,primary,3 cups,,1
+tanzanian-ugali-wa-muhogo,water,optional,4 cups,,2
+tanzanian-ugali-wa-muhogo,salt,optional,1 pinch,,3
+ethiopian-yetsom-beyaynetu,brown-lentils,primary,1 cup,,1
+ethiopian-yetsom-beyaynetu,split-peas,required,1 cup,,2
+ethiopian-yetsom-beyaynetu,collard-greens,optional,1 bunch,,3
+ethiopian-yetsom-beyaynetu,onion,required,1 large,,4
+ethiopian-yetsom-beyaynetu,garlic,optional,4 cloves,,5
+ethiopian-yetsom-beyaynetu,niter-kibbeh,optional,2 tbsp,,6
+ethiopian-yetsom-beyaynetu,salt,optional,1 tsp,,7
+ethiopian-doro-wat-berbere,chicken-pieces,primary,1 kg,,1
+ethiopian-doro-wat-berbere,berbere-spice,required,4 tbsp,,2
+ethiopian-doro-wat-berbere,onion,required,3 large,,3
+ethiopian-doro-wat-berbere,eggs,required,4,,4
+ethiopian-doro-wat-berbere,garlic,optional,4 cloves,,5
+ethiopian-doro-wat-berbere,niter-kibbeh,optional,3 tbsp,,6
+ethiopian-doro-wat-berbere,salt,optional,1 tsp,,7
+ethiopian-kitfo-ayib,beef,primary,500g,,1
+ethiopian-kitfo-ayib,niter-kibbeh,required,3 tbsp,,2
+ethiopian-kitfo-ayib,ayib,optional,200g,,3
+ethiopian-kitfo-ayib,mitmita-spice,optional,1 tbsp,,4
+ethiopian-kitfo-ayib,salt,optional,1 tsp,,5
+ethiopian-gomen-kitfo,collard-greens,primary,1 bunch,,1
+ethiopian-gomen-kitfo,beef,required,300g,,2
+ethiopian-gomen-kitfo,niter-kibbeh,optional,2 tbsp,,3
+ethiopian-gomen-kitfo,chili,optional,2 pieces,,4
+ethiopian-gomen-kitfo,garlic,optional,3 cloves,,5
+ethiopian-gomen-kitfo,salt,optional,1 tsp,,6
+ugandan-muchomo-kuku,chicken-pieces,primary,1 kg,,1
+ugandan-muchomo-kuku,onion,required,1 medium,,2
+ugandan-muchomo-kuku,chili,optional,2 pieces,,3
+ugandan-muchomo-kuku,salt,optional,1 tsp,,4
+ugandan-luwombo-beef,beef,primary,500g,,1
+ugandan-luwombo-beef,groundnut-paste,required,4 tbsp,,2
+ugandan-luwombo-beef,onion,required,1 medium,,3
+ugandan-luwombo-beef,tomato,required,2 medium,,4
+ugandan-luwombo-beef,banana-leaves,required,6 leaves,,5
+ugandan-luwombo-beef,salt,optional,1 tsp,,6
+ugandan-ekokoro,sweet-potato,primary,4 medium,,1
+ugandan-ekokoro,beans,required,1 cup,,2
+ugandan-ekokoro,salt,optional,1 tsp,,3
+ugandan-mu-kuku,chicken-pieces,primary,500g,,1
+ugandan-mu-kuku,groundnut-paste,required,4 tbsp,,2
+ugandan-mu-kuku,onion,required,1 medium,,3
+ugandan-mu-kuku,tomato,optional,2 medium,,4
+ugandan-mu-kuku,salt,optional,1 tsp,,5
+ugandan-mu-kuku,cooking-oil,optional,2 tbsp,,6
+rwandan-isombe-maharage,cassava-leaves,primary,500g,,1
+rwandan-isombe-maharage,beans,required,1 cup,,2
+rwandan-isombe-maharage,palm-oil,optional,2 tbsp,,3
+rwandan-isombe-maharage,onion,optional,1 medium,,4
+rwandan-isombe-maharage,salt,optional,1 tsp,,5
+rwandan-agatogo-inka,beef,primary,400g,,1
+rwandan-agatogo-inka,green-plantains,required,3 green,,2
+rwandan-agatogo-inka,tomato,required,2 medium,,3
+rwandan-agatogo-inka,onion,required,1 medium,,4
+rwandan-agatogo-inka,salt,optional,1 tsp,,5
+rwandan-agatogo-inka,cooking-oil,optional,2 tbsp,,6
+burundian-ibiharage-mboga,beans,primary,2 cups,,1
+burundian-ibiharage-mboga,onion,required,1 medium,,2
+burundian-ibiharage-mboga,tomato,required,2 medium,,3
+burundian-ibiharage-mboga,carrot,optional,2 medium,,4
+burundian-ibiharage-mboga,salt,optional,1 tsp,,5
+burundian-ibiharage-mboga,cooking-oil,optional,2 tbsp,,6
+coastal-biriani-kuku,chicken-pieces,primary,1 kg,,1
+coastal-biriani-kuku,basmati-rice,required,3 cups,,2
+coastal-biriani-kuku,onion,required,2 large,,3
+coastal-biriani-kuku,yogurt,optional,1 cup,,4
+coastal-biriani-kuku,biryani-masala,required,2 tbsp,,5
+coastal-biriani-kuku,coconut-milk,optional,1 cup,,6
+coastal-biriani-kuku,salt,optional,1 tsp,,7
+coastal-biriani-kuku,cooking-oil,optional,4 tbsp,,8
+coastal-pilau-samaki,fish,primary,500g,,1
+coastal-pilau-samaki,rice,required,3 cups,,2
+coastal-pilau-samaki,onion,required,2 medium,,3
+coastal-pilau-samaki,pilau-masala,required,2 tbsp,,4
+coastal-pilau-samaki,coconut-milk,optional,1 cup,,5
+coastal-pilau-samaki,garlic,optional,3 cloves,,6
+coastal-pilau-samaki,salt,optional,1 tsp,,7
+coastal-pilau-samaki,cooking-oil,optional,3 tbsp,,8

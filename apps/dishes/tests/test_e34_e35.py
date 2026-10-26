@@ -29,18 +29,18 @@ def api():
 
 
 class TestGoldenSetStructure:
-    def test_golden_set_has_100_cases(self):
-        """golden_set_v0.json must have exactly 100 cases."""
+    def test_golden_set_has_150_cases(self):
+        """golden_set_v0.json must have exactly 150 cases."""
         path = Path(__file__).parents[3] / "data" / "golden" / "golden_set_v0.json"
         data = json.loads(path.read_text())
-        assert len(data["cases"]) == 100
+        assert len(data["cases"]) == 150
 
     def test_golden_set_ids_are_sequential(self):
-        """Case IDs must run G01–G100 with no gaps."""
+        """Case IDs must run G01–G150 with no gaps."""
         path = Path(__file__).parents[3] / "data" / "golden" / "golden_set_v0.json"
         data = json.loads(path.read_text())
         ids = [c["id"] for c in data["cases"]]
-        expected = [f"G{i:02d}" for i in range(1, 101)]
+        expected = [f"G{i:02d}" for i in range(1, 151)]
         assert ids == expected
 
     def test_every_case_has_inputs_and_expect(self):
@@ -188,6 +188,6 @@ class TestDishCatalogue:
         assert slugs1.isdisjoint(slugs2)
         assert page1["count"] == total
 
-    def test_catalogue_total_dishes_is_219_or_more(self, api, seeded_db):
+    def test_catalogue_total_dishes_is_281_or_more(self, api, seeded_db):
         data = api.get("/v1/dishes/?limit=1").json()
-        assert data["count"] >= 219
+        assert data["count"] >= 281
