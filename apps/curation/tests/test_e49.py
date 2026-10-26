@@ -92,7 +92,7 @@ class TestBackupDrill:
                 "--step",
                 "verify",
                 "--snapshot-dir",
-                "/tmp/does_not_exist_e49_test",
+                "/tmp/does_not_exist_e49_test",  # nosec B108 — test-only path
                 stdout=StringIO(),
             )
 
@@ -104,7 +104,7 @@ class TestBackupDrill:
                 "--step",
                 "restore",
                 "--snapshot-dir",
-                "/tmp/some_snapshot",
+                "/tmp/some_snapshot",  # nosec B108 — test-only path, command raises before touching it
                 stdout=StringIO(),
             )
 
