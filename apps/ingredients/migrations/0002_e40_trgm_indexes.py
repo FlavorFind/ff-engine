@@ -17,6 +17,11 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+    # CREATE INDEX CONCURRENTLY cannot run inside a transaction block.
+    # Setting atomic=False tells Django to run this migration outside
+    # the default transaction wrapper.
+    atomic = False
+
     dependencies = [
         ("ingredients", "0001_initial"),
     ]

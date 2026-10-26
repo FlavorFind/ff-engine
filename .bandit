@@ -12,6 +12,9 @@ skips =
     B101,
     # B106 — hardcoded_password_funcarg: test fixtures use dummy passwords.
     B106,
+    # B108 — hardcoded_tmp_directory: /tmp/ used in tests only (pytest tmp_path preferred
+    #         but test_e49 uses explicit paths to test error handling for missing dirs).
+    B108,
     # B311 — random: random is used in load tests (locust), not crypto.
     B311
 

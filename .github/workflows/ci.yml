@@ -46,8 +46,8 @@ jobs:
       - name: Run bandit
         # -r apps/  — scan only app code, not test files or migrations
         # -ll       — report only medium and high severity issues
-        # -x apps/*/tests,apps/*/migrations  — exclude tests + migrations
-        run: bandit -r apps/ -ll -x apps/*/tests,apps/*/migrations
+        # Exclude test directories and migrations (bandit -x uses path prefixes)
+        run: bandit -r apps/ -ll --skip B101,B106,B108,B311 -x apps/accounts/tests,apps/api/tests,apps/clients/tests,apps/curation/tests,apps/dishes/tests,apps/ingredients/tests,apps/nutrition/tests,apps/search/tests,apps/accounts/migrations,apps/clients/migrations,apps/dietary/migrations,apps/dishes/migrations,apps/ingredients/migrations,apps/nutrition/migrations,apps/pairings/migrations,apps/regions/migrations,apps/substitutions/migrations
 
   dependency-audit:
     name: Dependency audit (pip-audit)
