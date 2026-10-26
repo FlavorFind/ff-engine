@@ -110,3 +110,92 @@ honey,sugar,1.25,ok,dawa,Add extra lime to balance
 malted-finger-millet,malted-sorghum,1.0,ok,togwa,Different flavour
 millet-flour,maize-flour,1.0,ok,fermented-millet-uji,Milder and less sour
 cassava-flour,maize-flour,1.0,ok,ubugari,Gives a firmer porridge
+olive-oil,sunflower-oil,1.0,great,,Neutral oil works in any recipe
+olive-oil,avocado-oil,1.0,great,,"Same fat profile, similar flavour"
+butter,margarine,1.0,ok,,Margarine melts like butter
+butter,coconut-oil,0.8,ok,,Use slightly less — coconut oil is richer
+ghee,coconut-oil,1.0,ok,,Similar high smoke point
+lard,beef-tallow,1.0,great,,"Same animal fat, same smoke point"
+vegetable-oil,sunflower-oil,1.0,great,,Direct swap
+sesame-oil,walnut-oil,1.0,ok,,Nutty flavour but less intense
+palm-oil,coconut-oil,1.0,ok,,Similar tropical fat
+milk,oat-milk,1.0,ok,,Works in cooking and baking
+milk,soy-milk,1.0,ok,,"Neutral flavour, good protein"
+milk,evaporated-milk,0.5,ok,,Dilute 1:1 with water before using
+cream,coconut-cream,1.0,ok,,Richer and slightly sweet
+cream,evaporated-milk,1.0,ok,,"Less fat, more liquid"
+yogurt,sour-cream,1.0,great,,Same tang and texture
+yogurt,labneh,0.75,great,,Labneh is thicker — use less
+greek-yogurt,labneh,1.0,great,,Almost identical consistency
+feta-cheese,halloumi,1.0,ok,,"Halloumi is less salty, holds shape when cooked"
+mozzarella,provolone,1.0,ok,,Melts similarly but stronger flavour
+parmesan,pecorino-romano,1.0,great,,Slightly saltier but the same function
+ricotta,cottage-cheese,1.0,ok,,Blend cottage cheese for smoother texture
+cheddar-cheese,gouda,1.0,ok,,Milder but melts well
+heavy-cream,coconut-cream,1.0,ok,,Works in soups and curries
+eggs,silken-tofu,0.25,ok,,25g tofu per egg in baking
+eggs,flaxseed,0.15,ok,,1 tbsp ground flax + 3 tbsp water per egg
+egg-yolk,cashew-cream,1.0,ok,,Richness without cholesterol
+chicken,turkey,1.0,great,,"Same cooking times, slightly drier"
+chicken,rabbit,1.0,ok,,"Lean white meat, similar texture"
+beef,lamb,1.0,great,,"Richer flavour, same cooking methods"
+beef,bison,1.0,great,,Leaner but same texture
+pork,chicken,1.0,ok,,Adjust seasonings — chicken is milder
+lamb,goat-meat,1.0,great,,Similar gamey flavour and texture
+goat-meat,lamb,1.0,great,,Lamb is slightly milder
+tilapia,catfish,1.0,great,,Same freshwater fish texture
+tilapia,bream,1.0,great,,Similar mild white fish
+salmon,trout,1.0,great,,Same omega-3 rich family
+tuna,skipjack-tuna,1.0,great,,"Same family, similar flavour"
+prawns,shrimp,1.0,great,,Direct swap by weight
+beef-mince,turkey-mince,1.0,ok,,"Leaner, add extra oil"
+minced-beef,minced-pork,1.0,ok,,Slightly fattier
+chicken-pieces,duck,1.0,ok,,Duck is richer — reduce oil
+beef-liver,chicken-liver,1.0,great,,"Milder flavour, same technique"
+wheat-flour,rice-flour,1.0,ok,,Gluten-free option — texture differs
+wheat-flour,almond-flour,0.75,ok,,Denser result — use less
+rice,quinoa,1.0,ok,,"Higher protein, slightly nuttier"
+rice,cauliflower-rice,1.0,ok,,Low-carb option
+sorghum-flour,millet-flour,1.0,great,,Very similar ancient grains
+bread-flour,all-purpose-flour,1.0,ok,,Slightly less gluten
+semolina,polenta,1.0,ok,,"Coarser grind, similar corn base"
+couscous,bulgur,1.0,great,,Same quick-cook grain texture
+bulgur,couscous,1.0,ok,,Slightly nuttier
+pasta,rice-noodles,1.0,ok,,Gluten-free option for noodle dishes
+rice-noodles,glass-noodles,1.0,ok,,Similar delicate noodle
+cornstarch,arrowroot,1.0,great,,Same thickening power
+cornstarch,tapioca,1.0,ok,,Works but produces chewier texture
+chickpeas,white-beans,1.0,great,,Same creamy texture when cooked
+chickpeas,lentils,1.0,ok,,"Softer texture, shorter cook time"
+black-beans,kidney-beans,1.0,great,,Same hearty bean texture
+lentils,split-peas,1.0,great,,Same quick-cook legume
+red-lentils,split-red-lentils,1.0,great,,Essentially the same ingredient
+kidney-beans,borlotti-beans,1.0,great,,Similar size and texture
+pigeon-peas,cowpeas,1.0,great,,Same East African legume family
+spinach,kale,1.0,ok,,Kale needs longer cooking
+spinach,Swiss-chard,1.0,great,,Same leafy green family
+collard-greens,kale,1.0,great,,Similar tough leafy greens
+sweet-potato,butternut-squash,1.0,ok,,Similar sweetness and texture
+carrot,parsnip,1.0,ok,,Parsnip is earthier and sweeter
+onion,shallots,0.5,great,,Shallots are more concentrated
+garlic,garlic-powder,0.1,ok,,1/8 tsp powder per fresh clove
+fresh-ginger,dried-ginger,0.25,ok,,Use 1/4 tsp dried per 1 inch fresh
+tomato,canned-tomatoes,1.0,great,,Use same weight of canned
+green-pepper,red-pepper,1.0,ok,,Red pepper is sweeter when raw
+pumpkin,butternut-squash,1.0,great,,Same orange flesh squash family
+cassava,potato,1.0,ok,,Adjust cook time — cassava takes longer
+plantain,banana,1.0,ok,,Use underripe banana as a starchy sub
+cumin,caraway-seeds,1.0,ok,,Caraway is earthier but similar
+coriander-powder,caraway-seeds,0.5,ok,,Milder — use half
+turmeric,saffron,0.1,ok,,Saffron gives colour but different flavour
+paprika,cayenne-pepper,0.25,ok,,Much hotter — use a quarter
+fresh-chili,dried-chili,0.33,ok,,Use 1/3 as much dried
+coconut-milk,cream,1.0,ok,,Dairy cream in non-vegan recipes
+soy-sauce,tamari,1.0,great,,Tamari is gluten-free and richer
+fish-sauce,soy-sauce,0.75,ok,,Use 3/4 — less pungent but salty
+tamarind,lemon-juice,2.0,ok,,Double the lemon — less sour than tamarind
+coconut-cream,heavy-cream,1.0,ok,,Works in non-tropical recipes
+bay-leaves,dried-thyme,1.0,ok,,Dried thyme adds herbal depth similarly
+cinnamon,mixed-spice,1.0,ok,,Mixed spice includes cinnamon notes
+cardamom,cinnamon,0.5,ok,,Milder warmth — use half
+nutmeg,mace,1.0,great,,Mace is the outer shell of nutmeg — same flavour

@@ -188,6 +188,6 @@ class TestDishCatalogue:
         assert slugs1.isdisjoint(slugs2)
         assert page1["count"] == total
 
-    def test_catalogue_total_dishes_is_281_or_more(self, api, seeded_db):
+    def test_catalogue_total_dishes_is_300_or_more(self, api, seeded_db):
         data = api.get("/v1/dishes/?limit=1").json()
-        assert data["count"] >= 281
+        assert data["count"] >= 300

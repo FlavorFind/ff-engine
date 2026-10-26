@@ -1133,3 +1133,151 @@ coastal-pilau-samaki,coconut-milk,optional,1 cup,,5
 coastal-pilau-samaki,garlic,optional,3 cloves,,6
 coastal-pilau-samaki,salt,optional,1 tsp,,7
 coastal-pilau-samaki,cooking-oil,optional,3 tbsp,,8
+west-african-jollof-rice,basmati-rice,primary,3 cups,,1
+west-african-jollof-rice,chicken-pieces,required,500g,,2
+west-african-jollof-rice,tomato,required,4 medium,,3
+west-african-jollof-rice,onion,required,2 medium,,4
+west-african-jollof-rice,scotch-bonnet-pepper,optional,2,,5
+west-african-jollof-rice,tomato-paste,optional,2 tbsp,,6
+west-african-jollof-rice,garlic,optional,4 cloves,,7
+west-african-jollof-rice,cooking-oil,optional,4 tbsp,,8
+west-african-jollof-rice,salt,optional,1 tsp,,9
+ghanaian-fufu-light-soup,cassava,primary,500g,,1
+ghanaian-fufu-light-soup,green-plantains,required,2,,2
+ghanaian-fufu-light-soup,chicken-pieces,required,500g,,3
+ghanaian-fufu-light-soup,tomato,required,3 medium,,4
+ghanaian-fufu-light-soup,onion,required,1 large,,5
+ghanaian-fufu-light-soup,scotch-bonnet-pepper,optional,2,,6
+ghanaian-fufu-light-soup,garlic,optional,3 cloves,,7
+ghanaian-fufu-light-soup,salt,optional,1 tsp,,8
+nigerian-egusi-soup,egusi-seeds,primary,2 cups,,1
+nigerian-egusi-soup,palm-oil,required,3 tbsp,,2
+nigerian-egusi-soup,beef,required,300g,,3
+nigerian-egusi-soup,stockfish,optional,100g,,4
+nigerian-egusi-soup,spinach-or-bitterleaf,required,1 bunch,,5
+nigerian-egusi-soup,onion,required,1 medium,,6
+nigerian-egusi-soup,scotch-bonnet-pepper,optional,2,,7
+nigerian-egusi-soup,dried-prawns,optional,2 tbsp,,8
+nigerian-egusi-soup,salt,optional,1 tsp,,9
+senegalese-thieboudienne,fish,primary,500g,,1
+senegalese-thieboudienne,rice,required,3 cups,,2
+senegalese-thieboudienne,tomato,required,4 medium,,3
+senegalese-thieboudienne,onion,required,2 medium,,4
+senegalese-thieboudienne,carrot,optional,2 medium,,5
+senegalese-thieboudienne,cabbage,optional,1/4 head,,6
+senegalese-thieboudienne,tomato-paste,optional,2 tbsp,,7
+senegalese-thieboudienne,garlic,optional,3 cloves,,8
+senegalese-thieboudienne,cooking-oil,optional,4 tbsp,,9
+senegalese-thieboudienne,salt,optional,1 tsp,,10
+moroccan-lamb-tagine,lamb-shoulder,primary,800g,,1
+moroccan-lamb-tagine,apricot,required,100g,,2
+moroccan-lamb-tagine,almonds,required,50g,,3
+moroccan-lamb-tagine,onion,required,2 medium,,4
+moroccan-lamb-tagine,cinnamon,optional,1 stick,,5
+moroccan-lamb-tagine,ground-cumin,optional,1 tsp,,6
+moroccan-lamb-tagine,honey,optional,2 tbsp,,7
+moroccan-lamb-tagine,garlic,optional,3 cloves,,8
+moroccan-lamb-tagine,cooking-oil,optional,3 tbsp,,9
+moroccan-lamb-tagine,salt,optional,1 tsp,,10
+moroccan-chicken-tagine,chicken-pieces,primary,1 kg,,1
+moroccan-chicken-tagine,lemon,required,2,,2
+moroccan-chicken-tagine,green-olives,required,100g,,3
+moroccan-chicken-tagine,onion,required,2 medium,,4
+moroccan-chicken-tagine,garlic,optional,4 cloves,,5
+moroccan-chicken-tagine,ginger,optional,1 inch,,6
+moroccan-chicken-tagine,turmeric,optional,1 tsp,,7
+moroccan-chicken-tagine,cooking-oil,optional,3 tbsp,,8
+moroccan-chicken-tagine,salt,optional,1 tsp,,9
+egyptian-koshari,rice,primary,1 cup,,1
+egyptian-koshari,brown-lentils,required,1 cup,,2
+egyptian-koshari,macaroni,required,1 cup,,3
+egyptian-koshari,onion,required,2 large,,4
+egyptian-koshari,tomato,required,4 medium,,5
+egyptian-koshari,garlic,optional,4 cloves,,6
+egyptian-koshari,whole-cumin,optional,1 tsp,,7
+egyptian-koshari,cooking-oil,optional,4 tbsp,,8
+egyptian-koshari,salt,optional,1 tsp,,9
+south-african-bobotie,minced-beef,primary,500g,,1
+south-african-bobotie,eggs,required,2,,2
+south-african-bobotie,milk,required,200ml,,3
+south-african-bobotie,onion,required,1 large,,4
+south-african-bobotie,curry-powder,required,2 tbsp,,5
+south-african-bobotie,bread-crumbs,optional,100g,,6
+south-african-bobotie,raisins,optional,50g,,7
+south-african-bobotie,cooking-oil,optional,2 tbsp,,8
+south-african-bobotie,salt,optional,1 tsp,,9
+south-african-boerewors-roll,beef-sausages,primary,400g,,1
+south-african-boerewors-roll,wheat-flour,required,2 cups,,2
+south-african-boerewors-roll,onion,optional,1 medium,,3
+south-african-boerewors-roll,tomato,optional,2 medium,,4
+south-african-boerewors-roll,salt,optional,1 tsp,,5
+south-african-boerewors-roll,cooking-oil,optional,2 tbsp,,6
+cameroonian-ndole,bitterleaf,primary,500g,,1
+cameroonian-ndole,groundnut-paste,required,4 tbsp,,2
+cameroonian-ndole,beef,required,300g,,3
+cameroonian-ndole,prawns,required,200g,,4
+cameroonian-ndole,onion,required,1 large,,5
+cameroonian-ndole,garlic,optional,3 cloves,,6
+cameroonian-ndole,palm-oil,optional,3 tbsp,,7
+cameroonian-ndole,salt,optional,1 tsp,,8
+ivorian-attiéké-fish,cassava,primary,500g,,1
+ivorian-attiéké-fish,tilapia,required,2 whole,,2
+ivorian-attiéké-fish,onion,required,1 large,,3
+ivorian-attiéké-fish,tomato,required,2 medium,,4
+ivorian-attiéké-fish,green-pepper,optional,1,,5
+ivorian-attiéké-fish,garlic,optional,2 cloves,,6
+ivorian-attiéké-fish,cooking-oil,optional,3 tbsp,,7
+ivorian-attiéké-fish,salt,optional,1 tsp,,8
+kenyan-mahindi-choma,maize,primary,4 ears,,1
+kenyan-mahindi-choma,salt,optional,1 pinch,,2
+kenyan-mahindi-choma,lemon-juice,optional,1 tbsp,,3
+kenyan-bhajia-ndizi,ripe-plantain,primary,3 ripe,,1
+kenyan-bhajia-ndizi,wheat-flour,required,1 cup,,2
+kenyan-bhajia-ndizi,ground-cumin,optional,1 tsp,,3
+kenyan-bhajia-ndizi,coriander,optional,1 tsp,,4
+kenyan-bhajia-ndizi,salt,optional,1 tsp,,5
+kenyan-bhajia-ndizi,cooking-oil,required,for frying,,6
+kenyan-vitumbua,rice,primary,2 cups,,1
+kenyan-vitumbua,coconut-milk,required,1 cup,,2
+kenyan-vitumbua,sugar,required,3 tbsp,,3
+kenyan-vitumbua,yeast,optional,1 tsp,,4
+kenyan-vitumbua,salt,optional,1 pinch,,5
+kenyan-vitumbua,cooking-oil,optional,2 tbsp,,6
+kenyan-samosa-ya-viazi,potato,primary,4 medium,,1
+kenyan-samosa-ya-viazi,wheat-flour,required,2 cups,,2
+kenyan-samosa-ya-viazi,onion,required,1 medium,,3
+kenyan-samosa-ya-viazi,garlic,optional,2 cloves,,4
+kenyan-samosa-ya-viazi,whole-cumin,optional,1 tsp,,5
+kenyan-samosa-ya-viazi,salt,optional,1 tsp,,6
+kenyan-samosa-ya-viazi,cooking-oil,required,for frying,,7
+tanzanian-supu-ya-ndizi,green-bananas,primary,4,,1
+tanzanian-supu-ya-ndizi,beef,required,300g,,2
+tanzanian-supu-ya-ndizi,onion,required,1 medium,,3
+tanzanian-supu-ya-ndizi,tomato,optional,2 medium,,4
+tanzanian-supu-ya-ndizi,garlic,optional,2 cloves,,5
+tanzanian-supu-ya-ndizi,salt,optional,1 tsp,,6
+tanzanian-supu-ya-ndizi,cooking-oil,optional,2 tbsp,,7
+ethiopian-shiro-wat,chickpea-flour,primary,1 cup,,1
+ethiopian-shiro-wat,onion,required,2 large,,2
+ethiopian-shiro-wat,niter-kibbeh,required,3 tbsp,,3
+ethiopian-shiro-wat,berbere-spice,optional,1 tbsp,,4
+ethiopian-shiro-wat,garlic,optional,3 cloves,,5
+ethiopian-shiro-wat,ginger,optional,1 inch,,6
+ethiopian-shiro-wat,salt,optional,1 tsp,,7
+ethiopian-tibs,beef,primary,500g,,1
+ethiopian-tibs,onion,required,2 medium,,2
+ethiopian-tibs,green-pepper,required,1,,3
+ethiopian-tibs,garlic,optional,3 cloves,,4
+ethiopian-tibs,rosemary,optional,1 sprig,,5
+ethiopian-tibs,niter-kibbeh,optional,2 tbsp,,6
+ethiopian-tibs,salt,optional,1 tsp,,7
+ethiopian-tibs,cooking-oil,optional,2 tbsp,,8
+somali-bariis-iskukaris,basmati-rice,primary,3 cups,,1
+somali-bariis-iskukaris,goat-meat,required,500g,,2
+somali-bariis-iskukaris,onion,required,1 large,,3
+somali-bariis-iskukaris,raisins,optional,50g,,4
+somali-bariis-iskukaris,cinnamon,optional,1 stick,,5
+somali-bariis-iskukaris,whole-cumin,optional,1 tsp,,6
+somali-bariis-iskukaris,garlic,optional,3 cloves,,7
+somali-bariis-iskukaris,cooking-oil,optional,3 tbsp,,8
+somali-bariis-iskukaris,salt,optional,1 tsp,,9
