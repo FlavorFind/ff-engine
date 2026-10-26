@@ -104,8 +104,7 @@ class SearchRequestSerializer(serializers.Serializer):
         for item in value:
             if not isinstance(item, str):
                 raise _s.ValidationError(
-                    "Each ingredient must be a string, got "
-                    f"{type(item).__name__!r}."
+                    "Each ingredient must be a string, got " f"{type(item).__name__!r}."
                 )
         # Strip HTML tags so script injection never reaches the response body.
         _tag_re = re.compile(r"<[^>]+>")
