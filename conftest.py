@@ -6,7 +6,7 @@ so pytest picks it up automatically.
 
 Performance
 -----------
-seed_all inserts 638 ingredients + 219 dishes + 733 links + 750 steps.
+seed_all inserts 878 ingredients + 281 dishes + 1134 links + 750 steps.
 Running it per-test-class takes 10+ minutes.
 The `seeded_db` fixture is SESSION-scoped: it runs seed_all once for the
 entire pytest session. Signals that fire on every DishIngredient insert are

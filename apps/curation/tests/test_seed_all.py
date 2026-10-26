@@ -23,11 +23,11 @@ class TestSeedAll:
         call_command("seed_all", verbosity=0)
 
     def test_ingredients_created(self):
-        """638 unique ingredients are seeded from the CSV (E33: grown to 638)."""
+        """878 unique ingredients are seeded from the CSV (E44: grown to 878)."""
         from apps.ingredients.models import Ingredient
 
         call_command("seed_all", verbosity=0)
-        assert Ingredient.objects.count() == 638
+        assert Ingredient.objects.count() == 878
 
     def test_ingredient_categories_created(self):
         """At least one IngredientCategory is created per unique category name."""
@@ -37,18 +37,18 @@ class TestSeedAll:
         assert IngredientCategory.objects.count() >= 1
 
     def test_dishes_created(self):
-        """219 dishes are seeded (E33: grown to 219)."""
+        """281 dishes are seeded (E44: grown to 281)."""
         from apps.dishes.models import Dish
 
         call_command("seed_all", verbosity=0)
-        assert Dish.objects.count() == 219
+        assert Dish.objects.count() == 281
 
     def test_dish_ingredients_created(self):
-        """At least 700 DishIngredient rows are created (csv has 733)."""
+        """At least 1100 DishIngredient rows are created (csv has 1134)."""
         from apps.dishes.models import DishIngredient
 
         call_command("seed_all", verbosity=0)
-        assert DishIngredient.objects.count() >= 700
+        assert DishIngredient.objects.count() >= 1100
 
     def test_dish_steps_created(self):
         """At least 700 DishStep rows are created (csv has 750)."""

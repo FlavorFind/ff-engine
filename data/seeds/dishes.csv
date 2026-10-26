@@ -204,7 +204,6 @@ baobab-juice,Baobab juice,Drink made from baobab fruit pulp and water,beverage,b
 kahawa-chungu,Kahawa chungu,Strong black coffee spiced with ginger and cardamom,beverage,beverage,1,easy,5,10,4,,,,,,,,,Kenya Coast|Easy|Drink,draft
 hibiscus-tea,Hibiscus tea,Tart red tea brewed from dried hibiscus petals,beverage,beverage,1,easy,5,10,4,,,,,,,,,Tanzania|Easy|Drink,draft
 masala-chai,Masala chai,Milky tea simmered with ginger cardamom and cinnamon,breakfast,beverage,1,easy,5,10,4,,,,,,,,,Kenya|Easy|Breakfast,draft
-mandazi,Mandazi,Classic East African fried dough triangles lightly sweetened with coconut milk,breakfast,side,1,easy,20,15,4,,,,,,,,,Kenyan|Swahili|Breakfast|Fried,draft
 rice-and-beans,Rice and Beans,Rice and red beans cooked together with onion and spices,dinner,main,2,easy,10,40,4,,,,,,,,,Kenyan|Everyday|Vegetarian,draft
 matumbo-stew,Matumbo Stew,Tripe slow-cooked with tomato onion garlic and spices,dinner,main,2,medium,20,120,4,,,,,,,,,Kenyan|Offal|Stew,draft
 ugandan-groundnut-stew,Ugandan Groundnut Stew,Chicken or beef simmered in a smooth peanut and tomato sauce,dinner,main,2,medium,20,60,4,,,,,,,,,Ugandan|Groundnut|Stew,draft
@@ -219,3 +218,65 @@ kenyan-cabbage-stew,Kenyan Cabbage Stew,Shredded cabbage stewed with tomato onio
 boiled-cassava,Boiled Cassava,Cassava chunks boiled until tender and served with coconut chutney or relish,snack,side,1,easy,10,30,4,,,,,,,,,Swahili|Cassava|Side,draft
 kenyan-fried-eggs,Kenyan Fried Eggs,Eggs fried with onion tomato and chili served with chapati or bread,breakfast,main,2,easy,5,10,4,,,,,,,,,Kenyan|Eggs|Breakfast,draft
 uji-porridge,Uji Porridge,Smooth fermented millet or maize flour porridge drunk warm for breakfast,breakfast,beverage,1,easy,5,15,4,,,,,,,,,Kenyan|Porridge|Breakfast,draft
+kenyan-vegetable-stew,Kenyan Vegetable Stew,Hearty mixed vegetable stew with potatoes and carrots,dinner,main,2,easy,15,30,4,180,6,4,28,5,8,0,350,Kenyan|Vegetarian|Vegetables|Stew,draft
+kenyan-chicken-pilau,Kenyan Chicken Pilau,Spiced rice with chicken and pilau masala,dinner,main,3,medium,15,45,6,380,25,10,50,2,3,45,480,Kenyan|Rice|Chicken|Spiced,draft
+kenyan-matoke-stew,Kenyan Matoke Stew,Green bananas cooked in a rich tomato-onion stew,dinner,main,2,medium,20,40,4,220,6,3,45,5,10,0,200,Kenyan|Matoke|Banana|Stew,draft
+kenyan-bean-soup,Kenyan Bean Soup,Rich bean soup with tomatoes and onions,lunch,starter,2,easy,10,30,4,160,10,2,25,8,5,0,320,Kenyan|Beans|Soup|Vegetarian,draft
+kenyan-pea-soup,Kenyan Pea Soup,Creamy split pea soup with carrots,lunch,starter,1,easy,10,25,4,140,8,1,25,6,5,0,280,Kenyan|Peas|Soup|Vegetarian,draft
+kenyan-carrot-soup,Kenyan Carrot Soup,Smooth carrot soup with ginger,lunch,starter,1,easy,10,20,4,120,3,2,20,4,10,0,260,Kenyan|Carrot|Soup|Vegetarian,draft
+kenyan-pumpkin-soup,Kenyan Pumpkin Soup,Creamy pumpkin soup with nutmeg,lunch,starter,1,easy,10,25,4,130,3,3,22,3,8,0,240,Kenyan|Pumpkin|Soup|Vegetarian,draft
+kenyan-sweet-potato-porridge,Kenyan Sweet Potato Porridge,Mashed sweet potatoes with milk and cinnamon,breakfast,main,1,easy,10,20,4,200,4,2,40,5,15,5,120,Kenyan|SweetPotato|Breakfast|Vegetarian,draft
+kenyan-cassava-stew,Kenyan Cassava Stew,Cassava cooked in a rich tomato stew,dinner,main,2,medium,15,35,4,250,5,3,48,4,6,0,220,Kenyan|Cassava|Stew|Vegetarian,draft
+kenyan-nduma,Kenyan Nduma (Arrowroot),"Boiled arrowroot tubers, a popular Kenyan snack",snack,side,0,easy,5,20,4,180,3,0,42,5,2,0,10,Kenyan|Arrowroot|Snack|Vegetarian,draft
+kenyan-ngumu,Kenyan Ngumu,"Deep fried wheat flour snack, crunchy and sweet",snack,snack,0,medium,15,20,6,320,5,15,42,2,8,20,180,Kenyan|Snack|Fried|Dessert,draft
+kenyan-kaimati,Kenyan Kaimati,Sweet fried dough balls soaked in sugar syrup,dessert,dessert,0,medium,20,30,6,350,4,18,45,1,25,15,120,Kenyan|Dessert|Fried|Sweet,draft
+kenyan-karakara,Kenyan Karakara,Spicy fried beef with chili and onions,dinner,main,4,medium,15,40,4,380,28,22,5,1,2,80,520,Kenyan|Beef|Spicy|Fried,draft
+kenyan-mbaazi,Kenyan Mbaazi,"Pigeon peas cooked in coconut milk, a coastal breakfast dish",breakfast,main,1,easy,10,35,4,220,10,5,32,8,6,0,180,Kenyan|PigeonPeas|Coconut|Breakfast,draft
+kenyan-viazi-vya-nyama,Kenyan Viazi vya Nyama,Potatoes stuffed with minced beef and spices,dinner,main,2,medium,25,40,4,320,18,12,35,4,3,45,400,Kenyan|Potato|Beef|Stuffed,draft
+kenyan-mchuzi-wa-nyama,Kenyan Mchuzi wa Nyama,Mixed meat stew with tomatoes and potatoes,dinner,main,2,medium,15,50,6,350,25,15,20,3,5,70,450,Kenyan|Meat|Stew|Potato,draft
+kenyan-ukwaju-soup,Kenyan Ukwaju Soup,Tamarind-flavored soup with vegetables,lunch,starter,2,easy,10,20,4,100,3,1,18,3,8,0,280,Kenyan|Tamarind|Soup|Vegetarian,draft
+kenyan-mkate-wa-sinia,Kenyan Mkate wa Sinia,"Steamed rice bread with coconut, a coastal specialty",breakfast,side,1,medium,30,60,6,280,5,6,48,2,8,10,150,Kenyan|Coastal|Bread|Coconut,draft
+kenyan-kishumba,Kenyan Kishumba,"Plantain and bean stew, a Kilifi specialty",dinner,main,2,medium,15,40,4,280,12,4,48,8,6,0,220,Kenyan|Plantain|Beans|Coastal,draft
+kenyan-bokoboko,Kenyan Bokoboko,"Mashed maize and beans, a Luhya specialty",dinner,main,1,easy,10,45,6,290,12,2,55,10,4,0,200,Kenyan|Luhya|Maize|Beans,draft
+kenyan-omurwa,Kenyan Omurwa,Roasted sweet potatoes with a honey glaze,snack,side,1,easy,5,25,4,220,3,1,48,5,20,0,80,Kenyan|SweetPotato|Snack|Roasted,draft
+kenyan-omalanga,Kenyan Omalanga,Cassava and fish stew from the lake region,dinner,main,2,medium,15,40,4,280,15,5,38,4,3,30,380,Kenyan|Cassava|Fish|Lake,draft
+kenyan-butere,Kenyan Butere,"Cabbage and egg stew, simple and hearty",dinner,side,1,easy,10,20,4,160,8,6,12,4,6,140,280,Kenyan|Cabbage|Egg|Vegetarian,draft
+kenyan-kienyeji-stew,Kenyan Kienyeji Stew,Free-range chicken stew with traditional vegetables,dinner,main,2,medium,20,60,6,340,28,14,12,3,4,75,420,Kenyan|Chicken|Kienyeji|Stew,draft
+kenyan-githeri-ya-maharage,Kenyan Githeri ya Maharage,Beans and maize cooked with tomatoes and onions,dinner,main,2,easy,10,35,6,260,12,3,45,10,5,0,220,Kenyan|Beans|Maize|Vegetarian,draft
+kenyan-wali-na-maharage,Kenyan Wali na Maharage,"Rice and beans cooked together, a simple staple",dinner,main,1,easy,5,30,6,280,10,2,52,6,2,0,180,Kenyan|Rice|Beans|Vegetarian,draft
+kenyan-sukuma-na-nyama,Kenyan Sukuma na Nyama,Collard greens with beef in a savory stew,dinner,main,2,medium,15,30,4,310,22,12,12,4,3,60,400,Kenyan|Sukuma|Beef|Stew,draft
+kenyan-ugali-nyama-choma,Kenyan Ugali na Nyama Choma,Ugali served with roasted goat meat and kachumbari,dinner,main,2,easy,10,30,4,450,35,15,40,2,1,100,500,Kenyan|Ugali|Goat|Grilled,draft
+kenyan-mchemsho,Kenyan Mchemsho,"Mixed boiled vegetables and meat, a coastal home dish",dinner,main,2,easy,15,40,4,280,15,8,30,5,5,40,350,Kenyan|Coastal|Mixed|Stew,draft
+kenyan-mboga-ya-kukaanga,Kenyan Mboga ya Kukaanga,Stir-fried mixed vegetables with garlic and ginger,dinner,side,2,easy,10,15,4,140,4,6,16,4,5,0,280,Kenyan|Vegetables|Fried|Vegetarian,draft
+kenyan-nyama-ya-kukaanga,Kenyan Nyama ya Kukaanga,Stir-fried beef strips with onions and peppers,dinner,main,2,medium,10,20,4,340,28,18,8,1,2,70,420,Kenyan|Beef|Fried|StirFry,draft
+kenyan-kuku-ya-kukaanga,Kenyan Kuku ya Kukaanga,Fried chicken with tomatoes and onions,dinner,main,2,medium,15,30,4,360,30,16,12,1,2,90,380,Kenyan|Chicken|Fried,draft
+kenyan-samaki-ya-kukaanga,Kenyan Samaki ya Kukaanga,"Fried fish with garlic, ginger and lime",dinner,main,2,medium,15,25,4,300,28,14,6,0,1,60,360,Kenyan|Fish|Fried|Coastal,draft
+kenyan-ndogo-ndogo,Kenyan Ndogo Ndogo,"Mixed offal stew with tripe, liver and kidney",dinner,main,3,hard,30,60,6,340,25,18,8,1,2,120,480,Kenyan|Offal|Stew|Tripe,draft
+kenyan-kahawa-ya-maziwa,Kenyan Kahawa ya Maziwa,"Spiced milk coffee, a Nairobi cafe culture staple",beverage,beverage,0,easy,5,10,2,120,6,5,12,0,12,25,100,Kenyan|Coffee|Milk|Spiced,draft
+kenyan-dawa-ya-asili,Kenyan Dawa ya Asili,"Honey, ginger and lemon tonic drink",beverage,beverage,1,easy,5,10,2,80,1,0,18,0,15,0,20,Kenyan|Honey|Ginger|Tonic,draft
+kenyan-ukwaju-juice,Kenyan Ukwaju Juice,Tamarind juice with sugar and lime,beverage,beverage,1,easy,10,15,4,90,1,0,22,0,18,0,15,Kenyan|Tamarind|Juice|Drink,draft
+kenyan-mabuyu,Kenyan Mabuyu,Roasted baobab seeds coated in sugar and color,snack,snack,0,easy,15,20,6,180,3,2,38,5,22,0,40,Kenyan|Baobab|Snack|Sweet,draft
+kenyan-karanga-ya-kukaanga,Kenyan Karanga ya Kukaanga,Fried peanuts with chili and salt,snack,snack,1,easy,5,10,4,280,12,20,12,4,3,0,340,Kenyan|Peanuts|Snack|Fried,draft
+kenyan-mboga-mix,Kenyan Mboga Mix,Mixed vegetable stir-fry with groundnut sauce,dinner,side,2,easy,10,20,4,200,8,10,18,5,4,0,260,Kenyan|Vegetables|Groundnut|Vegetarian,draft
+kenyan-ugali-wa-muondo,Kenyan Ugali wa Muondo,"Thick sorghum ugali, a western Kenya staple",dinner,side,1,medium,10,30,6,240,6,1,48,5,1,0,8,Kenyan|Sorghum|Ugali|Western,draft
+kenyan-chai-ya-maziwa,Kenyan Chai ya Maziwa,Milky spiced tea with cardamom and cinnamon,beverage,beverage,0,easy,5,15,4,100,5,3,12,0,10,15,90,Kenyan|Tea|Milk|Spiced,draft
+kenyan-mtindi,Kenyan Mtindi,"Fermented sour milk drink, a Luhya favorite",beverage,beverage,0,easy,5,0,2,100,6,4,8,0,8,15,80,Kenyan|Milk|Fermented|Luhya,draft
+kenyan-muratina,Kenyan Muratina,Traditional fermented sausage drink from muratina fruit,beverage,beverage,0,hard,120,240,6,180,2,0,30,1,18,0,20,Kenyan|Traditional|Fermented|Beverage,draft
+tanzanian-mchicha-ya-nazi,Tanzanian Mchicha ya Nazi,Spinach cooked in coconut milk with peanuts,dinner,side,2,easy,10,20,4,180,5,8,16,4,4,0,240,Tanzanian|Spinach|Coconut|Vegetarian,draft
+tanzanian-makande,Tanzanian Makande,"Maize and bean stew with coconut, a Zanzibar staple",dinner,main,2,easy,15,45,6,280,12,4,48,10,6,0,200,Tanzanian|Maize|Beans|Coconut,draft
+tanzanian-bokoli,Tanzanian Bokoli,Cassava leaves stew with peanuts and palm oil,dinner,main,2,medium,20,45,4,220,8,8,28,6,4,0,260,Tanzanian|Cassava|Leaves|Vegetarian,draft
+tanzanian-pilipili-ya-kuku,Tanzanian Pilipili ya Kuku,Spicy chicken in chili sauce with coconut,dinner,main,4,medium,20,40,4,360,28,16,12,2,3,80,440,Tanzanian|Chicken|Spicy|Coconut,draft
+tanzanian-ugali-wa-muhogo,Tanzanian Ugali wa Muhogo,"Cassava flour ugali, a coastal Tanzania staple",dinner,side,1,medium,10,25,6,230,3,1,52,4,1,0,10,Tanzanian|Cassava|Ugali|Coastal,draft
+ethiopian-yetsom-beyaynetu,Ethiopian Yetsom Beyaynetu,Fasting platter of mixed lentils and vegetables,dinner,main,2,medium,30,45,4,320,14,6,48,10,6,0,280,Ethiopian|Lentils|Vegetarian|Fasting,draft
+ethiopian-doro-wat-berbere,Ethiopian Doro Wat (Berbere),Spicy chicken stew with berbere and hard-boiled eggs,dinner,main,4,hard,30,90,6,420,30,18,15,3,4,120,520,Ethiopian|Chicken|Berbere|Spicy,draft
+ethiopian-kitfo-ayib,Ethiopian Kitfo with Ayib,Minced raw beef with spiced butter and fresh cheese,dinner,main,3,medium,15,10,4,450,35,28,5,1,1,120,380,Ethiopian|Beef|Raw|Traditional,draft
+ethiopian-gomen-kitfo,Ethiopian Gomen with Kitfo,Collard greens with minced beef and chili,dinner,main,3,medium,20,40,4,360,28,18,12,4,2,85,420,Ethiopian|Greens|Beef|Spicy,draft
+ugandan-muchomo-kuku,Ugandan Muchomo wa Kuku,Roasted chicken with kachumbari and chili,dinner,main,3,medium,15,60,4,380,32,16,8,1,2,90,420,Ugandan|Chicken|Roasted|Grilled,draft
+ugandan-luwombo-beef,Ugandan Luwombo wa Beef,Beef steamed in banana leaves with groundnut sauce,dinner,main,2,hard,30,90,6,380,28,14,22,4,3,65,380,Ugandan|Beef|Banana|Steamed,draft
+ugandan-ekokoro,Ugandan Ekokoro,"Sweet potato and bean mash, a home staple",dinner,main,1,easy,15,35,4,240,10,2,45,8,5,0,180,Ugandan|SweetPotato|Beans|Vegetarian,draft
+ugandan-mu-kuku,Ugandan Mu Kuku,Chicken stewed in groundnut paste with onions,dinner,main,2,medium,20,50,4,350,26,14,18,3,3,70,400,Ugandan|Chicken|Groundnut|Stew,draft
+rwandan-isombe-maharage,Rwandan Isombe ya Maharage,Cassava leaves with beans and palm oil,dinner,main,2,medium,20,50,4,260,12,6,35,8,4,0,240,Rwandan|Cassava|Beans|Vegetarian,draft
+rwandan-agatogo-inka,Rwandan Agatogo ya Inka,Beef and plantain stew with tomato and onion,dinner,main,2,medium,15,45,4,320,22,10,28,4,5,55,380,Rwandan|Beef|Plantain|Stew,draft
+burundian-ibiharage-mboga,Burundian Ibiharage ya Mboga,Beans and mixed vegetables in a rich stew,dinner,main,2,medium,15,40,4,240,11,3,42,10,5,0,220,Burundian|Beans|Vegetables|Vegetarian,draft
+coastal-biriani-kuku,Coastal Biriani ya Kuku,"Chicken biryani with saffron, cardamom and coconut milk",dinner,main,3,hard,30,75,6,420,28,14,48,3,4,75,520,Coastal|Biryani|Chicken|Spiced,draft
+coastal-pilau-samaki,Coastal Pilau ya Samaki,Fish pilau with coastal spices and coconut,dinner,main,3,medium,20,50,6,380,24,10,48,2,3,55,480,Coastal|Pilau|Fish|Spiced,draft
