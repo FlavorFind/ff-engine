@@ -527,8 +527,9 @@ class TestDuplicateDetector:
         assert any(d.name.lower() == "tomato" for d in dupes)
 
     def test_similar_name_flagged(self, ingredient) -> None:
-        # "Tomatoe" is very close to "Tomato"
-        dupes = find_duplicate_ingredients("Tomatoe", threshold=0.7)
+        # "Tomatoe" is very close to "Tomato" — use threshold 0.5 which works
+        # with both pg_trgm (trigram similarity ~0.55) and SequenceMatcher (~0.92).
+        dupes = find_duplicate_ingredients("Tomatoe", threshold=0.5)
         assert len(dupes) > 0
 
     def test_different_name_not_flagged(self, ingredient) -> None:

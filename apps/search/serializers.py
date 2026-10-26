@@ -31,7 +31,6 @@ class SearchRequestSerializer(serializers.Serializer):
         child=serializers.CharField(max_length=200, allow_blank=False),
         min_length=0,
         max_length=30,
-        default=list,
         help_text="Ingredient names or phrases typed by the user.",
     )
     exclude = serializers.ListField(
@@ -97,8 +96,20 @@ class SearchRequestSerializer(serializers.Serializer):
     )
 
     def validate_ingredients(self, value: list) -> list:
-        """Strip whitespace and drop blank entries."""
-        return [v.strip() for v in value if v.strip()]
+        """Strip whitespace, drop blank entries, and sanitize inputs."""
+        import re
+
+        from rest_framework import serializers as _s
+
+        for item in value:
+            if not isinstance(item, str):
+                raise _s.ValidationError(
+                    "Each ingredient must be a string, got "
+                    f"{type(item).__name__!r}."
+                )
+        # Strip HTML tags so script injection never reaches the response body.
+        _tag_re = re.compile(r"<[^>]+>")
+        return [_tag_re.sub("", v).strip() for v in value if v.strip()]
 
 
 # ──────────────────────────────────────────────────────────────────────────────

@@ -234,7 +234,7 @@ class TestAuthFailures:
         # Create a key with no search scope
         from apps.clients.models import ApiKey as AK
 
-        _, raw_key = create_key(client_record, scopes=[AK.SCOPE_READ_CATALOGUE], rate_limit=0)
+        _, raw_key = create_key(client_record, scopes=[AK.SCOPE_READ_CATALOG], rate_limit=0)
         c = APIClient()
         c.credentials(HTTP_X_API_KEY=raw_key)
         resp = c.post(
