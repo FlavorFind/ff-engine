@@ -182,7 +182,12 @@ class TestEmptyInputs:
         )
         data = resp.json()
         assert "results" in data
-        assert isinstance(data["results"], list)
+        # results is a dict with three tiers, not a flat list
+        results = data["results"]
+        assert isinstance(results, dict)
+        assert "exact" in results
+        assert "can_make" in results
+        assert "almost" in results
 
 
 # ── Authentication failures ────────────────────────────────────────────────────

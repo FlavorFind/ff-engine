@@ -14,10 +14,12 @@ import logging
 
 from drf_spectacular.utils import OpenApiResponse, extend_schema
 from rest_framework import status as http_status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.clients.models import ApiKey
+from apps.clients.permissions import HasScope
 from apps.search.cache import (
     build_cache_key,
     compute_etag,
@@ -56,6 +58,7 @@ CACHE_CONTROL = "private, max-age=300"
     tags=["Search"],
 )
 @api_view(["POST"])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_SEARCH)])
 def search_by_ingredients(request: Request) -> Response:
     """
     POST /v1/search/by-ingredients
