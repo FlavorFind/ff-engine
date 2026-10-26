@@ -280,3 +280,22 @@ rwandan-agatogo-inka,Rwandan Agatogo ya Inka,Beef and plantain stew with tomato 
 burundian-ibiharage-mboga,Burundian Ibiharage ya Mboga,Beans and mixed vegetables in a rich stew,dinner,main,2,medium,15,40,4,240,11,3,42,10,5,0,220,Burundian|Beans|Vegetables|Vegetarian,draft
 coastal-biriani-kuku,Coastal Biriani ya Kuku,"Chicken biryani with saffron, cardamom and coconut milk",dinner,main,3,hard,30,75,6,420,28,14,48,3,4,75,520,Coastal|Biryani|Chicken|Spiced,draft
 coastal-pilau-samaki,Coastal Pilau ya Samaki,Fish pilau with coastal spices and coconut,dinner,main,3,medium,20,50,6,380,24,10,48,2,3,55,480,Coastal|Pilau|Fish|Spiced,draft
+west-african-jollof-rice,West African Jollof Rice,Tomato-based spiced rice with chicken and vegetables,dinner,main,3,medium,20,50,6,420,22,12,58,3,5,55,480,WestAfrican|Rice|Tomato|Chicken,draft
+ghanaian-fufu-light-soup,Ghanaian Fufu with Light Soup,Pounded cassava and plantain with spiced chicken broth,dinner,main,3,hard,30,60,4,380,24,10,55,4,3,65,440,Ghanaian|Fufu|Soup|Chicken,draft
+nigerian-egusi-soup,Nigerian Egusi Soup,Rich melon seed soup with leafy greens and stockfish,dinner,main,3,medium,20,45,6,420,28,22,18,5,3,60,520,Nigerian|Egusi|Soup|Melon,draft
+senegalese-thieboudienne,Senegalese Thieboudienne,Senegalese fish and rice cooked in tomato sauce,dinner,main,2,hard,30,60,6,400,26,10,52,4,4,55,500,Senegalese|Fish|Rice|Tomato,draft
+moroccan-lamb-tagine,Moroccan Lamb Tagine,"Slow-cooked lamb with apricots, almonds and ras el hanout",dinner,main,2,medium,20,90,4,480,35,22,32,4,18,95,480,Moroccan|Lamb|Tagine|Apricot,draft
+moroccan-chicken-tagine,Moroccan Chicken Tagine,"Chicken with preserved lemon, olives and aromatic spices",dinner,main,2,medium,20,60,4,380,30,16,18,3,4,80,520,Moroccan|Chicken|Tagine|Lemon,draft
+egyptian-koshari,Egyptian Koshari,"Layered lentils, rice, pasta with crispy onions and tomato sauce",lunch,main,2,medium,20,45,4,420,14,8,72,8,6,0,480,Egyptian|Vegetarian|Rice|Lentils,draft
+south-african-bobotie,South African Bobotie,Spiced minced beef bake with egg custard topping,dinner,main,2,medium,20,45,4,420,28,24,22,2,8,120,500,SouthAfrican|Beef|Bake|Spiced,draft
+south-african-boerewors-roll,South African Boerewors Roll,Grilled boerewors sausage in a soft roll with chakalaka,lunch,snack,2,easy,10,20,2,380,22,20,28,2,5,60,540,SouthAfrican|Sausage|Roll|Grilled,draft
+cameroonian-ndole,Cameroonian Ndole,"Bitter leaf stew with groundnuts, prawns and beef",dinner,main,2,hard,30,60,4,380,28,18,20,6,3,75,440,Cameroonian|BitterLeaf|Groundnut|Stew,draft
+ivorian-attiéké-fish,Ivorian Attiéké with Fish,Fermented cassava couscous with grilled tilapia and onion sauce,lunch,main,2,medium,15,30,2,350,28,10,42,3,4,55,380,Ivorian|Cassava|Fish|Coastal,draft
+kenyan-mahindi-choma,Kenyan Mahindi Choma,"Roasted maize on the cob, a popular Kenyan street snack",snack,snack,1,easy,5,20,2,120,4,1,26,3,5,0,5,Kenyan|Maize|Roasted|Snack,draft
+kenyan-bhajia-ndizi,Kenyan Bhajia ya Ndizi,Plantain fritters spiced with cumin and coriander,snack,snack,2,easy,10,15,4,220,3,10,30,3,8,0,180,Kenyan|Plantain|Fritter|Snack,draft
+kenyan-vitumbua,Kenyan Vitumbua,"Coconut rice pancakes, a coastal breakfast staple",breakfast,snack,1,medium,15,20,4,280,5,8,44,2,10,20,120,Kenyan|Coconut|Rice|Breakfast,draft
+kenyan-samosa-ya-viazi,Kenyan Samosa ya Viazi,"Potato-filled pastry parcels, deep fried until golden",snack,snack,2,medium,30,20,6,280,5,14,34,2,2,0,320,Kenyan|Potato|Samosa|Fried,draft
+tanzanian-supu-ya-ndizi,Tanzanian Supu ya Ndizi,Green banana and beef soup from the Kilimanjaro region,lunch,starter,2,easy,15,40,4,220,14,6,28,4,5,35,380,Tanzanian|Banana|Beef|Soup,draft
+ethiopian-shiro-wat,Ethiopian Shiro Wat,Spiced chickpea flour stew with niter kibbeh and berbere,dinner,main,3,easy,10,25,4,280,14,10,34,6,4,0,380,Ethiopian|Chickpea|Vegetarian|Stew,draft
+ethiopian-tibs,Ethiopian Tibs,"Pan-fried beef or lamb with rosemary, onions and jalapeño",dinner,main,3,easy,15,20,4,360,30,20,8,2,2,85,420,Ethiopian|Beef|Fried|Spiced,draft
+somali-bariis-iskukaris,Somali Bariis Iskukaris,"Fragrant rice with raisins, cumin and cinnamon, served with goat",dinner,main,2,medium,20,50,6,420,25,12,58,2,8,55,440,Somali|Rice|Goat|Spiced,draft

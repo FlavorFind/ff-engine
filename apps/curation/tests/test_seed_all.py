@@ -37,18 +37,18 @@ class TestSeedAll:
         assert IngredientCategory.objects.count() >= 1
 
     def test_dishes_created(self):
-        """281 dishes are seeded (E44: grown to 281)."""
+        """300 dishes are seeded (E45: grown to 300)."""
         from apps.dishes.models import Dish
 
         call_command("seed_all", verbosity=0)
-        assert Dish.objects.count() == 281
+        assert Dish.objects.count() == 300
 
     def test_dish_ingredients_created(self):
-        """At least 1100 DishIngredient rows are created (csv has 1134)."""
+        """At least 1250 DishIngredient rows are created (csv has 1282)."""
         from apps.dishes.models import DishIngredient
 
         call_command("seed_all", verbosity=0)
-        assert DishIngredient.objects.count() >= 1100
+        assert DishIngredient.objects.count() >= 1250
 
     def test_dish_steps_created(self):
         """At least 700 DishStep rows are created (csv has 750)."""
