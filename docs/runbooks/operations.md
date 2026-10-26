@@ -1,0 +1,158 @@
+# Operations Runbook — Flavor Find Engine
+
+**Version:** 1.0.0  
+**Last updated:** 2026-10-26  
+**Service:** ff-engine (isolated recipe engine, Sprint 1)  
+**Staging URL:** https://ff-engine-kuar.onrender.com  
+
+---
+
+## Health Check
+
+```bash
+curl https://ff-engine-kuar.onrender.com/v1/health/
+# Expected: {"status": "ok", "database": "ok"}
+```
+
+If `database` is not `"ok"`, the PostgreSQL connection is broken — see [Database Issues](#database-issues).
+
+---
+
+## Deploy
+
+Render auto-deploys on every push to `main`. To trigger manually:
+
+1. Go to Render dashboard → ff-engine → Manual Deploy → Deploy latest commit.
+2. Wait for the health check to go green (≈ 2 min).
+3. Run the golden set post-deploy:
+   ```bash
+   python manage.py run_golden_set --fail-fast
+   ```
+
+---
+
+## Rollback
+
+Run the rollback drill first to print instructions:
+
+```bash
+python manage.py rollback_drill
+```
+
+Then follow the printed steps:
+
+1. In Render dashboard → Deploys → find the previous deploy → **Rollback to this deploy**.
+2. If a migration reversal is needed:
+   ```bash
+   python manage.py migrate <app> <previous-migration-name>
+   ```
+3. Verify health: `curl /v1/health/`
+4. Verify golden set: `python manage.py run_golden_set --fail-fast`
+
+---
+
+## Backup and Restore
+
+### Take a backup
+
+```bash
+python manage.py backup_drill --step backup
+# Writes to data/snapshots/<timestamp>/
+```
+
+### Verify a backup
+
+```bash
+python manage.py backup_drill --step verify --snapshot-dir data/snapshots/<timestamp>
+```
+
+### Restore from backup (disaster recovery only)
+
+```bash
+python manage.py backup_drill --step restore --confirm \
+  --snapshot-dir data/snapshots/<timestamp>
+```
+
+---
+
+## Database Issues
+
+**Symptom:** `/v1/health/` returns `{"database": "error"}`.
+
+1. Check Render → ff-engine → Logs for `OperationalError`.
+2. Check Render → PostgreSQL instance status.
+3. Restart the web service: Render dashboard → Restart.
+4. If the DB is truly down, Render's managed Postgres has automatic failover — wait up to 5 min.
+
+---
+
+## Redis / Cache Issues
+
+**Symptom:** Search is slow (no cache hits), or `500` errors with `ConnectionError`.
+
+1. Check `REDIS_URL` env var on Render.
+2. The search endpoint has a fallback — it will work without Redis, just slower.
+3. To clear all cache keys:
+   ```bash
+   python manage.py shell -c "from django.core.cache import cache; cache.clear()"
+   ```
+
+---
+
+## Zero-Result Queries
+
+Review which ingredient inputs are returning zero dishes:
+
+```bash
+python manage.py qa_zero_results --top 20
+```
+
+Act on the top entries by adding aliases or new seed data.
+
+---
+
+## QA Report
+
+Run the full data quality report:
+
+```bash
+python manage.py qa_report --fail-on-critical
+```
+
+Exits 1 if there are integrity violations (V01–V23 rules). Green exit = data is clean.
+
+---
+
+## Load Testing
+
+```bash
+# Standard load test (50 users, 2 min):
+FF_API_KEY=<key> locust -f load_tests/locustfile.py \
+  --host https://ff-engine-kuar.onrender.com \
+  --users 50 --spawn-rate 5 --run-time 2m --headless \
+  --html load_tests/report_load.html -u SearchUser
+
+# Soak test (20 users, 30 min):
+FF_API_KEY=<key> locust -f load_tests/locustfile.py \
+  --host https://ff-engine-kuar.onrender.com \
+  --users 20 --spawn-rate 1 --run-time 30m --headless \
+  --html load_tests/report_soak.html -u SoakUser
+```
+
+Target: p95 < 150 ms at 50 rps.
+
+---
+
+## Incident Log
+
+Record incidents in `docs/runbooks/incident-log.md`. Template:
+
+```
+## [DATE] — [TITLE]
+**Severity:** P1 / P2 / P3
+**Duration:** X min
+**Impact:** Description
+**Root cause:** Description
+**Resolution:** Steps taken
+**Follow-up:** Link to GitHub issue
+```

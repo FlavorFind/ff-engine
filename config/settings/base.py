@@ -81,6 +81,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.core.middleware.RequestIDMiddleware",
     "apps.clients.metering.MeteringMiddleware",
+    "apps.core.security.SecurityHeadersMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

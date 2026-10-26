@@ -27,9 +27,9 @@ services:
       - key: REDIS_URL
         value: redis://localhost:6379/0
       - key: ENGINE_VERSION
-        value: "1.0.0-staging"
+        value: "1.0.0"
       - key: DATASET_VERSION
-        value: "0.0.0"
+        value: "1.0.0"
       - key: CORS_ALLOW_ALL_ORIGINS
         value: "false"
       - key: CORS_ALLOWED_ORIGINS
