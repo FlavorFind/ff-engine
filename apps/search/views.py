@@ -14,10 +14,12 @@ import logging
 
 from drf_spectacular.utils import OpenApiResponse, extend_schema
 from rest_framework import status as http_status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.clients.models import ApiKey
+from apps.clients.permissions import HasScope
 from apps.search.cache import (
     build_cache_key,
     compute_etag,
@@ -56,6 +58,7 @@ CACHE_CONTROL = "private, max-age=300"
     tags=["Search"],
 )
 @api_view(["POST"])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_SEARCH)])
 def search_by_ingredients(request: Request) -> Response:
     """
     POST /v1/search/by-ingredients
@@ -127,7 +130,12 @@ def search_by_ingredients(request: Request) -> Response:
         diet=diet,
     )
 
-    cached = get_cached_result(cache_key)
+    cached = None
+    try:
+        cached = get_cached_result(cache_key)
+    except Exception:
+        logger.warning("Cache read failed — falling through to engine", exc_info=True)
+
     if cached is not None:
         payload = cached["payload"]
         etag = cached["etag"]
@@ -195,7 +203,10 @@ def search_by_ingredients(request: Request) -> Response:
     }
 
     etag = compute_etag(payload)
-    set_cached_result(cache_key, payload, etag, dataset_version)
+    try:
+        set_cached_result(cache_key, payload, etag, dataset_version)
+    except Exception:
+        logger.warning("Cache write failed — response still returned", exc_info=True)
 
     # ── Log zero-result queries for observatory (E43) ──────────────────────
     if result.total_results == 0 and ingredients:

@@ -95,19 +95,34 @@ class Command(BaseCommand):
 
         self.stdout.write(f"[backup] Exporting dataset to {snapshot_dir} …")
 
-        call_command(
-            "export_csv",
-            "--snapshot",
-            str(snapshot_dir),
-            stdout=self.stdout,
-            stderr=self.stderr,
-        )
+        # Export each data type individually into snapshot_dir.
+        # We use the individual --type calls rather than --type snapshot
+        # so that all CSVs land directly in snapshot_dir (not a sub-directory).
+        export_types = ["ingredients", "aliases", "dishes", "dish_ingredients"]
+        file_entries = []
+        for export_type in export_types:
+            call_command(
+                "export_csv",
+                "--type",
+                export_type,
+                "--output-dir",
+                str(snapshot_dir),
+                stdout=self.stdout,
+                stderr=self.stderr,
+            )
+            csv_path = snapshot_dir / f"{export_type}.csv"
+            if csv_path.exists():
+                with csv_path.open() as f:
+                    rows = sum(1 for _ in f) - 1  # exclude header
+                file_entries.append({"filename": f"{export_type}.csv", "rows": rows})
 
-        # Write a manifest with counts and timestamp
-        manifest = self._read_manifest(snapshot_dir)
-        manifest["drill_timestamp"] = datetime.utcnow().isoformat() + "Z"
-        manifest["drill_type"] = "backup"
-        (snapshot_dir / "drill_manifest.json").write_text(json.dumps(manifest, indent=2))
+        # Write a manifest.json with the format expected by _do_verify.
+        manifest = {
+            "drill_timestamp": datetime.utcnow().isoformat() + "Z",
+            "drill_type": "backup",
+            "files": file_entries,
+        }
+        (snapshot_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
         self.stdout.write(self.style.SUCCESS(f"[backup] ✓ Snapshot written to {snapshot_dir}"))
         return snapshot_dir
@@ -185,9 +200,3 @@ class Command(BaseCommand):
         if not dirs:
             raise CommandError("No snapshots found. Run --step backup first.")
         return dirs[0]
-
-    def _read_manifest(self, snapshot_dir: Path) -> dict:
-        manifest_path = snapshot_dir / "manifest.json"
-        if manifest_path.exists():
-            return json.loads(manifest_path.read_text())
-        return {"files": []}

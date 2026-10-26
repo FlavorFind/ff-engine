@@ -19,7 +19,19 @@ Response fields (per dish):
 
 from __future__ import annotations
 
+import re
+
 from rest_framework import serializers
+
+
+class StrictStringField(serializers.CharField):
+    """CharField that rejects non-string input (DRF's CharField coerces ints)."""
+
+    def to_internal_value(self, data):
+        if not isinstance(data, str):
+            self.fail("invalid")
+        return super().to_internal_value(data)
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Request
@@ -28,10 +40,9 @@ from rest_framework import serializers
 
 class SearchRequestSerializer(serializers.Serializer):
     ingredients = serializers.ListField(
-        child=serializers.CharField(max_length=200, allow_blank=False),
+        child=StrictStringField(max_length=200, allow_blank=False),
         min_length=0,
         max_length=30,
-        default=list,
         help_text="Ingredient names or phrases typed by the user.",
     )
     exclude = serializers.ListField(
@@ -97,8 +108,9 @@ class SearchRequestSerializer(serializers.Serializer):
     )
 
     def validate_ingredients(self, value: list) -> list:
-        """Strip whitespace and drop blank entries."""
-        return [v.strip() for v in value if v.strip()]
+        """Strip whitespace, drop blank entries, and strip HTML tags."""
+        _tag_re = re.compile(r"<[^>]+>")
+        return [_tag_re.sub("", v).strip() for v in value if v.strip()]
 
 
 # ──────────────────────────────────────────────────────────────────────────────

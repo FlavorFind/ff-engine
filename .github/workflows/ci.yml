@@ -128,12 +128,10 @@ jobs:
         env:
           PGPASSWORD: ff_engine_pass
         run: |
-          # Enable pg_trgm on the main DB
+          # Enable pg_trgm on the main and migration-check databases.
+          # The test DB (test_ff_engine_test) gets pg_trgm via the migration itself
+          # (0002_e40_trgm_indexes.py runs CREATE EXTENSION IF NOT EXISTS pg_trgm).
           psql -h localhost -U ff_engine -d ff_engine_test -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
-          # Pre-create the test DB that pytest-django will use (test_ff_engine_test)
-          # and install pg_trgm on it so the CONCURRENTLY migration succeeds.
-          psql -h localhost -U ff_engine -d postgres -c "CREATE DATABASE test_ff_engine_test OWNER ff_engine;" || true
-          psql -h localhost -U ff_engine -d test_ff_engine_test -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
 
       - name: Run tests with coverage
         env:
