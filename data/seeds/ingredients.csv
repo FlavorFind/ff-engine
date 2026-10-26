@@ -21,7 +21,7 @@ black-pepper,black pepper,Spices & Seasonings,seasoning,true
 black-tea-leaves,black tea leaves,Other,secondary,false
 black-eyed-peas,black-eyed peas,Legumes,primary,false
 brown-lentils,brown lentils,Legumes,primary,false
-butter,butter,Dairy & Eggs,secondary,true
+butter,butter,Dairy & Eggs,secondary,false
 cabbage,cabbage,Vegetables,secondary,false
 cardamom,cardamom,Spices & Seasonings,seasoning,false
 carrot,carrot,Vegetables,secondary,false
@@ -58,7 +58,7 @@ eggs,eggs,Dairy & Eggs,secondary,false
 fish,fish,Fish & Seafood,primary,false
 fish-fillets,fish fillets,Fish & Seafood,primary,false
 fish-heads-and-pieces,fish heads and pieces,Fish & Seafood,primary,false
-flour,flour,Grains,primary,true
+flour,flour,Grains,primary,false
 free-range-chicken,free-range chicken,Poultry,primary,false
 fresh-ginger,fresh ginger,Spices & Seasonings,seasoning,false
 fresh-milk,fresh milk,Dairy & Eggs,secondary,false
@@ -89,7 +89,7 @@ lemon-juice,lemon juice,Spices & Seasonings,seasoning,false
 lentils-or-minced-beef,lentils or minced beef,Legumes,primary,false
 lime,lime,Fruit,secondary,false
 maize,maize,Grains,primary,false
-maize-flour,maize flour,Grains,primary,true
+maize-flour,maize flour,Grains,primary,false
 managu-leaves,managu leaves,Vegetables,secondary,false
 mango,mango,Fruit,secondary,false
 milk,milk,Dairy & Eggs,secondary,false
@@ -103,7 +103,7 @@ onion,onion,Vegetables,secondary,false
 palm-oil,palm oil,Fats & Oils,staple,false
 passion-fruit,passion fruit,Fruit,secondary,false
 peanut-butter,peanut butter,Legumes,primary,false
-pepper,pepper,Spices & Seasonings,seasoning,true
+pepper,pepper,Spices & Seasonings,seasoning,false
 pepper-soup-spice,pepper soup spice,Spices & Seasonings,seasoning,false
 pilau-masala,pilau masala,Spices & Seasonings,seasoning,false
 pineapple,pineapple,Fruit,secondary,false
@@ -123,15 +123,15 @@ rosemary,rosemary,Spices & Seasonings,seasoning,false
 salt,salt,Spices & Seasonings,seasoning,true
 samosa-pastry,samosa pastry,Grains,primary,false
 scent-leaves,scent leaves,Vegetables,secondary,false
-seasoning-cubes,seasoning cubes,Spices & Seasonings,seasoning,true
+seasoning-cubes,seasoning cubes,Spices & Seasonings,seasoning,false
 shiro-powder,shiro powder,Spices & Seasonings,seasoning,false
 soy-sauce,soy sauce,Spices & Seasonings,seasoning,false
 spinach,spinach,Vegetables,secondary,false
 spinach-or-bitterleaf,spinach or bitterleaf,Vegetables,secondary,false
 split-peas,split peas,Legumes,primary,false
-stock,stock,Liquids,liquid,true
-stock-powder,stock powder,Spices & Seasonings,seasoning,true
-sugar,sugar,Other,secondary,true
+stock,stock,Liquids,liquid,false
+stock-powder,stock powder,Spices & Seasonings,seasoning,false
+sugar,sugar,Other,secondary,false
 sweet-potato,sweet potato,Vegetables,secondary,false
 tamarind,tamarind,Spices & Seasonings,seasoning,false
 teff-flour,teff flour,Grains,primary,false
@@ -141,14 +141,14 @@ tomato,tomato,Vegetables,secondary,false
 turmeric,turmeric,Spices & Seasonings,seasoning,false
 vegetable-oil,vegetable oil,Fats & Oils,staple,true
 vegetable-stock,vegetable stock,Liquids,liquid,false
-warm-water,warm water,Liquids,liquid,true
+warm-water,warm water,Liquids,liquid,false
 water,water,Liquids,liquid,true
 watermelon,watermelon,Fruit,secondary,false
-wheat-flour,wheat flour,Grains,primary,true
+wheat-flour,wheat flour,Grains,primary,false
 whole-cumin,whole cumin,Spices & Seasonings,seasoning,false
 whole-fish,whole fish,Fish & Seafood,primary,false
 whole-tilapia,whole tilapia,Fish & Seafood,primary,false
-yeast,yeast,Other,secondary,true
+yeast,yeast,Other,secondary,false
 lamb-leg,Lamb leg,Meat,primary,false
 lamb-chops,Lamb chops,Meat,primary,false
 lamb-shoulder,Lamb shoulder,Meat,primary,false
@@ -277,7 +277,7 @@ bird-eye-chili,Bird eye chili,Spices & Seasonings,seasoning,false
 dried-red-chili,Dried red chili,Spices & Seasonings,seasoning,false
 chili-flakes,Chili flakes,Spices & Seasonings,seasoning,false
 mekelesha-spice,Mekelesha spice blend,Spices & Seasonings,seasoning,false
-sea-salt,Sea salt,Spices & Seasonings,staple,true
+sea-salt,Sea salt,Spices & Seasonings,staple,false
 iodized-salt,Iodized salt,Spices & Seasonings,staple,true
 sorghum-flour,Sorghum flour,Grains,primary,false
 whole-sorghum,Whole sorghum,Grains,primary,false
@@ -328,13 +328,13 @@ condensed-milk,Sweetened condensed milk,Dairy & Eggs,secondary,false
 goat-milk,Goat milk,Dairy & Eggs,liquid,false
 camel-milk,Camel milk,Dairy & Eggs,liquid,false
 quail-eggs,Quail eggs,Dairy & Eggs,primary,false
-sunflower-oil,Sunflower oil,Fats & Oils,staple,true
-corn-oil,Corn oil,Fats & Oils,staple,true
-coconut-oil,Coconut oil,Fats & Oils,staple,true
-olive-oil,Olive oil,Fats & Oils,staple,true
-groundnut-oil,Groundnut oil,Fats & Oils,staple,true
+sunflower-oil,Sunflower oil,Fats & Oils,staple,false
+corn-oil,Corn oil,Fats & Oils,staple,false
+coconut-oil,Coconut oil,Fats & Oils,staple,false
+olive-oil,Olive oil,Fats & Oils,staple,false
+groundnut-oil,Groundnut oil,Fats & Oils,staple,false
 sesame-oil,Sesame oil,Fats & Oils,seasoning,false
-cottonseed-oil,Cottonseed oil,Fats & Oils,staple,true
+cottonseed-oil,Cottonseed oil,Fats & Oils,staple,false
 ghee,Ghee,Fats & Oils,secondary,false
 margarine,Margarine,Fats & Oils,secondary,false
 guava,Guava,Fruit,primary,false
@@ -389,8 +389,8 @@ sunflower-seeds,Sunflower seeds,Other,garnish,false
 cashew-nuts,Cashew nuts,Other,secondary,false
 macadamia-nuts,Macadamia nuts,Other,secondary,false
 desiccated-coconut,Desiccated coconut,Other,secondary,false
-baking-powder,Baking powder,Other,staple,true
-bicarbonate-of-soda,Bicarbonate of soda,Other,staple,true
+baking-powder,Baking powder,Other,staple,false
+bicarbonate-of-soda,Bicarbonate of soda,Other,staple,false
 green-tea,Green tea leaves,Other,secondary,false
 mango-pickle,Mango pickle,Other,seasoning,false
 jaggery,Jaggery,Other,secondary,false
