@@ -7,6 +7,7 @@ Architecture section 5 (Data Model):
   dataset_release  id, version, notes, counts (JSON), created_at
 """
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -110,3 +111,74 @@ class DatasetRelease(TimeStampedModel):
 
     def __str__(self) -> str:
         return f"Dataset {self.version}"
+
+
+class CommunitySubmission(TimeStampedModel):
+    """
+    E52 — A draft dish, ingredient or pairing submitted by a community member,
+    hotel or partner app.
+
+    Submissions always enter with status=PENDING and go through the standard
+    review workflow before any content reaches the shared library.  The raw
+    payload is stored as-is; it is validated on intake but not yet parsed into
+    model rows.
+
+    Architecture reference: POST /internal/submissions (internal key only).
+    Blueprint section 18 (v1.1): community submissions flowing in at scale.
+    """
+
+    class SubmissionType(models.TextChoices):
+        DISH = "dish", "Dish"
+        INGREDIENT = "ingredient", "Ingredient"
+        PAIRING = "pairing", "Pairing"
+
+    class SubmissionStatus(models.TextChoices):
+        PENDING = "pending", "Pending review"
+        APPROVED = "approved", "Approved"
+        REJECTED = "rejected", "Rejected"
+        DUPLICATE = "duplicate", "Duplicate"
+
+    submission_type = models.CharField(
+        max_length=20,
+        choices=SubmissionType.choices,
+        db_index=True,
+    )
+    status = models.CharField(
+        max_length=20,
+        choices=SubmissionStatus.choices,
+        default=SubmissionStatus.PENDING,
+        db_index=True,
+    )
+    # Raw payload saved as-is. Schema depends on submission_type.
+    payload = models.JSONField(
+        help_text="Raw submission payload. Schema depends on submission_type.",
+    )
+    # Source tracing — which API client submitted this
+    submitter_client = models.ForeignKey(
+        "clients.ApiClient",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="submissions",
+    )
+    submitter_note = models.TextField(blank=True)
+    # Moderation
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="reviewed_submissions",
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    rejection_reason = models.TextField(blank=True)
+
+    class Meta:
+        db_table = "community_submission"
+        ordering = ["-created_at"]
+        indexes = [
+            models.Index(fields=["status", "submission_type"]),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.get_submission_type_display()} submission [{self.status}] — {self.created_at:%Y-%m-%d}"

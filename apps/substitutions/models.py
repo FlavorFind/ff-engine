@@ -75,7 +75,19 @@ class Substitution(TimeStampedModel):
             models.UniqueConstraint(
                 fields=["ingredient", "substitute", "context_dish"],
                 name="unique_substitution_per_context",
-                nulls_distinct=False,  # treat NULL context_dish as equal (PostgreSQL 15+)
+                # nulls_distinct=False treats two rows with NULL context_dish as duplicates.
+                # This is the correct behaviour: a general substitution (no context) should
+                # exist at most once per (ingredient, substitute) pair.
+                # Requires PostgreSQL 15+ (released Oct 2022). Docker image uses postgres:16.
+                #
+                # Two-index fallback for PG < 15 (not needed here, documented for reference):
+                #   1. UniqueConstraint(fields=[ingredient, substitute],
+                #                       condition=Q(context_dish__isnull=True),
+                #                       name="unique_sub_no_context")
+                #   2. UniqueConstraint(fields=[ingredient, substitute, context_dish],
+                #                       condition=Q(context_dish__isnull=False),
+                #                       name="unique_sub_with_context")
+                nulls_distinct=False,
             ),
         ]
 

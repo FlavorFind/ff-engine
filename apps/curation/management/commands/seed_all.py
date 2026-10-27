@@ -106,6 +106,7 @@ class Command(BaseCommand):
             ("pairings", self._seed_pairings),
             ("substitutions", self._seed_substitutions),
             ("regions", self._seed_regions),
+            ("units", self._seed_units),
         ]:
             try:
                 with transaction.atomic():
@@ -598,6 +599,106 @@ class Command(BaseCommand):
 
         self.stdout.write(f"  Regions      created={created}  skipped={skipped}")
         return {"regions_created": created, "regions_skipped": skipped}
+
+    # ── units ─────────────────────────────────────────────────────────────────
+
+    def _seed_units(self, dry_run: bool) -> dict:
+        """
+        E55 — Seed measurement units from data/seeds/units.csv.
+
+        Format: code, name, kind, to_base_factor
+        """
+        path = SEEDS_DIR / "units.csv"
+        if not path.exists():
+            return {"units_created": 0, "units_skipped": 0}
+
+        from apps.ingredients.models import Unit
+
+        VALID_KINDS = {c[0] for c in Unit.Kind.choices}
+        created = skipped = 0
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                code = row["code"].strip()
+                name = row["name"].strip()
+                kind = row["kind"].strip()
+                factor = _safe_float(row.get("to_base_factor", "1.0"), 1.0)
+
+                if not code or not name:
+                    skipped += 1
+                    continue
+                if kind not in VALID_KINDS:
+                    kind = Unit.Kind.COUNT
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                _, was_created = Unit.objects.get_or_create(
+                    code=code,
+                    defaults={
+                        "name": name,
+                        "kind": kind,
+                        "to_base_factor": factor,
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        self.stdout.write(f"  Units        created={created}  skipped={skipped}")
+        return {"units_created": created, "units_skipped": skipped}
+
+    # ── units ─────────────────────────────────────────────────────────────────
+
+    def _seed_units(self, dry_run: bool) -> dict:
+        """
+        E55 — Seed measurement units from data/seeds/units.csv.
+
+        Format: code, name, kind, to_base_factor
+        """
+        path = SEEDS_DIR / "units.csv"
+        if not path.exists():
+            return {"units_created": 0, "units_skipped": 0}
+
+        from apps.ingredients.models import Unit
+
+        VALID_KINDS = {c[0] for c in Unit.Kind.choices}
+        created = skipped = 0
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                code = row["code"].strip()
+                name = row["name"].strip()
+                kind = row["kind"].strip()
+                factor = _safe_float(row.get("to_base_factor", "1.0"), 1.0)
+
+                if not code or not name:
+                    skipped += 1
+                    continue
+                if kind not in VALID_KINDS:
+                    kind = Unit.Kind.COUNT
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                _, was_created = Unit.objects.get_or_create(
+                    code=code,
+                    defaults={
+                        "name": name,
+                        "kind": kind,
+                        "to_base_factor": factor,
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        self.stdout.write(f"  Units        created={created}  skipped={skipped}")
+        return {"units_created": created, "units_skipped": skipped}
 
     # ── rebuild search arrays ────────────────────────────────────────────────
 

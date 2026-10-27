@@ -27,6 +27,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass, field
 
+from apps.search.category_expander import expand_category_terms
 from apps.search.resolver import ResolveResult, resolve_many
 from apps.search.staples import expand_with_staples
 
@@ -38,12 +39,13 @@ class ResolvedQuery:
     """
     The result of the input stage of the search pipeline.
 
-    matched_ids     — UUIDs of ingredients that resolved cleanly (as strings)
-    ambiguous       — ResolveResults where the word could mean multiple things
-    unmatched       — raw tokens that could not be resolved at all
-    staples_added   — staple UUIDs that were added to the pool
-    pool            — full set of ingredient IDs for the GIN query (matched + staples)
-    results         — all individual ResolveResults, for full inspection
+    matched_ids          — UUIDs of ingredients that resolved cleanly (as strings)
+    ambiguous            — ResolveResults where the word could mean multiple things
+    unmatched            — raw tokens that could not be resolved at all
+    staples_added        — staple UUIDs that were added to the pool
+    pool                 — full set of ingredient IDs for the GIN query (matched + staples)
+    results              — all individual ResolveResults, for full inspection
+    category_expanded_ids — IDs added via E56 category word expansion (e.g. 'greens' → all vegetables)
     """
 
     matched_ids: list[str] = field(default_factory=list)
@@ -52,6 +54,8 @@ class ResolvedQuery:
     staples_added: list[str] = field(default_factory=list)
     pool: list[str] = field(default_factory=list)
     results: list[ResolveResult] = field(default_factory=list)
+    # E56: ingredient IDs from category word expansion (e.g. 'greens' → vegetable IDs)
+    category_expanded_ids: list[str] = field(default_factory=list)
 
     @property
     def has_ambiguity(self) -> bool:
@@ -96,7 +100,13 @@ def resolve_ingredients(
             seen_raw.add(key)
             unique_inputs.append(raw.strip())
 
-    results = resolve_many(unique_inputs)
+    # ── E56: Category word expansion ─────────────────────────────────────────
+    # Check each token against the category word map FIRST.  Category words
+    # (e.g. 'greens', 'meat') expand to all member ingredient IDs and bypass
+    # the resolver.  Non-category tokens are passed to resolve_many() as usual.
+    category_expanded_ids, tokens_for_resolver = expand_category_terms(unique_inputs)
+
+    results = resolve_many(tokens_for_resolver)
 
     matched_ids: list[str] = []
     ambiguous: list[ResolveResult] = []
@@ -111,6 +121,11 @@ def resolve_ingredients(
         else:
             unmatched.append(r.raw)
 
+    # Merge category-expanded IDs into matched_ids (deduplicated)
+    for cid in category_expanded_ids:
+        if cid not in matched_ids:
+            matched_ids.append(cid)
+
     # Expand with staples
     pool = expand_with_staples(matched_ids, excluded_ids=excluded_ids)
 
@@ -119,8 +134,10 @@ def resolve_ingredients(
     staples_added = [sid for sid in pool if sid not in matched_set]
 
     logger.debug(
-        "resolve_ingredients: %d matched, %d ambiguous, %d unmatched, %d staples added",
-        len(matched_ids),
+        "resolve_ingredients: %d matched, %d category-expanded, %d ambiguous, "
+        "%d unmatched, %d staples added",
+        len(matched_ids) - len(category_expanded_ids),
+        len(category_expanded_ids),
         len(ambiguous),
         len(unmatched),
         len(staples_added),
@@ -133,4 +150,5 @@ def resolve_ingredients(
         staples_added=staples_added,
         pool=pool,
         results=results,
+        category_expanded_ids=category_expanded_ids,
     )

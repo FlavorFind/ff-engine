@@ -1,0 +1,24 @@
+code,name,kind,to_base_factor
+g,gram,mass,1.0
+kg,kilogram,mass,1000.0
+mg,milligram,mass,0.001
+oz,ounce,mass,28.3495
+lb,pound,mass,453.592
+ml,millilitre,volume,1.0
+l,litre,volume,1000.0
+cl,centilitre,volume,10.0
+tsp,teaspoon,volume,4.92892
+tbsp,tablespoon,volume,14.7868
+cup,cup,volume,240.0
+fl_oz,fluid ounce,volume,29.5735
+pcs,pieces,count,1.0
+whole,whole unit,count,1.0
+bunch,bunch,count,1.0
+clove,clove,count,1.0
+slice,slice,count,1.0
+pinch,pinch,count,1.0
+stalk,stalk,count,1.0
+leaf,leaf,count,1.0
+head,head,count,1.0
+can,can,count,1.0
+tin,tin,count,1.0
