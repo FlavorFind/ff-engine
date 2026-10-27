@@ -86,10 +86,9 @@ def test_verified_dishes_score_higher_than_seeded(seeded_db):
     dishes, so their popularity should be >= seeded dishes with same ingredient
     count (all else equal).
     """
-    from apps.core.models import StatusChoices
-    from apps.dishes.models import Dish
-
     from django.core.management import call_command
+
+    from apps.dishes.models import Dish
 
     call_command("compute_popularity", verbosity=0)
 

@@ -30,7 +30,7 @@ dataset version while they test a new one, and need to know what changed.
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timezone
+from datetime import datetime
 
 from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework import status as http_status
@@ -146,7 +146,7 @@ def dataset_diff(request: Request) -> Response:
     payload = {
         "since_version": since_version,
         "current_version": current_version,
-        "generated_at": datetime.now(tz=timezone.utc),
+        "generated_at": datetime.now(tz=datetime.UTC),
         "dishes": {
             "added": _fmt(dishes_added),
             "changed": _fmt(dishes_changed),

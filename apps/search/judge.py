@@ -34,7 +34,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 
 from apps.search.finder import CandidateDish
 from apps.search.staples import get_staple_ids
@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_ALMOST_LIMIT = 1
 
 
-class Tier(str, Enum):
+class Tier(StrEnum):
     EXACT = "exact"
     CAN_MAKE = "can_make"
     ALMOST = "almost"

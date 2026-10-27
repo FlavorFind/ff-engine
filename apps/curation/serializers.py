@@ -12,7 +12,6 @@ from rest_framework import serializers
 
 from apps.curation.models import CommunitySubmission
 
-
 # ---------------------------------------------------------------------------
 # E52 — Community submissions
 # ---------------------------------------------------------------------------

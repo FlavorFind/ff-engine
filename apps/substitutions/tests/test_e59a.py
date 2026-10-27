@@ -124,7 +124,6 @@ def test_null_context_duplicate_rejected_by_db():
     rejected by the database constraint.
     """
     from apps.core.models import StatusChoices
-    from apps.dishes.models import Dish
     from apps.ingredients.models import Ingredient, IngredientCategory
     from apps.substitutions.models import Substitution
 

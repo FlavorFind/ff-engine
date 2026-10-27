@@ -25,7 +25,6 @@ from __future__ import annotations
 import pytest
 from rest_framework.test import APIClient
 
-
 # ---------------------------------------------------------------------------
 # 1. Step-up 2FA
 # ---------------------------------------------------------------------------
@@ -74,7 +73,6 @@ def test_publish_release_refuses_without_confirm_stepup():
     """
     Running publish_release without --confirm-stepup must exit with code 1.
     """
-    import sys
     from io import StringIO
 
     with pytest.raises(SystemExit) as exc_info:

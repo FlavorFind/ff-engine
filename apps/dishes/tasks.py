@@ -30,8 +30,8 @@ def update_dish_popularity(self) -> dict:
     Retries up to 3 times on transient DB errors.
     """
     try:
-        from apps.dishes.models import Dish
         from apps.core.models import StatusChoices
+        from apps.dishes.models import Dish
 
         _QUALITY_SCORE = {
             "verified": 1.0,
@@ -74,4 +74,4 @@ def update_dish_popularity(self) -> dict:
 
     except Exception as exc:
         logger.error("update_dish_popularity: failed — %s", exc)
-        raise self.retry(exc=exc, countdown=60)
+        raise self.retry(exc=exc, countdown=60) from exc
