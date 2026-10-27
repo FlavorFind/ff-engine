@@ -135,3 +135,25 @@ class TestSeedAll:
         dish = Dish.objects.get(slug="nyama-choma")
         primary = DishIngredient.objects.filter(dish=dish, role=DishIngredient.Role.PRIMARY)
         assert primary.exists(), "No primary ingredient found for Nyama Choma"
+
+    def test_swahili_alias_nyanya_seeded(self):
+        """seed_all must create the 'nyanya' alias pointing to the tomato ingredient."""
+        from apps.ingredients.models import Ingredient, IngredientAlias
+
+        call_command("seed_all", verbosity=0)
+        tomato = Ingredient.objects.get(slug="tomato")
+        alias = IngredientAlias.objects.filter(normalized_alias="nyanya", language="sw").first()
+        assert alias is not None, "nyanya alias not found after seed_all"
+        assert alias.ingredient == tomato, f"nyanya points to {alias.ingredient} not tomato"
+
+    def test_seed_all_aliases_idempotent(self):
+        """Running seed_all twice must not duplicate aliases."""
+        from apps.ingredients.models import IngredientAlias
+
+        call_command("seed_all", verbosity=0)
+        count_after_first = IngredientAlias.objects.count()
+        call_command("seed_all", verbosity=0)
+        count_after_second = IngredientAlias.objects.count()
+        assert (
+            count_after_first == count_after_second
+        ), f"Alias count changed from {count_after_first} to {count_after_second} on second run"

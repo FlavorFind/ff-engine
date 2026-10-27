@@ -107,6 +107,7 @@ class Command(BaseCommand):
             ("substitutions", self._seed_substitutions),
             ("regions", self._seed_regions),
             ("units", self._seed_units),
+            ("aliases", self._seed_aliases),
         ]:
             try:
                 with transaction.atomic():
@@ -650,6 +651,66 @@ class Command(BaseCommand):
 
         self.stdout.write(f"  Units        created={created}  skipped={skipped}")
         return {"units_created": created, "units_skipped": skipped}
+
+    # ── aliases ───────────────────────────────────────────────────────────────
+
+    def _seed_aliases(self, dry_run: bool) -> dict:
+        """
+        E-Task 2 — Seed Swahili/Sheng ingredient aliases from data/seeds/aliases.csv.
+
+        Format: ingredient_slug, alias, language, is_misspelling
+        """
+        path = SEEDS_DIR / "aliases.csv"
+        if not path.exists():
+            return {"aliases_created": 0, "aliases_skipped": 0}
+
+        from apps.curation.normaliser import normalise
+        from apps.ingredients.models import IngredientAlias
+
+        created = skipped = 0
+        ing_cache: dict[str, Ingredient] = {}
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                slug = row["ingredient_slug"].strip()
+                alias = row["alias"].strip()
+                language = row.get("language", "sw").strip()
+                is_misspelling = row.get("is_misspelling", "false").strip().lower() == "true"
+
+                if not slug or not alias:
+                    skipped += 1
+                    continue
+
+                norm = normalise(alias)
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                if slug not in ing_cache:
+                    try:
+                        ing_cache[slug] = Ingredient.objects.get(slug=slug)
+                    except Ingredient.DoesNotExist:
+                        skipped += 1
+                        continue
+
+                # Unique constraint is (normalized_alias, language) — use those as lookup keys
+                _, was_created = IngredientAlias.objects.get_or_create(
+                    normalized_alias=norm,
+                    language=language,
+                    defaults={
+                        "ingredient": ing_cache[slug],
+                        "alias": alias,
+                        "is_misspelling": is_misspelling,
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        self.stdout.write(f"  Aliases      created={created}  skipped={skipped}")
+        return {"aliases_created": created, "aliases_skipped": skipped}
 
     # ── rebuild search arrays ────────────────────────────────────────────────
 

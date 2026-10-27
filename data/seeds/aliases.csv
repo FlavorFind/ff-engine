@@ -1,0 +1,137 @@
+ingredient_slug,alias,language,is_misspelling
+tomato,nyanya,sw,false
+tomato,tomatos,en,true
+tomato,tomatoe,en,true
+onion,vitunguu,sw,false
+onion,kitunguu,sw,false
+collard-greens,sukuma wiki,sw,false
+collard-greens,sukuma,sw,false
+collard-greens,sukumawiki,sw,false
+maize-flour,unga wa mahindi,sw,false
+maize-flour,unga,sw,false
+maize-flour,posho,sw,false
+beans,maharagwe,sw,false
+beans,maharage,sw,false
+potato,viazi,sw,false
+potatoes,viazi,sw,false
+beef,nyama ya ng'ombe,sw,false
+beef,ng'ombe,sw,false
+beef,nyama,sw,false
+goat-meat,nyama ya mbuzi,sw,false
+goat-meat,mbuzi,sw,false
+chicken-pieces,kuku,sw,false
+chicken-breast,kuku,sw,false
+chicken-thighs,kuku,sw,false
+chicken-drumsticks,kuku,sw,false
+fish,samaki,sw,false
+rice,mchele,sw,false
+rice,wali,sw,false
+salt,chumvi,sw,false
+cooking-oil,mafuta,sw,false
+vegetable-oil,mafuta,sw,false
+sunflower-oil,mafuta,sw,false
+avocado,parachichi,sw,false
+banana,ndizi,sw,false
+eggs,mayai,sw,false
+egg-noodles,mayai,sw,false
+milk,maziwa,sw,false
+water,maji,sw,false
+coconut,nazi,sw,false
+coconut-milk,maziwa ya nazi,sw,false
+lime,ndimu,sw,false
+lime-juice,ndimu,sw,false
+chili,pilipili,sw,false
+chili,pili pili,sw,false
+chili,pili,sheng,false
+chili-powder,pilipili,sw,false
+chili-flakes,pilipili,sw,false
+coriander,dhania,sw,false
+garlic,vitunguu saumu,sw,false
+garlic,saumu,sw,false
+garlic,thoum,sw,false
+ginger,tangawizi,sw,false
+spinach,mchicha,sw,false
+cassava,muhogo,sw,false
+cassava-flour,unga wa muhogo,sw,false
+sweet-potato,viazi vitamu,sw,false
+sweet-potato,viazi tamu,sw,false
+plantain-flour,ndizi mbichi,sw,false
+maize,mahindi,sw,false
+maize-grits,ugali,sw,false
+ugali-meal,ugali,sw,false
+butter,siagi,sw,false
+ghee,samli,sw,false
+yogurt,mtindi,sw,false
+tilapia,sato,sw,false
+tilapia,tilapia,sw,false
+omena,omena,sw,false
+omena,dagaa,sw,false
+omena,dagaas,en,true
+green-peas,mbaazi,sw,false
+lentils-or-minced-beef,dengu,sw,false
+lentils-or-minced-beef,ndengu,sw,false
+wheat-flour,unga wa ngano,sw,false
+wheat-flour,ngano,sw,false
+coconut-water,maji ya nazi,sw,false
+beef-liver,ini ya ng'ombe,sw,false
+beef-tripe,matumbo,sw,false
+beef-kidney,figo,sw,false
+goat-liver,ini ya mbuzi,sw,false
+goat-tripe,matumbo,sw,false
+goat-intestines,utumbo,sw,false
+chicken-liver,ini ya kuku,sw,false
+chicken-gizzards,gizzard,sw,false
+chicken-feet,makongwe,sw,false
+fish-sauce,mchuzi wa samaki,sw,false
+tomato-paste,tambi ya nyanya,sw,false
+tomato-sauce,mchuzi wa nyanya,sw,false
+cream-cheese,jibini,sw,false
+pepper,pilipili manga,sw,false
+pepper,manga,sw,false
+coriander-seeds,mbegu za dhania,sw,false
+garlic-paste,saumu iliyosagwa,sw,false
+ginger-paste,tangawizi iliyosagwa,sw,false
+beef-stock,mchuzi wa nyama,sw,false
+chicken-stock,mchuzi wa kuku,sw,false
+goat-milk,maziwa ya mbuzi,sw,false
+banana-leaves,majani ya ndizi,sw,false
+cassava-leaves,majani ya muhogo,sw,false
+sweet-potato-leaves,majani ya viazi,sw,false
+coconut-cream,cream ya nazi,sw,false
+coconut-sugar,sukari ya mnazi,sw,false
+maize-flour,dona,sw,false
+maize-flour,posho,sw,false
+beef,nyam,sheng,false
+chicken-pieces,chikin,sheng,false
+fish,samak,sheng,false
+onion,onyoni,sheng,false
+tomato,toma,sheng,false
+avocado,avo,sheng,false
+avocado,pea,sheng,false
+collard-greens,sukuma,sheng,false
+maize-flour,unga,sheng,false
+potato,viazi,sheng,false
+salt,chumvi,sheng,false
+cooking-oil,mafuta,sheng,false
+garlic,garlik,en,true
+coriander,corriander,en,true
+coriander,cilantro,en,false
+ginger,gingr,en,true
+tilapia,nile perch,en,false
+omena,silver cyprinid,en,false
+omena,lake victoria sardine,en,false
+collard-greens,kale,en,false
+cassava,tapioca,en,false
+cassava,yuca,en,false
+sweet-potato,kumara,en,false
+plantain-flour,green banana,en,false
+maize,corn,en,false
+maize-flour,cornmeal,en,false
+maize-flour,corn flour,en,false
+coconut-milk,coconut cream,en,false
+ugali-meal,stiff porridge,en,false
+ugali-meal,ugali,en,false
+ghee,clarified butter,en,false
+yogurt,mala,sw,false
+buttermilk,mala,sw,false
+sour-cream,mala,sw,false
