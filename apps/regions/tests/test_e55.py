@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pytest
 
-SEEDS_DIR = Path(__file__).resolve().parents[4] / "data" / "seeds"
+SEEDS_DIR = Path(__file__).resolve().parents[3] / "data" / "seeds"
 
 
 @pytest.mark.fast

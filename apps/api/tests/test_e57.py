@@ -38,7 +38,11 @@ def test_admin_site_uses_otp_required():
     admin page requires a fully OTP-verified session.
     Architecture: "Every human account must use two-factor authentication."
     """
+    # Ensure accounts.admin has been imported — it is the module that
+    # performs `admin.site.__class__ = AdminSiteOTPRequired`.
     from django.contrib import admin as django_admin
+
+    import apps.accounts.admin  # noqa: F401
 
     # AdminSiteOTPRequired replaces the standard AdminSite in accounts/admin.py
     site_type = type(django_admin.site).__name__

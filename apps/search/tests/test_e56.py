@@ -84,14 +84,7 @@ def test_mixed_category_and_ingredient():
 
     fake_ids = ["uuid-1", "uuid-2", "uuid-3"]
 
-    def fake_resolve(slug):
-        if "vegetable" in slug:
-            return fake_ids
-        return []
-
-    with patch(
-        "apps.search.category_expander._get_category_ingredient_ids", side_effect=fake_resolve
-    ):
+    with patch("apps.search.category_expander._resolve_category_to_ids", return_value=fake_ids):
         from apps.search.category_expander import expand_category_terms, invalidate_category_cache
 
         invalidate_category_cache()
@@ -160,33 +153,32 @@ def test_category_expanded_ids_in_pool(seeded_db):
     """
     from unittest.mock import patch
 
-    fake_ids = []
     from apps.ingredients.models import Ingredient
 
     # Use real ingredient IDs from the seeded DB
     sample = list(Ingredient.objects.values_list("id", flat=True)[:3])
     fake_ids = [str(pk) for pk in sample]
 
-    with patch(
-        "apps.search.category_expander._get_category_ingredient_ids",
-        return_value=fake_ids,
-    ):
-        from apps.search.category_expander import invalidate_category_cache
+    import apps.search.category_expander as ce
 
-        invalidate_category_cache()
-        # Patch the alias map so 'greens' resolves via our fake function
-        import apps.search.category_expander as ce
+    original_aliases = ce._CATEGORY_ALIASES.copy()
+    ce._CATEGORY_ALIASES["greens"] = ["vegetables"]
+    ce.invalidate_category_cache()
 
-        original_aliases = ce._CATEGORY_ALIASES.copy()
-        ce._CATEGORY_ALIASES["greens"] = ["vegetables"]
-
-        try:
+    try:
+        # Patch _resolve_category_to_ids — this is what expand_category_terms
+        # actually calls; patching the lru_cached _get_category_ingredient_ids
+        # doesn't intercept calls that go through _resolve_category_to_ids.
+        with patch(
+            "apps.search.category_expander._resolve_category_to_ids",
+            return_value=fake_ids,
+        ):
             from apps.search.pipeline import resolve_ingredients
 
             query = resolve_ingredients(["greens"])
             for fid in fake_ids:
                 assert fid in query.pool, f"Category-expanded ID {fid} not in pool"
-        finally:
-            ce._CATEGORY_ALIASES.clear()
-            ce._CATEGORY_ALIASES.update(original_aliases)
-            invalidate_category_cache()
+    finally:
+        ce._CATEGORY_ALIASES.clear()
+        ce._CATEGORY_ALIASES.update(original_aliases)
+        ce.invalidate_category_cache()

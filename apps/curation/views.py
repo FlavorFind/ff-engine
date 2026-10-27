@@ -85,6 +85,11 @@ def create_submission(request: Request) -> Response:
     )
 
     # Log to audit trail
+    # request.user is ApiKeyUser (AnonymousUser subclass) for API key auth —
+    # ChangeLog.actor expects a CustomUser FK or None.
+    from apps.accounts.models import CustomUser
+
+    actor = request.user if isinstance(request.user, CustomUser) else None
     ChangeLog.objects.create(
         object_type="CommunitySubmission",
         object_id=str(submission.pk),
@@ -94,7 +99,7 @@ def create_submission(request: Request) -> Response:
             "status": submission.status,
             "client": submitter_client.name if submitter_client else None,
         },
-        actor=request.user if request.user.is_authenticated else None,
+        actor=actor,
         reason="Community submission intake",
     )
 
