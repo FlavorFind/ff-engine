@@ -107,7 +107,7 @@ class TestSeedAll:
         call_command("seed_all", verbosity=0)
         dish = Dish.objects.get(slug="nyama-choma")
         assert dish.name_en == "Nyama Choma"
-        assert dish.status == "draft"
+        assert dish.status == "reviewed"
         assert dish.quality_level == "seeded"
         assert dish.cook_min == 120  # PT2H
 
