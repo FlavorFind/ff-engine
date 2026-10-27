@@ -7,14 +7,14 @@ All submissions enter as PENDING and require curator review before
 any content reaches the live dataset.
 """
 
+import uuid
+
 import django.db.models.deletion
-import django.utils.timezone
 from django.conf import settings
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("clients", "0002_e38_usage_metering"),
         ("curation", "0001_initial"),
@@ -27,8 +27,11 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "id",
-                    models.BigAutoField(
-                        auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
                     ),
                 ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
@@ -98,7 +101,7 @@ class Migration(migrations.Migration):
             model_name="communitysubmission",
             index=models.Index(
                 fields=["status", "submission_type"],
-                name="community_submission_status_type_idx",
+                name="community_s_status_1cd1c0_idx",
             ),
         ),
     ]
