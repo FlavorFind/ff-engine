@@ -117,6 +117,7 @@ class Command(BaseCommand):
         if not dry_run:
             rebuilt = self._rebuild_arrays()
             counters["dishes_rebuilt"] = rebuilt
+            counters.update(self._promote_seeded_to_reviewed())
         if dry_run:
             self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
 
@@ -650,56 +651,6 @@ class Command(BaseCommand):
         self.stdout.write(f"  Units        created={created}  skipped={skipped}")
         return {"units_created": created, "units_skipped": skipped}
 
-    # ── units ─────────────────────────────────────────────────────────────────
-
-    def _seed_units(self, dry_run: bool) -> dict:
-        """
-        E55 — Seed measurement units from data/seeds/units.csv.
-
-        Format: code, name, kind, to_base_factor
-        """
-        path = SEEDS_DIR / "units.csv"
-        if not path.exists():
-            return {"units_created": 0, "units_skipped": 0}
-
-        from apps.ingredients.models import Unit
-
-        VALID_KINDS = {c[0] for c in Unit.Kind.choices}
-        created = skipped = 0
-
-        with open(path, newline="", encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                code = row["code"].strip()
-                name = row["name"].strip()
-                kind = row["kind"].strip()
-                factor = _safe_float(row.get("to_base_factor", "1.0"), 1.0)
-
-                if not code or not name:
-                    skipped += 1
-                    continue
-                if kind not in VALID_KINDS:
-                    kind = Unit.Kind.COUNT
-
-                if dry_run:
-                    created += 1
-                    continue
-
-                _, was_created = Unit.objects.get_or_create(
-                    code=code,
-                    defaults={
-                        "name": name,
-                        "kind": kind,
-                        "to_base_factor": factor,
-                    },
-                )
-                if was_created:
-                    created += 1
-                else:
-                    skipped += 1
-
-        self.stdout.write(f"  Units        created={created}  skipped={skipped}")
-        return {"units_created": created, "units_skipped": skipped}
-
     # ── rebuild search arrays ────────────────────────────────────────────────
 
     def _rebuild_arrays(self) -> int:
@@ -708,6 +659,33 @@ class Command(BaseCommand):
             dish.rebuild_search_arrays()
             count += 1
         return count
+
+    # ── promote seeded records to reviewed ───────────────────────────────────
+
+    def _promote_seeded_to_reviewed(self) -> dict:
+        """
+        Promote all draft dishes and ingredients to 'reviewed' status.
+
+        seed_all creates every record as status=draft. The Finder and
+        public catalogue only query reviewed + verified rows, so a fresh
+        deploy returns zero results without this step.
+        """
+        from apps.ingredients.models import Ingredient
+
+        dishes_updated = Dish.objects.filter(status=StatusChoices.DRAFT).update(
+            status=StatusChoices.REVIEWED
+        )
+        ingredients_updated = Ingredient.objects.filter(status=StatusChoices.DRAFT).update(
+            status=StatusChoices.REVIEWED
+        )
+        self.stdout.write(
+            f"  Promoted  dishes={dishes_updated}  ingredients={ingredients_updated}"
+            "  draft→reviewed"
+        )
+        return {
+            "dishes_promoted": dishes_updated,
+            "ingredients_promoted": ingredients_updated,
+        }
 
     # ── report ────────────────────────────────────────────────────────────────
 
