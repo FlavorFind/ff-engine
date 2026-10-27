@@ -159,6 +159,6 @@ class TestZeroResultQueryModel:
     def test_admin_is_registered(self):
         from django.contrib.admin.sites import site
 
-        assert ZeroResultQuery in site._registry, (
-            "ZeroResultQuery must be registered with Django admin"
-        )
+        assert (
+            ZeroResultQuery in site._registry
+        ), "ZeroResultQuery must be registered with Django admin"

@@ -219,9 +219,9 @@ def test_read_search_key_cannot_post_to_submissions():
         data={"submission_type": "dish", "payload": {"name": "x"}},
         format="json",
     )
-    assert resp.status_code == 403, (
-        f"read:search key must not access internal:curation endpoint. Got {resp.status_code}"
-    )
+    assert (
+        resp.status_code == 403
+    ), f"read:search key must not access internal:curation endpoint. Got {resp.status_code}"
 
 
 @pytest.mark.django_db
@@ -243,9 +243,9 @@ def test_internal_curation_key_cannot_search():
         data={"ingredients": ["tomato"]},
         format="json",
     )
-    assert resp.status_code == 403, (
-        f"internal:curation key must not access read:search endpoint. Got {resp.status_code}"
-    )
+    assert (
+        resp.status_code == 403
+    ), f"internal:curation key must not access read:search endpoint. Got {resp.status_code}"
 
 
 @pytest.mark.django_db
@@ -257,9 +257,10 @@ def test_no_key_returns_401_on_protected_endpoints():
         "/v1/internal/submissions/",
     ]:
         resp = api.post(url, data={}, format="json")
-        assert resp.status_code in (401, 403), (
-            f"Expected 401/403 without API key on {url}, got {resp.status_code}"
-        )
+        assert resp.status_code in (
+            401,
+            403,
+        ), f"Expected 401/403 without API key on {url}, got {resp.status_code}"
 
 
 @pytest.mark.django_db

@@ -108,9 +108,9 @@ def test_model_has_nulls_distinct_false_constraint():
         None,
     )
     assert uc is not None, "UniqueConstraint 'unique_substitution_per_context' not found"
-    assert getattr(uc, "nulls_distinct", True) is False, (
-        "UniqueConstraint must have nulls_distinct=False (PostgreSQL 15+ required)"
-    )
+    assert (
+        getattr(uc, "nulls_distinct", True) is False
+    ), "UniqueConstraint must have nulls_distinct=False (PostgreSQL 15+ required)"
 
 
 # ---------------------------------------------------------------------------

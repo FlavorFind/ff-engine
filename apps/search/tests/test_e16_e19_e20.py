@@ -617,9 +617,9 @@ class TestSearchPipeline:
         non_staple = non_staple_required_ids(ugali)
 
         # Every non-staple required ingredient of ugali is in the pool
-        assert all(iid in pool_set for iid in non_staple), (
-            f"Pool {pool_set} does not cover non-staple required: {non_staple}"
-        )
+        assert all(
+            iid in pool_set for iid in non_staple
+        ), f"Pool {pool_set} does not cover non-staple required: {non_staple}"
 
     def test_has_ambiguity_flag(self, db, category) -> None:
         """has_ambiguity is True when any token is ambiguous."""

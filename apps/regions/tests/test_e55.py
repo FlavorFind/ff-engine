@@ -21,9 +21,9 @@ class TestRegionsCSV:
         with open(SEEDS_DIR / "regions.csv") as f:
             rows = list(csv.DictReader(f))
         counties = [r for r in rows if r["type"].strip() == "county"]
-        assert len(counties) == 47, (
-            f"Expected 47 county rows, got {len(counties)}: {[r['slug'] for r in counties]}"
-        )
+        assert (
+            len(counties) == 47
+        ), f"Expected 47 county rows, got {len(counties)}: {[r['slug'] for r in counties]}"
 
     def test_has_nairobi_county(self):
         with open(SEEDS_DIR / "regions.csv") as f:
