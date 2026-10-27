@@ -95,9 +95,9 @@ class TestStaplesMigrationState:
 
     def test_correct_slugs_are_staples(self, seeded_db) -> None:
         actual = set(Ingredient.objects.filter(is_staple=True).values_list("slug", flat=True))
-        assert (
-            actual == CORRECT_STAPLES
-        ), f"Wrong staple set.\nExpected: {sorted(CORRECT_STAPLES)}\nGot: {sorted(actual)}"
+        assert actual == CORRECT_STAPLES, (
+            f"Wrong staple set.\nExpected: {sorted(CORRECT_STAPLES)}\nGot: {sorted(actual)}"
+        )
 
     @pytest.mark.parametrize("slug", SHOULD_NOT_BE_STAPLES)
     def test_wrong_ingredient_not_a_staple(self, seeded_db, slug) -> None:

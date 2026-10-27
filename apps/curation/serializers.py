@@ -77,5 +77,5 @@ class DatasetDiffResponseSerializer(serializers.Serializer):
     since_version = serializers.CharField()
     current_version = serializers.CharField()
     generated_at = serializers.DateTimeField()
-    dishes = serializers.DictField()    # {added: [...], changed: [...], removed: [...]}
+    dishes = serializers.DictField()  # {added: [...], changed: [...], removed: [...]}
     ingredients = serializers.DictField()  # {added: [...], removed: [...]}

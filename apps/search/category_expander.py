@@ -38,8 +38,8 @@ _CATEGORY_ALIASES: dict[str, list[str]] = {
     "greens": ["vegetables", "vegetables-and-greens", "vegetables-greens"],
     "vegetables": ["vegetables", "vegetables-and-greens", "vegetables-greens"],
     "veggies": ["vegetables", "vegetables-and-greens", "vegetables-greens"],
-    "mboga": ["vegetables", "vegetables-and-greens"],          # Swahili for vegetables
-    "majani": ["vegetables", "vegetables-and-greens"],         # Swahili: leafy greens
+    "mboga": ["vegetables", "vegetables-and-greens"],  # Swahili for vegetables
+    "majani": ["vegetables", "vegetables-and-greens"],  # Swahili: leafy greens
     # Meat
     "meat": ["meat", "meat-offal-and-poultry", "meat-offal-poultry"],
     "nyama": ["meat", "meat-offal-and-poultry", "meat-offal-poultry"],  # Swahili: meat
@@ -114,9 +114,7 @@ def expand_category_terms(
         ids = _resolve_category_to_ids(candidate_slugs)
         if ids:
             expanded_ids.extend(ids)
-            logger.debug(
-                "category_expander: %r → %d ingredient IDs via category", token, len(ids)
-            )
+            logger.debug("category_expander: %r → %d ingredient IDs via category", token, len(ids))
         else:
             # No matching category found in DB — treat as normal ingredient token
             remaining.append(token)
@@ -170,14 +168,10 @@ def _get_category_ingredient_ids(category_slug: str) -> list[str]:
 
         # Collect this category and all children (one level deep for v1)
         cat_ids = [cat.pk]
-        child_ids = list(
-            IngredientCategory.objects.filter(parent=cat).values_list("id", flat=True)
-        )
+        child_ids = list(IngredientCategory.objects.filter(parent=cat).values_list("id", flat=True))
         cat_ids.extend(child_ids)
 
-        ids = list(
-            Ingredient.objects.filter(category_id__in=cat_ids).values_list("id", flat=True)
-        )
+        ids = list(Ingredient.objects.filter(category_id__in=cat_ids).values_list("id", flat=True))
         return [str(iid) for iid in ids]
     except Exception as exc:
         logger.warning("category_expander: failed to fetch category %r: %s", category_slug, exc)

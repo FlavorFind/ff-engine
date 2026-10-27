@@ -70,8 +70,7 @@ class Command(BaseCommand):
         # ── 1. Validate version format ────────────────────────────────────────
         if not _VERSION_RE.match(version):
             raise CommandError(
-                f"Invalid version {version!r}. "
-                f"Expected format: YYYY.MM.N (e.g. 2026.11.0)"
+                f"Invalid version {version!r}. Expected format: YYYY.MM.N (e.g. 2026.11.0)"
             )
 
         # ── 2. Step-up 2FA gate ───────────────────────────────────────────────
@@ -97,8 +96,7 @@ class Command(BaseCommand):
         latest = DatasetRelease.objects.order_by("-created_at").first()
         if latest and latest.version >= version:
             raise CommandError(
-                f"New version {version!r} must be newer than the latest "
-                f"release {latest.version!r}."
+                f"New version {version!r} must be newer than the latest release {latest.version!r}."
             )
 
         # ── 4. Count current dataset objects ─────────────────────────────────
@@ -110,12 +108,8 @@ class Command(BaseCommand):
             self.stdout.write(f"  Version  : {version}")
             self.stdout.write(f"  Notes    : {notes or '(none)'}")
             self.stdout.write(f"  Counts   : {counts}")
-            self.stdout.write(
-                f"  Previous : {latest.version if latest else '(none)'}"
-            )
-            self.stdout.write(
-                "\nNo changes made. Remove --dry-run to publish.\n"
-            )
+            self.stdout.write(f"  Previous : {latest.version if latest else '(none)'}")
+            self.stdout.write("\nNo changes made. Remove --dry-run to publish.\n")
             return
 
         # ── 6. Create the release and clear the cache ─────────────────────────
@@ -149,11 +143,7 @@ class Command(BaseCommand):
                         f"  Cleared search cache for previous version {latest.version}"
                     )
             except Exception as exc:
-                self.stderr.write(
-                    self.style.WARNING(
-                        f"Cache clear failed (non-fatal): {exc}"
-                    )
-                )
+                self.stderr.write(self.style.WARNING(f"Cache clear failed (non-fatal): {exc}"))
 
         self.stdout.write(
             self.style.SUCCESS(

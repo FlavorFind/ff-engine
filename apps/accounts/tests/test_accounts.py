@@ -149,9 +149,9 @@ class TestRoleHelpers(TestCase):
                 "is_admin_role": user.is_admin_role,
             }
             true_count = sum(1 for v in props.values() if v)
-            assert (
-                true_count == 1
-            ), f"Role '{role}' should set exactly one property True, got {props}"
+            assert true_count == 1, (
+                f"Role '{role}' should set exactly one property True, got {props}"
+            )
 
     def test_invalid_role_value_all_helpers_false(self):
         """

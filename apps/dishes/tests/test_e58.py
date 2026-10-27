@@ -8,6 +8,7 @@ Verifies:
 - The Celery task is importable and callable
 - Dishes with more ingredients score higher than dishes with fewer
 """
+
 from __future__ import annotations
 
 import pytest
@@ -92,12 +93,10 @@ def test_verified_dishes_score_higher_than_seeded(seeded_db):
 
     call_command("compute_popularity", verbosity=0)
 
-    verified_avg = (
-        Dish.objects.filter(quality_level="verified").values_list("popularity", flat=True)
+    verified_avg = Dish.objects.filter(quality_level="verified").values_list(
+        "popularity", flat=True
     )
-    seeded_avg = (
-        Dish.objects.filter(quality_level="seeded").values_list("popularity", flat=True)
-    )
+    seeded_avg = Dish.objects.filter(quality_level="seeded").values_list("popularity", flat=True)
 
     verified_list = list(verified_avg)
     seeded_list = list(seeded_avg)

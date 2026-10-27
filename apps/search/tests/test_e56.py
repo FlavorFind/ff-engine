@@ -5,6 +5,7 @@ Verifies that category words ('greens', 'meat', etc.) expand to
 member ingredient IDs before the GIN query, and that normal ingredient
 words pass through unchanged.
 """
+
 from __future__ import annotations
 
 import pytest
@@ -88,7 +89,9 @@ def test_mixed_category_and_ingredient():
             return fake_ids
         return []
 
-    with patch("apps.search.category_expander._get_category_ingredient_ids", side_effect=fake_resolve):
+    with patch(
+        "apps.search.category_expander._get_category_ingredient_ids", side_effect=fake_resolve
+    ):
         from apps.search.category_expander import expand_category_terms, invalidate_category_cache
 
         invalidate_category_cache()
@@ -173,6 +176,7 @@ def test_category_expanded_ids_in_pool(seeded_db):
         invalidate_category_cache()
         # Patch the alias map so 'greens' resolves via our fake function
         import apps.search.category_expander as ce
+
         original_aliases = ce._CATEGORY_ALIASES.copy()
         ce._CATEGORY_ALIASES["greens"] = ["vegetables"]
 

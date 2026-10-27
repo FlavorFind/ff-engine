@@ -31,8 +31,7 @@ class Command(BaseCommand):
         parser.add_argument(
             "--target-version",
             default=None,
-            help="The version tag to roll back to (e.g. v0.9.0). "
-            "Defaults to the previous git tag.",
+            help="The version tag to roll back to (e.g. v0.9.0). Defaults to the previous git tag.",
         )
 
     def handle(self, *args, **options) -> None:
@@ -113,8 +112,7 @@ class Command(BaseCommand):
         ]
         with connection.cursor() as cursor:
             cursor.execute(
-                "SELECT app, name FROM django_migrations "
-                "WHERE app = ANY(%s) ORDER BY app, name;",
+                "SELECT app, name FROM django_migrations WHERE app = ANY(%s) ORDER BY app, name;",
                 [local_apps],
             )
             rows = cursor.fetchall()

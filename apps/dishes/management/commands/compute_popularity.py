@@ -121,7 +121,7 @@ class Command(BaseCommand):
             self.style.SUCCESS(
                 f"\n✓ compute_popularity: updated {len(updates)} dishes.\n"
                 f"  min={min(pops):.4f}  max={max(pops):.4f}  "
-                f"avg={sum(pops)/len(pops):.4f}\n"
+                f"avg={sum(pops) / len(pops):.4f}\n"
                 f"  golden set dishes: {len(golden_slugs)}\n"
             )
         )

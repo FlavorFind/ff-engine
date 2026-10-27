@@ -4,6 +4,7 @@ E55 — Regions and units seed tests.
 Verifies data/seeds/regions.csv and data/seeds/units.csv contain the
 expected content without touching the database.
 """
+
 from __future__ import annotations
 
 import csv
@@ -21,8 +22,7 @@ class TestRegionsCSV:
             rows = list(csv.DictReader(f))
         counties = [r for r in rows if r["type"].strip() == "county"]
         assert len(counties) == 47, (
-            f"Expected 47 county rows, got {len(counties)}: "
-            f"{[r['slug'] for r in counties]}"
+            f"Expected 47 county rows, got {len(counties)}: {[r['slug'] for r in counties]}"
         )
 
     def test_has_nairobi_county(self):
@@ -40,9 +40,7 @@ class TestRegionsCSV:
         with open(SEEDS_DIR / "regions.csv") as f:
             rows = list(csv.DictReader(f))
         cuisine = [r for r in rows if r["type"].strip() == "cuisine"]
-        assert len(cuisine) >= 10, (
-            f"Expected at least 10 cuisine groups, got {len(cuisine)}"
-        )
+        assert len(cuisine) >= 10, f"Expected at least 10 cuisine groups, got {len(cuisine)}"
 
     def test_known_cuisine_groups_present(self):
         with open(SEEDS_DIR / "regions.csv") as f:

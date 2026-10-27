@@ -63,8 +63,9 @@ add a promotion step:
 def _promote_draft_to_reviewed(self) -> int:
     from apps.dishes.models import Dish
     from apps.ingredients.models import Ingredient
-    count = Dish.objects.filter(status='draft').update(status='reviewed', quality_level='reviewed')
-    Ingredient.objects.filter(status='draft').update(status='reviewed')
+
+    count = Dish.objects.filter(status="draft").update(status="reviewed", quality_level="reviewed")
+    Ingredient.objects.filter(status="draft").update(status="reviewed")
     return count
 ```
 And call it in `handle()` after `_rebuild_arrays()`.
@@ -142,6 +143,7 @@ Result:
 **Fix:** At the end of `seed_all`, after `_promote_draft_to_reviewed()`:
 ```python
 from apps.dietary.services import apply_derived_tags_for_all_dishes
+
 apply_derived_tags_for_all_dishes()
 ```
 
@@ -169,7 +171,7 @@ The URL pattern for pairings uses `<uuid:dish_id>` but the architecture uses slu
 
 Add to `apps/dishes/urls.py`:
 ```python
-path("<slug:slug>/", dish_detail, name="dish-detail"),
+(path("<slug:slug>/", dish_detail, name="dish-detail"),)
 ```
 
 Also standardise the pairings/substitutions/missing URLs to use `<slug:slug>` instead of `<uuid:dish_id>`.
@@ -189,8 +191,8 @@ Also standardise the pairings/substitutions/missing URLs to use `<slug:slug>` in
 
 Add to `apps/ingredients/urls.py`:
 ```python
-path("", ingredient_list, name="ingredient-list"),
-path("<slug:slug>/", ingredient_detail, name="ingredient-detail"),
+(path("", ingredient_list, name="ingredient-list"),)
+(path("<slug:slug>/", ingredient_detail, name="ingredient-detail"),)
 ```
 
 ---

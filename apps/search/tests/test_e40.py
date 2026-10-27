@@ -40,14 +40,14 @@ class TestIndexesExist:
             return cursor.fetchone() is not None
 
     def test_dish_required_ids_gin_index(self):
-        assert self._index_exists(
-            "dish_required_ids_gin"
-        ), "GIN index dish_required_ids_gin missing — check dishes migration 0001"
+        assert self._index_exists("dish_required_ids_gin"), (
+            "GIN index dish_required_ids_gin missing — check dishes migration 0001"
+        )
 
     def test_dish_all_ids_gin_index(self):
-        assert self._index_exists(
-            "dish_all_ids_gin"
-        ), "GIN index dish_all_ids_gin missing — check dishes migration 0001"
+        assert self._index_exists("dish_all_ids_gin"), (
+            "GIN index dish_all_ids_gin missing — check dishes migration 0001"
+        )
 
     def test_ingredient_alias_trgm_index(self):
         assert self._index_exists("ingredient_alias_normalized_trgm_idx"), (
@@ -57,14 +57,12 @@ class TestIndexesExist:
 
     def test_ingredient_name_en_trgm_index(self):
         assert self._index_exists("ingredient_name_en_trgm_idx"), (
-            "GIN trgm index ingredient_name_en_trgm_idx missing — "
-            "check ingredients migration 0002"
+            "GIN trgm index ingredient_name_en_trgm_idx missing — check ingredients migration 0002"
         )
 
     def test_ingredient_name_sw_trgm_index(self):
         assert self._index_exists("ingredient_name_sw_trgm_idx"), (
-            "GIN trgm index ingredient_name_sw_trgm_idx missing — "
-            "check ingredients migration 0002"
+            "GIN trgm index ingredient_name_sw_trgm_idx missing — check ingredients migration 0002"
         )
 
 

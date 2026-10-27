@@ -20,6 +20,7 @@ Architecture references:
   Sprint 1 doc section 14.2 (threat model)
   Sprint 1 doc section 14.4 (2FA architecture)
 """
+
 from __future__ import annotations
 
 import pytest
@@ -278,6 +279,4 @@ def test_revoked_key_returns_401():
         data={"ingredients": ["tomato"]},
         format="json",
     )
-    assert resp.status_code in (401, 403), (
-        f"Revoked key must be rejected. Got {resp.status_code}"
-    )
+    assert resp.status_code in (401, 403), f"Revoked key must be rejected. Got {resp.status_code}"
