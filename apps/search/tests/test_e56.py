@@ -80,22 +80,38 @@ def test_empty_input_returns_empty():
 @pytest.mark.fast
 def test_mixed_category_and_ingredient():
     """'greens' should expand; 'rice' should pass through."""
-    from unittest.mock import patch
+    from unittest.mock import MagicMock, patch
 
-    fake_ids = ["uuid-1", "uuid-2", "uuid-3"]
+    fake_category_ids = ["uuid-1", "uuid-2", "uuid-3"]
 
-    # Patch expand_category_terms at the pipeline import site so the mock
-    # is guaranteed to intercept the call regardless of normalise() stemming.
-    with patch(
-        "apps.search.pipeline.expand_category_terms",
-        return_value=(fake_ids, ["rice"]),
+    # Patch all three DB-touching collaborators so no DB access is needed.
+    # expand_category_terms: 'greens' → fake_category_ids, 'rice' → remaining
+    # resolve_many: 'rice' resolves to a matched ingredient (no DB)
+    # expand_with_staples: returns the pool directly (no DB)
+    rice_result = MagicMock()
+    rice_result.is_matched = True
+    rice_result.is_ambiguous = False
+    rice_result.ingredient_id = "uuid-rice"
+    rice_result.raw = "rice"
+
+    with (
+        patch(
+            "apps.search.pipeline.expand_category_terms",
+            return_value=(fake_category_ids, ["rice"]),
+        ),
+        patch("apps.search.pipeline.resolve_many", return_value=[rice_result]),
+        patch(
+            "apps.search.pipeline.expand_with_staples",
+            side_effect=lambda ids, excluded_ids=None: ids,
+        ),
     ):
         from apps.search.pipeline import resolve_ingredients
 
         query = resolve_ingredients(["greens", "rice"])
 
-    assert set(query.category_expanded_ids) == set(fake_ids)
-    assert set(fake_ids).issubset(set(query.pool))
+    assert set(query.category_expanded_ids) == set(fake_category_ids)
+    assert set(fake_category_ids).issubset(set(query.pool))
+    assert "uuid-rice" in query.pool
 
 
 # ---------------------------------------------------------------------------
