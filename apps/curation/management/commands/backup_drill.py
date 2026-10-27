@@ -161,18 +161,18 @@ class Command(BaseCommand):
                 checks_passed += 1
             else:
                 self.stderr.write(
-                    f"  ✗ {entry['filename']}: expected {expected} rows, " f"got {actual_rows}"
+                    f"  ✗ {entry['filename']}: expected {expected} rows, got {actual_rows}"
                 )
                 checks_failed += 1
 
         if checks_failed:
             raise CommandError(
-                f"[verify] ✗ {checks_failed} check(s) failed, " f"{checks_passed} passed."
+                f"[verify] ✗ {checks_failed} check(s) failed, {checks_passed} passed."
             )
 
         self.stdout.write(
             self.style.SUCCESS(
-                f"[verify] ✓ All {checks_passed} checks passed. " f"Snapshot is restorable."
+                f"[verify] ✓ All {checks_passed} checks passed. Snapshot is restorable."
             )
         )
 

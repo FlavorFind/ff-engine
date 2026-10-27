@@ -56,16 +56,14 @@ class TestIndexesExist:
         )
 
     def test_ingredient_name_en_trgm_index(self):
-        assert self._index_exists("ingredient_name_en_trgm_idx"), (
-            "GIN trgm index ingredient_name_en_trgm_idx missing — "
-            "check ingredients migration 0002"
-        )
+        assert self._index_exists(
+            "ingredient_name_en_trgm_idx"
+        ), "GIN trgm index ingredient_name_en_trgm_idx missing — check ingredients migration 0002"
 
     def test_ingredient_name_sw_trgm_index(self):
-        assert self._index_exists("ingredient_name_sw_trgm_idx"), (
-            "GIN trgm index ingredient_name_sw_trgm_idx missing — "
-            "check ingredients migration 0002"
-        )
+        assert self._index_exists(
+            "ingredient_name_sw_trgm_idx"
+        ), "GIN trgm index ingredient_name_sw_trgm_idx missing — check ingredients migration 0002"
 
 
 # ── Cache warming ─────────────────────────────────────────────────────────────

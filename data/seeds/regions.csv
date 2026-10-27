@@ -1,16 +1,64 @@
 slug,name,type,parent_slug,description
-kenya,Kenya,cuisine,,East African cuisine from Kenya
-tanzania,Tanzania,cuisine,,East African cuisine from Tanzania
-uganda,Uganda,cuisine,,East African cuisine from Uganda
-ethiopia,Ethiopia,cuisine,,Horn of Africa cuisine from Ethiopia
-eritrea,Eritrea,cuisine,,Horn of Africa cuisine from Eritrea
-rwanda,Rwanda,cuisine,,Great Lakes cuisine from Rwanda
-burundi,Burundi,cuisine,,Great Lakes cuisine from Burundi
-kenya-coast,Kenya Coast,coast,kenya,Swahili coastal cuisine — coconut, seafood, spice
-zanzibar,Zanzibar,coast,tanzania,Island cuisine rich in spice, seafood and coconut
-luo,Luo,cuisine,kenya,Lake Victoria cuisine — fish, ugali, greens
-kikuyu,Kikuyu,cuisine,kenya,Central Kenya highlands cuisine
-kalenjin,Kalenjin,cuisine,kenya,Rift Valley pastoral cuisine — mursik, ugali
-swahili,Swahili,cuisine,,Pan-coastal Swahili fusion cuisine
-great-lakes,Great Lakes,cuisine,,Shared cuisine of Rwanda, Burundi and eastern DRC
-horn-of-africa,Horn of Africa,cuisine,,Shared cuisine of Ethiopia and Eritrea
+mombasa,Mombasa,county,,Coastal county; home of Swahili and Indian-Kenyan cuisine
+kwale,Kwale,county,,Coastal county south of Mombasa; coconut and seafood dishes
+kilifi,Kilifi,county,,Coastal county; coral reef fishing communities
+tana-river,Tana River,county,,Semi-arid river basin; pastoral and fishing communities
+lamu,Lamu,county,,Island and coastal county; ancient Swahili cuisine
+taita-taveta,Taita-Taveta,county,,South-eastern county bordering Tanzania
+garissa,Garissa,county,,North-eastern county; Somali-Kenyan pastoral cuisine
+wajir,Wajir,county,,North-eastern county; camel milk and meat-based cuisine
+mandera,Mandera,county,,North-eastern corner; Somali and Ethiopian influences
+marsabit,Marsabit,county,,Northern arid county; pastoralist Borana and Rendille cuisine
+isiolo,Isiolo,county,,Northern semi-arid county; Samburu and Borana influences
+meru,Meru,county,,Mount Kenya eastern slopes; miraa and highland crops
+tharaka-nithi,Tharaka-Nithi,county,,Dry eastern zone of Mount Kenya region
+embu,Embu,county,,Mount Kenya south-eastern slopes; highland cuisine
+kitui,Kitui,county,,Semi-arid eastern county; Kamba cuisine
+machakos,Machakos,county,,Eastern county; Kamba cuisine and urban food culture
+makueni,Makueni,county,,Dry south-eastern county; baobab and mango growing region
+nyandarua,Nyandarua,county,,Central highlands; potatoes and dairy farming
+nyeri,Nyeri,county,,Central highlands and Mount Kenya slopes; Kikuyu cuisine
+kirinyaga,Kirinyaga,county,,Fertile slopes of Mount Kenya; Kikuyu cuisine
+muranga,Murang'a,county,,Central Province; Kikuyu heartland cuisine
+kiambu,Kiambu,county,,Central county bordering Nairobi; suburban and highland food
+turkana,Turkana,county,,North-western arid county; Turkana pastoralist cuisine; fermented milk
+west-pokot,West Pokot,county,,North Rift; Pokot pastoral cuisine
+samburu,Samburu,county,,Northern Rift; camel and cattle herding community
+trans-nzoia,Trans Nzoia,county,,Rift Valley maize basket; Uganda border
+uasin-gishu,Uasin Gishu,county,,Eldoret region; Kalenjin and diverse settler cuisine
+elgeyo-marakwet,Elgeyo-Marakwet,county,,Rift escarpment; Kalenjin highland cuisine
+nandi,Nandi,county,,Rift Valley; Kalenjin pastoral and highland cuisine
+baringo,Baringo,county,,Northern Rift; Tugen and Pokot pastoralist cuisine
+laikipia,Laikipia,county,,Central plateau; ranching and mixed farming
+nakuru,Nakuru,county,,Rift Valley; mixed highland and urban cuisine
+narok,Narok,county,,Masai Mara region; Maasai pastoral cuisine
+kajiado,Kajiado,county,,Southern Rift; Maasai pastoralist and peri-urban cuisine
+kericho,Kericho,county,,Tea-growing Kalenjin highlands
+bomet,Bomet,county,,South Rift; Kipsigis Kalenjin cuisine
+kakamega,Kakamega,county,,Western Kenya; Luhya cuisine; ugali and fried fish
+vihiga,Vihiga,county,,Densely farmed western county; Luhya cuisine
+bungoma,Bungoma,county,,Western Kenya; Luhya-Bukusu cuisine; millet-based dishes
+busia,Busia,county,,Western border county; Luhya and Luo cuisine
+siaya,Siaya,county,,Lake Victoria basin; Luo fishing communities
+kisumu,Kisumu,county,,Lake Victoria port city; Luo cuisine; omena and tilapia
+homa-bay,Homa Bay,county,,Lake Victoria south shore; Luo fishing and farming
+migori,Migori,county,,South Nyanza; Luo and Kuria cuisine
+kisii,Kisii,county,,South Nyanza highlands; Gusii cuisine; millet and sorghum
+nyamira,Nyamira,county,,South Nyanza highlands; Gusii cuisine
+nairobi,Nairobi,county,,Capital city; cosmopolitan cuisine; all regional styles
+kenyan-coast,Kenyan Coast,coast,,Swahili coastal cuisine — coconut rice, seafood, pilau and biriani
+luo,Luo,cuisine,,Lake Victoria fishing communities; tilapia, omena, ugali and nyoyo
+kikuyu,Kikuyu,cuisine,,Central Kenya highlands; irio, mutura, githeri and nyama choma
+luhya,Luhya,cuisine,,Western Kenya; ingokho (chicken), ugali and fried omena
+kamba,Kamba,cuisine,,Eastern semi-arid; muthokoi, nzau and dry meat dishes
+kalenjin,Kalenjin,cuisine,,Rift Valley pastoral; mursik (fermented milk) and ugali
+maasai,Maasai,cuisine,,Southern Rift; milk, blood and meat-based pastoral cuisine
+somali-kenyan,Somali-Kenyan,cuisine,,North-eastern; camel milk, hilib, anjero and suqaar
+indian-kenyan,Indian-Kenyan,cuisine,,Coastal and Nairobi; biriani, mandazi, samosa and pilau
+ethiopian,Ethiopian,cuisine,,Horn of Africa; injera, tibs, kitfo and wot stews
+tanzanian,Tanzanian,cuisine,,East Africa; pilau, coconut bean soup and ugali
+ugandan,Ugandan,cuisine,,East Africa; matoke, groundnut stew and rolex
+rwandan,Rwandan,cuisine,,Great Lakes; isombe, mizuzu and inyama
+east-african,East African,cuisine,,Pan-regional East African shared dishes
+west-african,West African,cuisine,,West Africa; jollof rice, egusi and suya
+north-african,North African,cuisine,,North Africa; couscous, tagine and ful medames

@@ -36,6 +36,12 @@ log_level = "WARNING"
 filterwarnings = [
     "ignore::DeprecationWarning",
     "ignore::django.utils.deprecation.RemovedInDjango60Warning",
+    "ignore::pytest.PytestUnknownMarkWarning",
+]
+markers = [
+    "fast: Tests that do not need the database. Run in under 1 second each.",
+    "full: Tests that need a fully seeded database. Slower — use seeded_db fixture.",
+    "django_db: marks tests that access the database (set by pytest-django)",
 ]
 
 [tool.mypy]

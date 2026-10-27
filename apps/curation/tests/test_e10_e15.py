@@ -144,6 +144,7 @@ def _write_csv(rows: list[dict], fieldnames: list[str]) -> Path:
 # ===========================================================================
 
 
+@pytest.mark.fast
 class TestNormaliser:
     """E15 — 100+ sample inputs mapped to expected outputs."""
 
@@ -281,6 +282,7 @@ class TestNormaliser:
         assert r.normalised == "garlic"
 
 
+@pytest.mark.fast
 class TestDetectLanguage:
     def test_english_word(self) -> None:
         assert detect_language("tomato") == "en"
@@ -300,6 +302,7 @@ class TestDetectLanguage:
 # ===========================================================================
 
 
+@pytest.mark.fast
 class TestIngredientRowValidators:
     """V01–V07: ingredient row rules."""
 

@@ -1,8 +1,8 @@
-"""Curation admin — Source, ChangeLog, DatasetRelease."""
+"""Curation admin — Source, ChangeLog, DatasetRelease, CommunitySubmission."""
 
 from django.contrib import admin
 
-from apps.curation.models import ChangeLog, DatasetRelease, Source
+from apps.curation.models import ChangeLog, CommunitySubmission, DatasetRelease, Source
 
 
 @admin.register(Source)
@@ -35,5 +35,17 @@ class ChangeLogAdmin(admin.ModelAdmin):
 class DatasetReleaseAdmin(admin.ModelAdmin):
     list_display = ["version", "released_by", "created_at"]
     search_fields = ["version", "notes"]
+    readonly_fields = ["version", "counts", "released_by", "created_at", "updated_at"]
+    ordering = ["-created_at"]
+
+    def has_change_permission(self, request, obj=None):
+        return False  # dataset releases are immutable once created
+
+
+@admin.register(CommunitySubmission)
+class CommunitySubmissionAdmin(admin.ModelAdmin):
+    list_display = ["submission_type", "status", "submitter_client", "created_at"]
+    list_filter = ["status", "submission_type"]
+    search_fields = ["payload", "submitter_note", "submitter_client__name"]
     readonly_fields = ["created_at", "updated_at"]
     ordering = ["-created_at"]
