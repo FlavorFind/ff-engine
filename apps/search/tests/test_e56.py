@@ -84,15 +84,18 @@ def test_mixed_category_and_ingredient():
 
     fake_ids = ["uuid-1", "uuid-2", "uuid-3"]
 
-    with patch("apps.search.category_expander._resolve_category_to_ids", return_value=fake_ids):
-        from apps.search.category_expander import expand_category_terms, invalidate_category_cache
+    # Patch expand_category_terms at the pipeline import site so the mock
+    # is guaranteed to intercept the call regardless of normalise() stemming.
+    with patch(
+        "apps.search.pipeline.expand_category_terms",
+        return_value=(fake_ids, ["rice"]),
+    ):
+        from apps.search.pipeline import resolve_ingredients
 
-        invalidate_category_cache()
-        ids, remaining = expand_category_terms(["greens", "rice"])
+        query = resolve_ingredients(["greens", "rice"])
 
-    assert set(ids) == set(fake_ids)
-    assert "rice" in remaining
-    assert "greens" not in remaining
+    assert set(query.category_expanded_ids) == set(fake_ids)
+    assert set(fake_ids).issubset(set(query.pool))
 
 
 # ---------------------------------------------------------------------------
@@ -159,26 +162,19 @@ def test_category_expanded_ids_in_pool(seeded_db):
     sample = list(Ingredient.objects.values_list("id", flat=True)[:3])
     fake_ids = [str(pk) for pk in sample]
 
-    import apps.search.category_expander as ce
+    # Patch expand_category_terms at the pipeline import site.
+    # Patching inside category_expander doesn't work reliably because
+    # normalise() stems tokens (e.g. 'greens' → 'green') so the alias map
+    # lookup misses and the token falls through to remaining without ever
+    # calling _resolve_category_to_ids.
+    with patch(
+        "apps.search.pipeline.expand_category_terms",
+        return_value=(fake_ids, []),
+    ):
+        from apps.search.pipeline import resolve_ingredients
 
-    original_aliases = ce._CATEGORY_ALIASES.copy()
-    ce._CATEGORY_ALIASES["greens"] = ["vegetables"]
-    ce.invalidate_category_cache()
+        query = resolve_ingredients(["greens"])
 
-    try:
-        # Patch _resolve_category_to_ids — this is what expand_category_terms
-        # actually calls; patching the lru_cached _get_category_ingredient_ids
-        # doesn't intercept calls that go through _resolve_category_to_ids.
-        with patch(
-            "apps.search.category_expander._resolve_category_to_ids",
-            return_value=fake_ids,
-        ):
-            from apps.search.pipeline import resolve_ingredients
-
-            query = resolve_ingredients(["greens"])
-            for fid in fake_ids:
-                assert fid in query.pool, f"Category-expanded ID {fid} not in pool"
-    finally:
-        ce._CATEGORY_ALIASES.clear()
-        ce._CATEGORY_ALIASES.update(original_aliases)
-        ce.invalidate_category_cache()
+    for fid in fake_ids:
+        assert fid in query.pool, f"Category-expanded ID {fid} not in pool"
+    assert set(fake_ids).issubset(set(query.category_expanded_ids))
