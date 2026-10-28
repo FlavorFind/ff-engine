@@ -197,3 +197,19 @@ class TestDishCatalogue:
     def test_catalogue_total_dishes_is_300_or_more(self, api, seeded_db):
         data = api.get("/v1/dishes/?limit=1").json()
         assert data["count"] >= 300
+
+    def test_catalogue_excludes_draft_dishes(self, api, seeded_db):
+        """GET /v1/dishes/ must never return dishes with status=draft."""
+        data = api.get("/v1/dishes/?limit=300").json()
+        for dish in data["results"]:
+            assert (
+                dish["status"] != "draft"
+            ), f"Dish {dish['slug']} has status=draft but was returned by public catalogue"
+
+    def test_catalogue_diet_filter_returns_vegetarian_dishes(self, api, seeded_db):
+        """GET /v1/dishes/?diet=vegetarian must return dishes tagged vegetarian."""
+        resp = api.get("/v1/dishes/?diet=vegetarian")
+        assert resp.status_code == 200
+        data = resp.json()
+        # After dietary derivation there should be some vegetarian dishes
+        assert data["count"] >= 1
