@@ -109,6 +109,7 @@ class Command(BaseCommand):
             ("units", self._seed_units),
             ("dish_regions", self._seed_dish_regions),
             ("aliases", self._seed_aliases),
+            ("nutrition", self._seed_nutrition),
         ]:
             try:
                 with transaction.atomic():
@@ -121,6 +122,10 @@ class Command(BaseCommand):
             counters["dishes_rebuilt"] = rebuilt
             counters.update(self._promote_seeded_to_reviewed())
             counters.update(self._derive_dietary_tags())
+            from django.core.management import call_command as _call
+
+            _call("compute_popularity", verbosity=0)
+            counters["popularity_computed"] = True
         if dry_run:
             self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
 
@@ -828,6 +833,68 @@ class Command(BaseCommand):
             "dietary_dishes_processed": result["dishes_processed"],
             "dietary_tags_applied": result["tags_applied"],
         }
+
+    # ── nutrition ─────────────────────────────────────────────────────────────
+
+    def _seed_nutrition(self, dry_run: bool) -> dict:
+        """
+        E-Task 9 — Load nutrition_ingredients.csv into NutritionFact.
+
+        CSV format: ingredient_name_en, kcal, protein_g, carbs_g, fat_g,
+                    fibre_g, sodium_mg, source, confidence
+        Looks up ingredients by name_en (case-insensitive).
+        """
+        path = SEEDS_DIR / "nutrition_ingredients.csv"
+        if not path.exists():
+            return {"nutrition_facts_created": 0, "nutrition_facts_skipped": 0}
+
+        from apps.nutrition.models import NutritionFact
+
+        created = skipped = 0
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                name_en = row.get("ingredient_name_en", "").strip()
+                if not name_en:
+                    skipped += 1
+                    continue
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                try:
+                    ingredient = Ingredient.objects.get(name_en__iexact=name_en)
+                except Ingredient.DoesNotExist:
+                    skipped += 1
+                    continue
+                except Ingredient.MultipleObjectsReturned:
+                    skipped += 1
+                    continue
+
+                def _dec(val: str, default: str = "0") -> str:
+                    return val.strip() if val.strip() else default
+
+                _, was_created = NutritionFact.objects.get_or_create(
+                    ingredient=ingredient,
+                    defaults={
+                        "kcal": _dec(row.get("kcal", "0")),
+                        "protein_g": _dec(row.get("protein_g", "0")),
+                        "carbs_g": _dec(row.get("carbs_g", "0")),
+                        "fat_g": _dec(row.get("fat_g", "0")),
+                        "fibre_g": _dec(row.get("fibre_g", "0")),
+                        "sodium_mg": _dec(row.get("sodium_mg", "0")),
+                        "source": row.get("source", "estimate").strip(),
+                        "confidence": row.get("confidence", "low").strip(),
+                    },
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        self.stdout.write(f"  Nutrition    created={created}  skipped={skipped}")
+        return {"nutrition_facts_created": created, "nutrition_facts_skipped": skipped}
 
     # ── report ────────────────────────────────────────────────────────────────
 
