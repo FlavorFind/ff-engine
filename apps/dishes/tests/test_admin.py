@@ -359,9 +359,12 @@ def test_search_by_alias_finds_dish(curator_client, dish):
 def test_search_by_alias_finds_ingredient(curator_client, category):
     """Search query matching an ingredient alias should find the ingredient."""
     ing = Ingredient.objects.create(name_en="_test_Coriander", category=category)
-    ing.aliases.create(alias="Dhania", normalized_alias="dhania", language="sw")
+    # Use a test-only alias that won't collide with aliases.csv seed data (dhania/sw is seeded)
+    ing.aliases.create(
+        alias="_test_Dhania_alias", normalized_alias="_test_dhania_alias", language="sw"
+    )
 
-    resp = curator_client.get("/admin/ingredients/ingredient/", data={"q": "dhania"})
+    resp = curator_client.get("/admin/ingredients/ingredient/", data={"q": "_test_dhania_alias"})
     assert resp.status_code == 200
     body = resp.content.decode()
     assert "_test_Coriander" in body
