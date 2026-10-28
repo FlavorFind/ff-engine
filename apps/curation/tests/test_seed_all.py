@@ -183,3 +183,19 @@ class TestSeedAll:
         call_command("seed_all", verbosity=0)
         count2 = DishRegion.objects.count()
         assert count1 == count2, f"DishRegion count changed: {count1} → {count2}"
+
+    def test_nutrition_facts_seeded(self):
+        """seed_all must load NutritionFact rows from nutrition_ingredients.csv."""
+        from apps.nutrition.models import NutritionFact
+
+        call_command("seed_all", verbosity=0)
+        count = NutritionFact.objects.count()
+        assert count >= 20, f"Expected ≥20 nutrition facts, got {count}"
+
+    def test_popularity_computed_after_seed(self):
+        """At least some dishes should have popularity > 0 after seed_all."""
+        from apps.dishes.models import Dish
+
+        call_command("seed_all", verbosity=0)
+        dishes_with_pop = Dish.objects.filter(popularity__gt=0).count()
+        assert dishes_with_pop > 0, "No dishes have popularity > 0 after seed_all"
