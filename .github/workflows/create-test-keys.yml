@@ -1,0 +1,75 @@
+name: Create verify-kit test keys
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-keys:
+    name: Create test API keys on staging DB
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install base requirements
+        run: pip install -r requirements/base.txt -q
+
+      - name: Create test API keys
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings.prod
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          ALLOWED_HOSTS: "ff-engine-kuar.onrender.com,localhost"
+          DEBUG: "False"
+          ENGINE_VERSION: "1.0.0"
+          DATASET_VERSION: "0.0.0"
+        run: |
+          python - << 'PYEOF'
+          import django, os
+          os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.prod")
+          django.setup()
+
+          from apps.clients.models import ApiClient
+          from apps.clients.keys import create_key
+
+          # Main test client — full scopes, unlimited rate
+          client, _ = ApiClient.objects.get_or_create(
+              name="verify-kit-read",
+              defaults={"type": "test", "active": True}
+          )
+          _, key_search = create_key(client, scopes=["read:search", "read:catalog"], rate_limit=0)
+
+          # Internal client — all scopes
+          client_int, _ = ApiClient.objects.get_or_create(
+              name="verify-kit-internal",
+              defaults={"type": "test", "active": True}
+          )
+          _, key_internal = create_key(client_int, scopes=["read:search", "read:catalog", "internal:curation"], rate_limit=0)
+
+          # No-scope client — valid key, no permissions (403 tests)
+          client_none, _ = ApiClient.objects.get_or_create(
+              name="verify-kit-noscope",
+              defaults={"type": "test", "active": True}
+          )
+          _, key_noscope = create_key(client_none, scopes=[], rate_limit=0)
+
+          # Low quota — 3 rpm to trigger 429
+          client_low, _ = ApiClient.objects.get_or_create(
+              name="verify-kit-lowquota",
+              defaults={"type": "test", "active": True}
+          )
+          _, key_lowquota = create_key(client_low, scopes=["read:search"], rate_limit=3)
+
+          print("::notice::KEY=" + key_search)
+          print("::notice::KEY_INTERNAL=" + key_internal)
+          print("::notice::KEY_NOSCOPE=" + key_noscope)
+          print("::notice::KEY_LOWQUOTA=" + key_lowquota)
+          print("Keys created successfully")
+          PYEOF
