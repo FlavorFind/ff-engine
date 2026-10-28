@@ -125,7 +125,7 @@ def dish_catalogue(request: Request) -> Response:
 
     diet = request.query_params.get("diet", "").strip()
     if diet:
-        qs = qs.filter(dish_dietary_tags__tag__slug=diet)
+        qs = qs.filter(dietary_tags__tag__slug=diet)
 
     q = request.query_params.get("q", "").strip()
     if q:
