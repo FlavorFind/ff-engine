@@ -5,14 +5,6 @@ on:
     - cron: "0 1 * * *"  # 1 AM UTC = 4 AM Nairobi time
   workflow_dispatch:      # allow manual trigger
 
-# ---------------------------------------------------------------------------
-# Iteration gate: steps below activate as build steps complete.
-#   seed_all       — E9  (seed first 100 ingredients and 20 dishes)
-#   golden set     — E18 (golden query set runner)
-#   qa_report      — E14 (QA report and dashboard)
-# Until those commands exist, each step exits cleanly with a notice.
-# ---------------------------------------------------------------------------
-
 jobs:
   nightly:
     name: Nightly — migrate, seed, golden set, QA
@@ -64,20 +56,18 @@ jobs:
           SECRET_KEY: ci-secret-key-not-for-production
         run: python manage.py migrate --noinput
 
-      - name: Seed data (E9 — skipped until built)
+      - name: Seed and promote data
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
           REDIS_URL: redis://localhost:6379/0
           SECRET_KEY: ci-secret-key-not-for-production
         run: |
-          if python manage.py help seed_all >/dev/null 2>&1; then
-            python manage.py seed_all --env test
-          else
-            echo "::notice::seed_all not yet built (E9) — skipping"
-          fi
+          # seed_all promotes seeded dishes/ingredients to status=reviewed
+          # automatically (no --dry-run flag). QA steps below only see live data.
+          python manage.py seed_all --env test
 
-      - name: Golden set (E18)
+      - name: Golden set
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
@@ -85,7 +75,7 @@ jobs:
           SECRET_KEY: ci-secret-key-not-for-production
         run: python manage.py run_golden_set --json
 
-      - name: QA report (E14 — skipped until built)
+      - name: QA report
         env:
           DJANGO_SETTINGS_MODULE: config.settings.test
           DATABASE_URL: postgres://ff_engine:ff_engine_pass@localhost:5432/ff_engine_test
@@ -95,5 +85,5 @@ jobs:
           if python manage.py help qa_report >/dev/null 2>&1; then
             python manage.py qa_report --fail-on-critical
           else
-            echo "::notice::qa_report not yet built (E14) — skipping"
+            echo "::notice::qa_report not yet built — skipping"
           fi
