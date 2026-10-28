@@ -290,7 +290,3 @@ if SENTRY_DSN:
 # ---------------------------------------------------------------------------
 ENGINE_VERSION = env("ENGINE_VERSION", default="dev")
 DATASET_VERSION = env("DATASET_VERSION", default="0.0.0")
-STAPLES_LIST = env.list(
-    "STAPLES_LIST",
-    default=["water", "salt", "cooking oil", "vegetable oil"],
-)
