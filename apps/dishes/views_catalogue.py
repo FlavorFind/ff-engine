@@ -93,9 +93,9 @@ def dish_catalogue(request: Request) -> Response:
 
     Returns a paginated list of dishes with basic metadata.
     """
-    qs = Dish.objects.filter(
-        status__in=[StatusChoices.DRAFT, StatusChoices.REVIEWED, StatusChoices.VERIFIED]
-    ).order_by("name_en")
+    qs = Dish.objects.filter(status__in=[StatusChoices.REVIEWED, StatusChoices.VERIFIED]).order_by(
+        "name_en"
+    )
 
     # ── filters ───────────────────────────────────────────────────────────────
 
@@ -125,11 +125,7 @@ def dish_catalogue(request: Request) -> Response:
 
     diet = request.query_params.get("diet", "").strip()
     if diet:
-        qs = qs.filter(
-            dish_dietary_tags__tag__slug=diet,
-        ).exclude(
-            dish_dietary_tags__tag__is_allergen_tag=True,
-        )
+        qs = qs.filter(dish_dietary_tags__tag__slug=diet)
 
     q = request.query_params.get("q", "").strip()
     if q:
