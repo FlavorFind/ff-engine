@@ -213,3 +213,69 @@ class TestDishCatalogue:
         data = resp.json()
         # After dietary derivation there should be some vegetarian dishes
         assert data["count"] >= 1
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# P1-1 — Dish detail endpoint
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+@pytest.mark.django_db
+class TestDishDetail:
+    def test_dish_detail_returns_200(self, api, seeded_db):
+        """GET /v1/dishes/{slug}/ returns 200 for a known seeded dish."""
+        resp = api.get("/v1/dishes/ugali/")
+        assert resp.status_code == 200
+
+    def test_dish_detail_unknown_slug_returns_404(self, api, seeded_db):
+        """GET /v1/dishes/no-such-dish/ returns 404."""
+        resp = api.get("/v1/dishes/no-such-dish-xyzzy/")
+        assert resp.status_code == 404
+
+    def test_dish_detail_has_required_fields(self, api, seeded_db):
+        """Dish detail response must include all spec-required fields."""
+        resp = api.get("/v1/dishes/ugali/")
+        data = resp.json()
+        for field in [
+            "slug",
+            "name_en",
+            "meal_type",
+            "course",
+            "difficulty",
+            "prep_min",
+            "cook_min",
+            "servings",
+            "status",
+            "ingredients",
+            "steps",
+            "regions",
+            "dietary_tags",
+        ]:
+            assert field in data, f"Missing field: {field}"
+
+    def test_dish_detail_ingredients_have_roles(self, api, seeded_db):
+        """Each ingredient in dish detail must have a role field."""
+        resp = api.get("/v1/dishes/ugali/")
+        data = resp.json()
+        assert len(data["ingredients"]) > 0
+        for ing in data["ingredients"]:
+            assert "role" in ing
+            assert ing["role"] in ("primary", "required", "optional", "garnish")
+
+    def test_dish_detail_excludes_draft(self, api, seeded_db):
+        """Draft dishes must not be accessible via the detail endpoint."""
+        from apps.dishes.models import Dish
+
+        # Set a dish to draft and confirm 404
+        dish = Dish.objects.get(slug="ugali")
+        Dish.objects.filter(pk=dish.pk).update(status="draft")
+        resp = api.get("/v1/dishes/ugali/")
+        assert resp.status_code == 404
+        # Restore
+        Dish.objects.filter(pk=dish.pk).update(status="reviewed")
+
+    def test_dish_detail_nyama_choma(self, api, seeded_db):
+        """Spot-check: nyama-choma detail returns correct name."""
+        resp = api.get("/v1/dishes/nyama-choma/")
+        assert resp.status_code == 200
+        assert resp.json()["name_en"] == "Nyama Choma"
