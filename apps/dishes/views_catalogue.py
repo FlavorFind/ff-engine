@@ -225,7 +225,7 @@ def dish_detail(request: Request, slug: str) -> Response:
         for di in dish.dish_ingredients.all()
     ]
     steps = [
-        {"position": s.position, "instruction": s.instruction}
+        {"position": s.position, "text_en": s.text_en, "text_sw": s.text_sw}
         for s in dish.steps.order_by("position")
     ]
     regions = [dr.region.slug for dr in dish.dish_regions.all()]
