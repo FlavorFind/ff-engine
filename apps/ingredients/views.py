@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import logging
 
-from drf_spectacular.utils import OpenApiResponse, extend_schema
+from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework import serializers, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -146,4 +146,164 @@ def resolve(request: Request) -> Response:
             "unmatched_count": sum(1 for r in results if r.status == STATUS_UNMATCHED),
         },
         status=status.HTTP_200_OK,
+    )
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# P1-2 / P1-3 — Ingredient list and detail endpoints
+# ──────────────────────────────────────────────────────────────────────────────
+
+
+@extend_schema(
+    summary="List ingredients",
+    description=(
+        "Returns a paginated list of ingredients. "
+        "Use ?q= for autocomplete (searches name_en, name_sw, and aliases). "
+        "Use ?category= to filter by category slug."
+    ),
+    parameters=[
+        OpenApiParameter(
+            name="q",
+            description="Autocomplete search on name_en, name_sw, and alias text.",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="category",
+            description="Filter by ingredient category slug.",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="limit",
+            description="Page size (default 50, max 200).",
+            required=False,
+            type=int,
+        ),
+        OpenApiParameter(
+            name="offset",
+            description="Pagination offset (default 0).",
+            required=False,
+            type=int,
+        ),
+    ],
+    responses={200: OpenApiResponse(description="Paginated ingredient list")},
+    tags=["Ingredients"],
+)
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def ingredient_list(request: Request) -> Response:
+    """
+    GET /v1/ingredients/
+
+    Paginated list of ingredients with optional autocomplete and category filter.
+    """
+    from django.db.models import Q
+
+    from apps.core.models import StatusChoices
+    from apps.ingredients.models import Ingredient
+
+    qs = Ingredient.objects.filter(
+        status__in=[StatusChoices.REVIEWED, StatusChoices.VERIFIED]
+    ).select_related("category")
+
+    q = request.query_params.get("q", "").strip()
+    if q:
+        qs = qs.filter(
+            Q(name_en__icontains=q) | Q(name_sw__icontains=q) | Q(aliases__alias__icontains=q)
+        ).distinct()
+
+    category = request.query_params.get("category", "").strip()
+    if category:
+        qs = qs.filter(category__slug=category)
+
+    try:
+        limit = min(int(request.query_params.get("limit", 50)), 200)
+    except (ValueError, TypeError):
+        limit = 50
+    try:
+        offset = max(int(request.query_params.get("offset", 0)), 0)
+    except (ValueError, TypeError):
+        offset = 0
+
+    total = qs.count()
+    ingredients = qs[offset : offset + limit]
+
+    results = [
+        {
+            "slug": ing.slug,
+            "name_en": ing.name_en,
+            "name_sw": ing.name_sw,
+            "kind": ing.kind,
+            "is_staple": ing.is_staple,
+            "category": ing.category.slug if ing.category else None,
+            "status": ing.status,
+        }
+        for ing in ingredients
+    ]
+
+    return Response({"count": total, "limit": limit, "offset": offset, "results": results})
+
+
+@extend_schema(
+    summary="Ingredient detail",
+    description=(
+        "Full detail for a single ingredient by slug. "
+        "Includes all aliases (with language and misspelling flag) and linked allergens."
+    ),
+    responses={
+        200: OpenApiResponse(description="Ingredient detail"),
+        404: OpenApiResponse(description="Ingredient not found"),
+    },
+    tags=["Ingredients"],
+)
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def ingredient_detail(request: Request, slug: str) -> Response:
+    """
+    GET /v1/ingredients/{slug}/
+
+    Full detail for a single ingredient including aliases and allergens.
+    Only reviewed and verified ingredients are accessible.
+    """
+    from apps.core.models import StatusChoices
+    from apps.ingredients.models import Ingredient
+
+    try:
+        ing = (
+            Ingredient.objects.filter(status__in=[StatusChoices.REVIEWED, StatusChoices.VERIFIED])
+            .select_related("category", "typical_unit")
+            .prefetch_related("aliases", "allergens")
+            .get(slug=slug)
+        )
+    except Ingredient.DoesNotExist:
+        return Response(
+            {"error": "Ingredient not found."},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    aliases = [
+        {
+            "alias": a.alias,
+            "language": a.language,
+            "is_misspelling": a.is_misspelling,
+        }
+        for a in ing.aliases.all()
+    ]
+    allergens = [{"slug": a.slug, "name": a.name} for a in ing.allergens.all()]
+
+    return Response(
+        {
+            "slug": ing.slug,
+            "name_en": ing.name_en,
+            "name_sw": ing.name_sw,
+            "kind": ing.kind,
+            "is_staple": ing.is_staple,
+            "category": ing.category.slug if ing.category else None,
+            "typical_unit": ing.typical_unit.code if ing.typical_unit else None,
+            "status": ing.status,
+            "notes": ing.notes,
+            "aliases": aliases,
+            "allergens": allergens,
+        }
     )
