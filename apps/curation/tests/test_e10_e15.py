@@ -648,10 +648,11 @@ class TestImportCsvIngredients:
 @pytest.mark.django_db
 class TestImportCsvAliases:
     def test_import_valid_alias(self, ingredient) -> None:
+        # Use a test-only alias that won't collide with aliases.csv seed data
         rows = [
             {
                 "ingredient_slug": "tomato",
-                "alias": "Nyanya",
+                "alias": "_test-nyanya-import",
                 "language": "sw",
                 "is_misspelling": "false",
             }
