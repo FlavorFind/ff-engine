@@ -36,3 +36,14 @@ def test_health_no_auth_required(client):
     response = client.get(reverse("health"))
     assert response.status_code != status.HTTP_401_UNAUTHORIZED
     assert response.status_code != status.HTTP_403_FORBIDDEN
+
+
+@pytest.mark.django_db
+def test_version_reads_from_db_dataset_release(client):
+    """Version endpoint must return the version from the latest DatasetRelease, not settings."""
+    from apps.curation.models import DatasetRelease
+
+    DatasetRelease.objects.create(version="2026.10.test", notes="test release")
+    response = client.get(reverse("version"))
+    assert response.status_code == status.HTTP_200_OK
+    assert response.data["dataset_version"] == "2026.10.test"

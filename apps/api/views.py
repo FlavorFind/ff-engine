@@ -59,10 +59,12 @@ def version(request: Request) -> Response:
     Version endpoint.
     Returns the engine version and current dataset version.
     """
+    from apps.search.cache import get_dataset_version
+
     return Response(
         {
             "engine_version": getattr(settings, "ENGINE_VERSION", "dev"),
-            "dataset_version": getattr(settings, "DATASET_VERSION", "0.0.0"),
+            "dataset_version": get_dataset_version(),
             "api_version": "v1",
         }
     )
