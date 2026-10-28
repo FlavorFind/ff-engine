@@ -107,6 +107,7 @@ class Command(BaseCommand):
             ("substitutions", self._seed_substitutions),
             ("regions", self._seed_regions),
             ("units", self._seed_units),
+            ("dish_regions", self._seed_dish_regions),
             ("aliases", self._seed_aliases),
         ]:
             try:
@@ -653,7 +654,62 @@ class Command(BaseCommand):
         self.stdout.write(f"  Units        created={created}  skipped={skipped}")
         return {"units_created": created, "units_skipped": skipped}
 
-    # ── aliases ───────────────────────────────────────────────────────────────
+    # ── dish regions ──────────────────────────────────────────────────────────
+
+    def _seed_dish_regions(self, dry_run: bool) -> dict:
+        """
+        E-Task 8 — Seed dish-region links from data/seeds/dish_regions.csv.
+
+        Format: dish_slug,region_slug
+        """
+        path = SEEDS_DIR / "dish_regions.csv"
+        if not path.exists():
+            return {"dish_regions_created": 0, "dish_regions_skipped": 0}
+
+        from apps.regions.models import DishRegion, Region
+
+        created = skipped = 0
+        dish_cache: dict[str, Dish] = {}
+        region_cache: dict[str, Region] = {}
+
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                dish_slug = row["dish_slug"].strip()
+                region_slug = row["region_slug"].strip()
+
+                if not dish_slug or not region_slug:
+                    skipped += 1
+                    continue
+
+                if dry_run:
+                    created += 1
+                    continue
+
+                if dish_slug not in dish_cache:
+                    try:
+                        dish_cache[dish_slug] = Dish.objects.get(slug=dish_slug)
+                    except Dish.DoesNotExist:
+                        skipped += 1
+                        continue
+
+                if region_slug not in region_cache:
+                    try:
+                        region_cache[region_slug] = Region.objects.get(slug=region_slug)
+                    except Region.DoesNotExist:
+                        skipped += 1
+                        continue
+
+                _, was_created = DishRegion.objects.get_or_create(
+                    dish=dish_cache[dish_slug],
+                    region=region_cache[region_slug],
+                )
+                if was_created:
+                    created += 1
+                else:
+                    skipped += 1
+
+        self.stdout.write(f"  DishRegions  created={created}  skipped={skipped}")
+        return {"dish_regions_created": created, "dish_regions_skipped": skipped}
 
     def _seed_aliases(self, dry_run: bool) -> dict:
         """
