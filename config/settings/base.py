@@ -6,6 +6,7 @@ Never import this directly — import dev, test or prod instead.
 from pathlib import Path
 
 import environ
+from celery.schedules import crontab
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -142,6 +143,12 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Africa/Nairobi"
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+CELERY_BEAT_SCHEDULE = {
+    "update-dish-popularity-daily": {
+        "task": "apps.dishes.tasks.update_dish_popularity",
+        "schedule": crontab(hour=3, minute=0),  # 3 AM Nairobi time daily
+    },
+}
 
 # ---------------------------------------------------------------------------
 # Auth
