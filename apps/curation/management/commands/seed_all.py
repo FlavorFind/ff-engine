@@ -119,6 +119,7 @@ class Command(BaseCommand):
             rebuilt = self._rebuild_arrays()
             counters["dishes_rebuilt"] = rebuilt
             counters.update(self._promote_seeded_to_reviewed())
+            counters.update(self._derive_dietary_tags())
         if dry_run:
             self.stdout.write(self.style.WARNING("Dry run — validation complete, nothing saved."))
 
@@ -746,6 +747,30 @@ class Command(BaseCommand):
         return {
             "dishes_promoted": dishes_updated,
             "ingredients_promoted": ingredients_updated,
+        }
+
+    def _derive_dietary_tags(self) -> dict:
+        """
+        E-Task 3 — Derive dietary tags for all seeded dishes.
+
+        Calls apply_derived_tags_for_all_dishes() which runs the 8 dietary
+        derivation rules (vegetarian, vegan, halal-friendly, gluten-free,
+        nut-free, dairy-free, egg-free, contains-pork) and persists
+        DishDietaryTag rows with source=derived.
+
+        Must run AFTER _promote_seeded_to_reviewed() so dish status is
+        already 'reviewed' when derivation runs.
+        """
+        from apps.dietary.services import apply_derived_tags_for_all_dishes
+
+        result = apply_derived_tags_for_all_dishes()
+        self.stdout.write(
+            f"  Dietary tags  dishes={result['dishes_processed']}"
+            f"  tags={result['tags_applied']}"
+        )
+        return {
+            "dietary_dishes_processed": result["dishes_processed"],
+            "dietary_tags_applied": result["tags_applied"],
         }
 
     # ── report ────────────────────────────────────────────────────────────────
