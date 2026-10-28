@@ -157,3 +157,11 @@ class TestSeedAll:
         assert (
             count_after_first == count_after_second
         ), f"Alias count changed from {count_after_first} to {count_after_second} on second run"
+
+    def test_dietary_tags_derived_after_seed(self):
+        """seed_all must derive at least one dietary tag for seeded dishes."""
+        from apps.dietary.models import DishDietaryTag
+
+        call_command("seed_all", verbosity=0)
+        count = DishDietaryTag.objects.filter(source="derived").count()
+        assert count > 0, "No derived dietary tags found after seed_all"

@@ -542,11 +542,14 @@ class TestManualOverrides:
             slug="halal-friendly",
             defaults={"name": "Halal friendly"},
         )
-        override = DishDietaryTag.objects.create(
+        # Derivation may have already created this tag — use update_or_create to set manual
+        override, _ = DishDietaryTag.objects.update_or_create(
             dish=kachumbari,
             tag=tag,
-            source=DishDietaryTag.Source.MANUAL,
-            reason="Confirmed by chef — no non-halal ingredients used",
+            defaults={
+                "source": DishDietaryTag.Source.MANUAL,
+                "reason": "Confirmed by chef — no non-halal ingredients used",
+            },
         )
         assert override.source == DishDietaryTag.Source.MANUAL
         assert override.reason != ""
@@ -593,11 +596,14 @@ class TestManualOverrides:
 
         before_count = ChangeLog.objects.filter(object_type="DishDietaryTag").count()
 
-        override = DishDietaryTag.objects.create(
+        # Derivation may have already created this tag — use update_or_create
+        override, _ = DishDietaryTag.objects.update_or_create(
             dish=kachumbari,
             tag=tag,
-            source=DishDietaryTag.Source.MANUAL,
-            reason="Verified egg-free by chef",
+            defaults={
+                "source": DishDietaryTag.Source.MANUAL,
+                "reason": "Verified egg-free by chef",
+            },
         )
 
         # Log manually (in real use the admin does this)
@@ -629,7 +635,11 @@ class TestManualOverrides:
             slug="dairy-free",
             defaults={"name": "Dairy-free"},
         )
-        DishDietaryTag.objects.create(dish=kachumbari, tag=tag, source="derived")
+        # Ensure one row exists (derivation may have already created it)
+        DishDietaryTag.objects.get_or_create(
+            dish=kachumbari, tag=tag, defaults={"source": "derived"}
+        )
+        # Attempting to create a second row for the same (dish, tag) must fail
         with pytest.raises(IntegrityError):
             DishDietaryTag.objects.create(dish=kachumbari, tag=tag, source="manual")
 
