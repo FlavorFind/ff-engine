@@ -13,8 +13,7 @@ urlpatterns = [
     path("dishes/", include("apps.nutrition.urls")),
     path("regions/", include("apps.regions.urls")),
     # E52: community submissions intake (internal:curation scope)
+    path("internal/", include("apps.curation.urls_submissions")),
     # E54: dataset diff endpoint (read:catalog scope)
-    path("internal/", include("apps.curation.urls")),
-    # E54: dataset diff also accessible at /v1/datasets/diff
-    path("datasets/", include("apps.curation.urls")),
+    path("datasets/", include("apps.curation.urls_diff")),
 ]

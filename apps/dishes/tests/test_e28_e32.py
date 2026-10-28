@@ -190,7 +190,7 @@ class TestDishPairingsEndpoint:
         from apps.dishes.models import Dish
 
         ugali = Dish.objects.get(slug="ugali")
-        url = f"/v1/dishes/{ugali.id}/pairings/"
+        url = f"/v1/dishes/{ugali.slug}/pairings/"
         resp = api.get(url)
         assert resp.status_code == 200
         data = resp.json()
@@ -201,7 +201,7 @@ class TestDishPairingsEndpoint:
         from apps.dishes.models import Dish
 
         ugali = Dish.objects.get(slug="ugali")
-        resp = api.get(f"/v1/dishes/{ugali.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{ugali.slug}/pairings/")
         data = resp.json()
         assert data["count"] == len(data["pairings"])
 
@@ -209,7 +209,7 @@ class TestDishPairingsEndpoint:
         from apps.dishes.models import Dish
 
         ugali = Dish.objects.get(slug="ugali")
-        resp = api.get(f"/v1/dishes/{ugali.id}/pairings/?type=side")
+        resp = api.get(f"/v1/dishes/{ugali.slug}/pairings/?type=side")
         data = resp.json()
         for p in data["pairings"]:
             assert p["pairing_type"] == "side"
@@ -218,14 +218,14 @@ class TestDishPairingsEndpoint:
         from apps.dishes.models import Dish
 
         ugali = Dish.objects.get(slug="ugali")
-        resp = api.get(f"/v1/dishes/{ugali.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{ugali.slug}/pairings/")
         pairings = resp.json()["pairings"]
         if len(pairings) > 1:
             strengths = [p["strength"] for p in pairings]
             assert strengths == sorted(strengths, reverse=True)
 
     def test_pairings_404_for_unknown_dish(self, api, seeded_db):
-        resp = api.get("/v1/dishes/00000000-0000-0000-0000-000000000000/pairings/")
+        resp = api.get("/v1/dishes/nonexistent-dish/pairings/")
         assert resp.status_code == 404
 
     def test_pairings_dish_with_no_pairings(self, api, seeded_db):
@@ -237,7 +237,7 @@ class TestDishPairingsEndpoint:
         dish_with_pairings = set(Pairing.objects.values_list("dish_id", flat=True))
         dish = Dish.objects.exclude(id__in=dish_with_pairings).first()
         if dish:
-            resp = api.get(f"/v1/dishes/{dish.id}/pairings/")
+            resp = api.get(f"/v1/dishes/{dish.slug}/pairings/")
             assert resp.status_code == 200
             assert resp.json()["count"] == 0
 
@@ -253,7 +253,7 @@ class TestDishSubstitutionsEndpoint:
         from apps.dishes.models import Dish
 
         sukuma_dish = Dish.objects.get(slug="sukuma-wiki")
-        resp = api.get(f"/v1/dishes/{sukuma_dish.id}/substitutions/")
+        resp = api.get(f"/v1/dishes/{sukuma_dish.slug}/substitutions/")
         assert resp.status_code == 200
         data = resp.json()
         assert "substitutions" in data
@@ -263,12 +263,12 @@ class TestDishSubstitutionsEndpoint:
         from apps.dishes.models import Dish
 
         sukuma_dish = Dish.objects.get(slug="sukuma-wiki")
-        resp = api.get(f"/v1/dishes/{sukuma_dish.id}/substitutions/")
+        resp = api.get(f"/v1/dishes/{sukuma_dish.slug}/substitutions/")
         data = resp.json()
         assert data["count"] == len(data["substitutions"])
 
     def test_substitutions_404_for_unknown_dish(self, api, seeded_db):
-        resp = api.get("/v1/dishes/00000000-0000-0000-0000-000000000000/substitutions/")
+        resp = api.get("/v1/dishes/nonexistent-dish/substitutions/")
         assert resp.status_code == 404
 
     def test_substitution_fields_present(self, api, seeded_db):
@@ -277,7 +277,7 @@ class TestDishSubstitutionsEndpoint:
 
         # Use a dish that has ingredients with substitutions
         sukuma = Dish.objects.get(slug="sukuma-wiki")
-        resp = api.get(f"/v1/dishes/{sukuma.id}/substitutions/")
+        resp = api.get(f"/v1/dishes/{sukuma.slug}/substitutions/")
         subs = resp.json()["substitutions"]
         if subs:
             s = subs[0]
@@ -299,7 +299,7 @@ class TestDishMissingEndpoint:
 
         ugali = Dish.objects.get(slug="ugali")
         resp = api.post(
-            f"/v1/dishes/{ugali.id}/missing/",
+            f"/v1/dishes/{ugali.slug}/missing/",
             {"ingredients": []},
             format="json",
         )
@@ -325,7 +325,7 @@ class TestDishMissingEndpoint:
         ]
 
         resp = api.post(
-            f"/v1/dishes/{ugali.id}/missing/",
+            f"/v1/dishes/{ugali.slug}/missing/",
             {"ingredients": non_staple_required},
             format="json",
         )
@@ -355,7 +355,7 @@ class TestDishMissingEndpoint:
         )
 
         resp = api.post(
-            f"/v1/dishes/{githeri.id}/missing/",
+            f"/v1/dishes/{githeri.slug}/missing/",
             {"ingredients": []},
             format="json",
         )
@@ -369,7 +369,7 @@ class TestDishMissingEndpoint:
 
         ugali = Dish.objects.get(slug="ugali")
         resp = api.post(
-            f"/v1/dishes/{ugali.id}/missing/",
+            f"/v1/dishes/{ugali.slug}/missing/",
             {"ingredients": []},
             format="json",
         )
@@ -381,7 +381,7 @@ class TestDishMissingEndpoint:
 
     def test_missing_404_unknown_dish(self, api, seeded_db):
         resp = api.post(
-            "/v1/dishes/00000000-0000-0000-0000-000000000000/missing/",
+            "/v1/dishes/nonexistent-dish/missing/",
             {"ingredients": []},
             format="json",
         )
@@ -397,7 +397,7 @@ class TestDishMissingEndpoint:
 
         githeri = Dish.objects.get(slug="githeri")
         resp = api.post(
-            f"/v1/dishes/{githeri.id}/missing/",
+            f"/v1/dishes/{githeri.slug}/missing/",
             {"ingredients": ["dried maize", "dried beans"]},
             format="json",
         )
@@ -414,7 +414,7 @@ class TestDishMissingEndpoint:
 
         ugali = Dish.objects.get(slug="ugali")
         resp = api.post(
-            f"/v1/dishes/{ugali.id}/missing/",
+            f"/v1/dishes/{ugali.slug}/missing/",
             {"ingredients": "tomato"},
             format="json",
         )

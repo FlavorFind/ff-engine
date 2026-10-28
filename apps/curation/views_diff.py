@@ -1,7 +1,6 @@
 """
 E54 — Dataset diff endpoint.
 
-GET /v1/internal/diff?since=VERSION
 GET /v1/datasets/diff?since=VERSION
 
 Returns a summary of what changed between VERSION and the current dataset.

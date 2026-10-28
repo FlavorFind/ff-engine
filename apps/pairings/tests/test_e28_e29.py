@@ -183,7 +183,7 @@ class TestPairingsEndpoint:
     def test_correct_json_shape(self, api):
         dish = _dish("e28-endpoint-shape")
         _pairing(dish, strength=5, paired_label="kachumbari", pairing_type=Pairing.PairingType.SIDE)
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/")
         assert resp.status_code == 200
         data = resp.json()
         assert data["dish_slug"] == "e28-endpoint-shape"
@@ -208,7 +208,7 @@ class TestPairingsEndpoint:
         _pairing(dish, strength=2, paired_label="a")
         _pairing(dish, strength=5, paired_label="b")
         _pairing(dish, strength=3, paired_label="c")
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/")
         strengths = [p["strength"] for p in resp.json()["pairings"]]
         assert strengths == [5, 3, 2]
 
@@ -216,7 +216,7 @@ class TestPairingsEndpoint:
         """A label-only pairing (e.g. 'chai') must come back with null dish fields."""
         dish = _dish("e28-endpoint-label")
         _pairing(dish, strength=4, paired_label="chai", pairing_type=Pairing.PairingType.DRINK)
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/")
         p = resp.json()["pairings"][0]
         assert p["paired_label"] == "chai"
         assert p["paired_dish_slug"] is None
@@ -226,7 +226,7 @@ class TestPairingsEndpoint:
         dish = _dish("e28-endpoint-min")
         _pairing(dish, strength=1, paired_label="a")
         _pairing(dish, strength=4, paired_label="b")
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/?min_strength=3")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/?min_strength=3")
         pairings = resp.json()["pairings"]
         assert len(pairings) == 1
         assert pairings[0]["strength"] == 4
@@ -235,18 +235,18 @@ class TestPairingsEndpoint:
         dish = _dish("e28-endpoint-type")
         _pairing(dish, strength=5, paired_label="side", pairing_type=Pairing.PairingType.SIDE)
         _pairing(dish, strength=5, paired_label="chai", pairing_type=Pairing.PairingType.DRINK)
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/?type=drink")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/?type=drink")
         pairings = resp.json()["pairings"]
         assert len(pairings) == 1
         assert pairings[0]["paired_label"] == "chai"
 
     def test_404_for_unknown_dish(self, api):
-        resp = api.get("/v1/dishes/00000000-0000-0000-0000-000000000000/pairings/")
+        resp = api.get("/v1/dishes/nonexistent-dish/pairings/")
         assert resp.status_code == 404
 
     def test_dish_with_no_pairings_returns_empty(self, api):
         dish = _dish("e28-endpoint-empty")
-        resp = api.get(f"/v1/dishes/{dish.id}/pairings/")
+        resp = api.get(f"/v1/dishes/{dish.slug}/pairings/")
         assert resp.status_code == 200
         data = resp.json()
         assert data["count"] == 0

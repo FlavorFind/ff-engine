@@ -3,14 +3,14 @@ E29 — Pairing and substitution endpoints.
 E30 — Missing-ingredients endpoint.
 
 Endpoints:
-  GET  /v1/dishes/{dish_id}/pairings        → sides, drinks, desserts with strength
-  GET  /v1/dishes/{dish_id}/substitutions   → replacements for dish ingredients
-  POST /v1/dishes/{dish_id}/missing         → given what I have, what do I still need?
+  GET  /v1/dishes/{slug}/pairings        → sides, drinks, desserts with strength
+  GET  /v1/dishes/{slug}/substitutions   → replacements for dish ingredients
+  POST /v1/dishes/{slug}/missing         → given what I have, what do I still need?
 
 Architecture section 7 (API Specification):
-  GET /v1/dishes/{id}/pairings
-  GET /v1/dishes/{id}/substitutions
-  POST /v1/dishes/{id}/missing
+  GET /v1/dishes/{slug}/pairings
+  GET /v1/dishes/{slug}/substitutions
+  POST /v1/dishes/{slug}/missing
 """
 
 from __future__ import annotations
@@ -65,8 +65,8 @@ logger = logging.getLogger(__name__)
     ),
     parameters=[
         OpenApiParameter(
-            name="dish_id",
-            description="UUID of the dish.",
+            name="slug",
+            description="Slug of the dish.",
             required=True,
             type=str,
             location=OpenApiParameter.PATH,
@@ -104,9 +104,9 @@ logger = logging.getLogger(__name__)
 )
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def dish_pairings(request: Request, dish_id: str) -> Response:
+def dish_pairings(request: Request, slug: str) -> Response:
     """
-    GET /v1/dishes/{dish_id}/pairings
+    GET /v1/dishes/{slug}/pairings
 
     Returns pairings for the dish, ordered by strength.
 
@@ -116,7 +116,7 @@ def dish_pairings(request: Request, dish_id: str) -> Response:
       lang       — en|sw
       limit      — max results (default 20)
     """
-    dish = get_object_or_404(Dish, pk=dish_id)
+    dish = get_object_or_404(Dish, slug=slug)
 
     pairing_type = request.query_params.get("type")
     lang = request.query_params.get("lang", "en")
@@ -157,8 +157,8 @@ def dish_pairings(request: Request, dish_id: str) -> Response:
     ),
     parameters=[
         OpenApiParameter(
-            name="dish_id",
-            description="UUID of the dish.",
+            name="slug",
+            description="Slug of the dish.",
             required=True,
             type=str,
             location=OpenApiParameter.PATH,
@@ -184,9 +184,9 @@ def dish_pairings(request: Request, dish_id: str) -> Response:
 )
 @api_view(["GET"])
 @permission_classes([AllowAny])
-def dish_substitutions(request: Request, dish_id: str) -> Response:
+def dish_substitutions(request: Request, slug: str) -> Response:
     """
-    GET /v1/dishes/{dish_id}/substitutions
+    GET /v1/dishes/{slug}/substitutions
 
     Returns substitutions for all ingredients in the dish.
 
@@ -194,7 +194,7 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
       lang  — en|sw
       limit — max results (default 50)
     """
-    dish = get_object_or_404(Dish, pk=dish_id)
+    dish = get_object_or_404(Dish, slug=slug)
 
     lang = request.query_params.get("lang", "en")
     limit = min(int(request.query_params.get("limit", 50)), 100)
@@ -225,8 +225,8 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
     ),
     parameters=[
         OpenApiParameter(
-            name="dish_id",
-            description="UUID of the dish.",
+            name="slug",
+            description="Slug of the dish.",
             required=True,
             type=str,
             location=OpenApiParameter.PATH,
@@ -242,9 +242,9 @@ def dish_substitutions(request: Request, dish_id: str) -> Response:
 )
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def dish_missing(request: Request, dish_id: str) -> Response:
+def dish_missing(request: Request, slug: str) -> Response:
     """
-    POST /v1/dishes/{dish_id}/missing
+    POST /v1/dishes/{slug}/missing
 
     Given what the user has, what non-staple required ingredients are missing?
 
@@ -271,7 +271,7 @@ def dish_missing(request: Request, dish_id: str) -> Response:
         "can_make": false
       }
     """
-    dish = get_object_or_404(Dish, pk=dish_id)
+    dish = get_object_or_404(Dish, slug=slug)
 
     raw_ingredients = request.data.get("ingredients", [])
     exclude = request.data.get("exclude", [])
