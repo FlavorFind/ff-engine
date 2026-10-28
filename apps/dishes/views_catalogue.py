@@ -174,3 +174,85 @@ def dish_catalogue(request: Request) -> Response:
             "results": results,
         }
     )
+
+
+@extend_schema(
+    summary="Dish detail",
+    description=(
+        "Full detail for a single dish by slug. "
+        "Returns ingredients with roles and quantities, cooking steps, "
+        "region links, and derived dietary tags."
+    ),
+    responses={
+        200: OpenApiResponse(description="Dish detail"),
+        404: OpenApiResponse(description="Dish not found"),
+    },
+)
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def dish_detail(request: Request, slug: str) -> Response:
+    """
+    GET /v1/dishes/{slug}/
+
+    Returns full detail for a single dish.
+    Only reviewed and verified dishes are accessible.
+    """
+    try:
+        dish = (
+            Dish.objects.filter(status__in=[StatusChoices.REVIEWED, StatusChoices.VERIFIED])
+            .prefetch_related(
+                "dish_ingredients__ingredient",
+                "dish_ingredients__unit",
+                "steps",
+                "dish_regions__region",
+                "dietary_tags__tag",
+            )
+            .get(slug=slug)
+        )
+    except Dish.DoesNotExist:
+        return Response({"error": "Dish not found."}, status=http_status.HTTP_404_NOT_FOUND)
+
+    ingredients = [
+        {
+            "slug": di.ingredient.slug,
+            "name_en": di.ingredient.name_en,
+            "name_sw": di.ingredient.name_sw,
+            "role": di.role,
+            "quantity": str(di.quantity) if di.quantity is not None else None,
+            "unit": di.unit.code if di.unit else None,
+            "preparation_note": di.preparation_note,
+        }
+        for di in dish.dish_ingredients.all()
+    ]
+    steps = [
+        {"position": s.position, "text_en": s.text_en, "text_sw": s.text_sw}
+        for s in dish.steps.order_by("position")
+    ]
+    regions = [dr.region.slug for dr in dish.dish_regions.all()]
+    dietary_tags = [
+        {"slug": dt.tag.slug, "name": dt.tag.name, "source": dt.source}
+        for dt in dish.dietary_tags.all()
+    ]
+
+    return Response(
+        {
+            "slug": dish.slug,
+            "name_en": dish.name_en,
+            "name_sw": dish.name_sw,
+            "description": dish.description,
+            "meal_type": dish.meal_type,
+            "course": dish.course,
+            "spice_level": dish.spice_level,
+            "difficulty": dish.difficulty,
+            "prep_min": dish.prep_min,
+            "cook_min": dish.cook_min,
+            "servings": dish.servings,
+            "popularity": dish.popularity,
+            "quality_level": dish.quality_level,
+            "status": dish.status,
+            "ingredients": ingredients,
+            "steps": steps,
+            "regions": regions,
+            "dietary_tags": dietary_tags,
+        }
+    )
