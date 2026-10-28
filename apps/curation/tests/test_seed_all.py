@@ -165,3 +165,21 @@ class TestSeedAll:
         call_command("seed_all", verbosity=0)
         count = DishDietaryTag.objects.filter(source="derived").count()
         assert count > 0, "No derived dietary tags found after seed_all"
+
+    def test_dish_regions_seeded(self):
+        """seed_all must create DishRegion links so region filter works."""
+        from apps.regions.models import DishRegion
+
+        call_command("seed_all", verbosity=0)
+        count = DishRegion.objects.count()
+        assert count >= 300, f"Expected ≥300 dish-region links, got {count}"
+
+    def test_dish_regions_idempotent(self):
+        """Running seed_all twice must not duplicate dish-region links."""
+        from apps.regions.models import DishRegion
+
+        call_command("seed_all", verbosity=0)
+        count1 = DishRegion.objects.count()
+        call_command("seed_all", verbosity=0)
+        count2 = DishRegion.objects.count()
+        assert count1 == count2, f"DishRegion count changed: {count1} → {count2}"
