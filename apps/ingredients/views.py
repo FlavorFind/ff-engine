@@ -18,6 +18,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.clients.models import ApiKey
+from apps.clients.permissions import HasScope
 from apps.search.resolver import STATUS_AMBIGUOUS, STATUS_MATCHED, STATUS_UNMATCHED, resolve_many
 
 logger = logging.getLogger(__name__)
@@ -107,11 +109,7 @@ def resolve(request: Request) -> Response:
         }
     """
     req_ser = ResolveRequestSerializer(data=request.data)
-    if not req_ser.is_valid():
-        return Response(
-            {"errors": req_ser.errors},
-            status=status.HTTP_400_BAD_REQUEST,
-        )
+    req_ser.is_valid(raise_exception=True)
 
     raw_tokens: list[str] = req_ser.validated_data["ingredients"]
 
@@ -191,7 +189,7 @@ def resolve(request: Request) -> Response:
     tags=["Ingredients"],
 )
 @api_view(["GET"])
-@permission_classes([AllowAny])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_CATALOG)])
 def ingredient_list(request: Request) -> Response:
     """
     GET /v1/ingredients/
@@ -258,7 +256,7 @@ def ingredient_list(request: Request) -> Response:
     tags=["Ingredients"],
 )
 @api_view(["GET"])
-@permission_classes([AllowAny])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_CATALOG)])
 def ingredient_detail(request: Request, slug: str) -> Response:
     """
     GET /v1/ingredients/{slug}/

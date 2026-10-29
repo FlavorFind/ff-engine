@@ -20,10 +20,11 @@ from __future__ import annotations
 from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework import status as http_status
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.clients.models import ApiKey
+from apps.clients.permissions import HasScope
 from apps.core.models import StatusChoices
 from apps.dishes.models import Dish
 
@@ -86,7 +87,7 @@ from apps.dishes.models import Dish
     tags=["Dishes"],
 )
 @api_view(["GET"])
-@permission_classes([AllowAny])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_CATALOG)])
 def dish_catalogue(request: Request) -> Response:
     """
     GET /v1/dishes/
@@ -137,7 +138,12 @@ def dish_catalogue(request: Request) -> Response:
 
     try:
         limit = min(int(request.query_params.get("limit", 50)), 200)
-        offset = max(int(request.query_params.get("offset", 0)), 0)
+        # Support both offset= (direct) and cursor= (opaque token that encodes the offset)
+        cursor_raw = request.query_params.get("cursor", "")
+        if cursor_raw:
+            offset = max(int(cursor_raw), 0)
+        else:
+            offset = max(int(request.query_params.get("offset", 0)), 0)
     except (ValueError, TypeError):
         return Response(
             {"error": "limit and offset must be integers"},
@@ -166,11 +172,15 @@ def dish_catalogue(request: Request) -> Response:
         for d in dishes
     ]
 
+    next_offset = offset + limit
+    next_cursor = str(next_offset) if next_offset < total else None
+
     return Response(
         {
             "count": total,
             "limit": limit,
             "offset": offset,
+            "next_cursor": next_cursor,
             "results": results,
         }
     )
@@ -189,7 +199,7 @@ def dish_catalogue(request: Request) -> Response:
     },
 )
 @api_view(["GET"])
-@permission_classes([AllowAny])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_CATALOG)])
 def dish_detail(request: Request, slug: str) -> Response:
     """
     GET /v1/dishes/{slug}/
@@ -210,7 +220,9 @@ def dish_detail(request: Request, slug: str) -> Response:
             .get(slug=slug)
         )
     except Dish.DoesNotExist:
-        return Response({"error": "Dish not found."}, status=http_status.HTTP_404_NOT_FOUND)
+        from rest_framework.exceptions import NotFound
+
+        raise NotFound("Dish not found.") from None
 
     ingredients = [
         {
