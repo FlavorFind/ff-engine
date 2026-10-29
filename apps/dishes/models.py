@@ -207,7 +207,7 @@ class Dish(TimeStampedModel):
             di.ingredient_id for di in qs if di.role == DishIngredient.Role.OPTIONAL
         ]
         self.primary_ids = [di.ingredient_id for di in qs if di.role == DishIngredient.Role.PRIMARY]
-        self.all_ids = [di.ingredient_id for di in qs]
+        self.all_ids = sorted([di.ingredient_id for di in qs])
         self.save(update_fields=["required_ids", "optional_ids", "primary_ids", "all_ids"])
 
     def __str__(self) -> str:

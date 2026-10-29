@@ -1,137 +1,1513 @@
 ingredient_slug,alias,language,is_misspelling
-tomato,nyanya,sw,false
-tomato,tomatos,en,true
-tomato,tomatoe,en,true
-onion,vitunguu,sw,false
-onion,kitunguu,sw,false
-collard-greens,sukuma wiki,sw,false
-collard-greens,sukuma,sw,false
-collard-greens,sukumawiki,sw,false
-maize-flour,unga wa mahindi,sw,false
-maize-flour,unga,sw,false
-maize-flour,posho,sw,false
-beans,maharagwe,sw,false
-beans,maharage,sw,false
-potato,viazi,sw,false
-potatoes,viazi,sw,false
-beef,nyama ya ng'ombe,sw,false
-beef,ng'ombe,sw,false
-beef,nyama,sw,false
-goat-meat,nyama ya mbuzi,sw,false
-goat-meat,mbuzi,sw,false
-chicken-pieces,kuku,sw,false
-chicken-breast,kuku,sw,false
-chicken-thighs,kuku,sw,false
-chicken-drumsticks,kuku,sw,false
-fish,samaki,sw,false
-rice,mchele,sw,false
-rice,wali,sw,false
-salt,chumvi,sw,false
-cooking-oil,mafuta,sw,false
-vegetable-oil,mafuta,sw,false
-sunflower-oil,mafuta,sw,false
-avocado,parachichi,sw,false
-banana,ndizi,sw,false
-eggs,mayai,sw,false
-egg-noodles,mayai,sw,false
-milk,maziwa,sw,false
-water,maji,sw,false
-coconut,nazi,sw,false
-coconut-milk,maziwa ya nazi,sw,false
-lime,ndimu,sw,false
-lime-juice,ndimu,sw,false
-chili,pilipili,sw,false
-chili,pili pili,sw,false
-chili,pili,sheng,false
-chili-powder,pilipili,sw,false
-chili-flakes,pilipili,sw,false
-coriander,dhania,sw,false
-garlic,vitunguu saumu,sw,false
-garlic,saumu,sw,false
-garlic,thoum,sw,false
-ginger,tangawizi,sw,false
-spinach,mchicha,sw,false
-cassava,muhogo,sw,false
-cassava-flour,unga wa muhogo,sw,false
-sweet-potato,viazi vitamu,sw,false
-sweet-potato,viazi tamu,sw,false
-plantain-flour,ndizi mbichi,sw,false
-maize,mahindi,sw,false
-maize-grits,ugali,sw,false
-ugali-meal,ugali,sw,false
-butter,siagi,sw,false
-ghee,samli,sw,false
-yogurt,mtindi,sw,false
-tilapia,sato,sw,false
-tilapia,tilapia,sw,false
-omena,omena,sw,false
-omena,dagaa,sw,false
-omena,dagaas,en,true
-green-peas,mbaazi,sw,false
-lentils-or-minced-beef,dengu,sw,false
-lentils-or-minced-beef,ndengu,sw,false
-wheat-flour,unga wa ngano,sw,false
-wheat-flour,ngano,sw,false
-coconut-water,maji ya nazi,sw,false
-beef-liver,ini ya ng'ombe,sw,false
-beef-tripe,matumbo,sw,false
-beef-kidney,figo,sw,false
-goat-liver,ini ya mbuzi,sw,false
-goat-tripe,matumbo,sw,false
-goat-intestines,utumbo,sw,false
-chicken-liver,ini ya kuku,sw,false
-chicken-gizzards,gizzard,sw,false
-chicken-feet,makongwe,sw,false
-fish-sauce,mchuzi wa samaki,sw,false
-tomato-paste,tambi ya nyanya,sw,false
-tomato-sauce,mchuzi wa nyanya,sw,false
-cream-cheese,jibini,sw,false
-pepper,pilipili manga,sw,false
-pepper,manga,sw,false
-coriander-seeds,mbegu za dhania,sw,false
-garlic-paste,saumu iliyosagwa,sw,false
-ginger-paste,tangawizi iliyosagwa,sw,false
-beef-stock,mchuzi wa nyama,sw,false
-chicken-stock,mchuzi wa kuku,sw,false
-goat-milk,maziwa ya mbuzi,sw,false
-banana-leaves,majani ya ndizi,sw,false
-cassava-leaves,majani ya muhogo,sw,false
-sweet-potato-leaves,majani ya viazi,sw,false
-coconut-cream,cream ya nazi,sw,false
-coconut-sugar,sukari ya mnazi,sw,false
-maize-flour,dona,sw,false
-maize-flour,posho,sw,false
-beef,nyam,sheng,false
-chicken-pieces,chikin,sheng,false
-fish,samak,sheng,false
-onion,onyoni,sheng,false
-tomato,toma,sheng,false
+ackee,achee,en,false
+ackee,ackee fruit,en,false
+ackee,aki,en,false
+adzuki-beans,adzuki,en,false
+adzuki-beans,azuki beans,en,false
+adzuki-beans,red beans,en,false
+african-eggplant,african garden egg,en,false
+african-eggplant,garden egg,en,false
+african-eggplant,nyanya chungu,sw,false
+agar-agar,agar,en,false
+agar-agar,kanten,en,false
+agave-syrup,agave,en,false
+agave-syrup,agave nectar,en,false
+ajwain,bishop weed,en,false
+ajwain,carom,en,false
+ajwain,carom seeds,en,false
+ajwain-seeds,ajowain,en,false
+almond-extract,almond flavoring,en,false
+almond-extract,almond flavouring,en,false
+almond-flour,almond meal,en,false
+almond-flour,ground almonds,en,false
+almond-milk,almond beverage,en,false
+almonds,shelled almonds,en,false
+almonds,whole almonds,en,false
+almonds,lozi,sw,false
+amaranth-leaves,callaloo,en,false
+amaranth-leaves,chinese spinach,en,false
+amaranth-or-spinach,amaranth,en,false
+amaranth-or-spinach,mchicha au spinach,sw,false
+amaranth-seeds,amaranth grain,en,false
+amaranth-seeds,whole amaranth,en,false
+amchur-powder,amchoor,en,false
+amchur-powder,dried mango powder,en,false
+amchur-powder,mango powder,en,false
+anchovies,anchovy,en,false
+anchovies,canned anchovies,en,false
+anchovy-fillets,salted anchovies,en,false
+anise-seeds,anise,en,false
+anise-seeds,aniseed,en,false
+apple-cider-vinegar,acv,en,false
+apple-cider-vinegar,cider vinegar,en,false
+apple-juice,fresh apple juice,en,false
+apricot,apricots,en,false
+apricot,fresh apricot,en,false
+arrowroot,arrowroot powder,en,false
+arrowroot-flour,arrowroot starch,en,false
+artichoke,globe artichoke,en,false
+arugula,garden rocket,en,false
+arugula,rocket,en,false
+arugula,roquette,en,false
+asafoetida,asafetida,en,false
+asafoetida,hing,en,false
+asparagus,asparagus spears,en,false
+asparagus,fresh asparagus,en,false
+assorted-meat-or-fish,mixed meat,en,false
+assorted-meat-or-fish,nyama mchanganyiko,sw,false
+avocado,avo,en,false
+avocado,butter pear,en,false
 avocado,avo,sheng,false
 avocado,pea,sheng,false
-collard-greens,sukuma,sheng,false
-maize-flour,unga,sheng,false
-potato,viazi,sheng,false
-salt,chumvi,sheng,false
-cooking-oil,mafuta,sheng,false
-garlic,garlik,en,true
-coriander,corriander,en,true
-coriander,cilantro,en,false
-ginger,gingr,en,true
-tilapia,nile perch,en,false
-omena,silver cyprinid,en,false
-omena,lake victoria sardine,en,false
-collard-greens,kale,en,false
+avocado,parachichi,sw,false
+avocado-oil,avocado cooking oil,en,false
+awaze-paste,awaze,en,false
+awaze-paste,ethiopian chili paste,en,false
+ayib,ayib cheese,en,false
+ayib,ethiopian fresh cheese,en,false
+baby-corn,mini corn,en,false
+baby-corn,young corn,en,false
+baking-powder,raising agent,en,false
+balsamic-vinegar,balsamic,en,false
+balsamic-vinegar,balsamic glaze,en,false
+bambara-beans,njugu mawe,sw,false
+bambara-groundnuts,bambara nuts,en,false
+bambara-groundnuts,jugo beans,en,false
+bambara-groundnuts,njugu,sw,false
+bambara-leaves,bambara bean leaves,en,false
+banana,ripe banana,en,false
+banana,yellow banana,en,false
+banana,ndizi,sw,false
+banana-beer,banana brew,en,false
+banana-beer,mbege,sw,false
+banana-juice,fresh banana juice,en,false
+banana-juice,maji ya ndizi,sw,false
+banana-leaves,banana wrapping leaves,en,false
+banana-leaves,majani ya ndizi,sw,false
+baobab-fruit,monkey bread fruit,en,false
+baobab-fruit,mbuyu,sw,false
+baobab-juice,baobab drink,en,false
+baobab-juice,maji ya mbuyu,sw,false
+baobab-leaves,dried baobab leaves,en,false
+baobab-leaves,majani ya mbuyu,sw,false
+baobab-powder,baobab pulp powder,en,false
+baobab-powder,mbuyu unga,sw,false
+baobab-seeds,mbuyu mbegu,sw,false
+barbecue-sauce,barbeque sauce,en,false
+barbecue-sauce,bbq sauce,en,false
+barley-flour,wholemeal barley flour,en,false
+barley-grain,hulled barley,en,false
+barley-grain,pearl barley,en,false
+basil,basil leaves,en,false
+basil,fresh basil,en,false
+basil,sweet basil,en,false
+basmati-rice,basmati,en,false
+basmati-rice,long grain rice,en,false
+bay-leaves,bay leaf,en,false
+bay-leaves,dried bay leaves,en,false
+bay-leaves,laurel leaves,en,false
+bean-cooking-water,aquafaba,en,false
+bean-cooking-water,bean water,en,false
+bean-leaves,cowpea leaves beans,en,false
+bean-leaves,dried bean leaves,en,false
+beans,common beans,en,false
+beans,haricot beans,en,false
+beans,maharage,sw,false
+beans,maharagwe,sw,false
+beef,beef meat,en,false
+beef,nyam,sheng,false
+beef,ng'ombe,sw,false
+beef,ngombe,sw,false
+beef,nyama,sw,false
+beef,nyama ya ng'ombe,sw,false
+beef,nyama ya ngombe,sw,false
+beef-biltong,beef jerky,en,false
+beef-biltong,biltong,en,false
+beef-brisket,beef breast,en,false
+beef-brisket,brisket,en,false
+beef-chunks,beef pieces,en,false
+beef-chunks,stewing beef,en,false
+beef-corned,bully beef,en,false
+beef-corned,tinned corned beef,en,false
+beef-cubes,beef dices,en,false
+beef-cubes,diced beef,en,false
+beef-flank,beef flank steak,en,false
+beef-flank,flank steak,en,false
+beef-heart,heart,en,false
+beef-heart,moyo wa ngombe,sw,false
+beef-kidney,kidney,en,false
+beef-kidney,figo,sw,false
+beef-kidney,figo ya ngombe,sw,false
+beef-liver,calf liver,en,false
+beef-liver,ini ya ng'ombe,sw,false
+beef-liver,ini ya ngombe,sw,false
+beef-lungs,beef lights,en,false
+beef-lungs,mapafu ya ngombe,sw,false
+beef-marrow-bones,beef marrow,en,false
+beef-marrow-bones,marrow bones,en,false
+beef-or-goat-meat,mixed meat pieces,en,false
+beef-ribs,beef short ribs raw,en,false
+beef-ribs,spare ribs beef,en,false
+beef-sausages,frankfurters,en,false
+beef-sausages,sausages beef,en,false
+beef-shin,beef shank,en,false
+beef-shin,shin of beef,en,false
+beef-short-ribs,braising ribs,en,false
+beef-short-ribs,short ribs,en,false
+beef-sirloin,sirloin,en,false
+beef-sirloin,sirloin steak,en,false
+beef-stock,beef bouillon,en,false
+beef-stock,beef broth,en,false
+beef-stock,mchuzi wa nyama,sw,false
+beef-tallow,dripping,en,false
+beef-tallow,rendered beef fat,en,false
+beef-tenderloin,beef fillet,en,false
+beef-tenderloin,tenderloin steak,en,false
+beef-tongue,tongue beef,en,false
+beef-tongue,ulimi wa ngombe,sw,false
+beef-tripe,tripe,en,false
+beef-tripe,matumbo,sw,false
+beef-tripe,matumbo ya ngombe,sw,false
+beet-greens,beetroot leaves,en,false
+beet-greens,beet tops,en,false
+beetroot,beet,en,false
+beetroot,red beet,en,false
+beetroot,table beet,en,false
+berbere-chilies,dried berbere chili,en,false
+berbere-chilies,ethiopian red chili,en,false
+berbere-spice,berbere,en,false
+berbere-spice,ethiopian spice blend,en,false
+besobela,ethiopian sacred basil,en,false
+besobela,holy basil ethiopia,en,false
+bicarbonate-of-soda,baking soda,en,false
+bicarbonate-of-soda,bicarb,en,false
+bicarbonate-of-soda,soda bicarbonate,en,false
+bilimbi,bilimbing,en,false
+bilimbi,cucumber tree fruit,en,false
+bird-eye-chili,birds eye chilli,en,false
+bird-eye-chili,thai chili,en,false
+bird-eye-chili,pili pili ndogo,sw,false
+biryani-masala,biryani seasoning,en,false
+biryani-masala,biryani spice mix,en,false
+bitter-cassava,poisonous cassava,en,false
+bitter-cassava,wild cassava,en,false
+bitter-gourd,bitter melon small,en,false
+bitter-gourd,karela,en,false
+bitterleaf,ewuro,en,false
+bitterleaf,onugbu,en,false
+bitterleaf-uganda,munyonyo,en,false
+bitterleaf-uganda,uganda bitter leaf,en,false
+bitter-melon,bitter gourd large,en,false
+black-beans,black turtle beans,en,false
+black-beans,dried black beans,en,false
+blackberry,blackberry,en,false
+black-currant,blackcurrant,en,false
+black-currant,fresh black currants,en,false
+black-eyed-peas,black eyed beans,en,false
+black-eyed-peas,cowpeas,en,false
+black-eyed-peas,kunde,sw,false
+black-gram,black urad beans,en,false
+black-gram,urad dal,en,false
+black-jack-leaves,blackjack herb,en,false
+black-jack-leaves,thunder plant,en,false
+black-olives,black olive,en,false
+black-olives,kalamata black olives,en,false
+black-pepper,cracked pepper,en,false
+black-pepper,ground black pepper,en,false
+black-tea-leaves,chai leaves,en,false
+black-tea-leaves,loose leaf black tea,en,false
+blueberry,fresh blueberries,en,false
+blueberry,wild blueberry,en,false
+blue-cheese,gorgonzola,en,false
+blue-cheese,stilton,en,false
+bok-choy,chinese cabbage,en,false
+bok-choy,pak choi,en,false
+bok-choy,pak choy,en,false
+bologna,bologna sausage slice,en,false
+bologna,polony,en,false
+bone-broth,beef bone broth,en,false
+bone-broth,collagen broth,en,false
+bottle-gourd,lauki,en,false
+bottle-gourd,white gourd,en,false
+bouillon-cubes,seasoning cubes,en,false
+bouillon-cubes,stock cubes,en,false
+bouillon-cubes,mchuzi cubes,sw,false
+brazil-nuts,brazil nut,en,false
+brazil-nuts,para nuts,en,false
+bread-crumbs,breadcrumbs,en,false
+bread-crumbs,panko,en,false
+bread-crumbs,toasted crumbs,en,false
+breadfruit,sukari muwa,sw,false
+breadfruit,utu,sw,false
+brewed-tea,black tea,en,false
+brewed-tea,chai,en,false
+brewed-tea,chai ya kawaida,sw,false
+broad-beans,fava beans,en,false
+broad-beans,field beans,en,false
+broad-beans,horse beans,en,false
+broccoli,broccoli florets,en,false
+broccoli,fresh broccoli,en,false
+brown-lentils,continental lentils,en,false
+brown-lentils,whole lentils,en,false
+brown-rice,unpolished rice,en,false
+brown-rice,wholegrain rice,en,false
+brown-sugar,light brown sugar,en,false
+brown-sugar,soft brown sugar,en,false
+brown-sugar,sukari kahawia,sw,false
+bulgur,bulghur,en,false
+bulgur,bulgur wheat,en,false
+bulgur,cracked wheat,en,false
+bulla,bulla grain,en,false
+bulla,ethiopian grain,en,false
+butter,salted butter,en,false
+butter,unsalted butter,en,false
+butter,siagi,sw,false
+buttermilk,cultured buttermilk,en,false
+buttermilk,sour milk,en,false
+butternut-squash,butternut,en,false
+butternut-squash,butternut pumpkin,en,false
+cabbage,green cabbage,en,false
+cabbage,head cabbage,en,false
+cabbage,kabichi,sw,false
+camel-meat,ngamia,sw,false
+camel-meat,nyama ya ngamia,sw,false
+camel-milk,dromedary milk,en,false
+camel-milk,maziwa ya ngamia,sw,false
+canadian-wonder-beans,mottled beans,en,false
+canadian-wonder-beans,wonder beans,en,false
+candied-peel,citrus peel candied,en,false
+candied-peel,mixed peel,en,false
+cane-syrup,light cane syrup,en,false
+cane-syrup,sugarcane syrup,en,false
+canned-mango,mango in syrup,en,false
+canned-mango,tinned mango,en,false
+canned-pineapple,pineapple in juice,en,false
+canned-pineapple,tinned pineapple,en,false
+cape-gooseberry,goldenberry,en,false
+cape-gooseberry,physalis,en,false
+capers,caper berries,en,false
+capers,salted capers,en,false
+caraway-seeds,black caraway,en,false
+caraway-seeds,meridian fennel,en,false
+cardamom,cardamom pods,en,false
+cardamom,green cardamom,en,false
+cardamom,iliki,sw,false
+carissa,natal plum,en,false
+carissa,num num,en,false
+carrot,carrots,en,false
+carrot,fresh carrot,en,false
+carrot,karoti,sw,false
+carrot-juice,fresh carrot juice,en,false
+carrot-juice,maji ya karoti,sw,false
+cashew-apple,cashew apple fruit,en,false
+cashew-apple,mwangaza,sw,false
+cashew-nuts,cashews,en,false
+cashew-nuts,raw cashews,en,false
+cashew-nuts,korosho,sw,false
+cassava,manioc,en,false
 cassava,tapioca,en,false
+cassava,tapioca root,en,false
 cassava,yuca,en,false
-sweet-potato,kumara,en,false
-plantain-flour,green banana,en,false
-maize,corn,en,false
-maize-flour,cornmeal,en,false
-maize-flour,corn flour,en,false
+cassava,muhogo,sw,false
+cassava-flour,manioc flour,en,false
+cassava-flour,tapioca flour,en,false
+cassava-flour,unga wa muhogo,sw,false
+cassava-leaves,tapioca leaves,en,false
+cassava-leaves,majani ya muhogo,sw,false
+cassava-leaves-uganda,pondu,en,false
+cassava-leaves-uganda,sombe,en,false
+cassava-starch,cassava starch powder,en,false
+cassava-starch,tapioca starch cassava,en,false
+castor-sugar,caster sugar,en,false
+castor-sugar,superfine sugar,en,false
+catfish,african catfish,en,false
+catfish,kambale,sw,false
+cauliflower,cauliflower florets,en,false
+cauliflower,fresh cauliflower,en,false
+cayenne-pepper,cayenne,en,false
+cayenne-pepper,ground cayenne,en,false
+cayenne-pepper,red cayenne,en,false
+celery,celery stalks,en,false
+celery,fresh celery,en,false
+celery-seeds,celery seed,en,false
+celery-seeds,ground celery seeds,en,false
+chaat-masala,chaat spice,en,false
+chaat-masala,indian snack spice,en,false
+chana-dal,bengal gram,en,false
+chana-dal,split chickpeas,en,false
+chapati,chapatti,en,false
+chapati,mkate wa chapati,sw,false
+charcoal-for-smoking,smoking charcoal,en,false
+charcoal-for-smoking,mkaa wa kuvutia,sw,false
+chayote,chow chow,en,false
+chayote,christophene,en,false
+cheddar-cheese,cheddar,en,false
+cheddar-cheese,mature cheddar,en,false
+chicken-breast,boneless chicken,en,false
+chicken-breast,chicken fillet,en,false
+chicken-breast,kuku kifua,sw,false
+chicken-drumsticks,drumsticks,en,false
+chicken-drumsticks,kuku miguu,sw,false
+chicken-fat,rendered chicken fat,en,false
+chicken-fat,schmaltz,en,false
+chicken-feet,paws chicken,en,false
+chicken-feet,makongwe,sw,false
+chicken-gizzards,gizzards,en,false
+chicken-gizzards,gizzard,sw,false
+chicken-gizzards,kuku gizzard,sw,false
+chicken-liver,chicken livers,en,false
+chicken-liver,ini ya kuku,sw,false
+chicken-or-beef,mixed poultry beef,en,false
+chicken-or-beef,nyama ya kuku au ng'ombe,sw,false
+chicken-pieces,mixed chicken pieces,en,false
+chicken-pieces,chikin,sheng,false
+chicken-pieces,kuku,sw,false
+chicken-stock,chicken bouillon,en,false
+chicken-stock,chicken broth,en,false
+chicken-stock,mchuzi wa kuku,sw,false
+chicken-thighs,bone in thighs,en,false
+chicken-thighs,kuku mapaja,sw,false
+chicken-wings,buffalo wings,en,false
+chicken-wings,kuku mabawa,sw,false
+chickpea-flour,besan,en,false
+chickpea-flour,chick pea flour,en,false
+chickpea-flour,gram flour,en,false
+chickpea-flour-fritters,bhajia batter,en,false
+chickpea-flour-fritters,pakora batter,en,false
+chickpeas,ceci beans,en,false
+chickpeas,garbanzo beans,en,false
+chili,chilli,en,false
+chili,hot pepper,en,false
+chili,pili,sheng,false
+chili,pili pili,sw,false
+chili,pilipili,sw,false
+chili-flakes,crushed chili,en,false
+chili-flakes,dried chili flakes,en,false
+chili-flakes,red pepper flakes,en,false
+chili-oil,chili infused oil,en,false
+chili-oil,spicy chili oil,en,false
+chili-powder,chilli powder,en,false
+chili-powder,ground chili,en,false
+chili-powder,pili pili unga,sw,false
+chili-sauce,hot chili sauce,en,false
+chili-sauce,sweet chili sauce,en,false
+chocolate-chips,dark chocolate chips,en,false
+chocolate-chips,semi sweet chips,en,false
+cinnamon,cinnamon stick,en,false
+cinnamon,ground cinnamon,en,false
+cinnamon,dalasini,sw,false
+clams,clams,en,false
+cloves,ground cloves,en,false
+cloves,whole cloves,en,false
+cloves,karafuu,sw,false
+cluster-beans,guar beans,en,false
+cluster-beans,guvar,en,false
+cockles,blood clams,en,false
+cockles,shell cockles,en,false
+cocoa,cocoa nibs,en,false
+cocoa,raw cocoa,en,false
+cocoa-powder,baking cocoa,en,false
+cocoa-powder,unsweetened cocoa,en,false
+cocoa-powder,unga wa kakao,sw,false
+coconut,coconut flesh,en,false
+coconut,fresh coconut,en,false
+coconut,nazi,sw,false
+coconut-aminos,coconut sap sauce,en,false
+coconut-aminos,soy free soy sauce,en,false
+coconut-chutney,coconut dip,en,false
+coconut-chutney,fresh coconut chutney,en,false
+coconut-cream,thick coconut cream,en,false
+coconut-cream,cream ya nazi,sw,false
+coconut-flakes,desiccated coconut,en,false
+coconut-flakes,shredded coconut,en,false
+coconut-flour,unga wa nazi,sw,false
+coconut-milk,canned coconut milk,en,false
 coconut-milk,coconut cream,en,false
+coconut-milk,maziwa ya nazi,sw,false
+coconut-milk-light,coconut milk light,en,false
+coconut-milk-light,light coconut milk,en,false
+coconut-milk-powder,coconut cream powder,en,false
+coconut-milk-powder,powdered coconut milk,en,false
+coconut-oil,vco,en,false
+coconut-oil,virgin coconut oil,en,false
+coconut-oil,mafuta ya nazi,sw,false
+coconut-palm-wine,palm toddy,en,false
+coconut-palm-wine,tembo,sw,false
+coconut-sugar,coconut palm sugar,en,false
+coconut-sugar,sukari ya mnazi,sw,false
+coconut-vinegar,coconut sap vinegar,en,false
+coconut-vinegar,sukari ya siki ya nazi,sw,false
+coconut-water,tender coconut water,en,false
+coconut-water,maji ya nazi,sw,false
+coconut-water-fresh,fresh green coconut water,en,false
+coconut-yogurt,dairy free yogurt,en,false
+coconut-yogurt,vegan yogurt,en,false
+coffee-husks,coffee husk tea,en,false
+coffee-husks,qishr,en,false
+collard-greens,kale,en,false
+collard-greens,sukuma,sheng,false
+collard-greens,sukuma,sw,false
+collard-greens,sukuma wiki,sw,false
+collard-greens,sukumawiki,sw,false
+cooking-oil,vegetable cooking oil,en,false
+cooking-oil,mafuta,sheng,false
+cooking-oil,mafuta,sw,false
+coriander,cilantro,en,false
+coriander,corriander,en,true
+coriander,fresh coriander,en,false
+coriander,dhania,sw,false
+coriander-chutney,green chutney,en,false
+coriander-chutney,dhania chutney,sw,false
+coriander-seeds,whole coriander,en,false
+coriander-seeds,mbegu za dhania,sw,false
+corn-cobs,ear of corn,en,false
+corn-cobs,mealie cob,en,false
+corn-cobs,sweet corn cobs,en,false
+corn-cobs,whole corn,en,false
+corned-beef,canned beef,en,false
+corned-beef,canned corned beef,en,false
+cornflour,cornflour starch,en,false
+cornish-hen,mini chicken,en,false
+cornish-hen,poussin,en,false
+corn-meal-fine,fine cornmeal,en,false
+corn-meal-fine,finely milled maize,en,false
+corn-oil,maize oil,en,false
+corn-oil,refined corn oil,en,false
+cornstarch,cornflour,en,false
+cornstarch,corn starch,en,false
+cornstarch,maize starch,en,false
+corn-syrup,glucose syrup,en,false
+corn-syrup,light corn syrup,en,false
+cottage-cheese,curd cheese,en,false
+cottage-cheese,fresh cheese,en,false
+cottonseed-oil,cotton oil,en,false
+cottonseed-oil,refined cottonseed oil,en,false
+courgette,summer squash,en,false
+courgette,zucchini,en,false
+couscous,instant couscous,en,false
+couscous,semolina couscous,en,false
+cowpea-leaves,cowpea greens,en,false
+cowpea-leaves,kunde leaves,sw,false
+cow-trotters,cow hooves,en,false
+cow-trotters,ngombe trotters,sw,false
+crab,fresh crab,en,false
+crab,kaa,sw,false
+crab-meat,canned crab,en,false
+crab-meat,dressed crab,en,false
+cracked-wheat,broken wheat,en,false
+cracked-wheat,bulgar raw,en,false
+cranberry,american cranberry,en,false
+cranberry,fresh cranberries,en,false
+cream-cheese,philadelphia cheese,en,false
+cream-cheese,jibini,sw,false
+cream-cheese,jibini laini,sw,false
+creme-fraiche,creme fraiche dairy,en,false
+creme-fraiche,french sour cream,en,false
+crotalaria-leaves,crotalaria,en,false
+crotalaria-leaves,mutembela,sw,false
+cucumber,fresh cucumber,en,false
+cucumber,tango,sw,false
+curry-leaves,fresh curry leaves,en,false
+curry-leaves,kadi patta,en,false
+curry-powder,curry spice,en,false
+curry-powder,mixed curry spices,en,false
+custard,custard sauce,en,false
+custard,pouring custard,en,false
+custard-apple,cherimoya,en,false
+custard-apple,sweetsop,en,false
+custard-powder,bird custard powder,en,false
+custard-powder,vanilla custard powder,en,false
+cuttlefish,inkfish,en,false
+cuttlefish,squid like cuttlefish,en,false
+dagaa,lake victoria dagaa,en,false
+dagaa,omena dagaa,en,false
+dagusha-flour,dagusha grain flour,en,false
+dagusha-flour,fingo millet flour,en,false
+dark-chocolate,70 percent chocolate,en,false
+dark-chocolate,bittersweet choc,en,false
+dark-chocolate,bittersweet chocolate,en,false
+dark-soy-sauce,double black soy,en,false
+dark-soy-sauce,thick soy sauce,en,false
+dates,medjool dates,en,false
+dates,tende,sw,false
+date-syrup,date molasses,en,false
+date-syrup,sirup ya tende,sw,false
+datta,datta paste,en,false
+datta,ethiopian green chili paste,en,false
+dawadawa,iru substitute,en,false
+dawadawa,locust bean,en,false
+delele,jute mallow,en,false
+delele,molokhia Uganda,en,false
+demerara-sugar,raw cane sugar,en,false
+demerara-sugar,turbinado sugar,en,false
+desiccated-coconut,dry coconut flakes,en,false
+dijon-mustard,french mustard,en,false
+dijon-mustard,wholegrain dijon,en,false
+dill-leaves,dill herb,en,false
+dill-leaves,fresh dill,en,false
+dill-seeds,dill seed spice,en,false
+dill-seeds,whole dill seeds,en,false
+dill-weed,dill herb dried,en,false
+dill-weed,dried dill weed,en,false
+double-cream,48 percent cream,en,false
+double-cream,heavy double cream,en,false
+dragon-fruit,pitahaya,en,false
+dragon-fruit,pitaya,en,false
+dried-amaranth-leaves,dried amaranth,en,false
+dried-amaranth-leaves,dried mchicha,sw,false
+dried-apricots,apricot dried,en,false
+dried-apricots,dried apricot,en,false
+dried-bamboo-shoots,canned bamboo shoots,en,false
+dried-bamboo-shoots,dried bamboo,en,false
+dried-bananas,banana chips,en,false
+dried-bananas,ndizi kavu,sw,false
+dried-basil,dried sweet basil,en,false
+dried-beans,dried common beans,en,false
+dried-beans,raw dried beans,en,false
+dried-broad-beans,dried fava,en,false
+dried-broad-beans,raw broad beans dried,en,false
+dried-cassava,sun dried cassava,en,false
+dried-cassava,muhogo kavu,sw,false
+dried-cassava-leaves,majani ya muhogo kavu,sw,false
+dried-cilantro,coriander leaf dried,en,false
+dried-coconut,dried coconut flesh,en,false
+dried-corn,dried maize kernels,en,false
+dried-corn,hominy,en,false
+dried-cowpea-leaves,dried kunde,sw,false
+dried-cranberries,craisins,en,false
+dried-cranberries,dried cranberry,en,false
+dried-dill,dried dill,en,false
+dried-figs,calimyrna figs,en,false
+dried-figs,dried fig,en,false
+dried-fish,salted dried fish,en,false
+dried-fish,samaki kavu,sw,false
+dried-ginger,dried ginger root,en,false
+dried-ginger,ginger kavu,sw,false
+dried-goat-meat,dried chevon,en,false
+dried-goat-meat,biltong ya mbuzi,sw,false
+dried-hibiscus-petals,roselle petals,en,false
+dried-hibiscus-petals,sorrel hibiscus,en,false
+dried-lemon-grass,lemongrass dried,en,false
+dried-limes,black limes,en,false
+dried-limes,loomi,en,false
+dried-lychee,lychee dried,en,false
+dried-maize,sun dried corn,en,false
+dried-mango,dried mango slices,en,false
+dried-mango,embe kavu,sw,false
+dried-mint,spearmint dried,en,false
+dried-octopus,pweza kavu,sw,false
+dried-omena,dried dagaa,en,false
+dried-omena,omena kavu,sw,false
+dried-onions,dehydrated onions,en,false
+dried-onions,onion flakes dried,en,false
+dried-oregano,oregano dried herb,en,false
+dried-pigeon-peas,dried mbaazi,sw,false
+dried-prawns,dried shrimps,en,false
+dried-prawns,kamba kavu,sw,false
+dried-prunes,dried plums,en,false
+dried-prunes,prunes,en,false
+dried-red-beans,dried kidney beans small,en,false
+dried-red-chili,whole dried chili,en,false
+dried-red-chili,pili pili kavu,sw,false
+dried-rosemary,rosemary dried herb,en,false
+dried-shrimp,crayfish powder,en,false
+dried-shrimp,ground dried shrimp,en,false
+dried-sorghum-leaves,mtama majani kavu,sw,false
+dried-squid,cuttlefish dried,en,false
+dried-sweet-potato-chips,viazi vitamu chips,sw,false
+dried-thyme,thyme dried herb,en,false
+dried-tilapia,sun dried tilapia,en,false
+dried-tilapia,tilapia kavu,sw,false
+dried-yeast,active dry yeast,en,false
+dried-yeast,chachu kavu,sw,false
+drumstick,drumstick,en,false
+drumstick,drumstick (moringa pods),en,false
+drumstick-leaves,moringa leaves,en,false
+drumstick-leaves,mlonge,sw,false
+duck,duck meat,en,false
+duck,whole duck,en,false
+duck-eggs,duck egg,en,false
+duck-fat,rendered duck fat,en,false
+duck-meat,duck breast,en,false
+duku,langsat like fruit,en,false
+duku,lansium domesticum,en,false
+durian,durian flesh,en,false
+durian,king of fruits,en,false
+eel,freshwater eel,en,false
+eel,unagi,en,false
+efo,efo riro leaves,en,false
+efo,green amaranth leaves,en,false
+egg-noodles,chinese egg noodles,en,false
+egg-noodles,egg pasta,en,false
+eggplant,aubergine,en,false
+eggplant,brinjal,en,false
+eggplant,biringanya,sw,false
+eggs,chicken eggs,en,false
+eggs,whole eggs,en,false
+eggs,mayai,sw,false
+egusi-seeds,egusi,en,false
+egusi-seeds,melon seeds,en,false
+elderberry,black elderberry,en,false
+elderberry,elder fruit,en,false
+emperor-fish,emperor bream,en,false
+emperor-fish,lethrinus fish,en,false
+endive,chicory endive,en,false
+endive,french endive,en,false
+english-mustard,colmans mustard,en,false
+english-mustard,hot english mustard,en,false
+enset-kocho,false banana bread,en,false
+enset-kocho,kocho bread,en,false
+ersho,injera starter culture,en,false
+ersho,teff starter,en,false
+evaporated-milk,tinned milk,en,false
+evaporated-milk,unsweetened evaporated milk,en,false
+evaporated-milk-liquid,evaporated milk open,en,false
+ewuro,bitter leaf west africa,en,false
+ewuro,vernonia amygdalina,en,false
+fava-beans-fresh,field peas fresh,en,false
+fava-beans-fresh,fresh broad beans,en,false
+feijoa,feijoa fruit,en,false
+feijoa,pineapple guava,en,false
+fennel-bulb,fennel,en,false
+fennel-bulb,fresh fennel,en,false
+fennel-herb,fresh fennel fronds,en,false
+fennel-seeds,sweet fennel,en,false
+fennel-seeds,whole fennel seeds,en,false
+fenugreek-leaves,fresh fenugreek,en,false
+fenugreek-leaves,methi,en,false
+fenugreek-leaves-fresh,methi leaves,en,false
+fenugreek-seeds,fenugreek,en,false
+fenugreek-seeds,methi seeds,en,false
+fermented-milk,sour fermented milk,en,false
+fermented-milk,maziwa lala,sw,false
+fermented-millet-flour,sour millet flour,en,false
+fermented-millet-flour,togwa flour,sw,false
+fermented-sorghum-flour,uji wa mtama,sw,false
+feta-cheese,crumbled feta,en,false
+feta-cheese,feta,en,false
+figs,fresh figs,en,false
+figs,tini,sw,false
+finger-bananas,lady finger bananas,en,false
+finger-bananas,ndizi kidole,sw,false
+finger-millet-flour,ragi flour,en,false
+finger-millet-flour,wimbi unga,sw,false
+finger-millet-grain,ragi,en,false
+fish,fresh fish,en,false
+fish,whole fish,en,false
+fish,samak,sheng,false
+fish,samaki,sw,false
+fish-fillets,boneless fish,en,false
+fish-fillets,fish fillet,en,false
+fish-heads-and-pieces,fish offcuts,en,false
+fish-heads-and-pieces,kichwa cha samaki,sw,false
+fish-sauce,nam pla,en,false
+fish-sauce,thai fish sauce,en,false
+fish-sauce,mchuzi wa samaki,sw,false
+fish-stock,court bouillon,en,false
+fish-stock,fish broth,en,false
+flavored-yogurt,fruit yogurt,en,false
+flavored-yogurt,sweetened yogurt,en,false
+flaxseed,linseed,en,false
+flaxseed,whole flaxseed,en,false
+flaxseed-oil,cold pressed flaxseed,en,false
+flaxseed-oil,linseed oil,en,false
+flax-seeds,brown flax,en,false
+flax-seeds,linseeds,en,false
+flour,all purpose flour,en,false
+flour,plain flour,en,false
+flying-termites,white ants,en,false
+flying-termites,kumbe kumbe,sw,false
+free-range-chicken,farm chicken,en,false
+free-range-chicken,pasture raised chicken,en,false
+fresh-cream,pouring cream,en,false
+fresh-cream,single cream,en,false
+fresh-figs,ripe figs,en,false
+fresh-ginger,ginger root,en,false
+fresh-ginger,young ginger,en,false
+fresh-milk,raw milk,en,false
+fresh-milk,unpasteurized milk,en,false
+fresh-pigeon-peas,green mbaazi,sw,false
+fresh-turmeric,turmeric root fresh,en,false
+fresh-yeast,bakers yeast fresh,en,false
+fresh-yeast,live yeast,en,false
+fruit-cocktail,mixed fruit salad,en,false
+fruit-cocktail,tinned fruit mix,en,false
+galangal,blue ginger,en,false
+galangal,thai ginger,en,false
+garam-masala,garam masala spice,en,false
+garam-masala,mixed spice blend,en,false
+garden-cress,garden cress herb,en,false
+garden-cress,peppergrass,en,false
+garlic,fresh garlic,en,false
+garlic,garlik,en,true
+garlic,saumu,sw,false
+garlic,thoum,sw,false
+garlic,vitunguu saumu,sw,false
+garlic-paste,crushed garlic,en,false
+garlic-paste,minced garlic,en,false
+garlic-paste,saumu iliyosagwa,sw,false
+garlic-powder,dried garlic,en,false
+garlic-powder,garlic granules,en,false
+gelatin,gelatine,en,false
+gelatin,gelatin powder,en,false
+gelatin,gelatin sheets,en,false
+gesho,gesho,en,false
+gesho-stems,gesho stems,en,false
+ghee,clarified butter,en,false
+ghee,drawn butter,en,false
+ghee,samli,sw,false
+ginger,fresh ginger,en,false
+ginger,gingr,en,true
+ginger,tangawizi,sw,false
+ginger-garlic-paste,adrak lahsun paste,en,false
+ginger-garlic-paste,combined ginger garlic,en,false
+ginger-juice,squeezed ginger,en,false
+ginger-juice,maji ya tangawizi,sw,false
+ginger-paste,minced ginger,en,false
+ginger-paste,tangawizi iliyosagwa,sw,false
+ginger-powder,dried ginger powder,en,false
+ginger-powder,ground ginger,en,false
+glass-noodles,bean thread noodles,en,false
+glass-noodles,cellophane noodles,en,false
+goat-broth,goat bone broth,en,false
+goat-broth,mchuzi wa mbuzi,sw,false
+goat-heart,moyo wa mbuzi,sw,false
+goat-intestines,utumbo,sw,false
+goat-intestines,utumbo wa mbuzi,sw,false
+goat-kidney,figo ya mbuzi,sw,false
+goat-legs,goat leg roast,en,false
+goat-legs,mguu wa mbuzi,sw,false
+goat-liver,ini ya mbuzi,sw,false
+goat-meat,chevon,en,false
+goat-meat,mbuzi,sw,false
+goat-meat,nyama ya mbuzi,sw,false
+goat-milk,fresh goat milk,en,false
+goat-milk,maziwa ya mbuzi,sw,false
+goat-ribs,goat spare ribs,en,false
+goat-ribs,mfupa wa mbuzi,sw,false
+goat-tripe,goat stomach,en,false
+goat-tripe,matumbo ya mbuzi,sw,false
+goat-trotters,trotters mbuzi,sw,false
+golden-syrup,cane golden syrup,en,false
+golden-syrup,light treacle,en,false
+goose,roast goose,en,false
+gooseberry,cape gooseberry similar,en,false
+gooseberry,gooseberries,en,false
+goose-meat,goose breast,en,false
+gouda,gouda cheese,en,false
+gouda,young gouda,en,false
+grapefruit,ruby grapefruit,en,false
+grapefruit,balungi,sw,false
+grasshoppers,edible grasshopper,en,false
+grasshoppers,edible grasshoppers,en,false
+grasshoppers,nzige,sw,false
+grass-peas,chickling vetch,en,false
+grass-peas,khesari dal,en,false
+greek-yogurt,strained yogurt,en,false
+greek-yogurt,thick yogurt,en,false
+green-banana-flour,green banana flour,en,false
+green-bananas,cooking bananas,en,false
+green-bananas,unripe bananas,en,false
+green-beans,french beans,en,false
+green-beans,snap beans,en,false
+green-beans,string beans,en,false
+green-beans,maharagwe ya kijani,sw,false
+green-chili,fresh green chili,en,false
+green-chili,green chilli,en,false
+green-chili,jalapeno,en,false
+green-coffee-beans,raw coffee beans,en,false
+green-coffee-beans,unroasted coffee,en,false
+green-grams,mung beans,en,false
+green-grams,whole mung beans,en,false
+green-lentils,french lentils,en,false
+green-lentils,puy lentils,en,false
+green-mango,raw mango,en,false
+green-mango,unripe mango,en,false
+green-mango,embe bichi,sw,false
+green-olives,fresh green olives,en,false
+green-olives,manzanilla olives,en,false
+green-papaya,raw papaya,en,false
+green-papaya,papai mbichi,sw,false
+green-peas,fresh peas,en,false
+green-peas,garden peas,en,false
+green-peas,mbaazi,sw,false
+green-pepper,bell pepper green,en,false
+green-pepper,green bell pepper,en,false
+green-pepper,pilipili hoho,sw,false
+green-plantains,matoke,sw,false
+green-plantains,ndizi kijani,sw,false
+green-tea,loose leaf green tea,en,false
+green-tea,sencha,en,false
+ground-cardamom,cardamom powder,en,false
+ground-cardamom,powdered cardamom,en,false
+ground-coriander,coriander powder,en,false
+ground-coriander,dhania unga,sw,false
+ground-cumin,cumin powder,en,false
+ground-cumin,jeera powder,en,false
+ground-egusi-seeds,egusi powder,en,false
+ground-egusi-seeds,ground melon seeds,en,false
+ground-fenugreek,fenugreek powder,en,false
+ground-fenugreek,methi powder,en,false
+groundnut-flour,peanut flour,en,false
+groundnut-flour,karanga unga,sw,false
+groundnut-oil,peanut cooking oil,en,false
+groundnut-paste,peanut paste,en,false
+groundnut-paste,karanga,sw,false
+groundnuts,monkey nuts,en,false
+groundnuts,peanuts,en,false
+groundnuts,njugu karanga,sw,false
+ground-peanuts,crushed peanuts,en,false
+ground-peanuts,peanut powder,en,false
+grouper,red grouper,en,false
+grouper,sea bass grouper,en,false
+guava,fresh guava,en,false
+guava,mapera,sw,false
+guava-juice,guava nectar,en,false
+guava-juice,mapera juice,sw,false
+guinea-fowl,helmeted guinea fowl,en,false
+guinea-fowl,kanga,sw,false
+hard-boiled-eggs,boiled eggs,en,false
+hard-boiled-eggs,mayai ya kuchemsha,sw,false
+haricot-beans,navy beans,en,false
+haricot-beans,white haricot beans,en,false
+harissa-paste,harissa,en,false
+harissa-paste,north african chili paste,en,false
+hazelnut-oil,hazelnut cooking oil,en,false
+hazelnuts,filberts,en,false
+hazelnuts,hazelnut kernels,en,false
+heavy-cream,double cream thick,en,false
+heavy-cream,whipping cream,en,false
+hemp-oil,hemp seed oil,en,false
+hibiscus-tea,roselle tea,en,false
+hibiscus-tea,sorrel tea,en,false
+hoisin-sauce,chinese bbq sauce,en,false
+hoisin-sauce,hoisin dipping sauce,en,false
+honey,natural honey,en,false
+honey,raw honey,en,false
+honey,asali,sw,false
+honeycomb,beeswax comb,en,false
+honeycomb,raw honeycomb,en,false
+hot-sauce,peri peri hot sauce,en,false
+hot-sauce,tabasco like sauce,en,false
+hummus,chickpea spread,en,false
+hummus,hummus dip,en,false
+iced-tea,cold brewed tea,en,false
+icing-sugar,confectioners sugar,en,false
+icing-sugar,powdered sugar,en,false
+injera,ethiopian flatbread,en,false
+injera,teff flatbread,en,false
+instant-yeast,easy blend yeast,en,false
+instant-yeast,fast acting yeast,en,false
+iodized-salt,iodised salt,en,false
+iodized-salt,table iodized salt,en,false
+iru,dawadawa iru,en,false
+iru,fermented locust beans,en,false
+ivy-gourd,baby watermelon,en,false
+ivy-gourd,tindora,en,false
+jackfruit,breadfruit,en,false
+jackfruit,fenesi,sw,false
+jaggery,gur,en,false
+jaggery,palm jaggery,en,false
+jaggery,unrefined cane sugar,en,false
+jam,jam,en,false
+java-plum,jambul,en,false
+java-plum,jamun,en,false
+jujube,chinese date,en,false
+jujube,red date jujube,en,false
+jumbo-prawns,king prawns,en,false
+jumbo-prawns,tiger prawns,en,false
+jute-leaves,delele,en,false
+jute-leaves,jews mallow,en,false
+jute-leaves,molokhia,en,false
+jute-leaves,mlenda,sw,false
+kaffir-lime-leaves,bergamot lime leaves,en,false
+kaffir-lime-leaves,makrut lime leaves,en,false
+kale,curly kale,en,false
+kale,dinosaur kale,en,false
+kale,lacinato kale,en,false
+kale-curly,curly leaf kale,en,false
+kawakawa,maori pepper,en,false
+kawakawa,piper excelsum,en,false
+kidney-beans,rajma,en,false
+kidney-beans,red kidney beans,en,false
+kingfish,cero fish,en,false
+kingfish,king mackerel,en,false
+kivunde,east african mackerel,en,false
+kohlrabi,german turnip,en,false
+kohlrabi,turnip cabbage,en,false
+korarima,ethiopian cardamom,en,false
+korarima,false cardamom,en,false
+kunde-leaves,cowpea greens fresh,en,false
+lablab-beans,hyacinth beans,en,false
+lablab-beans,hyacinth bean seeds,en,false
+lablab-beans,njahi,sw,false
+labneh,lebanese cream cheese,en,false
+labneh,strained yogurt cheese,en,false
+lake-flies,lake fly,en,false
+lake-flies,kungu,sw,false
+lake-flies,kungu cake,sw,false
+lake-flies,mukiyu,sw,false
+lamb-chops,lamb cutlets,en,false
+lamb-leg,leg of lamb,en,false
+lamb-neck,neck of lamb,en,false
+lamb-ribs,lamb spare ribs,en,false
+lamb-shank,slow cooked shank,en,false
+lamb-shoulder,shoulder of lamb,en,false
+langsat,langsat,en,false
+lard,lard,en,false
+lasagna-sheets,lasagna sheets,en,false
+leek,fresh leek,en,false
+leek,leeks,en,false
+lemon,fresh lemon,en,false
+lemon,ndimu kubwa,sw,false
+lemonade,lemonade,en,false
+lemongrass,cymbopogon,en,false
+lemongrass,lemon grass,en,false
+lemongrass,nyasi ya limao,sw,false
+lemon-juice,fresh lemon juice,en,false
+lemon-juice,squeezed lemon,en,false
+lemon-pickle,lemon pickle,en,false
+lemon-syrup,lemon syrup,en,false
+lentils-or-minced-beef,green lentils,en,false
+lentils-or-minced-beef,dengu,sw,false
+lentils-or-minced-beef,ndengu,sw,false
+lettuce,fresh lettuce,en,false
+lettuce,iceberg lettuce,en,false
+lettuce,salad lettuce,en,false
+lima-beans,butter beans,en,false
+lima-beans,wax beans,en,false
+lime,fresh lime,en,false
+lime,key lime,en,false
+lime,ndimu,sw,false
+lime-juice,fresh lime juice,en,false
+lime-juice,squeezed lime,en,false
+lime-powder,lime powder,en,false
+lobster,spiny lobster,en,false
+lobster,kamba mkubwa,sw,false
+long-pepper,long pepper,en,false
+loquat,loquat,en,false
+lungfish,lungfish,en,false
+lupin-beans,lupin beans,en,false
+lychee,lychee,en,false
+macadamia-nuts,macadamia nuts,en,false
+macaroni,macaroni,en,false
+mace-spice,mace,en,false
+mace-spice,mace spice,en,false
+mackerel,atlantic mackerel,en,false
+mackerel,spanish mackerel,en,false
+magadi-soda,magadi soda,en,false
+maize,corn,en,false
+maize,dried maize,en,false
+maize,mahindi,sw,false
+maize-flour,corn flour,en,false
+maize-flour,cornmeal,en,false
+maize-flour,unga,sheng,false
+maize-flour,dona,sw,false
+maize-flour,posho,sw,false
+maize-flour,unga,sw,false
+maize-flour,unga wa mahindi,sw,false
+maize-grits,hominy grits,en,false
+maize-grits,mealie meal,en,false
+maize-grits,ugali,sw,false
+maize-husks,maize husks,en,false
+malted-finger-millet,malted finger millet,en,false
+malted-maize,malted maize,en,false
+malted-sorghum,malted sorghum,en,false
+malt-vinegar,malt vinegar,en,false
+managu-leaves,managu leaves,en,false
+mango,fresh mango,en,false
+mango,ripe mango,en,false
+mango,embe,sw,false
+mango-chutney,mango chutney,en,false
+mango-juice,mango juice,en,false
+mango-pickle,mango pickle,en,false
+mangosteen,mangosteen,en,false
+maple-syrup,grade a maple,en,false
+maple-syrup,pure maple syrup,en,false
+margarine,baking margarine,en,false
+margarine,vegetable margarine,en,false
+marmalade,marmalade,en,false
+marmite,marmite,en,false
+mascarpone,mascarpone,en,false
+matembele,matembele,en,false
+matembele,matembele (sweet potato leaves),en,false
+mayonnaise,mayonnaise,en,false
+mchicha-leaves,mchicha leaves,en,false
+mchuzi-mix,mchuzi mix,en,false
+meat-masala,meat masala,en,false
+mekelesha-spice,mekelesha spice,en,false
+mekelesha-spice,mekelesha spice blend,en,false
+milk,fresh milk,en,false
+milk,whole milk,en,false
+milk,maziwa,sw,false
+millet-beer,millet beer,en,false
+millet-flour,pearl millet flour,en,false
+millet-flour,unga wa wimbi,sw,false
+millet-grain,pearl millet,en,false
+millet-grain,wimbi,sw,false
+millet-grain-pearl,millet grain (pearl),en,false
+millet-grain-pearl,millet grain pearl,en,false
+minced-beef,beef mince,en,false
+minced-beef,ground beef,en,false
+minced-beef,hamburger meat,en,false
+minced-chicken,minced chicken,en,false
+minced-goat,minced goat,en,false
+minced-lamb,minced lamb,en,false
+minced-pork,minced pork,en,false
+mint,fresh mint,en,false
+mint,peppermint,en,false
+mint,spearmint,en,false
+mint,mnanaa,sw,false
+mitmita-spice,mitmita spice,en,false
+mixed-teff-flour,mixed teff flour,en,false
+mlenda,mlenda,en,false
+mlenda,mlenda (corchorus),en,false
+molasses,blackstrap molasses,en,false
+molasses,treacle,en,false
+moringa-leaves,ben leaves,en,false
+moringa-leaves,drumstick leaves,en,false
+moringa-tea,moringa tea,en,false
+moth-beans,moth beans,en,false
+mozzarella,buffalo mozzarella,en,false
+mozzarella,fresh mozzarella,en,false
+mrenda,mrenda,en,false
+mrenda,mrenda (jute mallow),en,false
+mud-crab,mud crab,en,false
+mudfish,mudfish,en,false
+mulberry,mulberry,en,false
+mung-beans,green mung,en,false
+mung-beans,whole moong,en,false
+mursik,mursik,en,false
+mursik,mursik (fermented milk),en,false
+mushrooms,button mushrooms,en,false
+mushrooms,fresh mushrooms,en,false
+mushrooms,uyoga,sw,false
+mussels,mussels,en,false
+mustard,prepared mustard,en,false
+mustard,yellow mustard,en,false
+mustard-greens,indian mustard,en,false
+mustard-greens,leaf mustard,en,false
+mustard-powder,mustard powder,en,false
+mustard-seeds,black mustard seeds,en,false
+mustard-seeds,yellow mustard seeds,en,false
+mustard-seeds,mbegu za haradali,sw,false
+mutton-chunks,mutton chunks,en,false
+mutton-fat,mutton fat,en,false
+mutton-ribs,mutton ribs,en,false
+naranjilla,naranjilla,en,false
+ndagala,ndagala,en,false
+ngege-tilapia,ngege tilapia,en,false
+nigella-seeds,black cumin,en,false
+nigella-seeds,black seed,en,false
+nigella-seeds,kalonji,en,false
+niger-seeds,niger seeds,en,false
+nile-perch,lake victoria perch,en,false
+nile-perch,sangara,sw,false
+nile-perch-fillets,nile perch fillets,en,false
+niter-kibbeh,niter kibbeh,en,false
+njahi,njahi,en,false
+njahi,njahi (black lablab beans),en,false
+nutmeg,ground nutmeg,en,false
+nutmeg,whole nutmeg,en,false
+nutmeg,kungu manga,sw,false
+nutritional-yeast,nutritional yeast,en,false
+oat-flour,ground oats,en,false
+oat-flour,whole oat flour,en,false
+oats,oatmeal,en,false
+oats,porridge oats,en,false
+oats,rolled oats,en,false
+octopus,baby octopus,en,false
+octopus,pweza,sw,false
+ogbono,ogbono,en,false
+ogbono,ogbono seeds,en,false
+okra,gumbo,en,false
+okra,ladies fingers,en,false
+okra,bamia,sw,false
+olive-oil,evoo,en,false
+olive-oil,extra virgin olive oil,en,false
+olive-oil,mafuta ya zeituni,sw,false
+olives,black olives whole,en,false
+olives,kalamata olives,en,false
+olive-tapenade,olive tapenade,en,false
+omena,dagaas,en,true
+omena,lake victoria sardine,en,false
+omena,mukene,en,false
+omena,silver cyprinid,en,false
+omena,dagaa,sw,false
+omena,omena,sw,false
+onion,fresh onion,en,false
+onion,yellow onion,en,false
+onion,onyoni,sheng,false
+onion,kitunguu,sw,false
+onion,vitunguu,sw,false
+onion-flakes,onion flakes,en,false
+onion-powder,dried onion,en,false
+onion-powder,onion granules,en,false
+orange,fresh orange,en,false
+orange,navel orange,en,false
+orange,machungwa,sw,false
+orange-fleshed-sweet-potato,orange fleshed sweet potato,en,false
+orange-juice,freshly squeezed oj,en,false
+orange-juice,oj,en,false
+oregano,dried oregano,en,false
+oregano,fresh oregano,en,false
+ostrich-meat,ostrich meat,en,false
+oxtail,oxtail,en,false
+oyster-mushrooms,oyster mushrooms,en,false
+oysters,oysters,en,false
+oyster-sauce,oyster sauce,en,false
+palm-kernel-oil,palm kernel oil,en,false
+palm-oil,crude palm oil,en,false
+palm-oil,red palm oil,en,false
+palm-oil,mafuta ya mawese,sw,false
+palm-sugar,palm sugar,en,false
+palm-wine,palm wine,en,false
+paneer,fresh paneer,en,false
+paneer,indian cottage cheese,en,false
+papaya,papaw,en,false
+papaya,pawpaw,en,false
+papaya,papai,sw,false
+papaya-juice,papaya juice,en,false
+paprika,hungarian paprika,en,false
+paprika,smoked paprika,en,false
+paprika,sweet paprika,en,false
+parmesan,parmesan cheese,en,false
+parmesan,parmigiano reggiano,en,false
+parrotfish,parrotfish,en,false
+parsley,curly parsley,en,false
+parsley,flat leaf parsley,en,false
+parsley,fresh parsley,en,false
+passata,passata,en,false
+passion-fruit,granadilla,en,false
+passion-fruit,purple passion fruit,en,false
+passion-fruit,marakuja,sw,false
+passion-fruit-juice,passion fruit juice,en,false
+peach,fresh peach,en,false
+peach,nectarine,en,false
+peanut-butter,groundnut paste,en,false
+peanut-butter,smooth peanut butter,en,false
+peanut-butter,siagi ya karanga,sw,false
+peanut-oil,peanut oil,en,false
+pear,conference pear,en,false
+pear,fresh pear,en,false
+pecans,pecan halves,en,false
+pecans,pecan nuts,en,false
+penne,penne,en,false
+penne,penne pasta,en,false
+pepper,manga,sw,false
+pepper,pilipili manga,sw,false
+pepper-soup-spice,pepper soup spice,en,false
+peri-peri-sauce,peri peri sauce,en,false
+persimmon,persimmon,en,false
+pesto,pesto,en,false
+pickles,pickles,en,false
+pickling-spice,pickling spice,en,false
+pigeon,pigeon,en,false
+pigeon-meat,pigeon meat,en,false
+pigeon-peas,toor dal,en,false
+pilau-masala,pilau masala,en,false
+pili-pili-sauce,pili pili sauce,en,false
+pineapple,fresh pineapple,en,false
+pineapple,nanasi,sw,false
+pineapple-juice,pineapple juice,en,false
+pine-nuts,pignoli,en,false
+pine-nuts,pine seeds,en,false
+pishori-rice,pishori rice,en,false
+pistachios,pistachio nuts,en,false
+pistachios,shelled pistachios,en,false
+plantain-flour,green banana,en,false
+plantain-flour,ndizi mbichi,sw,false
+plum,fresh plum,en,false
+plum,italian plum,en,false
+plum-sauce,plum sauce,en,false
+polenta,coarse cornmeal,en,false
+polenta,italian cornmeal,en,false
+pomegranate,pomegranate seeds,en,false
+pomegranate,komamanga,sw,false
+poppy-seeds,blue poppy seeds,en,false
+poppy-seeds,mbegu za poppy,sw,false
+pork-belly,pork belly,en,false
+pork-chops,pork chops,en,false
+pork-fat,pork fat,en,false
+pork-ribs,pork ribs,en,false
+pork-sausages,pork sausages,en,false
+potato,fresh potato,en,false
+potato,white potato,en,false
+potato,viazi,sheng,false
+potato,viazi,sw,false
+potatoes,baby potatoes,en,false
+potatoes,fresh potatoes,en,false
+pounded-cassava-leaves,pounded cassava leaves,en,false
+powdered-milk,powdered milk,en,false
+prawns,fresh prawns,en,false
+prawns,shrimps,en,false
+prawns,kamba,sw,false
+premium-fish-sauce,premium fish sauce,en,false
+premium-oyster-sauce,premium oyster sauce,en,false
+pumpkin,fresh pumpkin,en,false
+pumpkin,winter squash,en,false
+pumpkin,boga,sw,false
+pumpkin-flowers,pumpkin flowers,en,false
+pumpkin-leaves,pumpkin greens,en,false
+pumpkin-leaves,majani ya boga,sw,false
+pumpkin-leaves-uganda,pumpkin leaves (uganda),en,false
+pumpkin-leaves-uganda,pumpkin leaves uganda,en,false
+pumpkin-seed-oil,pumpkin seed oil,en,false
+pumpkin-seeds,pepitas,en,false
+pumpkin-seeds,shelled pumpkin seeds,en,false
+quail,quail,en,false
+quail-eggs,quail eggs,en,false
+quail-meat,quail meat,en,false
+quinoa,quinoa grain,en,false
+quinoa,red quinoa,en,false
+quinoa,white quinoa,en,false
+qwanta,qwanta,en,false
+rabbitfish,rabbitfish,en,false
+rabbit-meat,rabbit meat,en,false
+radish,radish,en,false
+raisins,dried grapes,en,false
+raisins,sultanas,en,false
+raisins,zabibu kavu,sw,false
+rambutan,rambutan,en,false
+raspberry,fresh raspberry,en,false
+raspberry,raspberries,en,false
+red-bell-pepper,red capsicum,en,false
+red-bell-pepper,sweet red pepper,en,false
+red-bell-pepper,pilipili hoho nyekundu,sw,false
+red-cabbage,purple cabbage,en,false
+red-cabbage,red headed cabbage,en,false
+red-currant,red currant,en,false
+red-lentils,masoor dal,en,false
+red-lentils,split red lentils,en,false
+red-onion,fresh red onion,en,false
+red-onion,purple onion,en,false
+red-onion,kitunguu maji,sw,false
+red-pepper,red pepper,en,false
+red-snapper,red snapper,en,false
+red-teff-flour,red teff flour,en,false
+relish,relish,en,false
+rice,cooked rice,en,false
+rice,white rice,en,false
+rice,mchele,sw,false
+rice,wali,sw,false
+rice-bran-oil,rice bran oil,en,false
+rice-flour,rice flour,en,false
+rice-flour-milled,rice flour milled,en,false
+rice-noodles,rice noodles,en,false
+rice-vinegar,japanese rice vinegar,en,false
+rice-vinegar,rice wine vinegar,en,false
+rice-water,rice water,en,false
+ricotta,fresh ricotta,en,false
+ricotta,ricotta cheese,en,false
+ridge-gourd,ridge gourd,en,false
+ripe-bananas,ripe bananas,en,false
+ripe-plantain,ripe plantain,en,false
+roasted-coffee-beans,roasted coffee beans,en,false
+roasted-groundnuts,roasted groundnuts,en,false
+rooibos-tea,rooibos tea,en,false
+rose-apple,rose apple,en,false
+rosecoco-beans,rosecoco beans,en,false
+roselle-leaves,roselle leaves,en,false
+rosemary,dried rosemary,en,false
+rosemary,fresh rosemary,en,false
+rosemary,rosemary sprigs,en,false
+rose-petals,rose petals,en,false
+rose-syrup,rose syrup,en,false
+rose-water,flower water,en,false
+rose-water,maji ya waridi,sw,false
+rutabaga,rutabaga,en,false
+rye-flour,rye flour,en,false
+saffron,saffron threads,en,false
+saffron,zafrani,sw,false
+salt,sea salt,en,false
+salt,table salt,en,false
+salt,chumvi,sheng,false
+salt,chumvi,sw,false
+sardines,canned sardines,en,false
+sardines,fresh sardines,en,false
+sardines,sardinella,en,false
+scent-leaves,african basil,en,false
+scent-leaves,efirin,en,false
+scent-leaves,nchanwu,en,false
+semolina,durum wheat semolina,en,false
+semolina,sooji,en,false
+sesame-oil,toasted sesame oil,en,false
+sesame-oil,mafuta ya simsim,sw,false
+sesame-seeds,tahini seeds,en,false
+sesame-seeds,white sesame seeds,en,false
+sesame-seeds,simsim,sw,false
+shallots,banana shallots,en,false
+shallots,french shallots,en,false
+shallots,vitunguu ndogo,sw,false
+sorghum-flour,sorghum meal,en,false
+sorghum-flour,mtama unga,sw,false
+sorghum-grain,milo,en,false
+sorghum-grain,whole sorghum,en,false
+sorghum-grain,mtama,sw,false
+sour-cream,cultured sour cream,en,false
+soybeans,soya beans,en,false
+soybeans,whole soybeans,en,false
+soy-sauce,dark soy sauce,en,false
+soy-sauce,light soy sauce,en,false
+soy-sauce,shoyu,en,false
+spaghetti,long pasta,en,false
+spaghetti,pasta,en,false
+spaghetti,spaghetti pasta,en,false
+spaghetti-dry,dry spaghetti,en,false
+spaghetti-dry,spaghetti dry,en,false
+spinach,baby spinach,en,false
+spinach,fresh spinach,en,false
+spinach,mchicha,sw,false
+split-peas,green split peas,en,false
+split-peas,yellow split peas,en,false
+spring-onions,green onions,en,false
+spring-onions,scallions,en,false
+spring-onions,vitunguu maji,sw,false
+squid,calamari,en,false
+squid,ngisi,sw,false
+star-anise,anise star,en,false
+star-anise,chinese star anise,en,false
+star-fruit,carambola,en,false
+star-fruit,five finger fruit,en,false
+strawberry,fresh strawberry,en,false
+strawberry,strawberries,en,false
+sugar,granulated sugar,en,false
+sugar,white sugar,en,false
+sugar,sukari,sw,false
+sunflower-oil,refined sunflower oil,en,false
+sunflower-oil,mafuta ya alizeti,sw,false
+sunflower-seeds,hulled sunflower seeds,en,false
+sunflower-seeds,mbegu za alizeti,sw,false
+sweet-corn,corn kernels,en,false
+sweet-corn,mahindi tamu,sw,false
+sweet-potato,kumara,en,false
+sweet-potato,orange sweet potato,en,false
+sweet-potato,viazi tamu,sw,false
+sweet-potato,viazi vitamu,sw,false
+sweet-potato-leaves,sweet potato greens,en,false
+sweet-potato-leaves,majani ya viazi,sw,false
+sweet-potato-leaves,matembele,sw,false
+swiss-chard,chard,en,false
+swiss-chard,rainbow chard,en,false
+swiss-chard,silverbeet,en,false
+tahini,sesame paste,en,false
+tahini,sesame seed paste,en,false
+tamarind,tamarind fruit,en,false
+tamarind,ukwaju,sw,false
+tamarind-paste,tamarind concentrate,en,false
+tamarind-paste,ukwaju paste,sw,false
+tangerine,clementine,en,false
+tangerine,mandarin,en,false
+tapioca,tapioca pearls,en,false
+tapioca,tapioca starch,en,false
+taro-leaves,cocoyam leaves,en,false
+taro-leaves,dasheen leaves,en,false
+taro-root,cocoyam,en,false
+taro-root,nduma,sw,false
+teff-flour,injera flour,en,false
+teff-flour,teff grain flour,en,false
+teff-grain,ethiopian teff,en,false
+teff-grain,teff,en,false
+teff-grain,whole teff,en,false
+thyme,dried thyme,en,false
+thyme,fresh thyme,en,false
+thyme,thyme leaves,en,false
+tilapia,nile perch,en,false
+tilapia,nile tilapia,en,false
+tilapia,ngege,sw,false
+tilapia,sato,sw,false
+tilapia,tilapia,sw,false
+tilapia-fillets,boneless tilapia,en,false
+tilapia-fillets,tilapia fillet,en,false
+tomato,fresh tomato,en,false
+tomato,ripe tomato,en,false
+tomato,tomatoe,en,true
+tomato,tomatos,en,true
+tomato,toma,sheng,false
+tomato,nyanya,sw,false
+tomato-ketchup,ketchup,en,false
+tomato-ketchup,tomato ketsup,en,true
+tomato-paste,concentrated tomato,en,false
+tomato-paste,double concentrate,en,false
+tomato-paste,tambi ya nyanya,sw,false
+tomato-puree,crushed tomatoes,en,false
+tomato-puree,tomato passata,en,false
+tomato-sauce,ready made tomato sauce,en,false
+tomato-sauce,mchuzi wa nyanya,sw,false
+tree-tomato,tamarillo,en,false
+tree-tomato,nyanya mti,sw,false
+tuna,canned tuna,en,false
+tuna,skipjack tuna,en,false
+tuna,yellowfin tuna,en,false
+turkey,turkey meat,en,false
+turkey,whole turkey,en,false
+turmeric,ground turmeric,en,false
+turmeric,haldi,en,false
+turmeric,manjano,sw,false
+turnip,baby turnip,en,false
+turnip,white turnip,en,false
+turnip-greens,turnip leaves,en,false
+turnip-greens,turnip tops,en,false
 ugali-meal,stiff porridge,en,false
 ugali-meal,ugali,en,false
-ghee,clarified butter,en,false
+ugali-meal,unga wa ugali,sw,false
+vanilla,vanilla bean,en,false
+vanilla,vanilla pod,en,false
+vanilla-extract,pure vanilla,en,false
+vanilla-extract,vanilla essence,en,false
+veal,veal meat,en,false
+veal,ndama,sw,false
+vegetable-oil,cooking vegetable oil,en,false
+vegetable-oil,neutral oil,en,false
+vegetable-oil,mafuta ya mboga,sw,false
+vegetable-stock,vegetable broth,en,false
+vegetable-stock,veggie stock,en,false
+venison,deer meat,en,false
+venison,game meat,en,false
+walnuts,english walnuts,en,false
+walnuts,walnut halves,en,false
+water,clean water,en,false
+water,drinking water,en,false
+water,maji,sw,false
+watercress,garden cress,en,false
+watercress,watercress leaves,en,false
+waterleaf,gbure,en,false
+waterleaf,talinum,en,false
+watermelon,fresh watermelon,en,false
+watermelon,tikiti maji,sw,false
+wheat-flour,plain wheat flour,en,false
+wheat-flour,ngano,sw,false
+wheat-flour,unga wa ngano,sw,false
+wheat-grain,hard red wheat,en,false
+wheat-grain,whole wheat berries,en,false
+white-beans,cannellini beans,en,false
+white-beans,great northern beans,en,false
+white-pepper,ground white pepper,en,false
+white-pepper,whole white pepper,en,false
+white-sweet-potato,ivory sweet potato,en,false
+white-sweet-potato,white kumara,en,false
+white-vinegar,distilled white vinegar,en,false
+white-vinegar,spirit vinegar,en,false
+wild-honey,forest honey,en,false
+wild-honey,asali ya mwitu,sw,false
+wild-yams,bush yam,en,false
+wild-yams,wild yam,en,false
+worcestershire-sauce,worcester sauce,en,false
+worcestershire-sauce,worchester sauce,en,true
+yam,african yam,en,false
+yam,white yam,en,false
+yam,viazi vikuu,sw,false
+yam-flour,elubo,en,false
+yam-flour,yam powder,en,false
+yellow-beans,butter beans yellow,en,false
+yellow-bell-pepper,yellow capsicum,en,false
+yellow-bell-pepper,pilipili hoho njano,sw,false
+yellow-lentils,moong dal,en,false
+yellow-lentils,mung dal,en,false
+yogurt,natural yogurt,en,false
+yogurt,plain yogurt,en,false
 yogurt,mala,sw,false
-buttermilk,mala,sw,false
-sour-cream,mala,sw,false
+yogurt,mtindi,sw,false
+zaatar,thyme spice blend,en,false
+zaatar,za atar spice mix,en,false
+zaatar,zahtar,en,false
