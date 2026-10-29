@@ -13,10 +13,11 @@ import json
 
 from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
 from rest_framework.request import Request
 from rest_framework.response import Response
 
+from apps.clients.models import ApiKey
+from apps.clients.permissions import HasScope
 from apps.regions.models import Region
 
 
@@ -42,7 +43,7 @@ from apps.regions.models import Region
     tags=["Regions"],
 )
 @api_view(["GET"])
-@permission_classes([AllowAny])
+@permission_classes([HasScope(ApiKey.SCOPE_READ_CATALOG)])
 def region_list(request: Request) -> Response:
     """
     GET /v1/regions/
