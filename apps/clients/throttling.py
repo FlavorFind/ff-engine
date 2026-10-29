@@ -55,4 +55,13 @@ class ApiKeyRateThrottle(SimpleRateThrottle):
         # Override the rate dynamically from the key's rate_limit field.
         self.rate = f"{rpm}/min"
         self.num_requests, self.duration = self.parse_rate(self.rate)
-        return super().allow_request(request, view)
+        try:
+            return super().allow_request(request, view)
+        except Exception:
+            # Redis unavailable (e.g. no Redis on free-tier hosting).
+            # Fail open: allow the request rather than returning a 500.
+            import logging
+            logging.getLogger(__name__).warning(
+                "Rate-limit cache unavailable — allowing request without throttling"
+            )
+            return True
