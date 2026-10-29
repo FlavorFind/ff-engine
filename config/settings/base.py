@@ -290,3 +290,11 @@ if SENTRY_DSN:
 # ---------------------------------------------------------------------------
 ENGINE_VERSION = env("ENGINE_VERSION", default="dev")
 DATASET_VERSION = env("DATASET_VERSION", default="0.0.0")
+
+# ---------------------------------------------------------------------------
+# Session security
+# ---------------------------------------------------------------------------
+SESSION_COOKIE_AGE = 60 * 60 * 8  # 8 hours (default Django is 2 weeks)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+CSRF_COOKIE_HTTPONLY = True
