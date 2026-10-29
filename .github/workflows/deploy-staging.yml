@@ -1,37 +1,129 @@
 name: Deploy to Staging
 
-# Render auto-deploys on every push to main (Auto-Deploy: On Commit).
-# This workflow records the deploy in the GitHub Actions audit trail
-# and verifies the staging health endpoint after deploy.
+# Deploys to the self-hosted Lenovo ThinkPad staging server (100.96.139.83)
+# after CI passes on merge to main.
+#
+# Gate: the "ci" workflow's lint + test + migration-check jobs must all pass.
+# Deploy: SSH onto the server, pull latest, migrate, collectstatic, reload.
+# Verify: hit the health endpoint and run a quick smoke test.
+#
+# Required GitHub secrets (Settings → Secrets → Actions):
+#   DEPLOY_SSH_KEY    — private key that maps to ~/.ssh/authorized_keys on the server
+#   DEPLOY_HOST       — server host (Tailscale IP or hostname, e.g. 100.96.139.83)
+#   DEPLOY_USER       — SSH user (mayday)
+#   STAGING_API_KEY   — a valid API key for the smoke-test search call
+#   STAGING_URL       — public URL (https://engine.flavorfind.co.ke)
 
 on:
   push:
     branches: [main]
 
 jobs:
-  verify-staging:
-    name: Verify staging health after deploy
+  # ──────────────────────────────────────────────────────────────────────────
+  # 1. CI gate — lint, tests, migrations must all pass before we deploy
+  # ──────────────────────────────────────────────────────────────────────────
+  ci-gate:
+    name: CI gate (lint + tests + migrations)
+    uses: ./.github/workflows/ci.yml
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 2. Deploy
+  # ──────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to staging server
     runs-on: ubuntu-latest
+    needs: ci-gate
+    environment: staging
+    concurrency:
+      group: deploy-staging
+      cancel-in-progress: false
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          timeout: 300s
+          script: |
+            set -euo pipefail
+            cd /home/mayday/ff-engine
+
+            echo "=== [1/6] Pull latest code ==="
+            git fetch --prune origin
+            git checkout main
+            git reset --hard origin/main
+
+            echo "=== [2/6] Install/update dependencies ==="
+            .venv/bin/pip install -q --upgrade pip
+            .venv/bin/pip install -q -r requirements/prod.txt
+
+            echo "=== [3/6] Run migrations ==="
+            DJANGO_SETTINGS_MODULE=config.settings.prod \
+              .venv/bin/python manage.py migrate --no-input
+
+            echo "=== [4/6] Collect static files ==="
+            DJANGO_SETTINGS_MODULE=config.settings.prod \
+              .venv/bin/python manage.py collectstatic --no-input --clear
+
+            echo "=== [5/6] Reload Gunicorn (zero-downtime) ==="
+            # HUP sends a graceful reload: new workers start before old ones stop.
+            sudo systemctl reload ff-engine || sudo systemctl restart ff-engine
+
+            echo "=== [6/6] Wait for workers to be ready ==="
+            sleep 5
+            sudo systemctl is-active ff-engine
+            echo "Deploy complete ✓"
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # 3. Post-deploy verification
+  # ──────────────────────────────────────────────────────────────────────────
+  verify:
+    name: Verify staging health
+    runs-on: ubuntu-latest
+    needs: deploy
     environment: staging
 
     steps:
-      - name: Wait for Render deploy to complete
-        # Render typically takes 2-3 minutes to build and deploy
-        run: sleep 180
+      - name: Health endpoint check
+        run: |
+          echo "Checking ${{ secrets.STAGING_URL }}/v1/health/ ..."
+          for attempt in 1 2 3; do
+            STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+              --max-time 30 "${{ secrets.STAGING_URL }}/v1/health/")
+            echo "Attempt $attempt: $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              echo "Health check passed ✓"
+              break
+            fi
+            if [ "$attempt" = "3" ]; then
+              echo "Health check failed after 3 attempts (last status: $STATUS)"
+              exit 1
+            fi
+            sleep 10
+          done
 
-      - name: Check staging health endpoint
+      - name: Smoke test — search by ingredients
         run: |
           STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
-            https://ff-engine-kuar.onrender.com/v1/health/)
-          echo "Health check status: $STATUS"
+            --max-time 30 \
+            -X POST "${{ secrets.STAGING_URL }}/v1/search/by-ingredients" \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
+            -d '{"ingredients":["tomato","onion"]}')
+          echo "Search smoke test status: $STATUS"
           if [ "$STATUS" != "200" ]; then
-            echo "Staging health check failed with status $STATUS"
+            echo "Search smoke test failed (status: $STATUS)"
             exit 1
           fi
-          echo "Staging is healthy ✓"
+          echo "Smoke test passed ✓"
 
-      - name: Print staging URL
+      - name: Print staging URLs
         run: |
-          echo "Staging URL: https://ff-engine-kuar.onrender.com"
-          echo "Admin:       https://ff-engine-kuar.onrender.com/admin/"
-          echo "API docs:    https://ff-engine-kuar.onrender.com/docs/"
+          echo ""
+          echo "Staging deployed and verified ✓"
+          echo "  Public URL:   ${{ secrets.STAGING_URL }}"
+          echo "  Health:       ${{ secrets.STAGING_URL }}/v1/health/"
+          echo "  API docs:     ${{ secrets.STAGING_URL }}/docs/"
+          echo "  Admin:        ${{ secrets.STAGING_URL }}/admin/"

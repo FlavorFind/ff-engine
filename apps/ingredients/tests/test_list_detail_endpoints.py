@@ -9,10 +9,20 @@ from __future__ import annotations
 import pytest
 from rest_framework.test import APIClient
 
+from apps.clients.keys import create_key
+from apps.clients.models import ApiClient, ApiKey
+
 
 @pytest.fixture
-def api():
-    return APIClient()
+def api(db):
+    """Authenticated API client with read:catalog scope (required since PR #64)."""
+    client_record = ApiClient.objects.create(
+        name="_test_ingredients_client", type=ApiClient.ClientType.TEST
+    )
+    _, raw_key = create_key(client_record, scopes=[ApiKey.SCOPE_READ_CATALOG])
+    c = APIClient()
+    c.credentials(HTTP_X_API_KEY=raw_key)
+    return c
 
 
 # ─────────────────────────────────────────────────────────────────────────────

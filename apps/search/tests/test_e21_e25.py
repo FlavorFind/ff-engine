@@ -814,7 +814,7 @@ class TestSearchEndpoint:
             "matched",
             "missing",
             "unused",
-            "staples_assumed",
+            "assumed_staples",
             "score_breakdown",
         ):
             assert key in r, f"missing field: {key}"

@@ -156,3 +156,25 @@ Record incidents in `docs/runbooks/incident-log.md`. Template:
 **Resolution:** Steps taken
 **Follow-up:** Link to GitHub issue
 ```
+
+---
+
+## Render Free Plan Database Expiry
+
+The PostgreSQL database (`flavorfind_engine_db`) is on Render's **free plan**, which
+**expires after 90 days of inactivity** (or as per Render's current free-tier policy).
+
+**Renewal checklist (run before expiry):**
+1. Log in to the Render dashboard.
+2. Navigate to **PostgreSQL → flavorfind_engine_db**.
+3. Check the expiry date shown on the database overview page.
+4. If expiry is within 14 days: upgrade to a paid plan OR export a full backup and
+   recreate the database on a new free instance.
+
+**External backup before renewal:**
+```bash
+python manage.py backup_drill --step backup
+```
+Store the snapshot outside Render (S3, GCS, or local) before recreating the database.
+
+**Tracking:** Review this checklist every 60 days. Log any renewal in the incident log.

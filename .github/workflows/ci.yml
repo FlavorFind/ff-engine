@@ -5,6 +5,8 @@ on:
     branches: [main]
   push:
     branches: [main]
+  # Allow this workflow to be called by other workflows (e.g. deploy-staging)
+  workflow_call:
 
 jobs:
   lint:

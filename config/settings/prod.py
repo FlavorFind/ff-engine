@@ -42,12 +42,13 @@ STORAGES = {
 
 
 # Cache — use LocMemCache when Redis is not available (e.g. Render free tier).
-# LocMemCache is per-process and resets on restart, but it is sufficient for
-# rate-limiting and short-lived search caching on the free tier.
-# Set REDIS_URL to a real Redis instance to upgrade automatically.
+# Use Redis when REDIS_URL is set; fall back to LocMemCache only when it is
+# absent (e.g. CI, ephemeral review environments).
+# NOTE: redis://localhost is valid in self-hosted deployments — do not treat
+# it as a fallback trigger.
 def _make_cache_config():  # noqa: E302
     _redis_url = env("REDIS_URL", default="")  # noqa: F405
-    if not _redis_url or _redis_url.startswith("redis://localhost"):
+    if not _redis_url:
         return {
             "default": {
                 "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
