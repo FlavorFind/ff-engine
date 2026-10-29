@@ -61,6 +61,7 @@ class ApiKeyRateThrottle(SimpleRateThrottle):
             # Redis unavailable (e.g. no Redis on free-tier hosting).
             # Fail open: allow the request rather than returning a 500.
             import logging
+
             logging.getLogger(__name__).warning(
                 "Rate-limit cache unavailable — allowing request without throttling"
             )
