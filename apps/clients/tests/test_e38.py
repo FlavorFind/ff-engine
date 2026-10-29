@@ -36,32 +36,34 @@ def auth_client(client_record):
 @pytest.mark.django_db
 class TestMeteringMiddleware:
     def test_authenticated_request_creates_log(self, auth_client, client_record) -> None:
-        auth_client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        auth_client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
         assert RequestLog.objects.filter(client=client_record).count() == 1
 
     def test_log_records_endpoint(self, auth_client, client_record) -> None:
-        auth_client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        auth_client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
         log = RequestLog.objects.get(client=client_record)
         assert log.endpoint == "/v1/search/by-ingredients"
 
     def test_log_records_status_code(self, auth_client, client_record) -> None:
-        auth_client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        auth_client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
         log = RequestLog.objects.get(client=client_record)
         assert log.status_code == 200
 
     def test_log_records_response_ms(self, auth_client, client_record) -> None:
-        auth_client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        auth_client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
         log = RequestLog.objects.get(client=client_record)
         assert log.response_ms >= 0
 
     def test_multiple_requests_create_multiple_logs(self, auth_client, client_record) -> None:
         for _ in range(3):
-            auth_client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+            auth_client.post(
+                "/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json"
+            )
         assert RequestLog.objects.filter(client=client_record).count() == 3
 
     def test_unauthenticated_request_not_logged(self, db) -> None:
         anon = APIClient()
-        anon.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        anon.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
         assert RequestLog.objects.count() == 0
 
 

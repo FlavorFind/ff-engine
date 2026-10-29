@@ -164,30 +164,26 @@ class TestMalformedPayloads:
 
 @pytest.mark.django_db
 class TestEmptyInputs:
-    """Empty ingredient list should return 200 with empty/zero results."""
+    """Empty ingredient list should return 400 — at least one ingredient required."""
 
-    def test_empty_ingredients_list_returns_200(self, api) -> None:
+    def test_empty_ingredients_list_returns_400(self, api) -> None:
         resp = api.post(
             "/v1/search/by-ingredients",
             {"ingredients": []},
             format="json",
         )
-        assert resp.status_code == 200
+        assert resp.status_code == 400
 
-    def test_empty_results_structure_is_valid(self, api) -> None:
+    def test_empty_ingredients_error_shape(self, api) -> None:
         resp = api.post(
             "/v1/search/by-ingredients",
             {"ingredients": []},
             format="json",
         )
         data = resp.json()
-        assert "results" in data
-        # results is a dict with three tiers, not a flat list
-        results = data["results"]
-        assert isinstance(results, dict)
-        assert "exact" in results
-        assert "can_make" in results
-        assert "almost" in results
+        assert "error" in data
+        assert "code" in data["error"]
+        assert "message" in data["error"]
 
 
 # ── Authentication failures ────────────────────────────────────────────────────

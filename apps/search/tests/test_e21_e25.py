@@ -819,14 +819,13 @@ class TestSearchEndpoint:
         ):
             assert key in r, f"missing field: {key}"
 
-    def test_empty_ingredients_returns_200_no_results(self, api_client, db) -> None:
+    def test_empty_ingredients_returns_400(self, api_client, db) -> None:
         resp = api_client.post(
             "/v1/search/by-ingredients",
             {"ingredients": []},
             format="json",
         )
-        assert resp.status_code == 200
-        assert resp.json()["total_results"] == 0
+        assert resp.status_code == 400
 
     def test_invalid_mode_returns_400(self, api_client, db) -> None:
         resp = api_client.post(

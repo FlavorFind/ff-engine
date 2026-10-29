@@ -136,7 +136,7 @@ class SearchResultItemSerializer(serializers.Serializer):
     matched = IngredientRefSerializer(many=True)
     missing = IngredientRefSerializer(many=True)
     unused = IngredientRefSerializer(many=True)
-    assumed_staples = IngredientRefSerializer(many=True)
+    assumed_staples = IngredientRefSerializer(many=True, source="staples_assumed")
     quality_level = serializers.CharField()
 
 

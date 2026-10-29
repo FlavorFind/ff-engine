@@ -48,7 +48,7 @@ class TestRateLimiting:
         for _ in range(3):
             resp = client.post(
                 "/v1/search/by-ingredients",
-                {"ingredients": []},
+                {"ingredients": ["tomato"]},
                 format="json",
             )
             assert resp.status_code == 200
@@ -56,9 +56,9 @@ class TestRateLimiting:
     def test_exceeding_limit_returns_429(self, client_record) -> None:
         """rpm=2 → third request should be throttled."""
         client, _ = _make_client(client_record, rpm=2)
-        resp1 = client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
-        resp2 = client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
-        resp3 = client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        resp1 = client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
+        resp2 = client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
+        resp3 = client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
 
         assert resp1.status_code == 200
         assert resp2.status_code == 200
@@ -67,8 +67,8 @@ class TestRateLimiting:
     def test_429_has_retry_after_header(self, client_record) -> None:
         """Throttled response must include Retry-After header."""
         client, _ = _make_client(client_record, rpm=1)
-        client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
-        resp = client.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
+        resp = client.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
 
         assert resp.status_code == 429
         assert "Retry-After" in resp.headers
@@ -79,7 +79,7 @@ class TestRateLimiting:
         for _ in range(10):
             resp = client.post(
                 "/v1/search/by-ingredients",
-                {"ingredients": []},
+                {"ingredients": ["tomato"]},
                 format="json",
             )
             assert resp.status_code == 200
@@ -90,10 +90,14 @@ class TestRateLimiting:
         client_b, _ = _make_client(client_record, rpm=1)
 
         # Exhaust client_a's limit
-        client_a.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
-        resp_a = client_a.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        client_a.post("/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json")
+        resp_a = client_a.post(
+            "/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json"
+        )
         assert resp_a.status_code == 429
 
         # client_b's bucket is independent — should still be 200
-        resp_b = client_b.post("/v1/search/by-ingredients", {"ingredients": []}, format="json")
+        resp_b = client_b.post(
+            "/v1/search/by-ingredients", {"ingredients": ["tomato"]}, format="json"
+        )
         assert resp_b.status_code == 200
