@@ -79,10 +79,10 @@ def region_list(request: Request) -> Response:
     if if_none_match and if_none_match == etag:
         resp = Response(status=304)
         resp["ETag"] = etag
-        resp["Cache-Control"] = "public, max-age=300"
+        resp["Cache-Control"] = "private, max-age=300"
         return resp
 
     resp = Response(payload)
     resp["ETag"] = etag
-    resp["Cache-Control"] = "public, max-age=300"
+    resp["Cache-Control"] = "private, max-age=300"
     return resp
