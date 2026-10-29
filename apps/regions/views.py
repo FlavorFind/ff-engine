@@ -8,6 +8,9 @@ GET /v1/regions/
 
 from __future__ import annotations
 
+import hashlib
+import json
+
 from drf_spectacular.utils import OpenApiParameter, OpenApiResponse, extend_schema
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -33,6 +36,7 @@ from apps.regions.models import Region
     ],
     responses={
         200: OpenApiResponse(description="List of regions"),
+        304: OpenApiResponse(description="Not modified"),
         400: OpenApiResponse(description="Invalid query parameter"),
     },
     tags=["Regions"],
@@ -63,4 +67,21 @@ def region_list(request: Request) -> Response:
         }
         for r in qs
     ]
-    return Response({"count": len(data), "results": data})
+
+    payload = {"count": len(data), "results": data}
+
+    # Compute ETag from the response body so clients can use If-None-Match / 304.
+    body = json.dumps(payload, sort_keys=True, ensure_ascii=False)
+    etag = hashlib.sha256(body.encode()).hexdigest()[:32]
+
+    if_none_match = request.META.get("HTTP_IF_NONE_MATCH", "")
+    if if_none_match and if_none_match == etag:
+        resp = Response(status=304)
+        resp["ETag"] = etag
+        resp["Cache-Control"] = "public, max-age=300"
+        return resp
+
+    resp = Response(payload)
+    resp["ETag"] = etag
+    resp["Cache-Control"] = "public, max-age=300"
+    return resp

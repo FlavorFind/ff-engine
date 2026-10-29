@@ -39,3 +39,29 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+
+# Cache — use LocMemCache when Redis is not available (e.g. Render free tier).
+# LocMemCache is per-process and resets on restart, but it is sufficient for
+# rate-limiting and short-lived search caching on the free tier.
+# Set REDIS_URL to a real Redis instance to upgrade automatically.
+def _make_cache_config():  # noqa: E302
+    _redis_url = env("REDIS_URL", default="")  # noqa: F405
+    if not _redis_url or _redis_url.startswith("redis://localhost"):
+        return {
+            "default": {
+                "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+                "LOCATION": "ffengine-locmem",
+            }
+        }
+    return {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": _redis_url,
+            "KEY_PREFIX": "ffengine",
+            "TIMEOUT": 300,
+        }
+    }
+
+
+CACHES = _make_cache_config()

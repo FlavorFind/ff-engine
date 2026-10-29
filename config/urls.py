@@ -14,7 +14,8 @@ urlpatterns = [
     # API v1
     path("v1/", include("apps.api.urls")),
     # OpenAPI schema and docs
-    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("v1/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path("schema/", SpectacularAPIView.as_view(), name="schema-root"),  # legacy
     path("docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
 ]
 

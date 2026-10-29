@@ -98,14 +98,11 @@ def search_by_ingredients(request: Request) -> Response:
         Cache-Control: private, max-age=300
     """
     req_ser = SearchRequestSerializer(data=request.data)
-    if not req_ser.is_valid():
-        return Response(
-            {"errors": req_ser.errors},
-            status=http_status.HTTP_400_BAD_REQUEST,
-        )
+    req_ser.is_valid(raise_exception=True)
 
     data = req_ser.validated_data
-    ingredients: list[str] = data["ingredients"]
+    # Sort so order-independent queries produce identical cache keys and results.
+    ingredients: list[str] = sorted(data["ingredients"])
     exclude: list[str] = data.get("exclude") or []
     mode: str = data.get("mode", "strict")
     meal_type: str | None = data.get("meal_type")

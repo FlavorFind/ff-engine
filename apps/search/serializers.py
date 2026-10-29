@@ -41,7 +41,7 @@ class StrictStringField(serializers.CharField):
 class SearchRequestSerializer(serializers.Serializer):
     ingredients = serializers.ListField(
         child=StrictStringField(max_length=200, allow_blank=False),
-        min_length=0,
+        min_length=1,
         max_length=30,
         help_text="Ingredient names or phrases typed by the user.",
     )
@@ -136,7 +136,7 @@ class SearchResultItemSerializer(serializers.Serializer):
     matched = IngredientRefSerializer(many=True)
     missing = IngredientRefSerializer(many=True)
     unused = IngredientRefSerializer(many=True)
-    staples_assumed = IngredientRefSerializer(many=True)
+    assumed_staples = IngredientRefSerializer(many=True)
     quality_level = serializers.CharField()
 
 

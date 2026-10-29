@@ -55,7 +55,7 @@ class ExplainedResult:
     matched: list[IngredientRef]  # non-staple required ings user has
     missing: list[IngredientRef]  # non-staple required ings user lacks
     unused: list[IngredientRef]  # user's ings the dish doesn't use
-    staples_assumed: list[IngredientRef]  # staples assumed in the kitchen
+    assumed_staples: list[IngredientRef]  # staples assumed in the kitchen
     quality_level: str
     status: str
 
@@ -115,7 +115,7 @@ def explain(
                 matched=_refs(jd.matched_ids, ing_map),
                 missing=_refs(jd.missing_ids, ing_map),
                 unused=_refs(jd.unused_ids, ing_map),
-                staples_assumed=_refs(jd.staples_assumed, ing_map),
+                assumed_staples=_refs(jd.staples_assumed, ing_map),
                 quality_level=c.quality_level,
                 status=c.status,
             )
