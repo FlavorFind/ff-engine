@@ -155,7 +155,7 @@ CELERY_BEAT_SCHEDULE = {
 # ---------------------------------------------------------------------------
 AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_URL = "two_factor:login"
-LOGIN_REDIRECT_URL = "admin:index"
+LOGIN_REDIRECT_URL = "/console/"
 
 # ---------------------------------------------------------------------------
 # Password validation
@@ -180,6 +180,7 @@ USE_TZ = True
 # ---------------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ---------------------------------------------------------------------------
@@ -212,7 +213,10 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "Flavor Find Engine API",
     "DESCRIPTION": (
         "The isolated Flavor Find recipe engine. "
-        "Ingredient matching, pairings, substitutions and dietary filtering for Kenyan food."
+        "Ingredient matching, pairings, substitutions and dietary filtering for Kenyan food. "
+        "Disclaimer: dietary and allergen information is provided for informational purposes only "
+        "and is not a substitute for professional medical or nutritional advice. Always consult a "
+        "qualified professional for dietary requirements."
     ),
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
@@ -245,10 +249,16 @@ LOGGING = {
             "style": "{",
         },
     },
+    "filters": {
+        "request_id": {
+            "()": "apps.core.logging.RequestIDFilter",
+        },
+    },
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "simple",
+            "filters": ["request_id"],
         },
     },
     "root": {

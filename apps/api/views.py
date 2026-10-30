@@ -21,7 +21,7 @@ from rest_framework.response import Response
     },
     tags=["Meta"],
 )
-@api_view(["GET"])
+@api_view(["GET", "HEAD"])
 @permission_classes([AllowAny])
 def health(request: Request) -> Response:
     """
@@ -52,7 +52,7 @@ def health(request: Request) -> Response:
     },
     tags=["Meta"],
 )
-@api_view(["GET"])
+@api_view(["GET", "HEAD"])
 @permission_classes([AllowAny])
 def version(request: Request) -> Response:
     """

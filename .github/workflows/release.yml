@@ -39,6 +39,15 @@ jobs:
         run: |
           docker build -f docker/Dockerfile -t ff-engine:${{ github.ref_name }} .
 
+      - name: Container scan (Trivy)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: ff-engine:${{ github.ref_name }}
+          format: table
+          exit-code: "1"
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+
       - name: Deploy to production
         env:
           DEPLOY_HOST: ${{ secrets.PROD_HOST }}
