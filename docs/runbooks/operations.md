@@ -24,10 +24,46 @@ Render auto-deploys on every push to `main`. To trigger manually:
 
 1. Go to Render dashboard → ff-engine → Manual Deploy → Deploy latest commit.
 2. Wait for the health check to go green (≈ 2 min).
-3. Run the golden set post-deploy:
+3. **Warm up the service** — first requests after a restart are slow because Gunicorn workers start cold and the Redis cache is empty. Prime the cache before declaring the service ready:
+   ```bash
+   # Confirm the app is up
+   curl -s https://engine.flavorfind.co.ke/v1/health/
+   # Prime the search cache with common queries
+   curl -s -X POST https://engine.flavorfind.co.ke/v1/search/by-ingredients \
+     -H "X-API-Key: $KEY" -H "Content-Type: application/json" \
+     -d '{"ingredients":["tomato","onion"]}' > /dev/null
+   curl -s -X POST https://engine.flavorfind.co.ke/v1/search/by-ingredients \
+     -H "X-API-Key: $KEY" -H "Content-Type: application/json" \
+     -d '{"ingredients":["maize flour","kale"]}' > /dev/null
+   # Prime the catalogue cache
+   curl -s -H "X-API-Key: $KEY" "https://engine.flavorfind.co.ke/v1/dishes/?limit=20" > /dev/null
+   curl -s -H "X-API-Key: $KEY" "https://engine.flavorfind.co.ke/v1/ingredients/?limit=20" > /dev/null
+   ```
+4. Run the golden set post-deploy:
    ```bash
    python manage.py run_golden_set --fail-fast
    ```
+
+---
+
+## Monitoring and Alerts
+
+**Uptime monitoring:** BetterStack (or UptimeRobot) pings `/v1/health/` every 60 seconds.
+- If the check fails 3 times in a row, an alert is sent via Sentry notification.
+
+**Error tracking:** Sentry captures all unhandled exceptions and 5xx responses automatically.
+- Set `SENTRY_DSN` environment variable to enable.
+- Alert threshold: any new error or error rate spike > 1% in a 5-minute window.
+
+**Response time alerts:** Sentry performance monitoring tracks p95 latency.
+- Alert if p95 exceeds 500ms for the `/v1/search/by-ingredients` endpoint.
+
+To check current alerts:
+```bash
+# Check service health
+curl https://engine.flavorfind.co.ke/v1/health/
+# Review Sentry dashboard for recent errors
+```
 
 ---
 
