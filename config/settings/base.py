@@ -212,7 +212,10 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "Flavor Find Engine API",
     "DESCRIPTION": (
         "The isolated Flavor Find recipe engine. "
-        "Ingredient matching, pairings, substitutions and dietary filtering for Kenyan food."
+        "Ingredient matching, pairings, substitutions and dietary filtering for Kenyan food. "
+        "Disclaimer: dietary and allergen information is provided for informational purposes only "
+        "and is not a substitute for professional medical or nutritional advice. Always consult a "
+        "qualified professional for dietary requirements."
     ),
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,

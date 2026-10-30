@@ -31,6 +31,27 @@ Render auto-deploys on every push to `main`. To trigger manually:
 
 ---
 
+## Monitoring and Alerts
+
+**Uptime monitoring:** BetterStack (or UptimeRobot) pings `/v1/health/` every 60 seconds.
+- If the check fails 3 times in a row, an alert is sent via Sentry notification.
+
+**Error tracking:** Sentry captures all unhandled exceptions and 5xx responses automatically.
+- Set `SENTRY_DSN` environment variable to enable.
+- Alert threshold: any new error or error rate spike > 1% in a 5-minute window.
+
+**Response time alerts:** Sentry performance monitoring tracks p95 latency.
+- Alert if p95 exceeds 500ms for the `/v1/search/by-ingredients` endpoint.
+
+To check current alerts:
+```bash
+# Check service health
+curl https://engine.flavorfind.co.ke/v1/health/
+# Review Sentry dashboard for recent errors
+```
+
+---
+
 ## Rollback
 
 Run the rollback drill first to print instructions:
