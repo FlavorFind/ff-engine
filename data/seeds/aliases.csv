@@ -294,7 +294,6 @@ cardamom,green cardamom,en,false
 cardamom,iliki,sw,false
 carissa,natal plum,en,false
 carissa,num num,en,false
-carrot,carrots,en,false
 carrot,fresh carrot,en,false
 carrot,karoti,sw,false
 carrot-juice,fresh carrot juice,en,false
@@ -422,7 +421,6 @@ coconut-flakes,desiccated coconut,en,false
 coconut-flakes,shredded coconut,en,false
 coconut-flour,unga wa nazi,sw,false
 coconut-milk,canned coconut milk,en,false
-coconut-milk,coconut cream,en,false
 coconut-milk,maziwa ya nazi,sw,false
 coconut-milk-light,coconut milk light,en,false
 coconut-milk-light,light coconut milk,en,false
@@ -444,7 +442,6 @@ coconut-yogurt,dairy free yogurt,en,false
 coconut-yogurt,vegan yogurt,en,false
 coffee-husks,coffee husk tea,en,false
 coffee-husks,qishr,en,false
-collard-greens,kale,en,false
 collard-greens,sukuma,sheng,false
 collard-greens,sukuma,sw,false
 collard-greens,sukuma wiki,sw,false
@@ -1183,7 +1180,6 @@ passion-fruit,marakuja,sw,false
 passion-fruit-juice,passion fruit juice,en,false
 peach,fresh peach,en,false
 peach,nectarine,en,false
-peanut-butter,groundnut paste,en,false
 peanut-butter,smooth peanut butter,en,false
 peanut-butter,siagi ya karanga,sw,false
 peanut-oil,peanut oil,en,false
@@ -1214,7 +1210,6 @@ pine-nuts,pine seeds,en,false
 pishori-rice,pishori rice,en,false
 pistachios,pistachio nuts,en,false
 pistachios,shelled pistachios,en,false
-plantain-flour,green banana,en,false
 plantain-flour,ndizi mbichi,sw,false
 plum,fresh plum,en,false
 plum,italian plum,en,false
@@ -1232,7 +1227,6 @@ pork-ribs,pork ribs,en,false
 pork-sausages,pork sausages,en,false
 potato,fresh potato,en,false
 potato,white potato,en,false
-potato,viazi,sheng,false
 potato,viazi,sw,false
 potatoes,baby potatoes,en,false
 potatoes,fresh potatoes,en,false
@@ -1369,7 +1363,6 @@ star-anise,chinese star anise,en,false
 star-fruit,carambola,en,false
 star-fruit,five finger fruit,en,false
 strawberry,fresh strawberry,en,false
-strawberry,strawberries,en,false
 sugar,granulated sugar,en,false
 sugar,white sugar,en,false
 sugar,sukari,sw,false
@@ -1421,7 +1414,6 @@ tilapia-fillets,tilapia fillet,en,false
 tomato,fresh tomato,en,false
 tomato,ripe tomato,en,false
 tomato,tomatoe,en,true
-tomato,tomatos,en,true
 tomato,toma,sheng,false
 tomato,nyanya,sw,false
 tomato-ketchup,ketchup,en,false
@@ -1510,3 +1502,7 @@ yogurt,mtindi,sw,false
 zaatar,thyme spice blend,en,false
 zaatar,za atar spice mix,en,false
 zaatar,zahtar,en,false
+baobab-fruit,baobab,en,false
+coffee,brewed coffee,en,false
+coffee,kahwa,sw,false
+coffee,kaawa,sheng,false
