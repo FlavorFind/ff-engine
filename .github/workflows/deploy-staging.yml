@@ -62,8 +62,7 @@ jobs:
             git reset --hard origin/main
 
             echo "=== [2/6] Install/update dependencies ==="
-            .venv/bin/pip install -q --upgrade pip
-            .venv/bin/pip install -q -r requirements/prod.txt
+            .venv/bin/pip install -q -r requirements/prod.txt --prefer-binary
 
             echo "=== [3/6] Run migrations ==="
             DJANGO_SETTINGS_MODULE=config.settings.prod \
