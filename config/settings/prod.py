@@ -66,3 +66,4 @@ def _make_cache_config():  # noqa: E302
 
 
 CACHES = _make_cache_config()
+DEBUG_HEALTH = True  # ROLLBACK DRILL - INTENTIONAL BREAK
