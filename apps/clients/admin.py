@@ -92,15 +92,23 @@ class ApiKeyAdmin(admin.ModelAdmin):
     search_fields = ["prefix", "client__name"]
     readonly_fields = [
         "id",
-        "client",
         "prefix",
         "hashed_key",
-        "scopes",
-        "rate_limit",
         "created_at",
         "last_used_at",
         "revoked_at",
     ]
+    fieldsets = (
+        ("Key Info", {
+            "fields": ("id", "prefix", "hashed_key")
+        }),
+        ("Configuration", {
+            "fields": ("client", "name", "scopes", "rate_limit")
+        }),
+        ("Status", {
+            "fields": ("created_at", "last_used_at", "revoked_at")
+        }),
+    )
     actions = ["revoke_keys"]
 
     def scopes_display(self, obj):
