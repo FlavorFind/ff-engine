@@ -248,10 +248,16 @@ LOGGING = {
             "style": "{",
         },
     },
+    "filters": {
+        "request_id": {
+            "()": "apps.core.logging.RequestIDFilter",
+        },
+    },
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "simple",
+            "filters": ["request_id"],
         },
     },
     "root": {
