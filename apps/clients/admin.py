@@ -99,15 +99,9 @@ class ApiKeyAdmin(admin.ModelAdmin):
         "revoked_at",
     ]
     fieldsets = (
-        ("Key Info", {
-            "fields": ("id", "prefix", "hashed_key")
-        }),
-        ("Configuration", {
-            "fields": ("client", "scopes", "rate_limit")
-        }),
-        ("Status", {
-            "fields": ("created_at", "last_used_at", "revoked_at")
-        }),
+        ("Key Info", {"fields": ("id", "prefix", "hashed_key")}),
+        ("Configuration", {"fields": ("client", "scopes", "rate_limit")}),
+        ("Status", {"fields": ("created_at", "last_used_at", "revoked_at")}),
     )
     actions = ["revoke_keys"]
 

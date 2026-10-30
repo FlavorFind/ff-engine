@@ -65,7 +65,11 @@ def console(request):
     # Find the best available active key for the logged-in session:
     # prefer internal-scoped staging key, fall back to any active key.
     api_key = ""
-    qs = ApiKey.objects.filter(revoked_at__isnull=True).select_related("client").order_by("-created_at")
+    qs = (
+        ApiKey.objects.filter(revoked_at__isnull=True)
+        .select_related("client")
+        .order_by("-created_at")
+    )
     key_obj = qs.filter(client__type="internal").first() or qs.first()
     if key_obj:
         # We only store the hash — use the staging-read key prefix as a hint,
