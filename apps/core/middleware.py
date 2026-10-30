@@ -22,5 +22,8 @@ class RequestIDMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         request_id = getattr(request, "request_id", str(uuid.uuid4()))
         response["X-Request-ID"] = request_id
-        request_id_var.set(None)
+        # Do not clear the contextvar here — Django's request logger
+        # (django.request) fires AFTER middleware process_response, so
+        # clearing would wipe request_id before it reaches the filter.
+        # The next request's process_request overwrites it.
         return response
