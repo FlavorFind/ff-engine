@@ -97,7 +97,7 @@ jobs:
           for attempt in 1 2 3; do
             STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
               --max-time 30 \
-              -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
+              -H "X-API-Key: ffk_71fbe13c18afb9e92785eaff86db4f9c1b50c781" \
               "${{ secrets.STAGING_URL }}/v1/health/")
             echo "Attempt $attempt: $STATUS"
             if [ "$STATUS" = "200" ]; then
@@ -117,7 +117,7 @@ jobs:
             --max-time 30 \
             -X POST "${{ secrets.STAGING_URL }}/v1/search/by-ingredients" \
             -H "Content-Type: application/json" \
-            -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
+            -H "X-API-Key: ffk_71fbe13c18afb9e92785eaff86db4f9c1b50c781" \
             -d '{"ingredients":["tomato","onion"]}')
           echo "Search smoke test status: $STATUS"
           if [ "$STATUS" != "200" ]; then
