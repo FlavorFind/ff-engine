@@ -25,5 +25,5 @@ pip-audit==2.7.3
 
 # Debug
 django-debug-toolbar==4.4.6
-ipython==8.28.0
+ipython==9.17.1
 
