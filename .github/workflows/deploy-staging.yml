@@ -96,7 +96,9 @@ jobs:
           echo "Checking ${{ secrets.STAGING_URL }}/v1/health/ ..."
           for attempt in 1 2 3; do
             STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
-              --max-time 30 "${{ secrets.STAGING_URL }}/v1/health/")
+              --max-time 30 \
+              -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
+              "${{ secrets.STAGING_URL }}/v1/health/")
             echo "Attempt $attempt: $STATUS"
             if [ "$STATUS" = "200" ]; then
               echo "Health check passed ✓"
