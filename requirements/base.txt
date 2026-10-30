@@ -2,7 +2,7 @@
 Django==5.2.17
 djangorestframework==3.18.2
 django-environ==0.11.2
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.13
 redis==5.1.1
 hiredis==3.0.0
 
