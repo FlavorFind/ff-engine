@@ -24,7 +24,22 @@ Render auto-deploys on every push to `main`. To trigger manually:
 
 1. Go to Render dashboard → ff-engine → Manual Deploy → Deploy latest commit.
 2. Wait for the health check to go green (≈ 2 min).
-3. Run the golden set post-deploy:
+3. **Warm up the service** — first requests after a restart are slow because Gunicorn workers start cold and the Redis cache is empty. Prime the cache before declaring the service ready:
+   ```bash
+   # Confirm the app is up
+   curl -s https://engine.flavorfind.co.ke/v1/health/
+   # Prime the search cache with common queries
+   curl -s -X POST https://engine.flavorfind.co.ke/v1/search/by-ingredients \
+     -H "X-API-Key: $KEY" -H "Content-Type: application/json" \
+     -d '{"ingredients":["tomato","onion"]}' > /dev/null
+   curl -s -X POST https://engine.flavorfind.co.ke/v1/search/by-ingredients \
+     -H "X-API-Key: $KEY" -H "Content-Type: application/json" \
+     -d '{"ingredients":["maize flour","kale"]}' > /dev/null
+   # Prime the catalogue cache
+   curl -s -H "X-API-Key: $KEY" "https://engine.flavorfind.co.ke/v1/dishes/?limit=20" > /dev/null
+   curl -s -H "X-API-Key: $KEY" "https://engine.flavorfind.co.ke/v1/ingredients/?limit=20" > /dev/null
+   ```
+4. Run the golden set post-deploy:
    ```bash
    python manage.py run_golden_set --fail-fast
    ```

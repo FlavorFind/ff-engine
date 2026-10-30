@@ -155,7 +155,7 @@ CELERY_BEAT_SCHEDULE = {
 # ---------------------------------------------------------------------------
 AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_URL = "two_factor:login"
-LOGIN_REDIRECT_URL = "admin:index"
+LOGIN_REDIRECT_URL = "/console/"
 
 # ---------------------------------------------------------------------------
 # Password validation
@@ -180,6 +180,7 @@ USE_TZ = True
 # ---------------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ---------------------------------------------------------------------------
@@ -248,10 +249,16 @@ LOGGING = {
             "style": "{",
         },
     },
+    "filters": {
+        "request_id": {
+            "()": "apps.core.logging.RequestIDFilter",
+        },
+    },
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "simple",
+            "filters": ["request_id"],
         },
     },
     "root": {

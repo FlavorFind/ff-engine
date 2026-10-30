@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import type {
   DatasetVersion,
+  IngredientRef,
   SearchRequest,
   SearchResponse,
   SearchResultItem,
 } from "./api";
-import { getVersion, search } from "./api";
+import { getVersion, getStoredKey, saveKey, search } from "./api";
 
 // ── Default weights matching the engine's config ──────────────────────────────
 const DEFAULT_WEIGHTS: Record<string, number> = {
@@ -85,12 +86,12 @@ function ResultCard({ item }: { item: SearchResultItem }) {
 
       {item.missing.length > 0 && (
         <div className="mt-1 text-xs text-red-600">
-          Missing: {item.missing.join(", ")}
+          Missing: {item.missing.map((i: IngredientRef) => i.name_en).join(", ")}
         </div>
       )}
       {item.unused.length > 0 && (
         <div className="mt-0.5 text-xs text-gray-400">
-          Unused: {item.unused.join(", ")}
+          Unused: {item.unused.map((i: IngredientRef) => i.name_en).join(", ")}
         </div>
       )}
 
@@ -111,7 +112,7 @@ function ResultCard({ item }: { item: SearchResultItem }) {
           ))}
           {item.assumed_staples.length > 0 && (
             <div className="text-gray-400">
-              Staples assumed: {item.assumed_staples.join(", ")}
+              Staples assumed: {item.assumed_staples.map((i: any) => i.name_en).join(", ")}
             </div>
           )}
         </div>
@@ -228,6 +229,9 @@ function ResolvedPanel({ resp }: { resp: SearchResponse }) {
 // ── Main App ──────────────────────────────────────────────────────────────────
 
 export default function App() {
+  const [apiKey, setApiKey] = useState(() => getStoredKey());
+  const [keyInput, setKeyInput] = useState("");
+  const [showKeyInput, setShowKeyInput] = useState(() => !getStoredKey());
   const [input, setInput] = useState("");
   const [mode, setMode] = useState<"strict" | "explore">("strict");
   const [limit, setLimit] = useState(20);
@@ -245,10 +249,11 @@ export default function App() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    getVersion()
+    if (!apiKey) return;
+    getVersion(apiKey)
       .then(setVersion)
       .catch(() => {});
-  }, []);
+  }, [apiKey]);
 
   const runSearch = async () => {
     const ingredients = input
@@ -264,12 +269,12 @@ export default function App() {
     const t0 = performance.now();
 
     try {
-      const r = await search(req);
+      const r = await search(req, apiKey);
       setElapsed(performance.now() - t0);
       setResult(r);
 
       if (compareMode) {
-        const rB = await search({ ...req, weights: compareWeights });
+        const rB = await search({ ...req, weights: compareWeights }, apiKey);
         setResultB(rB);
       } else {
         setResultB(null);
@@ -294,15 +299,60 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 font-sans text-sm text-gray-800">
       {/* Header */}
       <header className="border-b border-gray-200 bg-white px-6 py-3">
-        <div className="flex items-center justify-between">
-          <div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="shrink-0">
             <span className="text-base font-bold text-indigo-600">
               Flavor Find
             </span>
             <span className="ml-2 text-gray-400">Internal Test Console</span>
           </div>
+          {/* API Key input */}
+          <div className="flex flex-1 items-center gap-2 max-w-md">
+            {showKeyInput ? (
+              <>
+                <input
+                  type="text"
+                  className="flex-1 rounded border border-gray-300 px-2 py-1 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                  placeholder="Paste API key (ffk_…)" autoComplete="off" spellCheck={false}
+                  value={keyInput}
+                  onChange={(e) => setKeyInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && keyInput.trim()) {
+                      saveKey(keyInput.trim());
+                      setApiKey(keyInput.trim());
+                      setShowKeyInput(false);
+                      setKeyInput("");
+                    }
+                  }}
+                />
+                <button
+                  className="rounded bg-indigo-600 px-3 py-1 text-xs text-white hover:bg-indigo-700 disabled:opacity-40"
+                  disabled={!keyInput.trim()}
+                  onClick={() => {
+                    saveKey(keyInput.trim());
+                    setApiKey(keyInput.trim());
+                    setShowKeyInput(false);
+                    setKeyInput("");
+                  }}
+                >
+                  Save
+                </button>
+              </>
+            ) : (
+              <div className="flex items-center gap-2 text-xs text-gray-400">
+                <span className="font-mono">{apiKey.slice(0, 12)}… ({apiKey.length})</span>
+                <button
+                  className="text-gray-400 hover:text-red-500"
+                  title="Change key"
+                  onClick={() => { saveKey(""); setApiKey(""); setShowKeyInput(true); }}
+                >
+                  ✕
+                </button>
+              </div>
+            )}
+          </div>
           {version && (
-            <div className="text-xs text-gray-400">
+            <div className="shrink-0 text-xs text-gray-400">
               engine {version.engine_version} · dataset{" "}
               {version.dataset_version}
             </div>

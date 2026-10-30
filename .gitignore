@@ -61,3 +61,7 @@ docker/postgres_data/
 *.pem
 *.key
 *.p12
+
+# Console build artifacts
+static/console/
+templates/
