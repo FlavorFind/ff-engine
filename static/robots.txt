@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /v1/internal/
+Disallow: /account/
+Allow: /v1/
+Allow: /docs/
+
+# Flavor Find Engine API
+# https://engine.flavorfind.co.ke
