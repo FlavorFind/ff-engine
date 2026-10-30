@@ -108,7 +108,7 @@ pepper-soup-spice,pepper soup spice,Spices & Seasonings,seasoning,false
 pilau-masala,pilau masala,Spices & Seasonings,seasoning,false
 pineapple,pineapple,Fruit,secondary,false
 potato,potato,Vegetables,secondary,false
-potatoes,potatoes,Vegetables,secondary,false
+potatoes,baby potatoes,Vegetables,secondary,false
 pumpkin,pumpkin,Vegetables,secondary,false
 pumpkin-leaves,pumpkin leaves,Vegetables,secondary,false
 red-bell-pepper,red bell pepper,Vegetables,secondary,false
@@ -877,3 +877,5 @@ coconut-sugar,Coconut sugar,Other,seasoning,false
 coconut-aminos,Coconut aminos,Other,seasoning,false
 coconut-flour,Coconut flour,Other,secondary,false
 coconut-water-fresh,Fresh coconut water,Other,liquid,false
+chicken,Chicken,Poultry,primary,false
+lentils,Lentils,Legumes,primary,false
