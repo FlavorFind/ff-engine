@@ -103,7 +103,7 @@ class ApiKeyAdmin(admin.ModelAdmin):
             "fields": ("id", "prefix", "hashed_key")
         }),
         ("Configuration", {
-            "fields": ("client", "name", "scopes", "rate_limit")
+            "fields": ("client", "scopes", "rate_limit")
         }),
         ("Status", {
             "fields": ("created_at", "last_used_at", "revoked_at")
