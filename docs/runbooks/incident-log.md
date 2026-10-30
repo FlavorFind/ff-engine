@@ -32,3 +32,32 @@ Steps taken to fix.
 ---
 
 *No incidents recorded yet. (First release: 2026-10-26)*
+
+---
+
+## [2026-10-30] — Tabletop drill: search endpoint returns 500
+
+**Severity:** P1 (simulated)
+**Duration:** 18 min (simulated)
+**Detected by:** UptimeRobot health check alert (simulated)
+**Impact:** All API consumers unable to search — simulated
+
+### Timeline (UTC)
+- 15:25 — Health check at /v1/health/ returns 500 (simulated trigger)
+- 15:27 — On-call engineer receives alert, confirms via curl
+- 15:29 — journalctl reviewed, identified DB connection pool exhaustion (simulated)
+- 15:33 — sudo systemctl restart ff-engine executed
+- 15:35 — Health check returns 200, service restored
+- 15:43 — Root cause confirmed, follow-up issue logged
+
+### Root cause
+Simulated: PostgreSQL connection pool exhausted due to long-running query
+blocking new connections. Engine workers timed out returning 500s.
+
+### Resolution
+Service restart cleared the pool. Query identified and flagged for optimisation.
+
+### Follow-up
+- [x] Runbook section "DB connection issues" updated
+- [x] Alert threshold lowered to 1 failed check (was 3)
+- [x] Tabletop drill completed 2026-10-30 — all steps followed correctly

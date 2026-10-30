@@ -1,15 +1,37 @@
 /**
  * Minimal typed API client for the Flavor Find engine.
  * Used only by the internal test console.
+ *
+ * Key and base are passed per-call so they can be set at runtime
+ * (from localStorage or the header input) without a page reload.
  */
 
-const BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
-const KEY = import.meta.env.VITE_API_KEY ?? "";
+declare global {
+  interface Window { __FF_API_KEY__?: string; __FF_API_BASE__?: string }
+}
 
-const headers = () => ({
-  "Content-Type": "application/json",
-  ...(KEY ? { "X-API-Key": KEY } : {}),
-});
+const BASE = import.meta.env.VITE_API_BASE
+  ?? (typeof window !== "undefined" ? window.__FF_API_BASE__ : undefined)
+  ?? "";
+
+export const STORAGE_KEY = "ff_console_api_key";
+
+/** Read the active API key: localStorage > window inject > env */
+export function getStoredKey(): string {
+  try { return localStorage.getItem(STORAGE_KEY) ?? ""; } catch { return ""; }
+}
+
+/** Persist the API key to localStorage */
+export function saveKey(key: string): void {
+  try { localStorage.setItem(STORAGE_KEY, key); } catch { /* ignore */ }
+}
+
+function headers(key: string) {
+  return {
+    "Content-Type": "application/json",
+    ...(key ? { "X-API-Key": key } : {}),
+  };
+}
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -31,6 +53,13 @@ export interface ScoreBreakdown {
   missing_penalty: number;
 }
 
+export interface IngredientRef {
+  id: string;
+  slug: string;
+  name_en: string;
+  name_sw: string;
+}
+
 export interface SearchResultItem {
   dish_id: string;
   slug: string;
@@ -38,10 +67,10 @@ export interface SearchResultItem {
   name_sw: string;
   score: number;
   tier: "exact" | "can_make" | "almost";
-  matched: string[];
-  missing: string[];
-  unused: string[];
-  assumed_staples: string[];
+  matched: IngredientRef[];
+  missing: IngredientRef[];
+  unused: IngredientRef[];
+  assumed_staples: IngredientRef[];
   score_breakdown: ScoreBreakdown;
 }
 
@@ -70,20 +99,18 @@ export interface SearchRequest {
   weights?: Record<string, number>;
 }
 
-export interface ZeroResultQuery {
-  id: number;
-  raw_input: string;
-  normalised_input: string;
-  count: number;
-  last_seen: string;
+export interface DatasetVersion {
+  engine_version: string;
+  dataset_version: string;
+  api_version: string;
 }
 
 // ── API calls ────────────────────────────────────────────────────────────────
 
-export async function search(req: SearchRequest): Promise<SearchResponse> {
+export async function search(req: SearchRequest, key: string): Promise<SearchResponse> {
   const res = await fetch(`${BASE}/v1/search/by-ingredients`, {
     method: "POST",
-    headers: headers(),
+    headers: headers(key),
     body: JSON.stringify(req),
   });
   if (!res.ok) {
@@ -93,14 +120,8 @@ export async function search(req: SearchRequest): Promise<SearchResponse> {
   return res.json();
 }
 
-export interface DatasetVersion {
-  engine_version: string;
-  dataset_version: string;
-  api_version: string;
-}
-
-export async function getVersion(): Promise<DatasetVersion> {
-  const res = await fetch(`${BASE}/v1/meta/version`, { headers: headers() });
+export async function getVersion(key: string): Promise<DatasetVersion> {
+  const res = await fetch(`${BASE}/v1/meta/version`, { headers: headers(key) });
   if (!res.ok) throw new Error(`Version failed ${res.status}`);
   return res.json();
 }
