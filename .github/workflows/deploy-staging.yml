@@ -1,18 +1,8 @@
 name: Deploy to Staging
 
-# Deploys to the self-hosted Lenovo ThinkPad staging server (100.96.139.83)
-# after CI passes on merge to main.
-#
-# Gate: the "ci" workflow's lint + test + migration-check jobs must all pass.
-# Deploy: SSH onto the server, pull latest, migrate, collectstatic, reload.
-# Verify: hit the health endpoint and run a quick smoke test.
-#
-# Required GitHub secrets (Settings → Secrets → Actions):
-#   DEPLOY_SSH_KEY    — private key that maps to ~/.ssh/authorized_keys on the server
-#   DEPLOY_HOST       — server host (Tailscale IP or hostname, e.g. 100.96.139.83)
-#   DEPLOY_USER       — SSH user (mayday)
-#   STAGING_API_KEY   — a valid API key for the smoke-test search call
-#   STAGING_URL       — public URL (https://engine.flavorfind.co.ke)
+# Deploys to the self-hosted Lenovo ThinkPad staging server via Tailscale + SSH.
+# Gate: CI must pass before deploy runs.
+# Verify: smoke test runs on the server itself (avoids Cloudflare blocking GitHub IPs).
 
 on:
   push:
@@ -20,19 +10,19 @@ on:
 
 jobs:
   # ──────────────────────────────────────────────────────────────────────────
-  # 1. CI gate — temporarily disabled to verify deploy pipeline
+  # 1. CI gate
   # ──────────────────────────────────────────────────────────────────────────
-  # ci-gate:
-  #   name: CI gate (lint + tests + migrations)
-  #   uses: ./.github/workflows/ci.yml
+  ci-gate:
+    name: CI gate (lint + tests + migrations)
+    uses: ./.github/workflows/ci.yml
 
   # ──────────────────────────────────────────────────────────────────────────
-  # 2. Deploy
+  # 2. Deploy + verify (runs on server via SSH — not affected by Cloudflare)
   # ──────────────────────────────────────────────────────────────────────────
   deploy:
     name: Deploy to staging server
     runs-on: ubuntu-latest
-    # needs: ci-gate  # temporarily disabled to test deploy pipeline
+    needs: ci-gate
     environment: staging
     concurrency:
       group: deploy-staging
@@ -56,81 +46,40 @@ jobs:
             set -euo pipefail
             cd /home/mayday/ff-engine
 
-            echo "=== [1/6] Pull latest code ==="
+            echo "=== [1/5] Pull latest code ==="
             git fetch --prune origin
             git checkout main
             git reset --hard origin/main
 
-            echo "=== [2/6] Install/update dependencies ==="
+            echo "=== [2/5] Install/update dependencies ==="
             .venv/bin/pip install -q -r requirements/prod.txt --prefer-binary
 
-            echo "=== [3/6] Run migrations ==="
+            echo "=== [3/5] Run migrations ==="
             DJANGO_SETTINGS_MODULE=config.settings.prod \
               .venv/bin/python manage.py migrate --no-input
 
-            echo "=== [4/6] Collect static files ==="
+            echo "=== [4/5] Collect static files ==="
             DJANGO_SETTINGS_MODULE=config.settings.prod \
               .venv/bin/python manage.py collectstatic --no-input --clear
 
-            echo "=== [5/6] Reload Gunicorn (zero-downtime) ==="
-            # HUP sends a graceful reload: new workers start before old ones stop.
+            echo "=== [5/5] Reload Gunicorn ==="
             sudo systemctl reload ff-engine || sudo systemctl restart ff-engine
-
-            echo "=== [6/6] Wait for workers to be ready ==="
             sleep 5
             sudo systemctl is-active ff-engine
+
+            echo "=== Smoke test (local) ==="
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+              -H "X-API-Key: ffk_71fbe13c18afb9e92785eaff86db4f9c1b50c781" \
+              http://127.0.0.1:8000/v1/health/)
+            echo "Health: $STATUS"
+            [ "$STATUS" = "200" ] || exit 1
+
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+              -X POST http://127.0.0.1:8000/v1/search/by-ingredients \
+              -H "Content-Type: application/json" \
+              -H "X-API-Key: ffk_71fbe13c18afb9e92785eaff86db4f9c1b50c781" \
+              -d '{"ingredients":["tomato","onion"]}')
+            echo "Search: $STATUS"
+            [ "$STATUS" = "200" ] || exit 1
+
             echo "Deploy complete ✓"
-
-  # ──────────────────────────────────────────────────────────────────────────
-  # 3. Post-deploy verification
-  # ──────────────────────────────────────────────────────────────────────────
-  verify:
-    name: Verify staging health
-    runs-on: ubuntu-latest
-    needs: deploy
-    environment: staging
-
-    steps:
-      - name: Health endpoint check
-        run: |
-          echo "Checking ${{ secrets.STAGING_URL }}/v1/health/ ..."
-          for attempt in 1 2 3; do
-            STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
-              --max-time 30 \
-              -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
-              "${{ secrets.STAGING_URL }}/v1/health/")
-            echo "Attempt $attempt: $STATUS"
-            if [ "$STATUS" = "200" ]; then
-              echo "Health check passed ✓"
-              break
-            fi
-            if [ "$attempt" = "3" ]; then
-              echo "Health check failed after 3 attempts (last status: $STATUS)"
-              exit 1
-            fi
-            sleep 10
-          done
-
-      - name: Smoke test — search by ingredients
-        run: |
-          STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
-            --max-time 30 \
-            -X POST "${{ secrets.STAGING_URL }}/v1/search/by-ingredients" \
-            -H "Content-Type: application/json" \
-            -H "X-API-Key: ${{ secrets.STAGING_API_KEY }}" \
-            -d '{"ingredients":["tomato","onion"]}')
-          echo "Search smoke test status: $STATUS"
-          if [ "$STATUS" != "200" ]; then
-            echo "Search smoke test failed (status: $STATUS)"
-            exit 1
-          fi
-          echo "Smoke test passed ✓"
-
-      - name: Print staging URLs
-        run: |
-          echo ""
-          echo "Staging deployed and verified ✓"
-          echo "  Public URL:   ${{ secrets.STAGING_URL }}"
-          echo "  Health:       ${{ secrets.STAGING_URL }}/v1/health/"
-          echo "  API docs:     ${{ secrets.STAGING_URL }}/docs/"
-          echo "  Admin:        ${{ secrets.STAGING_URL }}/admin/"
