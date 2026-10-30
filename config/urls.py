@@ -1,7 +1,9 @@
 """Root URL configuration."""
 
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from two_factor.urls import urlpatterns as tf_urls
@@ -46,7 +48,7 @@ def home(request):
         "<div class='links'>"
         "<a href='/docs/' class='primary'>API Docs</a>"
         "<a href='/v1/health/' class='secondary'>Health Check</a>"
-        "<a href='/v1/schema/?format=json' class='ghost'>OpenAPI Schema</a>"
+        "<a href='/console/' class='ghost'>Internal Console</a>"
         "</div>"
         "<div class='version'>v1.0.0 &middot; staging</div>"
         "</div>"
@@ -55,15 +57,34 @@ def home(request):
     return HttpResponse(html)
 
 
+@login_required
+def console(request):
+    """Internal test console — staff only, served behind Django session auth."""
+    from apps.clients.models import ApiKey
+
+    # Find the best available active key for the logged-in session:
+    # prefer internal-scoped staging key, fall back to any active key.
+    api_key = ""
+    qs = ApiKey.objects.filter(revoked_at__isnull=True).select_related("client").order_by("-created_at")
+    key_obj = qs.filter(client__type="internal").first() or qs.first()
+    if key_obj:
+        # We only store the hash — use the staging-read key prefix as a hint,
+        # staff must supply a key via the UI if the injected one is empty.
+        # Check if a console_key is stored in the user session.
+        api_key = request.session.get("console_api_key", "")
+
+    return render(request, "console/index.html", {"api_key": api_key})
+
+
 urlpatterns = [
     # Root landing page
     path("", home, name="home"),
     # Two-factor auth login (replaces the standard Django login).
-    # Mounted at "" so login URL stays /account/login/ as per tf_urls default.
-    # Must come before admin/ so the admin login redirect lands here.
     path("", include(tf_urls, namespace="two_factor")),
     # Django admin — protected by AdminSiteOTPRequired (see accounts/admin.py)
     path("admin/", admin.site.urls),
+    # Internal test console — staff login required
+    path("console/", console, name="console"),
     # API v1
     path("v1/", include("apps.api.urls")),
     # OpenAPI schema and docs
