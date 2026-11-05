@@ -1506,3 +1506,135 @@ baobab-fruit,baobab,en,false
 coffee,brewed coffee,en,false
 coffee,kahwa,sw,false
 coffee,kaawa,sheng,false
+beef-steak,steak,en,false
+beef-steak,beef steak,en,false
+beef-steak,nyama ya steak,sw,false
+beef-mince,mince,en,false
+beef-mince,mince beef,en,false
+beef-mince,ground beef,en,false
+beef-mince,nyama ya kusaga,sw,false
+ground-beef,ground beef,en,false
+ground-beef,minced beef,en,false
+ground-beef,beef mince,en,false
+beef-strips,beef strips,en,false
+beef-strips,beef slices,en,false
+beef-strips,nyama ya ukanda,sw,false
+beef-fillet,beef fillet,en,false
+beef-fillet,fillet steak,en,false
+beef-fillet,tenderloin steak,en,false
+beef-neck,beef neck,en,false
+beef-neck,neck of beef,en,false
+beef-shank,beef shank,en,false
+beef-shank,shin of beef,en,false
+beef-shank,beef shin,en,false
+beef-chuck,beef chuck,en,false
+beef-chuck,chuck steak,en,false
+beef-fat,beef fat,en,false
+beef-fat,beef tallow,en,false
+beef-bones,beef bones,en,false
+beef-bones,nyama na mifupa,sw,false
+beef-bones,soup bones,en,false
+beef-shoulder,beef shoulder,en,false
+beef-shoulder,shoulder of beef,en,false
+beef-rump,beef rump,en,false
+beef-rump,rump steak,en,false
+goat,goat,en,false
+goat,goat meat,en,false
+goat,mbuzi,sw,false
+goat,nyama ya mbuzi,sw,false
+whole-goat,whole goat,en,false
+whole-goat,mbuzi mzima,sw,false
+goat-shoulder,goat shoulder,en,false
+goat-shoulder,bega la mbuzi,sw,false
+goat-neck,goat neck,en,false
+goat-neck,shingo ya mbuzi,sw,false
+goat-chunks,goat chunks,en,false
+goat-chunks,goat pieces,en,false
+goat-chunks,vipande vya mbuzi,sw,false
+goat-chops,goat chops,en,false
+goat-fat,goat fat,en,false
+goat-bones,goat bones,en,false
+goat-bones,mifupa ya mbuzi,sw,false
+goat-head,goat head,en,false
+goat-head,kichwa cha mbuzi,sw,false
+goat-loin,goat loin,en,false
+pork,pork,en,false
+pork,nguruwe,sw,false
+pork,nyama ya nguruwe,sw,false
+pork,pig meat,en,false
+pork-shoulder,pork shoulder,en,false
+pork-loin,pork loin,en,false
+pork-loin,loin of pork,en,false
+pork-mince,pork mince,en,false
+pork-mince,ground pork,en,false
+pork-fat,pork fat,en,false
+pork-fat,lard,en,false
+pork-trotters,pork trotters,en,false
+pork-trotters,pig trotters,en,false
+pork-trotters,pig feet,en,false
+pork-knuckle,pork knuckle,en,false
+pork-knuckle,ham hock,en,false
+bacon,bacon,en,false
+bacon,streaky bacon,en,false
+bacon,back bacon,en,false
+ham,ham,en,false
+ham,cured ham,en,false
+pork-neck,pork neck,en,false
+lamb,lamb,en,false
+lamb,kondoo,sw,false
+lamb,nyama ya kondoo,sw,false
+lamb,young sheep,en,false
+whole-lamb,whole lamb,en,false
+whole-lamb,kondoo mzima,sw,false
+lamb-mince,lamb mince,en,false
+lamb-mince,ground lamb,en,false
+lamb-fat,lamb fat,en,false
+lamb-bones,lamb bones,en,false
+lamb-bones,mifupa ya kondoo,sw,false
+lamb-kidney,lamb kidney,en,false
+lamb-liver,lamb liver,en,false
+lamb-rack,rack of lamb,en,false
+lamb-rack,lamb rack,en,false
+lamb-cutlets,lamb cutlets,en,false
+lamb-cutlets,lamb chops,en,false
+chicken-neck,chicken neck,en,false
+chicken-neck,shingo ya kuku,sw,false
+chicken-back,chicken back,en,false
+chicken-back,chicken carcass,en,false
+chicken-leg,chicken leg,en,false
+chicken-leg,mguu wa kuku,sw,false
+chicken-leg,drumstick and thigh,en,false
+chicken-quarters,chicken quarters,en,false
+chicken-quarters,leg quarters,en,false
+chicken-fat,chicken fat,en,false
+chicken-fat,schmaltz,en,false
+chicken-bones,chicken bones,en,false
+chicken-bones,mifupa ya kuku,sw,false
+mixed-offal,mixed offal,en,false
+mixed-offal,matumbo mchanganyiko,sw,false
+mixed-offal,variety meats,en,false
+beef-offal,beef offal,en,false
+beef-offal,matumbo ya ng'ombe,sw,false
+suya-meat,suya,en,false
+suya-meat,suya meat,en,false
+suya-meat,spiced grilled meat,en,false
+nyama-choma-meat,nyama choma,en,false
+nyama-choma-meat,nyama choma,sw,false
+nyama-choma-meat,roast meat,en,false
+nyama-choma-meat,grilled meat,en,false
+chorizo,chorizo,en,false
+chorizo,chorizo sausage,en,false
+merguez,merguez,en,false
+merguez,merguez sausage,en,false
+merguez,spiced lamb sausage,en,false
+frankfurter,frankfurter,en,false
+frankfurter,hot dog,en,false
+frankfurter,wiener,en,false
+mutton,mutton,en,false
+mutton,kondoo mzee,sw,false
+mutton,adult sheep,en,false
+mutton,sheep meat,en,false
+veal-cutlets,veal cutlets,en,false
+veal-cutlets,ndama,sw,false
+camel-hump,camel hump,en,false
+camel-hump,nundu ya ngamia,sw,false
