@@ -331,3 +331,99 @@ frozen-spinach,Frozen spinach,Vegetables,secondary,false
 dried-tomatoes,Dried tomatoes,Vegetables,secondary,false
 sauerkraut,Sauerkraut,Vegetables,secondary,false
 kimchi-cabbage,Kimchi cabbage,Vegetables,secondary,false
+cherry,Cherry,Fruit,secondary,false
+fig,Fig,Fruit,secondary,false
+grape,Grape,Fruit,secondary,false
+kiwi,Kiwi,Fruit,secondary,false
+kumquat,Kumquat,Fruit,secondary,false
+mandarin,Mandarin,Fruit,secondary,false
+melon,Melon,Fruit,secondary,false
+nashi-pear,Nashi pear,Fruit,secondary,false
+olive,Olive,Fruit,secondary,false
+papaya-unripe,Unripe papaya,Fruit,secondary,false
+peach-canned,Canned peach,Fruit,secondary,false
+pear-canned,Canned pear,Fruit,secondary,false
+physalis,Physalis,Fruit,secondary,false
+plantain,Plantain,Fruit,primary,false
+pomelo,Pomelo,Fruit,secondary,false
+quince,Quince,Fruit,secondary,false
+sugar-cane,Sugar cane,Fruit,primary,false
+surinam-cherry,Surinam cherry,Fruit,secondary,false
+ugni,Ugni fruit,Fruit,secondary,false
+ugli-fruit,Ugli fruit,Fruit,secondary,false
+grape-juice,Grape juice,Fruit,liquid,false
+grapefruit-juice,Grapefruit juice,Fruit,liquid,false
+soursop-juice,Soursop juice,Fruit,liquid,false
+pomegranate-juice,Pomegranate juice,Fruit,liquid,false
+strawberry-juice,Strawberry juice,Fruit,liquid,false
+mixed-fruit-juice,Mixed fruit juice,Fruit,liquid,false
+apple-juice,Apple juice,Fruit,liquid,false
+mango-banana-blend,Mango banana smoothie blend,Fruit,secondary,false
+mango-pineapple-blend,Mango pineapple blend,Fruit,secondary,false
+strawberry-banana-blend,Strawberry banana blend,Fruit,secondary,false
+tropical-fruit-blend,Tropical fruit blend,Fruit,secondary,false
+berry-blend,Mixed berry blend,Fruit,secondary,false
+citrus-blend,Citrus blend,Fruit,secondary,false
+mango-orange-blend,Mango orange blend,Fruit,secondary,false
+pineapple-coconut-blend,Pineapple coconut blend,Fruit,secondary,false
+guava-passion-blend,Guava passion fruit blend,Fruit,secondary,false
+watermelon-lime-blend,Watermelon lime blend,Fruit,secondary,false
+avocado-banana-blend,Avocado banana blend,Fruit,secondary,false
+papaya-mango-blend,Papaya mango blend,Fruit,secondary,false
+passion-mango-blend,Passion fruit mango blend,Fruit,secondary,false
+mixed-berry-blend,Mixed berry blend (frozen),Fruit,secondary,false
+green-smoothie-blend,Green smoothie blend,Fruit,secondary,false
+banana-strawberry-blend,Banana strawberry blend,Fruit,secondary,false
+mango-yogurt-blend,Mango yogurt blend,Fruit,secondary,false
+citrus-ginger-blend,Citrus ginger blend,Fruit,secondary,false
+pineapple-ginger-blend,Pineapple ginger blend,Fruit,secondary,false
+watermelon-mint-blend,Watermelon mint blend,Fruit,secondary,false
+pineapple-mango-passion-blend,Pineapple mango passion blend,Fruit,secondary,false
+banana-mango-coconut-blend,Banana mango coconut blend,Fruit,secondary,false
+guava-mango-blend,Guava mango blend,Fruit,secondary,false
+strawberry-mango-blend,Strawberry mango blend,Fruit,secondary,false
+orange-carrot-blend,Orange carrot blend,Fruit,secondary,false
+apple-ginger-blend,Apple ginger blend,Fruit,secondary,false
+peach-mango-blend,Peach mango blend,Fruit,secondary,false
+soursop-banana-blend,Soursop banana blend,Fruit,secondary,false
+tamarind-mango-blend,Tamarind mango blend,Fruit,secondary,false
+passion-orange-blend,Passion fruit orange blend,Fruit,secondary,false
+guava-pineapple-blend,Guava pineapple blend,Fruit,secondary,false
+watermelon-strawberry-blend,Watermelon strawberry blend,Fruit,secondary,false
+mango-coconut-blend,Mango coconut blend,Fruit,secondary,false
+lemon-ginger-blend,Lemon ginger blend,Fruit,secondary,false
+papaya-pineapple-blend,Papaya pineapple blend,Fruit,secondary,false
+avocado-mango-blend,Avocado mango blend,Fruit,secondary,false
+kiwi-banana-blend,Kiwi banana blend,Fruit,secondary,false
+berry-banana-blend,Berry banana blend,Fruit,secondary,false
+orange-mango-pineapple-blend,Orange mango pineapple blend,Fruit,secondary,false
+passion-banana-blend,Passion fruit banana blend,Fruit,secondary,false
+guava-banana-blend,Guava banana blend,Fruit,secondary,false
+papaya-banana-blend,Papaya banana blend,Fruit,secondary,false
+watermelon-pineapple-blend,Watermelon pineapple blend,Fruit,secondary,false
+strawberry-passion-blend,Strawberry passion fruit blend,Fruit,secondary,false
+mango-lime-blend,Mango lime blend,Fruit,secondary,false
+pineapple-passion-blend,Pineapple passion fruit blend,Fruit,secondary,false
+avocado-pineapple-blend,Avocado pineapple blend,Fruit,secondary,false
+soursop-mango-blend,Soursop mango blend,Fruit,secondary,false
+tamarind-pineapple-blend,Tamarind pineapple blend,Fruit,secondary,false
+four-fruits-blend,Four fruits blend,Fruit,secondary,false
+dried-banana,Dried banana,Fruit,secondary,false
+dried-pineapple,Dried pineapple,Fruit,secondary,false
+dried-papaya,Dried papaya,Fruit,secondary,false
+dried-dates,Dried dates,Fruit,secondary,false
+dried-raisins,Dried raisins,Fruit,secondary,false
+dried-berries,Dried mixed berries,Fruit,secondary,false
+dried-cherries,Dried cherries,Fruit,secondary,false
+fruit-pulp,Fruit pulp,Fruit,secondary,false
+mango-pulp,Mango pulp,Fruit,secondary,false
+passion-fruit-pulp,Passion fruit pulp,Fruit,secondary,false
+guava-pulp,Guava pulp,Fruit,secondary,false
+coconut-milk-fresh,Fresh coconut milk,Fruit,secondary,false
+coconut-water,Coconut water,Fruit,liquid,false
+frozen-mango,Frozen mango,Fruit,secondary,false
+frozen-strawberry,Frozen strawberry,Fruit,secondary,false
+frozen-berries,Frozen mixed berries,Fruit,secondary,false
+frozen-pineapple,Frozen pineapple,Fruit,secondary,false
+frozen-banana,Frozen banana,Fruit,secondary,false
+frozen-mixed-fruit,Frozen mixed fruit,Fruit,secondary,false

@@ -2156,3 +2156,251 @@ beetroot,beet,en,false
 beetroot,red beet,en,false
 beetroot,beet root,en,false
 yam,viazi vikuu,sw,false
+cherry,cherry,en,false
+cherry,tunda la cherry,sw,false
+cherry,cherries,en,false
+fig,fig,en,false
+fig,tini,sw,false
+fig,fresh fig,en,false
+grape,grape,en,false
+grape,zabibu,sw,false
+grape,grapes,en,false
+grape,table grapes,en,false
+kiwi,kiwi,en,false
+kiwi,kiwi fruit,en,false
+kiwi,chinese gooseberry,en,false
+kiwi,tunda la kiwi,sw,false
+kumquat,kumquat,en,false
+kumquat,cumquat,en,false
+mandarin,mandarin,en,false
+mandarin,mandarin orange,en,false
+mandarin,mandarini,sw,false
+melon,melon,en,false
+melon,tikiti,sw,false
+melon,sweet melon,en,false
+melon,honeydew,en,false
+nashi-pear,nashi pear,en,false
+nashi-pear,asian pear,en,false
+nashi-pear,japanese pear,en,false
+olive,olive,en,false
+olive,zeituni,sw,false
+olive,olives,en,false
+papaya-unripe,unripe papaya,en,false
+papaya-unripe,green papaya,en,false
+papaya-unripe,pawpaw ya kijani,sw,false
+peach-canned,canned peach,en,false
+peach-canned,tinned peach,en,false
+pear-canned,canned pear,en,false
+pear-canned,tinned pear,en,false
+physalis,physalis,en,false
+physalis,cape gooseberry,en,false
+physalis,ground cherry,en,false
+plantain,plantain,en,false
+plantain,ndizi ya kupika,sw,false
+plantain,cooking banana,en,false
+pomelo,pomelo,en,false
+pomelo,pummelo,en,false
+pomelo,chinese grapefruit,en,false
+quince,quince,en,false
+sugar-cane,sugar cane,en,false
+sugar-cane,sugarcane,en,false
+sugar-cane,miwa,sw,false
+surinam-cherry,surinam cherry,en,false
+surinam-cherry,pitanga,en,false
+ugni,ugni,en,false
+ugni,chilean guava,en,false
+ugli-fruit,ugli fruit,en,false
+ugli-fruit,uniq fruit,en,false
+grape-juice,grape juice,en,false
+grape-juice,juisi ya zabibu,sw,false
+grapefruit-juice,grapefruit juice,en,false
+grapefruit-juice,juisi ya grapefruit,sw,false
+soursop-juice,soursop juice,en,false
+soursop-juice,mstafeli juice,sw,false
+soursop-juice,graviola juice,en,false
+pomegranate-juice,pomegranate juice,en,false
+pomegranate-juice,juisi ya komamanga,sw,false
+strawberry-juice,strawberry juice,en,false
+strawberry-juice,juisi ya straberry,sw,false
+mixed-fruit-juice,mixed fruit juice,en,false
+mixed-fruit-juice,fruit juice blend,en,false
+mixed-fruit-juice,juisi ya matunda,sw,false
+apple-juice,apple juice,en,false
+apple-juice,juisi ya apple,sw,false
+mango-banana-blend,mango banana smoothie,en,false
+mango-banana-blend,mango banana blend,en,false
+mango-banana-blend,smoothie ya mango na ndizi,sw,false
+mango-pineapple-blend,mango pineapple blend,en,false
+mango-pineapple-blend,mango pineapple smoothie,en,false
+mango-pineapple-blend,smoothie ya mango na nanasi,sw,false
+strawberry-banana-blend,strawberry banana blend,en,false
+strawberry-banana-blend,strawberry banana smoothie,en,false
+tropical-fruit-blend,tropical fruit blend,en,false
+tropical-fruit-blend,tropical smoothie,en,false
+tropical-fruit-blend,matunda ya tropiki,sw,false
+berry-blend,berry blend,en,false
+berry-blend,mixed berry smoothie,en,false
+berry-blend,berries blend,en,false
+citrus-blend,citrus blend,en,false
+citrus-blend,citrus smoothie,en,false
+citrus-blend,citrus mix,en,false
+mango-orange-blend,mango orange blend,en,false
+mango-orange-blend,mango orange smoothie,en,false
+pineapple-coconut-blend,pineapple coconut blend,en,false
+pineapple-coconut-blend,pina colada blend,en,false
+pineapple-coconut-blend,smoothie ya nanasi na nazi,sw,false
+guava-passion-blend,guava passion fruit blend,en,false
+guava-passion-blend,smoothie ya mapera na passion,sw,false
+watermelon-lime-blend,watermelon lime blend,en,false
+watermelon-lime-blend,tikiti na ndimu,sw,false
+avocado-banana-blend,avocado banana blend,en,false
+avocado-banana-blend,smoothie ya parachichi na ndizi,sw,false
+papaya-mango-blend,papaya mango blend,en,false
+papaya-mango-blend,smoothie ya papai na mango,sw,false
+passion-mango-blend,passion fruit mango blend,en,false
+passion-mango-blend,smoothie ya passion na mango,sw,false
+mixed-berry-blend,mixed berry blend,en,false
+mixed-berry-blend,frozen berry smoothie,en,false
+green-smoothie-blend,green smoothie,en,false
+green-smoothie-blend,green blend,en,false
+green-smoothie-blend,smoothie ya kijani,sw,false
+banana-strawberry-blend,banana strawberry blend,en,false
+banana-strawberry-blend,banana strawberry smoothie,en,false
+mango-yogurt-blend,mango yogurt blend,en,false
+mango-yogurt-blend,mango lassi,en,false
+mango-yogurt-blend,smoothie ya mango na mtindi,sw,false
+citrus-ginger-blend,citrus ginger blend,en,false
+citrus-ginger-blend,lemon ginger smoothie,en,false
+pineapple-ginger-blend,pineapple ginger blend,en,false
+pineapple-ginger-blend,smoothie ya nanasi na tangawizi,sw,false
+watermelon-mint-blend,watermelon mint blend,en,false
+watermelon-mint-blend,tikiti na mnanaa,sw,false
+pineapple-mango-passion-blend,pineapple mango passion blend,en,false
+pineapple-mango-passion-blend,tropical trio blend,en,false
+banana-mango-coconut-blend,banana mango coconut blend,en,false
+banana-mango-coconut-blend,tropical coconut smoothie,en,false
+guava-mango-blend,guava mango blend,en,false
+guava-mango-blend,smoothie ya mapera na mango,sw,false
+strawberry-mango-blend,strawberry mango blend,en,false
+strawberry-mango-blend,strawberry mango smoothie,en,false
+orange-carrot-blend,orange carrot blend,en,false
+orange-carrot-blend,orange carrot juice,en,false
+orange-carrot-blend,juisi ya chungwa na karoti,sw,false
+apple-ginger-blend,apple ginger blend,en,false
+apple-ginger-blend,apple ginger smoothie,en,false
+peach-mango-blend,peach mango blend,en,false
+peach-mango-blend,peach mango smoothie,en,false
+soursop-banana-blend,soursop banana blend,en,false
+soursop-banana-blend,mstafeli banana smoothie,sw,false
+tamarind-mango-blend,tamarind mango blend,en,false
+tamarind-mango-blend,ukwaju na mango,sw,false
+passion-orange-blend,passion fruit orange blend,en,false
+passion-orange-blend,passion orange juice,en,false
+guava-pineapple-blend,guava pineapple blend,en,false
+guava-pineapple-blend,smoothie ya mapera na nanasi,sw,false
+watermelon-strawberry-blend,watermelon strawberry blend,en,false
+mango-coconut-blend,mango coconut blend,en,false
+mango-coconut-blend,smoothie ya mango na nazi,sw,false
+lemon-ginger-blend,lemon ginger blend,en,false
+lemon-ginger-blend,tangawizi na ndimu,sw,false
+papaya-pineapple-blend,papaya pineapple blend,en,false
+papaya-pineapple-blend,smoothie ya papai na nanasi,sw,false
+avocado-mango-blend,avocado mango blend,en,false
+avocado-mango-blend,smoothie ya parachichi na mango,sw,false
+kiwi-banana-blend,kiwi banana blend,en,false
+kiwi-banana-blend,kiwi banana smoothie,en,false
+berry-banana-blend,berry banana blend,en,false
+berry-banana-blend,berry banana smoothie,en,false
+orange-mango-pineapple-blend,orange mango pineapple blend,en,false
+orange-mango-pineapple-blend,tropical orange blend,en,false
+passion-banana-blend,passion fruit banana blend,en,false
+passion-banana-blend,smoothie ya passion na ndizi,sw,false
+guava-banana-blend,guava banana blend,en,false
+guava-banana-blend,smoothie ya mapera na ndizi,sw,false
+papaya-banana-blend,papaya banana blend,en,false
+papaya-banana-blend,smoothie ya papai na ndizi,sw,false
+watermelon-pineapple-blend,watermelon pineapple blend,en,false
+strawberry-passion-blend,strawberry passion fruit blend,en,false
+strawberry-passion-blend,strawberry passion smoothie,en,false
+mango-lime-blend,mango lime blend,en,false
+mango-lime-blend,mango lime smoothie,en,false
+pineapple-passion-blend,pineapple passion fruit blend,en,false
+pineapple-passion-blend,smoothie ya nanasi na passion,sw,false
+avocado-pineapple-blend,avocado pineapple blend,en,false
+avocado-pineapple-blend,smoothie ya parachichi na nanasi,sw,false
+soursop-mango-blend,soursop mango blend,en,false
+soursop-mango-blend,mstafeli na mango,sw,false
+tamarind-pineapple-blend,tamarind pineapple blend,en,false
+tamarind-pineapple-blend,ukwaju na nanasi,sw,false
+four-fruits-blend,four fruits blend,en,false
+four-fruits-blend,matunda manne,sw,false
+four-fruits-blend,4 fruits blend,en,false
+dried-banana,dried banana,en,false
+dried-banana,banana chips,en,false
+dried-banana,ndizi kavu,sw,false
+dried-pineapple,dried pineapple,en,false
+dried-pineapple,nanasi kavu,sw,false
+dried-papaya,dried papaya,en,false
+dried-papaya,papai kavu,sw,false
+dried-dates,dried dates,en,false
+dried-dates,tende kavu,sw,false
+dried-raisins,dried raisins,en,false
+dried-raisins,zabibu kavu,sw,false
+dried-berries,dried berries,en,false
+dried-berries,dried mixed berries,en,false
+dried-cherries,dried cherries,en,false
+dried-cherries,cherry kavu,sw,false
+fruit-pulp,fruit pulp,en,false
+fruit-pulp,pulp ya matunda,sw,false
+fruit-pulp,blended fruit,en,false
+mango-pulp,mango pulp,en,false
+mango-pulp,pulp ya mango,sw,false
+mango-pulp,pureed mango,en,false
+passion-fruit-pulp,passion fruit pulp,en,false
+passion-fruit-pulp,pulp ya passion,sw,false
+passion-fruit-pulp,passion pulp,en,false
+guava-pulp,guava pulp,en,false
+guava-pulp,pulp ya mapera,sw,false
+coconut-milk-fresh,fresh coconut milk,en,false
+coconut-milk-fresh,maziwa ya nazi mbichi,sw,false
+coconut-milk-fresh,freshly squeezed coconut milk,en,false
+coconut-water,coconut water,en,false
+coconut-water,maji ya nazi,sw,false
+coconut-water,madafu,sw,false
+frozen-mango,frozen mango,en,false
+frozen-mango,mango ya friji,sw,false
+frozen-strawberry,frozen strawberry,en,false
+frozen-strawberry,strawberry ya friji,sw,false
+frozen-berries,frozen berries,en,false
+frozen-berries,frozen mixed berries,en,false
+frozen-pineapple,frozen pineapple,en,false
+frozen-pineapple,nanasi ya friji,sw,false
+frozen-banana,frozen banana,en,false
+frozen-banana,ndizi ya friji,sw,false
+frozen-mixed-fruit,frozen mixed fruit,en,false
+frozen-mixed-fruit,matunda ya friji,sw,false
+mango,embe,sw,false
+mango,maembe,sw,false
+banana,ndizi,sw,false
+pineapple,nanasi,sw,false
+watermelon,tikiti maji,sw,false
+watermelon,tikiti,sw,false
+passion-fruit,passion,sw,false
+passion-fruit,maracuja,en,false
+guava,mapera,sw,false
+papaya,papai,sw,false
+papaya,pawpaw,en,false
+orange,chungwa,sw,false
+lemon,ndimu,sw,false
+lime,ndimu ndogo,sw,false
+avocado,parachichi,sw,false
+coconut,nazi,sw,false
+strawberry,straberry,en,true
+strawberry,stawberry,en,true
+blueberry,buluberi,sw,false
+dates,tende,sw,false
+tamarind-pulp,ukwaju,sw,false
+grapefruit,balungi,sw,false
+jackfruit,fenesi,sw,false
+soursop,mstafeli,sw,false
+pomegranate,komamanga,sw,false
