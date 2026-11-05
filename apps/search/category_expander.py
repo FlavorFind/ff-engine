@@ -267,45 +267,24 @@ _GENERIC_INGREDIENT_SLUGS: dict[str, list[str]] = {
     ],
     "meatballs": ["beef-meatballs", "chicken-meatballs", "lamb-meatballs"],
     "kofta": ["beef-meatballs", "lamb-meatballs", "chicken-meatballs"],
-    # Vegetables — generic
+    # Vegetables — generic English terms only.
+    # Swahili names (nyanya, vitunguu, mchicha, etc.) resolve via name_sw
+    # in the resolver and must NOT be intercepted here.
     "tomatoes": ["tomato", "cherry-tomatoes", "roma-tomatoes", "plum-tomatoes",
                  "sun-dried-tomatoes", "canned-tomatoes", "green-tomatoes"],
-    "nyanya": ["tomato", "cherry-tomatoes", "roma-tomatoes", "canned-tomatoes"],
     "peppers": ["green-pepper", "red-bell-pepper", "yellow-bell-pepper", "capsicum",
                 "red-chili", "green-chili", "scotch-bonnet", "habanero",
                 "bird-eye-chili", "long-green-chili", "dried-chili"],
-    "pilipili": ["green-pepper", "red-bell-pepper", "yellow-bell-pepper",
-                 "red-chili", "green-chili", "bird-eye-chili", "dried-chili"],
     "chili": ["red-chili", "green-chili", "bird-eye-chili", "long-green-chili",
               "dried-chili", "chili-flakes", "scotch-bonnet", "habanero"],
     "onions": ["onion", "red-onion", "spring-onions", "shallots", "green-onion",
                "dried-onion"],
-    "vitunguu": ["onion", "red-onion", "spring-onions", "shallots"],
-    "garlic": ["garlic", "garlic-cloves", "garlic-powder"],
-    "saumu": ["garlic", "garlic-cloves"],
     "mushrooms": ["mushrooms", "oyster-mushrooms", "termite-mushrooms",
                   "wild-chanterelles", "dried-mushrooms"],
-    "uyoga": ["mushrooms", "oyster-mushrooms", "termite-mushrooms", "dried-mushrooms"],
-    "greens": ["spinach", "kale", "collard-greens", "amaranth-leaves",
-               "baby-spinach", "swiss-chard", "mustard-greens", "beet-greens",
-               "mchicha-leaves", "cowpea-leaves", "pumpkin-leaves",
-               "sweet-potato-leaves", "cassava-leaves", "moringa-leaves",
-               "nderema", "mchunga", "osuga", "bondwe", "african-nightshade"],
-    "mboga": ["spinach", "kale", "collard-greens", "amaranth-leaves",
-              "cowpea-leaves", "pumpkin-leaves", "cassava-leaves",
-              "nderema", "mchunga", "osuga", "bondwe"],
-    "mchicha": ["spinach", "amaranth-leaves", "baby-spinach", "mchicha-leaves",
-                "bondwe"],
-    "sukuma": ["kale", "collard-greens"],
-    "sukuma-wiki": ["kale", "collard-greens"],
     "squash": ["butternut-squash", "acorn-squash", "spaghetti-squash",
                "pattypan-squash", "butternut-cubes"],
-    "boga": ["pumpkin", "butternut-squash", "acorn-squash", "butternut-cubes"],
     "yam": ["yam", "white-yam", "water-yam", "wild-yams", "purple-yam",
             "elephant-foot-yam"],
-    "viazi": ["potato", "sweet-potato", "sweet-potato-purple", "white-sweet-potato",
-              "orange-fleshed-sweet-potato"],
-    "viazi-vikuu": ["yam", "white-yam", "water-yam", "cocoyam"],
     "frozen": ["frozen-peas", "frozen-corn", "frozen-spinach"],
     "canned": ["canned-tomatoes", "canned-beef", "luncheon-meat"],
 }
@@ -315,7 +294,11 @@ _GENERIC_INGREDIENT_SLUGS: dict[str, list[str]] = {
 def _get_generic_ingredient_ids(norm_token: str) -> list[str]:
     """
     Return ingredient UUIDs for a generic token (e.g. 'chicken') by looking
-    up each slug in _GENERIC_INGREDIENT_SLUGS.  Cached per token.
+    up each slug in _GENERIC_INGREDIENT_SLUGS.
+
+    Uses lru_cache for performance. Call invalidate_generic_cache() when the
+    ingredient table changes (e.g. after seeding) or in tests to prevent
+    stale IDs leaking across DB states.
     """
     slugs = _GENERIC_INGREDIENT_SLUGS.get(norm_token)
     if not slugs:

@@ -119,6 +119,30 @@ def _reconnect_signals():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Cache-clearing fixture — prevents lru_cache leaking IDs across DB contexts
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+@pytest.fixture(autouse=True)
+def clear_expander_caches():
+    """
+    Clear the category expander LRU caches before every test.
+
+    _get_category_ingredient_ids and _get_generic_ingredient_ids both cache
+    ingredient UUIDs by slug.  Without this, IDs from a previous test's DB
+    state (or from a live DB import) leak into the current test's context,
+    causing assertions on ingredient_id to fail with stale UUIDs.
+    """
+    from apps.search.category_expander import invalidate_category_cache, invalidate_generic_cache
+
+    invalidate_category_cache()
+    invalidate_generic_cache()
+    yield
+    invalidate_category_cache()
+    invalidate_generic_cache()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # E59c — Mini dataset fixture
 # ─────────────────────────────────────────────────────────────────────────────
 
