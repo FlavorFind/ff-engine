@@ -4,11 +4,11 @@ from .base import *  # noqa: F401, F403
 
 DEBUG = False
 
-# Render terminates TLS at the load balancer — don't redirect inside the app.
+# Nginx terminates TLS at the reverse proxy — don't redirect inside the app.
 # SECURE_PROXY_SSL_HEADER tells Django to trust the X-Forwarded-Proto header
-# that Render sets so request.is_secure() works correctly.
+# that Nginx sets so request.is_secure() works correctly.
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = False  # Render handles this at the edge
+SECURE_SSL_REDIRECT = False  # Nginx handles this at the edge
 
 # Security headers
 SECURE_HSTS_SECONDS = 31536000
@@ -17,7 +17,10 @@ SECURE_HSTS_PRELOAD = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ["https://ff-engine-kuar.onrender.com"]
+CSRF_TRUSTED_ORIGINS = env.list(  # type: ignore[misc]  # noqa: F405
+    "CSRF_TRUSTED_ORIGINS",
+    default=["https://engine.flavorfind.co.ke"],
+)
 
 # CORS — only the internal test console origin is allowed in production.
 # Add more origins via the CORS_ALLOWED_ORIGINS environment variable.

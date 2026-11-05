@@ -19,7 +19,7 @@ Run examples
 ------------
 # Standard load test (50 users, 2 min):
 locust -f load_tests/locustfile.py \
-    --host https://ff-engine-kuar.onrender.com \
+    --host https://engine.flavorfind.co.ke \
     --users 50 --spawn-rate 5 \
     --run-time 2m --headless \
     --html load_tests/report_load.html \
@@ -27,7 +27,7 @@ locust -f load_tests/locustfile.py \
 
 # Soak test (20 users, 30 min):
 locust -f load_tests/locustfile.py \
-    --host https://ff-engine-kuar.onrender.com \
+    --host https://engine.flavorfind.co.ke \
     --users 20 --spawn-rate 1 \
     --run-time 30m --headless \
     --html load_tests/report_soak.html \
@@ -35,7 +35,7 @@ locust -f load_tests/locustfile.py \
 
 # Burst / failure test (100 users, 1 min):
 locust -f load_tests/locustfile.py \
-    --host https://ff-engine-kuar.onrender.com \
+    --host https://engine.flavorfind.co.ke \
     --users 100 --spawn-rate 50 \
     --run-time 1m --headless \
     --html load_tests/report_burst.html \

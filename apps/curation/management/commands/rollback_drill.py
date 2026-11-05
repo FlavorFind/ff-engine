@@ -5,7 +5,7 @@ Simulates the rollback procedure documented in the runbook:
   1. Check the current deployed commit / version.
   2. Print the previous release tag to roll back to.
   3. Verify the database migrations can be reversed to the previous state.
-  4. Print the exact commands to execute on Render for a real rollback.
+  4. Print the exact commands to execute on the server for a real rollback.
 
 This command is read-only — it prints instructions, it does NOT execute
 any destructive git or migration operations. Actual rollback is done by
@@ -128,14 +128,16 @@ class Command(BaseCommand):
 
         self.stdout.write(
             f"""
-Step 1 — On Render dashboard:
-  a. Go to ff-engine service → Deploys
-  b. Find the deploy for {target_str} (or the commit before {current_commit})
-  c. Click "Rollback to this deploy"
-  d. Wait for deploy to complete (≈ 2 min)
+Step 1 — Deploy the rollback:
+  a. SSH into the server or use your deployment tool
+  b. Check out {target_str} (or the commit before {current_commit}):
+       git fetch --tags
+       git checkout {target_str}
+  c. Restart the application (e.g. sudo systemctl restart ff-engine)
+  d. Wait for the service to come back up
 
 Step 2 — If the rollback involves a migration reversal:
-  a. Open a Render shell: Dashboard → Shell
+  a. Open a shell on the server
   b. Run: python manage.py showmigrations
   c. Identify which migrations are in the new (rolled-back) release
   d. For each migration to reverse (newest first):
@@ -144,7 +146,7 @@ Step 2 — If the rollback involves a migration reversal:
        python manage.py migrate clients 0001_initial
 
 Step 3 — Verify the service is healthy:
-  curl https://ff-engine-kuar.onrender.com/v1/health/
+  curl https://engine.flavorfind.co.ke/v1/health/
   # Expected: {{"status": "ok", "database": "ok"}}
 
 Step 4 — Verify the golden set still passes at ≥ 95%:

@@ -4,9 +4,6 @@ Management command to create an API client and key without shell access.
 Usage:
     python manage.py create_api_key --client verify-kit --scopes read:search read:catalog
 
-This is useful on platforms like Render (free tier) where interactive
-shell access is not available.
-
 The raw key is printed to stdout ONCE — copy it immediately.
 """
 
