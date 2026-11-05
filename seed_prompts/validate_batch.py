@@ -29,26 +29,46 @@ _SEEDS = _ROOT / "data" / "seeds"
 ALLOWED_SLUGS: set[str] = set()
 with open(_SEEDS / "ingredients.csv", encoding="utf-8") as _f:
     import csv as _csv
+
     for _row in _csv.DictReader(_f):
         ALLOWED_SLUGS.add(_row["slug"])
 
 
 REQUIRED_FIELDS = [
-    "slug","name_en","name_sw","description","meal_type","course",
-    "spice_level","difficulty","prep_min","cook_min","servings",
-    "regions","ingredients","steps","nutrition_per_serving",
-    "dietary_tags","serving_suggestion",
+    "slug",
+    "name_en",
+    "name_sw",
+    "description",
+    "meal_type",
+    "course",
+    "spice_level",
+    "difficulty",
+    "prep_min",
+    "cook_min",
+    "servings",
+    "regions",
+    "ingredients",
+    "steps",
+    "nutrition_per_serving",
+    "dietary_tags",
+    "serving_suggestion",
 ]
 
-NUTRITION_FIELDS = ["calories","protein_g","carbs_g","fat_g","fiber_g"]
+NUTRITION_FIELDS = ["calories", "protein_g", "carbs_g", "fat_g", "fiber_g"]
 
-VALID_ROLES  = {"primary","required","optional","staple"}
+VALID_ROLES = {"primary", "required", "optional", "staple"}
 VALID_DIETARY = {
-    "halal-friendly","vegetarian","vegan","gluten-free",
-    "dairy-free","egg-free","nut-free",
+    "halal-friendly",
+    "vegetarian",
+    "vegan",
+    "gluten-free",
+    "dairy-free",
+    "egg-free",
+    "nut-free",
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def validate_file(path: Path, seen_slugs: set) -> tuple[int, int]:
     """Returns (pass_count, fail_count). Updates seen_slugs in place."""
@@ -98,8 +118,8 @@ def validate_file(path: Path, seen_slugs: set) -> tuple[int, int]:
         else:
             primary_count = 0
             for ing in ings:
-                s = ing.get("slug","")
-                role = ing.get("role","")
+                s = ing.get("slug", "")
+                role = ing.get("role", "")
                 if s not in ALLOWED_SLUGS:
                     errors.append(f"ingredient slug not allowed: '{s}'")
                 if role not in VALID_ROLES:
@@ -164,7 +184,9 @@ def main():
         total_fail += f
 
     print(f"\n{'═'*60}")
-    print(f"  TOTAL  ✅ {total_pass} passed    ❌ {total_fail} failed    📦 {total_pass + total_fail} dishes")
+    print(
+        f"  TOTAL  ✅ {total_pass} passed    ❌ {total_fail} failed    📦 {total_pass + total_fail} dishes"
+    )
     print(f"  Unique slugs seen: {len(seen_slugs)}")
 
     if total_fail > 0:

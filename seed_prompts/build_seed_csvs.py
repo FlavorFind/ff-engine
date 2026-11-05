@@ -29,7 +29,6 @@ Steps:
 import argparse
 import csv
 import json
-import os
 import shutil
 import subprocess
 import sys
@@ -40,10 +39,10 @@ from pathlib import Path
 # PATHS
 # ─────────────────────────────────────────────────────────────────────────────
 
-ROOT          = Path(__file__).parent.parent           # repo root
-OUTPUTS_DIR   = ROOT / "seed_prompts" / "outputs"
-SEEDS_DIR     = ROOT / "data" / "seeds"
-ARCHIVE_DIR   = ROOT / "data" / "seeds" / f"archive_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+ROOT = Path(__file__).parent.parent  # repo root
+OUTPUTS_DIR = ROOT / "seed_prompts" / "outputs"
+SEEDS_DIR = ROOT / "data" / "seeds"
+ARCHIVE_DIR = ROOT / "data" / "seeds" / f"archive_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
 BATCH_FILES = sorted(OUTPUTS_DIR.glob("batch_*.json"))
 
@@ -56,6 +55,7 @@ TARGET_CSVS = ["dishes.csv", "dish_ingredients.csv", "dish_steps.csv", "dish_reg
 # ─────────────────────────────────────────────────────────────────────────────
 # HELPERS
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def load_all_dishes() -> list[dict]:
     dishes = []
@@ -94,12 +94,27 @@ def archive_existing_csvs():
 def write_dishes_csv(dishes: list[dict]):
     path = SEEDS_DIR / "dishes.csv"
     fieldnames = [
-        "slug", "name_en", "name_sw", "description",
-        "meal_type", "course", "spice_level", "difficulty",
-        "prep_min", "cook_min", "servings",
-        "calories", "protein_g", "fat_g", "carbs_g", "fiber_g",
-        "sugar_g", "cholesterol_mg", "sodium_mg",
-        "keywords", "status",
+        "slug",
+        "name_en",
+        "name_sw",
+        "description",
+        "meal_type",
+        "course",
+        "spice_level",
+        "difficulty",
+        "prep_min",
+        "cook_min",
+        "servings",
+        "calories",
+        "protein_g",
+        "fat_g",
+        "carbs_g",
+        "fiber_g",
+        "sugar_g",
+        "cholesterol_mg",
+        "sodium_mg",
+        "keywords",
+        "status",
     ]
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -107,27 +122,27 @@ def write_dishes_csv(dishes: list[dict]):
         for d in dishes:
             n = d.get("nutrition_per_serving", {})
             row = {
-                "slug":           d["slug"],
-                "name_en":        d["name_en"],
-                "name_sw":        d.get("name_sw", ""),
-                "description":    d.get("description", ""),
-                "meal_type":      d.get("meal_type", "lunch"),
-                "course":         d.get("course", "main"),
-                "spice_level":    d.get("spice_level", "mild"),
-                "difficulty":     d.get("difficulty", "easy"),
-                "prep_min":       d.get("prep_min", 0),
-                "cook_min":       d.get("cook_min", 0),
-                "servings":       d.get("servings", 4),
-                "calories":       n.get("calories", ""),
-                "protein_g":      n.get("protein_g", ""),
-                "fat_g":          n.get("fat_g", ""),
-                "carbs_g":        n.get("carbs_g", ""),
-                "fiber_g":        n.get("fiber_g", ""),
-                "sugar_g":        "",
+                "slug": d["slug"],
+                "name_en": d["name_en"],
+                "name_sw": d.get("name_sw", ""),
+                "description": d.get("description", ""),
+                "meal_type": d.get("meal_type", "lunch"),
+                "course": d.get("course", "main"),
+                "spice_level": d.get("spice_level", "mild"),
+                "difficulty": d.get("difficulty", "easy"),
+                "prep_min": d.get("prep_min", 0),
+                "cook_min": d.get("cook_min", 0),
+                "servings": d.get("servings", 4),
+                "calories": n.get("calories", ""),
+                "protein_g": n.get("protein_g", ""),
+                "fat_g": n.get("fat_g", ""),
+                "carbs_g": n.get("carbs_g", ""),
+                "fiber_g": n.get("fiber_g", ""),
+                "sugar_g": "",
                 "cholesterol_mg": "",
-                "sodium_mg":      "",
-                "keywords":       "Kenyan",
-                "status":         "draft",
+                "sodium_mg": "",
+                "keywords": "Kenyan",
+                "status": "draft",
             }
             writer.writerow(row)
     print(f"  Wrote {len(dishes)} rows → {path.name}")
@@ -148,14 +163,16 @@ def write_dish_ingredients_csv(dishes: list[dict]):
                 unit = ing.get("unit", "")
                 qty_str = f"{qty} {unit}".strip() if qty else unit
 
-                writer.writerow({
-                    "dish_slug":       d["slug"],
-                    "ingredient_slug": ing["slug"],
-                    "role":            ing["role"],
-                    "quantity":        qty_str,
-                    "unit":            "",   # unit FK resolved by seed_all via preparation_note
-                    "position":        pos,
-                })
+                writer.writerow(
+                    {
+                        "dish_slug": d["slug"],
+                        "ingredient_slug": ing["slug"],
+                        "role": ing["role"],
+                        "quantity": qty_str,
+                        "unit": "",  # unit FK resolved by seed_all via preparation_note
+                        "position": pos,
+                    }
+                )
                 count += 1
     print(f"  Wrote {count} rows → {path.name}")
 
@@ -169,11 +186,13 @@ def write_dish_steps_csv(dishes: list[dict]):
         writer.writeheader()
         for d in dishes:
             for step in d.get("steps", []):
-                writer.writerow({
-                    "dish_slug": d["slug"],
-                    "position":  step["order"],
-                    "text_en":   step["instruction"],
-                })
+                writer.writerow(
+                    {
+                        "dish_slug": d["slug"],
+                        "position": step["order"],
+                        "text_en": step["instruction"],
+                    }
+                )
                 count += 1
     print(f"  Wrote {count} rows → {path.name}")
 
@@ -190,10 +209,12 @@ def write_dish_regions_csv(dishes: list[dict]):
             for r in regions:
                 # Map "kenya" → "east-african" (our existing region slug)
                 region_slug = "east-african" if r == "kenya" else r
-                writer.writerow({
-                    "dish_slug":   d["slug"],
-                    "region_slug": region_slug,
-                })
+                writer.writerow(
+                    {
+                        "dish_slug": d["slug"],
+                        "region_slug": region_slug,
+                    }
+                )
     print(f"  Wrote {len(dishes)} rows → {path.name}")
 
 
@@ -204,7 +225,10 @@ def wipe_dish_data():
     """
     print("\n  Wiping existing dish data from DB...")
     cmd = [
-        sys.executable, "manage.py", "shell", "--command",
+        sys.executable,
+        "manage.py",
+        "shell",
+        "--command",
         (
             "from apps.dishes.models import Dish; "
             "n = Dish.objects.all().delete(); "
@@ -233,12 +257,15 @@ def run_seed_all():
 # MAIN
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser(description="Build seed CSVs from JSON batches and load them")
-    parser.add_argument("--dry-run", "--no-seed", action="store_true",
-                        help="Build CSVs only, do not call seed_all")
-    parser.add_argument("--wipe", action="store_true",
-                        help="Delete existing Dish rows before seeding")
+    parser.add_argument(
+        "--dry-run", "--no-seed", action="store_true", help="Build CSVs only, do not call seed_all"
+    )
+    parser.add_argument(
+        "--wipe", action="store_true", help="Delete existing Dish rows before seeding"
+    )
     args = parser.parse_args()
 
     print("\n╔══════════════════════════════════════════════════════════╗")

@@ -39,9 +39,7 @@ with open(SEEDS / "dish_ingredients.csv") as f:
 # ── Build allowed-slugs block (grouped by category) ─────────────────────────
 cats: dict[str, list[tuple[str, str, bool]]] = {}
 for slug, info in ingredients.items():
-    cats.setdefault(info["category"], []).append(
-        (slug, info["name"], info["staple"])
-    )
+    cats.setdefault(info["category"], []).append((slug, info["name"], info["staple"]))
 
 slugs_block_lines = []
 staples_block_lines = []
@@ -64,49 +62,124 @@ staples_block = "\n".join(staples_block_lines)
 
 batches = [
     # Batch 07 — 1-dish fruits + fats
-    ["coconut-oil", "ghee", "groundnut-oil", "avocado", "mango",
-     "papaya", "passion-fruit", "green-bananas", "green-plantains",
-     "ripe-plantain"],
-
+    [
+        "coconut-oil",
+        "ghee",
+        "groundnut-oil",
+        "avocado",
+        "mango",
+        "papaya",
+        "passion-fruit",
+        "green-bananas",
+        "green-plantains",
+        "ripe-plantain",
+    ],
     # Batch 08 — 1-dish legumes + grains + fish + meat
-    ["black-eyed-peas", "chickpeas", "kidney-beans", "red-lentils",
-     "yellow-lentils", "sorghum-flour", "ugali-meal", "minced-beef",
-     "tamarind-pulp", "dried-fish"],
-
+    [
+        "black-eyed-peas",
+        "chickpeas",
+        "kidney-beans",
+        "red-lentils",
+        "yellow-lentils",
+        "sorghum-flour",
+        "ugali-meal",
+        "minced-beef",
+        "tamarind-pulp",
+        "dried-fish",
+    ],
     # Batch 09 — 1-dish poultry + spices + veg
-    ["chicken-breast", "chicken-thighs", "chicken-drumsticks",
-     "whole-chicken", "garam-masala", "lemongrass", "mchuzi-mix",
-     "black-pepper", "amaranth-leaves", "arrowroot"],
-
+    [
+        "chicken-breast",
+        "chicken-thighs",
+        "chicken-drumsticks",
+        "whole-chicken",
+        "garam-masala",
+        "lemongrass",
+        "mchuzi-mix",
+        "black-pepper",
+        "amaranth-leaves",
+        "arrowroot",
+    ],
     # Batch 10 — 1-dish vegetables + dairy
-    ["cassava", "cowpea-leaves", "cucumber", "eggplant", "mushrooms",
-     "okra", "pumpkin", "spring-onions", "butter", "fresh-milk"],
-
+    [
+        "cassava",
+        "cowpea-leaves",
+        "cucumber",
+        "eggplant",
+        "mushrooms",
+        "okra",
+        "pumpkin",
+        "spring-onions",
+        "butter",
+        "fresh-milk",
+    ],
     # Batch 11 — 2-dish proteins + dairy + fruit
-    ["goat-meat", "beef-liver", "dagaa", "nile-perch", "smoked-fish",
-     "tilapia-fillets", "pigeon-peas", "lentils-or-minced-beef",
-     "sour-milk", "banana"],
-
+    [
+        "goat-meat",
+        "beef-liver",
+        "dagaa",
+        "nile-perch",
+        "smoked-fish",
+        "tilapia-fillets",
+        "pigeon-peas",
+        "lentils-or-minced-beef",
+        "sour-milk",
+        "banana",
+    ],
     # Batch 12 — 2-dish spices + veg + fish + grains
-    ["cinnamon", "ground-cumin", "mint", "paprika", "turmeric",
-     "kale", "sweet-potato", "omena", "maize", "millet-flour"],
-
+    [
+        "cinnamon",
+        "ground-cumin",
+        "mint",
+        "paprika",
+        "turmeric",
+        "kale",
+        "sweet-potato",
+        "omena",
+        "maize",
+        "millet-flour",
+    ],
     # Batch 13 — 3-4 dish ingredients
-    ["beef-ribs", "beef-tripe", "cardamom", "green-beans", "yogurt",
-     "maize-flour", "green-grams", "groundnuts", "cabbage",
-     "collard-greens"],
-
+    [
+        "beef-ribs",
+        "beef-tripe",
+        "cardamom",
+        "green-beans",
+        "yogurt",
+        "maize-flour",
+        "green-grams",
+        "groundnuts",
+        "cabbage",
+        "collard-greens",
+    ],
     # Batch 14 — 4-9 dish ingredients
-    ["spinach", "tilapia", "green-pepper", "pilau-masala", "carrot",
-     "milk", "chili", "potato", "red-onion", "eggs"],
-
+    [
+        "spinach",
+        "tilapia",
+        "green-pepper",
+        "pilau-masala",
+        "carrot",
+        "milk",
+        "chili",
+        "potato",
+        "red-onion",
+        "eggs",
+    ],
     # Batch 15 — 9-16 dish ingredients
-    ["wheat-flour", "lemon", "lime", "rice", "beans",
-     "chicken-pieces", "beef", "sugar", "coriander", "coconut"],
-
+    [
+        "wheat-flour",
+        "lemon",
+        "lime",
+        "rice",
+        "beans",
+        "chicken-pieces",
+        "beef",
+        "sugar",
+        "coriander",
+        "coconut",
+    ],
     # Batch 16 — most-used (already well covered, fewer new dishes needed)
-    ["curry-powder", "ginger", "garlic", "water", "tomato",
-     "onion", "cooking-oil", "salt"],
+    ["curry-powder", "ginger", "garlic", "water", "tomato", "onion", "cooking-oil", "salt"],
 ]
 
 # ── Prompt template ──────────────────────────────────────────────────────────
@@ -216,8 +289,11 @@ PROMPT_TEMPLATE = dedent("""\
 # ── Generate prompt files ────────────────────────────────────────────────────
 
 staples_inline = ", ".join(
-    f"`{slug}`" for slug, _, staple in
-    sorted([(s, i["name"], i["staple"]) for s, i in ingredients.items() if i["staple"]], key=lambda x: x[0])
+    f"`{slug}`"
+    for slug, _, staple in sorted(
+        [(s, i["name"], i["staple"]) for s, i in ingredients.items() if i["staple"]],
+        key=lambda x: x[0],
+    )
 )
 
 batch_num = 7  # continue after existing batches 1-6
@@ -225,13 +301,13 @@ for batch in batches:
     ing_count = len(batch)
     # More dishes for under-covered ingredients
     total_coverage = sum(dish_counts.get(s, 0) for s in batch)
-    if total_coverage <= 12:      # all 1-dish ingredients
+    if total_coverage <= 12:  # all 1-dish ingredients
         dish_count = 50
-    elif total_coverage <= 25:    # mostly 2-dish
+    elif total_coverage <= 25:  # mostly 2-dish
         dish_count = 45
-    elif total_coverage <= 50:    # 3-4 dish
+    elif total_coverage <= 50:  # 3-4 dish
         dish_count = 40
-    else:                         # well-covered
+    else:  # well-covered
         dish_count = 30
 
     min_per_hero = max(3, dish_count // (ing_count + 5))
@@ -261,5 +337,9 @@ for batch in batches:
     batch_num += 1
 
 print(f"\nGenerated {len(batches)} batch prompts in {OUT}/")
-print(f"Total target dishes: ~{sum(50 if sum(dish_counts.get(s,0) for s in b) <= 12 else 45 if sum(dish_counts.get(s,0) for s in b) <= 25 else 40 if sum(dish_counts.get(s,0) for s in b) <= 50 else 30 for b in batches)}")
-print(f"Combined with existing 150 dishes → ~{150 + sum(50 if sum(dish_counts.get(s,0) for s in b) <= 12 else 45 if sum(dish_counts.get(s,0) for s in b) <= 25 else 40 if sum(dish_counts.get(s,0) for s in b) <= 50 else 30 for b in batches)} total")
+print(
+    f"Total target dishes: ~{sum(50 if sum(dish_counts.get(s,0) for s in b) <= 12 else 45 if sum(dish_counts.get(s,0) for s in b) <= 25 else 40 if sum(dish_counts.get(s,0) for s in b) <= 50 else 30 for b in batches)}"
+)
+print(
+    f"Combined with existing 150 dishes → ~{150 + sum(50 if sum(dish_counts.get(s,0) for s in b) <= 12 else 45 if sum(dish_counts.get(s,0) for s in b) <= 25 else 40 if sum(dish_counts.get(s,0) for s in b) <= 50 else 30 for b in batches)} total"
+)

@@ -9,6 +9,7 @@ Usage:
 The first argument is the batch number (e.g. 7 → batch_07_output.json).
 Reads JSON from stdin, saves it, then runs validate_batch.py on it.
 """
+
 import json
 import subprocess
 import sys
@@ -39,7 +40,8 @@ print(f"✅  Saved {len(data)} dishes to {out_file}")
 # Validate
 result = subprocess.run(
     [sys.executable, str(ROOT / "seed_prompts" / "validate_batch.py"), str(out_file)],
-    capture_output=True, text=True,
+    capture_output=True,
+    text=True,
 )
 print(result.stdout)
 if result.stderr:

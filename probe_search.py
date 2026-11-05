@@ -20,11 +20,10 @@ import itertools
 import json
 import os
 import sys
-import textwrap
 import time
 import urllib.error
 import urllib.request
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
@@ -37,9 +36,9 @@ ENGINE_KEY = os.environ.get(
     "ENGINE_KEY",
     "ffk_6342e74c59c5bf955b650605a003ba3c378c09d5",
 )
-MODE = os.environ.get("MODE", "explore")       # explore | strict
-LIMIT = int(os.environ.get("LIMIT", "5"))      # results per tier
-TIMEOUT = int(os.environ.get("TIMEOUT", "15")) # HTTP timeout seconds
+MODE = os.environ.get("MODE", "explore")  # explore | strict
+LIMIT = int(os.environ.get("LIMIT", "5"))  # results per tier
+TIMEOUT = int(os.environ.get("TIMEOUT", "15"))  # HTTP timeout seconds
 
 # Output file — written alongside this script
 TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -84,8 +83,10 @@ COMBO_SIZES = [1, 2, 3, 4, 5, 6, 7, 8]
 _ANSI_RE = __import__("re").compile(r"\033\[[0-9;]*m")
 _outfile = None  # opened in main()
 
+
 def _strip_ansi(text: str) -> str:
     return _ANSI_RE.sub("", text)
+
 
 def out(text: str = ""):
     """Print to terminal AND append plain text to the results file."""
@@ -97,40 +98,68 @@ def out(text: str = ""):
 
 USE_COLOUR = sys.stdout.isatty()
 
+
 def _c(code: str, text: str) -> str:
     return f"\033[{code}m{text}\033[0m" if USE_COLOUR else text
 
-def bold(t):    return _c("1", t)
-def dim(t):     return _c("2", t)
-def green(t):   return _c("32", t)
-def yellow(t):  return _c("33", t)
-def cyan(t):    return _c("36", t)
-def red(t):     return _c("31", t)
-def magenta(t): return _c("35", t)
-def blue(t):    return _c("34", t)
+
+def bold(t):
+    return _c("1", t)
+
+
+def dim(t):
+    return _c("2", t)
+
+
+def green(t):
+    return _c("32", t)
+
+
+def yellow(t):
+    return _c("33", t)
+
+
+def cyan(t):
+    return _c("36", t)
+
+
+def red(t):
+    return _c("31", t)
+
+
+def magenta(t):
+    return _c("35", t)
+
+
+def blue(t):
+    return _c("34", t)
+
 
 TIER_COLOUR = {
-    "exact":    green,
+    "exact": green,
     "can_make": cyan,
-    "almost":   yellow,
+    "almost": yellow,
 }
 TIER_LABEL = {
-    "exact":    "EXACT   ",
+    "exact": "EXACT   ",
     "can_make": "CAN MAKE",
-    "almost":   "ALMOST  ",
+    "almost": "ALMOST  ",
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
 # HTTP CLIENT
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 def search(ingredients: list[str]) -> dict:
     """POST to /v1/search/by-ingredients and return the parsed JSON."""
-    payload = json.dumps({
-        "ingredients": ingredients,
-        "mode": MODE,
-        "limit": LIMIT,
-    }).encode()
+    payload = json.dumps(
+        {
+            "ingredients": ingredients,
+            "mode": MODE,
+            "limit": LIMIT,
+        }
+    ).encode()
 
     req = urllib.request.Request(
         url=f"{ENGINE_URL}/v1/search/by-ingredients",
@@ -153,15 +182,18 @@ def search(ingredients: list[str]) -> dict:
     except Exception as exc:
         return {"_error": str(exc)}
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # DISPLAY HELPERS
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def score_bar(score: float, width: int = 20) -> str:
     """Visual bar representing a 0–1 score."""
     filled = round(score * width)
     bar = "█" * filled + "░" * (width - filled)
     return bar
+
 
 def fmt_inglist(refs: list[dict], colour_fn=None) -> str:
     """Format a list of ingredient refs as a compact comma string."""
@@ -171,13 +203,16 @@ def fmt_inglist(refs: list[dict], colour_fn=None) -> str:
     text = ", ".join(names)
     return colour_fn(text) if colour_fn else text
 
+
 def print_separator(char="─", width=80):
     out(dim(char * width))
+
 
 def print_header(text: str):
     out()
     out(bold(cyan(f"  {text}")))
     print_separator("═")
+
 
 def print_dish(rank: int, dish: dict):
     """Print one dish result with tier, score, matched/missing/unused."""
@@ -189,11 +224,11 @@ def print_dish(rank: int, dish: dict):
 
     matched = dish.get("matched", [])
     missing = dish.get("missing", [])
-    unused  = dish.get("unused", [])
+    unused = dish.get("unused", [])
     staples = dish.get("assumed_staples", [])
     breakdown = dish.get("score_breakdown", {})
 
-    tier_fn   = TIER_COLOUR.get(tier, lambda x: x)
+    tier_fn = TIER_COLOUR.get(tier, lambda x: x)
     tier_label = TIER_LABEL.get(tier, tier.upper().ljust(8))
 
     # Line 1 — rank, tier badge, name, score bar
@@ -210,7 +245,7 @@ def print_dish(rank: int, dish: dict):
     # Line 2 — ingredient breakdown
     matched_str = fmt_inglist(matched, green)
     missing_str = fmt_inglist(missing, red)
-    unused_str  = fmt_inglist(unused, yellow)
+    unused_str = fmt_inglist(unused, yellow)
     staples_str = fmt_inglist(staples, dim)
 
     out(f"       {dim('matched:')} {matched_str}")
@@ -235,6 +270,7 @@ def print_dish(rank: int, dish: dict):
 
     out()
 
+
 def print_resolution(resolved: list, ambiguous: list, unmatched: list):
     """Show how the engine understood each input token."""
     parts = []
@@ -242,7 +278,7 @@ def print_resolution(resolved: list, ambiguous: list, unmatched: list):
         tok = r.get("token", "?")
         status = r.get("status", "?")
         method = r.get("method", "")
-        conf   = r.get("confidence", 0.0)
+        conf = r.get("confidence", 0.0)
         if status == "matched":
             parts.append(green(f"✓ {tok}") + dim(f" ({method} {conf:.0%})"))
         elif status == "ambiguous":
@@ -256,9 +292,11 @@ def print_resolution(resolved: list, ambiguous: list, unmatched: list):
 
     out("  " + "   ".join(parts))
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # COMBO GENERATION
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def build_combos() -> list[list[str]]:
     """
@@ -280,7 +318,7 @@ def build_combos() -> list[list[str]]:
 
     for size in COMBO_SIZES:
         count = 0
-        cap   = limits[size]
+        cap = limits[size]
         for combo in itertools.combinations(INGREDIENTS, size):
             combos.append(list(combo))
             count += 1
@@ -289,9 +327,11 @@ def build_combos() -> list[list[str]]:
 
     return combos
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # VERDICT HELPERS — the quality analysis you care about
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def analyse_quality(ingredients: list[str], result: dict) -> list[str]:
     """
@@ -300,9 +340,9 @@ def analyse_quality(ingredients: list[str], result: dict) -> list[str]:
     """
     notes = []
     tiers = result.get("results", {})
-    exact    = tiers.get("exact", [])
+    exact = tiers.get("exact", [])
     can_make = tiers.get("can_make", [])
-    almost   = tiers.get("almost", [])
+    almost = tiers.get("almost", [])
     all_results = exact + can_make + almost
 
     total = result.get("total_results", 0)
@@ -310,25 +350,34 @@ def analyse_quality(ingredients: list[str], result: dict) -> list[str]:
 
     # ── Single ingredient edge case ──────────────────────────────────────────
     if len(ingredients) == 1:
-        ing = ingredients[0].lower()
         if total == 0:
-            notes.append(red("✗ ZERO RESULTS") + dim(" — engine returned nothing for a single ingredient"))
+            notes.append(
+                red("✗ ZERO RESULTS") + dim(" — engine returned nothing for a single ingredient")
+            )
         else:
             # Check if exact results exist — for single non-staple ingredient,
             # exact means the dish needs ONLY that ingredient (+ staples).
             # This is rare. If it exists it should be verified.
             if exact:
-                exact_names = [d.get("name_en","?") for d in exact[:3]]
-                notes.append(green("✓ EXACT hits for single ingredient: ") + bold(", ".join(exact_names)))
-                notes.append(dim("  → These dishes need only this ingredient + kitchen staples (salt/oil/water)"))
+                exact_names = [d.get("name_en", "?") for d in exact[:3]]
+                notes.append(
+                    green("✓ EXACT hits for single ingredient: ") + bold(", ".join(exact_names))
+                )
+                notes.append(
+                    dim(
+                        "  → These dishes need only this ingredient + kitchen staples (salt/oil/water)"
+                    )
+                )
             if can_make:
-                cm_names = [d.get("name_en","?") for d in can_make[:3]]
+                cm_names = [d.get("name_en", "?") for d in can_make[:3]]
                 notes.append(cyan("✓ CAN MAKE hits: ") + bold(", ".join(cm_names)))
-                notes.append(dim("  → You have all required ingredients because the rest are staples"))
+                notes.append(
+                    dim("  → You have all required ingredients because the rest are staples")
+                )
             if almost and not exact and not can_make:
-                al_names = [d.get("name_en","?") for d in almost[:3]]
+                al_names = [d.get("name_en", "?") for d in almost[:3]]
                 notes.append(yellow("△ ONLY ALMOST results: ") + bold(", ".join(al_names)))
-                notes.append(dim(f"  → Closest matches — missing 1 non-staple ingredient"))
+                notes.append(dim("  → Closest matches — missing 1 non-staple ingredient"))
 
         # Check order — first result should be highest scorer
         if len(all_results) >= 2:
@@ -341,34 +390,48 @@ def analyse_quality(ingredients: list[str], result: dict) -> list[str]:
     # ── Multi ingredient ─────────────────────────────────────────────────────
     else:
         if total == 0:
-            notes.append(red("✗ ZERO RESULTS") + dim(f" — no dishes found for {len(ingredients)} ingredients"))
+            notes.append(
+                red("✗ ZERO RESULTS")
+                + dim(f" — no dishes found for {len(ingredients)} ingredients")
+            )
         elif total < 3:
             notes.append(yellow(f"△ LOW RESULTS ({total})") + dim(" — only a few dishes matched"))
         else:
-            notes.append(green(f"✓ {total} total results") + dim(f" ({len(exact)} exact, {len(can_make)} can_make, {len(almost)} almost)"))
+            notes.append(
+                green(f"✓ {total} total results")
+                + dim(f" ({len(exact)} exact, {len(can_make)} can_make, {len(almost)} almost)")
+            )
 
         # Check that more ingredients = more exact results (generally)
         if len(ingredients) >= 4 and not exact and not can_make:
-            notes.append(yellow("△ No exact/can_make results with 4+ ingredients — data may be thin"))
+            notes.append(
+                yellow("△ No exact/can_make results with 4+ ingredients — data may be thin")
+            )
 
         # Top result sanity
         if all_results:
             top = all_results[0]
-            top_name = top.get("name_en","?")
+            top_name = top.get("name_en", "?")
             top_score = top.get("score", 0)
-            top_tier = top.get("tier","?")
-            notes.append(dim(f"  Top: {bold(top_name)} ({TIER_LABEL.get(top_tier, top_tier).strip()}, score={top_score:.3f})"))
+            top_tier = top.get("tier", "?")
+            notes.append(
+                dim(
+                    f"  Top: {bold(top_name)} ({TIER_LABEL.get(top_tier, top_tier).strip()}, score={top_score:.3f})"
+                )
+            )
 
     # ── Unmatched tokens ─────────────────────────────────────────────────────
     if unmatched:
-        notes.append(yellow(f"△ UNMATCHED tokens: ") + red(", ".join(unmatched)))
+        notes.append(yellow("△ UNMATCHED tokens: ") + red(", ".join(unmatched)))
         notes.append(dim("  → These words are not in the ingredient dictionary — add aliases"))
 
     return notes
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # SUMMARY COLLECTOR
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 @dataclass
 class ComboResult:
@@ -384,9 +447,11 @@ class ComboResult:
     top_tier: str
     error: str = ""
 
+
 # ─────────────────────────────────────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def main():
     global _outfile
@@ -394,7 +459,7 @@ def main():
 
     # Open results file
     _outfile = open(RESULTS_FILE, "w", encoding="utf-8")
-    _outfile.write(f"FF-Engine Search Quality Probe\n")
+    _outfile.write("FF-Engine Search Quality Probe\n")
     _outfile.write(f"Run at : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
     _outfile.write(f"Engine : {ENGINE_URL}\n")
     _outfile.write(f"Mode   : {MODE}\n")
@@ -409,13 +474,15 @@ def main():
     out(f"  Engine : {bold(ENGINE_URL)}")
     out(f"  Mode   : {bold(MODE)}")
     out(f"  Limit  : {bold(str(LIMIT))} results per tier")
-    out(f"  Combos : {bold(str(len(combos)))} queries  "
-          f"({', '.join(f'{COMBO_SIZES[i]}x{[1,10,8,6,4,3,2,1][i]}' for i in range(len(COMBO_SIZES)))})")
+    out(
+        f"  Combos : {bold(str(len(combos)))} queries  "
+        f"({', '.join(f'{COMBO_SIZES[i]}x{[1,10,8,6,4,3,2,1][i]}' for i in range(len(COMBO_SIZES)))})"
+    )
     out()
     out(f"  Ingredients under test ({len(INGREDIENTS)}):")
     cols = 4
     for i in range(0, len(INGREDIENTS), cols):
-        row = INGREDIENTS[i:i+cols]
+        row = INGREDIENTS[i : i + cols]
         out("    " + "  ".join(f"{dim(str(i+j+1).rjust(2))}. {r:<18}" for j, r in enumerate(row)))
     out()
     print_separator("═")
@@ -436,7 +503,7 @@ def main():
     except Exception as exc:
         out(f"\n  {red('✗ Engine is DOWN:')} {exc}\n")
         out(f"  Make sure the engine is running at {ENGINE_URL}")
-        out(f"  and your key is valid.\n")
+        out("  and your key is valid.\n")
         sys.exit(1)
 
     # ── Run combos ────────────────────────────────────────────────────────────
@@ -478,25 +545,34 @@ def main():
             if "_body" in result:
                 out(f"  {dim(result['_body'][:200])}")
             out()
-            summary.append(ComboResult(
-                ingredients=ings, size=size,
-                total=0, exact=0, can_make=0, almost=0,
-                unmatched=[], top_name="", top_score=0, top_tier="",
-                error=result["_error"],
-            ))
+            summary.append(
+                ComboResult(
+                    ingredients=ings,
+                    size=size,
+                    total=0,
+                    exact=0,
+                    can_make=0,
+                    almost=0,
+                    unmatched=[],
+                    top_name="",
+                    top_score=0,
+                    top_tier="",
+                    error=result["_error"],
+                )
+            )
             continue
 
         # ── Parse result ──────────────────────────────────────────────────────
-        tiers       = result.get("results", {})
-        exact_list  = tiers.get("exact", [])
-        cm_list     = tiers.get("can_make", [])
+        tiers = result.get("results", {})
+        exact_list = tiers.get("exact", [])
+        cm_list = tiers.get("can_make", [])
         almost_list = tiers.get("almost", [])
-        all_dishes  = exact_list + cm_list + almost_list
-        total       = result.get("total_results", 0)
-        candidates  = result.get("candidate_count", 0)
-        resolved    = result.get("resolved", [])
-        ambiguous   = result.get("ambiguous", [])
-        unmatched   = result.get("unmatched", [])
+        all_dishes = exact_list + cm_list + almost_list
+        total = result.get("total_results", 0)
+        candidates = result.get("candidate_count", 0)
+        resolved = result.get("resolved", [])
+        ambiguous = result.get("ambiguous", [])
+        unmatched = result.get("unmatched", [])
 
         # ── Resolution row ────────────────────────────────────────────────────
         print_resolution(resolved, ambiguous, unmatched)
@@ -508,10 +584,12 @@ def main():
             f"{cyan(str(len(cm_list)))} can_make  "
             f"{yellow(str(len(almost_list)))} almost"
         )
-        out(f"  {dim('candidates:')} {candidates}   "
-              f"{dim('results:')} {bold(str(total))}   "
-              f"{tier_summary}   "
-              f"{dim(f'{elapsed*1000:.0f}ms')}")
+        out(
+            f"  {dim('candidates:')} {candidates}   "
+            f"{dim('results:')} {bold(str(total))}   "
+            f"{tier_summary}   "
+            f"{dim(f'{elapsed*1000:.0f}ms')}"
+        )
         out()
 
         # ── Quality verdict ───────────────────────────────────────────────────
@@ -529,10 +607,10 @@ def main():
                 out(f"  {dim('→ Check the unmatched list above and add aliases.')}")
         else:
             rank = 1
-            for tier_key, tier_list in [
-                ("exact",    exact_list),
+            for _tier_key, tier_list in [
+                ("exact", exact_list),
                 ("can_make", cm_list),
-                ("almost",   almost_list),
+                ("almost", almost_list),
             ]:
                 if tier_list:
                     for dish in tier_list:
@@ -541,18 +619,20 @@ def main():
 
         # ── Summary record ────────────────────────────────────────────────────
         top = all_dishes[0] if all_dishes else {}
-        summary.append(ComboResult(
-            ingredients=ings,
-            size=size,
-            total=total,
-            exact=len(exact_list),
-            can_make=len(cm_list),
-            almost=len(almost_list),
-            unmatched=unmatched,
-            top_name=top.get("name_en", ""),
-            top_score=top.get("score", 0),
-            top_tier=top.get("tier", ""),
-        ))
+        summary.append(
+            ComboResult(
+                ingredients=ings,
+                size=size,
+                total=total,
+                exact=len(exact_list),
+                can_make=len(cm_list),
+                almost=len(almost_list),
+                unmatched=unmatched,
+                top_name=top.get("name_en", ""),
+                top_score=top.get("score", 0),
+                top_tier=top.get("tier", ""),
+            )
+        )
 
         # small pause to avoid hammering
         time.sleep(0.05)
@@ -569,7 +649,9 @@ def main():
     # Stats by group size
     out(bold("  Results by group size:"))
     out()
-    out(f"  {'Size':<6} {'Queries':<8} {'Avg Total':<10} {'Exact%':<8} {'CanMake%':<10} {'Almost%':<8} {'ZeroRes':<8}")
+    out(
+        f"  {'Size':<6} {'Queries':<8} {'Avg Total':<10} {'Exact%':<8} {'CanMake%':<10} {'Almost%':<8} {'ZeroRes':<8}"
+    )
     print_separator()
 
     for size in COMBO_SIZES:
@@ -577,11 +659,11 @@ def main():
         if not rows:
             continue
         n = len(rows)
-        avg_total   = sum(r.total for r in rows) / n
-        pct_exact   = 100 * sum(1 for r in rows if r.exact > 0) / n
-        pct_cm      = 100 * sum(1 for r in rows if r.can_make > 0) / n
-        pct_almost  = 100 * sum(1 for r in rows if r.almost > 0) / n
-        zero        = sum(1 for r in rows if r.total == 0)
+        avg_total = sum(r.total for r in rows) / n
+        pct_exact = 100 * sum(1 for r in rows if r.exact > 0) / n
+        pct_cm = 100 * sum(1 for r in rows if r.can_make > 0) / n
+        pct_almost = 100 * sum(1 for r in rows if r.almost > 0) / n
+        zero = sum(1 for r in rows if r.total == 0)
         out(
             f"  {size:<6} {n:<8} {avg_total:<10.1f} "
             f"{green(f'{pct_exact:.0f}%'):<20} "
@@ -635,10 +717,10 @@ def main():
             out(f"    {' + '.join(r.ingredients):<40} {red(r.error)}")
         out()
 
-    total_ok   = sum(1 for r in summary if not r.error and r.total > 0)
+    total_ok = sum(1 for r in summary if not r.error and r.total > 0)
     total_zero = len(zero_rows)
-    total_err  = len(errors)
-    total_all  = len(summary)
+    total_err = len(errors)
+    total_all = len(summary)
 
     out(bold("  Overall:"))
     out(f"    {green(str(total_ok))} / {total_all} queries returned results")
