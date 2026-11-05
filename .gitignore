@@ -71,3 +71,6 @@ probe_results/
 
 # Hypothesis property-test cache
 .hypothesis/
+
+# Documentation (operational workflows, not code)
+docs/
