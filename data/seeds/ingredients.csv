@@ -154,3 +154,90 @@ frankfurter,Frankfurter,Meat,primary,false
 mutton,Mutton,Meat,primary,false
 veal-cutlets,Veal cutlets,Meat,primary,false
 camel-hump,Camel hump,Meat,primary,false
+beef-brain,Beef brain,Meat,primary,false
+beef-tail,Beef tail,Meat,primary,false
+beef-skin,Beef skin,Meat,primary,false
+beef-feet,Beef feet,Meat,primary,false
+beef-intestines,Beef intestines,Meat,primary,false
+beef-spleen,Beef spleen,Meat,primary,false
+beef-testicles,Beef testicles,Meat,primary,false
+beef-cheek,Beef cheek,Meat,primary,false
+beef-ear,Beef ear,Meat,primary,false
+beef-jerky,Beef jerky,Meat,primary,false
+beef-suet,Beef suet,Meat,secondary,false
+beef-lard,Beef lard,Meat,secondary,false
+kilishi,Kilishi (spiced dried beef),Meat,primary,false
+goat-brain,Goat brain,Meat,primary,false
+goat-skin,Goat skin,Meat,primary,false
+goat-feet,Goat feet,Meat,primary,false
+goat-spleen,Goat spleen,Meat,primary,false
+goat-shoulder-chop,Goat shoulder chop,Meat,primary,false
+goat-rack,Rack of goat,Meat,primary,false
+lamb-breast,Lamb breast,Meat,primary,false
+lamb-brain,Lamb brain,Meat,primary,false
+lamb-tongue,Lamb tongue,Meat,primary,false
+lamb-heart,Lamb heart,Meat,primary,false
+lamb-tripe,Lamb tripe,Meat,primary,false
+mutton-shoulder,Mutton shoulder,Meat,primary,false
+mutton-leg,Mutton leg,Meat,primary,false
+pork-skin,Pork skin,Meat,primary,false
+pork-liver,Pork liver,Meat,primary,false
+pork-heart,Pork heart,Meat,primary,false
+pork-kidney,Pork kidney,Meat,primary,false
+pork-brain,Pork brain,Meat,primary,false
+pork-intestines,Pork intestines,Meat,primary,false
+pork-blood,Pork blood,Meat,primary,false
+pork-head,Pork head,Meat,primary,false
+blood-sausage,Blood sausage,Meat,primary,false
+luncheon-meat,Luncheon meat,Meat,primary,false
+canned-beef,Canned beef,Meat,primary,false
+meat-patties,Meat patties,Meat,primary,false
+beef-meatballs,Beef meatballs,Meat,primary,false
+chicken-meatballs,Chicken meatballs,Poultry,primary,false
+lamb-meatballs,Lamb meatballs,Meat,primary,false
+hotdog,Hotdog,Meat,primary,false
+pepperoni,Pepperoni,Meat,primary,false
+prosciutto,Prosciutto,Meat,primary,false
+pancetta,Pancetta,Meat,primary,false
+beef-patty,Beef patty,Meat,primary,false
+chicken-patty,Chicken patty,Poultry,primary,false
+warthog-meat,Warthog meat,Meat,primary,false
+impala-meat,Impala meat,Meat,primary,false
+eland-meat,Eland meat,Meat,primary,false
+crocodile-meat,Crocodile meat,Meat,primary,false
+buffalo-meat,Buffalo meat,Meat,primary,false
+zebra-meat,Zebra meat,Meat,primary,false
+hartebeest-meat,Hartebeest meat,Meat,primary,false
+springbok-meat,Springbok meat,Meat,primary,false
+bush-pig-meat,Bush pig meat,Meat,primary,false
+porcupine-meat,Porcupine meat,Meat,primary,false
+monitor-lizard-meat,Monitor lizard meat,Meat,primary,false
+chicken-stock,Chicken stock,Poultry,secondary,false
+beef-stock,Beef stock,Meat,secondary,false
+goat-stock,Goat stock,Meat,secondary,false
+lamb-stock,Lamb stock,Meat,secondary,false
+bone-broth,Bone broth,Meat,secondary,false
+chicken-skin,Chicken skin,Poultry,secondary,false
+chicken-fat-schmaltz,Chicken fat schmaltz,Poultry,secondary,false
+turkey-breast,Turkey breast,Poultry,primary,false
+turkey-legs,Turkey legs,Poultry,primary,false
+turkey-mince,Turkey mince,Poultry,primary,false
+duck-breast,Duck breast,Poultry,primary,false
+duck-legs,Duck legs,Poultry,primary,false
+duck-fat,Duck fat,Poultry,secondary,false
+guinea-fowl-pieces,Guinea fowl pieces,Poultry,primary,false
+quail-eggs,Quail eggs,Poultry,secondary,false
+chicken-liver-pate,Chicken liver pâté,Poultry,primary,false
+smoked-chicken,Smoked chicken,Poultry,primary,false
+smoked-goat,Smoked goat,Meat,primary,false
+smoked-beef,Smoked beef,Meat,primary,false
+marinated-chicken,Marinated chicken,Poultry,primary,false
+marinated-beef,Marinated beef,Meat,primary,false
+marinated-goat,Marinated goat,Meat,primary,false
+chicken-shawarma-meat,Chicken shawarma meat,Poultry,primary,false
+beef-shawarma-meat,Beef shawarma meat,Meat,primary,false
+lamb-shawarma-meat,Lamb shawarma meat,Meat,primary,false
+kuku-wa-kienyeji,Free-range local chicken (kuku wa kienyeji),Poultry,primary,false
+ng-ombe-ya-kienyeji,Local breed beef (ng'ombe ya kienyeji),Meat,primary,false
+nyama-ya-kondoo,Sheep meat,Meat,primary,false
+offal-mix,Offal mix (matumbo),Meat,primary,false

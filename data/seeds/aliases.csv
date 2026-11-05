@@ -1638,3 +1638,242 @@ veal-cutlets,veal cutlets,en,false
 veal-cutlets,ndama,sw,false
 camel-hump,camel hump,en,false
 camel-hump,nundu ya ngamia,sw,false
+beef-brain,beef brain,en,false
+beef-brain,ubongo wa ng'ombe,sw,false
+beef-brain,cow brain,en,false
+beef-tail,beef tail,en,false
+beef-tail,mkia wa ng'ombe,sw,false
+beef-tail,oxtail,en,false
+beef-skin,beef skin,en,false
+beef-skin,ngozi ya ng'ombe,sw,false
+beef-skin,cow skin,en,false
+beef-skin,kanda,sw,false
+beef-feet,beef feet,en,false
+beef-feet,maguu ya ng'ombe,sw,false
+beef-feet,cow feet,en,false
+beef-feet,cow trotters,en,false
+beef-intestines,beef intestines,en,false
+beef-intestines,matumbo ya ng'ombe,sw,false
+beef-intestines,cow intestines,en,false
+beef-spleen,beef spleen,en,false
+beef-spleen,bandama ya ng'ombe,sw,false
+beef-testicles,beef testicles,en,false
+beef-testicles,matonge,sw,false
+beef-testicles,rocky mountain oysters,en,false
+beef-cheek,beef cheek,en,false
+beef-cheek,shavu ya ng'ombe,sw,false
+beef-ear,beef ear,en,false
+beef-ear,sikio la ng'ombe,sw,false
+beef-jerky,beef jerky,en,false
+beef-jerky,dried beef,en,false
+beef-jerky,nyama kavu,sw,false
+beef-suet,beef suet,en,false
+beef-suet,beef dripping,en,false
+beef-lard,beef lard,en,false
+kilishi,kilishi,en,false
+kilishi,kilishi meat,en,false
+kilishi,spiced dried beef,en,false
+kilishi,nyama ya kilishi,sw,false
+goat-brain,goat brain,en,false
+goat-brain,ubongo wa mbuzi,sw,false
+goat-skin,goat skin,en,false
+goat-skin,ngozi ya mbuzi,sw,false
+goat-feet,goat feet,en,false
+goat-feet,maguu ya mbuzi,sw,false
+goat-spleen,goat spleen,en,false
+goat-shoulder-chop,goat shoulder chop,en,false
+goat-shoulder-chop,bega la mbuzi,sw,false
+goat-rack,rack of goat,en,false
+goat-rack,mbavu za mbuzi,sw,false
+lamb-breast,lamb breast,en,false
+lamb-brain,lamb brain,en,false
+lamb-brain,ubongo wa kondoo,sw,false
+lamb-tongue,lamb tongue,en,false
+lamb-tongue,ulimi wa kondoo,sw,false
+lamb-heart,lamb heart,en,false
+lamb-heart,moyo wa kondoo,sw,false
+lamb-tripe,lamb tripe,en,false
+lamb-tripe,matumbo ya kondoo,sw,false
+mutton-shoulder,mutton shoulder,en,false
+mutton-shoulder,bega la kondoo mzee,sw,false
+mutton-leg,mutton leg,en,false
+mutton-leg,mguu wa kondoo mzee,sw,false
+pork-fat,pork fat,en,false
+pork-fat,mafuta ya nguruwe,sw,false
+pork-fat,lard,en,false
+pork-skin,pork skin,en,false
+pork-skin,ngozi ya nguruwe,sw,false
+pork-skin,crackling,en,false
+pork-skin,pork rind,en,false
+pork-liver,pork liver,en,false
+pork-liver,ini ya nguruwe,sw,false
+pork-heart,pork heart,en,false
+pork-heart,moyo wa nguruwe,sw,false
+pork-kidney,pork kidney,en,false
+pork-kidney,figo ya nguruwe,sw,false
+pork-brain,pork brain,en,false
+pork-brain,ubongo wa nguruwe,sw,false
+pork-intestines,pork intestines,en,false
+pork-intestines,matumbo ya nguruwe,sw,false
+pork-blood,pork blood,en,false
+pork-blood,damu ya nguruwe,sw,false
+pork-head,pork head,en,false
+pork-head,kichwa cha nguruwe,sw,false
+blood-sausage,blood sausage,en,false
+blood-sausage,black pudding,en,false
+blood-sausage,soseji ya damu,sw,false
+luncheon-meat,luncheon meat,en,false
+luncheon-meat,spam,en,false
+luncheon-meat,canned meat,en,false
+canned-beef,canned beef,en,false
+canned-beef,tinned beef,en,false
+canned-beef,corned beef (canned),en,false
+meat-patties,meat patties,en,false
+meat-patties,burger patties,en,false
+beef-meatballs,beef meatballs,en,false
+beef-meatballs,nyama ya mpira,sw,false
+beef-meatballs,kofta,en,false
+chicken-meatballs,chicken meatballs,en,false
+chicken-meatballs,kofta ya kuku,sw,false
+lamb-meatballs,lamb meatballs,en,false
+lamb-meatballs,kofta ya kondoo,sw,false
+hotdog,hotdog,en,false
+hotdog,hot dog,en,false
+hotdog,frankfurter,en,false
+hotdog,wiener,en,false
+pepperoni,pepperoni,en,false
+pepperoni,pepperoni sausage,en,false
+prosciutto,prosciutto,en,false
+prosciutto,Italian cured ham,en,false
+pancetta,pancetta,en,false
+pancetta,Italian bacon,en,false
+beef-patty,beef patty,en,false
+beef-patty,hamburger patty,en,false
+beef-patty,burger patty,en,false
+chicken-patty,chicken patty,en,false
+chicken-patty,chicken burger patty,en,false
+warthog-meat,warthog,en,false
+warthog-meat,ngiri,sw,false
+warthog-meat,warthog meat,en,false
+warthog-meat,bush pig,en,false
+impala-meat,impala,en,false
+impala-meat,impala meat,en,false
+impala-meat,swala,sw,false
+eland-meat,eland,en,false
+eland-meat,eland meat,en,false
+eland-meat,pofu,sw,false
+crocodile-meat,crocodile,en,false
+crocodile-meat,crocodile meat,en,false
+crocodile-meat,mamba,sw,false
+buffalo-meat,buffalo,en,false
+buffalo-meat,buffalo meat,en,false
+buffalo-meat,nyati,sw,false
+buffalo-meat,wild buffalo,en,false
+zebra-meat,zebra,en,false
+zebra-meat,zebra meat,en,false
+zebra-meat,punda milia,sw,false
+hartebeest-meat,hartebeest,en,false
+hartebeest-meat,kongoni,sw,false
+springbok-meat,springbok,en,false
+springbok-meat,springbok meat,en,false
+bush-pig-meat,bush pig,en,false
+bush-pig-meat,nguruwe mwitu,sw,false
+porcupine-meat,porcupine,en,false
+porcupine-meat,nungunungu,sw,false
+monitor-lizard-meat,monitor lizard,en,false
+monitor-lizard-meat,kenge,sw,false
+monitor-lizard-meat,goanna,en,false
+chicken-stock,chicken stock,en,false
+chicken-stock,chicken broth,en,false
+chicken-stock,mchuzi wa kuku,sw,false
+beef-stock,beef stock,en,false
+beef-stock,beef broth,en,false
+beef-stock,mchuzi wa ng'ombe,sw,false
+goat-stock,goat stock,en,false
+goat-stock,goat broth,en,false
+goat-stock,mchuzi wa mbuzi,sw,false
+lamb-stock,lamb stock,en,false
+lamb-stock,lamb broth,en,false
+bone-broth,bone broth,en,false
+bone-broth,mchuzi wa mifupa,sw,false
+bone-broth,stock,en,false
+chicken-skin,chicken skin,en,false
+chicken-skin,ngozi ya kuku,sw,false
+chicken-fat-schmaltz,schmaltz,en,false
+chicken-fat-schmaltz,chicken fat,en,false
+chicken-fat-schmaltz,mafuta ya kuku,sw,false
+turkey-breast,turkey breast,en,false
+turkey-breast,bunda la bata mzinga,sw,false
+turkey-legs,turkey legs,en,false
+turkey-legs,miguu ya bata mzinga,sw,false
+turkey-mince,turkey mince,en,false
+turkey-mince,ground turkey,en,false
+duck-breast,duck breast,en,false
+duck-breast,bunda la bata,sw,false
+duck-legs,duck legs,en,false
+duck-legs,miguu ya bata,sw,false
+duck-fat,duck fat,en,false
+duck-fat,mafuta ya bata,sw,false
+guinea-fowl-pieces,guinea fowl pieces,en,false
+guinea-fowl-pieces,kanga pieces,sw,false
+quail-eggs,quail eggs,en,false
+quail-eggs,mayai ya kware,sw,false
+chicken-liver-pate,chicken liver pate,en,false
+chicken-liver-pate,liver pate,en,false
+smoked-chicken,smoked chicken,en,false
+smoked-chicken,kuku wa kuvuta moshi,sw,false
+smoked-goat,smoked goat,en,false
+smoked-goat,mbuzi wa kuvuta moshi,sw,false
+smoked-beef,smoked beef,en,false
+smoked-beef,nyama ya kuvuta moshi,sw,false
+marinated-chicken,marinated chicken,en,false
+marinated-chicken,kuku wa kumarinate,sw,false
+marinated-beef,marinated beef,en,false
+marinated-beef,nyama ya ng'ombe iliyoandaliwa,sw,false
+marinated-goat,marinated goat,en,false
+chicken-shawarma-meat,chicken shawarma,en,false
+chicken-shawarma-meat,shawarma ya kuku,sw,false
+beef-shawarma-meat,beef shawarma,en,false
+beef-shawarma-meat,shawarma ya nyama,sw,false
+lamb-shawarma-meat,lamb shawarma,en,false
+lamb-shawarma-meat,shawarma ya kondoo,sw,false
+kuku-wa-kienyeji,kuku wa kienyeji,sw,false
+kuku-wa-kienyeji,free range chicken,en,false
+kuku-wa-kienyeji,local chicken,en,false
+kuku-wa-kienyeji,indigenous chicken,en,false
+kuku-wa-kienyeji,village chicken,en,false
+ng-ombe-ya-kienyeji,ng'ombe ya kienyeji,sw,false
+ng-ombe-ya-kienyeji,local breed beef,en,false
+ng-ombe-ya-kienyeji,indigenous beef,en,false
+nyama-ya-kondoo,nyama ya kondoo,sw,false
+nyama-ya-kondoo,sheep meat,en,false
+nyama-ya-kondoo,kondoo,sw,false
+offal-mix,offal mix,en,false
+offal-mix,matumbo,sw,false
+offal-mix,mixed offal,en,false
+offal-mix,variety meats,en,false
+offal-mix,intestines and offal,en,false
+beef-tail,ng'ombe mkia,sw,false
+beef-liver,ini ya ng'ombe,sw,false
+beef-liver,cow liver,en,false
+beef-kidney,figo ya ng'ombe,sw,false
+beef-kidney,cow kidney,en,false
+beef-heart,moyo wa ng'ombe,sw,false
+beef-tripe,matumbo ya ng'ombe,sw,false
+beef-tripe,tripe,en,false
+beef-tripe,ndumba,sw,false
+goat-liver,ini ya mbuzi,sw,false
+goat-kidney,figo ya mbuzi,sw,false
+goat-heart,moyo wa mbuzi,sw,false
+goat-tripe,matumbo ya mbuzi,sw,false
+goat-intestines,utumbo wa mbuzi,sw,false
+goat-trotters,miguu ya mbuzi,sw,false
+chicken-gizzards,gizzards,en,false
+chicken-gizzards,figi ya kuku,sw,false
+chicken-gizzards,chicken gizzards,en,false
+chicken-feet,kuku miguu,sw,false
+chicken-feet,chicken paws,en,false
+chicken-liver,ini ya kuku,sw,false
+chicken-liver,kuku ini,sw,false
+minced-chicken,ground chicken,en,false
+minced-chicken,nyama ya kuku iliyosagwa,sw,false

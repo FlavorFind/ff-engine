@@ -214,6 +214,59 @@ _GENERIC_INGREDIENT_SLUGS: dict[str, list[str]] = {
         "pork-sausages",
     ],
     "nguruwe": ["pork", "pork-belly", "pork-ribs"],  # Swahili: pig/pork
+    # Game meat
+    "game": [
+        "warthog-meat", "impala-meat", "eland-meat", "buffalo-meat",
+        "zebra-meat", "hartebeest-meat", "springbok-meat", "bush-pig-meat",
+        "venison", "rabbit-meat",
+    ],
+    "bushmeat": [
+        "warthog-meat", "impala-meat", "eland-meat", "buffalo-meat",
+        "zebra-meat", "hartebeest-meat", "springbok-meat", "bush-pig-meat",
+        "porcupine-meat",
+    ],
+    "warthog": ["warthog-meat"],
+    "ngiri": ["warthog-meat"],  # Swahili
+    "impala": ["impala-meat"],
+    "swala": ["impala-meat"],   # Swahili
+    "eland": ["eland-meat"],
+    "pofu": ["eland-meat"],     # Swahili
+    "buffalo": ["buffalo-meat"],
+    "nyati": ["buffalo-meat"],  # Swahili
+    "venison": ["venison", "impala-meat", "hartebeest-meat", "eland-meat"],
+    # Offal — generic
+    "offal": [
+        "mixed-offal", "offal-mix", "beef-offal",
+        "beef-tripe", "beef-intestines", "beef-liver", "beef-kidney", "beef-heart",
+        "goat-tripe", "goat-intestines", "goat-liver", "goat-kidney", "goat-heart",
+        "chicken-gizzards", "chicken-liver", "chicken-feet",
+        "pork-liver", "pork-kidney", "pork-heart", "pork-intestines",
+    ],
+    "matumbo": [
+        "mixed-offal", "offal-mix", "beef-tripe", "beef-intestines",
+        "goat-tripe", "goat-intestines", "pork-intestines",
+    ],  # Swahili: intestines/tripe
+    "tripe": ["beef-tripe", "goat-tripe", "lamb-tripe", "mixed-offal"],
+    # Poultry — generic
+    "turkey": ["turkey-breast", "turkey-legs", "turkey-mince", "turkey"],
+    "bata-mzinga": ["turkey-breast", "turkey-legs", "turkey"],  # Swahili: turkey
+    "duck": ["duck", "duck-breast", "duck-legs", "duck-meat"],
+    "bata": ["duck", "duck-breast", "duck-legs", "duck-meat"],  # Swahili: duck
+    "guinea-fowl": ["guinea-fowl", "guinea-fowl-pieces"],
+    "kanga": ["guinea-fowl", "guinea-fowl-pieces"],  # Swahili: guinea fowl
+    # Processed / deli — generic
+    "sausage": [
+        "beef-sausages", "pork-sausages", "smoked-sausage", "chorizo",
+        "merguez", "frankfurter", "hotdog", "blood-sausage", "salami",
+    ],
+    "soseji": [
+        "beef-sausages", "pork-sausages", "smoked-sausage", "frankfurter",
+    ],  # Swahili: sausage
+    "shawarma": [
+        "chicken-shawarma-meat", "beef-shawarma-meat", "lamb-shawarma-meat",
+    ],
+    "meatballs": ["beef-meatballs", "chicken-meatballs", "lamb-meatballs"],
+    "kofta": ["beef-meatballs", "lamb-meatballs", "chicken-meatballs"],
 }
 
 
