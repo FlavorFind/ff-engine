@@ -1877,3 +1877,282 @@ chicken-liver,ini ya kuku,sw,false
 chicken-liver,kuku ini,sw,false
 minced-chicken,ground chicken,en,false
 minced-chicken,nyama ya kuku iliyosagwa,sw,false
+garlic-cloves,garlic cloves,en,false
+garlic-cloves,cloves of garlic,en,false
+garlic-cloves,vitunguu saumu,sw,false
+garlic-cloves,saumu,sw,false
+garlic-powder,garlic powder,en,false
+garlic-powder,powdered garlic,en,false
+garlic-powder,unga wa vitunguu saumu,sw,false
+dried-onion,dried onion,en,false
+dried-onion,onion flakes,en,false
+dried-onion,vitunguu kavu,sw,false
+onion-powder,onion powder,en,false
+onion-powder,powdered onion,en,false
+green-onion,green onion,en,false
+green-onion,spring onion,en,false
+green-onion,scallion,en,false
+green-onion,vitunguu maji,sw,false
+chives,chives,en,false
+chives,nyasi ya kitunguu,sw,false
+shallot,shallot,en,false
+shallot,eschalot,en,false
+shallot,vitunguu kidogo,sw,false
+cherry-tomatoes,cherry tomatoes,en,false
+cherry-tomatoes,nyanya ndogo,sw,false
+cherry-tomatoes,cocktail tomatoes,en,false
+roma-tomatoes,roma tomatoes,en,false
+roma-tomatoes,plum tomatoes,en,false
+roma-tomatoes,nyanya roma,sw,false
+tomato-concasse,tomato concasse,en,false
+tomato-concasse,concassed tomatoes,en,false
+plum-tomatoes,plum tomatoes,en,false
+plum-tomatoes,nyanya plum,sw,false
+green-tomatoes,green tomatoes,en,false
+green-tomatoes,unripe tomatoes,en,false
+green-tomatoes,nyanya kijani,sw,false
+scotch-bonnet,scotch bonnet,en,false
+scotch-bonnet,scotch bonnet pepper,en,false
+scotch-bonnet,pilipili ya scotch,sw,false
+habanero,habanero,en,false
+habanero,habanero pepper,en,false
+habanero,pilipili kali sana,sw,false
+jalapeño,jalapeno,en,false
+jalapeño,jalapeño,en,false
+jalapeño,jalapeno pepper,en,false
+jalapeño,pilipili jalapeño,sw,false
+bird-eye-chili,bird eye chili,en,false
+bird-eye-chili,bird's eye chili,en,false
+bird-eye-chili,thai chili,en,false
+bird-eye-chili,pilipili ndogo kali,sw,false
+long-green-chili,long green chili,en,false
+long-green-chili,green finger chili,en,false
+long-green-chili,pilipili ndefu ya kijani,sw,false
+dried-chili,dried chili,en,false
+dried-chili,dry chili,en,false
+dried-chili,pilipili kavu,sw,false
+chili-flakes,chili flakes,en,false
+chili-flakes,red pepper flakes,en,false
+chili-flakes,crushed chili,en,false
+chili-flakes,pilipili iliyosagwa,sw,false
+poblano,poblano,en,false
+poblano,poblano pepper,en,false
+capsicum,capsicum,en,false
+capsicum,bell pepper,en,false
+capsicum,pilipili hoho,sw,false
+capsicum,sweet pepper,en,false
+red-chili,red chili,en,false
+red-chili,red hot pepper,en,false
+red-chili,pilipili nyekundu,sw,false
+green-chili,green chili,en,false
+green-chili,green hot pepper,en,false
+green-chili,pilipili ya kijani,sw,false
+dried-red-chili,dried red chili,en,false
+dried-red-chili,pilipili nyekundu kavu,sw,false
+sweet-potato-purple,purple sweet potato,en,false
+sweet-potato-purple,viazi vitamu vya zambarau,sw,false
+purple-yam,purple yam,en,false
+purple-yam,ube,en,false
+purple-yam,viazi vya zambarau,sw,false
+water-yam,water yam,en,false
+water-yam,white yam,en,false
+water-yam,viazi maji,sw,false
+white-yam,white yam,en,false
+white-yam,viazi nyeupe,sw,false
+elephant-foot-yam,elephant foot yam,en,false
+elephant-foot-yam,suran,en,false
+cocoyam,cocoyam,en,false
+cocoyam,taro,en,false
+cocoyam,nduma,sw,false
+cocoyam,colocasia,en,false
+lotus-root,lotus root,en,false
+lotus-root,mizizi ya lotus,sw,false
+parsnip,parsnip,en,false
+parsnip,white carrot,en,false
+celeriac,celeriac,en,false
+celeriac,celery root,en,false
+jicama,jicama,en,false
+jicama,mexican turnip,en,false
+burdock-root,burdock root,en,false
+burdock-root,gobo,en,false
+baby-spinach,baby spinach,en,false
+baby-spinach,mchicha mchanga,sw,false
+rocket,rocket,en,false
+rocket,arugula,en,false
+rocket,rucola,en,false
+rocket,jarjeer,en,false
+pak-choi,pak choi,en,false
+pak-choi,bok choy,en,false
+pak-choi,chinese cabbage,en,false
+pak-choi,cabbage ya kichina,sw,false
+napa-cabbage,napa cabbage,en,false
+napa-cabbage,chinese leaf,en,false
+napa-cabbage,wombok,en,false
+savoy-cabbage,savoy cabbage,en,false
+savoy-cabbage,cabbage ya savoy,sw,false
+brussels-sprouts,brussels sprouts,en,false
+brussels-sprouts,brussel sprouts,en,true
+brussels-sprouts,mini cabbages,en,false
+microgreens,microgreens,en,false
+microgreens,micro greens,en,false
+microgreens,sprouts,en,false
+purslane,purslane,en,false
+purslane,mjani wa jambo,sw,false
+lamb-lettuce,lamb lettuce,en,false
+lamb-lettuce,corn salad,en,false
+lamb-lettuce,mache,en,false
+radicchio,radicchio,en,false
+radicchio,italian chicory,en,false
+sorrel,sorrel,en,false
+sorrel,sour grass,en,false
+malabar-spinach,malabar spinach,en,false
+malabar-spinach,indian spinach,en,false
+malabar-spinach,basella,en,false
+malabar-spinach,mchicha wa india,sw,false
+acorn-squash,acorn squash,en,false
+acorn-squash,boga la acorn,sw,false
+spaghetti-squash,spaghetti squash,en,false
+pattypan-squash,pattypan squash,en,false
+pattypan-squash,flying saucer squash,en,false
+luffa,luffa,en,false
+luffa,loofah,en,false
+luffa,ridge gourd,en,false
+luffa,boga la nyota,sw,false
+wax-gourd,wax gourd,en,false
+wax-gourd,winter melon,en,false
+wax-gourd,ash gourd,en,false
+snake-gourd,snake gourd,en,false
+snake-gourd,chichinda,en,false
+pointed-gourd,pointed gourd,en,false
+pointed-gourd,parwal,en,false
+ash-gourd,ash gourd,en,false
+ash-gourd,white gourd,en,false
+ash-gourd,petha,en,false
+snap-peas,snap peas,en,false
+snap-peas,garden peas,en,false
+snap-peas,njegere,sw,false
+sugar-snap-peas,sugar snap peas,en,false
+sugar-snap-peas,snap peas,en,false
+mangetout,mangetout,en,false
+mangetout,snow peas,en,false
+mangetout,flat peas,en,false
+edamame,edamame,en,false
+edamame,fresh soybeans,en,false
+edamame,green soybeans,en,false
+winged-beans,winged beans,en,false
+winged-beans,four-angled beans,en,false
+hyacinth-beans,hyacinth beans,en,false
+hyacinth-beans,lablab beans,en,false
+hyacinth-beans,dolichos,en,false
+nderema,nderema,sw,false
+nderema,slippery vegetable,en,false
+nderema,corchorus,en,false
+mchunga,mchunga,sw,false
+mchunga,african mustard,en,false
+mchunga,african mustard greens,en,false
+mto-leaves,mto leaves,sw,false
+mto-leaves,river leaves,en,false
+osuga,osuga,sw,false
+osuga,black nightshade leaves,en,false
+osuga,managu,sw,false
+black-nightshade-leaves,black nightshade,en,false
+black-nightshade-leaves,managu,sw,false
+black-nightshade-leaves,osuga,sw,false
+black-nightshade-leaves,african nightshade,en,false
+african-nightshade,african nightshade,en,false
+african-nightshade,managu,sw,false
+african-nightshade,black nightshade,en,false
+saget,saget,sw,false
+saget,spider plant,en,false
+saget,sageti,sw,false
+pojo,pojo,sw,false
+pojo,cowpea leaves,en,false
+pojo,kunde,sw,false
+bondwe,bondwe,sw,false
+bondwe,amaranth leaves,en,false
+bondwe,mchicha,sw,false
+mapera,mapera,sw,false
+mapera,guava leaves,en,false
+dried-mushrooms,dried mushrooms,en,false
+dried-mushrooms,uyoga kavu,sw,false
+dried-mushrooms,shiitake mushrooms,en,false
+dried-okra,dried okra,en,false
+dried-okra,okra kavu,sw,false
+sun-dried-peppers,sun-dried peppers,en,false
+sun-dried-peppers,pilipili ya jua,sw,false
+pickled-cabbage,pickled cabbage,en,false
+pickled-cabbage,sauerkraut,en,false
+pickled-cabbage,kabichi iliyochacha,sw,false
+fermented-cassava,fermented cassava,en,false
+fermented-cassava,cassava ya kuchacha,sw,false
+artichoke-hearts,artichoke hearts,en,false
+artichoke-hearts,moyo wa artichoke,sw,false
+zucchini,zucchini,en,false
+zucchini,courgette,en,false
+zucchini,baby marrow,en,false
+zucchini,boga dogo,sw,false
+corn-on-the-cob,corn on the cob,en,false
+corn-on-the-cob,mahindi,sw,false
+corn-on-the-cob,fresh corn,en,false
+corn-on-the-cob,roasted corn,en,false
+baby-carrots,baby carrots,en,false
+baby-carrots,karoti ndogo,sw,false
+butternut-cubes,butternut squash cubes,en,false
+butternut-cubes,boga cubes,sw,false
+butternut-cubes,diced butternut,en,false
+roasted-peppers,roasted peppers,en,false
+roasted-peppers,pilipili ya kuoka,sw,false
+roasted-peppers,charred peppers,en,false
+grilled-eggplant,grilled eggplant,en,false
+grilled-eggplant,brinjal ya kuchoma,sw,false
+grilled-eggplant,charred aubergine,en,false
+canned-tomatoes,canned tomatoes,en,false
+canned-tomatoes,tinned tomatoes,en,false
+canned-tomatoes,nyanya ya kopo,sw,false
+canned-tomatoes,chopped tomatoes,en,false
+frozen-peas,frozen peas,en,false
+frozen-peas,njegere za kufungia,sw,false
+frozen-corn,frozen corn,en,false
+frozen-corn,frozen maize,en,false
+frozen-corn,mahindi ya friji,sw,false
+frozen-spinach,frozen spinach,en,false
+frozen-spinach,mchicha wa friji,sw,false
+dried-tomatoes,dried tomatoes,en,false
+dried-tomatoes,nyanya kavu,sw,false
+dried-tomatoes,sun-dried tomatoes,en,false
+sauerkraut,sauerkraut,en,false
+sauerkraut,fermented cabbage,en,false
+sauerkraut,kabichi iliyochacha,sw,false
+kimchi-cabbage,kimchi,en,false
+kimchi-cabbage,kimchi cabbage,en,false
+kimchi-cabbage,fermented korean cabbage,en,false
+garlic,vitunguu saumu,sw,false
+garlic,saumu,sw,false
+onion,vitunguu,sw,false
+onion,kitunguu,sw,false
+tomato,nyanya,sw,false
+tomato,tomatoes,en,false
+spinach,mchicha,sw,false
+kale,sukuma wiki,sw,false
+kale,sukuma,sw,false
+cabbage,kabichi,sw,false
+cabbage,kabeji,sw,true
+carrot,karoti,sw,false
+potato,viazi,sw,false
+potato,viazi mviringo,sw,false
+sweet-potato,viazi vitamu,sw,false
+pumpkin,boga,sw,false
+eggplant,biringanya,sw,false
+eggplant,brinjal,en,false
+eggplant,aubergine,en,false
+green-pepper,pilipili hoho ya kijani,sw,false
+okra,bamia,sw,false
+okra,ladies fingers,en,false
+mushrooms,uyoga,sw,false
+cucumber,tango,sw,false
+cucumber,matango,sw,false
+collard-greens,sukuma wiki,sw,false
+beetroot,beet,en,false
+beetroot,red beet,en,false
+beetroot,beet root,en,false
+yam,viazi vikuu,sw,false

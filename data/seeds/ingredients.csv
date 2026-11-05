@@ -241,3 +241,93 @@ kuku-wa-kienyeji,Free-range local chicken (kuku wa kienyeji),Poultry,primary,fal
 ng-ombe-ya-kienyeji,Local breed beef (ng'ombe ya kienyeji),Meat,primary,false
 nyama-ya-kondoo,Sheep meat,Meat,primary,false
 offal-mix,Offal mix (matumbo),Meat,primary,false
+garlic-cloves,Garlic cloves,Vegetables,seasoning,false
+garlic-powder,Garlic powder,Vegetables,seasoning,false
+dried-onion,Dried onion,Vegetables,seasoning,false
+onion-powder,Onion powder,Vegetables,seasoning,false
+green-onion,Green onion,Vegetables,secondary,false
+chives,Chives,Vegetables,garnish,false
+shallot,Shallot,Vegetables,secondary,false
+cherry-tomatoes,Cherry tomatoes,Vegetables,secondary,false
+roma-tomatoes,Roma tomatoes,Vegetables,secondary,false
+tomato-concasse,Tomato concasse,Vegetables,secondary,false
+plum-tomatoes,Plum tomatoes,Vegetables,secondary,false
+green-tomatoes,Green tomatoes,Vegetables,secondary,false
+scotch-bonnet,Scotch bonnet,Vegetables,seasoning,false
+habanero,Habanero pepper,Vegetables,seasoning,false
+jalapeño,Jalapeño pepper,Vegetables,seasoning,false
+bird-eye-chili,Bird eye chili,Vegetables,seasoning,false
+long-green-chili,Long green chili,Vegetables,seasoning,false
+dried-chili,Dried chili,Vegetables,seasoning,false
+chili-flakes,Chili flakes,Vegetables,seasoning,false
+poblano,Poblano pepper,Vegetables,seasoning,false
+capsicum,Capsicum,Vegetables,secondary,false
+red-chili,Red chili,Vegetables,seasoning,false
+green-chili,Green chili,Vegetables,seasoning,false
+dried-red-chili,Dried red chili,Vegetables,seasoning,false
+sweet-potato-purple,Purple sweet potato,Vegetables,primary,false
+purple-yam,Purple yam,Vegetables,primary,false
+water-yam,Water yam,Vegetables,primary,false
+white-yam,White yam,Vegetables,primary,false
+elephant-foot-yam,Elephant foot yam,Vegetables,primary,false
+cocoyam,Cocoyam,Vegetables,primary,false
+lotus-root,Lotus root,Vegetables,secondary,false
+parsnip,Parsnip,Vegetables,secondary,false
+celeriac,Celeriac,Vegetables,secondary,false
+jicama,Jicama,Vegetables,secondary,false
+burdock-root,Burdock root,Vegetables,secondary,false
+baby-spinach,Baby spinach,Vegetables,secondary,false
+rocket,Rocket,Vegetables,secondary,false
+pak-choi,Pak choi,Vegetables,secondary,false
+napa-cabbage,Napa cabbage,Vegetables,secondary,false
+savoy-cabbage,Savoy cabbage,Vegetables,secondary,false
+brussels-sprouts,Brussels sprouts,Vegetables,secondary,false
+microgreens,Microgreens,Vegetables,garnish,false
+purslane,Purslane,Vegetables,secondary,false
+lamb-lettuce,Lamb lettuce,Vegetables,secondary,false
+radicchio,Radicchio,Vegetables,secondary,false
+sorrel,Sorrel,Vegetables,secondary,false
+malabar-spinach,Malabar spinach,Vegetables,secondary,false
+acorn-squash,Acorn squash,Vegetables,secondary,false
+spaghetti-squash,Spaghetti squash,Vegetables,secondary,false
+pattypan-squash,Pattypan squash,Vegetables,secondary,false
+luffa,Luffa,Vegetables,secondary,false
+wax-gourd,Wax gourd,Vegetables,secondary,false
+snake-gourd,Snake gourd,Vegetables,secondary,false
+pointed-gourd,Pointed gourd,Vegetables,secondary,false
+ash-gourd,Ash gourd,Vegetables,secondary,false
+snap-peas,Snap peas,Vegetables,secondary,false
+sugar-snap-peas,Sugar snap peas,Vegetables,secondary,false
+mangetout,Mangetout,Vegetables,secondary,false
+edamame,Edamame,Vegetables,secondary,false
+winged-beans,Winged beans,Vegetables,secondary,false
+hyacinth-beans,Hyacinth beans,Vegetables,secondary,false
+nderema,Nderema (slippery vegetable),Vegetables,primary,false
+mchunga,Mchunga (African mustard greens),Vegetables,primary,false
+mto-leaves,Mto leaves,Vegetables,primary,false
+osuga,Osuga (black nightshade),Vegetables,primary,false
+black-nightshade-leaves,Black nightshade leaves,Vegetables,primary,false
+african-nightshade,African nightshade,Vegetables,primary,false
+saget,Saget (spider plant),Vegetables,primary,false
+pojo,Pojo (cowpea leaves),Vegetables,primary,false
+bondwe,Bondwe (amaranth leaves),Vegetables,primary,false
+mapera,Mapera (guava leaves),Vegetables,primary,false
+dried-mushrooms,Dried mushrooms,Vegetables,secondary,false
+dried-okra,Dried okra,Vegetables,secondary,false
+sun-dried-peppers,Sun-dried peppers,Vegetables,secondary,false
+pickled-cabbage,Pickled cabbage,Vegetables,secondary,false
+fermented-cassava,Fermented cassava,Vegetables,primary,false
+artichoke-hearts,Artichoke hearts,Vegetables,secondary,false
+zucchini,Zucchini,Vegetables,secondary,false
+corn-on-the-cob,Corn on the cob,Vegetables,secondary,false
+baby-carrots,Baby carrots,Vegetables,secondary,false
+butternut-cubes,Butternut squash cubes,Vegetables,secondary,false
+roasted-peppers,Roasted peppers,Vegetables,secondary,false
+grilled-eggplant,Grilled eggplant,Vegetables,secondary,false
+canned-tomatoes,Canned tomatoes,Vegetables,secondary,false
+frozen-peas,Frozen peas,Vegetables,secondary,false
+frozen-corn,Frozen corn,Vegetables,secondary,false
+frozen-spinach,Frozen spinach,Vegetables,secondary,false
+dried-tomatoes,Dried tomatoes,Vegetables,secondary,false
+sauerkraut,Sauerkraut,Vegetables,secondary,false
+kimchi-cabbage,Kimchi cabbage,Vegetables,secondary,false
