@@ -1,0 +1,764 @@
+[
+  {
+    "slug": "kenyan-cabbage-stew",
+    "name_en": "Kenyan Cabbage Stew",
+    "name_sw": "Mchuzi wa Kabichi",
+    "description": "A simple and nutritious Kenyan cabbage stew cooked with tomatoes and onions, commonly served with ugali.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cabbage", "role": "primary", "quantity": "1", "unit": "medium head"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "carrot", "role": "optional", "quantity": "1", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Heat oil in a pot and sauté chopped onion until soft and golden."},
+      {"order": 2, "instruction": "Add chopped tomatoes and cook until they break down into a sauce, about 5 minutes."},
+      {"order": 3, "instruction": "Add shredded cabbage and grated carrot (if using). Stir to coat with the sauce and season with salt."},
+      {"order": 4, "instruction": "Add water, cover, and simmer on low heat for 10–15 minutes until cabbage is tender but not mushy. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 95, "protein_g": 3, "carbs_g": 12, "fat_g": 4, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or chapati."
+  },
+  {
+    "slug": "kenyan-spinach-potato-egg-curry",
+    "name_en": "Kenyan Spinach, Potato and Egg Curry",
+    "name_sw": "Saget na Viazi",
+    "description": "A comforting Kenyan curry of spinach and potatoes topped with halved boiled eggs, lightly spiced with curry powder.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "spinach", "role": "primary", "quantity": "300", "unit": "g"},
+      {"slug": "potato", "role": "required", "quantity": "500", "unit": "g"},
+      {"slug": "eggs", "role": "required", "quantity": "4", "unit": "whole"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "3", "unit": "cloves"},
+      {"slug": "curry-powder", "role": "optional", "quantity": "1.5", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil eggs for 8 minutes, cool, peel, and halve. Peel and cube potatoes, boil for 15 minutes until tender, then drain."},
+      {"order": 2, "instruction": "Heat oil and sauté chopped onions until softened. Add garlic and curry powder, stir for 1 minute."},
+      {"order": 3, "instruction": "Add chopped tomatoes and cook until saucy. Add potatoes and spinach, stir for 5 minutes until spinach wilts."},
+      {"order": 4, "instruction": "Season with salt, top with halved eggs, and serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 306, "protein_g": 14, "carbs_g": 29, "fat_g": 13, "fiber_g": 7},
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "serving_suggestion": "Serve on its own or with chapati."
+  },
+  {
+    "slug": "kenyan-sukuma-wiki-kale",
+    "name_en": "Sukuma Wiki (Kale)",
+    "name_sw": "Sukuma Wiki",
+    "description": "Kenya's beloved braised kale dish, cooked with onions and tomatoes until tender and flavorful.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "kale", "role": "primary", "quantity": "1", "unit": "large bunch"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Wash kale, remove tough stalks, and slice finely. Set aside."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic if using and cook 1 minute."},
+      {"order": 3, "instruction": "Add chopped tomatoes and cook until softened and saucy."},
+      {"order": 4, "instruction": "Add kale and salt. Stir and cook for 5–7 minutes until tender but still bright green. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 85, "protein_g": 3, "carbs_g": 8, "fat_g": 5, "fiber_g": 3},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali and a meat stew."
+  },
+  {
+    "slug": "kenyan-sukuma-wiki-collard-greens",
+    "name_en": "Sukuma Wiki (Collard Greens)",
+    "name_sw": "Sukuma Wiki",
+    "description": "The classic Kenyan preparation of collard greens, braised with onions, tomatoes, and ginger until tender.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "4", "unit": "cloves"},
+      {"slug": "ginger", "role": "optional", "quantity": "1", "unit": "thumb"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Remove thick stalks from collard greens, stack, roll tightly, and slice finely."},
+      {"order": 2, "instruction": "Heat oil in a wide pan. Add sliced garlic and ginger, cook until lightly browned."},
+      {"order": 3, "instruction": "Add the greens and stir until they brighten in color. Add chopped tomatoes, cover, and steam for 2–3 minutes."},
+      {"order": 4, "instruction": "Season with salt, stir, and serve immediately."}
+    ],
+    "nutrition_per_serving": {"calories": 110, "protein_g": 3, "carbs_g": 9, "fat_g": 8, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali and nyama choma."
+  },
+  {
+    "slug": "kenyan-potato-stew",
+    "name_en": "Kenyan Potato Stew",
+    "name_sw": "Mchuzi wa Viazi",
+    "description": "Chunky potatoes simmered in a savory tomato-onion gravy, a simple and filling Kenyan home dish.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "potato", "role": "primary", "quantity": "800", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "2", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel and cut potatoes into chunks. Heat oil and sauté onions until golden."},
+      {"order": 2, "instruction": "Add garlic and chopped tomatoes. Cook until tomatoes break down into a sauce."},
+      {"order": 3, "instruction": "Add potatoes, salt, and water. Cover and simmer for 20–25 minutes until potatoes are tender and sauce thickens."},
+      {"order": 4, "instruction": "Serve hot with ugali or rice."}
+    ],
+    "nutrition_per_serving": {"calories": 220, "protein_g": 5, "carbs_g": 38, "fat_g": 6, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or chapati."
+  },
+  {
+    "slug": "kenyan-carrot-stew",
+    "name_en": "Kenyan Carrot Stew",
+    "name_sw": "Mchuzi wa Karoti",
+    "description": "Sweet carrots cooked down with onions and tomatoes into a simple, colorful Kenyan side stew.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "carrot", "role": "primary", "quantity": "6", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "0.5", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel and slice carrots into rounds. Heat oil and sauté onions until soft."},
+      {"order": 2, "instruction": "Add chopped tomatoes and cook until they soften into a sauce."},
+      {"order": 3, "instruction": "Add carrots, salt, and water. Cover and simmer for 10–12 minutes until carrots are tender."},
+      {"order": 4, "instruction": "Serve hot as a side with ugali or rice."}
+    ],
+    "nutrition_per_serving": {"calories": 90, "protein_g": 2, "carbs_g": 14, "fat_g": 4, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a side with any main dish."
+  },
+  {
+    "slug": "kenyan-green-pepper-kachumbari",
+    "name_en": "Green Pepper Kachumbari",
+    "name_sw": "Kachumbari ya Pilipili Hoho",
+    "description": "A fresh Kenyan salad with green pepper, tomatoes, and onions, a zesty condiment for grilled meats and rice dishes.",
+    "meal_type": "snack",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-pepper", "role": "primary", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "coriander", "role": "optional", "quantity": "0.25", "unit": "cup"},
+      {"slug": "lemon", "role": "optional", "quantity": "1", "unit": "whole"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Finely chop green pepper, tomatoes, onion, and coriander."},
+      {"order": 2, "instruction": "Combine in a bowl and squeeze lemon juice over. Sprinkle with salt."},
+      {"order": 3, "instruction": "Toss gently and serve fresh alongside grilled fish, nyama choma, or pilau."}
+    ],
+    "nutrition_per_serving": {"calories": 30, "protein_g": 1, "carbs_g": 6, "fat_g": 0, "fiber_g": 2},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with grilled fish or nyama choma."
+  },
+  {
+    "slug": "kenyan-roasted-sweet-potato",
+    "name_en": "Roasted Sweet Potato with Lime and Chilli",
+    "name_sw": "Viazi Vitamu vya Kuchoma",
+    "description": "Whole sweet potatoes roasted until tender, then split and dressed with lime juice and chilli salt, a Kenyan coast street food style.",
+    "meal_type": "snack",
+    "course": "snack",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 50,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "sweet-potato", "role": "primary", "quantity": "4", "unit": "medium"},
+      {"slug": "lime", "role": "required", "quantity": "1", "unit": "whole"},
+      {"slug": "chili", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Preheat oven to 220°C. Prick sweet potatoes with a fork, rub with oil and salt, and place on a baking tray."},
+      {"order": 2, "instruction": "Roast for 45–50 minutes until fork-tender and lightly browned."},
+      {"order": 3, "instruction": "Split open and squeeze lime juice over. Sprinkle with chilli and a pinch of salt. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 180, "protein_g": 3, "carbs_g": 38, "fat_g": 3, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Enjoy as a street-style snack."
+  },
+  {
+    "slug": "kenyan-pumpkin-soup",
+    "name_en": "Kenyan Pumpkin Soup",
+    "name_sw": "Supu ya Malenge",
+    "description": "A creamy, spiced pumpkin soup with coconut milk and a warm hint of cinnamon and cumin.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "pumpkin", "role": "primary", "quantity": "1", "unit": "small"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "garlic", "role": "required", "quantity": "2", "unit": "cloves"},
+      {"slug": "coconut", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "ground-cumin", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cinnamon", "role": "optional", "quantity": "0.5", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Heat oil and sauté onion and garlic until soft. Add diced pumpkin, cumin, and cinnamon, stir to coat."},
+      {"order": 2, "instruction": "Add water and bring to a boil. Simmer for 20–25 minutes until pumpkin is tender."},
+      {"order": 3, "instruction": "Blend until smooth. Stir in coconut milk and season with salt. Simmer 5 more minutes and serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 180, "protein_g": 5, "carbs_g": 25, "fat_g": 7, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with crusty bread or as a starter."
+  },
+  {
+    "slug": "kenyan-eggplant-coconut-stew",
+    "name_en": "Eggplant in Coconut Milk",
+    "name_sw": "Biringanya ya Nazi",
+    "description": "Eggplant cubes simmered in creamy coconut milk with curry powder and fresh coriander, a coastal Kenyan favorite.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "eggplant", "role": "primary", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "garlic", "role": "required", "quantity": "3", "unit": "cloves"},
+      {"slug": "ginger", "role": "optional", "quantity": "1", "unit": "inch"},
+      {"slug": "coconut", "role": "required", "quantity": "1.5", "unit": "cups"},
+      {"slug": "curry-powder", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "coriander", "role": "optional", "quantity": "0.25", "unit": "cup"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Cut eggplant into cubes, salt lightly, and let sit for 10 minutes. Rinse and pat dry."},
+      {"order": 2, "instruction": "Heat oil and sauté onions, garlic, and ginger until fragrant. Add eggplant and curry powder, stir to coat."},
+      {"order": 3, "instruction": "Pour in coconut milk and simmer for 15–20 minutes until eggplant is soft and sauce thickens."},
+      {"order": 4, "instruction": "Season with salt, garnish with coriander, and serve with rice."}
+    ],
+    "nutrition_per_serving": {"calories": 240, "protein_g": 4, "carbs_g": 18, "fat_g": 18, "fiber_g": 6},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-okra-stew",
+    "name_en": "Kenyan Okra Stew",
+    "name_sw": "Mchuzi wa Mabenda",
+    "description": "Okra simmered in a rich tomato and onion sauce, a hearty and nutritious Kenyan vegetable stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "okra", "role": "primary", "quantity": "500", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "paprika", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "0.5", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Wash okra and trim the tops. Cut into rounds. Heat oil and sauté onions until soft."},
+      {"order": 2, "instruction": "Add garlic and chopped tomatoes. Cook until tomatoes break down into a sauce, about 5 minutes."},
+      {"order": 3, "instruction": "Add okra, paprika, salt, and water. Stir gently and simmer for 10–12 minutes until okra is tender."},
+      {"order": 4, "instruction": "Serve hot with ugali or rice."}
+    ],
+    "nutrition_per_serving": {"calories": 110, "protein_g": 3, "carbs_g": 14, "fat_g": 5, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-mushroom-stew",
+    "name_en": "Kenyan Mushroom Stew",
+    "name_sw": "Mchuzi wa Uyoga",
+    "description": "Sautéed mushrooms simmered in a yogurt and tomato sauce with onions, a creamy vegetarian Kenyan dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "mushrooms", "role": "primary", "quantity": "500", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "yogurt", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Heat oil and sauté onion until soft. Add chopped mushrooms and cook for 2–3 minutes."},
+      {"order": 2, "instruction": "Add chopped tomatoes and cook for 3 minutes, stirring. Remove from heat and let cool for a few minutes."},
+      {"order": 3, "instruction": "Stir in yogurt and salt. Return to low heat and cook gently for 5 minutes—do not boil. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 140, "protein_g": 8, "carbs_g": 10, "fat_g": 8, "fiber_g": 3},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-amaranth-greens",
+    "name_en": "Kenyan Amaranth Greens",
+    "name_sw": "Mchicha",
+    "description": "Amaranth leaves fried with onions and tomatoes, a traditional Kenyan green vegetable dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "amaranth-leaves", "role": "primary", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Wash amaranth leaves well and chop. Heat oil and sauté onion until golden."},
+      {"order": 2, "instruction": "Add chopped tomatoes and cook until softened."},
+      {"order": 3, "instruction": "Add amaranth leaves and salt. Stir-fry for 5–7 minutes until wilted and tender. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 70, "protein_g": 3, "carbs_g": 7, "fat_g": 4, "fiber_g": 3},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali."
+  },
+  {
+    "slug": "kenyan-cowpea-leaves-stew",
+    "name_en": "Kenyan Cowpea Leaves Stew",
+    "name_sw": "Kunde",
+    "description": "Cowpea leaves slow-cooked with onions and tomatoes into a traditional Kenyan vegetable stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cowpea-leaves", "role": "primary", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Wash and chop cowpea leaves. Boil in water for 15–20 minutes until tender. Drain."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add tomatoes and cook until saucy."},
+      {"order": 3, "instruction": "Add cooked cowpea leaves and salt. Stir and simmer for 5–10 minutes. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 100, "protein_g": 5, "carbs_g": 9, "fat_g": 5, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali."
+  },
+  {
+    "slug": "kenyan-mayai-pasua",
+    "name_en": "Mayai Pasua (Kenyan Stuffed Eggs)",
+    "name_sw": "Mayai Pasua",
+    "description": "Hard-boiled eggs split and stuffed with fresh tomato-onion salsa, a popular Kenyan snack.",
+    "meal_type": "snack",
+    "course": "snack",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 10,
+    "servings": 3,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "eggs", "role": "primary", "quantity": "4", "unit": "whole"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "red-onion", "role": "required", "quantity": "0.5", "unit": "small"},
+      {"slug": "coriander", "role": "optional", "quantity": "2", "unit": "tbsp"},
+      {"slug": "lime", "role": "optional", "quantity": "0.5", "unit": "whole"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Hard-boil eggs for 10 minutes. Cool, peel, and slice each egg lengthwise about three-quarters of the way through."},
+      {"order": 2, "instruction": "Finely dice tomato, red onion, and coriander. Mix with salt and a squeeze of lime."},
+      {"order": 3, "instruction": "Spoon the salsa into the split eggs and serve immediately."}
+    ],
+    "nutrition_per_serving": {"calories": 195, "protein_g": 13, "carbs_g": 5, "fat_g": 13, "fiber_g": 1},
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a snack or appetizer."
+  },
+  {
+    "slug": "kenyan-spiced-milk-tea",
+    "name_en": "Kenyan Spiced Milk Tea",
+    "name_sw": "Chai ya Maziwa",
+    "description": "Strong black tea brewed with milk, sugar, and warming spices like cardamom and ginger—Kenya's daily chai.",
+    "meal_type": "breakfast",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 2,
+    "cook_min": 10,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "milk", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "sugar", "role": "required", "quantity": "2", "unit": "tsp"},
+      {"slug": "cardamom", "role": "optional", "quantity": "2", "unit": "pods"},
+      {"slug": "ginger", "role": "optional", "quantity": "0.5", "unit": "inch"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Bring water to a boil. Add tea leaves (or tea bags), crushed cardamom, and grated ginger. Boil for 2 minutes."},
+      {"order": 2, "instruction": "Pour in milk and add sugar. Bring to a gentle boil, then reduce heat and simmer for 5 minutes."},
+      {"order": 3, "instruction": "Strain into cups and serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 120, "protein_g": 5, "carbs_g": 15, "fat_g": 4, "fiber_g": 0},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with chapati or mandazi."
+  },
+  {
+    "slug": "kenyan-yogurt-banana-smoothie",
+    "name_en": "Kenyan Yogurt Banana Smoothie",
+    "name_sw": "Smoothie ya Maziwa ya Mgando na Ndizi",
+    "description": "A creamy, refreshing smoothie of yogurt and ripe bananas, a popular Kenyan breakfast or snack drink.",
+    "meal_type": "breakfast",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 0,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "yogurt", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "banana", "role": "required", "quantity": "2", "unit": "ripe"},
+      {"slug": "milk", "role": "optional", "quantity": "0.5", "unit": "cup"},
+      {"slug": "sugar", "role": "optional", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel bananas and break into chunks."},
+      {"order": 2, "instruction": "Blend yogurt, bananas, milk (if using), and sugar until smooth."},
+      {"order": 3, "instruction": "Pour into glasses and serve chilled."}
+    ],
+    "nutrition_per_serving": {"calories": 210, "protein_g": 8, "carbs_g": 35, "fat_g": 5, "fiber_g": 3},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a breakfast drink or afternoon snack."
+  },
+  {
+    "slug": "kenyan-avocado-salad",
+    "name_en": "Kenyan Avocado Salad",
+    "name_sw": "Saladi ya Parachichi",
+    "description": "Creamy avocado chunks tossed with tomatoes, onions, and lime—a simple, fresh Kenyan side salad.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "avocado", "role": "primary", "quantity": "2", "unit": "ripe"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "red-onion", "role": "required", "quantity": "0.5", "unit": "small"},
+      {"slug": "lime", "role": "optional", "quantity": "1", "unit": "whole"},
+      {"slug": "coriander", "role": "optional", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Cut avocados in half, remove pit, and dice the flesh."},
+      {"order": 2, "instruction": "Dice tomatoes and finely chop red onion and coriander."},
+      {"order": 3, "instruction": "Gently toss everything with lime juice and salt. Serve immediately."}
+    ],
+    "nutrition_per_serving": {"calories": 160, "protein_g": 2, "carbs_g": 9, "fat_g": 14, "fiber_g": 7},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve alongside githeri, rice, or grilled meat."
+  },
+  {
+    "slug": "kenyan-banana-fritters",
+    "name_en": "Kenyan Banana Fritters",
+    "name_sw": "Ndizi za Kukaanga",
+    "description": "Ripe bananas dipped in a light batter and fried until golden—a sweet Kenyan snack.",
+    "meal_type": "snack",
+    "course": "snack",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 10,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "banana", "role": "primary", "quantity": "4", "unit": "ripe"},
+      {"slug": "wheat-flour", "role": "required", "quantity": "0.5", "unit": "cup"},
+      {"slug": "sugar", "role": "optional", "quantity": "1", "unit": "tbsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "cup"},
+      {"slug": "water", "role": "staple", "quantity": "0.25", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Mix flour, sugar, and water into a smooth batter."},
+      {"order": 2, "instruction": "Peel bananas and cut into halves or chunks. Dip into batter."},
+      {"order": 3, "instruction": "Fry in hot oil until golden brown on all sides, about 2–3 minutes. Drain and serve warm."}
+    ],
+    "nutrition_per_serving": {"calories": 220, "protein_g": 3, "carbs_g": 35, "fat_g": 10, "fiber_g": 3},
+    "dietary_tags": ["vegetarian", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a snack with tea."
+  },
+  {
+    "slug": "kenyan-green-banana-stew",
+    "name_en": "Kenyan Green Banana Stew",
+    "name_sw": "Ndizi Mbichi za Kupika",
+    "description": "Firm green bananas simmered in a savory tomato and onion stew, a filling Kenyan side or main.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-bananas", "role": "primary", "quantity": "6", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "2", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel green bananas and cut into chunks. Soak in water to prevent browning."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic and tomatoes, cook until saucy."},
+      {"order": 3, "instruction": "Add green bananas, salt, and water. Cover and simmer for 20–25 minutes until bananas are tender."},
+      {"order": 4, "instruction": "Serve hot with rice or as a side."}
+    ],
+    "nutrition_per_serving": {"calories": 200, "protein_g": 3, "carbs_g": 38, "fat_g": 5, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or as a side to meat stew."
+  },
+  {
+    "slug": "kenyan-coconut-rice",
+    "name_en": "Kenyan Coconut Rice",
+    "name_sw": "Wali wa Nazi",
+    "description": "Fragrant rice cooked in coconut milk, a coastal Kenyan favorite often served with fish or stew.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "coconut", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "rice", "role": "required", "quantity": "2", "unit": "cups"},
+      {"slug": "onion", "role": "optional", "quantity": "1", "unit": "small"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Rinse rice and drain. Heat oil and sauté onion (if using) until soft."},
+      {"order": 2, "instruction": "Add rice and stir for 1 minute. Pour in coconut milk, water, and salt."},
+      {"order": 3, "instruction": "Bring to a boil, then cover and simmer on low heat for 20 minutes until rice is tender and liquid absorbed. Fluff and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 350, "protein_g": 6, "carbs_g": 52, "fat_g": 13, "fiber_g": 2},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with fish curry or bean stew."
+  },
+  {
+    "slug": "kenyan-mango-salsa",
+    "name_en": "Kenyan Mango Salsa",
+    "name_sw": "Salsa ya Embe",
+    "description": "A sweet and tangy salsa of ripe mango, tomato, onion, and coriander—a fresh Kenyan condiment.",
+    "meal_type": "snack",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "mango", "role": "primary", "quantity": "2", "unit": "ripe"},
+      {"slug": "tomato", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "red-onion", "role": "required", "quantity": "0.5", "unit": "small"},
+      {"slug": "coriander", "role": "optional", "quantity": "3", "unit": "tbsp"},
+      {"slug": "lime", "role": "optional", "quantity": "1", "unit": "whole"},
+      {"slug": "chili", "role": "optional", "quantity": "0.5", "unit": "tsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Dice mango and tomato into small cubes. Finely chop red onion and coriander."},
+      {"order": 2, "instruction": "Combine in a bowl. Add lime juice, chilli (if using), and salt."},
+      {"order": 3, "instruction": "Toss gently and serve fresh with grilled fish or chicken."}
+    ],
+    "nutrition_per_serving": {"calories": 60, "protein_g": 1, "carbs_g": 15, "fat_g": 0, "fiber_g": 2},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with grilled fish or as a topping for rice."
+  },
+  {
+    "slug": "kenyan-passion-fruit-juice",
+    "name_en": "Kenyan Passion Fruit Juice",
+    "name_sw": "Juisi ya Matunda ya Passion",
+    "description": "Fresh, tangy passion fruit juice sweetened lightly—a refreshing Kenyan drink enjoyed everywhere.",
+    "meal_type": "snack",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "passion-fruit", "role": "primary", "quantity": "6", "unit": "whole"},
+      {"slug": "sugar", "role": "optional", "quantity": "3", "unit": "tbsp"},
+      {"slug": "water", "role": "staple", "quantity": "3", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Cut passion fruits in half and scoop pulp into a blender."},
+      {"order": 2, "instruction": "Add water and sugar. Blend briefly."},
+      {"order": 3, "instruction": "Strain through a sieve to remove seeds. Chill and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 70, "protein_g": 1, "carbs_g": 17, "fat_g": 0, "fiber_g": 2},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve chilled as a refreshing drink."
+  },
+  {
+    "slug": "kenyan-tamarind-drink",
+    "name_en": "Kenyan Tamarind Drink",
+    "name_sw": "Ukwaju",
+    "description": "A sweet-sour tamarind drink, popular along the Kenyan coast and enjoyed chilled.",
+    "meal_type": "snack",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 5,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "tamarind-pulp", "role": "primary", "quantity": "1", "unit": "cup"},
+      {"slug": "sugar", "role": "required", "quantity": "4", "unit": "tbsp"},
+      {"slug": "ginger", "role": "optional", "quantity": "0.5", "unit": "inch"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Soak tamarind pulp in 1 cup of hot water for 10 minutes. Mash and strain to extract juice."},
+      {"order": 2, "instruction": "Combine tamarind extract with remaining water, sugar, and grated ginger (if using). Stir until sugar dissolves."},
+      {"order": 3, "instruction": "Chill and serve over ice."}
+    ],
+    "nutrition_per_serving": {"calories": 90, "protein_g": 0, "carbs_g": 23, "fat_g": 0, "fiber_g": 1},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve chilled as a refreshing drink."
+  },
+  {
+    "slug": "kenyan-papaya-salad",
+    "name_en": "Kenyan Papaya Salad",
+    "name_sw": "Saladi ya Papai",
+    "description": "Ripe papaya cubes tossed with lime and a hint of chilli—a simple, refreshing Kenyan fruit salad.",
+    "meal_type": "snack",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "papaya", "role": "primary", "quantity": "1", "unit": "ripe"},
+      {"slug": "lime", "role": "required", "quantity": "1", "unit": "whole"},
+      {"slug": "chili", "role": "optional", "quantity": "0.25", "unit": "tsp"},
+      {"slug": "mint", "role": "optional", "quantity": "2", "unit": "tbsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel papaya, remove seeds, and cut into cubes."},
+      {"order": 2, "instruction": "Squeeze lime juice over the papaya. Add chilli and chopped mint if using."},
+      {"order": 3, "instruction": "Toss gently and serve fresh."}
+    ],
+    "nutrition_per_serving": {"calories": 50, "protein_g": 1, "carbs_g": 12, "fat_g": 0, "fiber_g": 2},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a light dessert or snack."
+  }
+]

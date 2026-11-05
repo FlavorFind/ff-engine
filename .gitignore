@@ -64,4 +64,7 @@ docker/postgres_data/
 
 # Console build artifacts
 static/console/
-templates/
+
+# Seed data archives and probe output (ephemeral, generated locally)
+data/seeds/archive_*/
+probe_results/

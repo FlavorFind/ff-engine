@@ -1,0 +1,1262 @@
+[
+  {
+    "slug": "kenyan-nyama-choma-ribs",
+    "name_en": "Kenyan Grilled Beef Ribs (Nyama Choma)",
+    "name_sw": "Nyama Choma ya Mbavu",
+    "description": "Beef ribs marinated with lemon and garlic, grilled over charcoal until charred and tender—Kenya's iconic barbecue dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "medium",
+    "prep_min": 20,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-ribs", "role": "primary", "quantity": "1", "unit": "kg"},
+      {"slug": "lemon", "role": "required", "quantity": "1", "unit": "whole"},
+      {"slug": "garlic", "role": "required", "quantity": "4", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Mix lemon juice, crushed garlic, oil and salt. Rub over beef ribs and marinate for 20 minutes."},
+      {"order": 2, "instruction": "Grill over medium charcoal or barbecue for 30–40 minutes, turning occasionally, until charred and cooked through."},
+      {"order": 3, "instruction": "Rest for 5 minutes, cut into pieces and serve with kachumbari."}
+    ],
+    "nutrition_per_serving": {"calories": 460, "protein_g": 35, "carbs_g": 3, "fat_g": 34, "fiber_g": 0},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with kachumbari and ugali."
+  },
+  {
+    "slug": "kenyan-beef-ribs-stew",
+    "name_en": "Beef Ribs Stew",
+    "name_sw": "Mchuzi wa Mbavu",
+    "description": "Hearty beef ribs slow-cooked in a rich tomato and onion gravy until fall-off-the-bone tender.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 90,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-ribs", "role": "primary", "quantity": "1", "unit": "kg"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "large"},
+      {"slug": "garlic", "role": "required", "quantity": "4", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "3", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil beef ribs in salted water for 45–60 minutes until tender. Reserve broth."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic and tomatoes and cook until saucy."},
+      {"order": 3, "instruction": "Add boiled ribs and reserved broth. Simmer for 20–30 minutes until sauce coats the ribs. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 450, "protein_g": 35, "carbs_g": 10, "fat_g": 30, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with ugali and greens."
+  },
+  {
+    "slug": "kenyan-beef-ribs-wet-fry",
+    "name_en": "Beef Ribs Wet Fry",
+    "name_sw": "Mbavu za Ng'ombe za Kukaanga",
+    "description": "Boiled beef ribs stir-fried in a thick tomato and onion sauce—a hearty Kenyan wet fry.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 60,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-ribs", "role": "primary", "quantity": "1", "unit": "kg"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "required", "quantity": "3", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "3", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil beef ribs in salted water for 45–50 minutes until tender. Reserve broth."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic and tomatoes and cook until thick."},
+      {"order": 3, "instruction": "Add boiled ribs and a splash of broth. Stir-fry for 10–15 minutes until coated and sauce thickens."}
+    ],
+    "nutrition_per_serving": {"calories": 460, "protein_g": 35, "carbs_g": 10, "fat_g": 30, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with ugali and greens."
+  },
+  {
+    "slug": "kenyan-beef-ribs-pilau",
+    "name_en": "Beef Ribs Pilau",
+    "name_sw": "Pilau ya Mbavu",
+    "description": "Fragrant Kenyan pilau rice cooked with tender beef ribs, pilau masala and caramelised onions.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 20,
+    "cook_min": 70,
+    "servings": 6,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-ribs", "role": "primary", "quantity": "800", "unit": "g"},
+      {"slug": "rice", "role": "required", "quantity": "3", "unit": "cups"},
+      {"slug": "pilau-masala", "role": "required", "quantity": "2", "unit": "tbsp"},
+      {"slug": "onion", "role": "required", "quantity": "3", "unit": "large"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "4", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "2", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "5", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil beef ribs for 45 minutes until tender. Reserve broth."},
+      {"order": 2, "instruction": "Fry onions until deep golden. Add pilau masala and ribs, stir. Add rice and coat."},
+      {"order": 3, "instruction": "Add broth and water, season with salt. Cover and simmer for 20 minutes. Fluff and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 560, "protein_g": 32, "carbs_g": 65, "fat_g": 20, "fiber_g": 3},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with kachumbari."
+  },
+  {
+    "slug": "kenyan-matumbo-stew",
+    "name_en": "Kenyan Matumbo Stew",
+    "name_sw": "Matumbo ya Kupika",
+    "description": "Tender beef tripe slow-cooked in a rich tomato-onion gravy—a beloved Kenyan comfort dish.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 90,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-tripe", "role": "primary", "quantity": "750", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "required", "quantity": "3", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "6", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Clean tripe and boil in salted water for 1 to 1.5 hours until very tender. Cut into strips."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic and tomatoes and cook until saucy."},
+      {"order": 3, "instruction": "Add tripe and stir to coat. Simmer for 10–15 minutes, adding water if needed. Season and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 310, "protein_g": 28, "carbs_g": 10, "fat_g": 18, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with ugali and sukuma wiki."
+  },
+  {
+    "slug": "kenyan-matumbo-wet-fry",
+    "name_en": "Matumbo Wet Fry",
+    "name_sw": "Matumbo ya Kukaanga",
+    "description": "Boiled tripe stir-fried with onions, tomatoes and curry powder—a flavourful Kenyan delicacy.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 90,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-tripe", "role": "primary", "quantity": "750", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "garlic", "role": "required", "quantity": "3", "unit": "cloves"},
+      {"slug": "curry-powder", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "6", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Clean and boil tripe in salted water for 1 to 1.5 hours until tender. Cut into strips."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until golden. Add garlic, curry powder and tomatoes, cook until saucy."},
+      {"order": 3, "instruction": "Add tripe and stir-fry for 5–10 minutes until well coated and heated through. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 320, "protein_g": 28, "carbs_g": 10, "fat_g": 18, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-matumbo-coconut",
+    "name_en": "Matumbo in Coconut Milk",
+    "name_sw": "Matumbo wa Nazi",
+    "description": "Tender tripe simmered in a creamy coconut and tomato sauce, a coastal Kenyan variation.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 90,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-tripe", "role": "primary", "quantity": "700", "unit": "g"},
+      {"slug": "coconut", "role": "required", "quantity": "1.5", "unit": "cups"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "6", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil cleaned tripe in salted water for 1 to 1.5 hours until tender. Cut into strips."},
+      {"order": 2, "instruction": "Sauté onion until soft. Add tomatoes and cook until saucy."},
+      {"order": 3, "instruction": "Add tripe and coconut milk. Simmer for 15 minutes until thick. Season and serve with rice."}
+    ],
+    "nutrition_per_serving": {"calories": 380, "protein_g": 28, "carbs_g": 12, "fat_g": 26, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-matumbo-beans",
+    "name_en": "Matumbo and Beans",
+    "name_sw": "Matumbo na Maharagwe",
+    "description": "Tripe and beans simmered together in a tomato-onion sauce, a protein-rich Kenyan stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 90,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "beef-tripe", "role": "primary", "quantity": "600", "unit": "g"},
+      {"slug": "beans", "role": "required", "quantity": "1.5", "unit": "cups cooked"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "6", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil cleaned tripe in salted water for 1 to 1.5 hours until tender. Cut into strips."},
+      {"order": 2, "instruction": "Sauté onion until golden, add tomatoes and cook until saucy. Add beans and tripe."},
+      {"order": 3, "instruction": "Simmer for 10–15 minutes, season and serve with ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 380, "protein_g": 32, "carbs_g": 30, "fat_g": 18, "fiber_g": 8},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with ugali."
+  },
+  {
+    "slug": "kenyan-cardamom-mahamri",
+    "name_en": "Cardamom Mahamri",
+    "name_sw": "Mahamri ya Iliki",
+    "description": "Sweet triangular fried dough from the Kenyan coast, perfumed with ground cardamom and coconut milk.",
+    "meal_type": "breakfast",
+    "course": "snack",
+    "spice_level": "mild",
+    "difficulty": "medium",
+    "prep_min": 20,
+    "cook_min": 15,
+    "servings": 6,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cardamom", "role": "primary", "quantity": "1", "unit": "tsp ground"},
+      {"slug": "wheat-flour", "role": "required", "quantity": "2", "unit": "cups"},
+      {"slug": "coconut", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "sugar", "role": "required", "quantity": "3", "unit": "tbsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "cup"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Mix flour, cardamom, sugar and salt. Add coconut milk and knead into a soft dough."},
+      {"order": 2, "instruction": "Rest for 20 minutes. Roll out and cut into triangles."},
+      {"order": 3, "instruction": "Fry in hot oil for 2–3 minutes per side until golden. Drain and serve warm."}
+    ],
+    "nutrition_per_serving": {"calories": 220, "protein_g": 4, "carbs_g": 32, "fat_g": 9, "fiber_g": 1},
+    "dietary_tags": ["vegetarian", "dairy-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with Kenyan chai."
+  },
+  {
+    "slug": "kenyan-cardamom-tea",
+    "name_en": "Cardamom Tea",
+    "name_sw": "Chai ya Iliki",
+    "description": "A warming Kenyan tea brewed with cardamom pods, milk and sugar.",
+    "meal_type": "breakfast",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 2,
+    "cook_min": 8,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cardamom", "role": "primary", "quantity": "3", "unit": "pods"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"},
+      {"slug": "milk", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "sugar", "role": "required", "quantity": "2", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Crush cardamom pods and boil with water for 2 minutes."},
+      {"order": 2, "instruction": "Add tea leaves, milk and sugar. Simmer for 5 minutes."},
+      {"order": 3, "instruction": "Strain into cups and serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 100, "protein_g": 4, "carbs_g": 13, "fat_g": 3, "fiber_g": 0},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with chapati or mandazi."
+  },
+  {
+    "slug": "kenyan-cardamom-rice-pudding",
+    "name_en": "Cardamom Rice Pudding",
+    "name_sw": "Pudding ya Wali na Iliki",
+    "description": "A creamy Kenyan rice pudding scented with cardamom, slow-cooked in milk and sweetened with sugar.",
+    "meal_type": "snack",
+    "course": "dessert",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cardamom", "role": "primary", "quantity": "0.5", "unit": "tsp ground"},
+      {"slug": "rice", "role": "required", "quantity": "0.5", "unit": "cup"},
+      {"slug": "milk", "role": "required", "quantity": "3", "unit": "cups"},
+      {"slug": "sugar", "role": "required", "quantity": "3", "unit": "tbsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Rinse rice and combine with milk in a pot."},
+      {"order": 2, "instruction": "Bring to a boil, then simmer on low heat for 25 minutes, stirring often, until creamy."},
+      {"order": 3, "instruction": "Stir in sugar and cardamom. Serve warm or chilled."}
+    ],
+    "nutrition_per_serving": {"calories": 250, "protein_g": 7, "carbs_g": 42, "fat_g": 6, "fiber_g": 1},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a dessert or snack."
+  },
+  {
+    "slug": "kenyan-cardamom-chicken",
+    "name_en": "Cardamom Chicken",
+    "name_sw": "Kuku wa Iliki",
+    "description": "Chicken pieces simmered with cardamom, onions and tomatoes, giving a warm, aromatic Kenyan stew.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cardamom", "role": "primary", "quantity": "1", "unit": "tsp ground"},
+      {"slug": "chicken-pieces", "role": "required", "quantity": "800", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Brown chicken in oil for 6–8 minutes."},
+      {"order": 2, "instruction": "Add onion and cook until soft. Stir in cardamom and tomatoes, cook until saucy."},
+      {"order": 3, "instruction": "Add salt and water, cover and simmer for 20 minutes. Serve with rice."}
+    ],
+    "nutrition_per_serving": {"calories": 360, "protein_g": 32, "carbs_g": 9, "fat_g": 22, "fiber_g": 2},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-green-beans-coconut-curry",
+    "name_en": "Green Beans Coconut Curry",
+    "name_sw": "Maharagwe ya Kijani na Nazi",
+    "description": "Fresh green beans simmered in a creamy coconut curry with tomatoes and mild spices—a coastal Kenyan side.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-beans", "role": "primary", "quantity": "400", "unit": "g"},
+      {"slug": "coconut", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Trim green beans. Sauté onion until soft. Add tomatoes and cook until saucy."},
+      {"order": 2, "instruction": "Add green beans and coconut milk."},
+      {"order": 3, "instruction": "Simmer for 10–12 minutes until beans are tender. Season and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 160, "protein_g": 3, "carbs_g": 12, "fat_g": 12, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or grilled fish."
+  },
+  {
+    "slug": "kenyan-green-beans-carrots",
+    "name_en": "Green Beans and Carrots",
+    "name_sw": "Maharagwe ya Kijani na Karoti",
+    "description": "A colourful Kenyan stir-fry of green beans and carrots, lightly seasoned and perfect alongside ugali.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-beans", "role": "primary", "quantity": "300", "unit": "g"},
+      {"slug": "carrot", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "onion", "role": "optional", "quantity": "1", "unit": "small"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Trim green beans and slice carrots into strips."},
+      {"order": 2, "instruction": "Sauté onion in oil until soft. Add carrots and stir-fry for 2 minutes."},
+      {"order": 3, "instruction": "Add green beans and salt, stir-fry for 6–8 minutes until tender. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 80, "protein_g": 2, "carbs_g": 10, "fat_g": 4, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or chapati."
+  },
+  {
+    "slug": "kenyan-green-beans-potatoes",
+    "name_en": "Green Beans and Potatoes",
+    "name_sw": "Maharagwe ya Kijani na Viazi",
+    "description": "Green beans and potatoes simmered in a tomato-onion sauce, a hearty Kenyan side or main.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-beans", "role": "primary", "quantity": "300", "unit": "g"},
+      {"slug": "potato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion until golden, add tomatoes and cook until saucy."},
+      {"order": 2, "instruction": "Add cubed potatoes and water, simmer for 15 minutes."},
+      {"order": 3, "instruction": "Add green beans and salt, cook for 8 minutes. Serve."}
+    ],
+    "nutrition_per_serving": {"calories": 180, "protein_g": 4, "carbs_g": 30, "fat_g": 5, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-green-beans-eggs",
+    "name_en": "Green Beans with Eggs",
+    "name_sw": "Maharagwe ya Kijani na Mayai",
+    "description": "Green beans sautéed with onions and scrambled eggs, a quick Kenyan breakfast or light meal.",
+    "meal_type": "breakfast",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 10,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-beans", "role": "primary", "quantity": "200", "unit": "g"},
+      {"slug": "eggs", "role": "required", "quantity": "3", "unit": "whole"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "small"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion in oil until soft. Add chopped green beans and cook for 5 minutes."},
+      {"order": 2, "instruction": "Beat eggs with salt and pour over the beans."},
+      {"order": 3, "instruction": "Scramble until eggs are set. Serve with chapati."}
+    ],
+    "nutrition_per_serving": {"calories": 220, "protein_g": 14, "carbs_g": 10, "fat_g": 16, "fiber_g": 4},
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with chapati or bread."
+  },
+  {
+    "slug": "kenyan-cucumber-yogurt-salad",
+    "name_en": "Cucumber Yogurt Salad",
+    "name_sw": "Saladi ya Tango na Maziwa ya Mgando",
+    "description": "A refreshing Kenyan salad of cucumber, yogurt, mint and a hint of garlic.",
+    "meal_type": "snack",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "yogurt", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "cucumber", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "mint", "role": "optional", "quantity": "2", "unit": "tbsp"},
+      {"slug": "garlic", "role": "optional", "quantity": "1", "unit": "clove"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Grate cucumber and squeeze out excess water."},
+      {"order": 2, "instruction": "Mix yogurt, crushed garlic, chopped mint and salt."},
+      {"order": 3, "instruction": "Stir in cucumber and serve chilled."}
+    ],
+    "nutrition_per_serving": {"calories": 90, "protein_g": 4, "carbs_g": 8, "fat_g": 4, "fiber_g": 1},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a side with pilau or grilled meat."
+  },
+  {
+    "slug": "kenyan-yogurt-marinated-chicken",
+    "name_en": "Yogurt Marinated Chicken",
+    "name_sw": "Kuku wa Maziwa ya Mgando",
+    "description": "Chicken pieces marinated in spiced yogurt, then grilled until juicy and charred.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 20,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "yogurt", "role": "primary", "quantity": "1", "unit": "cup"},
+      {"slug": "chicken-pieces", "role": "required", "quantity": "800", "unit": "g"},
+      {"slug": "garlic", "role": "required", "quantity": "3", "unit": "cloves"},
+      {"slug": "paprika", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Mix yogurt, crushed garlic, paprika, oil and salt. Coat chicken and marinate for 20 minutes."},
+      {"order": 2, "instruction": "Grill over medium heat for 8–10 minutes per side until cooked through and charred."},
+      {"order": 3, "instruction": "Serve hot with kachumbari or rice."}
+    ],
+    "nutrition_per_serving": {"calories": 340, "protein_g": 32, "carbs_g": 6, "fat_g": 20, "fiber_g": 1},
+    "dietary_tags": ["halal-friendly", "gluten-free", "nut-free"],
+    "serving_suggestion": "Serve with kachumbari and rice."
+  },
+  {
+    "slug": "kenyan-yogurt-banana-smoothie",
+    "name_en": "Yogurt Banana Smoothie",
+    "name_sw": "Smoothie ya Maziwa ya Mgando na Ndizi",
+    "description": "A creamy, refreshing smoothie of yogurt and ripe bananas, a popular Kenyan breakfast or snack drink.",
+    "meal_type": "breakfast",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 0,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "yogurt", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "banana", "role": "required", "quantity": "2", "unit": "ripe"},
+      {"slug": "milk", "role": "optional", "quantity": "0.5", "unit": "cup"},
+      {"slug": "sugar", "role": "optional", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel bananas and break into chunks."},
+      {"order": 2, "instruction": "Blend yogurt, bananas, milk (if using) and sugar until smooth."},
+      {"order": 3, "instruction": "Pour into glasses and serve chilled."}
+    ],
+    "nutrition_per_serving": {"calories": 210, "protein_g": 8, "carbs_g": 35, "fat_g": 5, "fiber_g": 3},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a breakfast drink or afternoon snack."
+  },
+  {
+    "slug": "kenyan-yogurt-rice",
+    "name_en": "Yogurt Rice",
+    "name_sw": "Wali wa Maziwa ya Mgando",
+    "description": "A cooling Kenyan rice dish mixed with creamy yogurt, cucumber and mint.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "yogurt", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "rice", "role": "required", "quantity": "1.5", "unit": "cups"},
+      {"slug": "cucumber", "role": "optional", "quantity": "1", "unit": "small"},
+      {"slug": "mint", "role": "optional", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Cook rice in salted water until tender. Cool slightly."},
+      {"order": 2, "instruction": "Mix yogurt with grated cucumber and chopped mint."},
+      {"order": 3, "instruction": "Fold in the rice and serve at room temperature or chilled."}
+    ],
+    "nutrition_per_serving": {"calories": 250, "protein_g": 8, "carbs_g": 42, "fat_g": 5, "fiber_g": 1},
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a cooling side with spicy dishes."
+  },
+  {
+    "slug": "kenyan-ugali-plain",
+    "name_en": "Ugali",
+    "name_sw": "Ugali",
+    "description": "A stiff maize flour porridge that is the staple food of Kenya, served with vegetables, meat or fish.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "maize-flour", "role": "primary", "quantity": "2", "unit": "cups"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Bring water and salt to a boil in a heavy pot."},
+      {"order": 2, "instruction": "Gradually add maize flour while stirring continuously to prevent lumps."},
+      {"order": 3, "instruction": "Reduce heat and keep stirring for 8–10 minutes until firm. Shape and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 280, "protein_g": 6, "carbs_g": 58, "fat_g": 2, "fiber_g": 3},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with sukuma wiki, beans or meat."
+  },
+  {
+    "slug": "kenyan-ugali-na-sukuma",
+    "name_en": "Ugali na Sukuma",
+    "name_sw": "Ugali na Sukuma",
+    "description": "The quintessential Kenyan meal: stiff maize flour ugali served with sautéed collard greens.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "maize-flour", "role": "primary", "quantity": "2", "unit": "cups"},
+      {"slug": "collard-greens", "role": "required", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil water and salt, gradually add maize flour and stir until firm. Shape ugali."},
+      {"order": 2, "instruction": "Sauté onion in oil until golden. Add sliced collard greens and cook for 5–7 minutes."},
+      {"order": 3, "instruction": "Serve the hot ugali with the greens."}
+    ],
+    "nutrition_per_serving": {"calories": 320, "protein_g": 8, "carbs_g": 60, "fat_g": 6, "fiber_g": 6},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a complete meal."
+  },
+  {
+    "slug": "kenyan-ugali-beans",
+    "name_en": "Ugali with Beans",
+    "name_sw": "Ugali na Maharagwe",
+    "description": "Stiff ugali served with a hearty bean stew, a filling and economical Kenyan meal.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "maize-flour", "role": "primary", "quantity": "2", "unit": "cups"},
+      {"slug": "beans", "role": "required", "quantity": "2", "unit": "cups cooked"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Prepare ugali by boiling water and salt, adding maize flour and stirring until firm."},
+      {"order": 2, "instruction": "Sauté onion until golden, add tomatoes and cook until saucy. Add beans and simmer for 10 minutes."},
+      {"order": 3, "instruction": "Serve the bean stew with the hot ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 380, "protein_g": 14, "carbs_g": 70, "fat_g": 6, "fiber_g": 10},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a complete meal."
+  },
+  {
+    "slug": "kenyan-ugali-sour-milk",
+    "name_en": "Ugali with Sour Milk",
+    "name_sw": "Ugali na Mursik",
+    "description": "Stiff ugali served with traditional sour milk, a Kalenjin-inspired Kenyan combination.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "maize-flour", "role": "primary", "quantity": "2", "unit": "cups"},
+      {"slug": "sour-milk", "role": "required", "quantity": "2", "unit": "cups"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil water and salt, gradually add maize flour and stir until firm. Shape ugali."},
+      {"order": 2, "instruction": "Serve the hot ugali with chilled or room-temperature sour milk alongside."},
+      {"order": 3, "instruction": "Eat by dipping pieces of ugali into the sour milk."}
+    ],
+    "nutrition_per_serving": {"calories": 340, "protein_g": 10, "carbs_g": 60, "fat_g": 6, "fiber_g": 3},
+    "dietary_tags": ["vegetarian", "gluten-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve as a traditional meal."
+  },
+  {
+    "slug": "kenyan-ugali-beef-stew",
+    "name_en": "Ugali with Beef Stew",
+    "name_sw": "Ugali na Nyama",
+    "description": "Stiff ugali served with a rich Kenyan beef stew, the ultimate comfort meal.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 60,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "maize-flour", "role": "primary", "quantity": "2", "unit": "cups"},
+      {"slug": "beef", "role": "required", "quantity": "500", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "3", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "5", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil beef until tender. Sauté onions in oil, add tomatoes and cook until saucy. Add beef and simmer."},
+      {"order": 2, "instruction": "Prepare ugali by boiling water and adding maize flour until firm."},
+      {"order": 3, "instruction": "Serve hot ugali with the beef stew."}
+    ],
+    "nutrition_per_serving": {"calories": 480, "protein_g": 30, "carbs_g": 60, "fat_g": 14, "fiber_g": 4},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve as a complete meal."
+  },
+  {
+    "slug": "kenyan-green-grams-stew",
+    "name_en": "Green Grams Stew",
+    "name_sw": "Ndengu ya Kupika",
+    "description": "Green grams cooked into a soft, flavorful stew with tomatoes and onions.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 45,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-grams", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Rinse green grams and boil in water for 30–40 minutes until soft."},
+      {"order": 2, "instruction": "Sauté onions until golden. Add garlic and tomatoes, cook until saucy."},
+      {"order": 3, "instruction": "Add cooked green grams with some liquid. Simmer for 10 minutes, season and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 230, "protein_g": 14, "carbs_g": 35, "fat_g": 5, "fiber_g": 10},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-green-grams-coconut",
+    "name_en": "Green Grams in Coconut Milk",
+    "name_sw": "Ndengu za Nazi",
+    "description": "Green grams simmered in creamy coconut milk with onions and mild spices—a coastal Kenyan favourite.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-grams", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "coconut", "role": "required", "quantity": "1.5", "unit": "cups"},
+      {"slug": "onion", "role": "optional", "quantity": "1", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "2", "unit": "cloves"},
+      {"slug": "curry-powder", "role": "optional", "quantity": "1", "unit": "tsp"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "2", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Rinse green grams. Sauté onion and garlic until soft. Stir in curry powder."},
+      {"order": 2, "instruction": "Add green grams, coconut milk, water and salt."},
+      {"order": 3, "instruction": "Simmer for 20–25 minutes until grams are soft. Serve with rice."}
+    ],
+    "nutrition_per_serving": {"calories": 300, "protein_g": 13, "carbs_g": 35, "fat_g": 13, "fiber_g": 9},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-green-grams-rice",
+    "name_en": "Green Grams and Rice",
+    "name_sw": "Ndengu na Wali",
+    "description": "A comforting Kenyan one-pot rice and green gram dish with onions and mild spices.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 35,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-grams", "role": "primary", "quantity": "1", "unit": "cup"},
+      {"slug": "rice", "role": "required", "quantity": "2", "unit": "cups"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Boil green grams in water for 20 minutes until almost tender."},
+      {"order": 2, "instruction": "Sauté onion until golden. Add rice, green grams, salt and water."},
+      {"order": 3, "instruction": "Cover and simmer for 20 minutes until rice is tender. Fluff and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 360, "protein_g": 12, "carbs_g": 65, "fat_g": 6, "fiber_g": 7},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with kachumbari."
+  },
+  {
+    "slug": "kenyan-green-grams-onions",
+    "name_en": "Green Grams with Onions",
+    "name_sw": "Ndengu na Kitunguu",
+    "description": "Soft green grams cooked with plenty of onions until they melt into a savoury, comforting stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 35,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "green-grams", "role": "primary", "quantity": "1.5", "unit": "cups"},
+      {"slug": "onion", "role": "required", "quantity": "3", "unit": "large"},
+      {"slug": "tomato", "role": "optional", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "4", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Rinse green grams and boil in water for 25–30 minutes until soft."},
+      {"order": 2, "instruction": "Sauté onions until golden and sweet. Add tomatoes if using and cook until saucy."},
+      {"order": 3, "instruction": "Add cooked green grams with liquid. Simmer for 10 minutes, season and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 230, "protein_g": 14, "carbs_g": 35, "fat_g": 5, "fiber_g": 10},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-groundnut-stew-v2",
+    "name_en": "Kenyan Groundnut Stew",
+    "name_sw": "Karanga ya Kupika",
+    "description": "A rich, nutty stew made with groundnuts, tomatoes and onions—often served with rice or ugali.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "groundnuts", "role": "primary", "quantity": "1", "unit": "cup"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "3", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Roast groundnuts lightly, then grind into a paste."},
+      {"order": 2, "instruction": "Sauté onions until golden. Add tomatoes and cook until soft. Add groundnut paste and water, stir well."},
+      {"order": 3, "instruction": "Simmer for 15–20 minutes until thickened. Season and serve with rice or ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 320, "protein_g": 12, "carbs_g": 18, "fat_g": 24, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or ugali."
+  },
+  {
+    "slug": "kenyan-groundnut-chicken",
+    "name_en": "Kenyan Groundnut Chicken",
+    "name_sw": "Kuku wa Karanga",
+    "description": "Chicken pieces simmered in a rich, nutty groundnut sauce with onions, tomatoes, garlic and ginger.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "groundnuts", "role": "primary", "quantity": "0.75", "unit": "cup"},
+      {"slug": "chicken-pieces", "role": "required", "quantity": "1", "unit": "kg"},
+      {"slug": "onion", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "garlic", "role": "optional", "quantity": "3", "unit": "cloves"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "2", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Roast groundnuts and grind into a paste. Brown chicken in oil and remove."},
+      {"order": 2, "instruction": "Sauté onions and garlic until soft. Add tomatoes and cook until saucy. Add groundnut paste and water."},
+      {"order": 3, "instruction": "Return chicken and simmer for 25–30 minutes until cooked and sauce thickens. Season and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 450, "protein_g": 34, "carbs_g": 12, "fat_g": 30, "fiber_g": 4},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free"],
+    "serving_suggestion": "Serve with rice or ugali."
+  },
+  {
+    "slug": "kenyan-groundnut-spinach",
+    "name_en": "Groundnut and Spinach Stew",
+    "name_sw": "Mchuzi wa Karanga na Mchicha",
+    "description": "A rich, nutty Kenyan stew of spinach simmered with groundnuts, tomatoes and onions.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "groundnuts", "role": "primary", "quantity": "0.75", "unit": "cup"},
+      {"slug": "spinach", "role": "required", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.75", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1.5", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Roast groundnuts and grind into a coarse paste."},
+      {"order": 2, "instruction": "Sauté onion until golden. Add tomatoes and cook until softened. Add groundnut paste and water, stir."},
+      {"order": 3, "instruction": "Simmer for 8–10 minutes, add spinach and salt and cook for 5 minutes. Serve with rice or ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 260, "protein_g": 11, "carbs_g": 14, "fat_g": 19, "fiber_g": 6},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice, ugali or chapati."
+  },
+  {
+    "slug": "kenyan-groundnut-rice",
+    "name_en": "Groundnut Rice",
+    "name_sw": "Wali wa Karanga",
+    "description": "Rice cooked with groundnut paste and onions, a rich and nutty Kenyan side dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "groundnuts", "role": "primary", "quantity": "0.5", "unit": "cup"},
+      {"slug": "rice", "role": "required", "quantity": "2", "unit": "cups"},
+      {"slug": "onion", "role": "optional", "quantity": "1", "unit": "small"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "3", "unit": "cups"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Roast groundnuts and grind into a paste. Sauté onion in oil until soft."},
+      {"order": 2, "instruction": "Stir in groundnut paste and rice. Add water and salt."},
+      {"order": 3, "instruction": "Cover and simmer for 20 minutes until rice is tender. Fluff and serve."}
+    ],
+    "nutrition_per_serving": {"calories": 340, "protein_g": 9, "carbs_g": 52, "fat_g": 12, "fiber_g": 3},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "halal-friendly"],
+    "serving_suggestion": "Serve with grilled fish or chicken."
+  },
+  {
+    "slug": "kenyan-cabbage-stew",
+    "name_en": "Kenyan Cabbage Stew",
+    "name_sw": "Mchuzi wa Kabichi",
+    "description": "A simple and nutritious Kenyan cabbage stew cooked with tomatoes and onions.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cabbage", "role": "primary", "quantity": "1", "unit": "medium head"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion in oil until soft and golden."},
+      {"order": 2, "instruction": "Add chopped tomatoes and cook until they break down into a sauce."},
+      {"order": 3, "instruction": "Add shredded cabbage and salt. Stir, add water, cover and simmer for 10–15 minutes. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 95, "protein_g": 3, "carbs_g": 12, "fat_g": 4, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or chapati."
+  },
+  {
+    "slug": "kenyan-cabbage-carrot-stir-fry",
+    "name_en": "Cabbage and Carrot Stir-Fry",
+    "name_sw": "Kabichi na Karoti",
+    "description": "A quick, colourful Kenyan stir-fry of shredded cabbage and sweet carrot, lightly seasoned.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cabbage", "role": "primary", "quantity": "1", "unit": "small head"},
+      {"slug": "carrot", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "optional", "quantity": "1", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Shred cabbage and grate or julienne carrots."},
+      {"order": 2, "instruction": "Heat oil and sauté onion until soft. Add carrots and stir-fry for 2 minutes."},
+      {"order": 3, "instruction": "Add cabbage and salt, stir-fry for 6–8 minutes until tender but crunchy. Serve."}
+    ],
+    "nutrition_per_serving": {"calories": 80, "protein_g": 2, "carbs_g": 10, "fat_g": 4, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or chapati."
+  },
+  {
+    "slug": "kenyan-cabbage-minced-beef",
+    "name_en": "Cabbage with Minced Beef",
+    "name_sw": "Kabichi na Nyama ya Kuchonga",
+    "description": "Shredded cabbage stir-fried with minced beef and tomatoes, a quick Kenyan weeknight dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cabbage", "role": "primary", "quantity": "0.5", "unit": "medium head"},
+      {"slug": "minced-beef", "role": "required", "quantity": "400", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion until soft. Add minced beef and brown."},
+      {"order": 2, "instruction": "Add tomatoes and cook until saucy. Add shredded cabbage and salt."},
+      {"order": 3, "instruction": "Stir-fry for 8–10 minutes until cabbage is tender. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 300, "protein_g": 26, "carbs_g": 12, "fat_g": 18, "fiber_g": 4},
+    "dietary_tags": ["halal-friendly", "gluten-free", "dairy-free", "egg-free", "nut-free"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-cabbage-potatoes",
+    "name_en": "Cabbage and Potatoes",
+    "name_sw": "Kabichi na Viazi",
+    "description": "Cabbage and potatoes simmered in a tomato-onion sauce, a hearty Kenyan side or main.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "cabbage", "role": "primary", "quantity": "0.5", "unit": "medium head"},
+      {"slug": "potato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion until golden, add tomatoes and cook until saucy."},
+      {"order": 2, "instruction": "Add cubed potatoes and water, simmer for 15 minutes."},
+      {"order": 3, "instruction": "Add shredded cabbage and salt, cook for 8 minutes. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 170, "protein_g": 4, "carbs_g": 30, "fat_g": 5, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-sukuma-wiki-v2",
+    "name_en": "Kenyan Sukuma Wiki",
+    "name_sw": "Sukuma Wiki",
+    "description": "Sautéed collard greens cooked with tomatoes and onions—Kenya's most popular everyday vegetable side dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "500", "unit": "g"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Wash collard greens, remove stems and slice thinly."},
+      {"order": 2, "instruction": "Heat oil and sauté onions until soft. Add tomatoes and cook until saucy."},
+      {"order": 3, "instruction": "Add greens and salt, cook for 5–7 minutes until wilted but still bright. Serve with ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 85, "protein_g": 4, "carbs_g": 9, "fat_g": 4, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve alongside ugali."
+  },
+  {
+    "slug": "kenyan-collard-greens-coconut",
+    "name_en": "Collard Greens in Coconut Milk",
+    "name_sw": "Sukuma Wiki ya Nazi",
+    "description": "Collard greens simmered in creamy coconut milk with onions—a coastal Kenyan side dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "400", "unit": "g"},
+      {"slug": "coconut", "role": "required", "quantity": "1", "unit": "cup"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion in oil until soft. Add sliced collard greens and cook for 3 minutes."},
+      {"order": 2, "instruction": "Pour in coconut milk and add salt."},
+      {"order": 3, "instruction": "Simmer for 7–10 minutes until greens are tender. Serve with rice."}
+    ],
+    "nutrition_per_serving": {"calories": 140, "protein_g": 3, "carbs_g": 8, "fat_g": 11, "fiber_g": 4},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-collard-greens-beans",
+    "name_en": "Collard Greens and Beans",
+    "name_sw": "Sukuma Wiki na Maharagwe",
+    "description": "Collard greens and beans simmered in a tomato-onion sauce, a protein-rich Kenyan stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "300", "unit": "g"},
+      {"slug": "beans", "role": "required", "quantity": "1.5", "unit": "cups cooked"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "2", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion until golden, add tomatoes and cook until saucy."},
+      {"order": 2, "instruction": "Add beans and cook for 5 minutes."},
+      {"order": 3, "instruction": "Add sliced collard greens and salt, cook for 5–7 minutes. Serve with ugali."}
+    ],
+    "nutrition_per_serving": {"calories": 200, "protein_g": 10, "carbs_g": 28, "fat_g": 6, "fiber_g": 8},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-collard-greens-eggs",
+    "name_en": "Collard Greens with Eggs",
+    "name_sw": "Sukuma Wiki na Mayai",
+    "description": "Collard greens sautéed with onions and scrambled eggs, a nutritious Kenyan breakfast.",
+    "meal_type": "breakfast",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 10,
+    "servings": 2,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "200", "unit": "g"},
+      {"slug": "eggs", "role": "required", "quantity": "3", "unit": "whole"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "small"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "1", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "0.25", "unit": "tsp"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Sauté onion in oil until soft. Add sliced collard greens and cook for 3 minutes."},
+      {"order": 2, "instruction": "Beat eggs with salt and pour over the greens."},
+      {"order": 3, "instruction": "Scramble until eggs are set. Serve with chapati."}
+    ],
+    "nutrition_per_serving": {"calories": 220, "protein_g": 14, "carbs_g": 6, "fat_g": 16, "fiber_g": 4},
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with chapati or bread."
+  },
+  {
+    "slug": "kenyan-collard-greens-potatoes",
+    "name_en": "Collard Greens and Potatoes",
+    "name_sw": "Sukuma Wiki na Viazi",
+    "description": "Collard greens and potatoes simmered together in a tomato-onion sauce, a hearty Kenyan side or main.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": ["kenya"],
+    "ingredients": [
+      {"slug": "collard-greens", "role": "primary", "quantity": "300", "unit": "g"},
+      {"slug": "potato", "role": "required", "quantity": "4", "unit": "medium"},
+      {"slug": "onion", "role": "required", "quantity": "1", "unit": "large"},
+      {"slug": "tomato", "role": "required", "quantity": "3", "unit": "medium"},
+      {"slug": "cooking-oil", "role": "staple", "quantity": "2", "unit": "tbsp"},
+      {"slug": "salt", "role": "staple", "quantity": "1", "unit": "tsp"},
+      {"slug": "water", "role": "staple", "quantity": "1", "unit": "cup"}
+    ],
+    "steps": [
+      {"order": 1, "instruction": "Peel and cube potatoes. Sauté onion until golden, add tomatoes and cook until saucy."},
+      {"order": 2, "instruction": "Add potatoes and water, simmer for 15 minutes until almost tender."},
+      {"order": 3, "instruction": "Add sliced collard greens and salt, cook for 5 minutes. Serve hot."}
+    ],
+    "nutrition_per_serving": {"calories": 180, "protein_g": 4, "carbs_g": 30, "fat_g": 5, "fiber_g": 5},
+    "dietary_tags": ["vegan", "gluten-free", "dairy-free", "egg-free", "nut-free", "halal-friendly"],
+    "serving_suggestion": "Serve with ugali or rice."
+  }
+]

@@ -1,0 +1,2370 @@
+[
+  {
+    "slug": "kenyan-curry-powder-chicken",
+    "name_en": "Kenyan Curry Powder Chicken",
+    "name_sw": "Kuku wa Curry",
+    "description": "Chicken pieces simmered in a rich curry sauce made with curry powder, onions and tomatoes\u2014a Kenyan favourite with Indian influences.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "800",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Brown chicken in hot oil for 6\u20138 minutes. Remove and set aside."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onions until golden. Add curry powder and tomatoes and cook until thick."
+      },
+      {
+        "order": 3,
+        "instruction": "Return chicken, add water and salt, cover and simmer for 20 minutes. Serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 370,
+      "protein_g": 32,
+      "carbs_g": 10,
+      "fat_g": 22,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-curry-powder-rice",
+    "name_en": "Kenyan Curry Powder Rice",
+    "name_sw": "Wali wa Curry",
+    "description": "Fragrant rice cooked with curry powder and onions, a simple Kenyan side with a warm spice aroma.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "small"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Rinse rice. Heat oil and saut\u00e9 onion until soft."
+      },
+      {
+        "order": 2,
+        "instruction": "Stir in curry powder and rice. Add water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes until tender. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 260,
+      "protein_g": 5,
+      "carbs_g": 50,
+      "fat_g": 5,
+      "fiber_g": 1
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with beef stew or grilled chicken."
+  },
+  {
+    "slug": "kenyan-curry-powder-lentils",
+    "name_en": "Kenyan Curry Powder Lentils",
+    "name_sw": "Dengu za Curry",
+    "description": "Yellow lentils simmered with curry powder, onions and tomatoes, a comforting Kenyan vegetarian stew.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "slug": "yellow-lentils",
+        "role": "required",
+        "quantity": "1.5",
+        "unit": "cups"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "4",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Saut\u00e9 onion until soft. Add curry powder and tomatoes, cook until saucy."
+      },
+      {
+        "order": 2,
+        "instruction": "Add lentils and water. Bring to a boil."
+      },
+      {
+        "order": 3,
+        "instruction": "Simmer for 20\u201325 minutes until lentils are soft. Season and serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 260,
+      "protein_g": 14,
+      "carbs_g": 38,
+      "fat_g": 6,
+      "fiber_g": 8
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-ginger-chicken",
+    "name_en": "Kenyan Ginger Chicken",
+    "name_sw": "Kuku wa Tangawizi",
+    "description": "Chicken pieces cooked with plenty of fresh ginger, garlic and onions\u2014a warming Kenyan stew.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "2",
+        "unit": "inch"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "800",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Grate or crush ginger. Brown chicken in oil for 6\u20138 minutes."
+      },
+      {
+        "order": 2,
+        "instruction": "Add onion and ginger, cook until soft. Add tomatoes and cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Add salt and water, simmer for 20 minutes. Serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 360,
+      "protein_g": 32,
+      "carbs_g": 9,
+      "fat_g": 22,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-ginger-tea",
+    "name_en": "Kenyan Ginger Tea",
+    "name_sw": "Chai ya Tangawizi",
+    "description": "A warming Kenyan tea brewed with fresh ginger, milk and sugar\u2014served daily in homes and cafes.",
+    "meal_type": "breakfast",
+    "course": "drink",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 2,
+    "cook_min": 8,
+    "servings": 2,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "1",
+        "unit": "inch"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "slug": "milk",
+        "role": "required",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "slug": "sugar",
+        "role": "required",
+        "quantity": "2",
+        "unit": "tsp"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Peel and grate ginger. Bring water to a boil and add ginger."
+      },
+      {
+        "order": 2,
+        "instruction": "Boil for 2 minutes, then add tea leaves, milk and sugar."
+      },
+      {
+        "order": 3,
+        "instruction": "Simmer for 5 minutes, strain and serve hot."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 90,
+      "protein_g": 4,
+      "carbs_g": 12,
+      "fat_g": 3,
+      "fiber_g": 0
+    },
+    "dietary_tags": [
+      "vegetarian",
+      "gluten-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with chapati or mandazi."
+  },
+  {
+    "slug": "kenyan-ginger-fish",
+    "name_en": "Kenyan Ginger Fish",
+    "name_sw": "Samaki wa Tangawizi",
+    "description": "Tilapia simmered with fresh ginger, tomatoes and onions\u2014a fragrant coastal Kenyan fish dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 3,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "1.5",
+        "unit": "inch"
+      },
+      {
+        "slug": "tilapia",
+        "role": "required",
+        "quantity": "1",
+        "unit": "whole"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Clean and score tilapia. Fry in oil for 3\u20134 minutes per side. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onion and grated ginger until soft. Add tomatoes and cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Add water, return fish and simmer for 8\u201310 minutes. Serve with ugali."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 300,
+      "protein_g": 34,
+      "carbs_g": 10,
+      "fat_g": 14,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-garlic-chicken",
+    "name_en": "Kenyan Garlic Chicken",
+    "name_sw": "Kuku wa Kitunguu Saumu",
+    "description": "A garlic-forward Kenyan chicken stew where plenty of crushed garlic is cooked with chicken pieces, onions and tomatoes.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 35,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "10",
+        "unit": "cloves"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "1",
+        "unit": "kg"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Crush garlic cloves. Heat oil and brown chicken for 6\u20138 minutes."
+      },
+      {
+        "order": 2,
+        "instruction": "Add chopped onions and cook until soft. Stir in crushed garlic and cook 1 minute."
+      },
+      {
+        "order": 3,
+        "instruction": "Add tomatoes and salt, cook until saucy. Add water and simmer for 20 minutes. Serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein_g": 32,
+      "carbs_g": 10,
+      "fat_g": 24,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali and sukuma wiki."
+  },
+  {
+    "slug": "kenyan-garlic-rice",
+    "name_en": "Kenyan Garlic Rice",
+    "name_sw": "Wali wa Kitunguu Saumu",
+    "description": "Fragrant rice cooked with saut\u00e9ed garlic and onions, a simple Kenyan side with a bold aroma.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "6",
+        "unit": "cloves"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "small"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Rinse rice. Heat oil and saut\u00e9 minced garlic and onion until golden."
+      },
+      {
+        "order": 2,
+        "instruction": "Add rice and stir to coat. Pour in water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes until tender. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 260,
+      "protein_g": 5,
+      "carbs_g": 50,
+      "fat_g": 5,
+      "fiber_g": 1
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with grilled fish or chicken."
+  },
+  {
+    "slug": "kenyan-garlic-spinach",
+    "name_en": "Kenyan Garlic Spinach",
+    "name_sw": "Mchicha wa Kitunguu Saumu",
+    "description": "Spinach saut\u00e9ed with plenty of garlic and onions, a quick and healthy Kenyan side dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 10,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "5",
+        "unit": "cloves"
+      },
+      {
+        "slug": "spinach",
+        "role": "required",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Heat oil and saut\u00e9 minced garlic and onion until fragrant."
+      },
+      {
+        "order": 2,
+        "instruction": "Add spinach and salt, stir-fry for 5\u20137 minutes until wilted."
+      },
+      {
+        "order": 3,
+        "instruction": "Serve hot with ugali or rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 80,
+      "protein_g": 3,
+      "carbs_g": 6,
+      "fat_g": 5,
+      "fiber_g": 3
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with ugali or as a side."
+  },
+  {
+    "slug": "kenyan-tomato-chicken",
+    "name_en": "Kenyan Tomato Chicken",
+    "name_sw": "Kuku wa Nyanya",
+    "description": "Chicken pieces cooked in a vibrant tomato sauce with onions and garlic\u2014a simple, comforting Kenyan dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "tomato",
+        "role": "primary",
+        "quantity": "6",
+        "unit": "ripe"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "1",
+        "unit": "kg"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Boil chicken with salt and water until tender, about 25 minutes. Reserve broth."
+      },
+      {
+        "order": 2,
+        "instruction": "Heat oil and saut\u00e9 onions until golden. Add chopped tomatoes and cook until thick sauce."
+      },
+      {
+        "order": 3,
+        "instruction": "Add chicken and a little broth, simmer for 10\u201315 minutes. Serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 340,
+      "protein_g": 30,
+      "carbs_g": 10,
+      "fat_g": 20,
+      "fiber_g": 3
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or ugali."
+  },
+  {
+    "slug": "kenyan-tomato-rice",
+    "name_en": "Kenyan Tomato Rice",
+    "name_sw": "Wali wa Nyanya",
+    "description": "Rice cooked with a rich tomato and onion base, giving a colourful and flavourful Kenyan side.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "tomato",
+        "role": "primary",
+        "quantity": "4",
+        "unit": "ripe"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Saut\u00e9 onion in oil until soft. Add chopped tomatoes and cook until saucy."
+      },
+      {
+        "order": 2,
+        "instruction": "Add rice and stir to coat. Pour in water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes until rice is tender. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 270,
+      "protein_g": 5,
+      "carbs_g": 52,
+      "fat_g": 5,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with grilled chicken or fish."
+  },
+  {
+    "slug": "kenyan-tomato-salad",
+    "name_en": "Kenyan Tomato Salad",
+    "name_sw": "Kachumbari",
+    "description": "A fresh, zesty salad of tomatoes, onions, and coriander\u2014the classic Kenyan condiment.",
+    "meal_type": "snack",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 0,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "tomato",
+        "role": "primary",
+        "quantity": "4",
+        "unit": "ripe"
+      },
+      {
+        "slug": "red-onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "slug": "coriander",
+        "role": "required",
+        "quantity": "0.25",
+        "unit": "cup"
+      },
+      {
+        "slug": "lemon",
+        "role": "optional",
+        "quantity": "1",
+        "unit": "whole"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "0.5",
+        "unit": "tsp"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Chop tomatoes, red onion and coriander."
+      },
+      {
+        "order": 2,
+        "instruction": "Combine in a bowl, squeeze lemon juice over and add salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Toss gently and serve fresh."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 30,
+      "protein_g": 1,
+      "carbs_g": 7,
+      "fat_g": 0,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with nyama choma or pilau."
+  },
+  {
+    "slug": "kenyan-onion-stew",
+    "name_en": "Kenyan Onion Stew",
+    "name_sw": "Mchuzi wa Kitunguu",
+    "description": "A deeply savoury Kenyan stew where onions are cooked down until sweet and golden, forming the backbone of a rich gravy.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "onion",
+        "role": "primary",
+        "quantity": "4",
+        "unit": "large"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "slug": "tomato",
+        "role": "optional",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Brown beef in oil and set aside."
+      },
+      {
+        "order": 2,
+        "instruction": "In the same pot, cook sliced onions on medium-low for 12 minutes until golden and sweet."
+      },
+      {
+        "order": 3,
+        "instruction": "Add tomatoes if using and cook until saucy. Return beef, add salt and water, simmer for 20 minutes."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein_g": 32,
+      "carbs_g": 10,
+      "fat_g": 24,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-onion-rice",
+    "name_en": "Kenyan Onion Rice",
+    "name_sw": "Wali wa Kitunguu",
+    "description": "Rice cooked with caramelised onions, a simple Kenyan side with a sweet, rich flavour.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "onion",
+        "role": "primary",
+        "quantity": "3",
+        "unit": "large"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Slice onions and fry in oil until deep golden, about 10 minutes."
+      },
+      {
+        "order": 2,
+        "instruction": "Add rice and stir to coat. Pour in water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 300,
+      "protein_g": 5,
+      "carbs_g": 52,
+      "fat_g": 8,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with grilled meat or fish."
+  },
+  {
+    "slug": "kenyan-onion-soup",
+    "name_en": "Kenyan Onion Soup",
+    "name_sw": "Supu ya Kitunguu",
+    "description": "A rich, comforting Kenyan onion soup made with caramelised onions and a touch of milk.",
+    "meal_type": "dinner",
+    "course": "starter",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "onion",
+        "role": "primary",
+        "quantity": "5",
+        "unit": "large"
+      },
+      {
+        "slug": "milk",
+        "role": "required",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "4",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Slice onions and cook in oil on low heat for 20 minutes until caramelised."
+      },
+      {
+        "order": 2,
+        "instruction": "Add water and salt, simmer for 10 minutes."
+      },
+      {
+        "order": 3,
+        "instruction": "Stir in milk, heat through and serve with bread."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 160,
+      "protein_g": 4,
+      "carbs_g": 18,
+      "fat_g": 8,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "vegetarian",
+      "gluten-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with bread or chapati."
+  },
+  {
+    "slug": "kenyan-curry-powder-beef",
+    "name_en": "Kenyan Curry Powder Beef",
+    "name_sw": "Nyama ya Ng'ombe ya Curry",
+    "description": "Beef cubes simmered in a spiced curry sauce with onions and tomatoes\u2014a hearty Kenyan stew.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 10,
+    "cook_min": 45,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "2",
+        "unit": "tsp"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "600",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Boil beef until tender, about 30 minutes. Reserve broth."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onions until golden. Add curry powder and tomatoes, cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Add beef and broth, simmer for 15 minutes. Serve with ugali or rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 400,
+      "protein_g": 34,
+      "carbs_g": 10,
+      "fat_g": 24,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-ginger-beef",
+    "name_en": "Kenyan Ginger Beef",
+    "name_sw": "Nyama ya Ng'ombe ya Tangawizi",
+    "description": "Beef strips stir-fried with fresh ginger, garlic and onions, a fragrant Kenyan dish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 15,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "2",
+        "unit": "inch"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Slice beef thinly. Heat oil and stir-fry beef for 3\u20134 minutes."
+      },
+      {
+        "order": 2,
+        "instruction": "Add grated ginger and onion, cook until soft."
+      },
+      {
+        "order": 3,
+        "instruction": "Season with salt, cook for 5 minutes and serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 350,
+      "protein_g": 34,
+      "carbs_g": 6,
+      "fat_g": 20,
+      "fiber_g": 1
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or noodles."
+  },
+  {
+    "slug": "kenyan-garlic-beef",
+    "name_en": "Kenyan Garlic Beef",
+    "name_sw": "Nyama ya Ng'ombe ya Kitunguu Saumu",
+    "description": "Beef pieces cooked with plenty of garlic, onions and tomatoes\u2014a bold Kenyan stew.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "8",
+        "unit": "cloves"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "600",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Brown beef in oil. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onion and crushed garlic until fragrant. Add tomatoes and cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Return beef, add water and salt, simmer for 30 minutes. Serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 390,
+      "protein_g": 34,
+      "carbs_g": 10,
+      "fat_g": 24,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-tomato-beef",
+    "name_en": "Kenyan Tomato Beef",
+    "name_sw": "Nyama ya Ng'ombe ya Nyanya",
+    "description": "Beef simmered in a rich tomato sauce with onions and garlic\u2014a Kenyan weeknight favourite.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 45,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "tomato",
+        "role": "primary",
+        "quantity": "6",
+        "unit": "ripe"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Boil beef until tender, about 30 minutes. Reserve broth."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onions until golden. Add tomatoes and cook until thick."
+      },
+      {
+        "order": 3,
+        "instruction": "Add beef and broth, simmer for 10 minutes. Serve with rice."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein_g": 32,
+      "carbs_g": 10,
+      "fat_g": 24,
+      "fiber_g": 3
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or ugali."
+  },
+  {
+    "slug": "kenyan-onion-beef",
+    "name_en": "Kenyan Onion Beef",
+    "name_sw": "Nyama ya Ng'ombe na Kitunguu",
+    "description": "A deeply savoury Kenyan beef stew where onions are cooked down until sweet and golden.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 50,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "onion",
+        "role": "primary",
+        "quantity": "4",
+        "unit": "large"
+      },
+      {
+        "slug": "beef",
+        "role": "required",
+        "quantity": "600",
+        "unit": "g"
+      },
+      {
+        "slug": "tomato",
+        "role": "optional",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Brown beef in oil. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Cook sliced onions on medium-low for 10\u201312 minutes until golden."
+      },
+      {
+        "order": 3,
+        "instruction": "Add tomatoes if using, then return beef, add salt and water, simmer for 30 minutes."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein_g": 34,
+      "carbs_g": 8,
+      "fat_g": 22,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-curry-powder-fish",
+    "name_en": "Kenyan Curry Powder Fish",
+    "name_sw": "Samaki wa Curry",
+    "description": "Tilapia simmered in a spiced curry sauce with tomatoes and onions.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 3,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "slug": "tilapia",
+        "role": "required",
+        "quantity": "1",
+        "unit": "whole"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "3",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Clean and score tilapia. Fry in oil for 3 minutes per side. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onion until soft. Add curry powder and tomatoes, cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Add water, return fish and simmer for 8 minutes. Serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 300,
+      "protein_g": 34,
+      "carbs_g": 10,
+      "fat_g": 14,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with rice or ugali."
+  },
+  {
+    "slug": "kenyan-ginger-chicken-soup",
+    "name_en": "Kenyan Ginger Chicken Soup",
+    "name_sw": "Supu ya Kuku wa Tangawizi",
+    "description": "A soothing Kenyan chicken soup infused with fresh ginger and garlic.",
+    "meal_type": "dinner",
+    "course": "starter",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "2",
+        "unit": "inch"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "medium"
+      },
+      {
+        "slug": "garlic",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "6",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Saut\u00e9 onion, garlic and grated ginger in oil until fragrant."
+      },
+      {
+        "order": 2,
+        "instruction": "Add chicken and brown for 5 minutes. Add water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Simmer for 30 minutes, strain and serve hot."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 220,
+      "protein_g": 20,
+      "carbs_g": 4,
+      "fat_g": 14,
+      "fiber_g": 1
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve as a starter or light meal."
+  },
+  {
+    "slug": "kenyan-garlic-pilau",
+    "name_en": "Kenyan Garlic Pilau",
+    "name_sw": "Pilau ya Kitunguu Saumu",
+    "description": "Fragrant pilau rice cooked with plenty of garlic, pilau masala and onions.",
+    "meal_type": "lunch",
+    "course": "main",
+    "spice_level": "medium",
+    "difficulty": "medium",
+    "prep_min": 15,
+    "cook_min": 30,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "10",
+        "unit": "cloves"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "pilau-masala",
+        "role": "required",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "2",
+        "unit": "large"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Fry onions until golden. Add crushed garlic and cook 1 minute."
+      },
+      {
+        "order": 2,
+        "instruction": "Add pilau masala and rice, stir to coat. Add water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein_g": 7,
+      "carbs_g": 60,
+      "fat_g": 12,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with kachumbari."
+  },
+  {
+    "slug": "kenyan-tomato-fish",
+    "name_en": "Kenyan Tomato Fish",
+    "name_sw": "Samaki wa Nyanya",
+    "description": "Tilapia simmered in a tangy tomato and onion sauce\u2014a favourite way to enjoy fresh fish.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 25,
+    "servings": 3,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "tomato",
+        "role": "primary",
+        "quantity": "5",
+        "unit": "ripe"
+      },
+      {
+        "slug": "tilapia",
+        "role": "required",
+        "quantity": "1",
+        "unit": "whole"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Fry tilapia in oil for 3\u20134 minutes per side. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 onion until soft. Add tomatoes and cook until thick sauce."
+      },
+      {
+        "order": 3,
+        "instruction": "Add water, return fish and simmer for 8 minutes. Serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 300,
+      "protein_g": 34,
+      "carbs_g": 12,
+      "fat_g": 14,
+      "fiber_g": 3
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-onion-chicken",
+    "name_en": "Kenyan Onion Chicken",
+    "name_sw": "Kuku na Kitunguu",
+    "description": "A rustic Kenyan chicken stew built on a generous base of slow-cooked onions and garlic.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 40,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "onion",
+        "role": "primary",
+        "quantity": "4",
+        "unit": "large"
+      },
+      {
+        "slug": "chicken-pieces",
+        "role": "required",
+        "quantity": "1",
+        "unit": "kg"
+      },
+      {
+        "slug": "tomato",
+        "role": "optional",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Brown chicken in oil. Remove."
+      },
+      {
+        "order": 2,
+        "instruction": "Cook sliced onions on medium-low for 10 minutes until golden."
+      },
+      {
+        "order": 3,
+        "instruction": "Add tomatoes if using, return chicken, add salt and water, simmer for 25 minutes."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 360,
+      "protein_g": 30,
+      "carbs_g": 8,
+      "fat_g": 22,
+      "fiber_g": 2
+    },
+    "dietary_tags": [
+      "halal-friendly",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free"
+    ],
+    "serving_suggestion": "Serve with ugali or rice."
+  },
+  {
+    "slug": "kenyan-curry-powder-vegetables",
+    "name_en": "Kenyan Curry Powder Vegetables",
+    "name_sw": "Mboga za Curry",
+    "description": "Mixed vegetables simmered in a spiced curry sauce with onions and tomatoes\u2014a healthy Kenyan side.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "medium",
+    "difficulty": "easy",
+    "prep_min": 15,
+    "cook_min": 25,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "curry-powder",
+        "role": "primary",
+        "quantity": "1.5",
+        "unit": "tsp"
+      },
+      {
+        "slug": "carrot",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "green-beans",
+        "role": "required",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "slug": "potato",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "large"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "2",
+        "unit": "medium"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Saut\u00e9 onion until golden. Add curry powder and tomatoes, cook until saucy."
+      },
+      {
+        "order": 2,
+        "instruction": "Add carrots, potatoes and water, simmer for 10 minutes."
+      },
+      {
+        "order": 3,
+        "instruction": "Add green beans and salt, cook for 10 minutes until tender. Serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 180,
+      "protein_g": 4,
+      "carbs_g": 28,
+      "fat_g": 6,
+      "fiber_g": 5
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with rice or chapati."
+  },
+  {
+    "slug": "kenyan-ginger-rice",
+    "name_en": "Kenyan Ginger Rice",
+    "name_sw": "Wali wa Tangawizi",
+    "description": "Fragrant rice cooked with fresh ginger and onions, a warming Kenyan side dish.",
+    "meal_type": "lunch",
+    "course": "side",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 5,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "ginger",
+        "role": "primary",
+        "quantity": "1",
+        "unit": "inch"
+      },
+      {
+        "slug": "rice",
+        "role": "required",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "small"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "3",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Grate ginger. Heat oil and saut\u00e9 ginger and onion until fragrant."
+      },
+      {
+        "order": 2,
+        "instruction": "Add rice and stir. Pour in water and salt."
+      },
+      {
+        "order": 3,
+        "instruction": "Cover and simmer for 20 minutes. Fluff and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 260,
+      "protein_g": 5,
+      "carbs_g": 50,
+      "fat_g": 5,
+      "fiber_g": 1
+    },
+    "dietary_tags": [
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with grilled meat or fish."
+  },
+  {
+    "slug": "kenyan-garlic-tomato-pasta",
+    "name_en": "Kenyan Garlic Tomato Pasta",
+    "name_sw": "Pasta ya Kitunguu Saumu na Nyanya",
+    "description": "A simple Kenyan pasta dish tossed in a garlicky tomato sauce, a popular home meal.",
+    "meal_type": "dinner",
+    "course": "main",
+    "spice_level": "mild",
+    "difficulty": "easy",
+    "prep_min": 10,
+    "cook_min": 20,
+    "servings": 4,
+    "regions": [
+      "kenya"
+    ],
+    "ingredients": [
+      {
+        "slug": "garlic",
+        "role": "primary",
+        "quantity": "6",
+        "unit": "cloves"
+      },
+      {
+        "slug": "tomato",
+        "role": "required",
+        "quantity": "4",
+        "unit": "ripe"
+      },
+      {
+        "slug": "onion",
+        "role": "required",
+        "quantity": "1",
+        "unit": "small"
+      },
+      {
+        "slug": "cooking-oil",
+        "role": "staple",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "slug": "salt",
+        "role": "staple",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "slug": "water",
+        "role": "staple",
+        "quantity": "4",
+        "unit": "cups"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "instruction": "Cook pasta in salted water until al dente. Drain."
+      },
+      {
+        "order": 2,
+        "instruction": "Saut\u00e9 garlic and onion in oil until fragrant. Add chopped tomatoes and cook until saucy."
+      },
+      {
+        "order": 3,
+        "instruction": "Toss pasta in the sauce, season with salt and serve."
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 320,
+      "protein_g": 10,
+      "carbs_g": 50,
+      "fat_g": 10,
+      "fiber_g": 3
+    },
+    "dietary_tags": [
+      "vegetarian",
+      "dairy-free",
+      "egg-free",
+      "nut-free",
+      "halal-friendly"
+    ],
+    "serving_suggestion": "Serve with a side salad."
+  }
+]

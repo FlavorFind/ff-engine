@@ -1,0 +1,103 @@
+# FF-Engine Ingredient Combinations for Testing
+# Use these in the console at https://engine.flavorfind.co.ke/console/
+# Copy any line into the ingredients field (set Mode to "explore")
+# ============================================================
+
+# ── 1-Ingredient searches ─────────────────────────────────────
+onions
+tomato
+garlic
+ginger
+beef
+chicken
+rice
+maize flour
+beans
+potato
+eggs
+spinach
+cabbage
+carrot
+coconut milk
+lentils
+coriander
+sukuma wiki
+pilipili hoho
+tilapia
+
+# ── 2-Ingredient combinations ─────────────────────────────────
+onions, tomato
+onions, garlic
+beef, onion
+chicken, tomato
+rice, coconut milk
+beans, onion
+potato, onion
+eggs, tomato
+spinach, onion
+cabbage, carrot
+lentils, onion
+tilapia, onion
+maize flour, water
+ginger, garlic
+coriander, onion
+sukuma wiki, onion
+pilipili hoho, onion
+beef, ginger
+chicken, garlic
+rice, pilau masala
+
+# ── 3-Ingredient combinations ─────────────────────────────────
+onions, tomato, garlic
+beef, onion, tomato
+chicken, onion, garlic
+rice, coconut milk, onion
+beans, onion, tomato
+potato, onion, tomato
+eggs, onion, tomato
+spinach, onion, tomato
+lentils, onion, garlic
+tilapia, onion, tomato
+cabbage, onion, tomato
+carrot, onion, tomato
+beef, ginger, garlic
+chicken, ginger, garlic
+sukuma wiki, onion, tomato
+pilipili hoho, onion, tomato
+coconut milk, rice, onion
+groundnuts, onion, tomato
+maize flour, water, salt
+
+# ── 4-Ingredient combinations ─────────────────────────────────
+onions, tomato, garlic, ginger
+beef, onion, tomato, garlic
+chicken, onion, tomato, garlic
+rice, coconut milk, onion, garlic
+beans, onion, tomato, garlic
+potato, onion, tomato, garlic
+eggs, onion, tomato, garlic
+spinach, onion, tomato, garlic
+lentils, onion, garlic, ginger
+tilapia, onion, tomato, garlic
+cabbage, carrot, onion, tomato
+beef, onion, ginger, pilau masala
+chicken, onion, ginger, pilau masala
+sukuma wiki, onion, tomato, garlic
+coconut milk, rice, onion, garlic
+
+# ── 5-Ingredient combinations ─────────────────────────────────
+onions, tomato, garlic, ginger, beef
+onions, tomato, garlic, ginger, chicken
+beef, onion, tomato, garlic, ginger
+chicken, onion, tomato, garlic, ginger
+rice, coconut milk, onion, garlic, ginger
+beans, onion, tomato, garlic, ginger
+potato, onion, tomato, garlic, ginger
+lentils, onion, garlic, ginger, tomato
+tilapia, onion, tomato, garlic, ginger
+cabbage, carrot, onion, tomato, garlic
+sukuma wiki, onion, tomato, garlic, pilipili hoho
+beef, onion, tomato, ginger, pilau masala
+chicken, onion, tomato, ginger, pilau masala
+coconut milk, rice, onion, garlic, ginger
+groundnuts, onion, tomato, garlic, ginger
