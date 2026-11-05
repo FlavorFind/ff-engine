@@ -45,7 +45,7 @@ _CATEGORY_ALIASES: dict[str, list[str]] = {
     "nyama": ["meat", "meat-offal-and-poultry", "meat-offal-poultry"],  # Swahili: meat
     # Poultry
     "poultry": ["poultry", "meat-offal-and-poultry", "meat-offal-poultry"],
-    "chicken": None,  # 'chicken' is an ingredient, not a category — skip
+    "chicken": None,  # handled by _GENERIC_INGREDIENT_SLUGS below
     # Fish / seafood
     "fish": ["fish-and-seafood", "fish-seafood", "fish"],
     "seafood": ["fish-and-seafood", "fish-seafood"],
@@ -77,6 +77,107 @@ _CATEGORY_ALIASES: dict[str, list[str]] = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Generic ingredient expansion map
+#
+# When a user types a generic term like "chicken" that has no dishes using
+# the bare ingredient slug, expand it to all the specific cuts/variants that
+# are actually used in dish data.  This is keyed on the normalised token.
+# ---------------------------------------------------------------------------
+
+_GENERIC_INGREDIENT_SLUGS: dict[str, list[str]] = {
+    "chicken": [
+        "chicken-pieces",
+        "chicken-breast",
+        "chicken-thighs",
+        "chicken-drumsticks",
+        "whole-chicken",
+        "chicken-wings",
+        "free-range-chicken",
+        "chicken",  # include bare slug too in case any dishes do use it
+    ],
+    "kuku": [  # Swahili: chicken
+        "chicken-pieces",
+        "chicken-breast",
+        "chicken-thighs",
+        "chicken-drumsticks",
+        "whole-chicken",
+        "chicken-wings",
+        "free-range-chicken",
+        "chicken",
+    ],
+    "beef": [
+        "beef",
+        "minced-beef",
+        "beef-steak",
+        "beef-ribs",
+        "beef-offal",
+        "ground-beef",
+    ],
+    "nyama-ya-ng-ombe": ["beef", "minced-beef"],  # Swahili: beef
+    "fish": [
+        "tilapia",
+        "nile-perch",
+        "sardines",
+        "mackerel",
+        "omena",
+        "dagaa",
+        "fish",
+    ],
+    "samaki": [  # Swahili: fish
+        "tilapia",
+        "nile-perch",
+        "sardines",
+        "mackerel",
+        "omena",
+        "dagaa",
+        "fish",
+    ],
+    "goat": [
+        "goat-meat",
+        "goat",
+        "goat-ribs",
+        "whole-goat",
+    ],
+    "mbuzi": ["goat-meat", "goat"],  # Swahili: goat
+    "lamb": [
+        "lamb",
+        "lamb-shoulder",
+        "lamb-chops",
+        "minced-lamb",
+    ],
+    "pork": [
+        "pork",
+        "pork-belly",
+        "pork-ribs",
+        "minced-pork",
+    ],
+}
+
+
+@lru_cache(maxsize=128)
+def _get_generic_ingredient_ids(norm_token: str) -> list[str]:
+    """
+    Return ingredient UUIDs for a generic token (e.g. 'chicken') by looking
+    up each slug in _GENERIC_INGREDIENT_SLUGS.  Cached per token.
+    """
+    slugs = _GENERIC_INGREDIENT_SLUGS.get(norm_token)
+    if not slugs:
+        return []
+
+    from apps.ingredients.models import Ingredient
+
+    ids = list(
+        Ingredient.objects.filter(slug__in=slugs).values_list("id", flat=True)
+    )
+    return [str(iid) for iid in ids]
+
+
+def invalidate_generic_cache() -> None:
+    """Clear the generic ingredient cache.  Call in tests or after bulk imports."""
+    _get_generic_ingredient_ids.cache_clear()
+
+
 def expand_category_terms(
     raw_tokens: list[str],
 ) -> tuple[list[str], list[str]]:
@@ -99,6 +200,16 @@ def expand_category_terms(
 
     for token in raw_tokens:
         norm = normalise(token)
+
+        # ── Generic ingredient expansion (e.g. 'chicken' → all cuts) ──────────
+        generic_ids = _get_generic_ingredient_ids(norm)
+        if generic_ids:
+            expanded_ids.extend(generic_ids)
+            logger.debug(
+                "category_expander: %r → %d IDs via generic expansion", token, len(generic_ids)
+            )
+            continue
+
         candidate_slugs = _CATEGORY_ALIASES.get(norm)
 
         if candidate_slugs is None:
