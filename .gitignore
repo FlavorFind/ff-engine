@@ -68,3 +68,6 @@ static/console/
 # Seed data archives and probe output (ephemeral, generated locally)
 data/seeds/archive_*/
 probe_results/
+
+# Hypothesis property-test cache
+.hypothesis/
