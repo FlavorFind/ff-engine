@@ -1,7 +1,7 @@
 """Root URL configuration."""
 
 from django.contrib import admin
-from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import include, path
@@ -57,44 +57,71 @@ def home(request):
     return HttpResponse(html)
 
 
-@login_required
+@staff_member_required
 def console(request):
-    """Internal test console — staff only, served behind Django session auth."""
-    from apps.clients.models import ApiKey
+    """Internal test console — staff only, served behind Django session auth.
 
-    # Find the best available active key for the logged-in session:
-    # prefer internal-scoped staging key, fall back to any active key.
-    api_key = ""
-    qs = (
-        ApiKey.objects.filter(revoked_at__isnull=True)
-        .select_related("client")
-        .order_by("-created_at")
+    Auto-provisions a read:search API key for the console so the user
+    doesn't have to paste one manually. The key is stored in the session
+    and injected into the page via a window global.
+    """
+    from django.conf import settings
+
+    from apps.clients.keys import create_key
+    from apps.clients.models import ApiClient, ApiKey
+
+    # ── API key: reuse one stored in the session, or create a new one ──
+    api_key = request.session.get("console_api_key", "")
+    if not api_key:
+        client, _created = ApiClient.objects.get_or_create(
+            name="Internal Console",
+            defaults={"type": ApiClient.ClientType.INTERNAL},
+        )
+        _obj, raw_key = create_key(client, scopes=[ApiKey.SCOPE_READ_SEARCH])
+        api_key = raw_key
+        request.session["console_api_key"] = api_key
+
+    # ── Find current built JS/CSS assets (hashed filenames) ──────────────
+    js_file = ""
+    css_file = ""
+    search_dirs = [
+        settings.STATIC_ROOT / "console" / "assets",
+        settings.BASE_DIR / "console" / "dist" / "assets",
+    ]
+    for d in search_dirs:
+        if d.is_dir():
+            for f in d.iterdir():
+                if f.suffix == ".js" and not js_file:
+                    js_file = f.name
+                elif f.suffix == ".css" and not css_file:
+                    css_file = f.name
+            if js_file and css_file:
+                break
+
+    return render(
+        request,
+        "console/index.html",
+        {"api_key": api_key, "js_file": js_file, "css_file": css_file},
     )
-    key_obj = qs.filter(client__type="internal").first() or qs.first()
-    if key_obj:
-        # We only store the hash — use the staging-read key prefix as a hint,
-        # staff must supply a key via the UI if the injected one is empty.
-        # Check if a console_key is stored in the user session.
-        api_key = request.session.get("console_api_key", "")
-
-    return render(request, "console/index.html", {"api_key": api_key})
 
 
 urlpatterns = [
     # Root landing page
     path("", home, name="home"),
     # Two-factor auth login (replaces the standard Django login).
+    # Mounted at "" so login URL stays /account/login/ as per tf_urls default.
+    # Must come before admin/ so the admin login redirect lands here.
     path("", include(tf_urls, namespace="two_factor")),
     # Django admin — protected by AdminSiteOTPRequired (see accounts/admin.py)
     path("admin/", admin.site.urls),
-    # Internal test console — staff login required
-    path("console/", console, name="console"),
     # API v1
     path("v1/", include("apps.api.urls")),
     # OpenAPI schema and docs
     path("v1/schema/", SpectacularAPIView.as_view(), name="schema"),
     path("schema/", SpectacularAPIView.as_view(), name="schema-root"),  # legacy
     path("docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
+    # Internal test console — staff only
+    path("console/", console, name="console"),
 ]
 
 # Debug toolbar in dev

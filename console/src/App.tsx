@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import type {
   DatasetVersion,
-  IngredientRef,
   SearchRequest,
   SearchResponse,
   SearchResultItem,
 } from "./api";
-import { getVersion, getStoredKey, saveKey, search } from "./api";
+import { getVersion, search, setApiKey, hasApiKey, initKey, getApiKey } from "./api";
 
 // ── Default weights matching the engine's config ──────────────────────────────
 const DEFAULT_WEIGHTS: Record<string, number> = {
@@ -50,23 +49,32 @@ function tierColor(tier: string): "green" | "yellow" | "orange" {
   return "orange";
 }
 
-function ScoreBar({ value }: { value: number }) {
-  const pct = Math.max(0, Math.min(1, value)) * 100;
+/** Match percentage = matched / (matched + missing) * 100 */
+function matchPercent(item: SearchResultItem): number {
+  const total = item.matched.length + item.missing.length;
+  if (total === 0) return 100; // no non-staple requirements → 100%
+  return Math.round((item.matched.length / total) * 100);
+}
+
+function MatchBar({ pct }: { pct: number }) {
+  const color =
+    pct >= 80 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : "bg-orange-500";
   return (
     <div className="flex items-center gap-2">
-      <div className="h-1.5 w-24 rounded bg-gray-200">
+      <div className="h-2 w-32 rounded bg-gray-200">
         <div
-          className="h-1.5 rounded bg-indigo-500"
+          className={`h-2 rounded ${color}`}
           style={{ width: `${pct}%` }}
         />
       </div>
-      <span className="text-xs text-gray-500">{value.toFixed(3)}</span>
+      <span className="text-xs font-semibold text-gray-700">{pct}%</span>
     </div>
   );
 }
 
 function ResultCard({ item }: { item: SearchResultItem }) {
   const [expanded, setExpanded] = useState(false);
+  const pct = matchPercent(item);
   return (
     <div className="rounded border border-gray-200 bg-white p-3 shadow-sm">
       <div className="flex items-start justify-between gap-2">
@@ -76,24 +84,29 @@ function ResultCard({ item }: { item: SearchResultItem }) {
             <span className="ml-2 text-sm text-gray-500">/ {item.name_sw}</span>
           )}
         </div>
-        <div className="flex shrink-0 items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-2">
           <Badge label={item.tier} color={tierColor(item.tier)} />
-          <span className="text-sm font-mono text-indigo-600">
-            {item.score.toFixed(3)}
-          </span>
+          <MatchBar pct={pct} />
         </div>
       </div>
 
-      {item.missing.length > 0 && (
-        <div className="mt-1 text-xs text-red-600">
-          Missing: {item.missing.map((i: IngredientRef) => i.name_en).join(", ")}
-        </div>
-      )}
-      {item.unused.length > 0 && (
-        <div className="mt-0.5 text-xs text-gray-400">
-          Unused: {item.unused.map((i: IngredientRef) => i.name_en).join(", ")}
-        </div>
-      )}
+      <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-0.5 text-xs">
+        {item.matched.length > 0 && (
+          <span className="text-green-600">
+            ✓ {item.matched.map((m) => m.name_en || m.slug).join(", ")}
+          </span>
+        )}
+        {item.missing.length > 0 && (
+          <span className="text-red-600">
+            ✕ {item.missing.map((m) => m.name_en || m.slug).join(", ")}
+          </span>
+        )}
+        {item.unused.length > 0 && (
+          <span className="text-gray-400">
+            — {item.unused.map((u) => u.name_en || u.slug).join(", ")}
+          </span>
+        )}
+      </div>
 
       <button
         className="mt-2 text-xs text-indigo-500 hover:underline"
@@ -107,12 +120,12 @@ function ResultCard({ item }: { item: SearchResultItem }) {
           {Object.entries(item.score_breakdown ?? {}).map(([k, v]) => (
             <div key={k} className="flex items-center justify-between gap-4">
               <span className="w-36 text-gray-600">{k}</span>
-              <ScoreBar value={v as number} />
+              <span className="font-mono text-gray-500">{(v as number).toFixed(3)}</span>
             </div>
           ))}
           {item.assumed_staples.length > 0 && (
             <div className="text-gray-400">
-              Staples assumed: {item.assumed_staples.map((i: any) => i.name_en).join(", ")}
+              Staples: {item.assumed_staples.map((s) => s.name_en || s.slug).join(", ")}
             </div>
           )}
         </div>
@@ -121,31 +134,58 @@ function ResultCard({ item }: { item: SearchResultItem }) {
   );
 }
 
-function TierSection({
-  title,
-  items,
-  color,
-}: {
-  title: string;
-  items: SearchResultItem[];
-  color: "green" | "yellow" | "orange";
-}) {
-  if (items.length === 0) return null;
-  const headingColors = {
-    green: "text-green-700",
-    yellow: "text-yellow-700",
-    orange: "text-orange-700",
-  };
-  return (
-    <div>
-      <h3 className={`mb-2 text-sm font-semibold ${headingColors[color]}`}>
-        {title} ({items.length})
-      </h3>
-      <div className="space-y-2">
-        {items.map((item) => (
-          <ResultCard key={item.dish_id} item={item} />
-        ))}
+/** Flat list of all results sorted by match percentage (descending), then score. */
+function SortedResults({ resp }: { resp: SearchResponse }) {
+  const all = [
+    ...resp.results.exact,
+    ...resp.results.can_make,
+    ...resp.results.almost,
+  ].sort((a, b) => {
+    const pa = matchPercent(a);
+    const pb = matchPercent(b);
+    if (pb !== pa) return pb - pa;
+    return b.score - a.score;
+  });
+
+  if (all.length === 0) {
+    return (
+      <div className="flex h-32 items-center justify-center text-gray-400">
+        No results — try switching to explore mode or adding more ingredients.
       </div>
+    );
+  }
+
+  // Group by match bracket for readability
+  const brackets = [
+    { label: "100% — Complete match", min: 100, color: "text-green-700" },
+    { label: "50–99% — Almost there", min: 50, color: "text-yellow-700" },
+    { label: "Below 50% — Missing key ingredients", min: 0, color: "text-orange-700" },
+  ];
+
+  return (
+    <div className="space-y-4">
+      {brackets.map((br) => {
+        const items = all.filter((i) =>
+          br.min === 100
+            ? matchPercent(i) === 100
+            : br.min === 50
+              ? matchPercent(i) >= 50 && matchPercent(i) < 100
+              : matchPercent(i) < 50,
+        );
+        if (items.length === 0) return null;
+        return (
+          <div key={br.label}>
+            <h3 className={`mb-2 text-sm font-semibold ${br.color}`}>
+              {br.label} ({items.length})
+            </h3>
+            <div className="space-y-2">
+              {items.map((item) => (
+                <ResultCard key={item.dish_id} item={item} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -229,11 +269,8 @@ function ResolvedPanel({ resp }: { resp: SearchResponse }) {
 // ── Main App ──────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [apiKey, setApiKey] = useState(() => getStoredKey());
-  const [keyInput, setKeyInput] = useState("");
-  const [showKeyInput, setShowKeyInput] = useState(() => !getStoredKey());
   const [input, setInput] = useState("");
-  const [mode, setMode] = useState<"strict" | "explore">("strict");
+  const [mode, setMode] = useState<"strict" | "explore">("explore");
   const [limit, setLimit] = useState(20);
   const [weights, setWeights] = useState({ ...DEFAULT_WEIGHTS });
   const [compareWeights, setCompareWeights] = useState({ ...DEFAULT_WEIGHTS });
@@ -246,14 +283,24 @@ export default function App() {
   const [elapsed, setElapsed] = useState<number | null>(null);
   const [version, setVersion] = useState<DatasetVersion | null>(null);
 
+  const [keyInput, setKeyInput] = useState("");
+  const [keySaved, setKeySaved] = useState(false);
+
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    if (!apiKey) return;
-    getVersion(apiKey)
+    initKey();
+    setKeyInput(getApiKey());
+    setKeySaved(hasApiKey());
+    getVersion()
       .then(setVersion)
       .catch(() => {});
-  }, [apiKey]);
+  }, []);
+
+  const saveKey = () => {
+    setApiKey(keyInput.trim());
+    setKeySaved(keyInput.trim() !== "");
+  };
 
   const runSearch = async () => {
     const ingredients = input
@@ -269,12 +316,12 @@ export default function App() {
     const t0 = performance.now();
 
     try {
-      const r = await search(req, apiKey);
+      const r = await search(req);
       setElapsed(performance.now() - t0);
       setResult(r);
 
       if (compareMode) {
-        const rB = await search({ ...req, weights: compareWeights }, apiKey);
+        const rB = await search({ ...req, weights: compareWeights });
         setResultB(rB);
       } else {
         setResultB(null);
@@ -306,51 +353,6 @@ export default function App() {
             </span>
             <span className="ml-2 text-gray-400">Internal Test Console</span>
           </div>
-          {/* API Key input */}
-          <div className="flex flex-1 items-center gap-2 max-w-md">
-            {showKeyInput ? (
-              <>
-                <input
-                  type="text"
-                  className="flex-1 rounded border border-gray-300 px-2 py-1 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-indigo-400"
-                  placeholder="Paste API key (ffk_…)" autoComplete="off" spellCheck={false}
-                  value={keyInput}
-                  onChange={(e) => setKeyInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && keyInput.trim()) {
-                      saveKey(keyInput.trim());
-                      setApiKey(keyInput.trim());
-                      setShowKeyInput(false);
-                      setKeyInput("");
-                    }
-                  }}
-                />
-                <button
-                  className="rounded bg-indigo-600 px-3 py-1 text-xs text-white hover:bg-indigo-700 disabled:opacity-40"
-                  disabled={!keyInput.trim()}
-                  onClick={() => {
-                    saveKey(keyInput.trim());
-                    setApiKey(keyInput.trim());
-                    setShowKeyInput(false);
-                    setKeyInput("");
-                  }}
-                >
-                  Save
-                </button>
-              </>
-            ) : (
-              <div className="flex items-center gap-2 text-xs text-gray-400">
-                <span className="font-mono">{apiKey.slice(0, 12)}… ({apiKey.length})</span>
-                <button
-                  className="text-gray-400 hover:text-red-500"
-                  title="Change key"
-                  onClick={() => { saveKey(""); setApiKey(""); setShowKeyInput(true); }}
-                >
-                  ✕
-                </button>
-              </div>
-            )}
-          </div>
           {version && (
             <div className="shrink-0 text-xs text-gray-400">
               engine {version.engine_version} · dataset{" "}
@@ -364,6 +366,29 @@ export default function App() {
         <div className="grid grid-cols-[340px_1fr] gap-6">
           {/* ── Left panel — query form ─────────────────────────────────── */}
           <aside className="space-y-4">
+            {/* API key */}
+            <div>
+              <label className="mb-1 block text-xs font-medium text-gray-600">
+                API Key
+              </label>
+              <input
+                type="password"
+                className="w-full rounded border border-gray-300 px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="ffk_..."
+                value={keyInput}
+                onChange={(e) => setKeyInput(e.target.value)}
+                onBlur={saveKey}
+                onKeyDown={(e) => e.key === "Enter" && saveKey()}
+              />
+              <div className="mt-0.5 text-xs">
+                {keySaved ? (
+                  <span className="text-green-600">✓ Key saved</span>
+                ) : (
+                  <span className="text-red-500">No key — searches will fail</span>
+                )}
+              </div>
+            </div>
+
             <div>
               <label className="mb-1 block text-xs font-medium text-gray-600">
                 Ingredients (one per line or comma-separated)
@@ -497,65 +522,17 @@ export default function App() {
                       <div className="mb-2 text-xs font-semibold text-indigo-600">
                         Weights A
                       </div>
-                      <div className="space-y-4">
-                        <TierSection
-                          title="Exact"
-                          items={result.results.exact}
-                          color="green"
-                        />
-                        <TierSection
-                          title="Can make"
-                          items={result.results.can_make}
-                          color="yellow"
-                        />
-                        <TierSection
-                          title="Almost"
-                          items={result.results.almost}
-                          color="orange"
-                        />
-                      </div>
+                      <SortedResults resp={result} />
                     </div>
                     <div>
                       <div className="mb-2 text-xs font-semibold text-purple-600">
                         Weights B
                       </div>
-                      <div className="space-y-4">
-                        <TierSection
-                          title="Exact"
-                          items={resultB.results.exact}
-                          color="green"
-                        />
-                        <TierSection
-                          title="Can make"
-                          items={resultB.results.can_make}
-                          color="yellow"
-                        />
-                        <TierSection
-                          title="Almost"
-                          items={resultB.results.almost}
-                          color="orange"
-                        />
-                      </div>
+                      <SortedResults resp={resultB} />
                     </div>
                   </div>
                 ) : (
-                  <div className="space-y-4">
-                    <TierSection
-                      title="Exact"
-                      items={result.results.exact}
-                      color="green"
-                    />
-                    <TierSection
-                      title="Can make"
-                      items={result.results.can_make}
-                      color="yellow"
-                    />
-                    <TierSection
-                      title="Almost"
-                      items={result.results.almost}
-                      color="orange"
-                    />
-                  </div>
+                  <SortedResults resp={result} />
                 )}
               </>
             )}

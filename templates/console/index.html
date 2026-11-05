@@ -1,0 +1,24 @@
+{% load static %}<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'console/favicon.svg' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flavor Find — Internal Test Console</title>
+    <script>
+      // Injected by Django so the SPA uses same-origin API calls
+      // and has a pre-provisioned API key.
+      window.__FF_API_BASE__ = "";
+      window.__FF_API_KEY__ = "{{ api_key|escapejs }}";
+    </script>
+    {% if js_file %}
+    <script type="module" crossorigin src="{% static 'console/assets/' %}{{ js_file }}"></script>
+    {% endif %}
+    {% if css_file %}
+    <link rel="stylesheet" crossorigin href="{% static 'console/assets/' %}{{ css_file }}">
+    {% endif %}
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

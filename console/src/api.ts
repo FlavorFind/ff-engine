@@ -1,37 +1,62 @@
 /**
  * Minimal typed API client for the Flavor Find engine.
  * Used only by the internal test console.
- *
- * Key and base are passed per-call so they can be set at runtime
- * (from localStorage or the header input) without a page reload.
  */
 
 declare global {
   interface Window { __FF_API_KEY__?: string; __FF_API_BASE__?: string }
 }
 
-const BASE = import.meta.env.VITE_API_BASE
-  ?? (typeof window !== "undefined" ? window.__FF_API_BASE__ : undefined)
-  ?? "";
+// ── API base: injected by Django template via window.__FF_API_BASE__,
+//    falling back to same-origin (empty string = relative URLs). ────────────────
+const BASE =
+  (typeof window !== "undefined" ? window.__FF_API_BASE__ : undefined) ?? "";
 
-export const STORAGE_KEY = "ff_console_api_key";
+const KEY_STORAGE = "ff_console_api_key";
 
-/** Read the active API key: localStorage > window inject > env */
-export function getStoredKey(): string {
-  try { return localStorage.getItem(STORAGE_KEY) ?? ""; } catch { return ""; }
+function getKey(): string {
+  try {
+    const stored = localStorage.getItem(KEY_STORAGE);
+    if (stored) return stored;
+  } catch {
+    /* ignore */
+  }
+  // Fall back to key injected by the Django template.
+  return (typeof window !== "undefined" ? window.__FF_API_KEY__ : undefined) ?? "";
 }
 
-/** Persist the API key to localStorage */
-export function saveKey(key: string): void {
-  try { localStorage.setItem(STORAGE_KEY, key); } catch { /* ignore */ }
+export function getApiKey(): string {
+  return getKey();
 }
 
-function headers(key: string) {
-  return {
-    "Content-Type": "application/json",
-    ...(key ? { "X-API-Key": key } : {}),
-  };
+export function setApiKey(key: string): void {
+  try {
+    localStorage.setItem(KEY_STORAGE, key);
+  } catch {
+    /* ignore */
+  }
 }
+
+export function hasApiKey(): boolean {
+  return getKey() !== "";
+}
+
+/**
+ * If the Django template injected an API key and the user hasn't set
+ * one in localStorage, persist the injected key so it survives reloads.
+ */
+export function initKey(): void {
+  const injected =
+    (typeof window !== "undefined" ? window.__FF_API_KEY__ : undefined) ?? "";
+  if (injected && !hasApiKey()) {
+    setApiKey(injected);
+  }
+}
+
+const headers = () => ({
+  "Content-Type": "application/json",
+  ...(getKey() ? { "X-API-Key": getKey() } : {}),
+});
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -99,18 +124,20 @@ export interface SearchRequest {
   weights?: Record<string, number>;
 }
 
-export interface DatasetVersion {
-  engine_version: string;
-  dataset_version: string;
-  api_version: string;
+export interface ZeroResultQuery {
+  id: number;
+  raw_input: string;
+  normalised_input: string;
+  count: number;
+  last_seen: string;
 }
 
 // ── API calls ────────────────────────────────────────────────────────────────
 
-export async function search(req: SearchRequest, key: string): Promise<SearchResponse> {
+export async function search(req: SearchRequest): Promise<SearchResponse> {
   const res = await fetch(`${BASE}/v1/search/by-ingredients`, {
     method: "POST",
-    headers: headers(key),
+    headers: headers(),
     body: JSON.stringify(req),
   });
   if (!res.ok) {
@@ -120,8 +147,14 @@ export async function search(req: SearchRequest, key: string): Promise<SearchRes
   return res.json();
 }
 
-export async function getVersion(key: string): Promise<DatasetVersion> {
-  const res = await fetch(`${BASE}/v1/meta/version`, { headers: headers(key) });
+export interface DatasetVersion {
+  engine_version: string;
+  dataset_version: string;
+  api_version: string;
+}
+
+export async function getVersion(): Promise<DatasetVersion> {
+  const res = await fetch(`${BASE}/v1/meta/version`, { headers: headers() });
   if (!res.ok) throw new Error(`Version failed ${res.status}`);
   return res.json();
 }

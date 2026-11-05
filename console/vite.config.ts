@@ -1,9 +1,11 @@
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
-export default defineConfig({
+// https://vite.dev/config/
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: "/static/console/",
+  // In production the console is served from /static/console/ by Django/Whitenoise.
+  base: mode === "production" ? "/static/console/" : "/",
   css: {
     postcss: "./postcss.config.js",
   },
@@ -11,4 +13,4 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
   },
-})
+}))
