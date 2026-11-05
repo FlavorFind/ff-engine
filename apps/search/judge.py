@@ -6,19 +6,20 @@ exact, can_make, or almost tier — or should be dropped entirely.
 
 Architecture section 6.2 — Tier definitions:
 
-  Exact    — Every non-staple required ingredient is covered by the user's
-              ingredients, AND the dish uses every ingredient the user typed.
+  Exact    — Every non-staple required AND primary ingredient is covered by
+              the user's ingredients, AND the dish uses every ingredient the
+              user typed.
               (missing is empty AND unused is empty)
 
-  Can make — Every non-staple required ingredient is covered, but the user
-              typed some ingredient the dish does not use.
+  Can make — Every non-staple required AND primary ingredient is covered, but
+              the user typed some ingredient the dish does not use.
               (missing is empty AND unused is not empty)
 
-  Almost   — Missing at most K required non-staple ingredients (K=1 default).
-              Explore mode only.
+  Almost   — Missing at most K non-staple required/primary ingredients (K=1
+              default).  Explore mode only.
 
 Architecture section 6.5 — Decision flow:
-  1. Remove staples from the dish's required list  → real requirements
+  1. Combine required_ids + non-staple primary_ids, remove staples  → real requirements
   2. Which real requirements has the user not covered?  → missing list
   3. Which of the user's ingredients does the dish not use at all?  → unused list
   4. missing empty AND unused empty  → Exact
@@ -60,9 +61,10 @@ class JudgedDish:
 
     candidate: CandidateDish
     tier: Tier
-    # IDs the user provided that the dish actually requires (non-staple)
+    # IDs the user provided that the dish actually requires or has as primary
+    # (non-staple)
     matched_ids: list[str] = field(default_factory=list)
-    # Non-staple required IDs the user did NOT provide
+    # Non-staple required/primary IDs the user did NOT provide
     missing_ids: list[str] = field(default_factory=list)
     # IDs the user provided that the dish does not use at all
     unused_ids: list[str] = field(default_factory=list)
@@ -91,7 +93,7 @@ def judge_candidates(
         Full pool including staples — used for coverage check.
     explore:
         If True, include the 'almost' tier (dishes missing ≤ almost_limit
-        non-staple required ingredients).
+        non-staple required/primary ingredients).
     almost_limit:
         Maximum missing ingredients for the 'almost' tier.
 
@@ -137,10 +139,17 @@ def _classify(
 ) -> JudgedDish | None:
     """Classify a single candidate. Returns None if the dish should be dropped."""
 
-    # Step 1: real requirements = required_ids with staples removed
-    # (candidate.required_ids was already stored without staples by rebuild_search_arrays,
-    # but we double-check here in case a staple flag changed after rebuild)
+    # Step 1: real requirements = required_ids + non-staple primary_ids
+    # (candidate.required_ids was already stored without staples by
+    # rebuild_search_arrays, but we double-check here in case a staple flag
+    # changed after rebuild.  primary_ids may contain staples, so we filter
+    # them out here too — a staple primary should not block a match.)
     real_required = [iid for iid in candidate.required_ids if iid not in staples]
+    _seen = set(real_required)
+    for iid in candidate.primary_ids:
+        if iid not in staples and iid not in _seen:
+            real_required.append(iid)
+            _seen.add(iid)
 
     # Step 2: missing = real requirements the pool does NOT cover
     missing = [iid for iid in real_required if iid not in pool_set]
