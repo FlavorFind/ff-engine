@@ -69,7 +69,7 @@ class SearchRequestSerializer(serializers.Serializer):
         ],
         required=False,
         allow_null=True,
-        default=None,
+        default="breakfast",
     )
     course = serializers.ChoiceField(
         choices=[
