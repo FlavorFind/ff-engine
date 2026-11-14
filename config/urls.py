@@ -108,26 +108,29 @@ def console(request):
 urlpatterns = [
     # Root landing page
     path("", home, name="home"),
-    # Two-factor auth login (replaces the standard Django login).
-    # Mounted at "" so login URL stays /account/login/ as per tf_urls default.
-    # Must come before admin/ so the admin login redirect lands here.
+    # Two-factor auth login
     path("", include(tf_urls, namespace="two_factor")),
-    # Django admin — protected by AdminSiteOTPRequired (see accounts/admin.py)
-    path("admin/", admin.site.urls),
     # API v1
     path("v1/", include("apps.api.urls")),
+    # Admin API (always enabled — controlled by scope, not by URL guard)
+    path("v1/admin/", include("apps.admin_api.urls")),
     # OpenAPI schema and docs
     path("v1/schema/", SpectacularAPIView.as_view(), name="schema"),
-    path("schema/", SpectacularAPIView.as_view(), name="schema-root"),  # legacy
+    path("schema/", SpectacularAPIView.as_view(), name="schema-root"),
     path("docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
-    # Internal test console — staff only
-    path("console/", console, name="console"),
 ]
 
-# Debug toolbar in dev
-from django.conf import settings  # noqa: E402
+# Django admin and internal console — disabled in production via ADMIN_ENABLED env var
+from django.conf import settings as _settings  # noqa: E402
 
-if settings.DEBUG:
+if _settings.ADMIN_ENABLED:
+    urlpatterns += [
+        path("admin/", admin.site.urls),
+        path("console/", console, name="console"),
+    ]
+
+# Debug toolbar in dev
+if _settings.DEBUG:
     try:
         import debug_toolbar
 

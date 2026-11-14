@@ -65,7 +65,11 @@ LOCAL_APPS = [
     "apps.curation",
     "apps.clients",
     "apps.api",
+    "apps.admin_api",
 ]
+
+ADMIN_ENABLED = env.bool("ADMIN_ENABLED", default=True)
+ADMIN_API_ENABLED = env.bool("ADMIN_API_ENABLED", default=True)
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

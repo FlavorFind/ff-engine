@@ -66,8 +66,14 @@ class ApiKey(models.Model):
     SCOPE_READ_SEARCH = "read:search"
     SCOPE_READ_CATALOG = "read:catalog"
     SCOPE_INTERNAL_CURATION = "internal:curation"
+    SCOPE_INTERNAL_ADMIN = "internal:admin"
 
-    ALL_SCOPES = [SCOPE_READ_SEARCH, SCOPE_READ_CATALOG, SCOPE_INTERNAL_CURATION]
+    ALL_SCOPES = [
+        SCOPE_READ_SEARCH,
+        SCOPE_READ_CATALOG,
+        SCOPE_INTERNAL_CURATION,
+        SCOPE_INTERNAL_ADMIN,
+    ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     client = models.ForeignKey(ApiClient, on_delete=models.CASCADE, related_name="keys")
