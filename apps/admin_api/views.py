@@ -23,8 +23,8 @@ from apps.clients.keys import create_key
 from apps.clients.models import ApiClient, ApiKey, UsageRecord
 from apps.clients.permissions import HasScope
 from apps.curation.models import ChangeLog, CommunitySubmission, DatasetRelease
-from apps.dishes.models import Dish
-from apps.ingredients.models import Ingredient
+from apps.dishes.models import Dish, DishAlias
+from apps.ingredients.models import Ingredient, IngredientAlias
 from apps.search.models import ZeroResultQuery
 
 from .serializers import (
@@ -56,9 +56,9 @@ _scope_perm = [HasScope(SCOPE)]
 
 
 class StandardPagination(PageNumberPagination):
-    page_size = 20
+    page_size = 50
     page_size_query_param = "page_size"
-    max_page_size = 100
+    max_page_size = 200
 
 
 def _paginate(request, queryset, serializer_class):
@@ -212,15 +212,29 @@ def usage_client(request, client_id):
 @permission_classes(_scope_perm)
 def dish_list(request):
     qs = Dish.objects.all().order_by("-updated_at")
-    # Filters
+
+    # Enum filters — these hit B-tree indexes directly.
     if status_f := request.query_params.get("status"):
         qs = qs.filter(status=status_f)
     if meal_type := request.query_params.get("meal_type"):
         qs = qs.filter(meal_type=meal_type)
     if course := request.query_params.get("course"):
         qs = qs.filter(course=course)
-    if search := request.query_params.get("search"):
-        qs = qs.filter(Q(name_en__icontains=search) | Q(name_sw__icontains=search))
+
+    # Text search — uses trgm GIN index on name_en / name_sw (migration 0003).
+    # Also covers DishAlias so e.g. "Pilav" finds a dish aliased as "Pilau".
+    if search := request.query_params.get("search", "").strip():
+        # Collect IDs of dishes matched by alias first (separate query is faster
+        # than a JOIN+DISTINCT when the alias table grows large).
+        alias_dish_ids = DishAlias.objects.filter(
+            alias__icontains=search
+        ).values_list("dish_id", flat=True)
+        qs = qs.filter(
+            Q(name_en__icontains=search)
+            | Q(name_sw__icontains=search)
+            | Q(id__in=alias_dish_ids)
+        )
+
     return _paginate(request, qs, DishListSerializer)
 
 
@@ -341,12 +355,25 @@ def dish_changelog(request, slug):
 @permission_classes(_scope_perm)
 def ingredient_list(request):
     qs = Ingredient.objects.select_related("category").order_by("name_en")
+
     if status_f := request.query_params.get("status"):
         qs = qs.filter(status=status_f)
     if kind := request.query_params.get("kind"):
         qs = qs.filter(kind=kind)
-    if search := request.query_params.get("search"):
-        qs = qs.filter(Q(name_en__icontains=search) | Q(name_sw__icontains=search))
+
+    # Text search — uses trgm GIN indexes on name_en / name_sw (migration 0002).
+    # Also covers IngredientAlias.normalized_alias (also trgm-indexed) so e.g.
+    # "sukuma" finds "Kale" because the alias table has that mapping.
+    if search := request.query_params.get("search", "").strip():
+        alias_ingredient_ids = IngredientAlias.objects.filter(
+            normalized_alias__icontains=search.lower()
+        ).values_list("ingredient_id", flat=True)
+        qs = qs.filter(
+            Q(name_en__icontains=search)
+            | Q(name_sw__icontains=search)
+            | Q(id__in=alias_ingredient_ids)
+        )
+
     return _paginate(request, qs, IngredientListSerializer)
 
 
