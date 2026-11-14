@@ -420,3 +420,256 @@ class ChangeLogSerializer(serializers.ModelSerializer):
         if obj.actor:
             return str(obj.actor)
         return "FFCC (via API)"
+
+
+# ---------------------------------------------------------------------------
+# Regions
+# ---------------------------------------------------------------------------
+from apps.regions.models import Region  # noqa: E402
+
+
+class RegionSerializer(serializers.ModelSerializer):
+    parent_slug = serializers.SlugField(source="parent.slug", read_only=True, allow_null=True)
+    dish_count = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = Region
+        fields = ["id", "slug", "name", "type", "parent_slug", "description", "dish_count", "created_at"]
+        read_only_fields = fields
+
+
+class CreateRegionSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=100)
+    type = serializers.ChoiceField(choices=Region.Type.choices)
+    description = serializers.CharField(required=False, allow_blank=True, default="")
+    parent_slug = serializers.SlugField(required=False, allow_blank=True, default="")
+
+    def validate_name(self, value):
+        from django.utils.text import slugify
+        slug = slugify(value)
+        if Region.objects.filter(slug=slug).exists():
+            raise serializers.ValidationError(f"Region with slug '{slug}' already exists.")
+        return value
+
+
+class PatchRegionSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=100, required=False)
+    type = serializers.ChoiceField(choices=Region.Type.choices, required=False)
+    description = serializers.CharField(required=False, allow_blank=True)
+
+
+class DishRegionAssignSerializer(serializers.Serializer):
+    dish_slug = serializers.SlugField()
+    region_slug = serializers.SlugField()
+
+
+# ---------------------------------------------------------------------------
+# Dietary Tags
+# ---------------------------------------------------------------------------
+from apps.dietary.models import DietaryTag, DishDietaryTag  # noqa: E402
+
+
+class DietaryTagSerializer(serializers.ModelSerializer):
+    dish_count = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = DietaryTag
+        fields = ["id", "slug", "name", "description", "is_allergen_tag", "dish_count", "created_at"]
+        read_only_fields = fields
+
+
+class CreateDietaryTagSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=100)
+    description = serializers.CharField(required=False, allow_blank=True, default="")
+    is_allergen_tag = serializers.BooleanField(default=False)
+
+
+class DishDietaryTagSerializer(serializers.ModelSerializer):
+    tag_slug = serializers.SlugField(source="tag.slug", read_only=True)
+    tag_name = serializers.CharField(source="tag.name", read_only=True)
+    is_allergen_tag = serializers.BooleanField(source="tag.is_allergen_tag", read_only=True)
+
+    class Meta:
+        model = DishDietaryTag
+        fields = ["id", "tag_slug", "tag_name", "is_allergen_tag", "source", "reason", "created_at"]
+        read_only_fields = fields
+
+
+class SetDishDietaryTagSerializer(serializers.Serializer):
+    tag_slug = serializers.SlugField()
+    reason = serializers.CharField(max_length=500, required=False, allow_blank=True, default="")
+
+
+# ---------------------------------------------------------------------------
+# Pairings
+# ---------------------------------------------------------------------------
+from apps.pairings.models import Pairing  # noqa: E402
+
+
+class PairingSerializer(serializers.ModelSerializer):
+    dish_slug = serializers.SlugField(source="dish.slug", read_only=True)
+    paired_dish_slug = serializers.SlugField(source="paired_dish.slug", read_only=True, allow_null=True)
+    paired_dish_name = serializers.CharField(source="paired_dish.name_en", read_only=True, allow_null=True)
+
+    class Meta:
+        model = Pairing
+        fields = [
+            "id", "dish_slug", "paired_dish_slug", "paired_dish_name",
+            "paired_label", "pairing_type", "strength", "note", "created_at",
+        ]
+        read_only_fields = fields
+
+
+class CreatePairingSerializer(serializers.Serializer):
+    dish_slug = serializers.SlugField()
+    paired_dish_slug = serializers.SlugField(required=False, allow_blank=True, default="")
+    paired_label = serializers.CharField(max_length=150, required=False, allow_blank=True, default="")
+    pairing_type = serializers.ChoiceField(choices=Pairing.PairingType.choices)
+    strength = serializers.IntegerField(min_value=1, max_value=5)
+    note = serializers.CharField(required=False, allow_blank=True, default="")
+
+    def validate(self, data):
+        if not data.get("paired_dish_slug") and not data.get("paired_label"):
+            raise serializers.ValidationError("Provide either paired_dish_slug or paired_label.")
+        return data
+
+
+class PatchPairingSerializer(serializers.Serializer):
+    pairing_type = serializers.ChoiceField(choices=Pairing.PairingType.choices, required=False)
+    strength = serializers.IntegerField(min_value=1, max_value=5, required=False)
+    note = serializers.CharField(required=False, allow_blank=True)
+
+
+# ---------------------------------------------------------------------------
+# Substitutions
+# ---------------------------------------------------------------------------
+from apps.substitutions.models import Substitution  # noqa: E402
+
+
+class SubstitutionSerializer(serializers.ModelSerializer):
+    ingredient_slug = serializers.SlugField(source="ingredient.slug", read_only=True)
+    ingredient_name = serializers.CharField(source="ingredient.name_en", read_only=True)
+    substitute_slug = serializers.SlugField(source="substitute.slug", read_only=True)
+    substitute_name = serializers.CharField(source="substitute.name_en", read_only=True)
+    context_dish_slug = serializers.SlugField(source="context_dish.slug", read_only=True, allow_null=True)
+
+    class Meta:
+        model = Substitution
+        fields = [
+            "id", "ingredient_slug", "ingredient_name",
+            "substitute_slug", "substitute_name",
+            "ratio", "quality", "context_dish_slug", "note", "created_at",
+        ]
+        read_only_fields = fields
+
+
+class CreateSubstitutionSerializer(serializers.Serializer):
+    ingredient_slug = serializers.SlugField()
+    substitute_slug = serializers.SlugField()
+    ratio = serializers.DecimalField(max_digits=6, decimal_places=3, default="1.000")
+    quality = serializers.ChoiceField(choices=Substitution.Quality.choices, default="ok")
+    context_dish_slug = serializers.SlugField(required=False, allow_blank=True, default="")
+    note = serializers.CharField(required=False, allow_blank=True, default="")
+
+    def validate(self, data):
+        if data["ingredient_slug"] == data["substitute_slug"]:
+            raise serializers.ValidationError("ingredient_slug and substitute_slug must differ.")
+        return data
+
+
+class PatchSubstitutionSerializer(serializers.Serializer):
+    ratio = serializers.DecimalField(max_digits=6, decimal_places=3, required=False)
+    quality = serializers.ChoiceField(choices=Substitution.Quality.choices, required=False)
+    note = serializers.CharField(required=False, allow_blank=True)
+
+
+# ---------------------------------------------------------------------------
+# Nutrition Facts
+# ---------------------------------------------------------------------------
+from apps.nutrition.models import NutritionFact  # noqa: E402
+
+
+class NutritionFactSerializer(serializers.ModelSerializer):
+    ingredient_slug = serializers.SlugField(source="ingredient.slug", read_only=True)
+    ingredient_name = serializers.CharField(source="ingredient.name_en", read_only=True)
+
+    class Meta:
+        model = NutritionFact
+        fields = [
+            "id", "ingredient_slug", "ingredient_name",
+            "kcal", "protein_g", "carbs_g", "fat_g", "fibre_g", "sodium_mg",
+            "source", "confidence", "created_at", "updated_at",
+        ]
+        read_only_fields = ["id", "ingredient_slug", "ingredient_name", "created_at", "updated_at"]
+
+
+class UpsertNutritionSerializer(serializers.Serializer):
+    kcal = serializers.DecimalField(max_digits=8, decimal_places=2)
+    protein_g = serializers.DecimalField(max_digits=7, decimal_places=2)
+    carbs_g = serializers.DecimalField(max_digits=7, decimal_places=2)
+    fat_g = serializers.DecimalField(max_digits=7, decimal_places=2)
+    fibre_g = serializers.DecimalField(max_digits=7, decimal_places=2, default="0.00")
+    sodium_mg = serializers.DecimalField(max_digits=8, decimal_places=2, default="0.00")
+    source = serializers.CharField(max_length=200)
+    confidence = serializers.ChoiceField(choices=NutritionFact.Confidence.choices, default="medium")
+
+
+# ---------------------------------------------------------------------------
+# Sources
+# ---------------------------------------------------------------------------
+from apps.curation.models import Source  # noqa: E402
+
+
+class SourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Source
+        fields = [
+            "id", "kind", "title", "citation",
+            "permission_status", "contributor", "notes", "created_at",
+        ]
+        read_only_fields = ["id", "created_at"]
+
+
+class CreateSourceSerializer(serializers.Serializer):
+    kind = serializers.ChoiceField(choices=Source.Kind.choices)
+    title = serializers.CharField(max_length=255)
+    citation = serializers.CharField(required=False, allow_blank=True, default="")
+    permission_status = serializers.ChoiceField(
+        choices=Source.PermissionStatus.choices, default="pending"
+    )
+    contributor = serializers.CharField(max_length=255, required=False, allow_blank=True, default="")
+    notes = serializers.CharField(required=False, allow_blank=True, default="")
+
+
+# ---------------------------------------------------------------------------
+# Dish Aliases
+# ---------------------------------------------------------------------------
+from apps.dishes.models import DishAlias  # noqa: E402
+
+
+class DishAliasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DishAlias
+        fields = ["id", "alias", "language"]
+        read_only_fields = ["id"]
+
+
+class CreateDishAliasSerializer(serializers.Serializer):
+    alias = serializers.CharField(max_length=200)
+    language = serializers.ChoiceField(choices=DishAlias.Language.choices, default="en")
+
+
+# ---------------------------------------------------------------------------
+# Ingredient Categories
+# ---------------------------------------------------------------------------
+from apps.ingredients.models import IngredientCategory  # noqa: E402
+
+
+class IngredientCategorySerializer(serializers.ModelSerializer):
+    parent_slug = serializers.SlugField(source="parent.slug", read_only=True, allow_null=True)
+    ingredient_count = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = IngredientCategory
+        fields = ["id", "slug", "name_en", "name_sw", "parent_slug", "ingredient_count", "created_at"]
+        read_only_fields = fields
