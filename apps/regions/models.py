@@ -39,6 +39,12 @@ class Region(TimeStampedModel):
         related_name="children",
     )
     description = models.TextField(blank=True)
+    image_url = models.URLField(
+        max_length=500,
+        blank=True,
+        default="",
+        help_text="Cloudinary CDN URL for the region hero image. Set via FFCC Image Studio.",
+    )
 
     class Meta:
         db_table = "region"

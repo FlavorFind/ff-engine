@@ -149,6 +149,14 @@ class Dish(TimeStampedModel):
         blank=True,
     )
 
+    # Images
+    image_url = models.URLField(
+        max_length=500,
+        blank=True,
+        default="",
+        help_text="Cloudinary CDN URL for the hero image. Set via FFCC Image Studio.",
+    )
+
     # -----------------------------------------------------------------------
     # Denormalised search arrays (Architecture section 5)
     # Rebuilt by rebuild_search_arrays() whenever DishIngredient rows change.

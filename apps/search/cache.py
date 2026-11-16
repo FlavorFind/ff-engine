@@ -21,7 +21,7 @@ from django.core.cache import cache
 
 logger = logging.getLogger(__name__)
 
-CACHE_PREFIX = "ffengine:search:v1:"
+CACHE_PREFIX = "ffengine:search:v2:"  # bumped from v1 — adds image_url to cached responses
 CACHE_TTL = 300  # seconds — matches CACHES["default"]["TIMEOUT"]
 
 

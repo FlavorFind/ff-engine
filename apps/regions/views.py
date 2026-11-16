@@ -65,6 +65,7 @@ def region_list(request: Request) -> Response:
             "type": r.type,
             "parent_slug": r.parent.slug if r.parent else None,
             "description": r.description,
+            "image_url": r.image_url or None,
         }
         for r in qs
     ]

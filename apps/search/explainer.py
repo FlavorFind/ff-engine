@@ -58,6 +58,7 @@ class ExplainedResult:
     staples_assumed: list[IngredientRef]  # staples assumed in the kitchen
     quality_level: str
     status: str
+    image_url: str = ""
 
 
 def explain(
@@ -118,6 +119,7 @@ def explain(
                 staples_assumed=_refs(jd.staples_assumed, ing_map),
                 quality_level=c.quality_level,
                 status=c.status,
+                image_url=c.image_url,
             )
         )
 

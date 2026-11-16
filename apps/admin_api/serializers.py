@@ -153,6 +153,7 @@ class DishListSerializer(serializers.ModelSerializer):
             "prep_min",
             "cook_min",
             "servings",
+            "image_url",
             "created_at",
             "updated_at",
         ]
@@ -182,6 +183,7 @@ class DishDetailSerializer(serializers.ModelSerializer):
             "popularity",
             "quality_level",
             "status",
+            "image_url",
             "region_names",
             "dish_ingredients",
             "steps",
@@ -200,6 +202,10 @@ class PatchDishSerializer(serializers.Serializer):
     description = serializers.CharField(required=False, allow_blank=True)
     status = serializers.ChoiceField(
         choices=["draft", "reviewed", "verified", "archived"], required=False
+    )
+    image_url = serializers.URLField(
+        max_length=500, required=False, allow_blank=True,
+        help_text="Cloudinary CDN URL for the hero image. Written by FFCC after upload.",
     )
     reason = serializers.CharField(max_length=1000, required=False, allow_blank=True, default="")
 
@@ -244,6 +250,7 @@ class IngredientListSerializer(serializers.ModelSerializer):
             "kind",
             "is_staple",
             "status",
+            "image_url",
             "created_at",
             "updated_at",
         ]
@@ -266,6 +273,7 @@ class IngredientDetailSerializer(serializers.ModelSerializer):
             "kind",
             "is_staple",
             "status",
+            "image_url",
             "notes",
             "aliases",
             "allergen_links",
@@ -286,6 +294,10 @@ class PatchIngredientSerializer(serializers.Serializer):
         required=False,
     )
     notes = serializers.CharField(required=False, allow_blank=True)
+    image_url = serializers.URLField(
+        max_length=500, required=False, allow_blank=True,
+        help_text="Cloudinary CDN URL for the ingredient image. Written by FFCC after upload.",
+    )
     reason = serializers.CharField(max_length=1000, required=False, allow_blank=True, default="")
 
 
@@ -434,7 +446,7 @@ class RegionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Region
-        fields = ["id", "slug", "name", "type", "parent_slug", "description", "dish_count", "created_at"]
+        fields = ["id", "slug", "name", "type", "parent_slug", "description", "image_url", "dish_count", "created_at"]
         read_only_fields = fields
 
 
@@ -456,6 +468,10 @@ class PatchRegionSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=100, required=False)
     type = serializers.ChoiceField(choices=Region.Type.choices, required=False)
     description = serializers.CharField(required=False, allow_blank=True)
+    image_url = serializers.URLField(
+        max_length=500, required=False, allow_blank=True,
+        help_text="Cloudinary CDN URL for the region hero image. Written by FFCC after upload.",
+    )
 
 
 class DishRegionAssignSerializer(serializers.Serializer):

@@ -50,6 +50,7 @@ class CandidateDish:
     popularity: float
     quality_level: str
     status: str
+    image_url: str = ""
 
 
 def find_candidates(
@@ -120,6 +121,7 @@ def find_candidates(
         "popularity",
         "quality_level",
         "status",
+        "image_url",
     )
 
     if meal_type:
@@ -162,6 +164,7 @@ def find_candidates(
                 popularity=float(row["popularity"]),
                 quality_level=row["quality_level"],
                 status=row["status"],
+                image_url=row["image_url"] or "",
             )
         )
 

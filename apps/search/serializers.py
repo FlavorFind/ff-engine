@@ -138,6 +138,7 @@ class SearchResultItemSerializer(serializers.Serializer):
     unused = IngredientRefSerializer(many=True)
     assumed_staples = IngredientRefSerializer(many=True, source="staples_assumed")
     quality_level = serializers.CharField()
+    image_url = serializers.CharField(allow_blank=True, default="")
 
 
 class ResolvedInputSerializer(serializers.Serializer):

@@ -168,6 +168,7 @@ def dish_catalogue(request: Request) -> Response:
             "cook_min": d.cook_min,
             "servings": d.servings,
             "status": d.status,
+            "image_url": d.image_url or None,
         }
         for d in dishes
     ]
@@ -262,6 +263,7 @@ def dish_detail(request: Request, slug: str) -> Response:
             "popularity": dish.popularity,
             "quality_level": dish.quality_level,
             "status": dish.status,
+            "image_url": dish.image_url or None,
             "ingredients": ingredients,
             "steps": steps,
             "regions": regions,

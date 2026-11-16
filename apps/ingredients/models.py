@@ -181,6 +181,12 @@ class Ingredient(TimeStampedModel):
         related_name="ingredients",
     )
     notes = models.TextField(blank=True)
+    image_url = models.URLField(
+        max_length=500,
+        blank=True,
+        default="",
+        help_text="Cloudinary CDN URL for the ingredient image. Set via FFCC Image Studio.",
+    )
 
     class Meta:
         db_table = "ingredient"
