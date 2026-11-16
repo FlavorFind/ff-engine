@@ -68,6 +68,12 @@ from apps.dishes.models import Dish
             type=str,
         ),
         OpenApiParameter(
+            name="has_image",
+            description="If true, only return dishes that have an image_url set.",
+            required=False,
+            type=bool,
+        ),
+        OpenApiParameter(
             name="limit",
             description="Page size (default 50, max 200).",
             required=False,
@@ -133,6 +139,11 @@ def dish_catalogue(request: Request) -> Response:
         from django.db.models import Q
 
         qs = qs.filter(Q(name_en__icontains=q) | Q(name_sw__icontains=q))
+
+    has_image = request.query_params.get("has_image", "").strip().lower()
+    if has_image in ("true", "1", "yes"):
+        qs = qs.exclude(image_url__isnull=True).exclude(image_url="")
+        qs = qs.order_by("-popularity", "name_en")
 
     # ── pagination ────────────────────────────────────────────────────────────
 
