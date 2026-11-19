@@ -164,6 +164,13 @@ def _classify(
     elif not missing and unused:
         tier = Tier.CAN_MAKE
     elif explore and len(missing) <= almost_limit:
+        # E22-fix: require at least one real user ingredient to actually appear
+        # in the dish.  Without this, staple-only overlap causes dishes that
+        # share nothing with the user's input (only water/salt/oil in common)
+        # to surface as almost matches — producing phantom results when the
+        # user searches an ingredient the dish does not contain at all.
+        if not (user_set & dish_all_set):
+            return None  # Dropped — only staple overlap, no real match
         tier = Tier.ALMOST
     else:
         return None  # Dropped
