@@ -215,6 +215,10 @@ def ingredient_list(request: Request) -> Response:
     if category:
         qs = qs.filter(category__slug=category)
 
+    # ?staple=true — return only staple ingredients (common pantry additions)
+    if request.query_params.get("staple", "").lower() == "true":
+        qs = qs.filter(is_staple=True)
+
     try:
         limit = min(int(request.query_params.get("limit", 50)), 200)
     except (ValueError, TypeError):
