@@ -74,3 +74,14 @@ probe_results/
 
 # Documentation (operational workflows, not code)
 docs/
+
+# Seed backup files generated during batch imports
+data/seeds/*.bak.*
+data/seeds/*.bak
+
+# Scratch/backup files
+*.bak
+*.bak.*
+
+# Batch test script (operational, not part of codebase)
+batch_test.py
