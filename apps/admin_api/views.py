@@ -28,6 +28,9 @@ from apps.ingredients.models import Ingredient, IngredientAlias
 from apps.search.models import ZeroResultQuery
 
 from .serializers import (
+    AddDishIngredientSerializer,
+    RemoveDishIngredientSerializer,
+    DishIngredientSerializer,
     ApiClientDetailSerializer,
     ApiClientListSerializer,
     ChangeLogSerializer,
@@ -1419,3 +1422,140 @@ def duplicate_check(request):
         "entity": entity,
         "matches": [{"name": m.name, "similarity": m.similarity, "pk": m.pk} for m in matches],
     })
+
+
+# ---------------------------------------------------------------------------
+# Dish-Ingredient links
+# ---------------------------------------------------------------------------
+
+@extend_schema(tags=["admin:dishes"], summary="List ingredients linked to a dish")
+@api_view(["GET"])
+@permission_classes([HasScope("internal:admin")])
+def dish_ingredient_list(request, slug):
+    """GET /v1/admin/dishes/<slug>/ingredients/ — list all ingredient links."""
+    try:
+        dish = Dish.objects.get(slug=slug)
+    except Dish.DoesNotExist:
+        return Response({"error": "Dish not found."}, status=http_status.HTTP_404_NOT_FOUND)
+    from apps.dishes.models import DishIngredient
+    qs = dish.dish_ingredients.select_related("ingredient", "unit").order_by("position", "role")
+    return Response({
+        "dish": slug,
+        "count": qs.count(),
+        "ingredients": DishIngredientSerializer(qs, many=True).data,
+    })
+
+
+@extend_schema(tags=["admin:dishes"], summary="Add an ingredient to a dish")
+@api_view(["POST"])
+@permission_classes([HasScope("internal:admin")])
+def dish_ingredient_add(request, slug):
+    """
+    POST /v1/admin/dishes/<slug>/ingredients/add/
+    Body: {ingredient_slug, role, quantity, preparation_note, position, reason}
+    Creates the DishIngredient link and rebuilds the dish's search arrays.
+    """
+    try:
+        dish = Dish.objects.get(slug=slug)
+    except Dish.DoesNotExist:
+        return Response({"error": "Dish not found."}, status=http_status.HTTP_404_NOT_FOUND)
+
+    ser = AddDishIngredientSerializer(data=request.data)
+    if not ser.is_valid():
+        return Response({"errors": ser.errors}, status=http_status.HTTP_400_BAD_REQUEST)
+
+    data = ser.validated_data
+    ingredient_slug = data["ingredient_slug"]
+    reason = data.pop("reason", "") or f"Ingredient added via admin API"
+
+    try:
+        ingredient = Ingredient.objects.get(slug=ingredient_slug)
+    except Ingredient.DoesNotExist:
+        return Response({"error": f"Ingredient '{ingredient_slug}' not found."}, status=http_status.HTTP_404_NOT_FOUND)
+
+    from apps.dishes.models import DishIngredient
+    from django.db import IntegrityError
+
+    try:
+        with transaction.atomic():
+            di = DishIngredient.objects.create(
+                dish=dish,
+                ingredient=ingredient,
+                role=data["role"],
+                quantity=data.get("quantity"),
+                preparation_note=data.get("preparation_note", ""),
+                position=data.get("position", 0),
+            )
+            # Rebuild search arrays so the new ingredient is immediately searchable
+            dish.rebuild_search_arrays()
+            dish.save(update_fields=[
+                "primary_ids", "required_ids", "optional_ids",
+                "all_ids", "updated_at",
+            ])
+            ChangeLog.objects.create(
+                object_type="dish",
+                object_id=str(dish.id),
+                action=ChangeLog.Action.UPDATE,
+                diff={"added_ingredient": ingredient_slug, "role": data["role"]},
+                reason=reason,
+            )
+    except IntegrityError:
+        return Response(
+            {"error": f"'{ingredient_slug}' is already linked to '{slug}'."},
+            status=http_status.HTTP_409_CONFLICT,
+        )
+
+    return Response({
+        "status": "added",
+        "dish": slug,
+        "ingredient": ingredient_slug,
+        "role": di.role,
+        "search_arrays_rebuilt": True,
+    }, status=http_status.HTTP_201_CREATED)
+
+
+@extend_schema(tags=["admin:dishes"], summary="Remove an ingredient from a dish")
+@api_view(["POST"])
+@permission_classes([HasScope("internal:admin")])
+def dish_ingredient_remove(request, slug):
+    """
+    POST /v1/admin/dishes/<slug>/ingredients/remove/
+    Body: {ingredient_slug, reason}
+    Removes the DishIngredient link and rebuilds search arrays.
+    """
+    try:
+        dish = Dish.objects.get(slug=slug)
+    except Dish.DoesNotExist:
+        return Response({"error": "Dish not found."}, status=http_status.HTTP_404_NOT_FOUND)
+
+    ser = RemoveDishIngredientSerializer(data=request.data)
+    if not ser.is_valid():
+        return Response({"errors": ser.errors}, status=http_status.HTTP_400_BAD_REQUEST)
+
+    ingredient_slug = ser.validated_data["ingredient_slug"]
+    reason = ser.validated_data.get("reason", "") or f"Ingredient removed via admin API"
+
+    from apps.dishes.models import DishIngredient
+    deleted, _ = DishIngredient.objects.filter(
+        dish=dish, ingredient__slug=ingredient_slug
+    ).delete()
+
+    if not deleted:
+        return Response(
+            {"error": f"'{ingredient_slug}' is not linked to '{slug}'."},
+            status=http_status.HTTP_404_NOT_FOUND,
+        )
+
+    dish.rebuild_search_arrays()
+    dish.save(update_fields=[
+        "primary_ids", "required_ids", "optional_ids",
+        "all_ids", "updated_at",
+    ])
+    ChangeLog.objects.create(
+        object_type="dish",
+        object_id=str(dish.id),
+        action=ChangeLog.Action.UPDATE,
+        diff={"removed_ingredient": ingredient_slug},
+        reason=reason,
+    )
+    return Response({"status": "removed", "dish": slug, "ingredient": ingredient_slug, "search_arrays_rebuilt": True})

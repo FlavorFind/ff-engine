@@ -443,10 +443,11 @@ from apps.regions.models import Region  # noqa: E402
 class RegionSerializer(serializers.ModelSerializer):
     parent_slug = serializers.SlugField(source="parent.slug", read_only=True, allow_null=True)
     dish_count = serializers.IntegerField(read_only=True)
+    image_urls = serializers.JSONField(default=list, required=False)
 
     class Meta:
         model = Region
-        fields = ["id", "slug", "name", "type", "parent_slug", "description", "image_url", "dish_count", "created_at"]
+        fields = ["id", "slug", "name", "type", "parent_slug", "description", "image_url", "image_urls", "dish_count", "created_at"]
         read_only_fields = fields
 
 
@@ -471,6 +472,11 @@ class PatchRegionSerializer(serializers.Serializer):
     image_url = serializers.URLField(
         max_length=500, required=False, allow_blank=True,
         help_text="Cloudinary CDN URL for the region hero image. Written by FFCC after upload.",
+    )
+    image_urls = serializers.ListField(
+        child=serializers.URLField(max_length=500, required=False, allow_blank=True),
+        required=False, allow_empty=True,
+        help_text="Cloudinary CDN URLs for the region gallery images. Written by FFCC after upload.",
     )
 
 
@@ -689,3 +695,22 @@ class IngredientCategorySerializer(serializers.ModelSerializer):
         model = IngredientCategory
         fields = ["id", "slug", "name_en", "name_sw", "parent_slug", "ingredient_count", "created_at"]
         read_only_fields = fields
+
+
+class AddDishIngredientSerializer(serializers.Serializer):
+    ingredient_slug = serializers.SlugField()
+    role = serializers.ChoiceField(
+        choices=["primary", "required", "optional", "garnish"],
+        default="required",
+    )
+    quantity = serializers.DecimalField(
+        max_digits=8, decimal_places=2, required=False, allow_null=True,
+    )
+    preparation_note = serializers.CharField(max_length=200, required=False, default="")
+    position = serializers.IntegerField(required=False, default=0)
+    reason = serializers.CharField(required=False, default="")
+
+
+class RemoveDishIngredientSerializer(serializers.Serializer):
+    ingredient_slug = serializers.SlugField()
+    reason = serializers.CharField(required=False, default="")
