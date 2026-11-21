@@ -45,6 +45,11 @@ class Region(TimeStampedModel):
         default="",
         help_text="Cloudinary CDN URL for the region hero image. Set via FFCC Image Studio.",
     )
+    image_urls = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="Cloudinary CDN URLs for the region gallery images. Managed via FFCC Image Studio.",
+    )
 
     class Meta:
         db_table = "region"
