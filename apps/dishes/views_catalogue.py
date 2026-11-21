@@ -224,6 +224,7 @@ def dish_detail(request: Request, slug: str) -> Response:
             Dish.objects.filter(status__in=[StatusChoices.REVIEWED, StatusChoices.VERIFIED])
             .prefetch_related(
                 "dish_ingredients__ingredient",
+                "dish_ingredients__ingredient__nutrition",
                 "dish_ingredients__unit",
                 "steps",
                 "dish_regions__region",
@@ -258,6 +259,34 @@ def dish_detail(request: Request, slug: str) -> Response:
         for dt in dish.dietary_tags.all()
     ]
 
+    # Inline nutrition — same logic as /nutrition/ endpoint, avoids a second round-trip
+    from decimal import Decimal as _D
+    _DEFAULT_GRAMS = _D("100")
+    _totals = {"kcal": _D(0), "protein_g": _D(0), "carbs_g": _D(0), "fat_g": _D(0), "fibre_g": _D(0), "sodium_mg": _D(0)}
+    _is_estimate = False
+    _total_ings = 0
+    _covered = 0
+    for _di in dish.dish_ingredients.all():
+        _total_ings += 1
+        try:
+            _nf = _di.ingredient.nutrition
+        except Exception:
+            _is_estimate = True
+            continue
+        _covered += 1
+        if _di.quantity is not None and _di.unit is not None:
+            _grams = _di.quantity * _di.unit.to_base_factor
+        else:
+            _grams = _DEFAULT_GRAMS
+            _is_estimate = True
+        _scale = _grams / _D("100")
+        for _k in _totals:
+            _totals[_k] += getattr(_nf, _k) * _scale
+    _servings = dish.servings or 1
+    nutrition = {k: float(round(v / _servings, 1)) for k, v in _totals.items()}
+    nutrition["is_estimate"] = _is_estimate
+    nutrition["coverage"] = round(_covered / _total_ings, 2) if _total_ings else 0.0
+
     return Response(
         {
             "slug": dish.slug,
@@ -279,5 +308,6 @@ def dish_detail(request: Request, slug: str) -> Response:
             "steps": steps,
             "regions": regions,
             "dietary_tags": dietary_tags,
+            "nutrition": nutrition,
         }
     )
