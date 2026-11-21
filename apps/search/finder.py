@@ -147,7 +147,50 @@ def find_candidates(
                 )
                 qs = qs.filter(id__in=required_dish_ids)
 
-    qs = qs[:limit]
+    # Priority candidate retrieval:
+    # First grab all dishes where a user ingredient is in primary_ids or required_ids
+    # (guaranteed relevant — must not be excluded by the 200 cap).
+    # Then fill remaining slots from the general GIN overlap.
+    from apps.dishes.models import Dish as _Dish
+    from django.db.models import Q
+
+    # Use string values directly — StatusChoices enum values may not compare
+    # equal to stored strings in ORM filter kwargs.
+    _status_strings = [str(s.value) if hasattr(s, 'value') else str(s) for s in statuses]
+    base_filter = dict(status__in=_status_strings, all_ids__overlap=pool_uuids)
+    if meal_type:
+        base_filter["meal_type"] = meal_type
+    if course:
+        base_filter["course"] = course
+
+    _select_fields = (
+        "id", "slug", "name_en", "name_sw",
+        "required_ids", "optional_ids", "primary_ids", "all_ids",
+        "popularity", "quality_level", "status", "image_url",
+    )
+
+    # Query A: dishes where pool overlaps primary_ids or required_ids (most relevant)
+    priority_qs = _Dish.objects.filter(
+        **base_filter
+    ).filter(
+        Q(primary_ids__overlap=pool_uuids) | Q(required_ids__overlap=pool_uuids)
+    ).values(*_select_fields).order_by("-popularity")
+
+    priority_rows = list(priority_qs)
+    priority_ids = {r["id"] for r in priority_rows}
+
+    # Query B: fill the rest from general GIN overlap, excluding priority dishes
+    remaining_limit = max(0, limit - len(priority_rows))
+    if remaining_limit > 0:
+        fill_qs = _Dish.objects.filter(**base_filter).exclude(
+            id__in=priority_ids
+        ).values(*_select_fields).order_by("-popularity")[:remaining_limit]
+        fill_rows = list(fill_qs)
+    else:
+        fill_rows = []
+
+    combined_rows = priority_rows + fill_rows
+    qs = combined_rows  # will iterate below
 
     candidates = []
     for row in qs:
